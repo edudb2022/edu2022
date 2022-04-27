@@ -9,4 +9,4 @@ const Layout: React.FunctionComponent = ({ children }) => {
   );
 };
 
-export default index;
+export default Layout;
