@@ -1,7 +1,7 @@
 import React from "react";
 
 const Footer: React.FunctionComponent = () => {
-  return <footer>index</footer>;
+  return <footer>footer</footer>;
 };
 
 export default Footer;
