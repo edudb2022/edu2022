@@ -1,9 +1,9 @@
 import React from "react";
 import BaseInput, { IBaseInputProps } from ".";
 
-interface ISearchInputProps extends IBaseInputProps {
+type ISearchInputProps = IBaseInputProps & {
   className?: string;
-}
+};
 
 const SearchInput: React.FunctionComponent<ISearchInputProps> = ({
   className,
@@ -12,7 +12,7 @@ const SearchInput: React.FunctionComponent<ISearchInputProps> = ({
   return (
     <BaseInput
       name="search"
-      className="w-full"
+      className="w-10/12"
       placeholder="輸入學校中文或英文名稱"
       {...props}
     />

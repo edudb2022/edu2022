@@ -1,5 +1,6 @@
 export type ID = string;
-export type Username = string;
+export type UserName = string;
+export type SchoolName = string;
 
 export enum Role {
   User = "user",
@@ -10,7 +11,7 @@ export interface ISystem {
   user: {
     isLogin: boolean;
     role: Role.User;
-    username: Username;
+    username: UserName;
     userId: ID;
     isVerified: boolean;
   };
