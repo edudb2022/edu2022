@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import BaseCard, { IBaseCardProps } from ".";
 import { ID, SchoolName } from "../../../types";
@@ -24,13 +25,17 @@ const SchoolCard: React.FunctionComponent<ISchoolCardProps> = ({
   averageSchoolScore,
 }) => {
   return (
-    <BaseCard className="border-2 w-56 h-56 m-2">
-      <h6> {id}</h6>
-      <h6> {schoolChineseName}</h6>
-      <h6> {schoolEnglishName}</h6>
-      <h6> {shortName}</h6>
-      <h6> {averageSchoolScore}</h6>
-    </BaseCard>
+    <Link href={`/school/${id}`}>
+      <a>
+        <BaseCard className="border-2 w-56 h-56 m-2">
+          <h6> {id}</h6>
+          <h6> {schoolChineseName}</h6>
+          <h6> {schoolEnglishName}</h6>
+          <h6> {shortName}</h6>
+          <h6> {averageSchoolScore}</h6>
+        </BaseCard>
+      </a>
+    </Link>
   );
 };
 
