@@ -7,7 +7,7 @@ import SchoolsPanelItems from "./items/schools";
 
 const SchoolsPanel: React.FunctionComponent = () => {
   const [page, setPage] = useState(0);
-  const handleChange = (e, val) => {
+  const handleChange = (e: any, val: any) => {
     e.preventDefault();
     setPage(val);
   };
