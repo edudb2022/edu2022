@@ -1,5 +1,5 @@
 import React from "react";
-import BaseButton from "../common/button/base";
+import BaseButton from "../common/buttons";
 import AuthButtonGroup from "../common/groups/button/auth";
 
 const Navbar: React.FunctionComponent = () => {

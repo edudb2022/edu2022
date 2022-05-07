@@ -1,5 +1,5 @@
 import React from "react";
-import AuthButton from "../../button/base/auth";
+import AuthButton from "../../buttons/auth";
 
 const AuthButtonGroup: React.FunctionComponent = () => {
   return <AuthButton />;

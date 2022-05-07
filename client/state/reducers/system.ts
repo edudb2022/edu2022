@@ -1,25 +1,9 @@
-import { ID, ISystem, Role, Username } from "../../types";
+import { Role } from "../../types";
 import { AnyAction } from "redux";
 
 const initialState = {
-  user: {
-    isLogin: false,
-    role: Role.User,
-    username: "",
-    userId: "",
-    isVerified: false,
-  },
+  isLoading: false,
 };
-
-// export interface ISystem {
-//   user: {
-//     isLogin: boolean;
-//     role: Role.User;
-//     username: Username;
-//     userId: ID;
-//     isVerified: boolean;
-//   };
-// }
 
 const systemReducer = (state = initialState, action: AnyAction) => {
   switch (action.type) {
