@@ -13,7 +13,7 @@ const MyApp: React.FunctionComponent<IMyAppProps> = ({
   return (
     <Provider store={store}>
       <CommonLayout>
-        <Component {...pageProps} />;
+        <Component {...pageProps} />
       </CommonLayout>
     </Provider>
   );

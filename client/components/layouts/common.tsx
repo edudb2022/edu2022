@@ -15,7 +15,8 @@ const CommonLayout: React.FunctionComponent<
         <Navbar />
       </header>
       <LoadingBackDrop />
-      <main>{children}</main> <Footer />
+      <main>{children}</main>
+      <Footer />
     </>
   );
 };

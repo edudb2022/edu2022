@@ -10,7 +10,6 @@ const Home: NextPage = () => {
       <div className="flex justify-center">
         <SearchInput />
       </div>
-
       <SchoolsPanel />
     </div>
   );
