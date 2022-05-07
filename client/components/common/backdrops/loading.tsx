@@ -1,7 +1,7 @@
 import { CircularProgress } from "@mui/material";
 import React from "react";
 import { useSelector } from "react-redux";
-import BaseBackDrop, { IBaseBackDropProps } from ".";
+import BaseBackDrop from ".";
 
 interface ILoadingBackDropProps {}
 
