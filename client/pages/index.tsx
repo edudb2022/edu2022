@@ -1,6 +1,5 @@
-import { Backdrop, CircularProgress, Modal } from "@mui/material";
 import type { NextPage } from "next";
-import LoadingBackDrop from "../components/common/backdrops/loading";
+
 import SearchInput from "../components/common/inputs/base/search";
 import SchoolsPanel from "../components/common/panel/schools";
 

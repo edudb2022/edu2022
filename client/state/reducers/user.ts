@@ -1,5 +1,7 @@
-import { Role } from "../../types";
 import { AnyAction } from "redux";
+import { Role } from "../../types/common";
+import { IUserState } from "../../types/state";
+import { IUserActions } from "../actions/user";
 
 const initialState = {
   isLogin: false,
@@ -9,8 +11,11 @@ const initialState = {
   isVerified: false,
 };
 
-const userReducer = (state = initialState, action: AnyAction) => {
-  switch (action.type) {
+const userReducer = (
+  state: IUserState = initialState,
+  { type, action }: IUserActions
+) => {
+  switch (type) {
     default:
       return state;
   }

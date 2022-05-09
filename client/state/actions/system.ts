@@ -7,3 +7,5 @@
 export default {
   //   increment,
 };
+
+export type ISystemActions = "";
