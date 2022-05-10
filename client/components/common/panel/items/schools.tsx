@@ -1,5 +1,6 @@
 import React from "react";
-import SchoolCard, { ISchoolCardProps } from "../../cards/school";
+import TertiarySchoolCard from "../../cards/schools/tertiary";
+import SchoolCard, { ISchoolCardProps } from "../../cards/schools/tertiary";
 
 interface SchoolsPanelItemsProps {
   index: number;
@@ -17,7 +18,7 @@ const SchoolsPanelItems: React.FunctionComponent<SchoolsPanelItemsProps> = ({
       {index === currentIndex &&
         schools.map((data) => {
           return (
-            <SchoolCard
+            <TertiarySchoolCard
               averageSchoolScore={data.averageSchoolScore}
               schoolChineseName={data.schoolChineseName}
               id={data.id}

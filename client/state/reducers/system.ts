@@ -10,7 +10,7 @@ const systemReducer = (
   state: ISystemState = initialState,
   { type, action }: ISystemActions
 ) => {
-  switch (action.type) {
+  switch (type) {
     default:
       return state;
   }

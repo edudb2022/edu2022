@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from "react";
-import BaseCard, { IBaseCardProps } from ".";
-import { ID, SchoolName } from "../../../types";
+import BaseCard, { IBaseCardProps } from "..";
+import { ID, SchoolName } from "../../../../types/state";
 
 export interface ISchoolCardProps extends IBaseCardProps {
   id: ID;
@@ -17,7 +17,7 @@ export interface ISchoolCardProps extends IBaseCardProps {
   // avergae Cateen rating[Excellent/ Good/ Neutral/ Bad / Shit]
 }
 
-const SchoolCard: React.FunctionComponent<ISchoolCardProps> = ({
+const TertiarySchoolCard: React.FunctionComponent<ISchoolCardProps> = ({
   id,
   schoolChineseName,
   schoolEnglishName,
@@ -25,7 +25,7 @@ const SchoolCard: React.FunctionComponent<ISchoolCardProps> = ({
   averageSchoolScore,
 }) => {
   return (
-    <Link href={`/school/${id}`}>
+    <Link href={`/schools/tertiary/${id}`}>
       <a>
         <BaseCard className="border-2 w-56 h-56 m-2">
           <h6> {id}</h6>
@@ -39,4 +39,4 @@ const SchoolCard: React.FunctionComponent<ISchoolCardProps> = ({
   );
 };
 
-export default SchoolCard;
+export default TertiarySchoolCard;
