@@ -2,20 +2,19 @@ import axios, { AxiosInstance } from "axios";
 
 // import { auth } from "./firebase/configs";
 
-// // DEV:
-// const DEFAULT_BASE_URL =
-//   process.env.NODE_ENV === "development"
-//     ? "http://localhost:5001/creato-web-app/us-central1/api/"
-//     : process.env.GATSBY_API_URL;
-// // const DEFAULT_BASE_URL = process.env.GATSBY_API_URL;
+// DEV:
+export const DEFAULT_BASE_URL =
+  process.env.NODE_ENV === "development" ? "http://localhost:3001/" : "";
+// process.env.GATSBY_API_URL;
+// const DEFAULT_BASE_URL = process.env.GATSBY_API_URL;
 
-// const instance: AxiosInstance = axios.create({
-//   baseURL: DEFAULT_BASE_URL,
-//   timeout: 5000,
-//   headers: {
-//     "X-Custom-Header": "creato",
-//   },
-// });
+const instance: AxiosInstance = axios.create({
+  baseURL: DEFAULT_BASE_URL,
+  timeout: 5000,
+  headers: {
+    "X-Custom-Header": "eduDB",
+  },
+});
 
 // instance.interceptors.request.use(
 //   async function (config: any) {
