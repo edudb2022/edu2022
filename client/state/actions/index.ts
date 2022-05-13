@@ -1,5 +1,5 @@
-import system from "./system";
-import user from "./user";
+import system from "../system/actions";
+import user from "../user/actions";
 
 const rootActions = {
   system,
