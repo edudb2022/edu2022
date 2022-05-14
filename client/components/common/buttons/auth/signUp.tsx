@@ -5,7 +5,11 @@ interface ISignUpButtonProps extends IBaseButtonProps {}
 const SignUpButton: React.FunctionComponent<ISignUpButtonProps> = ({
   ...props
 }) => {
-  return <BaseButton {...props}>登入</BaseButton>;
+  return (
+    <BaseButton className="text-white bg-[#EF5DA8]" {...props}>
+      注冊
+    </BaseButton>
+  );
 };
 
 export default SignUpButton;
