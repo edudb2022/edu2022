@@ -1,5 +1,7 @@
 import React from "react";
 import BaseButton from "../common/buttons";
+import SignInButton from "../common/buttons/auth/signIn";
+import SignUpButton from "../common/buttons/auth/signUp";
 import DiscordButton from "../common/buttons/discord";
 import AuthButtonGroup from "../common/groups/button/auth";
 
@@ -9,6 +11,7 @@ const Navbar: React.FunctionComponent = () => {
       <div>icon</div>
       <div className="flex flex-row">
         <DiscordButton />
+
         <AuthButtonGroup />
       </div>
     </nav>

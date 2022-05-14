@@ -11,7 +11,10 @@ const BaseButton: React.FunctionComponent<IBaseButtonProps> = ({
   ...props
 }) => {
   return (
-    <button className={`p-2 rounded-lg border-2 ${className}`} {...props}>
+    <button
+      className={`p-2 rounded-lg flex flex-row  items-center  ${className}`}
+      {...props}
+    >
       {children}
     </button>
   );

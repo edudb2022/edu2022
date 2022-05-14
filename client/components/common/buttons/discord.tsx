@@ -10,12 +10,15 @@ const DiscordButton: React.FunctionComponent<IDiscordButtonProps> = ({
 }) => {
   return (
     <BaseButton
-      className={`flex flex-row justify-center items-center text-lg bg-[#5865F2] text-white ${className}`}
+      className={` gap-x-1 text-lg bg-[#5865F2]  text-white hover:shadow-md  hover:shadow-[#5865F2] ${className}`}
       {...props}
     >
-      <FaDiscord /> Discord
+      <FaDiscord className="" />
+      <span className="">Discord</span>
     </BaseButton>
   );
 };
+
+//flex flex-row justify-between items-center
 
 export default DiscordButton;
