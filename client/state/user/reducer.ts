@@ -1,4 +1,4 @@
-import { IUserState, UserActions, UserActionTypes } from "./types";
+import { IUserActions, IUserActionTypes, IUserState } from "./types";
 import { Role } from "../../types/common";
 
 const initialState = {
@@ -11,10 +11,10 @@ const initialState = {
 
 const userReducer = (
   state: IUserState = initialState,
-  { type, payload }: UserActions
+  { type, payload }: IUserActions
 ) => {
   switch (type) {
-    case UserActionTypes.USER_SIGN_IN:
+    case IUserActionTypes.USER_SIGN_IN:
       return state;
     default:
       return state;

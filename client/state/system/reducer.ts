@@ -1,4 +1,4 @@
-import { ISystemState, SystemActions, SystemActionTypes } from "./types";
+import { ISystemActions, ISystemActionTypes, ISystemState } from "./types";
 
 const initialState = {
   isLoading: false,
@@ -7,13 +7,13 @@ const initialState = {
 
 const systemReducer = (
   state: ISystemState = initialState,
-  { type, payload }: SystemActions
+  { type, payload }: ISystemActions
 ) => {
   switch (type) {
-    case SystemActionTypes.SYSTEM_IS_LOADING:
+    case ISystemActionTypes.SYSTEM_IS_LOADING:
       return state;
 
-    case SystemActionTypes.SYSTEM_ERROR:
+    case ISystemActionTypes.SYSTEM_ERROR:
       return state;
 
     default:

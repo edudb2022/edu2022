@@ -1,6 +1,6 @@
 import { ID, Role, UserName } from "../../types/common";
 
-export enum UserActionTypes {
+export enum IUserActionTypes {
   USER_SIGN_IN = "USER:SIGN_IN",
   USER_SIGN_OUT = "USER:SIGN_OUT",
 }
@@ -15,11 +15,11 @@ export interface IUserState {
 
 export interface IUserSignInAction {
   payload: IUserState;
-  type: typeof UserActionTypes.USER_SIGN_IN;
+  type: typeof IUserActionTypes.USER_SIGN_IN;
 }
 
 export interface IUserSignOutAction {
-  type: typeof UserActionTypes.USER_SIGN_OUT;
+  type: typeof IUserActionTypes.USER_SIGN_OUT;
 }
 
-export type UserActions = IUserSignInAction | IUserSignOutAction;
+export type IUserActions = IUserSignInAction | IUserSignOutAction;

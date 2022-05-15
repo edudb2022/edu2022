@@ -1,4 +1,5 @@
 import type { NextPage } from "next";
+
 import HeaderBar from "../components/common/bars/header";
 
 import SearchInput from "../components/common/inputs/base/search";

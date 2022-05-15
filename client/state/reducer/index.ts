@@ -6,3 +6,5 @@ export const rootReducer = combineReducers({
   system: systemReducer,
   user: userReducer,
 });
+
+export type IRootState = ReturnType<typeof rootReducer>;

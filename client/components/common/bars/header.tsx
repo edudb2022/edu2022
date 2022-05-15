@@ -26,11 +26,11 @@ const formRoutes = [
 
 const HeaderBar: React.FunctionComponent = () => {
   return (
-    <div className="flex flex-row gap-x-2 bg-[#59712B]">
+    <div className="flex flex-row gap-x-2 bg-[#3db0f7]">
       {formRoutes.map((data) => {
         return (
           <Link href={`/forms/tertiary/${data.route}`}>
-            <a className="p-3 text-white hover:bg-[#81B224]">{data.title}</a>
+            <a className="p-3 text-white hover:bg-[#87cefa]">{data.title}</a>
           </Link>
         );
       })}

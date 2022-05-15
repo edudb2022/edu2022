@@ -1,16 +1,16 @@
 import {
   IUserSignInAction,
   IUserSignOutAction,
-  UserActionTypes,
+  IUserActionTypes,
 } from "./types";
 
 export const signIn = (payload: IUserSignInAction) => ({
   payload: payload,
-  type: UserActionTypes.USER_SIGN_IN,
+  type: IUserActionTypes.USER_SIGN_IN,
 });
 
 export const signOut = (): IUserSignOutAction => ({
-  type: UserActionTypes.USER_SIGN_OUT,
+  type: IUserActionTypes.USER_SIGN_OUT,
 });
 
 export default {

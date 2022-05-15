@@ -1,4 +1,4 @@
-export enum SystemActionTypes {
+export enum ISystemActionTypes {
   SYSTEM_IS_LOADING = "SYSTEM:IS_LOADING",
   SYSTEM_ERROR = "SYSTEM:ERROR",
 }
@@ -10,12 +10,12 @@ export interface ISystemState {
 
 export interface ISystemIsLoadingAction {
   payload: ISystemState;
-  type: typeof SystemActionTypes.SYSTEM_IS_LOADING;
+  type: typeof ISystemActionTypes.SYSTEM_IS_LOADING;
 }
 
 export interface ISystemErrorACtion {
   payload: ISystemState;
-  type: typeof SystemActionTypes.SYSTEM_ERROR;
+  type: typeof ISystemActionTypes.SYSTEM_ERROR;
 }
 
-export type SystemActions = ISystemIsLoadingAction | ISystemErrorACtion;
+export type ISystemActions = ISystemIsLoadingAction | ISystemErrorACtion;

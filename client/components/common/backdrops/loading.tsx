@@ -1,14 +1,14 @@
 import { CircularProgress } from "@mui/material";
 import React from "react";
-import { useSelector } from "react-redux";
 import BaseBackDrop from ".";
+import { useAppSelector } from "../../../hooks/common/useAppSelector";
 
 interface ILoadingBackDropProps {}
 
 const LoadingBackDrop: React.FunctionComponent<ILoadingBackDropProps> = ({
   ...props
 }) => {
-  const { isLoading } = useSelector((state) => state.system);
+  const { isLoading } = useAppSelector((state) => state.system);
 
   return (
     <BaseBackDrop isOpen={isLoading} className="z-50" {...props}>
