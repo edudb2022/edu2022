@@ -12,7 +12,16 @@ const MyApp: React.FunctionComponent<IMyAppProps> = ({
   Component,
   pageProps,
 }) => {
-  const [queryClient] = useState(() => new QueryClient());
+  const [queryClient] = useState(
+    () =>
+      new QueryClient({
+        defaultOptions: {
+          queries: {
+            staleTime: 0,
+          },
+        },
+      })
+  );
   return (
     <QueryClientProvider client={queryClient}>
       <Hydrate state={pageProps.dehydratedState}>
@@ -21,8 +30,9 @@ const MyApp: React.FunctionComponent<IMyAppProps> = ({
             <Component {...pageProps} />
           </CommonLayout>
         </Provider>
+
+        <ReactQueryDevtools initialIsOpen={false} />
       </Hydrate>
-      <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
   );
 };

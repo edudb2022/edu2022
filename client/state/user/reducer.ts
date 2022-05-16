@@ -16,6 +16,10 @@ const userReducer = (
   switch (type) {
     case IUserActionTypes.USER_SIGN_IN:
       return state;
+
+    case IUserActionTypes.USER_SIGN_OUT:
+      console.log(123);
+      return state;
     default:
       return state;
   }

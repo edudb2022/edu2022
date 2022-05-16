@@ -1,7 +1,6 @@
 import system from "../system/actions";
-import { ISystemActions } from "../system/types";
+
 import user from "../user/actions";
-import { IUserActions } from "../user/types";
 
 const rootActions = {
   system,
