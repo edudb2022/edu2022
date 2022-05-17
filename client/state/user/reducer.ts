@@ -1,4 +1,4 @@
-import { IUserActions, IUserActionTypes, IUserState } from "./types";
+import { IUserActions, IUserActionTypes, IUserState } from "./actions";
 import { Role } from "../../types/common";
 
 const initialState = {

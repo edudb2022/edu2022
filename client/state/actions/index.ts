@@ -1,18 +1,6 @@
-import system from "../system/actions";
+// import { ISystemActionTypes } from "../system/types";
+// import { IUserActionTypes } from "../user/types";
 
-import user from "../user/actions";
+// // export type IRootActionTypes = ISystemActionTypes | IUserActionTypes;
 
-const rootActions = {
-  system,
-  user,
-};
-
-export default rootActions;
-
-// // export type IRootActions {
-// //   ISystemActions,
-// //   IUserActions,
-// // }
-
-// export const IRootActions = { ...ISystemActions, ...IUserActions };
-// export type IRootActions = typeof IRootActions;
+// const IRootActionTypes = { ...ISystemActionTypes, ...IUserActionTypes };

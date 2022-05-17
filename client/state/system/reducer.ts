@@ -1,4 +1,4 @@
-import { ISystemActions, ISystemActionTypes, ISystemState } from "./types";
+import { ISystemActions, ISystemActionTypes, ISystemState } from "./actions";
 
 const initialState = {
   isLoading: false,
