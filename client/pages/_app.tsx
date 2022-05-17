@@ -13,14 +13,14 @@ const MyApp: React.FunctionComponent<IMyAppProps> = ({
   pageProps,
 }) => {
   const [queryClient] = useState(
-    () =>
-      new QueryClient({
-        defaultOptions: {
-          queries: {
-            staleTime: 0,
-          },
-        },
-      })
+    () => new QueryClient()
+    // ({
+    //   defaultOptions: {
+    //     queries: {
+    //       staleTime: Infinity,
+    //     },
+    //   },
+    // })
   );
   return (
     <QueryClientProvider client={queryClient}>
