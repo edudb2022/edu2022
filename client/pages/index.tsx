@@ -1,30 +1,37 @@
-import axios from "axios";
-
 import type { NextPage } from "next";
-import { useEffect } from "react";
-import { dehydrate, QueryClient, useQuery, useQueryClient } from "react-query";
-import { useDispatch } from "react-redux";
 
 import HeaderBar from "../components/common/bars/header";
+import GpaSlider from "../components/common/inputs/slider/gpa";
+import SearchTextInput from "../components/common/inputs/text/search";
 
-import SearchInput from "../components/common/inputs/base/search";
+import SearchInput from "../components/common/inputs/text/search";
+
 import SchoolsPanel from "../components/common/panel/schools";
 
-import { Role } from "../types/common";
-
 // const fetchTodoList = () => {
-//   return axios
-//     .get("https://random-data-api.com/api/address/random_address")
-//     .then((res) => res.json());
+//   // return axios.get("https://random-data-api.com/api/address/random_address");
+//   return fetch("https://random-data-api.com/api/address/random_address").then(
+//     (res) => res.json()
+//   );
 // };
 
 const Home: NextPage = () => {
+  // const { data, isLoading, isFetching } = useQuery("post", fetchTodoList, {
+  //   // refetchOnWindowFocus: false,
+  //   staleTime: 0,
+  // });
+  // console.log(data, isLoading, isFetching);
+
+  // const aa = (e) =>{
+  //   console.log(e.target.value)}
+  // }
+
   return (
     <>
       <HeaderBar />
       <div className="p-2">
         <div className="flex justify-center">
-          <SearchInput />
+          <SearchTextInput />
         </div>
         <SchoolsPanel />
       </div>
@@ -35,9 +42,7 @@ const Home: NextPage = () => {
 // export async function getServerSideProps() {
 //   const queryClient = new QueryClient();
 
-//   await queryClient.prefetchQuery("posts", fetchTodoList, {
-//     // staleTime: 300000,
-//   });
+//   await queryClient.prefetchQuery("posts", fetchTodoList);
 
 //   return {
 //     props: {
