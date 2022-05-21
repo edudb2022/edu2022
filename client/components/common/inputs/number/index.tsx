@@ -1,7 +1,7 @@
 import React from "react";
 import BaseTextInput, { IBaseInputTextProps } from "../text";
 
-type IBaseNumberInputProps = IBaseInputTextProps & {
+export type IBaseNumberInputProps = IBaseInputTextProps & {
   className?: string;
 };
 
