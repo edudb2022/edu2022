@@ -9,7 +9,7 @@ interface ISelectMenuItems {
 interface IBaseSelectProps extends SelectProps {
   inputLabel?: string;
   inputLabelClassName?: string;
-  //   selectLabel: string;
+  selectLabel: string;
   selecClassName?: string;
   selectValue: string;
   selectId?: string;
@@ -20,7 +20,7 @@ interface IBaseSelectProps extends SelectProps {
 const BaseSelect: React.FunctionComponent<IBaseSelectProps> = ({
   inputLabel,
   inputLabelClassName,
-  //   selectLabel,
+  selectLabel,
   selectValue,
   selecClassName,
   selectId,

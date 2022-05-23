@@ -1,17 +1,13 @@
 import type { NextPage } from "next";
-import { dehydrate, QueryClient, useQuery } from "react-query";
+
+import { dehydrate, QueryClient } from "react-query";
 
 import HeaderBar from "../components/common/bars/header";
-import BaseSalaryNumberInput from "../components/common/inputs/number/basesalary";
 
-import GpaSlider from "../components/common/inputs/slider/gpa";
 import SearchTextInput from "../components/common/inputs/text/search";
 
-import SearchInput from "../components/common/inputs/text/search";
-import TitleTextInput from "../components/common/inputs/text/title";
-
 import SchoolsPanel from "../components/common/panel/schools";
-import BaseSelect from "../components/common/select";
+import DseSubjectsSelect from "../components/common/select/dseSubjects";
 
 // const fetchTodoList = async () => {
 //   // return axios.get("https://random-data-api.com/api/address/random_address");
@@ -30,7 +26,6 @@ const Home: NextPage = () => {
   return (
     <>
       <HeaderBar />
-      <div className="flex justify-center mt-2"></div>
 
       <div className="p-2">
         <div className="flex justify-center">
