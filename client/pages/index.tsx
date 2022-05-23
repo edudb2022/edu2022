@@ -7,7 +7,6 @@ import HeaderBar from "../components/common/bars/header";
 import SearchTextInput from "../components/common/inputs/text/search";
 
 import SchoolsPanel from "../components/common/panel/schools";
-import DseSubjectsSelect from "../components/common/select/dseSubjects";
 
 // const fetchTodoList = async () => {
 //   // return axios.get("https://random-data-api.com/api/address/random_address");
