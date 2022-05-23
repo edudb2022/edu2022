@@ -11,29 +11,27 @@ import SearchInput from "../components/common/inputs/text/search";
 import TitleTextInput from "../components/common/inputs/text/title";
 
 import SchoolsPanel from "../components/common/panel/schools";
+import BaseSelect from "../components/common/select";
 
-const fetchTodoList = async () => {
-  // return axios.get("https://random-data-api.com/api/address/random_address");
-  return await fetch(
-    "https://random-data-api.com/api/address/random_address"
-  ).then((res) => res.json());
-};
+// const fetchTodoList = async () => {
+//   // return axios.get("https://random-data-api.com/api/address/random_address");
+//   return await fetch(
+//     "https://random-data-api.com/api/address/random_address"
+//   ).then((res) => res.json());
+// };
 
 const Home: NextPage = () => {
-  const { data, isLoading, isFetching } = useQuery("posts", fetchTodoList, {
-    // refetchOnWindowFocus: false,
-    staleTime: 0,
-  });
-  console.log(data, isLoading, isFetching);
-
-  // const aa = (e) =>{
-  //   console.log(e.target.value)}
-  // }
+  // const { data, isLoading, isFetching } = useQuery("posts", fetchTodoList, {
+  //   // refetchOnWindowFocus: false,
+  //   staleTime: 0,
+  // });
+  // console.log(data, isLoading, isFetching);
 
   return (
     <>
       <HeaderBar />
-      <BaseSalaryNumberInput variant="outlined" />
+      <div className="flex justify-center mt-2"></div>
+
       <div className="p-2">
         <div className="flex justify-center">
           <SearchTextInput variant="outlined" />
@@ -47,7 +45,7 @@ const Home: NextPage = () => {
 export async function getServerSideProps() {
   const queryClient = new QueryClient();
 
-  await queryClient.prefetchQuery("posts", fetchTodoList);
+  // await queryClient.prefetchQuery("posts", fetchTodoList);
 
   return {
     props: {
