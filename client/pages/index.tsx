@@ -3,6 +3,7 @@ import type { NextPage } from "next";
 import { dehydrate, QueryClient } from "react-query";
 
 import HeaderBar from "../components/common/bars/header";
+import SignInButton from "../components/common/buttons/auth/signIn";
 
 import SearchTextInput from "../components/common/inputs/text/search";
 
