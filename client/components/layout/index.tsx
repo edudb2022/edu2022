@@ -1,12 +1,12 @@
 import React from "react";
 import Footer from "../footer";
 
-const Layout: React.FunctionComponent = ({ children }) => {
+const Layout: React.FunctionComponent = () => {
   return (
     <>
-      {children} <Footer />
+      <Footer />
     </>
   );
 };
 
-export default index;
+export default Layout;
