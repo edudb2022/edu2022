@@ -1,11 +1,12 @@
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
-import CommonLayout from "../components/layouts/common";
+// import CommonLayout from "../components/layouts";
 import { Provider } from "react-redux";
 import { store } from "../state/store";
 import { Hydrate, QueryClient, QueryClientProvider } from "react-query";
 import { useState } from "react";
 import { ReactQueryDevtools } from "react-query/devtools";
+import CommonLayout from "../components/layouts";
 interface IMyAppProps extends AppProps {}
 
 const MyApp: React.FunctionComponent<IMyAppProps> = ({
