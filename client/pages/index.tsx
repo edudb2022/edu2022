@@ -37,15 +37,15 @@ const Home: NextPage = () => {
   );
 };
 
-export async function getServerSideProps() {
-  const queryClient = new QueryClient();
+// export async function getServerSideProps() {
+//   const queryClient = new QueryClient();
 
-  // await queryClient.prefetchQuery("posts", fetchTodoList);
+//   // await queryClient.prefetchQuery("posts", fetchTodoList);
 
-  return {
-    props: {
-      dehydratedState: dehydrate(queryClient),
-    },
-  };
-}
+//   return {
+//     props: {
+//       dehydratedState: dehydrate(queryClient),
+//     },
+//   };
+// }
 export default Home;

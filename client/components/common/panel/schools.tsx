@@ -18,9 +18,9 @@ const SchoolsPanel: React.FunctionComponent = () => {
         <BaseTap className="w-1/2 text-center" label="大學" />
         <BaseTap className="w-1/2 text-center" label="大專" />
       </Tabs>
-      <div className="m-12 ">
+      <div className="md:m-12 ">
         <SchoolsPanelItems index={0} currentIndex={page} schools={uni} />
-        <SchoolsPanelItems index={1} currentIndex={page} schools={college} />
+        {/* <SchoolsPanelItems index={1} currentIndex={page} schools={college} /> */}
       </div>
     </div>
   );
