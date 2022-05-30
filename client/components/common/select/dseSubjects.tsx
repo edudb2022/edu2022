@@ -43,25 +43,37 @@ const DseSubjectsSelect: React.FunctionComponent<IDseSubjectsSelectProps> = ({
         {...props}
       >
         <ListSubheader>甲類：高中科目</ListSubheader>
-        {CategoryA.map((data) => {
+        {CategoryA.map((data, index) => {
           return (
-            <MenuItem className={`${itemsClassName}`} value={data.value}>
+            <MenuItem
+              key={index}
+              className={`${itemsClassName}`}
+              value={data.value}
+            >
               {data.title}
             </MenuItem>
           );
         })}
         <ListSubheader>乙類：應用學習科目</ListSubheader>
-        {CategoryB.map((data) => {
+        {CategoryB.map((data, index) => {
           return (
-            <MenuItem className={`${itemsClassName}`} value={data.value}>
+            <MenuItem
+              key={index}
+              className={`${itemsClassName}`}
+              value={data.value}
+            >
               {data.title}
             </MenuItem>
           );
         })}
         <ListSubheader>丙類：其他語言科目</ListSubheader>
-        {CategoryC.map((data) => {
+        {CategoryC.map((data, index) => {
           return (
-            <MenuItem className={`${itemsClassName}`} value={data.value}>
+            <MenuItem
+              key={index}
+              className={`${itemsClassName}`}
+              value={data.value}
+            >
               {data.title}
             </MenuItem>
           );

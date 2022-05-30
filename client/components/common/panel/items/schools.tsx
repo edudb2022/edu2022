@@ -18,6 +18,7 @@ const SchoolsPanelItems: React.FunctionComponent<SchoolsPanelItemsProps> = ({
         schools.map((data) => {
           return (
             <BaseReviewCard
+              key={data.id}
               id={data.id}
               schoolChineseName={data.schoolChineseName}
               schoolEnglishName={data.schoolEnglishName}

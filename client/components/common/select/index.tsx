@@ -41,9 +41,13 @@ const BaseSelect: React.FunctionComponent<IBaseSelectProps> = ({
         className={`${selecClassName}`}
         variant="outlined"
       >
-        {items.map((data) => {
+        {items.map((data, index) => {
           return (
-            <MenuItem className={`${itemsClassName}`} value={data.value}>
+            <MenuItem
+              key={index}
+              className={`${itemsClassName}`}
+              value={data.value}
+            >
               {data.title}
             </MenuItem>
           );
