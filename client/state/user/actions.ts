@@ -39,6 +39,7 @@ export interface IUserSignInAction {
 }
 
 export interface IUserSignOutAction {
+  payload?: null;
   type: typeof IUserActionTypes.USER_SIGN_OUT;
 }
 
