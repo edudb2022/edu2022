@@ -1,4 +1,3 @@
-import { totalmem } from "os";
 import React from "react";
 import BaseReviewCard, { IBaseReviewCardProps } from "../../cards/reviewCard";
 
@@ -18,14 +17,6 @@ const SchoolsPanelItems: React.FunctionComponent<SchoolsPanelItemsProps> = ({
       {index === currentIndex &&
         schools.map((data) => {
           return (
-            // <TertiarySchoolCard
-            //   averageSchoolScore={data.averageSchoolScore}
-            //   schoolChineseName={data.schoolChineseName}
-            //   id={data.id}
-            //   schoolEnglishName={data.schoolEnglishName}
-            //   key={data.id}
-            //   shortName={data.shortName}
-            // />
             <BaseReviewCard
               id={data.id}
               schoolChineseName={data.schoolChineseName}
@@ -38,16 +29,6 @@ const SchoolsPanelItems: React.FunctionComponent<SchoolsPanelItemsProps> = ({
             </BaseReviewCard>
           );
         })}
-
-      {/* <BaseReviewCard />
-      <BaseReviewCard />
-      <BaseReviewCard />
-      <BaseReviewCard />
-      <BaseReviewCard />
-      <BaseReviewCard /> */}
-
-      {/* <BaseReviewCard></BaseReviewCard>
-      <BaseReviewCard></BaseReviewCard> */}
     </div>
   );
 };
