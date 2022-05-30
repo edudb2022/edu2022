@@ -1,5 +1,5 @@
 import React from "react";
-import BaseReviewCard, { IBaseReviewCardProps } from "../../cards/reviewCard";
+import BaseReviewCard, { IBaseReviewCardProps } from "../../cards/review";
 
 interface SchoolsPanelItemsProps {
   index: number;
