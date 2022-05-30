@@ -2,13 +2,13 @@ import Image from "next/image";
 import React, { PropsWithChildren } from "react";
 import BaseCard, { IBaseCardProps } from "..";
 import { HiOutlineDocumentText } from "react-icons/hi";
-import { ID } from "../../../../types/common";
+import { ID, SchoolName } from "../../../../types/common";
 
 export interface IBaseReviewCardProps extends IBaseCardProps {
   id: ID;
-  schoolChineseName: string;
-  schoolEnglishName: string;
-  schoolShortName: string;
+  schoolChineseName: SchoolName;
+  schoolEnglishName: SchoolName;
+  schoolShortName: SchoolName;
   schoolTypes: string;
   totalReports: number;
 }
@@ -52,7 +52,7 @@ const BaseReviewCard: React.FunctionComponent<
 
         {children}
 
-        <p className="absolute bottom-2   right-2  flex flex-row">
+        <p className="absolute bottom-2   right-2  flex flex-row items-center">
           {totalReports} <HiOutlineDocumentText />
         </p>
       </div>
