@@ -1,5 +1,6 @@
 import React from "react";
 import BaseReviewCard, { IBaseReviewCardProps } from "../../cards/review";
+import SchoolsCards from "../../cards/review/schools";
 
 interface SchoolsPanelItemsProps {
   index: number;
@@ -17,7 +18,7 @@ const SchoolsPanelItems: React.FunctionComponent<SchoolsPanelItemsProps> = ({
       {index === currentIndex &&
         schools.map((data) => {
           return (
-            <BaseReviewCard
+            <SchoolsCards
               key={data.id}
               id={data.id}
               schoolChineseName={data.schoolChineseName}
@@ -25,9 +26,7 @@ const SchoolsPanelItems: React.FunctionComponent<SchoolsPanelItemsProps> = ({
               totalReports={data.totalReports}
               schoolTypes={data.schoolTypes}
               schoolShortName={data.schoolShortName}
-            >
-              123
-            </BaseReviewCard>
+            />
           );
         })}
     </div>

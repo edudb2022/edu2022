@@ -51,7 +51,6 @@ const BaseReviewCard: React.FunctionComponent<
         <h6 className="text-gray-500">{schoolEnglishName}</h6>
 
         {children}
-
         <p className="absolute bottom-2   right-2  flex flex-row items-center">
           {totalReports} <HiOutlineDocumentText />
         </p>

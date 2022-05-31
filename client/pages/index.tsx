@@ -1,4 +1,5 @@
 import type { NextPage } from "next";
+import { Radar } from "react-chartjs-2";
 
 import { dehydrate, QueryClient } from "react-query";
 
@@ -9,6 +10,25 @@ import SearchTextInput from "../components/common/inputs/text/search";
 
 import SchoolsPanel from "../components/common/panel/schools";
 
+// import {
+//   Chart as ChartJS,
+//   RadialLinearScale,
+//   PointElement,
+//   LineElement,
+//   Filler,
+//   Tooltip,
+//   Legend,
+// } from "chart.js";
+
+// ChartJS.register(
+//   RadialLinearScale,
+//   PointElement,
+//   LineElement,
+//   Filler,
+//   Tooltip,
+//   Legend
+// );
+
 // const fetchTodoList = async () => {
 //   // return axios.get("https://random-data-api.com/api/address/random_address");
 //   return await fetch(
@@ -16,6 +36,18 @@ import SchoolsPanel from "../components/common/panel/schools";
 //   ).then((res) => res.json());
 // };
 
+// const labels = ["January", "February", "March", "April", "May", "June"];
+// const data = {
+//   labels: labels,
+//   datasets: [
+//     {
+//       label: "My First dataset",
+//       backgroundColor: "rgb(255, 99, 132)",
+//       borderColor: "rgb(255, 99, 132)",
+//       data: [0, 10, 5, 2, 20, 30, 45],
+//     },
+//   ],
+// };
 const Home: NextPage = () => {
   // const { data, isLoading, isFetching } = useQuery("posts", fetchTodoList, {
   //   // refetchOnWindowFocus: false,
@@ -32,6 +64,10 @@ const Home: NextPage = () => {
           <SearchTextInput variant="outlined" />
         </div>
         <SchoolsPanel />
+        {/* <Radar
+          //   options={...}
+          data={data}
+        /> */}
       </div>
     </>
   );
