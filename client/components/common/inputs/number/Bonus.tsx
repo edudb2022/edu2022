@@ -4,16 +4,17 @@ import BaseNumberInput, { IBaseNumberInputProps } from ".";
 
 interface IBonusNumberInputProps extends IBaseNumberInputProps {}
 
-const BonusNumberInput: React.FunctionComponent<
-  IBonusNumberInputProps
-> = () => {
+const BonusNumberInput: React.FunctionComponent<IBonusNumberInputProps> = ({
+  ...props
+}) => {
   return (
     <BaseNumberInput
-      variant="outlined"
       label="花紅"
+      name="bonus"
       InputProps={{
         startAdornment: <InputAdornment position="start">HKD</InputAdornment>,
       }}
+      {...props}
     />
   );
 };

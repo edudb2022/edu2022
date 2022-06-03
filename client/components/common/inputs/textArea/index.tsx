@@ -1,17 +1,20 @@
-import { OutlinedTextFieldProps, TextField } from "@mui/material";
+import { TextareaAutosize, TextareaAutosizeProps } from "@mui/material";
 import React from "react";
 import ErrorMessage, { IErrorMessageProps } from "../../messages/error";
 
-export type IBaseInputTextProps = OutlinedTextFieldProps & IErrorMessageProps;
+export interface IBaseTextAreaProps
+  extends TextareaAutosizeProps,
+    IErrorMessageProps {}
 
-const BaseTextInput: React.FunctionComponent<IBaseInputTextProps> = ({
+const BaseTextArea: React.FunctionComponent<IBaseTextAreaProps> = ({
   isTouched,
   errorMessages,
+  className,
   ...props
 }) => {
   return (
     <div className="flex flex-col">
-      <TextField {...props} />
+      <TextareaAutosize className={` p-2 ${className}`} {...props} />
 
       <div className="flex justify-end">
         <ErrorMessage isTouched={isTouched} errorMessages={errorMessages} />
@@ -20,4 +23,4 @@ const BaseTextInput: React.FunctionComponent<IBaseInputTextProps> = ({
   );
 };
 
-export default BaseTextInput;
+export default BaseTextArea;

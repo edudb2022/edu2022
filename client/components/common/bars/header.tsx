@@ -27,12 +27,12 @@ const formRoutes = [
 
 const HeaderBar: React.FunctionComponent = () => {
   return (
-    <div className="flex flex-row gap-x-2  shadow-lg ">
+    <div className="flex flex-row gap-x-2 text-xs ">
       {formRoutes.map((data) => {
         return (
           <>
             <Link href={`/forms/tertiary/${data.route}`}>
-              <a className="flex flex-row  justify-center items-center text-xs md:text-base px-1 py-3 md:p-3 text-black hover:bg-[#87cefa]">
+              <a className="flex flex-row  justify-center items-center md:text-xs p-1  text-black">
                 <GrFormAdd /> {data.title}
               </a>
             </Link>

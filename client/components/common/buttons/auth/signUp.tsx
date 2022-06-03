@@ -6,7 +6,10 @@ const SignUpButton: React.FunctionComponent<ISignUpButtonProps> = ({
   ...props
 }) => {
   return (
-    <BaseButton className="text-white bg-[#EF5DA8]" {...props}>
+    <BaseButton
+      className="text-white bg-themeColors-one-400 text-sm"
+      {...props}
+    >
       注冊
     </BaseButton>
   );

@@ -7,6 +7,7 @@ import HeaderBar from "../components/common/bars/header";
 import SignInButton from "../components/common/buttons/auth/signIn";
 
 import SearchTextInput from "../components/common/inputs/text/search";
+import BaseTestArea from "../components/common/inputs/textArea";
 
 import SchoolsPanel from "../components/common/panel/schools";
 
@@ -56,12 +57,10 @@ const Home: NextPage = () => {
   // console.log(data, isLoading, isFetching);
 
   return (
-    <>
-      <HeaderBar />
-
+    <div>
       <div className="p-2">
         <div className="flex justify-center">
-          <SearchTextInput variant="outlined" />
+          {/* <SearchTextInput variant="outlined" /> */}
         </div>
         <SchoolsPanel />
         {/* <Radar
@@ -69,7 +68,7 @@ const Home: NextPage = () => {
           data={data}
         /> */}
       </div>
-    </>
+    </div>
   );
 };
 

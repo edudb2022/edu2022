@@ -6,14 +6,15 @@ interface IStockOptionNumberInputProps extends IBaseNumberInputProps {}
 
 const StockOptionNumberInput: React.FunctionComponent<
   IStockOptionNumberInputProps
-> = () => {
+> = ({ ...props }) => {
   return (
     <BaseNumberInput
-      variant="outlined"
       label="股票/股票期权"
+      name="stockOption"
       InputProps={{
         startAdornment: <InputAdornment position="start">HKD</InputAdornment>,
       }}
+      {...props}
     />
   );
 };

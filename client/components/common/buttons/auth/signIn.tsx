@@ -6,7 +6,7 @@ const SignInButton: React.FunctionComponent<ISignInButtonProps> = ({
   ...props
 }) => {
   return (
-    <BaseButton className="text-white bg-[#6C5CE7] " {...props}>
+    <BaseButton className="text-black-500 text-sm" {...props}>
       登入
     </BaseButton>
   );

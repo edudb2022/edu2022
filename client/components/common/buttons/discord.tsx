@@ -10,7 +10,7 @@ const DiscordButton: React.FunctionComponent<IDiscordButtonProps> = ({
 }) => {
   return (
     <BaseButton
-      className={` gap-x-1 text-lg bg-[#5865F2]  text-white hover:shadow-md  hover:shadow-[#5865F2] ${className}`}
+      className={` gap-x-1 text-sm bg-[#5865F2]  text-white hover:shadow-md  hover:shadow-[#5865F2] ${className}`}
       {...props}
     >
       <FaDiscord className="" />

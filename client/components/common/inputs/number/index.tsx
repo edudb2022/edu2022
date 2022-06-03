@@ -1,4 +1,5 @@
 import React from "react";
+import ErrorMessage from "../../messages/error";
 import BaseTextInput, { IBaseInputTextProps } from "../text";
 
 export type IBaseNumberInputProps = IBaseInputTextProps & {
@@ -8,7 +9,11 @@ export type IBaseNumberInputProps = IBaseInputTextProps & {
 const BaseNumberInput: React.FunctionComponent<IBaseNumberInputProps> = ({
   ...props
 }) => {
-  return <BaseTextInput type={"number"} {...props} />;
+  return (
+    <>
+      <BaseTextInput type={"number"} {...props} />
+    </>
+  );
 };
 
 export default BaseNumberInput;
