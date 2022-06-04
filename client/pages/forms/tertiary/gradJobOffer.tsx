@@ -65,7 +65,7 @@ const GradJobOfferFormPage: React.FunctionComponent = () => {
         />
         <h1>總年薪 : {formik.values.totalSalary}</h1>
 
-        <div className="flex flex-col">
+        <div className="flex flex-col md:flex-row w-full gap-x-3 gap-y-6 justify-end">
           <BaseSalaryNumberInput
             variant="outlined"
             name="baseSalary"
@@ -96,7 +96,7 @@ const GradJobOfferFormPage: React.FunctionComponent = () => {
           isTouched={true}
           errorMessages={"123"}
           title="123"
-          minRows={3}
+          minRows={5}
         />
       </form>
     </div>
