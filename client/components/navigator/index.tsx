@@ -6,11 +6,12 @@ import DiscordButton from "../common/buttons/discord";
 import AuthButtonGroup from "../common/groups/button/auth";
 import { FiAlignJustify } from "react-icons/fi";
 import { Drawer, Popper } from "@mui/material";
+import NavDrawer from "../common/drawers/nav";
 
 const Navbar: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const handleClick = (e) => {
+  const handleClick = (e: any) => {
     setIsOpen(!isOpen);
   };
   return (
@@ -28,9 +29,7 @@ const Navbar: React.FunctionComponent = () => {
           <FiAlignJustify />
         </button>
 
-        <Drawer anchor={"right"} open={isOpen} onClose={handleClick}>
-          <div className="w-28">123</div>
-        </Drawer>
+        <NavDrawer isOpen={isOpen} onClose={handleClick} />
       </div>
 
       <div>

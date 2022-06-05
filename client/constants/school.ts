@@ -4,7 +4,7 @@ export const uni = [
     schoolChineseName: "香港科技大學",
     schoolEnglishName: "Hong Kong University of Science and Technology",
     schoolShortName: "hkust",
-    schoolTypes: "大學",
+    type: "大學",
     totalReports: 1,
   },
   {
@@ -12,7 +12,7 @@ export const uni = [
     schoolChineseName: "香港大學",
     schoolEnglishName: "University of Hong Kong",
     schoolShortName: "hku",
-    schoolTypes: "大學",
+    type: "大學",
     totalReports: 123123123,
   },
   {
@@ -20,7 +20,7 @@ export const uni = [
     schoolChineseName: "香港中文大學",
     schoolEnglishName: "The Chinese University of Hong Kong",
     schoolShortName: "hkcu",
-    schoolTypes: "大學",
+    type: "大學",
     totalReports: 1,
   },
 ];

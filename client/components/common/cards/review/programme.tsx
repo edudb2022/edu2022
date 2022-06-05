@@ -1,12 +1,10 @@
 import React from "react";
-
 import BaseReviewCard, { IBaseReviewCardProps } from ".";
-
 import BaseRadar from "../../charts/radar";
 
-interface ISchoolsCardsProps extends IBaseReviewCardProps {}
+interface IProgrammeReviewCard extends IBaseReviewCardProps {}
 
-const SchoolsCards: React.FunctionComponent<ISchoolsCardsProps> = ({
+const ProgrammeReviewCard: React.FunctionComponent<IProgrammeReviewCard> = ({
   schoolChineseName,
   schoolEnglishName,
   schoolShortName,
@@ -21,7 +19,7 @@ const SchoolsCards: React.FunctionComponent<ISchoolsCardsProps> = ({
       schoolEnglishName={schoolEnglishName}
       schoolShortName={schoolShortName}
       totalReports={totalReports}
-      type={type}
+      type={"Review"}
     >
       <div className="absolute top-0 h-full w-full  px-8 py-4 md:p-4 ">
         <BaseRadar
@@ -33,4 +31,4 @@ const SchoolsCards: React.FunctionComponent<ISchoolsCardsProps> = ({
   );
 };
 
-export default SchoolsCards;
+export default ProgrammeReviewCard;

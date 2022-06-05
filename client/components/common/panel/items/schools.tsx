@@ -24,7 +24,7 @@ const SchoolsPanelItems: React.FunctionComponent<SchoolsPanelItemsProps> = ({
               schoolChineseName={data.schoolChineseName}
               schoolEnglishName={data.schoolEnglishName}
               totalReports={data.totalReports}
-              schoolTypes={data.schoolTypes}
+              type={data.type}
               schoolShortName={data.schoolShortName}
             />
           );

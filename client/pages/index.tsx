@@ -1,54 +1,8 @@
 import type { NextPage } from "next";
-import { Radar } from "react-chartjs-2";
-
-import { dehydrate, QueryClient } from "react-query";
-
-import HeaderBar from "../components/common/bars/header";
-import SignInButton from "../components/common/buttons/auth/signIn";
-
-import SearchTextInput from "../components/common/inputs/text/search";
-import BaseTestArea from "../components/common/inputs/textArea";
+import AdmissionOfferReviewCard from "../components/common/cards/review/admissionOffer";
 
 import SchoolsPanel from "../components/common/panel/schools";
 
-// import {
-//   Chart as ChartJS,
-//   RadialLinearScale,
-//   PointElement,
-//   LineElement,
-//   Filler,
-//   Tooltip,
-//   Legend,
-// } from "chart.js";
-
-// ChartJS.register(
-//   RadialLinearScale,
-//   PointElement,
-//   LineElement,
-//   Filler,
-//   Tooltip,
-//   Legend
-// );
-
-// const fetchTodoList = async () => {
-//   // return axios.get("https://random-data-api.com/api/address/random_address");
-//   return await fetch(
-//     "https://random-data-api.com/api/address/random_address"
-//   ).then((res) => res.json());
-// };
-
-// const labels = ["January", "February", "March", "April", "May", "June"];
-// const data = {
-//   labels: labels,
-//   datasets: [
-//     {
-//       label: "My First dataset",
-//       backgroundColor: "rgb(255, 99, 132)",
-//       borderColor: "rgb(255, 99, 132)",
-//       data: [0, 10, 5, 2, 20, 30, 45],
-//     },
-//   ],
-// };
 const Home: NextPage = () => {
   // const { data, isLoading, isFetching } = useQuery("posts", fetchTodoList, {
   //   // refetchOnWindowFocus: false,
@@ -58,15 +12,22 @@ const Home: NextPage = () => {
 
   return (
     <div>
+      {/* <AdmissionOfferReviewCard
+        id={"123"}
+        schoolChineseName={"123"}
+        schoolEnglishName={"123"}
+        schoolShortName={"HKU"}
+        totalReports={123}
+        jupasBestFiveValue={11}
+        jupasBestSixValue={22}
+        nonJupasBestFiveValue={33}
+        nonJupasBestGpaValue={3.3}
+      /> */}
       <div className="p-2">
         <div className="flex justify-center">
           {/* <SearchTextInput variant="outlined" /> */}
         </div>
         <SchoolsPanel />
-        {/* <Radar
-          //   options={...}
-          data={data}
-        /> */}
       </div>
     </div>
   );

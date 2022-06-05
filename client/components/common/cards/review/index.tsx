@@ -9,7 +9,7 @@ export interface IBaseReviewCardProps extends IBaseCardProps {
   schoolChineseName: SchoolName;
   schoolEnglishName: SchoolName;
   schoolShortName: SchoolName;
-  schoolTypes: string;
+  type: string;
   totalReports: number;
 }
 
@@ -21,7 +21,7 @@ const BaseReviewCard: React.FunctionComponent<
   schoolShortName,
   totalReports,
   children,
-  schoolTypes,
+  type,
   id,
 }) => {
   return (
@@ -41,7 +41,7 @@ const BaseReviewCard: React.FunctionComponent<
             {schoolShortName.toUpperCase()}
           </div>
           <div className="border-black  w-4/5 text-center py-2 bg-white rounded-2xl">
-            {schoolTypes}
+            {type}
           </div>
         </div>
       </div>

@@ -1,9 +1,9 @@
 import { IUserActions, IUserActionTypes, IUserState } from "./actions";
-import { Role } from "../../types/common";
+import { ROLE } from "../../types/common";
 
 const initialState = {
   isLogin: false,
-  role: Role.User,
+  role: ROLE,
   username: "",
   userId: "",
   isVerified: false,

@@ -14,12 +14,12 @@ const BaseTextArea: React.FunctionComponent<IBaseTextAreaProps> = ({
 }) => {
   return (
     <div className="flex flex-col">
-      {/* <TextareaAutosize
-        className={` p-2 ring-none border-2${className}`}
+      <TextareaAutosize
+        className={` p-2 ring-none border-2 ${className}`}
         {...props}
-      /> */}
+      />
 
-      <textarea className={` p-2  border-2 ${className}`} {...props} />
+      {/* <textarea className={` p-2  border-2 ${className}`} {...props} /> */}
 
       <div className="flex justify-end">
         <ErrorMessage isTouched={isTouched} errorMessages={errorMessages} />
