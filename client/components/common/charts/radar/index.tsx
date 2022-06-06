@@ -8,6 +8,7 @@ import {
   Filler,
   Tooltip,
   Legend,
+  ArcElement,
 } from "chart.js";
 
 ChartJS.register(
@@ -16,7 +17,8 @@ ChartJS.register(
   LineElement,
   Filler,
   Tooltip,
-  Legend
+  Legend,
+  ArcElement
 );
 
 interface IBaseRadarProps {

@@ -1,5 +1,7 @@
 import type { NextPage } from "next";
 import AdmissionOfferReviewCard from "../components/common/cards/review/admissionOffer";
+import InternshipReviewCard from "../components/common/cards/review/internship";
+import BasePieChart from "../components/common/charts/pie";
 
 import SchoolsPanel from "../components/common/panel/schools";
 
@@ -23,6 +25,7 @@ const Home: NextPage = () => {
         nonJupasBestFiveValue={33}
         nonJupasBestGpaValue={3.3}
       /> */}
+
       <div className="p-2">
         <div className="flex justify-center">
           {/* <SearchTextInput variant="outlined" /> */}
