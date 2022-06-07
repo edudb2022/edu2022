@@ -19,7 +19,10 @@ const AdmissionScoreCircularBarProps: React.FunctionComponent<
         maxValue={maxValue!}
         pathColor={`rgba(62, 152, 199, ${100 / 100})`}
         trailColor={"#d6d6d6"}
-      />
+      >
+        <h2>{currentValue}</h2>
+      </BaseCircularBar>
+
       <div className="text-gray-500 text-xs">{admissionType}</div>
     </div>
   );

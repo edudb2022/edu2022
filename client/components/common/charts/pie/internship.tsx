@@ -1,10 +1,9 @@
 import React from "react";
 import BasePieChart, { IBasePieChartProps } from ".";
 
-interface IInternshipPeiChartProps extends Partial<IBasePieChartProps> {}
+export interface IInternshipPeiChartProps extends Partial<IBasePieChartProps> {}
 
 const InternshipPeiChart: React.FunctionComponent<IInternshipPeiChartProps> = ({
-  colors,
   statistic,
   labels,
 }) => {

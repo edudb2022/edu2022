@@ -1,19 +1,15 @@
 import React from "react";
 import BaseReviewCard, { IBaseReviewCardProps } from ".";
 import CountUp from "react-countup";
+import ReviewRankingCircularBar from "../../circularBar/reviewRanking";
+import { reviewColor } from "../../../../constants/reviewRanking";
 
-import InternshipPeiChart, {
-  IInternshipPeiChartProps,
-} from "../../charts/pie/internship";
-
-interface IInternshipReviewCardProps
-  extends Partial<IBaseReviewCardProps>,
-    IInternshipPeiChartProps {
+const currentValue = 1;
+interface IGradJobOfferReviewCardProps extends IBaseReviewCardProps {
   salary: number;
 }
-
-const InternshipReviewCard: React.FunctionComponent<
-  IInternshipReviewCardProps
+const GradJobOfferReviewCard: React.FunctionComponent<
+  IGradJobOfferReviewCardProps
 > = ({
   schoolChineseName,
   schoolEnglishName,
@@ -21,8 +17,6 @@ const InternshipReviewCard: React.FunctionComponent<
   totalReports,
   id,
   salary,
-  labels,
-  statistic,
 }) => {
   return (
     <BaseReviewCard
@@ -35,8 +29,7 @@ const InternshipReviewCard: React.FunctionComponent<
     >
       <div className="relative">
         <div className=" absolute w-full text-center">
-          <h6 className="text-gray-500">平均月薪</h6>
-
+          <h6 className="text-gray-500">平均年薪</h6>
           <h1>
             <CountUp
               start={0}
@@ -46,13 +39,16 @@ const InternshipReviewCard: React.FunctionComponent<
               suffix="HKD"
             />
           </h1>
-        </div>
-        <div className="absolute  w-9/12 md:w-11/12 p-2  ">
-          <InternshipPeiChart labels={labels} statistic={statistic} />
+          <div className="absolute  w-full  px-20  md:px-16  ">
+            <ReviewRankingCircularBar
+              color={reviewColor[currentValue - 1]}
+              currentValue={currentValue}
+            />
+          </div>
         </div>
       </div>
     </BaseReviewCard>
   );
 };
 
-export default InternshipReviewCard;
+export default GradJobOfferReviewCard;

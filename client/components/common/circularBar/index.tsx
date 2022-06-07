@@ -20,8 +20,6 @@ const BaseCircularBar: React.FunctionComponent<IBaseBaseCircularBarProps> = ({
   children,
 }) => {
   return (
-    // <div className="flex flex-col text-center gap-y-5">
-    //   <div className="text-gray-500 text-base">DSE</div>
     <CircularProgressbarWithChildren
       value={currentValue}
       maxValue={maxValue}
@@ -33,7 +31,6 @@ const BaseCircularBar: React.FunctionComponent<IBaseBaseCircularBarProps> = ({
       })}
     >
       {children}
-      <h2>{currentValue}</h2>
     </CircularProgressbarWithChildren>
   );
 };
