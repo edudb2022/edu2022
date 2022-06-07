@@ -23,6 +23,7 @@ const options = {
   plugins: {
     legend: {
       position: "right",
+      // display: false,
     },
   },
 };
@@ -46,7 +47,7 @@ const BasePieChart: React.FunctionComponent<IBasePieChartProps> = ({
       },
     ],
   };
-  return <Pie data={data} options={options} />;
+  return <Pie data={data} />;
 };
 
 export default BasePieChart;

@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 
 import GradJobOfferReviewCard from "../components/common/cards/review/gradJob";
+import InternshipReviewCard from "../components/common/cards/review/internship";
 
 import SchoolsPanel from "../components/common/panel/schools";
 
@@ -24,6 +25,18 @@ const Home: NextPage = () => {
         nonJupasBestFiveValue={33}
         nonJupasBestGpaValue={3.3}
       /> */}
+
+      <InternshipReviewCard
+        id={"123"}
+        schoolChineseName={"123"}
+        schoolEnglishName={"123"}
+        schoolShortName={"HKU"}
+        totalReports={123}
+        salary={123}
+        colors={["red", "black"]}
+        labels={["123", "456"]}
+        statistic={[1, 2]}
+      />
 
       <GradJobOfferReviewCard
         salary={22000 * 12}
