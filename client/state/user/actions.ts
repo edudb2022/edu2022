@@ -18,7 +18,7 @@
 //   signOut,
 // };
 
-import { ID, Role, UserName } from "../../types/common";
+import { ID, ROLE, UserName } from "../../types/common";
 
 export enum IUserActionTypes {
   USER_SIGN_IN = "USER:SIGN_IN",
@@ -27,7 +27,7 @@ export enum IUserActionTypes {
 
 export interface IUserState {
   isLogin: boolean;
-  role: Role;
+  role: ROLE;
   username: UserName;
   userId: ID;
   isVerified: boolean;
