@@ -3,7 +3,7 @@ import { ROLE } from "../../types/common";
 
 const initialState = {
   isLogin: false,
-  role: ROLE,
+  role: ROLE.USER,
   username: "",
   userId: "",
   isVerified: false,
