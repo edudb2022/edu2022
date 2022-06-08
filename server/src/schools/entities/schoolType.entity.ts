@@ -1,7 +1,7 @@
 import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 import { SchoolTypeEnum } from "./entity.types";
 
-@Entity()
+@Entity({ name: "SchoolType" })
 export class SchoolType {
   @PrimaryGeneratedColumn()
   id: number;
