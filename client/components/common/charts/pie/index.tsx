@@ -19,7 +19,7 @@ ChartJS.register(
   Legend
 );
 
-const options = {
+const options: any = {
   plugins: {
     legend: {
       position: "right",
@@ -47,7 +47,7 @@ const BasePieChart: React.FunctionComponent<IBasePieChartProps> = ({
       },
     ],
   };
-  return <Pie data={data} />;
+  return <Pie data={data} options={options} />;
 };
 
 export default BasePieChart;
