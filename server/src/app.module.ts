@@ -3,6 +3,7 @@ import { ConfigModule, ConfigService } from "@nestjs/config";
 import { TypeOrmModule } from "@nestjs/typeorm";
 import { FacultiesModule } from "./faculties/faculties.module";
 import { ProgramsModule } from "./programs/programs.module";
+import { SchoolReviewsModule } from "./school-reviews/school-reviews.module";
 import { SchoolsModule } from "./schools/schools.module";
 import { UsersModule } from "./users/users.module";
 
@@ -29,6 +30,7 @@ import { UsersModule } from "./users/users.module";
     FacultiesModule,
     ProgramsModule,
     UsersModule,
+    SchoolReviewsModule,
   ],
   controllers: [],
   providers: [],
