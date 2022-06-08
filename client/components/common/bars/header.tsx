@@ -12,6 +12,10 @@ const formRoutes = [
     route: "programmeReview",
   },
   {
+    title: "面試評價",
+    route: "interviewReview",
+  },
+  {
     title: "入學offer",
     route: "admissionOffer",
   },
