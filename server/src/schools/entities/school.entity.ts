@@ -5,6 +5,7 @@ import {
   OneToMany,
   PrimaryGeneratedColumn,
 } from "typeorm";
+import { Faculty } from "../../faculties/entities/faculty.entity";
 import { SchoolTypeEnum } from "./entity.types";
 import { SchoolAlias } from "./schoolAlias.entity";
 import { SchoolType } from "./schoolType.entity";
@@ -19,6 +20,9 @@ export class School {
 
   @OneToMany(() => SchoolAlias, schoolAlias => schoolAlias.school)
   aliases: string[];
+
+  @OneToMany(() => Faculty, faculty => faculty.school)
+  faculties: Faculty[];
 
   @Column({
     type: "varchar",
