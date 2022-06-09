@@ -1,13 +1,14 @@
 import { Module } from "@nestjs/common";
 import { ConfigModule, ConfigService } from "@nestjs/config";
 import { TypeOrmModule } from "@nestjs/typeorm";
+import { join } from "path";
 import { FacultiesModule } from "./faculties/faculties.module";
+import { InterviewReviewsModule } from "./interview-reviews/interview-reviews.module";
+import { ProgramReviewsModule } from "./program-reviews/program-reviews.module";
 import { ProgramsModule } from "./programs/programs.module";
 import { SchoolReviewsModule } from "./school-reviews/school-reviews.module";
 import { SchoolsModule } from "./schools/schools.module";
 import { UsersModule } from "./users/users.module";
-import { ProgramReviewsModule } from "./program-reviews/program-reviews.module";
-import { InterviewReviewsModule } from "./interview-reviews/interview-reviews.module";
 
 @Module({
   imports: [
@@ -24,7 +25,7 @@ import { InterviewReviewsModule } from "./interview-reviews/interview-reviews.mo
         username: configService.get("DATABASE_USERNAME"),
         password: configService.get("DATABASE_PASSWORD"),
         database: configService.get("DATABASE_NAME"),
-        entities: ["dist/**/*.entity{.ts,.js}"],
+        entities: [join(__dirname, "**", "*.entity.{ts,js}")],
         autoLoadEntities: true,
         synchronize: true,
       }),

@@ -6,6 +6,7 @@ import {
   PrimaryGeneratedColumn,
 } from "typeorm";
 import { Faculty } from "../../faculties/entities/faculty.entity";
+import { InterviewReview } from "../../interview-reviews/entities/interview-review.entity";
 import { ProgramReview } from "../../program-reviews/entities/program-review.entity";
 
 @Entity()
@@ -17,7 +18,9 @@ export class Program {
   faculty: Faculty;
 
   @OneToMany(() => ProgramReview, programReview => programReview.program)
-  reviews: ProgramReview[];
+  programReviews: ProgramReview[];
+  @OneToMany(() => InterviewReview, interviewReview => interviewReview.program)
+  interviewReviews: InterviewReview[];
 
   @Column({
     type: "varchar",

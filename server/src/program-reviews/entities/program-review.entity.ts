@@ -9,9 +9,9 @@ export class ProgramReview {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @ManyToOne(() => Program, program => program.reviews)
+  @ManyToOne(() => Program, program => program.programReviews)
   program: Program;
-  @ManyToOne(() => User, user => user.programReview)
+  @ManyToOne(() => User, user => user.programReviews)
   user: User;
 
   @Column(() => CreationAndUpdate, { prefix: false })
