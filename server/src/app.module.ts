@@ -9,6 +9,7 @@ import { ProgramsModule } from "./programs/programs.module";
 import { SchoolReviewsModule } from "./school-reviews/school-reviews.module";
 import { SchoolsModule } from "./schools/schools.module";
 import { UsersModule } from "./users/users.module";
+import { AdmissionOfferReviewsModule } from "./admission-offer-reviews/admission-offer-reviews.module";
 
 @Module({
   imports: [
@@ -37,6 +38,7 @@ import { UsersModule } from "./users/users.module";
     SchoolReviewsModule,
     ProgramReviewsModule,
     InterviewReviewsModule,
+    AdmissionOfferReviewsModule,
   ],
   controllers: [],
   providers: [],
