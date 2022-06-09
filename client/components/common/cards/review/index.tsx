@@ -32,6 +32,7 @@ const BaseReviewCard: React.FunctionComponent<
             src="/icons/schools/universities/hku.jpg"
             width={50}
             height={50}
+            alt={`${schoolShortName}`}
             style={{ borderRadius: "40rem" }}
           />
         </div>

@@ -4,6 +4,8 @@ import GradJobOfferReviewCard from "../components/common/cards/review/gradJob";
 import InternshipReviewCard from "../components/common/cards/review/internship";
 
 import SchoolsPanel from "../components/common/panel/schools";
+import DetailReviewHeader from "../components/containers/detailReviewHeader";
+import ReviewHeaderContainer from "../components/containers/reviewHeader";
 
 const Home: NextPage = () => {
   // const { data, isLoading, isFetching } = useQuery("posts", fetchTodoList, {
@@ -12,9 +14,8 @@ const Home: NextPage = () => {
   // });
   // console.log(data, isLoading, isFetching);
 
-  return (
-    <div>
-      {/* <AdmissionOfferReviewCard
+  {
+    /* <AdmissionOfferReviewCard
         id={"123"}
         schoolChineseName={"123"}
         schoolEnglishName={"123"}
@@ -24,29 +25,73 @@ const Home: NextPage = () => {
         jupasBestSixValue={22}
         nonJupasBestFiveValue={33}
         nonJupasBestGpaValue={3.3}
+      /> */
+  }
+
+  //   <InternshipReviewCard
+  //   id={"123"}
+  //   schoolChineseName={"123"}
+  //   schoolEnglishName={"123"}
+  //   schoolShortName={"HKU"}
+  //   totalReports={123}
+  //   salary={123}
+  //   colors={["red", "black"]}
+  //   labels={["123", "456"]}
+  //   statistic={[1, 2]}
+  // />
+
+  // <GradJobOfferReviewCard
+  //   salary={22000 * 12}
+  //   schoolShortName={"owe"}
+  //   schoolChineseName={"123"}
+  //   schoolEnglishName={"123"}
+  //   totalReports={123}
+  //   type={"123"}
+  //   id={"21"}
+  // />
+
+  return (
+    <div>
+      {/* <ReviewHeaderContainer
+        ChineseTitle={"計量金融學及風險管理科學"}
+        EnglishTitle={"Quantitative Finance and Risk Management Science"}
+        ShortTitle={"HKu"}
+        schoolShortName={"hku"}
       /> */}
 
-      <InternshipReviewCard
-        id={"123"}
-        schoolChineseName={"123"}
-        schoolEnglishName={"123"}
-        schoolShortName={"HKU"}
-        totalReports={123}
-        salary={123}
-        colors={["red", "black"]}
-        labels={["123", "456"]}
-        statistic={[1, 2]}
-      />
+      <DetailReviewHeader
+        ChineseTitle={"計量金融學及風險管理科學"}
+        EnglishTitle={"Quantitative Finance and Risk Management Science"}
+        ShortTitle={"HKu"}
+        schoolShortName={"hku"}
+        score={123}
+      >
+        <div>123</div>
+        <div>123</div>
+        <div>123</div>
+        <div>123</div>
+        <div>123</div>
+        <div>123</div>
+        <div>123</div>
+        <div>123</div>
 
-      <GradJobOfferReviewCard
-        salary={22000 * 12}
-        schoolShortName={"owe"}
-        schoolChineseName={"123"}
-        schoolEnglishName={"123"}
-        totalReports={123}
-        type={"123"}
-        id={"21"}
-      />
+        <div>123</div>
+        <div>123</div>
+        <div>123</div>
+        <div>123</div>
+
+        <div>123</div>
+        <div>123</div>
+        <div>123</div>
+        <div>123</div>
+        <div>123</div>
+
+        <div>123</div>
+        <div>123</div>
+        <div>123</div>
+        <div>123</div>
+      </DetailReviewHeader>
+
       <div className="p-2">
         <div className="flex justify-center">
           {/* <SearchTextInput variant="outlined" /> */}
