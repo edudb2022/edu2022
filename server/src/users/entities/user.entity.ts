@@ -15,7 +15,6 @@ export class User {
 
   @OneToMany(() => SchoolReview, schoolReview => schoolReview.user)
   schoolReviews: SchoolReview[];
-
   @OneToMany(() => ProgramReview, programReview => programReview.user)
   programReview: ProgramReview[];
 }

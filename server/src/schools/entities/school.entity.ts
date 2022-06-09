@@ -21,10 +21,8 @@ export class School {
 
   @OneToMany(() => SchoolAlias, schoolAlias => schoolAlias.school)
   aliases: string[];
-
   @OneToMany(() => Faculty, faculty => faculty.school)
   faculties: Faculty[];
-
   @OneToMany(() => SchoolReview, schoolReview => schoolReview.school)
   reviews: SchoolReview[];
 
@@ -33,7 +31,6 @@ export class School {
     length: 255,
   })
   chinese_name: string;
-
   @Column({
     type: "varchar",
     length: 255,
