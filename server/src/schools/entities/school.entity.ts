@@ -7,7 +7,6 @@ import {
 } from "typeorm";
 import { Faculty } from "../../faculties/entities/faculty.entity";
 import { SchoolReview } from "../../school-reviews/entities/school-review.entity";
-import { SchoolTypeEnum } from "./entity.types";
 import { SchoolAlias } from "./school-alias.entity";
 import { SchoolType } from "./school-type.entity";
 
@@ -17,7 +16,7 @@ export class School {
   id: number;
 
   @ManyToOne(() => SchoolType, schoolType => schoolType.id)
-  type: SchoolTypeEnum;
+  type: SchoolType;
 
   @OneToMany(() => SchoolAlias, schoolAlias => schoolAlias.school)
   aliases: string[];

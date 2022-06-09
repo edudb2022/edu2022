@@ -1,5 +1,6 @@
 import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
-import { SchoolTypeEnum } from "./entity.types";
+
+export enum SchoolTypeEnum {}
 
 @Entity({ name: "SchoolType" })
 export class SchoolType {
@@ -7,5 +8,5 @@ export class SchoolType {
   id: number;
 
   @Column()
-  name: SchoolTypeEnum;
+  name: string;
 }
