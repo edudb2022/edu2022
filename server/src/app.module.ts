@@ -2,14 +2,14 @@ import { Module } from "@nestjs/common";
 import { ConfigModule, ConfigService } from "@nestjs/config";
 import { TypeOrmModule } from "@nestjs/typeorm";
 import { join } from "path";
-import { FacultiesModule } from "./faculties/faculties.module";
-import { InterviewReviewsModule } from "./interview-reviews/interview-reviews.module";
-import { ProgramReviewsModule } from "./program-reviews/program-reviews.module";
-import { ProgramsModule } from "./programs/programs.module";
-import { SchoolReviewsModule } from "./school-reviews/school-reviews.module";
-import { SchoolsModule } from "./schools/schools.module";
-import { UsersModule } from "./users/users.module";
-import { AdmissionOfferReviewsModule } from "./admission-offer-reviews/admission-offer-reviews.module";
+import { AdmissionOfferReviewsModule } from "./modules/admission-offer-reviews/admission-offer-reviews.module";
+import { FacultiesModule } from "./modules/faculties/faculties.module";
+import { InterviewReviewsModule } from "./modules/interview-reviews/interview-reviews.module";
+import { ProgramReviewsModule } from "./modules/program-reviews/program-reviews.module";
+import { ProgramsModule } from "./modules/programs/programs.module";
+import { SchoolReviewsModule } from "./modules/school-reviews/school-reviews.module";
+import { SchoolsModule } from "./modules/schools/schools.module";
+import { UsersModule } from "./modules/users/users.module";
 
 @Module({
   imports: [

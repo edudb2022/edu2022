@@ -1,6 +1,6 @@
 import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
-import { CreationAndUpdate } from "../../embedded-entities/creation-and-update";
-import { LikesDislikes } from "../../embedded-entities/likes-dislikes.entity";
+import { CreationAndUpdate } from "../../../common/entities/creation-and-update";
+import { LikesDislikes } from "../../../common/entities/likes-dislikes.entity";
 import { Program } from "../../programs/entities/program.entity";
 import { User } from "../../users/entities/user.entity";
 import { AdmissionLevel } from "./admission-level.entity";

@@ -1,17 +1,18 @@
 import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
-import { CreationAndUpdate } from "../../embedded-entities/creation-and-update";
-import { LikesDislikes } from "../../embedded-entities/likes-dislikes.entity";
-import { Program } from "../../programs/entities/program.entity";
+import { CreationAndUpdate } from "../../../common/entities/creation-and-update";
+import { LikesDislikes } from "../../../common/entities/likes-dislikes.entity";
+import { School } from "../../schools/entities/school.entity";
 import { User } from "../../users/entities/user.entity";
 
-@Entity()
-export class ProgramReview {
+@Entity({ name: "SchoolReview" })
+export class SchoolReview {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @ManyToOne(() => Program, program => program.programReviews)
-  program: Program;
-  @ManyToOne(() => User, user => user.programReviews)
+  // TODO - Make school and user unique fields
+  @ManyToOne(() => School, school => school.reviews)
+  school: School;
+  @ManyToOne(() => User, user => user.schoolReviews)
   user: User;
 
   @Column(() => CreationAndUpdate, { prefix: false })
