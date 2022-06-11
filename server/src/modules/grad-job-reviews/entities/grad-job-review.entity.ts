@@ -1,5 +1,8 @@
 import { CreationAndUpdate, LikesDislikes } from "@common/entities";
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Honor } from "@common/entities/honor.entity";
+import { Industry } from "@common/entities/jobs/industry.entity";
+import { JobPostSource } from "@common/entities/jobs/job-post-source.entity";
+import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
 export class GradJobReview {
@@ -11,8 +14,21 @@ export class GradJobReview {
   @Column(() => LikesDislikes, { prefix: false })
   likesDislikes: LikesDislikes;
 
+  @ManyToOne(() => Industry)
+  industry: Industry;
+  @ManyToOne(() => JobPostSource)
+  jobPostSource: JobPostSource;
+  @ManyToOne(() => Honor)
+  honor: Honor;
+
   @Column("varchar", { length: 255 })
   title: string;
+  @Column("varchar", { length: 255 })
+  jobTitle: string;
+  @Column("timestamp")
+  offerReceiveDate: Date;
+  @Column("int")
+  annualSalary: number;
   @Column("tinyint")
   anonymous: boolean;
 }
