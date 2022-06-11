@@ -1,4 +1,5 @@
 import { NextPage } from "next"
+import Link from "next/link"
 import { useRouter } from "next/router"
 import React from "react"
 import { FiArrowRight } from "react-icons/fi"
@@ -6,7 +7,7 @@ import BaseButton from "../../../components/common/buttons"
 import ProgrammeCard from "../../../components/common/cards/programme"
 import BaseRadar from "../../../components/common/charts/radar"
 import ReviewRankingCircularBar from "../../../components/common/circularBar/reviewRanking"
-import DetailReviewHeader from "../../../components/containers/detailReviewHeader"
+
 import ReviewHeaderContainer from "../../../components/containers/reviewHeader"
 
 const TertiarySchoolPage: NextPage = (props) => {
@@ -32,10 +33,14 @@ const TertiarySchoolPage: NextPage = (props) => {
 
               <div className="w-2/5   py-12">
                 <ReviewRankingCircularBar currentValue={4} color={"red"} />
-                <BaseButton className=" w-full justify-center gap-x-2  text-sm md:text-base mt-4 bg-theme-one-500 text-white">
-                  <span>更多學校評價</span>
-                  <FiArrowRight />
-                </BaseButton>
+                <Link href={`/review/tertiary/school/${schoolId}`}>
+                  <a>
+                    <BaseButton className="w-full justify-center gap-x-2  text-sm md:text-base mt-4 bg-theme-one-500 text-white">
+                      <span>更多學校評價</span>
+                      <FiArrowRight />
+                    </BaseButton>
+                  </a>
+                </Link>
               </div>
             </div>
           </div>

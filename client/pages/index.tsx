@@ -2,6 +2,8 @@ import type { NextPage } from "next"
 
 import GradJobOfferReviewCard from "../components/common/cards/review/gradJob"
 import InternshipReviewCard from "../components/common/cards/review/internship"
+import BaseReviewDetailCard from "../components/common/cards/reviewDetail"
+import GradJobReviewDetailCard from "../components/common/cards/reviewDetail/gradJob"
 
 import SchoolsPanel from "../components/common/panel/schools"
 import DetailReviewHeader from "../components/containers/detailReviewHeader"
@@ -51,7 +53,9 @@ const Home: NextPage = (props) => {
   // />
 
   return (
-    <div className="bg-theme-two-500">
+    <div className="bg-theme-two-500 ">
+      <BaseReviewDetailCard score={19999} />
+      <GradJobReviewDetailCard score={19999} />
       <div className="p-2">
         <div className="flex justify-center">
           {/* <SearchTextInput variant="outlined" /> */}
