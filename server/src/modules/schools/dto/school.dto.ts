@@ -1,5 +1,6 @@
-import { Faculty } from "../../faculties/entities";
-import { SchoolType } from "../entities";
+import { Faculty } from "@modules/faculties/entities";
+import { SchoolReview } from "@modules/school-reviews/entities";
+import { SchoolType } from "@modules/schools/entities";
 
 export class SchoolDto {
   id: number;
