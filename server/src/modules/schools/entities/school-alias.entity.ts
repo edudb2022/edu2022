@@ -1,5 +1,5 @@
 import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
-import { School } from "./school.entity";
+import { School } from "@modules/schools/entities/school.entity";
 
 @Entity({ name: "SchoolAlias" })
 export class SchoolAlias {

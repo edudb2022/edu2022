@@ -9,9 +9,9 @@ import {
   Post,
 } from "@nestjs/common";
 import { ApiOkResponse } from "@nestjs/swagger";
-import { CreateSchoolDto } from "./dto/create-school.dto";
-import { UpdateSchoolDto } from "./dto/update-school.dto";
-import { SchoolsService } from "./schools.service";
+import { CreateSchoolDto } from "@modules/schools/dto/create-school.dto";
+import { UpdateSchoolDto } from "@modules/schools/dto/update-school.dto";
+import { SchoolsService } from "@modules/schools/schools.service";
 
 @Controller("schools")
 export class SchoolsController {

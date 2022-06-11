@@ -1,6 +1,6 @@
 import { Injectable } from "@nestjs/common";
-import { CreateInterviewReviewDto } from "./dto/create-interview-review.dto";
-import { UpdateInterviewReviewDto } from "./dto/update-interview-review.dto";
+import { CreateInterviewReviewDto } from "@modules/interview-reviews/dto/create-interview-review.dto";
+import { UpdateInterviewReviewDto } from "@modules/interview-reviews/dto/update-interview-review.dto";
 
 @Injectable()
 export class InterviewReviewsService {

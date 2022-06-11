@@ -1,6 +1,6 @@
 import { Injectable } from "@nestjs/common";
-import { CreateAdmissionOfferReviewDto } from "./dto/create-admission-offer-review.dto";
-import { UpdateAdmissionOfferReviewDto } from "./dto/update-admission-offer-review.dto";
+import { CreateAdmissionOfferReviewDto } from "@modules/admission-offer-reviews/dto/create-admission-offer-review.dto";
+import { UpdateAdmissionOfferReviewDto } from "@modules/admission-offer-reviews/dto/update-admission-offer-review.dto";
 
 @Injectable()
 export class AdmissionOfferReviewsService {

@@ -1,6 +1,6 @@
 import { Test, TestingModule } from "@nestjs/testing";
-import { GradJobReviewsController } from "./grad-job-reviews.controller";
-import { GradJobReviewsService } from "./grad-job-reviews.service";
+import { GradJobReviewsController } from "@modules/grad-job-reviews/grad-job-reviews.controller";
+import { GradJobReviewsService } from "@modules/grad-job-reviews/grad-job-reviews.service";
 
 describe("GradJobReviewsController", () => {
   let controller: GradJobReviewsController;
