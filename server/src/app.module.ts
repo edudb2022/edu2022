@@ -11,6 +11,7 @@ import { ProgramsModule } from "@modules/programs/programs.module";
 import { SchoolReviewsModule } from "@modules/school-reviews/school-reviews.module";
 import { SchoolsModule } from "@modules/schools/schools.module";
 import { UsersModule } from "@modules/users/users.module";
+import { InternshipReviewsModule } from "@modules/internship-reviews/internship-reviews.module";
 
 @Module({
   imports: [
@@ -41,6 +42,7 @@ import { UsersModule } from "@modules/users/users.module";
     InterviewReviewsModule,
     AdmissionOfferReviewsModule,
     GradJobReviewsModule,
+    InternshipReviewsModule,
   ],
   controllers: [],
   providers: [],
