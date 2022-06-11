@@ -1,7 +1,10 @@
-import { CreationAndUpdate, LikesDislikes } from "@common/entities";
-import { Honor } from "@common/entities/honor.entity";
-import { Industry } from "@common/entities/jobs/industry.entity";
-import { JobPostSource } from "@common/entities/jobs/job-post-source.entity";
+import {
+  CreationAndUpdate,
+  Honor,
+  Industry,
+  JobPostSource,
+  LikesDislikes,
+} from "@common/entities";
 import { Program } from "@modules/programs/entities";
 import { User } from "@modules/users/entities";
 import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
