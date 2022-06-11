@@ -1,15 +1,17 @@
+import { SchoolDto } from "@modules/schools/dto/school.dto";
 import {
-  Controller,
-  Get,
-  Post,
   Body,
-  Patch,
-  Param,
+  Controller,
   Delete,
+  Get,
+  Param,
+  Patch,
+  Post,
 } from "@nestjs/common";
-import { SchoolsService } from "./schools.service";
+import { ApiOkResponse } from "@nestjs/swagger";
 import { CreateSchoolDto } from "./dto/create-school.dto";
 import { UpdateSchoolDto } from "./dto/update-school.dto";
+import { SchoolsService } from "./schools.service";
 
 @Controller("schools")
 export class SchoolsController {
@@ -21,6 +23,10 @@ export class SchoolsController {
   }
 
   @Get()
+  @ApiOkResponse({
+    type: SchoolDto,
+    isArray: true,
+  })
   findAll() {
     return this.schoolsService.findAll();
   }
