@@ -1,10 +1,10 @@
 import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
 export enum HonorEnum {
-  FIRST = "FIRST",
-  SECOND_UP = "SECOND_UP",
-  SECOND_LOW = "SECOND_LOW",
-  THIRD = "THIRD",
+  FIRST = 1,
+  SECOND_UP,
+  SECOND_LOW,
+  THIRD,
 }
 
 @Entity()
