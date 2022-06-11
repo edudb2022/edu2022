@@ -1,3 +1,4 @@
+import { GradJobReviewsModule } from "@modules/grad-job-reviews/grad-job-reviews.module";
 import { Module } from "@nestjs/common";
 import { ConfigModule, ConfigService } from "@nestjs/config";
 import { TypeOrmModule } from "@nestjs/typeorm";
@@ -39,6 +40,7 @@ import { UsersModule } from "./modules/users/users.module";
     ProgramReviewsModule,
     InterviewReviewsModule,
     AdmissionOfferReviewsModule,
+    GradJobReviewsModule,
   ],
   controllers: [],
   providers: [],

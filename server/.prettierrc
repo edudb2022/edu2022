@@ -3,5 +3,6 @@
   "useTabs": false,
   "arrowParens": "avoid",
   "singleQuote": false,
-  "endOfLine": "auto"
+  "endOfLine": "auto",
+  "plugins": ["./node_modules/prettier-plugin-alias-imports"]
 }
