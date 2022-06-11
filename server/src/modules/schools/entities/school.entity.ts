@@ -5,8 +5,8 @@ import {
   OneToMany,
   PrimaryGeneratedColumn,
 } from "typeorm";
-import { Faculty } from "../../faculties/entities/faculty.entity";
-import { SchoolReview } from "../../school-reviews/entities/school-review.entity";
+import { Faculty } from "../../faculties/entities";
+import { SchoolReview } from "../../school-reviews/entities";
 import { SchoolAlias } from "./school-alias.entity";
 import { SchoolType } from "./school-type.entity";
 

@@ -5,8 +5,8 @@ import {
   OneToMany,
   PrimaryGeneratedColumn,
 } from "typeorm";
-import { Program } from "../../programs/entities/program.entity";
-import { School } from "../../schools/entities/school.entity";
+import { Program } from "../../programs/entities";
+import { School } from "../../schools/entities";
 
 @Entity()
 export class Faculty {

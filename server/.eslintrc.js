@@ -23,6 +23,10 @@ module.exports = {
     "@typescript-eslint/no-explicit-any": "off",
     "@typescript-eslint/no-empty-function": "warn",
     "@typescript-eslint/ban-types": "off",
-    "prettier/prettier": ["error", { singleQuote: false }],
+    "prettier/prettier": [
+      "error",
+      { singleQuote: false },
+      { endOfLine: "auto" },
+    ],
   },
 };

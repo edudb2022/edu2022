@@ -1,8 +1,8 @@
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
-import { AdmissionOfferReview } from "../../admission-offer-reviews/entities/admission-offer-review.entity";
-import { InterviewReview } from "../../interview-reviews/entities/interview-review.entity";
-import { ProgramReview } from "../../program-reviews/entities/program-review.entity";
-import { SchoolReview } from "../../school-reviews/entities/school-review.entity";
+import { AdmissionOfferReview } from "../../admission-offer-reviews/entities";
+import { InterviewReview } from "../../interview-reviews/entities";
+import { ProgramReview } from "../../program-reviews/entities";
+import { SchoolReview } from "../../school-reviews/entities";
 
 @Entity()
 export class User {

@@ -1,8 +1,7 @@
 import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
-import { CreationAndUpdate } from "../../../common/entities/creation-and-update";
-import { LikesDislikes } from "../../../common/entities/likes-dislikes.entity";
-import { School } from "../../schools/entities/school.entity";
-import { User } from "../../users/entities/user.entity";
+import { CreationAndUpdate, LikesDislikes } from "../../../common/entities";
+import { School } from "../../schools/entities";
+import { User } from "../../users/entities";
 
 @Entity({ name: "SchoolReview" })
 export class SchoolReview {
