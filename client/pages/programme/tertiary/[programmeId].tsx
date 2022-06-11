@@ -1,7 +1,7 @@
-import React from "react";
+import React from "react"
 
 const ProgrammePage: React.FunctionComponent = () => {
-  return <div>[programmeId]</div>;
-};
+  return <div>[programmeId]</div>
+}
 
-export default ProgrammePage;
+export default ProgrammePage

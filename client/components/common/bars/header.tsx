@@ -1,6 +1,7 @@
-import Link from "next/link";
-import React from "react";
-import { GrFormAdd } from "react-icons/gr";
+import Link from "next/link"
+import React from "react"
+import { GrFormAdd } from "react-icons/gr"
+// import { useRouter } from "next/router";
 
 const formRoutes = [
   {
@@ -27,9 +28,11 @@ const formRoutes = [
     title: "工作offer",
     route: "gradJobOffer",
   },
-];
+]
 
 const HeaderBar: React.FunctionComponent = () => {
+  // const router = useRouter();
+  // console.log(router.pathname);
   return (
     <div className="flex flex-row gap-x-2 ">
       {formRoutes.map((data) => {
@@ -41,10 +44,10 @@ const HeaderBar: React.FunctionComponent = () => {
               </a>
             </Link>
           </>
-        );
+        )
       })}
     </div>
-  );
-};
+  )
+}
 
-export default HeaderBar;
+export default HeaderBar

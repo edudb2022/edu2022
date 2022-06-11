@@ -7,7 +7,7 @@ import SchoolsPanel from "../components/common/panel/schools";
 import DetailReviewHeader from "../components/containers/detailReviewHeader";
 import ReviewHeaderContainer from "../components/containers/reviewHeader";
 
-const Home: NextPage = () => {
+const Home: NextPage = (props) => {
   // const { data, isLoading, isFetching } = useQuery("posts", fetchTodoList, {
   //   // refetchOnWindowFocus: false,
   //   staleTime: 0,
@@ -52,46 +52,6 @@ const Home: NextPage = () => {
 
   return (
     <div>
-      {/* <ReviewHeaderContainer
-        ChineseTitle={"計量金融學及風險管理科學"}
-        EnglishTitle={"Quantitative Finance and Risk Management Science"}
-        ShortTitle={"HKu"}
-        schoolShortName={"hku"}
-      /> */}
-
-      <DetailReviewHeader
-        ChineseTitle={"計量金融學及風險管理科學"}
-        EnglishTitle={"Quantitative Finance and Risk Management Science"}
-        ShortTitle={"HKu"}
-        schoolShortName={"hku"}
-        score={123}
-      >
-        <div>123</div>
-        <div>123</div>
-        <div>123</div>
-        <div>123</div>
-        <div>123</div>
-        <div>123</div>
-        <div>123</div>
-        <div>123</div>
-
-        <div>123</div>
-        <div>123</div>
-        <div>123</div>
-        <div>123</div>
-
-        <div>123</div>
-        <div>123</div>
-        <div>123</div>
-        <div>123</div>
-        <div>123</div>
-
-        <div>123</div>
-        <div>123</div>
-        <div>123</div>
-        <div>123</div>
-      </DetailReviewHeader>
-
       <div className="p-2">
         <div className="flex justify-center">
           {/* <SearchTextInput variant="outlined" /> */}

@@ -10,23 +10,22 @@ import LikeRating, { ILikeRatingProps } from "../common/specical/likeRating";
 interface IDetailReviewHeader
   extends IReviewHeaderContainerProps,
     ILikeRatingProps {
-  ContainerClassName?: string;
+  containerClassName?: string;
 }
 
 const DetailReviewHeader: React.FunctionComponent<
   PropsWithChildren<IDetailReviewHeader>
-> = ({ children, score, ContainerClassName, ...props }) => {
+> = ({ children, score, containerClassName, layoutClassName, ...props }) => {
   return (
-    <ReviewHeaderContainer {...props}>
+    <ReviewHeaderContainer layoutClassName={layoutClassName} {...props}>
       {children}
       <div
-        className={`flex flex-row items-center justify-around text-l ${ContainerClassName}`}
+        className={`flex flex-row items-center justify-around text-l ${containerClassName}`}
       >
         <BaseButton className=" bg-red-500 text-white gap-x-1">
           <MdOutlineReportGmailerrorred />
           {"舉報"}
         </BaseButton>
-
         <LikeRating score={score} />
         <div>
           <LikeAndDisLikeButtonGroup />

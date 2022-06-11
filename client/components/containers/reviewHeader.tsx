@@ -21,7 +21,9 @@ const ReviewHeaderContainer: React.FunctionComponent<
 }) => {
   return (
     <div>
-      <div className={`flex justify-center items-center ${layoutClassName}`}>
+      <div
+        className={`flex justify-center items-center p-4 ${layoutClassName} `}
+      >
         <div className="flex flex-row">
           <div>
             <Image

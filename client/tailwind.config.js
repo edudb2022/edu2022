@@ -1,10 +1,10 @@
 const width = {
   120: "30rem",
-};
+  "9/10": "90%",
+}
+const school = { cuhk: "#69246B" }
 
-const schoolsColor = { cuhk: "#69246B" };
-
-const themeColors = {
+const theme = {
   one: {
     50: "#FFC9AF",
     100: "#FFBF9F",
@@ -17,7 +17,7 @@ const themeColors = {
     800: "#953D00",
     900: "#6C2D00",
   },
-};
+}
 
 module.exports = {
   content: [
@@ -27,8 +27,8 @@ module.exports = {
   theme: {
     extend: {
       width: width,
-      colors: { schoolsColor, themeColors },
+      colors: { school, theme },
     },
   },
   plugins: [],
-};
+}
