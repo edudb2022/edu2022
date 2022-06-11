@@ -5,7 +5,7 @@ export enum AdmissionOfferTypeEnum {
   DIRECT = 2,
 }
 
-@Entity()
+@Entity({ name: "AdmissionOfferType" })
 export class AdmissionOfferType {
   @PrimaryGeneratedColumn()
   id: number;

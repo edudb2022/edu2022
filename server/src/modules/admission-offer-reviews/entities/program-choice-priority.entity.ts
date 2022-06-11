@@ -6,7 +6,7 @@ export enum ProgramChoicePriorityEnum {
   BAND_C = 3,
 }
 
-@Entity()
+@Entity({ name: "ProgramChoicePriority" })
 export class ProgramChoicePriority {
   @PrimaryGeneratedColumn()
   id: number;

@@ -5,7 +5,7 @@ import { Program } from "@modules/programs/entities";
 import { User } from "@modules/users/entities";
 import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 
-@Entity()
+@Entity({ name: "AdmissionOfferReview" })
 export class AdmissionOfferReview {
   @PrimaryGeneratedColumn()
   id: number;

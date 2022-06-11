@@ -8,7 +8,7 @@ export enum AdmissionLevelEnum {
   YEAR_FIVE_PLUS = 5,
 }
 
-@Entity()
+@Entity({ name: "AdmissionLevel" })
 export class AdmissionLevel {
   @PrimaryGeneratedColumn()
   id: number;

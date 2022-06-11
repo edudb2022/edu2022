@@ -7,7 +7,7 @@ export enum InterviewDressCodeEnum {
   FREE = 4,
 }
 
-@Entity()
+@Entity({ name: "InterviewDressCode" })
 export class InterviewDressCode {
   @PrimaryGeneratedColumn()
   id: number;

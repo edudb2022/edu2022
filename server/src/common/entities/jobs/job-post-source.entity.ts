@@ -7,7 +7,7 @@ export enum JobPostSourceEnum {
   OTHER,
 }
 
-@Entity()
+@Entity({ name: "JobPostSource" })
 export class JobPostSource {
   @PrimaryGeneratedColumn()
   id: number;

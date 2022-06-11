@@ -7,7 +7,7 @@ export enum HonorEnum {
   THIRD,
 }
 
-@Entity()
+@Entity({ name: "Honor" })
 export class Honor {
   @PrimaryGeneratedColumn()
   id: number;

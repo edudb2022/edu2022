@@ -10,7 +10,7 @@ import {
   PrimaryGeneratedColumn,
 } from "typeorm";
 
-@Entity()
+@Entity({ name: "Program" })
 export class Program {
   @PrimaryGeneratedColumn()
   id: number;

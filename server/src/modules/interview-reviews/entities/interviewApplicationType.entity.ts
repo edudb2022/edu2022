@@ -5,7 +5,7 @@ export enum InterviewApplicationTypeEnum {
   NON_JUPAS = 2,
 }
 
-@Entity()
+@Entity({ name: "InterviewApplicationType" })
 export class InterviewApplicationType {
   @PrimaryGeneratedColumn()
   id: number;

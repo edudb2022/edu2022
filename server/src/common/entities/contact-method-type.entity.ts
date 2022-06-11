@@ -5,7 +5,7 @@ export enum ContactMethodTypeEnum {
   EMAIL,
 }
 
-@Entity()
+@Entity({ name: "ContactMethodType" })
 export class ContactMethodType {
   @PrimaryGeneratedColumn()
   id: number;

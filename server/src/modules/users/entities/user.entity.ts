@@ -6,7 +6,7 @@ import { ProgramReview } from "@modules/program-reviews/entities";
 import { SchoolReview } from "@modules/school-reviews/entities";
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 
-@Entity()
+@Entity({ name: "User" })
 export class User {
   @PrimaryGeneratedColumn()
   id: number;
