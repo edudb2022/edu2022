@@ -1,14 +1,20 @@
 import { CreationAndUpdate, LikesDislikes } from "@common/entities";
 import { School } from "@modules/schools/entities";
 import { User } from "@modules/users/entities";
-import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import {
+  Column,
+  Entity,
+  ManyToOne,
+  PrimaryGeneratedColumn,
+  Unique,
+} from "typeorm";
 
 @Entity({ name: "SchoolReview" })
+@Unique(["school", "user"])
 export class SchoolReview {
   @PrimaryGeneratedColumn()
   id: number;
 
-  // TODO - Make school and user unique fields
   @ManyToOne(() => School, school => school.reviews)
   school: School;
   @ManyToOne(() => User, user => user.schoolReviews)
