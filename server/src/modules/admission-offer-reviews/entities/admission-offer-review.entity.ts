@@ -1,9 +1,9 @@
+import { CreationAndUpdate, LikesDislikes } from "@common/entities";
+import { AdmissionLevel } from "@modules/admission-offer-reviews/entities/admission-level.entity";
+import { AdmissionOfferType } from "@modules/admission-offer-reviews/entities/admisson-offer-type.entity";
+import { Program } from "@modules/programs/entities";
+import { User } from "@modules/users/entities";
 import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
-import { CreationAndUpdate, LikesDislikes } from "../../../common/entities";
-import { Program } from "../../programs/entities";
-import { User } from "../../users/entities";
-import { AdmissionLevel } from "./admission-level.entity";
-import { AdmissionOfferType } from "./admisson-offer-type.entity";
 
 @Entity()
 export class AdmissionOfferReview {

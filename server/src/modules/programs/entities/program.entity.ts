@@ -1,3 +1,7 @@
+import { AdmissionOfferReview } from "@modules/admission-offer-reviews/entities";
+import { Faculty } from "@modules/faculties/entities";
+import { InterviewReview } from "@modules/interview-reviews/entities";
+import { ProgramReview } from "@modules/program-reviews/entities";
 import {
   Column,
   Entity,
@@ -5,10 +9,6 @@ import {
   OneToMany,
   PrimaryGeneratedColumn,
 } from "typeorm";
-import { AdmissionOfferReview } from "../../admission-offer-reviews/entities";
-import { Faculty } from "../../faculties/entities";
-import { InterviewReview } from "../../interview-reviews/entities";
-import { ProgramReview } from "../../program-reviews/entities";
 
 @Entity()
 export class Program {

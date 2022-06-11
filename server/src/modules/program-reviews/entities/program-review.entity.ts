@@ -1,7 +1,7 @@
+import { CreationAndUpdate, LikesDislikes } from "@common/entities";
+import { Program } from "@modules/programs/entities";
+import { User } from "@modules/users/entities";
 import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
-import { CreationAndUpdate, LikesDislikes } from "../../../common/entities";
-import { Program } from "../../programs/entities";
-import { User } from "../../users/entities";
 
 @Entity()
 export class ProgramReview {

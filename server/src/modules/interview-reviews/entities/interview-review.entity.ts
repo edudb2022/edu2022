@@ -1,9 +1,9 @@
+import { CreationAndUpdate, LikesDislikes } from "@common/entities";
+import { InterviewApplicationType } from "@modules/interview-reviews/entities/interviewApplicationType.entity";
+import { InterviewDressCode } from "@modules/interview-reviews/entities/interviewDressCode.entity";
+import { Program } from "@modules/programs/entities";
+import { User } from "@modules/users/entities";
 import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
-import { CreationAndUpdate, LikesDislikes } from "../../../common/entities";
-import { Program } from "../../programs/entities";
-import { User } from "../../users/entities";
-import { InterviewApplicationType } from "./interviewApplicationType.entity";
-import { InterviewDressCode } from "./interviewDressCode.entity";
 
 @Entity()
 export class InterviewReview {
