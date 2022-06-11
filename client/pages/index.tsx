@@ -1,11 +1,11 @@
-import type { NextPage } from "next";
+import type { NextPage } from "next"
 
-import GradJobOfferReviewCard from "../components/common/cards/review/gradJob";
-import InternshipReviewCard from "../components/common/cards/review/internship";
+import GradJobOfferReviewCard from "../components/common/cards/review/gradJob"
+import InternshipReviewCard from "../components/common/cards/review/internship"
 
-import SchoolsPanel from "../components/common/panel/schools";
-import DetailReviewHeader from "../components/containers/detailReviewHeader";
-import ReviewHeaderContainer from "../components/containers/reviewHeader";
+import SchoolsPanel from "../components/common/panel/schools"
+import DetailReviewHeader from "../components/containers/detailReviewHeader"
+import ReviewHeaderContainer from "../components/containers/reviewHeader"
 
 const Home: NextPage = (props) => {
   // const { data, isLoading, isFetching } = useQuery("posts", fetchTodoList, {
@@ -51,7 +51,7 @@ const Home: NextPage = (props) => {
   // />
 
   return (
-    <div>
+    <div className="bg-theme-two-500">
       <div className="p-2">
         <div className="flex justify-center">
           {/* <SearchTextInput variant="outlined" /> */}
@@ -59,8 +59,8 @@ const Home: NextPage = (props) => {
         <SchoolsPanel />
       </div>
     </div>
-  );
-};
+  )
+}
 
 // export async function getServerSideProps() {
 //   const queryClient = new QueryClient();
@@ -73,4 +73,4 @@ const Home: NextPage = (props) => {
 //     },
 //   };
 // }
-export default Home;
+export default Home

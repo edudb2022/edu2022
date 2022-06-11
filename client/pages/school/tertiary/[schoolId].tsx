@@ -32,7 +32,7 @@ const TertiarySchoolPage: NextPage = (props) => {
 
               <div className="w-2/5   py-12">
                 <ReviewRankingCircularBar currentValue={4} color={"red"} />
-                <BaseButton className=" w-full justify-center gap-x-2  text-sm md:text-base mt-4 bg-theme-one-400 text-white">
+                <BaseButton className=" w-full justify-center gap-x-2  text-sm md:text-base mt-4 bg-theme-one-500 text-white">
                   <span>更多學校評價</span>
                   <FiArrowRight />
                 </BaseButton>

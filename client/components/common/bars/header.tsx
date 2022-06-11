@@ -1,7 +1,6 @@
 import Link from "next/link"
 import React from "react"
-import { GrFormAdd } from "react-icons/gr"
-// import { useRouter } from "next/router";
+import { useRouter } from "next/router"
 
 const formRoutes = [
   {
@@ -31,16 +30,22 @@ const formRoutes = [
 ]
 
 const HeaderBar: React.FunctionComponent = () => {
-  // const router = useRouter();
-  // console.log(router.pathname);
+  const router = useRouter()
+
   return (
     <div className="flex flex-row gap-x-2 ">
       {formRoutes.map((data) => {
         return (
           <>
             <Link href={`/forms/tertiary/${data.route}`}>
-              <a className="flex flex-row  justify-center items-center text-xs md:text-base py-1 px-3  text-[#333333] ">
-                <GrFormAdd /> {data.title}
+              <a
+                className={`flex flex-row  justify-center items-center text-xs md:text-base py-1 px-3 ${
+                  router.pathname === "/forms/tertiary/" + data.route
+                    ? "text-theme-one-500"
+                    : "text-black"
+                }`}
+              >
+                + {data.title}
               </a>
             </Link>
           </>

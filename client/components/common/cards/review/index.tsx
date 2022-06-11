@@ -25,7 +25,7 @@ const BaseReviewCard: React.FunctionComponent<
   id,
 }) => {
   return (
-    <BaseCard className="flex flex-row w-96 h-60 md:h-72 shadow-lg rounded-2xl ">
+    <BaseCard className="flex flex-row w-96 h-60 md:h-72 shadow-lg rounded-2xl bg-white">
       <div className="flex flex-col py-4 justify-between items-center w-1/4 bg-school-cuhk rounded-l-2xl">
         <div className="bg-white border-2 rounded-full p-2 m-2 ">
           <Image
