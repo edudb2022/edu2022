@@ -1,6 +1,6 @@
 import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
-export enum JobPostSourceEnum {
+export enum JobPostSourceId {
   JIJIS = 1,
   JOBS_DB,
   INDEED,

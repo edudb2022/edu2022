@@ -1,6 +1,6 @@
 import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
-export enum ContactMethodTypeEnum {
+export enum ContactMethodId {
   WHATSAPP = 1,
   EMAIL,
 }

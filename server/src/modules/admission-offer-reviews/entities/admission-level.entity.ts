@@ -1,6 +1,6 @@
 import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
-export enum AdmissionLevelEnum {
+export enum AdmissionLevelId {
   YEAR_ONE = 1,
   YEAR_TWO = 2,
   YEAR_THREE = 3,

@@ -1,6 +1,6 @@
 import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
-export enum ProgramChoicePriorityEnum {
+export enum ProgramChoicePriorityId {
   BAND_A = 1,
   BAND_B = 2,
   BAND_C = 3,

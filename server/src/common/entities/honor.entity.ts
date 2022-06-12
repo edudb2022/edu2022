@@ -1,6 +1,6 @@
 import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
-export enum HonorEnum {
+export enum HonorId {
   FIRST = 1,
   SECOND_UP,
   SECOND_LOW,

@@ -10,7 +10,7 @@ export class Industry {
 }
 
 // include POPO
-export enum IndustryEnum {
+export enum IndustryId {
   ACCOUNTING = 1,
   AVIATION,
   ALTERNATIVE_Dispute_Resolution,

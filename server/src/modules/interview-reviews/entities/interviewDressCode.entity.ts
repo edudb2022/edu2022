@@ -1,6 +1,6 @@
 import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
-export enum InterviewDressCodeEnum {
+export enum InterviewDressCodeId {
   CASUAL = 1,
   SMART_CASUAL = 2,
   FORMAL = 3,

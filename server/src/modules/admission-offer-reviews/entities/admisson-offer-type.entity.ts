@@ -1,6 +1,6 @@
 import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
-export enum AdmissionOfferTypeEnum {
+export enum AdmissionOfferTypeId {
   CONDITIONAL = 1,
   DIRECT = 2,
 }
@@ -8,7 +8,7 @@ export enum AdmissionOfferTypeEnum {
 @Entity({ name: "AdmissionOfferType" })
 export class AdmissionOfferType {
   @PrimaryGeneratedColumn()
-  id: number;
+  id: AdmissionOfferTypeId;
 
   @Column("varchar", { length: 255 })
   displayText: string;
