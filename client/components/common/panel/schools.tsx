@@ -1,9 +1,8 @@
-import { Tabs } from "@mui/material"
-
 import React, { useState } from "react"
 import { college, uni } from "../../../constants/school"
 import { SCHOOL_TYPE } from "../../../types/common"
-import BaseTap from "../tap"
+import CardDisplayLayout from "../../layouts/cardDisplay"
+
 import SchoolsPanelItems, { SchoolsPanelItemsProps } from "./items/schools"
 
 interface SchoolsPanelProps extends Partial<SchoolsPanelItemsProps> {}
@@ -14,7 +13,7 @@ const SchoolsPanel: React.FunctionComponent<SchoolsPanelProps> = ({
   searchText,
 }) => {
   return (
-    <div className="w-full md:w-9/10 flex-wrap flex flex-row gap-y-6 gap-x-12 justify-center md:justify-start">
+    <CardDisplayLayout>
       <SchoolsPanelItems
         index={SCHOOL_TYPE.UNIVERSITY}
         currentIndex={currentIndex!}
@@ -27,7 +26,7 @@ const SchoolsPanel: React.FunctionComponent<SchoolsPanelProps> = ({
         schools={college}
         searchText={searchText!}
       />
-    </div>
+    </CardDisplayLayout>
   )
 }
 

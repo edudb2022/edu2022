@@ -1,12 +1,12 @@
-import Image from "next/image";
-import React, { PropsWithChildren } from "react";
+import Image from "next/image"
+import React, { PropsWithChildren } from "react"
 
 export interface IReviewHeaderContainerProps {
-  ChineseTitle: string;
-  EnglishTitle: string;
-  ShortTitle?: string;
-  schoolShortName: string;
-  layoutClassName?: string;
+  ChineseTitle: string
+  EnglishTitle: string
+  ShortTitle?: string
+  schoolShortName: string
+  layoutClassName?: string
 }
 
 const ReviewHeaderContainer: React.FunctionComponent<
@@ -25,7 +25,7 @@ const ReviewHeaderContainer: React.FunctionComponent<
         className={`flex justify-center items-center p-4 ${layoutClassName} `}
       >
         <div className="flex flex-row">
-          <div>
+          <div className="hidden md:flex">
             <Image
               src={`/icons/schools/universities/${schoolShortName}.jpg`}
               width={"100rem"}
@@ -44,7 +44,7 @@ const ReviewHeaderContainer: React.FunctionComponent<
       </div>
       {children}
     </div>
-  );
-};
+  )
+}
 
-export default ReviewHeaderContainer;
+export default ReviewHeaderContainer

@@ -5,6 +5,7 @@ import BaseTextInput from "../components/common/inputs/text"
 
 import SchoolsPanel from "../components/common/panel/schools"
 import BaseSelect from "../components/common/select"
+import PageLayout from "../components/layouts/page"
 import { SCHOOL_TYPE } from "../types/common"
 
 const schoolsType = [
@@ -30,30 +31,27 @@ const Home: NextPage = (props) => {
     setSearch(e.target.value)
   }
 
+  console.log(type)
   return (
-    <div className="bg-theme-two-500 ">
-      <div className="p-2">
-        <div className="flex justify-center gap-x-4">
-          <TextField
-            className="bg-white w-3/5 "
-            variant="outlined"
-            onChange={handleSearchChange}
-            placeholder={"輸入學校中文或英文名稱"}
-            value={search}
-          />
-          <BaseSelect
-            items={schoolsType}
-            selectValue={type}
-            selectClassName="bg-white  px-2"
-            onChange={handleTypeChange}
-          />
-        </div>
-
-        <div className="flex justify-center mt-4">
-          <SchoolsPanel searchText={search} />
-        </div>
+    <PageLayout>
+      <div className="flex justify-center gap-x-4">
+        <TextField
+          className="bg-white w-3/5 "
+          variant="outlined"
+          onChange={handleSearchChange}
+          placeholder={"輸入學校中文或英文名稱"}
+          value={search}
+        />
+        <BaseSelect
+          items={schoolsType}
+          selectValue={type}
+          selectClassName="bg-white  px-2"
+          onChange={handleTypeChange}
+        />
       </div>
-    </div>
+
+      <SchoolsPanel searchText={search} currentIndex={type} />
+    </PageLayout>
   )
 }
 
