@@ -35,7 +35,7 @@ const Navbar: React.FunctionComponent = () => {
           <FiAlignJustify />
         </button>
 
-        {/* <NavDrawer isOpen={isOpen} onClose={handleClick} /> */}
+        <NavDrawer isOpen={isOpen} onClose={handleClick} />
       </div>
 
       <div>

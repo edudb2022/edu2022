@@ -1,5 +1,6 @@
-import React from "react";
-import { Radar } from "react-chartjs-2";
+import React from "react"
+import { Radar } from "react-chartjs-2"
+
 import {
   Chart as ChartJS,
   RadialLinearScale,
@@ -9,7 +10,7 @@ import {
   Tooltip,
   Legend,
   ArcElement,
-} from "chart.js";
+} from "chart.js"
 
 ChartJS.register(
   RadialLinearScale,
@@ -19,12 +20,12 @@ ChartJS.register(
   Tooltip,
   Legend,
   ArcElement
-);
+)
 
 interface IBaseRadarProps {
-  labels: string[];
-  scores: Number[];
-  className?: string;
+  labels: string[]
+  scores: Number[]
+  className?: string
 }
 
 const BaseRadar: React.FunctionComponent<IBaseRadarProps> = ({
@@ -41,11 +42,16 @@ const BaseRadar: React.FunctionComponent<IBaseRadarProps> = ({
 
     scales: {
       r: {
-        suggestedMin: 1,
+        suggestedMin: 0,
         suggestedMax: 5,
+        pointLabels: {
+          font: {
+            size: 14,
+          },
+        },
       },
     },
-  };
+  }
 
   //   const labels = ["January", "February", "March", "April", "May"];
   const data = {
@@ -63,8 +69,8 @@ const BaseRadar: React.FunctionComponent<IBaseRadarProps> = ({
         data: scores,
       },
     ],
-  };
-  return <Radar data={data} className={`${className}`} options={options} />;
-};
+  }
+  return <Radar data={data} className={`${className}`} options={options} />
+}
 
-export default BaseRadar;
+export default BaseRadar

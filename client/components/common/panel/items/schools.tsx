@@ -1,12 +1,13 @@
-import Link from "next/link";
-import React from "react";
-import BaseReviewCard, { IBaseReviewCardProps } from "../../cards/review";
-import SchoolsCards from "../../cards/review/schools";
+import Link from "next/link"
+import React from "react"
+import BaseReviewCard, { IBaseReviewCardProps } from "../../cards/review"
+import SchoolsCards from "../../cards/review/schools"
 
-interface SchoolsPanelItemsProps {
-  index: number;
-  currentIndex: number;
-  schools: IBaseReviewCardProps[];
+export interface SchoolsPanelItemsProps {
+  index: string
+  currentIndex: string
+  schools: IBaseReviewCardProps[]
+  searchText: string
 }
 
 const SchoolsPanelItems: React.FunctionComponent<SchoolsPanelItemsProps> = ({
@@ -15,7 +16,7 @@ const SchoolsPanelItems: React.FunctionComponent<SchoolsPanelItemsProps> = ({
   schools,
 }) => {
   return (
-    <div className=" w-full flex-wrap flex flex-row gap-y-6 gap-x-12 ">
+    <>
       {index === currentIndex &&
         schools.map((data) => {
           return (
@@ -32,10 +33,10 @@ const SchoolsPanelItems: React.FunctionComponent<SchoolsPanelItemsProps> = ({
                 />
               </a>
             </Link>
-          );
+          )
         })}
-    </div>
-  );
-};
+    </>
+  )
+}
 
-export default SchoolsPanelItems;
+export default SchoolsPanelItems

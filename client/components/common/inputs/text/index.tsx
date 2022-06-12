@@ -1,8 +1,8 @@
-import { OutlinedTextFieldProps, TextField } from "@mui/material";
-import React from "react";
-import ErrorMessage, { IErrorMessageProps } from "../../messages/error";
+import { OutlinedTextFieldProps, TextField } from "@mui/material"
+import React from "react"
+import ErrorMessage, { IErrorMessageProps } from "../../messages/error"
 
-export type IBaseInputTextProps = OutlinedTextFieldProps & IErrorMessageProps;
+export type IBaseInputTextProps = OutlinedTextFieldProps & IErrorMessageProps
 
 const BaseTextInput: React.FunctionComponent<IBaseInputTextProps> = ({
   isTouched,
@@ -17,7 +17,7 @@ const BaseTextInput: React.FunctionComponent<IBaseInputTextProps> = ({
         <ErrorMessage isTouched={isTouched} errorMessages={errorMessages} />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default BaseTextInput;
+export default BaseTextInput

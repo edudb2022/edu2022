@@ -1,18 +1,38 @@
+import { TextField } from "@mui/material"
 import { NextPage } from "next"
 import Link from "next/link"
 import { useRouter } from "next/router"
-import React from "react"
+import React, { useState } from "react"
 import { FiArrowRight } from "react-icons/fi"
 import BaseButton from "../../../components/common/buttons"
 import ProgrammeCard from "../../../components/common/cards/programme"
 import BaseRadar from "../../../components/common/charts/radar"
 import ReviewRankingCircularBar from "../../../components/common/circularBar/reviewRanking"
+import BaseSelect from "../../../components/common/select"
 
 import ReviewHeaderContainer from "../../../components/containers/reviewHeader"
+import { SCHOOL_TYPE } from "../../../types/common"
 
 const TertiarySchoolPage: NextPage = (props) => {
   const router = useRouter()
   const { schoolId } = router.query
+  const [type, setType] = useState("all")
+  const [search, setSearch] = useState("")
+
+  const handleTypeChange = (e: any) => {
+    setType(e.target.value)
+  }
+
+  const handleSearchChange = (e: any) => {
+    setSearch(e.target.value)
+  }
+
+  const facultyType = [
+    { value: "all", title: "所有課程" },
+    { value: "engineering", title: "工程" },
+    { value: "law", title: "法律" },
+  ]
+
   return (
     <div className="flex justify-center w-full">
       <div className="w-full md:w-9/10">
@@ -26,7 +46,7 @@ const TertiarySchoolPage: NextPage = (props) => {
             <div className="flex flex-row md:w-2/5 ">
               <div className="w-3/5 ">
                 <BaseRadar
-                  scores={[1, 2, 3, 4, 5]}
+                  scores={[3, 3.6, 3.7, 3.6, 4]}
                   labels={["January", "February", "March", "April", "May"]}
                 />
               </div>
@@ -35,7 +55,7 @@ const TertiarySchoolPage: NextPage = (props) => {
                 <ReviewRankingCircularBar currentValue={4} color={"red"} />
                 <Link href={`/review/tertiary/school/${schoolId}`}>
                   <a>
-                    <BaseButton className="w-full justify-center gap-x-2  text-sm md:text-base mt-4 bg-theme-one-500 text-white">
+                    <BaseButton className="w-full justify-center gap-x-2  text-sm md:text-base mt-4 bg-theme-one-500 text-white shrink-0">
                       <span>更多學校評價</span>
                       <FiArrowRight />
                     </BaseButton>
@@ -45,11 +65,23 @@ const TertiarySchoolPage: NextPage = (props) => {
             </div>
           </div>
 
-          <div>
-            <h1>Faculty</h1>
+          <div className="flex justify-center gap-x-4 ">
+            <TextField
+              className="bg-white w-3/5 "
+              variant="outlined"
+              onChange={handleSearchChange}
+              placeholder={"輸入學校中文或英文名稱"}
+              value={search}
+            />
+            <BaseSelect
+              items={facultyType}
+              selectValue={type}
+              selectClassName="bg-white  px-2"
+              onChange={handleTypeChange}
+            />
           </div>
 
-          <div>
+          {/* <div>
             <ProgrammeCard
               programmeChineseName="123"
               programmeEnglishName="123"
@@ -58,6 +90,66 @@ const TertiarySchoolPage: NextPage = (props) => {
               programmeType="123"
               programmeShortName="123"
             />
+          </div> */}
+          <div className="flex justify-center mt-4 w-full border-2">
+            <div className="w-full flex-wrap flex flex-row gap-y-6 gap-x-12 justify-center md:justify-start">
+              <ProgrammeCard
+                programmeChineseName="123"
+                programmeEnglishName="123"
+                programmeId="123"
+                totalReports={123}
+                programmeType="123"
+                programmeShortName="123"
+              />
+              <ProgrammeCard
+                programmeChineseName="123"
+                programmeEnglishName="123"
+                programmeId="123"
+                totalReports={123}
+                programmeType="123"
+                programmeShortName="123"
+              />
+              <ProgrammeCard
+                programmeChineseName="123"
+                programmeEnglishName="123"
+                programmeId="123"
+                totalReports={123}
+                programmeType="123"
+                programmeShortName="123"
+              />
+              <ProgrammeCard
+                programmeChineseName="123"
+                programmeEnglishName="123"
+                programmeId="123"
+                totalReports={123}
+                programmeType="123"
+                programmeShortName="123"
+              />
+              <ProgrammeCard
+                programmeChineseName="123"
+                programmeEnglishName="123"
+                programmeId="123"
+                totalReports={123}
+                programmeType="123"
+                programmeShortName="123"
+              />
+              <ProgrammeCard
+                programmeChineseName="123"
+                programmeEnglishName="123"
+                programmeId="123"
+                totalReports={123}
+                programmeType="123"
+                programmeShortName="123"
+              />
+              <ProgrammeCard
+                programmeChineseName="123"
+                programmeEnglishName="123"
+                programmeId="123"
+                totalReports={123}
+                programmeType="123"
+                programmeShortName="123"
+              />
+            </div>
           </div>
         </ReviewHeaderContainer>
       </div>

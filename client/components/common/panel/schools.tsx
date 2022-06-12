@@ -1,29 +1,34 @@
-import { Tabs } from "@mui/material";
+import { Tabs } from "@mui/material"
 
-import React, { useState } from "react";
-import { college, uni } from "../../../constants/school";
-import BaseTap from "../tap";
-import SchoolsPanelItems from "./items/schools";
+import React, { useState } from "react"
+import { college, uni } from "../../../constants/school"
+import { SCHOOL_TYPE } from "../../../types/common"
+import BaseTap from "../tap"
+import SchoolsPanelItems, { SchoolsPanelItemsProps } from "./items/schools"
 
-const SchoolsPanel: React.FunctionComponent = () => {
-  const [page, setPage] = useState(0);
-  const handleChange = (e: any, val: any) => {
-    e.preventDefault();
-    setPage(val);
-  };
+interface SchoolsPanelProps extends Partial<SchoolsPanelItemsProps> {}
 
+const SchoolsPanel: React.FunctionComponent<SchoolsPanelProps> = ({
+  currentIndex,
+  schools,
+  searchText,
+}) => {
   return (
-    <div>
-      <Tabs value={page} onChange={handleChange} centered>
-        <BaseTap className="w-1/2 text-center" label="大學" />
-        <BaseTap className="w-1/2 text-center" label="大專" />
-      </Tabs>
-      <div className="md:m-12 ">
-        <SchoolsPanelItems index={0} currentIndex={page} schools={uni} />
-        {/* <SchoolsPanelItems index={1} currentIndex={page} schools={college} /> */}
-      </div>
+    <div className="w-full md:w-9/10 flex-wrap flex flex-row gap-y-6 gap-x-12 justify-center md:justify-start">
+      <SchoolsPanelItems
+        index={SCHOOL_TYPE.UNIVERSITY}
+        currentIndex={currentIndex!}
+        schools={uni}
+        searchText={searchText!}
+      />
+      <SchoolsPanelItems
+        index={SCHOOL_TYPE.COLLEGE}
+        currentIndex={currentIndex!}
+        schools={college}
+        searchText={searchText!}
+      />
     </div>
-  );
-};
+  )
+}
 
-export default SchoolsPanel;
+export default SchoolsPanel

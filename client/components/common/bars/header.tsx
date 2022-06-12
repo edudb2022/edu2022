@@ -34,9 +34,9 @@ const HeaderBar: React.FunctionComponent = () => {
 
   return (
     <div className="flex flex-row gap-x-2 ">
-      {formRoutes.map((data) => {
+      {formRoutes.map((data, key) => {
         return (
-          <>
+          <React.Fragment key={key}>
             <Link href={`/forms/tertiary/${data.route}`}>
               <a
                 className={`flex flex-row  justify-center items-center text-xs md:text-base py-1 px-3 ${
@@ -48,7 +48,7 @@ const HeaderBar: React.FunctionComponent = () => {
                 + {data.title}
               </a>
             </Link>
-          </>
+          </React.Fragment>
         )
       })}
     </div>

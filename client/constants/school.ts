@@ -23,42 +23,39 @@ export const uni = [
     type: "大學",
     totalReports: 1,
   },
-];
+  {
+    id: "4",
+    schoolChineseName: "香港中文大學",
+    schoolEnglishName: "The Chinese University of Hong Kong",
+    schoolShortName: "hkcu",
+    type: "大學",
+    totalReports: 1,
+  },
+  // {
+  //   id: "5",
+  //   schoolChineseName: "香港中文大學",
+  //   schoolEnglishName: "The Chinese University of Hong Kong",
+  //   schoolShortName: "hkcu",
+  //   type: "大學",
+  //   totalReports: 1,
+  // },
+  // {
+  //   id: "6",
+  //   schoolChineseName: "香港中文大學",
+  //   schoolEnglishName: "The Chinese University of Hong Kong",
+  //   schoolShortName: "hkcu",
+  //   type: "大學",
+  //   totalReports: 1,
+  // },
+]
 
 export const college = [
   {
     id: "1",
     schoolChineseName: "香港專業教育學院",
     schoolEnglishName: "Hong Kong Institute of Vocational Education",
-    shortName: "IVE",
-    averageSchoolScore: 2,
+    schoolShortName: "IVE",
+    type: "大學",
+    totalReports: 1,
   },
-  {
-    id: "1",
-    schoolChineseName: "香港專業教育學院",
-    schoolEnglishName: "Hong Kong Institute of Vocational Education",
-    shortName: "IVE",
-    averageSchoolScore: 5,
-  },
-  {
-    id: "2",
-    schoolChineseName: "香港專業教育學院",
-    schoolEnglishName: "Hong Kong Institute of Vocational Education",
-    shortName: "IVE",
-    averageSchoolScore: 4,
-  },
-  {
-    id: "3",
-    schoolChineseName: "香港專業教育學院",
-    schoolEnglishName: "Hong Kong Institute of Vocational Education",
-    shortName: "IVE",
-    averageSchoolScore: 3,
-  },
-  {
-    id: "4",
-    schoolChineseName: "香港專業教育學院",
-    schoolEnglishName: "Hong Kong Institute of Vocational Education",
-    shortName: "IVE",
-    averageSchoolScore: 2,
-  },
-];
+]

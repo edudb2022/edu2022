@@ -1,13 +1,16 @@
+import { TextField } from "@mui/material"
 import type { NextPage } from "next"
-
-import GradJobOfferReviewCard from "../components/common/cards/review/gradJob"
-import InternshipReviewCard from "../components/common/cards/review/internship"
-import BaseReviewDetailCard from "../components/common/cards/reviewDetail"
-import GradJobReviewDetailCard from "../components/common/cards/reviewDetail/gradJob"
+import { ChangeEventHandler, useState } from "react"
+import BaseTextInput from "../components/common/inputs/text"
 
 import SchoolsPanel from "../components/common/panel/schools"
-import DetailReviewHeader from "../components/containers/detailReviewHeader"
-import ReviewHeaderContainer from "../components/containers/reviewHeader"
+import BaseSelect from "../components/common/select"
+import { SCHOOL_TYPE } from "../types/common"
+
+const schoolsType = [
+  { value: SCHOOL_TYPE.UNIVERSITY, title: "大學" },
+  { value: SCHOOL_TYPE.COLLEGE, title: "大專" },
+]
 
 const Home: NextPage = (props) => {
   // const { data, isLoading, isFetching } = useQuery("posts", fetchTodoList, {
@@ -16,51 +19,39 @@ const Home: NextPage = (props) => {
   // });
   // console.log(data, isLoading, isFetching);
 
-  {
-    /* <AdmissionOfferReviewCard
-        id={"123"}
-        schoolChineseName={"123"}
-        schoolEnglishName={"123"}
-        schoolShortName={"HKU"}
-        totalReports={123}
-        jupasBestFiveValue={11}
-        jupasBestSixValue={22}
-        nonJupasBestFiveValue={33}
-        nonJupasBestGpaValue={3.3}
-      /> */
+  const [type, setType] = useState(SCHOOL_TYPE.UNIVERSITY)
+  const [search, setSearch] = useState("")
+
+  const handleTypeChange = (e: any) => {
+    setType(e.target.value)
   }
 
-  //   <InternshipReviewCard
-  //   id={"123"}
-  //   schoolChineseName={"123"}
-  //   schoolEnglishName={"123"}
-  //   schoolShortName={"HKU"}
-  //   totalReports={123}
-  //   salary={123}
-  //   colors={["red", "black"]}
-  //   labels={["123", "456"]}
-  //   statistic={[1, 2]}
-  // />
-
-  // <GradJobOfferReviewCard
-  //   salary={22000 * 12}
-  //   schoolShortName={"owe"}
-  //   schoolChineseName={"123"}
-  //   schoolEnglishName={"123"}
-  //   totalReports={123}
-  //   type={"123"}
-  //   id={"21"}
-  // />
+  const handleSearchChange = (e: any) => {
+    setSearch(e.target.value)
+  }
 
   return (
     <div className="bg-theme-two-500 ">
-      <BaseReviewDetailCard score={19999} />
-      <GradJobReviewDetailCard score={19999} />
       <div className="p-2">
-        <div className="flex justify-center">
-          {/* <SearchTextInput variant="outlined" /> */}
+        <div className="flex justify-center gap-x-4">
+          <TextField
+            className="bg-white w-3/5 "
+            variant="outlined"
+            onChange={handleSearchChange}
+            placeholder={"輸入學校中文或英文名稱"}
+            value={search}
+          />
+          <BaseSelect
+            items={schoolsType}
+            selectValue={type}
+            selectClassName="bg-white  px-2"
+            onChange={handleTypeChange}
+          />
         </div>
-        <SchoolsPanel />
+
+        <div className="flex justify-center mt-4">
+          <SchoolsPanel searchText={search} />
+        </div>
       </div>
     </div>
   )

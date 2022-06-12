@@ -1,20 +1,20 @@
-import { InputLabel, MenuItem, Select, SelectProps } from "@mui/material";
-import React, { FormEvent } from "react";
+import { InputLabel, MenuItem, Select, SelectProps } from "@mui/material"
+import React, { FormEvent } from "react"
 
 interface ISelectMenuItems {
-  value: string;
-  title: string;
+  value: string
+  title: string
 }
 
 interface IBaseSelectProps extends SelectProps {
-  inputLabel?: string;
-  inputLabelClassName?: string;
-  selectLabel: string;
-  selecClassName?: string;
-  selectValue: string;
-  selectId?: string;
-  itemsClassName?: string;
-  items: ISelectMenuItems[];
+  inputLabel?: string
+  inputLabelClassName?: string
+  selectLabel?: string
+  selectClassName?: string
+  selectValue: string
+  selectId?: string
+  itemsClassName?: string
+  items: ISelectMenuItems[]
 }
 
 const BaseSelect: React.FunctionComponent<IBaseSelectProps> = ({
@@ -22,7 +22,7 @@ const BaseSelect: React.FunctionComponent<IBaseSelectProps> = ({
   inputLabelClassName,
   selectLabel,
   selectValue,
-  selecClassName,
+  selectClassName,
   selectId,
   items,
   itemsClassName,
@@ -35,11 +35,13 @@ const BaseSelect: React.FunctionComponent<IBaseSelectProps> = ({
           {inputLabel}
         </InputLabel>
       )}
+      <InputLabel className={`${inputLabelClassName}`}>{inputLabel}</InputLabel>
       <Select
         id={selectId}
         value={selectValue}
-        className={`${selecClassName}`}
+        className={`${selectClassName}`}
         variant="outlined"
+        {...props}
       >
         {items.map((data, index) => {
           return (
@@ -50,11 +52,11 @@ const BaseSelect: React.FunctionComponent<IBaseSelectProps> = ({
             >
               {data.title}
             </MenuItem>
-          );
+          )
         })}
       </Select>
     </div>
-  );
-};
+  )
+}
 
-export default BaseSelect;
+export default BaseSelect
