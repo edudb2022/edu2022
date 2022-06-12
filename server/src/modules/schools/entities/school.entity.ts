@@ -1,3 +1,7 @@
+import { Faculty } from "@modules/faculties/entities";
+import { SchoolReview } from "@modules/school-reviews/entities";
+import { SchoolAlias } from "@modules/schools/entities/school-alias.entity";
+import { SchoolType } from "@modules/schools/entities/school-type.entity";
 import {
   Column,
   Entity,
@@ -5,12 +9,8 @@ import {
   OneToMany,
   PrimaryGeneratedColumn,
 } from "typeorm";
-import { Faculty } from "../../faculties/entities/faculty.entity";
-import { SchoolReview } from "../../school-reviews/entities/school-review.entity";
-import { SchoolAlias } from "./school-alias.entity";
-import { SchoolType } from "./school-type.entity";
 
-@Entity()
+@Entity({ name: "School" })
 export class School {
   @PrimaryGeneratedColumn()
   id: number;

@@ -7,9 +7,9 @@ import {
   Param,
   Delete,
 } from "@nestjs/common";
-import { ProgramsService } from "./programs.service";
-import { CreateProgramDto } from "./dto/create-program.dto";
-import { UpdateProgramDto } from "./dto/update-program.dto";
+import { ProgramsService } from "@modules/programs/programs.service";
+import { CreateProgramDto } from "@modules/programs/dto/create-program.dto";
+import { UpdateProgramDto } from "@modules/programs/dto/update-program.dto";
 
 @Controller("programs")
 export class ProgramsController {

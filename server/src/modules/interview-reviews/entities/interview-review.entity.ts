@@ -1,12 +1,11 @@
+import { CreationAndUpdate, LikesDislikes } from "@common/entities";
+import { InterviewApplicationType } from "@modules/interview-reviews/entities/interviewApplicationType.entity";
+import { InterviewDressCode } from "@modules/interview-reviews/entities/interviewDressCode.entity";
+import { Program } from "@modules/programs/entities";
+import { User } from "@modules/users/entities";
 import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
-import { CreationAndUpdate } from "../../../common/entities/creation-and-update";
-import { LikesDislikes } from "../../../common/entities/likes-dislikes.entity";
-import { Program } from "../../programs/entities/program.entity";
-import { User } from "../../users/entities/user.entity";
-import { InterviewApplicationType } from "./interviewApplicationType.entity";
-import { InterviewDressCode } from "./interviewDressCode.entity";
 
-@Entity()
+@Entity({ name: "InterviewReview" })
 export class InterviewReview {
   @PrimaryGeneratedColumn()
   id: number;

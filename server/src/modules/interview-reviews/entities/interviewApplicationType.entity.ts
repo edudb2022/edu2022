@@ -1,11 +1,11 @@
 import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
-export enum InterviewApplicationTypeEnum {
+export enum InterviewApplicationTypeId {
   JUPAS = 1,
   NON_JUPAS = 2,
 }
 
-@Entity()
+@Entity({ name: "InterviewApplicationType" })
 export class InterviewApplicationType {
   @PrimaryGeneratedColumn()
   id: number;

@@ -7,9 +7,9 @@ import {
   Param,
   Delete,
 } from "@nestjs/common";
-import { FacultiesService } from "./faculties.service";
-import { CreateFacultyDto } from "./dto/create-faculty.dto";
-import { UpdateFacultyDto } from "./dto/update-faculty.dto";
+import { FacultiesService } from "@modules/faculties/faculties.service";
+import { CreateFacultyDto } from "@modules/faculties/dto/create-faculty.dto";
+import { UpdateFacultyDto } from "@modules/faculties/dto/update-faculty.dto";
 
 @Controller("faculties")
 export class FacultiesController {

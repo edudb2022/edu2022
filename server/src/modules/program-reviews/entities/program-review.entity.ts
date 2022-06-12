@@ -1,10 +1,9 @@
+import { CreationAndUpdate, LikesDislikes } from "@common/entities";
+import { Program } from "@modules/programs/entities";
+import { User } from "@modules/users/entities";
 import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
-import { CreationAndUpdate } from "../../../common/entities/creation-and-update";
-import { LikesDislikes } from "../../../common/entities/likes-dislikes.entity";
-import { Program } from "../../programs/entities/program.entity";
-import { User } from "../../users/entities/user.entity";
 
-@Entity()
+@Entity({ name: "ProgramReview" })
 export class ProgramReview {
   @PrimaryGeneratedColumn()
   id: number;

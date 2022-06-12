@@ -1,9 +1,17 @@
+import { CreateAdmissionOfferReviewDto } from "@modules/admission-offer-reviews/dto/create-admission-offer-review.dto";
+import { UpdateAdmissionOfferReviewDto } from "@modules/admission-offer-reviews/dto/update-admission-offer-review.dto";
+import { AdmissionOfferReview } from "@modules/admission-offer-reviews/entities";
 import { Injectable } from "@nestjs/common";
-import { CreateAdmissionOfferReviewDto } from "./dto/create-admission-offer-review.dto";
-import { UpdateAdmissionOfferReviewDto } from "./dto/update-admission-offer-review.dto";
+import { InjectRepository } from "@nestjs/typeorm";
+import { Repository } from "typeorm";
 
 @Injectable()
 export class AdmissionOfferReviewsService {
+  constructor(
+    @InjectRepository(AdmissionOfferReview)
+    admissionOfferReviewRepository: Repository<AdmissionOfferReview>
+  ) {}
+
   create(createAdmissionOfferReviewDto: CreateAdmissionOfferReviewDto) {
     return "This action adds a new admissionOfferReview";
   }
