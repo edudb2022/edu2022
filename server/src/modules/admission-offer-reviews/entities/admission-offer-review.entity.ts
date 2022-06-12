@@ -1,6 +1,6 @@
 import { CreationAndUpdate, LikesDislikes } from "@common/entities";
 import { AdmissionLevel } from "@modules/admission-offer-reviews/entities/admission-level.entity";
-import { AdmissionOfferType } from "@modules/admission-offer-reviews/entities/admisson-offer-type.entity";
+import { AdmissionOfferType } from "@modules/admission-offer-reviews/entities/admission-offer-type.entity";
 import { Program } from "@modules/programs/entities";
 import { User } from "@modules/users/entities";
 import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
@@ -21,7 +21,7 @@ export class AdmissionOfferReview {
     () => AdmissionOfferType,
     admissionOfferType => admissionOfferType.id
   )
-  admissionOfferType: AdmissionOfferType;
+  offerType: AdmissionOfferType;
 
   @Column(() => CreationAndUpdate, { prefix: false })
   creationAndUpdate: CreationAndUpdate;
