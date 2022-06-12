@@ -33,6 +33,7 @@ module.exports = {
     extend: {
       width: width,
       colors: { school, theme },
+      fontSize: { xxs: "0.5rem" },
     },
   },
   plugins: [],

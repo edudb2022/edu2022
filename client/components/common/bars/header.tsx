@@ -33,13 +33,13 @@ const HeaderBar: React.FunctionComponent = () => {
   const router = useRouter()
 
   return (
-    <div className="flex flex-row gap-x-2 ">
+    <div className="flex flex-row md:gap-x-2">
       {formRoutes.map((data, key) => {
         return (
           <React.Fragment key={key}>
             <Link href={`/forms/tertiary/${data.route}`}>
               <a
-                className={`flex flex-row  justify-center items-center text-xs md:text-base py-1 px-3 ${
+                className={`flex flex-row  text-center text-xs md:text-base py-1 md:px-3   ${
                   router.pathname === "/forms/tertiary/" + data.route
                     ? "text-theme-one-500"
                     : "text-black"

@@ -26,12 +26,11 @@ const Navbar: React.FunctionComponent = () => {
         <Link href={"/"}>
           <a>icon</a>
         </Link>
-
         <div className="flex-row gap-x-1 h-full hidden md:flex ">
           <DiscordButton />
           <AuthButtonGroup />
         </div>
-        <button onClick={handleClick} className="flex  md:hidden">
+        <button onClick={handleClick} className="flex md:hidden">
           <FiAlignJustify />
         </button>
 
