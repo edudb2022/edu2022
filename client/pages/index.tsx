@@ -31,7 +31,6 @@ const Home: NextPage = (props) => {
     setSearch(e.target.value)
   }
 
-  console.log(type)
   return (
     <PageLayout>
       <div className="flex justify-center gap-x-4">
