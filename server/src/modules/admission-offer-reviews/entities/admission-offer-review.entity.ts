@@ -1,9 +1,21 @@
 import { CreationAndUpdate, LikesDislikes } from "@common/entities";
-import { AdmissionLevel } from "@modules/admission-offer-reviews/entities/admission-level.entity";
-import { AdmissionOfferType } from "@modules/admission-offer-reviews/entities/admission-offer-type.entity";
+import {
+  AdmissionLevel,
+  AdmissionLevelId,
+} from "@modules/admission-offer-reviews/entities/admission-level.entity";
+import {
+  AdmissionOfferType,
+  AdmissionOfferTypeId,
+} from "@modules/admission-offer-reviews/entities/admission-offer-type.entity";
 import { Program } from "@modules/programs/entities";
 import { User } from "@modules/users/entities";
-import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import {
+  Column,
+  Entity,
+  ManyToOne,
+  PrimaryGeneratedColumn,
+  RelationId,
+} from "typeorm";
 
 @Entity({ name: "AdmissionOfferReview" })
 export class AdmissionOfferReview {
@@ -32,4 +44,17 @@ export class AdmissionOfferReview {
   title: string;
   @Column("tinyint")
   anonymous: boolean;
+
+  @Column()
+  @RelationId((review: AdmissionOfferReview) => review.program)
+  programId: number;
+  @Column()
+  @RelationId((review: AdmissionOfferReview) => review.user)
+  userId: number;
+  @Column()
+  @RelationId((review: AdmissionOfferReview) => review.admissionLevel)
+  admissionLevelId: AdmissionLevelId;
+  @Column()
+  @RelationId((review: AdmissionOfferReview) => review.offerType)
+  offerTypeId: AdmissionOfferTypeId;
 }
