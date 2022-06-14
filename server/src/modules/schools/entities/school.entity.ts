@@ -1,13 +1,17 @@
 import { Faculty } from "@modules/faculties/entities";
 import { SchoolReview } from "@modules/school-reviews/entities";
 import { SchoolAlias } from "@modules/schools/entities/school-alias.entity";
-import { SchoolType } from "@modules/schools/entities/school-type.entity";
+import {
+  SchoolType,
+  SchoolTypeId,
+} from "@modules/schools/entities/school-type.entity";
 import {
   Column,
   Entity,
   ManyToOne,
   OneToMany,
   PrimaryGeneratedColumn,
+  RelationId,
 } from "typeorm";
 
 @Entity({ name: "School" })
@@ -19,7 +23,7 @@ export class School {
   type: SchoolType;
 
   @OneToMany(() => SchoolAlias, schoolAlias => schoolAlias.school)
-  aliases: string[];
+  aliases: SchoolAlias[];
   @OneToMany(() => Faculty, faculty => faculty.school)
   faculties: Faculty[];
   @OneToMany(() => SchoolReview, schoolReview => schoolReview.school)
@@ -29,10 +33,14 @@ export class School {
     type: "varchar",
     length: 255,
   })
-  chinese_name: string;
+  chineseName: string;
   @Column({
     type: "varchar",
     length: 255,
   })
-  english_name: string;
+  englishName: string;
+
+  @Column()
+  @RelationId((school: School) => school.type)
+  typeId: SchoolTypeId;
 }
