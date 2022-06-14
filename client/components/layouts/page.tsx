@@ -10,7 +10,7 @@ const PageLayout: React.FunctionComponent<
 
   return (
     <div
-      className={`flex justify-center w-full ${
+      className={`flex justify-center w-full  ${
         router.pathname === "/" ? "bg-theme-two-500" : "bg-white"
       }`}
     >
