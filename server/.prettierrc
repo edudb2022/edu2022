@@ -2,5 +2,7 @@
   "tabWidth": 2,
   "useTabs": false,
   "arrowParens": "avoid",
-  "singleQuote": false
+  "singleQuote": false,
+  "endOfLine": "auto",
+  "plugins": ["./node_modules/prettier-plugin-alias-imports"]
 }

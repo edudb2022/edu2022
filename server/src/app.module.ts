@@ -1,15 +1,17 @@
+import { AdmissionOfferReviewsModule } from "@modules/admission-offer-reviews/admission-offer-reviews.module";
+import { FacultiesModule } from "@modules/faculties/faculties.module";
+import { GradJobReviewsModule } from "@modules/grad-job-reviews/grad-job-reviews.module";
+import { InternshipReviewsModule } from "@modules/internship-reviews/internship-reviews.module";
+import { InterviewReviewsModule } from "@modules/interview-reviews/interview-reviews.module";
+import { ProgramReviewsModule } from "@modules/program-reviews/program-reviews.module";
+import { ProgramsModule } from "@modules/programs/programs.module";
+import { SchoolReviewsModule } from "@modules/school-reviews/school-reviews.module";
+import { SchoolsModule } from "@modules/schools/schools.module";
+import { UsersModule } from "@modules/users/users.module";
 import { Module } from "@nestjs/common";
 import { ConfigModule, ConfigService } from "@nestjs/config";
 import { TypeOrmModule } from "@nestjs/typeorm";
 import { join } from "path";
-import { AdmissionOfferReviewsModule } from "./modules/admission-offer-reviews/admission-offer-reviews.module";
-import { FacultiesModule } from "./modules/faculties/faculties.module";
-import { InterviewReviewsModule } from "./modules/interview-reviews/interview-reviews.module";
-import { ProgramReviewsModule } from "./modules/program-reviews/program-reviews.module";
-import { ProgramsModule } from "./modules/programs/programs.module";
-import { SchoolReviewsModule } from "./modules/school-reviews/school-reviews.module";
-import { SchoolsModule } from "./modules/schools/schools.module";
-import { UsersModule } from "./modules/users/users.module";
 
 @Module({
   imports: [
@@ -39,6 +41,8 @@ import { UsersModule } from "./modules/users/users.module";
     ProgramReviewsModule,
     InterviewReviewsModule,
     AdmissionOfferReviewsModule,
+    GradJobReviewsModule,
+    InternshipReviewsModule,
   ],
   controllers: [],
   providers: [],

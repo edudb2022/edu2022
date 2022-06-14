@@ -1,10 +1,12 @@
+import { AdmissionOfferReview } from "@modules/admission-offer-reviews/entities";
+import { GradJobReview } from "@modules/grad-job-reviews/entities";
+import { InternshipReview } from "@modules/internship-reviews/entities";
+import { InterviewReview } from "@modules/interview-reviews/entities";
+import { ProgramReview } from "@modules/program-reviews/entities";
+import { SchoolReview } from "@modules/school-reviews/entities";
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
-import { AdmissionOfferReview } from "../../admission-offer-reviews/entities/admission-offer-review.entity";
-import { InterviewReview } from "../../interview-reviews/entities/interview-review.entity";
-import { ProgramReview } from "../../program-reviews/entities/program-review.entity";
-import { SchoolReview } from "../../school-reviews/entities/school-review.entity";
 
-@Entity()
+@Entity({ name: "User" })
 export class User {
   @PrimaryGeneratedColumn()
   id: number;
@@ -26,4 +28,8 @@ export class User {
     admissionOfferReview => admissionOfferReview.user
   )
   admissionOfferReviews: AdmissionOfferReview[];
+  @OneToMany(() => GradJobReview, gradJobReview => gradJobReview.user)
+  gradJobReviews: GradJobReview[];
+  @OneToMany(() => InternshipReview, internshipReview => internshipReview.user)
+  internshipReviews: InternshipReview[];
 }

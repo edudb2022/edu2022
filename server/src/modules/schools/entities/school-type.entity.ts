@@ -1,6 +1,6 @@
 import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
-export enum SchoolTypeEnum {}
+export enum SchoolTypeId {}
 
 @Entity({ name: "SchoolType" })
 export class SchoolType {

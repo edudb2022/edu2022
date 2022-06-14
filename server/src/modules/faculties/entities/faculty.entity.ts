@@ -1,3 +1,5 @@
+import { Program } from "@modules/programs/entities";
+import { School } from "@modules/schools/entities";
 import {
   Column,
   Entity,
@@ -5,10 +7,8 @@ import {
   OneToMany,
   PrimaryGeneratedColumn,
 } from "typeorm";
-import { Program } from "../../programs/entities/program.entity";
-import { School } from "../../schools/entities/school.entity";
 
-@Entity()
+@Entity({ name: "Faculty" })
 export class Faculty {
   @PrimaryGeneratedColumn()
   id: number;

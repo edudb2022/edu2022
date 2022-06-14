@@ -7,9 +7,9 @@ import {
   Param,
   Delete,
 } from "@nestjs/common";
-import { SchoolReviewsService } from "./school-reviews.service";
-import { CreateSchoolReviewDto } from "./dto/create-school-review.dto";
-import { UpdateSchoolReviewDto } from "./dto/update-school-review.dto";
+import { SchoolReviewsService } from "@modules/school-reviews/school-reviews.service";
+import { CreateSchoolReviewDto } from "@modules/school-reviews/dto/create-school-review.dto";
+import { UpdateSchoolReviewDto } from "@modules/school-reviews/dto/update-school-review.dto";
 
 @Controller("school-reviews")
 export class SchoolReviewsController {

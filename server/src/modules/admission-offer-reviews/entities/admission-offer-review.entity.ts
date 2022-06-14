@@ -1,12 +1,23 @@
-import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
-import { CreationAndUpdate } from "../../../common/entities/creation-and-update";
-import { LikesDislikes } from "../../../common/entities/likes-dislikes.entity";
-import { Program } from "../../programs/entities/program.entity";
-import { User } from "../../users/entities/user.entity";
-import { AdmissionLevel } from "./admission-level.entity";
-import { AdmissionOfferType } from "./admisson-offer-type.entity";
+import { CreationAndUpdate, LikesDislikes } from "@common/entities";
+import {
+  AdmissionLevel,
+  AdmissionLevelId,
+} from "@modules/admission-offer-reviews/entities/admission-level.entity";
+import {
+  AdmissionOfferType,
+  AdmissionOfferTypeId,
+} from "@modules/admission-offer-reviews/entities/admission-offer-type.entity";
+import { Program } from "@modules/programs/entities";
+import { User } from "@modules/users/entities";
+import {
+  Column,
+  Entity,
+  ManyToOne,
+  PrimaryGeneratedColumn,
+  RelationId,
+} from "typeorm";
 
-@Entity()
+@Entity({ name: "AdmissionOfferReview" })
 export class AdmissionOfferReview {
   @PrimaryGeneratedColumn()
   id: number;
@@ -22,7 +33,7 @@ export class AdmissionOfferReview {
     () => AdmissionOfferType,
     admissionOfferType => admissionOfferType.id
   )
-  admissionOfferType: AdmissionOfferType;
+  offerType: AdmissionOfferType;
 
   @Column(() => CreationAndUpdate, { prefix: false })
   creationAndUpdate: CreationAndUpdate;
@@ -33,4 +44,17 @@ export class AdmissionOfferReview {
   title: string;
   @Column("tinyint")
   anonymous: boolean;
+
+  @Column()
+  @RelationId((review: AdmissionOfferReview) => review.program)
+  programId: number;
+  @Column()
+  @RelationId((review: AdmissionOfferReview) => review.user)
+  userId: number;
+  @Column()
+  @RelationId((review: AdmissionOfferReview) => review.admissionLevel)
+  admissionLevelId: AdmissionLevelId;
+  @Column()
+  @RelationId((review: AdmissionOfferReview) => review.offerType)
+  offerTypeId: AdmissionOfferTypeId;
 }
