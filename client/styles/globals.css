@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  @apply m-0;
+}
+
 h1 {
   @apply font-semibold text-2xl leading-7 md:text-[1.625rem] md:leading-[1.875rem];
 }

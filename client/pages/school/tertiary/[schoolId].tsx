@@ -36,8 +36,6 @@ const TertiarySchoolPage: NextPage = () => {
   ]
 
   return (
-    // <div className="flex justify-center w-full">
-    //   <div className="w-full md:w-9/10">
     <PageLayout>
       <ReviewHeaderContainer
         ChineseTitle={"計量金融學及風險管理科學"}
@@ -67,82 +65,81 @@ const TertiarySchoolPage: NextPage = () => {
             </div>
           </div>
         </div>
-
-        <div className="flex justify-center gap-x-4 ">
-          <TextField
-            className="bg-white w-3/5 "
-            variant="outlined"
-            onChange={handleSearchChange}
-            placeholder={"輸入學校中文或英文名稱"}
-            value={search}
-          />
-          <BaseSelect
-            items={facultyType}
-            selectValue={type}
-            selectClassName="bg-white  px-2"
-            onChange={handleTypeChange}
-          />
-        </div>
-
-        <CardDisplayLayout className="md:w-full">
-          <ProgrammeCard
-            programmeChineseName="123"
-            programmeEnglishName="123"
-            programmeId="123"
-            totalReports={123}
-            programmeType="123"
-            programmeShortName="123"
-          />
-          <ProgrammeCard
-            programmeChineseName="123"
-            programmeEnglishName="123"
-            programmeId="123"
-            totalReports={123}
-            programmeType="123"
-            programmeShortName="123"
-          />
-          <ProgrammeCard
-            programmeChineseName="123"
-            programmeEnglishName="123"
-            programmeId="123"
-            totalReports={123}
-            programmeType="123"
-            programmeShortName="123"
-          />
-          <ProgrammeCard
-            programmeChineseName="123"
-            programmeEnglishName="123"
-            programmeId="123"
-            totalReports={123}
-            programmeType="123"
-            programmeShortName="123"
-          />
-          <ProgrammeCard
-            programmeChineseName="123"
-            programmeEnglishName="123"
-            programmeId="123"
-            totalReports={123}
-            programmeType="123"
-            programmeShortName="123"
-          />
-          <ProgrammeCard
-            programmeChineseName="123"
-            programmeEnglishName="123"
-            programmeId="123"
-            totalReports={123}
-            programmeType="123"
-            programmeShortName="123"
-          />
-          <ProgrammeCard
-            programmeChineseName="123"
-            programmeEnglishName="123"
-            programmeId="123"
-            totalReports={123}
-            programmeType="123"
-            programmeShortName="123"
-          />
-        </CardDisplayLayout>
       </ReviewHeaderContainer>
+      <div className="flex justify-center gap-x-4 ">
+        <TextField
+          className="bg-white w-3/5 "
+          variant="outlined"
+          onChange={handleSearchChange}
+          placeholder={"輸入學校中文或英文名稱"}
+          value={search}
+        />
+        <BaseSelect
+          items={facultyType}
+          selectValue={type}
+          selectClassName="bg-white  px-2"
+          onChange={handleTypeChange}
+        />
+      </div>
+
+      <CardDisplayLayout className="md:w-full">
+        <ProgrammeCard
+          programmeChineseName="123"
+          programmeEnglishName="123"
+          programmeId="123"
+          totalReports={123}
+          programmeType="123"
+          programmeShortName="123"
+        />
+        <ProgrammeCard
+          programmeChineseName="123"
+          programmeEnglishName="123"
+          programmeId="123"
+          totalReports={123}
+          programmeType="123"
+          programmeShortName="123"
+        />
+        <ProgrammeCard
+          programmeChineseName="123"
+          programmeEnglishName="123"
+          programmeId="123"
+          totalReports={123}
+          programmeType="123"
+          programmeShortName="123"
+        />
+        <ProgrammeCard
+          programmeChineseName="123"
+          programmeEnglishName="123"
+          programmeId="123"
+          totalReports={123}
+          programmeType="123"
+          programmeShortName="123"
+        />
+        <ProgrammeCard
+          programmeChineseName="123"
+          programmeEnglishName="123"
+          programmeId="123"
+          totalReports={123}
+          programmeType="123"
+          programmeShortName="123"
+        />
+        <ProgrammeCard
+          programmeChineseName="123"
+          programmeEnglishName="123"
+          programmeId="123"
+          totalReports={123}
+          programmeType="123"
+          programmeShortName="123"
+        />
+        <ProgrammeCard
+          programmeChineseName="123"
+          programmeEnglishName="123"
+          programmeId="123"
+          totalReports={123}
+          programmeType="123"
+          programmeShortName="123"
+        />
+      </CardDisplayLayout>
     </PageLayout>
   )
 }
