@@ -1,10 +1,12 @@
 import { Rating } from "@mui/material"
 import React from "react"
 import BaseReviewDetailCard, { IBaseReviewDetailCardProps } from "."
+import { ID } from "../../../../types/common"
 
 interface ISchoolReviewDetailCardProps extends IBaseReviewDetailCardProps {
   value: number
   label: string
+  id: ID
 }
 
 const SchoolReviewDetailCard: React.FunctionComponent<

@@ -82,7 +82,7 @@ const TertiarySchoolPage: NextPage = () => {
         />
       </div>
 
-      <CardDisplayLayout className="md:w-full">
+      <CardDisplayLayout>
         <ProgrammeCard
           programmeChineseName="123"
           programmeEnglishName="123"

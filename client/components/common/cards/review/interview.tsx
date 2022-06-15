@@ -1,9 +1,13 @@
-import React from 'react'
-import BaseReviewCard, { IBaseReviewCardProps } from '.'
-import { ADMISSION_TYPE, SCORE_TYPE } from '../../../../types/common'
-import AdmissionScoreCircularBarProps from '../../circularBar/admissionScore'
+import React from "react"
+import BaseReviewCard, { IBaseReviewCardProps } from "."
 
-interface IInterviewOfferReviewCardProps extends Partial<IBaseReviewCardProps> {
+import AdmissionScoreCircularBarGroup, {
+  IAdmissionScoreCircularBarGroupProps,
+} from "../../groups/cirmularBar/admissionScore"
+
+interface IInterviewOfferReviewCardProps
+  extends Partial<IBaseReviewCardProps>,
+    IAdmissionScoreCircularBarGroupProps {
   jupasBestFiveValue: number
   jupasBestSixValue: number
   nonJupasBestFiveValue: number
@@ -30,37 +34,14 @@ const InterviewReviewCard: React.FunctionComponent<
       schoolEnglishName={schoolEnglishName!}
       schoolShortName={schoolShortName!}
       totalReports={totalReports!}
-      type={'面試'}
+      type={"面試"}
     >
-      <div className='flex flex-row justify-around items-center gap-y-2 mt-8'>
-        <AdmissionScoreCircularBarProps
-          admissionType={ADMISSION_TYPE.JUPAS}
-          scoreType={SCORE_TYPE.BEST_FIVE}
-          currentValue={jupasBestFiveValue}
-          maxValue={35}
-        />
-
-        <AdmissionScoreCircularBarProps
-          admissionType={ADMISSION_TYPE.JUPAS}
-          scoreType={SCORE_TYPE.BEST_SIX}
-          currentValue={jupasBestSixValue}
-          maxValue={42}
-        />
-
-        <AdmissionScoreCircularBarProps
-          admissionType={ADMISSION_TYPE.NON_JUPAS}
-          scoreType={SCORE_TYPE.GPA}
-          currentValue={nonJupasBestGpaValue}
-          maxValue={4.3}
-        />
-
-        <AdmissionScoreCircularBarProps
-          admissionType={ADMISSION_TYPE.NON_JUPAS}
-          scoreType={SCORE_TYPE.BEST_FIVE}
-          currentValue={nonJupasBestFiveValue}
-          maxValue={35}
-        />
-      </div>
+      <AdmissionScoreCircularBarGroup
+        jupasBestFiveValue={jupasBestFiveValue}
+        jupasBestSixValue={jupasBestSixValue}
+        nonJupasBestFiveValue={nonJupasBestFiveValue}
+        nonJupasBestGpaValue={nonJupasBestGpaValue}
+      />
     </BaseReviewCard>
   )
 }

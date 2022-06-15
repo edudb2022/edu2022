@@ -38,34 +38,7 @@ const SchoolReviewPage = () => {
           postDate="20/23"
           label="絕對不建議"
           title="title"
-        />
-        <SchoolReviewDetailCard
-          score={1223}
-          value={0}
-          postDate="20/23"
-          label="絕對不建議"
-          title="title"
-        />
-        <SchoolReviewDetailCard
-          score={1223}
-          value={0}
-          postDate="20/23"
-          label="絕對不建議"
-          title="title"
-        />
-        <SchoolReviewDetailCard
-          score={1223}
-          value={0}
-          postDate="20/23"
-          label="絕對不建議"
-          title="title"
-        />
-        <SchoolReviewDetailCard
-          score={1223}
-          value={0}
-          postDate="20/23"
-          label="絕對不建議"
-          title="title"
+          id="1"
         />
       </CardDisplayLayout>
     </PageLayout>
