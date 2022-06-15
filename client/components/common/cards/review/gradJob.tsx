@@ -41,7 +41,7 @@ const GradJobOfferReviewCard: React.FunctionComponent<
               suffix='HKD'
             />
           </h1>
-          <div className='absolute  w-full  px-20  md:px-16  '>
+          <div className='absolute  w-full  px-20 mt-2 md:px-16  '>
             <ReviewRankingCircularBar
               color={reviewColor[Math.round(hope) - 1]}
               currentValue={hope}

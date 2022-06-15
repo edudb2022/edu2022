@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 import AdmissionOfferReviewCard from '../../../components/common/cards/review/admission'
 import GradJobOfferReviewCard from '../../../components/common/cards/review/gradJob'
@@ -37,56 +38,77 @@ const ProgrammePage: React.FunctionComponent = () => {
       </ReviewHeaderContainer>
 
       <CardDisplayLayout>
-        <ProgrammeReviewCard
-          id='2'
-          schoolChineseName='12'
-          schoolEnglishName='123'
-          schoolShortName='hku'
-          totalReports={123}
-        />
-        <InterviewReviewCard
-          jupasBestFiveValue={12}
-          jupasBestSixValue={33}
-          nonJupasBestFiveValue={3}
-          nonJupasBestGpaValue={3.4}
-          id='1'
-          schoolChineseName='123'
-          schoolEnglishName='123'
-          schoolShortName='hku'
-          totalReports={123}
-        />
+        <Link href={`/review/tertiary/programme/${'2'}`}>
+          <a>
+            <ProgrammeReviewCard
+              id='2'
+              schoolChineseName='12'
+              schoolEnglishName='123'
+              schoolShortName='hku'
+              totalReports={123}
+            />
+          </a>
+        </Link>
 
-        <AdmissionOfferReviewCard
-          id='1'
-          schoolChineseName='123'
-          schoolEnglishName='123'
-          schoolShortName='hku'
-          totalReports={123}
-          jupasBestFiveValue={12}
-          jupasBestSixValue={33}
-          nonJupasBestFiveValue={3}
-          nonJupasBestGpaValue={3.4}
-        />
-        <InternshipReviewCard
-          id='1'
-          schoolChineseName='123'
-          schoolEnglishName='123'
-          schoolShortName='hku'
-          totalReports={123}
-          salary={332244}
-          // colors={['red', 'black', 'white']}
-          labels={['summer', 'winder', 'placement']}
-          statistic={[1, 5, 6]}
-        />
-        <GradJobOfferReviewCard
-          id='1'
-          schoolChineseName='123'
-          schoolEnglishName='123'
-          schoolShortName='hku'
-          totalReports={123}
-          salary={123123123}
-          hope={2.5}
-        />
+        <Link href={`/review/tertiary/interview/${'2'}`}>
+          <a>
+            <InterviewReviewCard
+              jupasBestFiveValue={12}
+              jupasBestSixValue={33}
+              nonJupasBestFiveValue={3}
+              nonJupasBestGpaValue={3.4}
+              id='1'
+              schoolChineseName='123'
+              schoolEnglishName='123'
+              schoolShortName='hku'
+              totalReports={123}
+            />
+          </a>
+        </Link>
+        <Link href={`/review/tertiary/admission/${'2'}`}>
+          <a>
+            <AdmissionOfferReviewCard
+              id='1'
+              schoolChineseName='123'
+              schoolEnglishName='123'
+              schoolShortName='hku'
+              totalReports={123}
+              jupasBestFiveValue={12}
+              jupasBestSixValue={33}
+              nonJupasBestFiveValue={3}
+              nonJupasBestGpaValue={3.4}
+            />
+          </a>
+        </Link>
+
+        <Link href={`/review/tertiary/internship/${'2'}`}>
+          <a>
+            <InternshipReviewCard
+              id='1'
+              schoolChineseName='123'
+              schoolEnglishName='123'
+              schoolShortName='hku'
+              totalReports={123}
+              salary={332244}
+              labels={['summer', 'winder', 'placement']}
+              statistic={[1, 5, 6]}
+            />
+          </a>
+        </Link>
+
+        <Link href={`/review/tertiary/gradJob/${'2'}`}>
+          <a>
+            <GradJobOfferReviewCard
+              id='1'
+              schoolChineseName='123'
+              schoolEnglishName='123'
+              schoolShortName='hku'
+              totalReports={123}
+              salary={123123123}
+              hope={2.5}
+            />
+          </a>
+        </Link>
       </CardDisplayLayout>
     </PageLayout>
   )
