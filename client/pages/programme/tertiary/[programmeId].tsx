@@ -74,7 +74,7 @@ const ProgrammePage: React.FunctionComponent = () => {
           schoolShortName='hku'
           totalReports={123}
           salary={332244}
-          colors={['red', 'black', 'white']}
+          // colors={['red', 'black', 'white']}
           labels={['summer', 'winder', 'placement']}
           statistic={[1, 5, 6]}
         />
