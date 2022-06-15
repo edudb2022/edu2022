@@ -1,7 +1,7 @@
-import Link from "next/link"
-import React from "react"
-import BaseReviewCard, { IBaseReviewCardProps } from "../../cards/review"
-import SchoolsCards from "../../cards/review/schools"
+import Link from 'next/link'
+import React from 'react'
+import BaseReviewCard, { IBaseReviewCardProps } from '../../cards/review'
+import SchoolsReviewCards from '../../cards/review/schools'
 
 export interface SchoolsPanelItemsProps {
   index: string
@@ -22,7 +22,7 @@ const SchoolsPanelItems: React.FunctionComponent<SchoolsPanelItemsProps> = ({
           return (
             <Link key={data.id} href={`/school/tertiary/${data.id}`}>
               <a key={data.id}>
-                <SchoolsCards
+                <SchoolsReviewCards
                   key={data.id}
                   id={data.id}
                   schoolChineseName={data.schoolChineseName}

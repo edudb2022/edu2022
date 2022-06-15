@@ -1,13 +1,13 @@
-import React from "react";
-import BaseReviewCard, { IBaseReviewCardProps } from ".";
-import { ADMISSION_TYPE, SCORE_TYPE } from "../../../../types/common";
-import AdmissionScoreCircularBarProps from "../../circularBar/admissionScore";
+import React from 'react'
+import BaseReviewCard, { IBaseReviewCardProps } from '.'
+import { ADMISSION_TYPE, SCORE_TYPE } from '../../../../types/common'
+import AdmissionScoreCircularBarProps from '../../circularBar/admissionScore'
 
 interface IInterviewOfferReviewCardProps extends Partial<IBaseReviewCardProps> {
-  jupasBestFiveValue: number;
-  jupasBestSixValue: number;
-  nonJupasBestFiveValue: number;
-  nonJupasBestGpaValue: number;
+  jupasBestFiveValue: number
+  jupasBestSixValue: number
+  nonJupasBestFiveValue: number
+  nonJupasBestGpaValue: number
 }
 
 const InterviewReviewCard: React.FunctionComponent<
@@ -30,9 +30,9 @@ const InterviewReviewCard: React.FunctionComponent<
       schoolEnglishName={schoolEnglishName!}
       schoolShortName={schoolShortName!}
       totalReports={totalReports!}
-      type={"OFFER"}
+      type={'面試'}
     >
-      <div className="flex flex-row justify-around items-center gap-y-2 mt-8">
+      <div className='flex flex-row justify-around items-center gap-y-2 mt-8'>
         <AdmissionScoreCircularBarProps
           admissionType={ADMISSION_TYPE.JUPAS}
           scoreType={SCORE_TYPE.BEST_FIVE}
@@ -62,7 +62,7 @@ const InterviewReviewCard: React.FunctionComponent<
         />
       </div>
     </BaseReviewCard>
-  );
-};
+  )
+}
 
-export default InterviewReviewCard;
+export default InterviewReviewCard
