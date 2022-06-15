@@ -1,7 +1,7 @@
-import React from "react"
+import React from 'react'
 
 const ErrorPage: React.FunctionComponent = () => {
-  return <div>hiqeho1qladnklcloirgdfbjknv</div>
+  return <div>404</div>
 }
 
 export default ErrorPage
