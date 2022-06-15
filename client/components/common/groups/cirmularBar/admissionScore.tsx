@@ -22,7 +22,7 @@ const AdmissionScoreCircularBarGroup: React.FunctionComponent<
 }) => {
   return (
     <div
-      className={`flex flex-row justify-around items-center gap-y-2 gap-x-2 w-full mt-8  ${className}`}
+      className={`flex flex-row justify-around items-center gap-y-2 gap-x-2  mt-8  ${className}`}
     >
       <AdmissionScoreCircularBarProps
         admissionType={ADMISSION_TYPE.JUPAS}

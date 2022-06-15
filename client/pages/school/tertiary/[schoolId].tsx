@@ -107,38 +107,6 @@ const TertiarySchoolPage: NextPage = () => {
           programmeType="123"
           programmeShortName="123"
         />
-        <ProgrammeCard
-          programmeChineseName="123"
-          programmeEnglishName="123"
-          programmeId="123"
-          totalReports={123}
-          programmeType="123"
-          programmeShortName="123"
-        />
-        <ProgrammeCard
-          programmeChineseName="123"
-          programmeEnglishName="123"
-          programmeId="123"
-          totalReports={123}
-          programmeType="123"
-          programmeShortName="123"
-        />
-        <ProgrammeCard
-          programmeChineseName="123"
-          programmeEnglishName="123"
-          programmeId="123"
-          totalReports={123}
-          programmeType="123"
-          programmeShortName="123"
-        />
-        <ProgrammeCard
-          programmeChineseName="123"
-          programmeEnglishName="123"
-          programmeId="123"
-          totalReports={123}
-          programmeType="123"
-          programmeShortName="123"
-        />
       </CardDisplayLayout>
     </PageLayout>
   )

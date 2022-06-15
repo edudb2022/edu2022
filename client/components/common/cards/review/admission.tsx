@@ -1,6 +1,7 @@
 import React from "react"
 import BaseReviewCard, { IBaseReviewCardProps } from "."
 import { ADMISSION_TYPE, SCORE_TYPE } from "../../../../types/common"
+import CardDisplayLayout from "../../../layouts/cardDisplay"
 import AdmissionScoreCircularBarProps from "../../circularBar/admissionScore"
 import AdmissionScoreCircularBarGroup, {
   IAdmissionScoreCircularBarGroupProps,

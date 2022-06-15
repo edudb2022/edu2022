@@ -1,8 +1,10 @@
 import { NextPage } from "next"
 import React from "react"
+import AdmissionOfferReviewDetailCard from "../../../../components/common/cards/reviewDetail/admission"
 import AdmissionScoreCircularBarProps from "../../../../components/common/circularBar/admissionScore"
 import AdmissionScoreCircularBarGroup from "../../../../components/common/groups/cirmularBar/admissionScore"
 import ReviewHeaderContainer from "../../../../components/containers/reviewHeader"
+import CardDisplayLayout from "../../../../components/layouts/cardDisplay"
 import PageLayout from "../../../../components/layouts/page"
 import { ADMISSION_TYPE, SCORE_TYPE } from "../../../../types/common"
 
@@ -21,10 +23,23 @@ const AdmissionOfferReviewPage: NextPage = () => {
             jupasBestSixValue={33}
             nonJupasBestFiveValue={12}
             nonJupasBestGpaValue={3.2}
-            className=" md:w-1/2"
+            className=" md:w-1/2 w-full"
           />
         </div>
       </ReviewHeaderContainer>
+      <CardDisplayLayout>
+        <AdmissionOfferReviewDetailCard
+          jupasBestFiveValue={23}
+          jupasBestSixValue={33}
+          nonJupasBestFiveValue={20}
+          nonJupasBestGpaValue={3.3}
+          postDate="20/23"
+          score={23}
+          title="123"
+          label="23"
+          id="23"
+        />
+      </CardDisplayLayout>
     </PageLayout>
   )
 }
