@@ -1,13 +1,13 @@
 import React from "react"
 import ReviewBaseItem, { IReviewBaseItemProps } from "."
 
-interface IReviewTextItemProps extends IReviewBaseItemProps {
+interface IReviewNumberItemProps extends IReviewBaseItemProps {
   title: string
-  detail: string
+  detail: number
   subtitle?: string
 }
 
-const ReviewTextItem: React.FunctionComponent<IReviewTextItemProps> = ({
+const ReviewNumberItem: React.FunctionComponent<IReviewNumberItemProps> = ({
   title,
   detail,
   subtitle,
@@ -19,4 +19,4 @@ const ReviewTextItem: React.FunctionComponent<IReviewTextItemProps> = ({
   )
 }
 
-export default ReviewTextItem
+export default ReviewNumberItem
