@@ -14,7 +14,7 @@ const ReviewNumberItem: React.FunctionComponent<IReviewNumberItemProps> = ({
 }) => {
   return (
     <ReviewBaseItem title={title} subtitle={subtitle}>
-      <h6 className="text-3xl">{detail}</h6>
+      <h6 className="text-4xl">{detail}</h6>
     </ReviewBaseItem>
   )
 }

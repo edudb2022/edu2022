@@ -2,7 +2,7 @@ import React from "react"
 import BaseReviewDetailCard, { IBaseReviewDetailCardProps } from "."
 import { ID } from "../../../../types/common"
 import ReviewBarRankItem from "./items/rank"
-import ReviewBarTextItem from "./items/text"
+import ReviewBarTextItem from "./items/number"
 
 interface IGradJobReviewDetailCard extends IBaseReviewDetailCardProps {
   id: ID
