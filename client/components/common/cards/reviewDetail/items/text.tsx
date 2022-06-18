@@ -10,11 +10,11 @@ interface IReviewTextItemProps extends IReviewBaseItemProps {
 const ReviewTextItem: React.FunctionComponent<IReviewTextItemProps> = ({
   title,
   detail,
-  subtitle,
+  subtitle
 }) => {
   return (
     <ReviewBaseItem title={title} subtitle={subtitle}>
-      <h6>{detail}</h6>
+      <h6 className="text-xl h-full ">{detail}</h6>
     </ReviewBaseItem>
   )
 }

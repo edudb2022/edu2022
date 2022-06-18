@@ -11,9 +11,9 @@ interface ISchoolReviewDetailCardProps extends IBaseReviewDetailCardProps {
 
 const SchoolReviewDetailCard: React.FunctionComponent<
   ISchoolReviewDetailCardProps
-> = ({ score, value, label, postDate, title }) => {
+> = ({ value, label, ...props }) => {
   return (
-    <BaseReviewDetailCard score={score} postDate={postDate} title={title}>
+    <BaseReviewDetailCard {...props}>
       <div className="flex flex-col-reverse md:flex-row h-full items-center justify-center gap-x-4">
         <Rating name="read-only" value={value} readOnly className="text-5xl" />
         <h1>{label}</h1>

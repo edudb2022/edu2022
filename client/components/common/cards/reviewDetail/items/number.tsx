@@ -10,11 +10,11 @@ interface IReviewNumberItemProps extends IReviewBaseItemProps {
 const ReviewNumberItem: React.FunctionComponent<IReviewNumberItemProps> = ({
   title,
   detail,
-  subtitle,
+  subtitle
 }) => {
   return (
     <ReviewBaseItem title={title} subtitle={subtitle}>
-      <h6 className="text-4xl">{detail}</h6>
+      <h6 className="text-xl">{detail}</h6>
     </ReviewBaseItem>
   )
 }

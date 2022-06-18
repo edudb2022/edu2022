@@ -1,10 +1,10 @@
-import React from 'react'
-import BaseReviewCard, { IBaseReviewCardProps } from '.'
-import CountUp from 'react-countup'
+import React from "react"
+import BaseReviewCard, { IBaseReviewCardProps } from "."
+import CountUp from "react-countup"
 
 import InternshipPeiChart, {
-  IInternshipPeiChartProps,
-} from '../../charts/pie/internship'
+  IInternshipPeiChartProps
+} from "../../charts/pie/internship"
 
 interface IInternshipReviewCardProps
   extends Partial<IBaseReviewCardProps>,
@@ -22,7 +22,7 @@ const InternshipReviewCard: React.FunctionComponent<
   id,
   salary,
   // labels,
-  statistic,
+  statistic
 }) => {
   return (
     <BaseReviewCard
@@ -31,27 +31,24 @@ const InternshipReviewCard: React.FunctionComponent<
       schoolEnglishName={schoolEnglishName!}
       schoolShortName={schoolShortName!}
       totalReports={totalReports!}
-      type={'實習'}
+      type={"實習"}
     >
-      <div className='relative'>
-        <div className=' absolute w-full text-center'>
-          <h6 className='text-gray-500'>平均月薪</h6>
+      <div className="relative">
+        <div className=" absolute w-full text-center">
+          <h6 className="text-gray-500">平均月薪</h6>
 
           <h1>
             <CountUp
               start={0}
               end={salary}
               duration={1}
-              separator=','
-              suffix='HKD'
+              separator=","
+              suffix="HKD"
             />
           </h1>
         </div>
-        <div className='absolute  w-9/12 md:w-11/12 p-2  '>
-          <InternshipPeiChart
-            labels={['Summer', 'Winter', 'Placement']}
-            statistic={statistic}
-          />
+        <div className="absolute  w-9/12 md:w-11/12 p-2  ">
+          <InternshipPeiChart statistic={statistic} />
         </div>
       </div>
     </BaseReviewCard>
