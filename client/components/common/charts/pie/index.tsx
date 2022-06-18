@@ -1,5 +1,5 @@
-import React from "react";
-import { Pie } from "react-chartjs-2";
+import React from "react"
+import { Pie } from "react-chartjs-2"
 import {
   Chart as ChartJS,
   RadialLinearScale,
@@ -8,7 +8,8 @@ import {
   Filler,
   Tooltip,
   Legend,
-} from "chart.js";
+  ArcElement
+} from "chart.js"
 
 ChartJS.register(
   RadialLinearScale,
@@ -16,38 +17,39 @@ ChartJS.register(
   LineElement,
   Filler,
   Tooltip,
-  Legend
-);
+  Legend,
+  ArcElement
+)
 
 const options: any = {
   plugins: {
     legend: {
-      position: "right",
+      position: "right"
       // display: false,
-    },
-  },
-};
+    }
+  }
+}
 
 export interface IBasePieChartProps {
-  labels: string[];
-  statistic: number[];
-  colors: string[];
+  labels: string[]
+  statistic: number[]
+  colors: string[]
 }
 const BasePieChart: React.FunctionComponent<IBasePieChartProps> = ({
   labels,
   statistic,
-  colors,
+  colors
 }) => {
   const data = {
     labels: labels,
     datasets: [
       {
         data: statistic,
-        backgroundColor: colors,
-      },
-    ],
-  };
-  return <Pie data={data} options={options} />;
-};
+        backgroundColor: colors
+      }
+    ]
+  }
+  return <Pie data={data} options={options} />
+}
 
-export default BasePieChart;
+export default BasePieChart
