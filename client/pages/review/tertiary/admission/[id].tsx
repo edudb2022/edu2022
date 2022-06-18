@@ -34,7 +34,6 @@ const AdmissionOfferReviewPage: NextPage = () => {
           nonJupasBestGpaValue={3.3}
           postDate="20/23"
           score={23}
-          title="123"
           label="23"
           id="23"
           isStudent={true}
