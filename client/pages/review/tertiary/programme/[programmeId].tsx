@@ -36,6 +36,7 @@ const ProgrammeReviewPage: NextPage = () => {
 
       <CardDisplayLayout>
         <ProgrammeReviewDetailCard
+          isStudent={true}
           score={1223}
           value={0}
           postDate="20/23"
