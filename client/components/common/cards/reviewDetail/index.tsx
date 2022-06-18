@@ -1,6 +1,7 @@
 import Link from "next/link"
 import React, { PropsWithChildren } from "react"
 import BaseCard from ".."
+import StudentIcon from "../../icons/student"
 import LikeRating, { ILikeRatingProps } from "../../specical/likeRating"
 
 export interface IBaseReviewDetailCardProps extends ILikeRatingProps {
@@ -19,7 +20,11 @@ const BaseReviewDetailCard: React.FunctionComponent<
       <div className="flex flex-row">
         <div className="w-4/5 h-fit flex flex-row gap-x-2 ">
           {title && <h1>{title}</h1>}
-          {isStudent && <h1>🎓</h1>}
+          {isStudent && (
+            <h1>
+              <StudentIcon />
+            </h1>
+          )}
         </div>
         <p className="w-1/5 text-center h-full  ">
           <span>發布日期 {postDate}</span>

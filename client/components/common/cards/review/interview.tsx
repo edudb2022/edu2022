@@ -2,8 +2,9 @@ import React from "react"
 import BaseReviewCard, { IBaseReviewCardProps } from "."
 
 import AdmissionScoreCircularBarGroup, {
-  IAdmissionScoreCircularBarGroupProps,
+  IAdmissionScoreCircularBarGroupProps
 } from "../../groups/cirmularBar/admissionScore"
+import BaseTag from "../../tags"
 
 interface IInterviewOfferReviewCardProps
   extends Partial<IBaseReviewCardProps>,
@@ -25,7 +26,7 @@ const InterviewReviewCard: React.FunctionComponent<
   jupasBestFiveValue,
   jupasBestSixValue,
   nonJupasBestFiveValue,
-  nonJupasBestGpaValue,
+  nonJupasBestGpaValue
 }) => {
   return (
     <BaseReviewCard
