@@ -9,7 +9,7 @@ import {
   Filler,
   Tooltip,
   Legend,
-  ArcElement,
+  ArcElement
 } from "chart.js"
 
 ChartJS.register(
@@ -31,13 +31,13 @@ interface IBaseRadarProps {
 const BaseRadar: React.FunctionComponent<IBaseRadarProps> = ({
   labels,
   scores,
-  className,
+  className
 }) => {
   const options = {
     plugins: {
       legend: {
-        display: false,
-      },
+        display: false
+      }
     },
 
     scales: {
@@ -46,11 +46,11 @@ const BaseRadar: React.FunctionComponent<IBaseRadarProps> = ({
         suggestedMax: 5,
         pointLabels: {
           font: {
-            size: 14,
-          },
-        },
-      },
-    },
+            size: 14
+          }
+        }
+      }
+    }
   }
 
   //   const labels = ["January", "February", "March", "April", "May"];
@@ -66,9 +66,9 @@ const BaseRadar: React.FunctionComponent<IBaseRadarProps> = ({
         pointHoverBackgroundColor: "#fff",
         pointHoverBorderColor: "rgb(54, 162, 235)",
 
-        data: scores,
-      },
-    ],
+        data: scores
+      }
+    ]
   }
   return <Radar data={data} className={`${className}`} options={options} />
 }
