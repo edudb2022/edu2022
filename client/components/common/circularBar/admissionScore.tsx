@@ -1,11 +1,11 @@
-import React from "react";
-import BaseCircularBar, { IBaseBaseCircularBarProps } from ".";
-import { ADMISSION_TYPE, SCORE_TYPE } from "../../../types/common";
+import React from "react"
+import BaseCircularBar, { IBaseBaseCircularBarProps } from "."
+import { ADMISSION_TYPE, SCORE_TYPE } from "../../../types/common"
 
 interface IAdmissionScoreCircularBarProps
   extends Partial<IBaseBaseCircularBarProps> {
-  admissionType: ADMISSION_TYPE;
-  scoreType: SCORE_TYPE;
+  admissionType: ADMISSION_TYPE
+  scoreType: SCORE_TYPE
 }
 
 const AdmissionScoreCircularBarProps: React.FunctionComponent<
@@ -17,15 +17,15 @@ const AdmissionScoreCircularBarProps: React.FunctionComponent<
       <BaseCircularBar
         currentValue={currentValue!}
         maxValue={maxValue!}
-        pathColor={`rgba(62, 152, 199, ${100 / 100})`}
-        trailColor={"#d6d6d6"}
+        pathColor={"#4682B4"}
+        trailColor={"#FAF9F9"}
       >
         <h2>{currentValue}</h2>
       </BaseCircularBar>
 
       <div className="text-gray-500 text-xs">{admissionType}</div>
     </div>
-  );
-};
+  )
+}
 
-export default AdmissionScoreCircularBarProps;
+export default AdmissionScoreCircularBarProps

@@ -1,25 +1,36 @@
-import React from "react";
-import BaseCircularBar from ".";
+import React, { useEffect, useState } from "react"
+import BaseCircularBar from "."
+import { rankColor } from "../../../constants/colors"
 
 interface IReviewRankingCircularBar {
-  currentValue: number;
-  color: string;
+  currentValue: number
+  title: string
+  // color: string
 }
 
 const ReviewRankingCircularBar: React.FunctionComponent<
   IReviewRankingCircularBar
-> = ({ currentValue, color }) => {
+> = ({ currentValue, title }) => {
+  const color = [
+    "text-ranking-1-500",
+    "text-ranking-2-500",
+    "text-ranking-3-500",
+    "text-ranking-4-500",
+    "text-ranking-5-500"
+  ]
   return (
-    <BaseCircularBar
-      currentValue={2}
-      maxValue={5}
-      pathColor={color}
-      trailColor={"#d6d6d6"}
-    >
-      <h2>{`${currentValue}/5`}</h2>
-      <h2 className={`text-${color}-500`}>{`on99`}</h2>
-    </BaseCircularBar>
-  );
-};
+    <div className="w-full">
+      <BaseCircularBar
+        currentValue={currentValue}
+        maxValue={5}
+        pathColor={rankColor[Math.round(currentValue) - 1]}
+        trailColor={"#FAF9F9"}
+      >
+        <h4>{`${currentValue}/5`}</h4>
+        <h6 className={`${color[Math.round(currentValue) - 1]}`}>{title}</h6>
+      </BaseCircularBar>
+    </div>
+  )
+}
 
-export default ReviewRankingCircularBar;
+export default ReviewRankingCircularBar

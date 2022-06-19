@@ -47,7 +47,7 @@ const InternshipReviewCard: React.FunctionComponent<
             />
           </h1>
         </div>
-        <div className="absolute  w-9/12 md:w-11/12 p-2  ">
+        <div className="absolute  w-full  px-2 ">
           <InternshipPeiChart statistic={statistic} />
         </div>
       </div>

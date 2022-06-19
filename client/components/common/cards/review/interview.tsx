@@ -39,14 +39,14 @@ const InterviewReviewCard: React.FunctionComponent<
       totalReports={totalReports!}
       type={"面試"}
     >
-      <div className="flex flex-row justify-center">
+      <div className="flex flex-row  justify-evenly">
         <RankingTag
           ranking={1}
           title={difficultyRating[0].label}
           className=""
         />
         <RankingTag
-          ranking={1}
+          ranking={2}
           title={difficultyRating[0].label}
           className=""
         />
