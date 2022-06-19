@@ -25,7 +25,7 @@ const SchoolReviewPage = () => {
             </div>
 
             <div className="w-2/5  py-12">
-              <ReviewRankingCircularBar currentValue={4} color={"red"} />
+              <ReviewRankingCircularBar currentValue={4} title={"red"} />
             </div>
           </div>
         </div>

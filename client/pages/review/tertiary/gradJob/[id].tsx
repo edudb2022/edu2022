@@ -19,10 +19,7 @@ const GradJobReviewPage: NextPage = () => {
       >
         <div className="flex flex-col md:flex-row w-full justify-center gap-x-12 items-center ">
           <div className="w-1/2 md:w-1/6">
-            <ReviewRankingCircularBar
-              color={reviewColor[Math.round(2) - 1]}
-              currentValue={2}
-            />
+            <ReviewRankingCircularBar title="123" currentValue={2} />
           </div>
 
           <div className="text-center mt-4 md:mt-0">
