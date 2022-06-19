@@ -16,7 +16,9 @@ const BaseTag: React.FunctionComponent<IBaseTagProps> = ({
   // color,
   className
 }) => {
-  return <div className={`rounded-2xl px-7  ${className}`}>{title}</div>
+  return (
+    <div className={`rounded-2xl px-7 text-center ${className}`}>{title}</div>
+  )
 }
 
 export default BaseTag

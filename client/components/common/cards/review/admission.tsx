@@ -34,19 +34,6 @@ const AdmissionOfferReviewCard: React.FunctionComponent<
       totalReports={totalReports!}
       type={"OFFER"}
     >
-      <div className="flex flex-row justify-center">
-        <RankingTag
-          ranking={1}
-          title={difficultyRating[0].label}
-          className="border-2"
-        />
-        <RankingTag
-          ranking={1}
-          title={difficultyRating[0].label}
-          className="border-2"
-        />
-      </div>
-
       <AdmissionScoreCircularBarGroup
         jupasBestFiveValue={jupasBestFiveValue}
         jupasBestSixValue={jupasBestSixValue}

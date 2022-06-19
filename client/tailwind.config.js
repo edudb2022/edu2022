@@ -21,12 +21,8 @@ const theme = {
   },
   two: {
     500: "#FFF5EC"
-  }
-}
+  },
 
-//https://tailwindcss.com/docs/customizing-colors
-
-const ranking = {
   rose: {
     50: "#fff1f2",
     100: "#ffe4e6",
@@ -87,6 +83,16 @@ const ranking = {
     800: "#166534",
     900: "#14532d"
   }
+}
+
+//https://tailwindcss.com/docs/customizing-colors
+
+const ranking = {
+  1: theme.rose,
+  2: theme.pink,
+  3: theme.yellow,
+  4: theme.teal,
+  5: theme.green
 }
 
 module.exports = {
