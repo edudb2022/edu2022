@@ -25,7 +25,7 @@ const SchoolReviewPage = () => {
             </div>
 
             <div className="w-2/5  py-12">
-              <ReviewRankingCircularBar currentValue={4} color={"red"} />
+              <ReviewRankingCircularBar currentValue={4} title={"red"} />
             </div>
           </div>
         </div>
@@ -33,39 +33,13 @@ const SchoolReviewPage = () => {
 
       <CardDisplayLayout>
         <SchoolReviewDetailCard
+          isStudent={true}
           score={1223}
           value={0}
           postDate="20/23"
           label="絕對不建議"
           title="title"
-        />
-        <SchoolReviewDetailCard
-          score={1223}
-          value={0}
-          postDate="20/23"
-          label="絕對不建議"
-          title="title"
-        />
-        <SchoolReviewDetailCard
-          score={1223}
-          value={0}
-          postDate="20/23"
-          label="絕對不建議"
-          title="title"
-        />
-        <SchoolReviewDetailCard
-          score={1223}
-          value={0}
-          postDate="20/23"
-          label="絕對不建議"
-          title="title"
-        />
-        <SchoolReviewDetailCard
-          score={1223}
-          value={0}
-          postDate="20/23"
-          label="絕對不建議"
-          title="title"
+          id="1"
         />
       </CardDisplayLayout>
     </PageLayout>

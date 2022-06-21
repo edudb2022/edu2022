@@ -32,7 +32,7 @@ const TertiarySchoolPage: NextPage = () => {
   const facultyType = [
     { value: "all", title: "所有課程" },
     { value: "engineering", title: "工程" },
-    { value: "law", title: "法律" },
+    { value: "law", title: "法律" }
   ]
 
   return (
@@ -53,7 +53,7 @@ const TertiarySchoolPage: NextPage = () => {
             </div>
 
             <div className="w-2/5  py-12">
-              <ReviewRankingCircularBar currentValue={4} color={"red"} />
+              <ReviewRankingCircularBar currentValue={4} title={"red"} />
               <Link href={`/review/tertiary/school/${schoolId}`}>
                 <a>
                   <BaseButton className="w-full justify-center gap-x-2  text-sm md:text-base mt-4 bg-theme-one-500 text-white shrink-0">
@@ -82,39 +82,7 @@ const TertiarySchoolPage: NextPage = () => {
         />
       </div>
 
-      <CardDisplayLayout className="md:w-full">
-        <ProgrammeCard
-          programmeChineseName="123"
-          programmeEnglishName="123"
-          programmeId="123"
-          totalReports={123}
-          programmeType="123"
-          programmeShortName="123"
-        />
-        <ProgrammeCard
-          programmeChineseName="123"
-          programmeEnglishName="123"
-          programmeId="123"
-          totalReports={123}
-          programmeType="123"
-          programmeShortName="123"
-        />
-        <ProgrammeCard
-          programmeChineseName="123"
-          programmeEnglishName="123"
-          programmeId="123"
-          totalReports={123}
-          programmeType="123"
-          programmeShortName="123"
-        />
-        <ProgrammeCard
-          programmeChineseName="123"
-          programmeEnglishName="123"
-          programmeId="123"
-          totalReports={123}
-          programmeType="123"
-          programmeShortName="123"
-        />
+      <CardDisplayLayout>
         <ProgrammeCard
           programmeChineseName="123"
           programmeEnglishName="123"

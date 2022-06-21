@@ -17,13 +17,11 @@ const ReviewHeaderContainer: React.FunctionComponent<
   EnglishTitle,
   schoolShortName,
   children,
-  layoutClassName,
+  layoutClassName
 }) => {
   return (
     <div>
-      <div
-        className={`flex justify-center items-center p-4 ${layoutClassName} `}
-      >
+      <div className={`flex justify-center items-center   ${layoutClassName} `}>
         <div className="flex flex-row">
           <div className="hidden md:flex">
             <Image

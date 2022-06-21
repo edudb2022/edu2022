@@ -1,15 +1,15 @@
-import React, { Children, PropsWithChildren } from "react";
+import React, { Children, PropsWithChildren } from "react"
 import {
   buildStyles,
-  CircularProgressbarWithChildren,
-} from "react-circular-progressbar";
+  CircularProgressbarWithChildren
+} from "react-circular-progressbar"
 
 export interface IBaseBaseCircularBarProps {
-  currentValue: number;
-  maxValue: number;
-  pathColor: string;
-  trailColor: string;
-  children?: React.ReactNode;
+  currentValue: number
+  maxValue: number
+  pathColor: string
+  trailColor: string
+  children?: React.ReactNode
 }
 
 const BaseCircularBar: React.FunctionComponent<IBaseBaseCircularBarProps> = ({
@@ -17,7 +17,7 @@ const BaseCircularBar: React.FunctionComponent<IBaseBaseCircularBarProps> = ({
   maxValue,
   pathColor,
   trailColor,
-  children,
+  children
 }) => {
   return (
     <CircularProgressbarWithChildren
@@ -27,12 +27,12 @@ const BaseCircularBar: React.FunctionComponent<IBaseBaseCircularBarProps> = ({
         rotation: 1,
         pathTransitionDuration: 0.5,
         pathColor: pathColor,
-        trailColor: trailColor,
+        trailColor: trailColor
       })}
     >
       {children}
     </CircularProgressbarWithChildren>
-  );
-};
+  )
+}
 
-export default BaseCircularBar;
+export default BaseCircularBar

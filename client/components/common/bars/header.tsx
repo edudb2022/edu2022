@@ -1,32 +1,33 @@
 import Link from "next/link"
 import React from "react"
 import { useRouter } from "next/router"
+import { BsFillPencilFill } from "react-icons/bs"
 
 const formRoutes = [
   {
     title: "學校評價",
-    route: "schoolReview",
+    route: "schoolReview"
   },
   {
     title: "課程評價",
-    route: "programmeReview",
+    route: "programmeReview"
   },
   {
     title: "面試評價",
-    route: "interviewReview",
+    route: "interviewReview"
   },
   {
     title: "入學offer",
-    route: "admissionOffer",
+    route: "admissionOffer"
   },
   {
     title: "實習offer",
-    route: "internshipOffer",
+    route: "internshipOffer"
   },
   {
     title: "工作offer",
-    route: "gradJobOffer",
-  },
+    route: "gradJobOffer"
+  }
 ]
 
 const HeaderBar: React.FunctionComponent = () => {
@@ -39,13 +40,13 @@ const HeaderBar: React.FunctionComponent = () => {
           <React.Fragment key={key}>
             <Link href={`/forms/tertiary/${data.route}`}>
               <a
-                className={`flex flex-row  text-center text-xs md:text-base py-1 md:px-3   ${
+                className={`flex flex-wrap items-center justify-center gap-x-1 text-xs md:text-base py-1 md:px-3   ${
                   router.pathname === "/forms/tertiary/" + data.route
                     ? "text-theme-one-500"
                     : "text-black"
                 }`}
               >
-                + {data.title}
+                <BsFillPencilFill /> {data.title}
               </a>
             </Link>
           </React.Fragment>
