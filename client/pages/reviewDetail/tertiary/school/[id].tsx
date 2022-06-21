@@ -24,8 +24,14 @@ const SchoolReviewDetailPage: NextPage = () => {
           <RatingTag rating={3} title="12313" header="Canteen" />
         </div>
       </DetailReviewHeaderContainer>
-
-      <DetailReviewInfoContainer />
+      123
+      <DetailReviewInfoContainer
+        admissionYear="2022"
+        academicStatus="Year 1"
+        username={null}
+        postDate="01/02/23"
+        contact="tg : 123"
+      />
     </PageLayout>
   )
 }
