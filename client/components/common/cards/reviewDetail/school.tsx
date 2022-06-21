@@ -20,12 +20,7 @@ const SchoolReviewDetailCard: React.FunctionComponent<
       <Link href={`/reviewDetail/tertiary/school/${id}`}>
         <a>
           <div className="flex flex-col-reverse md:flex-row h-full items-center justify-center gap-x-4">
-            <RatingTag
-              rating={2}
-              title={` ${label}`}
-              className=""
-              ratingClassName=""
-            />
+            <RatingTag rating={2} title={`${label}`} />
           </div>
         </a>
       </Link>
