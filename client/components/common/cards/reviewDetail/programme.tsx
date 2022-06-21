@@ -20,9 +20,10 @@ const ProgrammeReviewDetailCard: React.FunctionComponent<
       <div className="flex flex-col-reverse md:flex-row h-full items-center justify-center gap-x-4">
         {/* <Rating name="read-only" value={value} readOnly className="text-5xl" /> */}
         <RatingTag
-          ranting={1}
-          title={`1.4 ${label}`}
-          className=" md:text-2xl text-lg md:px-8 px-4 font-black flex justify-center items-center"
+          rating={1}
+          title={` ${label}`}
+          className="text-2xl font-black"
+          ratingClassName="text-semi border-4"
         />
         {/* <h1>{label}</h1> */}
       </div>

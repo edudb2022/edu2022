@@ -12,11 +12,11 @@ const ReviewRankingCircularBar: React.FunctionComponent<
   IReviewRankingCircularBar
 > = ({ currentValue, title }) => {
   const color = [
-    "text-ranking-1-500",
-    "text-ranking-2-500",
-    "text-ranking-3-500",
-    "text-ranking-4-500",
-    "text-ranking-5-500"
+    "text-rating-1-500",
+    "text-rating-2-500",
+    "text-rating-3-500",
+    "text-rating-4-500",
+    "text-rating-5-500"
   ]
   return (
     <div className="w-full">

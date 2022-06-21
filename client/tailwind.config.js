@@ -87,7 +87,7 @@ const theme = {
 
 //https://tailwindcss.com/docs/customizing-colors
 
-const ranking = {
+const rating = {
   1: theme.rose,
   2: theme.pink,
   3: theme.yellow,
@@ -103,7 +103,7 @@ module.exports = {
   theme: {
     extend: {
       width: width,
-      colors: { school, theme, ranking },
+      colors: { school, theme, rating },
       fontSize: { xxs: "0.5rem" }
     }
   },

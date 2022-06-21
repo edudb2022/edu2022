@@ -7,7 +7,6 @@ import AdmissionScoreCircularBarProps from "../../circularBar/admissionScore"
 import AdmissionScoreCircularBarGroup, {
   IAdmissionScoreCircularBarGroupProps
 } from "../../groups/cirmularBar/admissionScore"
-import RankingTag from "../../tags/ranking"
 
 interface IAdmissionOfferReviewCardProps
   extends Partial<IBaseReviewCardProps>,

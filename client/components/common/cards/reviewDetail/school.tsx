@@ -23,9 +23,10 @@ const SchoolReviewDetailCard: React.FunctionComponent<
             {/* <Rating name="read-only" value={value} readOnly className="text-5xl" />
         <h1>{label}</h1> */}
             <RatingTag
-              ranting={1}
-              title={`1.4 ${label}`}
-              className=" md:text-2xl text-lg md:px-4  font-black flex justify-center items-center"
+              rating={1}
+              title={` ${label}`}
+              className="text-2xl font-black"
+              ratingClassName="text-semi border-4"
             />
           </div>
         </a>
