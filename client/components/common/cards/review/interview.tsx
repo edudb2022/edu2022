@@ -5,7 +5,7 @@ import { difficultyRating } from "../../../../constants/rating"
 import AdmissionScoreCircularBarGroup, {
   IAdmissionScoreCircularBarGroupProps
 } from "../../groups/cirmularBar/admissionScore"
-import RantingTag from "../../tags/ranking"
+import RatingTag from "../../tags/rating"
 
 interface IInterviewOfferReviewCardProps
   extends Partial<IBaseReviewCardProps>,
@@ -39,16 +39,8 @@ const InterviewReviewCard: React.FunctionComponent<
       type={"面試"}
     >
       <div className="flex flex-row  justify-evenly">
-        <RantingTag
-          ranting={1}
-          title={difficultyRating[0].label}
-          className=""
-        />
-        <RantingTag
-          ranting={2}
-          title={difficultyRating[0].label}
-          className=""
-        />
+        <RatingTag ranting={1} title={difficultyRating[0].label} className="" />
+        <RatingTag ranting={2} title={difficultyRating[0].label} className="" />
       </div>
 
       <AdmissionScoreCircularBarGroup

@@ -6,7 +6,7 @@ interface IRantingTagProps extends IBaseTagProps {
   ranting: number
 }
 
-const RantingTag: React.FunctionComponent<IRantingTagProps> = ({
+const RatingTag: React.FunctionComponent<IRantingTagProps> = ({
   title,
   className,
   ranting
@@ -24,4 +24,4 @@ const RantingTag: React.FunctionComponent<IRantingTagProps> = ({
   )
 }
 
-export default RantingTag
+export default RatingTag
