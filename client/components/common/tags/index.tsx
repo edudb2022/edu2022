@@ -1,7 +1,7 @@
 import React from "react"
 
 export interface IBaseTagProps {
-  title: string | string[]
+  title: string
   secondary?: boolean
   // color: string
   className?: string

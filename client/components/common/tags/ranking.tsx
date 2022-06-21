@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from "react"
 import BaseTag, { IBaseTagProps } from "."
 
-interface RankingTagProps extends IBaseTagProps {
+interface IRantingTagProps extends IBaseTagProps {
   title: string
-  ranking: number
+  ranting: number
 }
 
-const RankingTag: React.FunctionComponent<RankingTagProps> = ({
+const RantingTag: React.FunctionComponent<IRantingTagProps> = ({
   title,
   className,
-  ranking
+  ranting
 }) => {
   const color = [
     `bg-ranking-1-200 text-ranking-1-700`,
@@ -20,8 +20,8 @@ const RankingTag: React.FunctionComponent<RankingTagProps> = ({
   ]
 
   return (
-    <BaseTag title={title} className={` ${color[ranking - 1]} ${className}`} />
+    <BaseTag title={title} className={` ${color[ranting - 1]} ${className}`} />
   )
 }
 
-export default RankingTag
+export default RantingTag
