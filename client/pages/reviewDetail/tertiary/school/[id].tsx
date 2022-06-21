@@ -2,6 +2,7 @@ import { NextPage } from "next"
 import React from "react"
 import RatingTag from "../../../../components/common/tags/rating"
 import DetailReviewHeaderContainer from "../../../../components/containers/detailReviewHeader"
+import DetailReviewInfoContainer from "../../../../components/containers/detailReviewInfo"
 
 import PageLayout from "../../../../components/layouts/page"
 
@@ -23,6 +24,8 @@ const SchoolReviewDetailPage: NextPage = () => {
           <RatingTag rating={3} title="12313" header="Canteen" />
         </div>
       </DetailReviewHeaderContainer>
+
+      <DetailReviewInfoContainer />
     </PageLayout>
   )
 }
