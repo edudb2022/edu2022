@@ -1,19 +1,19 @@
-import React, { PropsWithChildren } from "react";
+import React, { PropsWithChildren } from "react"
 import ReviewHeaderContainer, {
-  IReviewHeaderContainerProps,
-} from "./reviewHeader";
-import { MdOutlineReportGmailerrorred } from "react-icons/md";
-import BaseButton from "../common/buttons";
-import LikeAndDisLikeButtonGroup from "../common/buttonGroups/likeAndDisLike";
-import LikeRating, { ILikeRatingProps } from "../common/specical/likeRating";
+  IReviewHeaderContainerProps
+} from "./reviewHeader"
+import { MdOutlineReportGmailerrorred } from "react-icons/md"
+import BaseButton from "../common/buttons"
+import LikeAndDisLikeButtonGroup from "../common/buttonGroups/likeAndDisLike"
+import LikeRating, { ILikeRatingProps } from "../common/specical/likeRating"
 
 interface IDetailReviewHeader
   extends IReviewHeaderContainerProps,
     ILikeRatingProps {
-  containerClassName?: string;
+  containerClassName?: string
 }
 
-const DetailReviewHeader: React.FunctionComponent<
+const DetailReviewHeaderContainer: React.FunctionComponent<
   PropsWithChildren<IDetailReviewHeader>
 > = ({ children, score, containerClassName, layoutClassName, ...props }) => {
   return (
@@ -32,7 +32,7 @@ const DetailReviewHeader: React.FunctionComponent<
         </div>
       </div>
     </ReviewHeaderContainer>
-  );
-};
+  )
+}
 
-export default DetailReviewHeader;
+export default DetailReviewHeaderContainer

@@ -7,6 +7,7 @@ export interface IBaseTagProps {
   rating?: number
   className?: string
   ratingClassName?: string
+  header?: string
 }
 
 //     <div className={`${secondary ?  `border-2 boder-${color} text-${color}` : `boder-${color} bg-${color}` } ${className}`}>{title}</div>
@@ -17,20 +18,22 @@ const BaseTag: React.FunctionComponent<IBaseTagProps> = ({
   secondary,
   rating,
   // color,
+  header,
   className,
   ratingClassName
 }) => {
   return (
-    <div
-      className={`rounded-2xl flex flex-row items-center  max-w-fit ${className}`}
-    >
-      {rating && (
-        <span className={` px-2 rounded-2xl  ${ratingClassName}`}>
-          {rating}
-        </span>
-      )}
+    <div className={`flex flex-col w-fit s rounded-2xl max-w-fit`}>
+      {header && <h6>{header}</h6>}
+      <div className={` flex flex-row items-center rounded-2xl ${className}`}>
+        {rating && (
+          <span className={` px-2 rounded-2xl border-2 ${ratingClassName}`}>
+            {rating}
+          </span>
+        )}
 
-      <div className="min-w-full px-1 pr-3 "> {title}</div>
+        <div className="min-w-fit px-1 pr-3 "> {title}</div>
+      </div>
     </div>
   )
 }
