@@ -21,7 +21,7 @@ const SchoolReviewDetailCard: React.FunctionComponent<
         <RantingTag
           ranting={1}
           title={`1.4 ${label}`}
-          className=" md:text-2xl text-lg md:p-4 p-2 font-black flex justify-center items-center"
+          className=" md:text-2xl text-lg md:px-4  font-black flex justify-center items-center"
         />
       </div>
     </BaseReviewDetailCard>
