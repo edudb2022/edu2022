@@ -1,9 +1,5 @@
 import React from "react"
 import BaseTag, { IBaseTagProps } from "."
-import {
-  ratingBorderColor,
-  ratingTextAndBackgroundColor
-} from "../../../constants/colors"
 
 interface IRantingTagProps extends IBaseTagProps {
   title: string
