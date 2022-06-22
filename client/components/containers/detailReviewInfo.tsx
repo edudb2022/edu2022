@@ -7,7 +7,7 @@ interface IDetailReviewInfoContainerProps {
   contact: string
   admissionYear?: string
   academicStatus?: string
-  interviewDate: string
+  interviewDate?: string
   DressCode?: string
   offerDate?: string
   currentSchool?: string
@@ -37,27 +37,27 @@ const DetailReviewInfoContainer: React.FunctionComponent<
 }) => {
   return (
     <div className={`${className}`}>
-      <div className="flex flex-col">
-        <div className="flex flex-row justify-around flex-wrap">
-          {admissionYear && <p> {`admissionYear : ${admissionYear}`}</p>}
-          {interviewDate && <p> {`interviewDate : ${interviewDate}`}</p>}
-          {academicStatus && <p> {`academicStatus : ${academicStatus}`}</p>}
-          {currentSchool && <p> {`currentSchool : ${currentSchool}`}</p>}
+      <div className="flex flex-col items-center border-2">
+        <div className="flex flex-row justify-evenly border-2 w-full">
+          {admissionYear && <p> {`Admission Year : ${admissionYear}`}</p>}
+          {interviewDate && <p> {`Interview Date : ${interviewDate}`}</p>}
+          {academicStatus && <p> {`Academic Status : ${academicStatus}`}</p>}
+          {currentSchool && <p> {`CurrentSchool : ${currentSchool}`}</p>}
           {currentProgramme && (
-            <p> {`currentProgramme : ${currentProgramme}`}</p>
+            <p> {`Current Programme : ${currentProgramme}`}</p>
           )}
-          {industry && <p> {`industry  : ${industry}`}</p>}
-          {companyName && <p> {`companyName  : ${companyName}`}</p>}
-          {jobSource && <p> {`jobSource  : ${jobSource}`}</p>}
-          {offerDate && <p> {`offerDate : ${offerDate}`}</p>}
+          {industry && <p> {`Industry  : ${industry}`}</p>}
+          {companyName && <p> {`CompanyName  : ${companyName}`}</p>}
+          {jobSource && <p> {`JobSource  : ${jobSource}`}</p>}
+          {offerDate && <p> {`OfferDate : ${offerDate}`}</p>}
           {DressCode && <p> {`DressCode : ${DressCode}`}</p>}
-        </div>
 
-        <div className="flex flex-row">
+          {/* <div className="flex flex-row justify-evenly border-2 w-full"> */}
           <p> {`username  : ${username ? username : "null"}`}</p>
           <p> {`Post Date : ${postDate}`}</p>
           <p> {`contact : ${contact ? contact : "null"}`}</p>
         </div>
+        {/* </div> */}
       </div>
     </div>
   )
