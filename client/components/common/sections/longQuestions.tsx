@@ -1,5 +1,6 @@
 import { Paper } from "@mui/material"
 import React from "react"
+import LongTextDisplayContainer from "../../containers/longTextDisplay"
 import BaseTextArea, { IBaseTextAreaProps } from "../inputs/textArea"
 
 interface ILongQuestionsSectionProps extends Partial<IBaseTextAreaProps> {
@@ -13,17 +14,21 @@ const LongQuestionsSection: React.FunctionComponent<
   return (
     <div>
       <h1>{title}</h1>
-
-      {isDisplay ? (
-        <Paper>123</Paper>
-      ) : (
-        <BaseTextArea
-          isTouched={isTouched}
-          errorMessages={errorMessages}
-          className={className}
-          {...props}
-        />
-      )}
+      <div className="mt-4">
+        {isDisplay ? (
+          <LongTextDisplayContainer
+            content=" 123 
+            123 "
+          />
+        ) : (
+          <BaseTextArea
+            isTouched={isTouched}
+            errorMessages={errorMessages}
+            className={className}
+            {...props}
+          />
+        )}
+      </div>
     </div>
   )
 }
