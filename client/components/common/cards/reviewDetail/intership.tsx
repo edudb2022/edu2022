@@ -1,3 +1,4 @@
+import Link from "next/link"
 import React from "react"
 import BaseReviewDetailCard, { IBaseReviewDetailCardProps } from "."
 import { ID } from "../../../../types/common"
@@ -13,14 +14,18 @@ interface IntershipReviewDetailCardProps extends IBaseReviewDetailCardProps {
 
 const IntershipReviewDetailCard: React.FunctionComponent<
   IntershipReviewDetailCardProps
-> = ({ industry, offerDate, salary, ...props }) => {
+> = ({ industry, offerDate, salary, id, ...props }) => {
   return (
     <BaseReviewDetailCard {...props}>
-      <div className="flex flex-row justify-around">
-        <ReviewTextItem detail={industry} title="行業" />
-        <ReviewTextItem detail={offerDate} title="offer日期" />
-        <ReviewNumberItem detail={salary} title="月薪" />
-      </div>
+      <Link href={`/reviewDetail/tertiary/internship/${id}`}>
+        <a>
+          <div className="flex flex-row justify-around">
+            <ReviewTextItem detail={industry} title="行業" />
+            <ReviewTextItem detail={offerDate} title="offer日期" />
+            <ReviewNumberItem detail={salary} title="月薪" />
+          </div>
+        </a>
+      </Link>
     </BaseReviewDetailCard>
   )
 }
