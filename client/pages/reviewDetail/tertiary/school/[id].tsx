@@ -1,5 +1,6 @@
 import { NextPage } from "next"
 import React from "react"
+import LongQuestionsSection from "../../../../components/common/sections/longQuestions"
 import RatingTag from "../../../../components/common/tags/rating"
 import DetailReviewHeaderContainer from "../../../../components/containers/detailReviewHeader"
 import DetailReviewInfoContainer from "../../../../components/containers/detailReviewInfo"
@@ -32,6 +33,8 @@ const SchoolReviewDetailPage: NextPage = () => {
           contact="tg : 123"
         />
       </DetailReviewHeaderContainer>
+
+      <LongQuestionsSection title="123" isDisplay={true} />
     </PageLayout>
   )
 }
