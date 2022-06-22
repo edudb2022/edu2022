@@ -1,6 +1,7 @@
 import { NextPage } from "next"
 import React from "react"
-import ReviewNumberItem from "../../../../components/common/cards/reviewDetail/items/number"
+import ReviewNumberItem from "../../../../components/common/display/items/number"
+
 import RatingTag from "../../../../components/common/tags/rating"
 import TextTag from "../../../../components/common/tags/text"
 import DetailReviewHeaderContainer from "../../../../components/containers/detailReviewHeader"

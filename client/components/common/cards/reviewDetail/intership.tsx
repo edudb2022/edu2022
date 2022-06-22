@@ -2,8 +2,8 @@ import Link from "next/link"
 import React from "react"
 import BaseReviewDetailCard, { IBaseReviewDetailCardProps } from "."
 import { ID } from "../../../../types/common"
-import ReviewNumberItem from "./items/number"
-import ReviewTextItem from "./items/text"
+import ReviewNumberItem from "../../display/items/number"
+import ReviewTextItem from "../../display/items/text"
 
 interface IntershipReviewDetailCardProps extends IBaseReviewDetailCardProps {
   industry: string

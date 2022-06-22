@@ -1,9 +1,17 @@
 import { NextPage } from "next"
 import React from "react"
+import ReviewNumberItem from "../../../../components/common/display/items/number"
+import TextTag from "../../../../components/common/tags/text"
 import DetailReviewHeaderContainer from "../../../../components/containers/detailReviewHeader"
 import DetailReviewInfoContainer from "../../../../components/containers/detailReviewInfo"
 
 import PageLayout from "../../../../components/layouts/page"
+import {
+  ADMISSION_OFFER_TYPE,
+  ADMISSION_TYPE,
+  ADMISSION_YEAR_TYPE,
+  SCORE_TYPE
+} from "../../../../types/common"
 
 const AdmissionReviewDetailPage: NextPage = () => {
   return (
@@ -23,9 +31,18 @@ const AdmissionReviewDetailPage: NextPage = () => {
           <RatingTag rating={3} title="12313" header="Canteen" />
         </div> */}
 
+        <TextTag title={ADMISSION_TYPE.NON_JUPAS} type="admission" />
+        <TextTag title={ADMISSION_OFFER_TYPE.CONDITIONAL} type="offer_type" />
+        <TextTag title={ADMISSION_YEAR_TYPE.FIVE_PLUS} type="admission_year" />
+
+        <ReviewNumberItem detail={123} title={SCORE_TYPE.BEST_FIVE} />
+        <ReviewNumberItem detail={123} title={SCORE_TYPE.BEST_SIX} />
+        <ReviewNumberItem detail={123} title={SCORE_TYPE.GPA} />
+
         <DetailReviewInfoContainer
-          admissionYear="2022"
-          academicStatus="Year 1"
+          offerDate="02/23"
+          currentProgramme="213"
+          currentSchool="123"
           username={null}
           postDate="01/02/23"
           contact="tg : 123"

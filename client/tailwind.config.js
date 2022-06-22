@@ -6,6 +6,12 @@ const width = {
 }
 const school = { cuhk: "#69246B" }
 
+const intern = {
+  summer: "rgb(255, 99, 132)",
+  winter: "rgb(54, 162, 235)",
+  placement: "rgb(255, 205, 86)"
+}
+
 const theme = {
   one: {
     50: "#FFC9AF",
@@ -103,7 +109,7 @@ module.exports = {
   theme: {
     extend: {
       width: width,
-      colors: { school, theme, rating },
+      colors: { school, theme, rating, intern },
       fontSize: { xxs: "0.5rem" }
     }
   },

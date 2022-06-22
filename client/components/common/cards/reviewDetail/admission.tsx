@@ -12,8 +12,9 @@ import AdmissionScoreCircularBarGroup, {
   IAdmissionScoreCircularBarGroupProps
 } from "../../groups/cirmularBar/admissionScore"
 import BaseTag from "../../tags"
-import ReviewNumberItem from "./items/number"
-import ReviewBarTextItem from "./items/number"
+import TextTag from "../../tags/text"
+import ReviewNumberItem from "../../display/items/number"
+import ReviewBarTextItem from "../../display/items/number"
 
 interface IAdmissionOfferReviewDetailCardProps
   extends IBaseReviewDetailCardProps {
@@ -37,7 +38,7 @@ const AdmissionOfferReviewDetailCard: React.FunctionComponent<
 }) => {
   return (
     <BaseReviewDetailCard {...props}>
-      <Link href={`/reviewDetail/tertiary/gradJob/${id}`}>
+      <Link href={`/reviewDetail/tertiary/admission/${id}`}>
         <a>
           <div className="flex w-full h-full justify-evenly">
             <ReviewNumberItem detail={23} title={SCORE_TYPE.BEST_FIVE} />
@@ -47,17 +48,14 @@ const AdmissionOfferReviewDetailCard: React.FunctionComponent<
             <ReviewNumberItem detail={3.3} title={SCORE_TYPE.GPA} />
 
             <div className="flex flex-col gap-y-1">
-              <BaseTag
-                title={ADMISSION_TYPE.NON_JUPAS}
-                className="bg-purple-200 text-purple-900"
-              />
-              <BaseTag
+              <TextTag title={ADMISSION_TYPE.NON_JUPAS} type="admission" />
+              <TextTag
                 title={ADMISSION_OFFER_TYPE.CONDITIONAL}
-                className="bg-blue-200 text-blue-900"
+                type="offer_type"
               />
-              <BaseTag
+              <TextTag
                 title={ADMISSION_YEAR_TYPE.FIVE_PLUS}
-                className="bg-teal-200 text-teal-900"
+                type="admission_year"
               />
             </div>
           </div>

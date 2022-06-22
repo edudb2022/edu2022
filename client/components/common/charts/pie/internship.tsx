@@ -10,7 +10,7 @@ const InternshipPeiChart: React.FunctionComponent<IInternshipPeiChartProps> = ({
     <BasePieChart
       statistic={statistic!}
       labels={["Summer", "Winter", "Placement"]}
-      colors={["rgb(255, 99, 132)", "rgb(54, 162, 235)", "rgb(255, 205, 86)"]}
+      colors={["#fb7185", "#38bdf8", "#facc15"]}
     />
   )
 }
