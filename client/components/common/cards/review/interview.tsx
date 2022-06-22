@@ -39,16 +39,8 @@ const InterviewReviewCard: React.FunctionComponent<
       type={"面試"}
     >
       <div className="flex flex-row  justify-evenly">
-        <RatingTag
-          rating={1.4}
-          title={difficultyRating[4].label}
-          className=""
-        />
-        <RatingTag
-          rating={2.4}
-          title={difficultyRating[0].label}
-          className=""
-        />
+        <RatingTag rating={1.4} title={difficultyRating[4].label} />
+        <RatingTag rating={2.4} title={difficultyRating[0].label} />
       </div>
 
       <AdmissionScoreCircularBarGroup

@@ -23,7 +23,7 @@ const BaseTag: React.FunctionComponent<IBaseTagProps> = ({
   ratingClassName
 }) => {
   return (
-    <div className={`flex flex-col w-fit items-center rounded-2xl max-w-fit`}>
+    <div className={`flex flex-col w-fit items-center rounded-2xl `}>
       {header && <h6>{header}</h6>}
       <div className={` flex flex-row items-center rounded-2xl ${className}`}>
         {rating && (
@@ -32,7 +32,14 @@ const BaseTag: React.FunctionComponent<IBaseTagProps> = ({
           </span>
         )}
 
-        <div className="min-w-fit px-1 pr-3 "> {title}</div>
+        <div
+          className={`max-w-full items-center  ${
+            !rating ? "px-4 py-[2px]" : "px-4"
+          }`}
+        >
+          {" "}
+          {title}
+        </div>
       </div>
     </div>
   )
