@@ -2,22 +2,15 @@ import React from "react"
 
 export interface IBaseTagProps {
   title: string
-  secondary?: boolean
-  // color: string
   rating?: number
   className?: string
   ratingClassName?: string
   header?: string
 }
 
-//     <div className={`${secondary ?  `border-2 boder-${color} text-${color}` : `boder-${color} bg-${color}` } ${className}`}>{title}</div>
-// }
-
 const BaseTag: React.FunctionComponent<IBaseTagProps> = ({
   title,
-  secondary,
   rating,
-  // color,
   header,
   className,
   ratingClassName
@@ -37,7 +30,6 @@ const BaseTag: React.FunctionComponent<IBaseTagProps> = ({
             !rating ? "px-4 py-[2px]" : "px-4"
           }`}
         >
-          {" "}
           {title}
         </div>
       </div>

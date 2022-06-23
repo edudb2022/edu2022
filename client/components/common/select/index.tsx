@@ -1,5 +1,5 @@
 import { InputLabel, MenuItem, Select, SelectProps } from "@mui/material"
-import React, { FormEvent } from "react"
+import React from "react"
 
 interface ISelectMenuItems {
   value: string

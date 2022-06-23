@@ -2,7 +2,6 @@ import React from "react"
 import BaseReviewCard, { IBaseReviewCardProps } from "."
 import CountUp from "react-countup"
 import ReviewRankingCircularBar from "../../circularBar/reviewRanking"
-import { reviewColor } from "../../../../constants/reviewRanking"
 
 interface IGradJobOfferReviewCardProps extends Partial<IBaseReviewCardProps> {
   salary: number

@@ -1,4 +1,3 @@
-import { Paper } from "@mui/material"
 import React from "react"
 import LongTextDisplayContainer from "../../containers/longTextDisplay"
 import BaseTextArea, { IBaseTextAreaProps } from "../inputs/textArea"

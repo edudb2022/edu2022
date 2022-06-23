@@ -8,13 +8,8 @@ import {
   ID,
   SCORE_TYPE
 } from "../../../../types/common"
-import AdmissionScoreCircularBarGroup, {
-  IAdmissionScoreCircularBarGroupProps
-} from "../../groups/cirmularBar/admissionScore"
-import BaseTag from "../../tags"
 import TextTag from "../../tags/text"
 import ReviewNumberItem from "../../display/items/number"
-import ReviewBarTextItem from "../../display/items/number"
 
 interface IAdmissionOfferReviewDetailCardProps
   extends IBaseReviewDetailCardProps {

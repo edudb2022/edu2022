@@ -1,14 +1,13 @@
-import React from "react";
-import { boolean } from "yup";
+import React from "react"
 
 export interface IErrorMessageProps {
-  isTouched: boolean | undefined;
-  errorMessages: string | undefined;
+  isTouched: boolean | undefined
+  errorMessages: string | undefined
 }
 
 const ErrorMessage: React.FunctionComponent<IErrorMessageProps> = ({
   isTouched,
-  errorMessages,
+  errorMessages
 }) => {
   return (
     <>
@@ -16,7 +15,7 @@ const ErrorMessage: React.FunctionComponent<IErrorMessageProps> = ({
         <p className="text-red-500">{errorMessages}</p>
       ) : null}
     </>
-  );
-};
+  )
+}
 
-export default ErrorMessage;
+export default ErrorMessage

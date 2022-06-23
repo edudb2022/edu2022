@@ -5,7 +5,6 @@ import PageLayout from "../../../../components/layouts/page"
 import CountUp from "react-countup"
 import InternshipPeiChart from "../../../../components/common/charts/pie/internship"
 import CardDisplayLayout from "../../../../components/layouts/cardDisplay"
-import GradJobReviewDetailCard from "../../../../components/common/cards/reviewDetail/gradJob"
 import IntershipReviewDetailCard from "../../../../components/common/cards/reviewDetail/intership"
 
 const IntershipReviewPage: NextPage = () => {

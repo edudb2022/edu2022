@@ -1,7 +1,7 @@
-import React from "react";
+import React from "react"
 
 const ProgrammeReviewFormPage: React.FunctionComponent = () => {
-  return <div>programmeReview</div>;
-};
+  return <div>programmeReview</div>
+}
 
-export default ProgrammeReviewFormPage;
+export default ProgrammeReviewFormPage

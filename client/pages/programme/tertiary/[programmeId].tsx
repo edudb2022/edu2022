@@ -5,7 +5,6 @@ import GradJobOfferReviewCard from "../../../components/common/cards/review/grad
 import InternshipReviewCard from "../../../components/common/cards/review/internship"
 import InterviewReviewCard from "../../../components/common/cards/review/interview"
 import ProgrammeReviewCard from "../../../components/common/cards/review/programme"
-import ProgrammeReviewDetailCard from "../../../components/common/cards/reviewDetail/programme"
 import BaseRadar from "../../../components/common/charts/radar"
 import ReviewRankingCircularBar from "../../../components/common/circularBar/reviewRanking"
 import ReviewHeaderContainer from "../../../components/containers/reviewHeader"

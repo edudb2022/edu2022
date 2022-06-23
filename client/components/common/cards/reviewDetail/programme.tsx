@@ -18,14 +18,7 @@ const ProgrammeReviewDetailCard: React.FunctionComponent<
       <Link href={`/reviewDetail/tertiary/programme/${id}`}>
         <a>
           <div className="flex flex-col-reverse md:flex-row h-full items-center justify-center gap-x-4">
-            {/* <Rating name="read-only" value={value} readOnly className="text-5xl" /> */}
-            <RatingTag
-              rating={3}
-              title={`${label}`}
-              // className="text-2xl font-black"
-              // ratingClassName="text-semi border-4"
-            />
-            {/* <h1>{label}</h1> */}
+            <RatingTag rating={3} title={`${label}`} />
           </div>
         </a>
       </Link>

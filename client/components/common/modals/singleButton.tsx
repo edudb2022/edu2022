@@ -1,10 +1,10 @@
-import React, { PropsWithChildren } from "react";
-import BaseModal, { IBaseModalProps } from ".";
+import React, { PropsWithChildren } from "react"
+import BaseModal, { IBaseModalProps } from "."
 
 interface ISingleButtonModalProps extends IBaseModalProps {
   //   isOpen: boolean;
-  buttonTitle: string;
-  buttonClassName?: string;
+  buttonTitle: string
+  buttonClassName?: string
 }
 
 const SingleButtonModal: React.FunctionComponent<
@@ -28,7 +28,7 @@ const SingleButtonModal: React.FunctionComponent<
         </button>
       </div>
     </BaseModal>
-  );
-};
+  )
+}
 
-export default SingleButtonModal;
+export default SingleButtonModal

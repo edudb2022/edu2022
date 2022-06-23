@@ -1,14 +1,13 @@
 import {
   ExtendButtonBase,
   ToggleButton,
-  ToggleButtonTypeMap,
-} from "@mui/material";
-import React, { PropsWithChildren } from "react";
+  ToggleButtonTypeMap
+} from "@mui/material"
+import React, { PropsWithChildren } from "react"
 
 interface IBaseToggleButtonProps {
-  value: string | number;
+  value: string | number
 }
-//   extends ExtendButtonBase<ToggleButtonTypeMap> {}
 
 const BaseToggleButton: React.FunctionComponent<
   PropsWithChildren<IBaseToggleButtonProps>
@@ -17,7 +16,7 @@ const BaseToggleButton: React.FunctionComponent<
     <ToggleButton value={value} {...props}>
       {children}
     </ToggleButton>
-  );
-};
+  )
+}
 
-export default BaseToggleButton;
+export default BaseToggleButton

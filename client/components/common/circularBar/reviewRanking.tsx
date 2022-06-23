@@ -1,11 +1,10 @@
-import React, { useEffect, useState } from "react"
+import React from "react"
 import BaseCircularBar from "."
 import { rankColor } from "../../../constants/colors"
 
 interface IReviewRankingCircularBar {
   currentValue: number
   title: string
-  // color: string
 }
 
 const ReviewRankingCircularBar: React.FunctionComponent<

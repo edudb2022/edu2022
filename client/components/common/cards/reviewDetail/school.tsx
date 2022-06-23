@@ -1,10 +1,8 @@
-import { Rating } from "@mui/material"
 import Link from "next/link"
 import React from "react"
 import BaseReviewDetailCard, { IBaseReviewDetailCardProps } from "."
 import { ID } from "../../../../types/common"
 import RatingTag from "../../tags/rating"
-import RantingTag from "../../tags/rating"
 
 interface ISchoolReviewDetailCardProps extends IBaseReviewDetailCardProps {
   value: number

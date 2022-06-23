@@ -1,6 +1,6 @@
-import React from "react";
-import BaseButton, { IBaseButtonProps } from ".";
-import { FaDiscord } from "react-icons/fa";
+import React from "react"
+import BaseButton, { IBaseButtonProps } from "."
+import { FaDiscord } from "react-icons/fa"
 
 interface IDiscordButtonProps extends IBaseButtonProps {}
 
@@ -16,9 +16,7 @@ const DiscordButton: React.FunctionComponent<IDiscordButtonProps> = ({
       <FaDiscord className="" />
       <span className="">Discord</span>
     </BaseButton>
-  );
-};
+  )
+}
 
-//flex flex-row justify-between items-center
-
-export default DiscordButton;
+export default DiscordButton

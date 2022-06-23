@@ -1,4 +1,3 @@
-import { ClassNames } from "@emotion/react"
 import React from "react"
 import { ADMISSION_TYPE, SCORE_TYPE } from "../../../../types/common"
 import AdmissionScoreCircularBarProps from "../../circularBar/admissionScore"
@@ -18,7 +17,7 @@ const AdmissionScoreCircularBarGroup: React.FunctionComponent<
   jupasBestSixValue,
   nonJupasBestGpaValue,
   nonJupasBestFiveValue,
-  className,
+  className
 }) => {
   return (
     <div

@@ -1,7 +1,7 @@
-import Link from 'next/link'
-import React from 'react'
-import BaseReviewCard, { IBaseReviewCardProps } from '../../cards/review'
-import SchoolsReviewCards from '../../cards/review/schools'
+import Link from "next/link"
+import React from "react"
+import { IBaseReviewCardProps } from "../../cards/review"
+import SchoolsReviewCards from "../../cards/review/schools"
 
 export interface SchoolsPanelItemsProps {
   index: string
@@ -13,7 +13,7 @@ export interface SchoolsPanelItemsProps {
 const SchoolsPanelItems: React.FunctionComponent<SchoolsPanelItemsProps> = ({
   index,
   currentIndex,
-  schools,
+  schools
 }) => {
   return (
     <>

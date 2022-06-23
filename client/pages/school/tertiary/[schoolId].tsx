@@ -13,7 +13,6 @@ import BaseSelect from "../../../components/common/select"
 import ReviewHeaderContainer from "../../../components/containers/reviewHeader"
 import CardDisplayLayout from "../../../components/layouts/cardDisplay"
 import PageLayout from "../../../components/layouts/page"
-import { SCHOOL_TYPE } from "../../../types/common"
 
 const TertiarySchoolPage: NextPage = () => {
   const router = useRouter()

@@ -1,4 +1,3 @@
-import Link from "next/link"
 import React, { PropsWithChildren } from "react"
 import BaseCard from ".."
 import StudentIcon from "../../icons/student"

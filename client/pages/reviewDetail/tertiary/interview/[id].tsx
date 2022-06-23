@@ -8,11 +8,7 @@ import DetailReviewHeaderContainer from "../../../../components/containers/detai
 import DetailReviewInfoContainer from "../../../../components/containers/detailReviewInfo"
 
 import PageLayout from "../../../../components/layouts/page"
-import {
-  ADMISSION_OFFER_TYPE,
-  ADMISSION_TYPE,
-  SCORE_TYPE
-} from "../../../../types/common"
+import { SCORE_TYPE } from "../../../../types/common"
 
 const InterviewReviewDetailPage: NextPage = () => {
   return (

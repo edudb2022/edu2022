@@ -1,12 +1,11 @@
-import { ExtendModalUnstyled, Modal, ModalTypeMap } from "@mui/material";
+import { ExtendModalUnstyled, Modal, ModalTypeMap } from "@mui/material"
 
-import React, { PropsWithChildren } from "react";
+import React, { PropsWithChildren } from "react"
 
-//extends ExtendModalUnstyled<ModalTypeMap>
 export interface IBaseModalProps {
-  className?: string;
-  isOpen: boolean;
-  title: string;
+  className?: string
+  isOpen: boolean
+  title: string
 }
 
 const BaseModal: React.FunctionComponent<
@@ -24,7 +23,7 @@ const BaseModal: React.FunctionComponent<
         {children}
       </div>
     </Modal>
-  );
-};
+  )
+}
 
-export default BaseModal;
+export default BaseModal

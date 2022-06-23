@@ -1,12 +1,10 @@
 import { NextPage } from "next"
 import React from "react"
 import AdmissionOfferReviewDetailCard from "../../../../components/common/cards/reviewDetail/admission"
-import AdmissionScoreCircularBarProps from "../../../../components/common/circularBar/admissionScore"
 import AdmissionScoreCircularBarGroup from "../../../../components/common/groups/cirmularBar/admissionScore"
 import ReviewHeaderContainer from "../../../../components/containers/reviewHeader"
 import CardDisplayLayout from "../../../../components/layouts/cardDisplay"
 import PageLayout from "../../../../components/layouts/page"
-import { ADMISSION_TYPE, SCORE_TYPE } from "../../../../types/common"
 
 const AdmissionOfferReviewPage: NextPage = () => {
   return (

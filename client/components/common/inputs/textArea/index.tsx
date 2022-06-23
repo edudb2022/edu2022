@@ -1,6 +1,6 @@
-import { TextareaAutosize, TextareaAutosizeProps } from "@mui/material";
-import React from "react";
-import ErrorMessage, { IErrorMessageProps } from "../../messages/error";
+import { TextareaAutosize, TextareaAutosizeProps } from "@mui/material"
+import React from "react"
+import ErrorMessage, { IErrorMessageProps } from "../../messages/error"
 
 export interface IBaseTextAreaProps
   extends TextareaAutosizeProps,
@@ -19,13 +19,11 @@ const BaseTextArea: React.FunctionComponent<IBaseTextAreaProps> = ({
         {...props}
       />
 
-      {/* <textarea className={` p-2  border-2 ${className}`} {...props} /> */}
-
       <div className="flex justify-end">
         <ErrorMessage isTouched={isTouched} errorMessages={errorMessages} />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default BaseTextArea;
+export default BaseTextArea

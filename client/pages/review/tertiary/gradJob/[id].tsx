@@ -6,7 +6,6 @@ import CountUp from "react-countup"
 import CardDisplayLayout from "../../../../components/layouts/cardDisplay"
 import GradJobReviewDetailCard from "../../../../components/common/cards/reviewDetail/gradJob"
 import ReviewRankingCircularBar from "../../../../components/common/circularBar/reviewRanking"
-import { reviewColor } from "../../../../constants/reviewRanking"
 
 const GradJobReviewPage: NextPage = () => {
   return (

@@ -1,11 +1,11 @@
-import React, { PropsWithChildren } from "react";
-import BaseModal, { IBaseModalProps } from ".";
+import React, { PropsWithChildren } from "react"
+import BaseModal, { IBaseModalProps } from "."
 
 interface IDoubleButtonModalProps extends IBaseModalProps {
-  leftButtonTitle: string;
-  leftButtonClassName?: string;
-  rightButtonTile: string;
-  rightButtonClassName?: string;
+  leftButtonTitle: string
+  leftButtonClassName?: string
+  rightButtonTile: string
+  rightButtonClassName?: string
 }
 
 const DoubleButtonModal: React.FunctionComponent<
@@ -36,7 +36,7 @@ const DoubleButtonModal: React.FunctionComponent<
         </button>
       </div>
     </BaseModal>
-  );
-};
+  )
+}
 
-export default DoubleButtonModal;
+export default DoubleButtonModal

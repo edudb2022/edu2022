@@ -1,12 +1,8 @@
-import React from 'react'
-
-import BaseReviewCard, { IBaseReviewCardProps } from '.'
-
-import BaseRadar from '../../charts/radar'
+import React from "react"
+import BaseReviewCard, { IBaseReviewCardProps } from "."
+import BaseRadar from "../../charts/radar"
 
 interface ISchoolsCardsProps extends IBaseReviewCardProps {}
-
-//absolute top-0 h-full w-full  px-8 py-5 md:p-4
 
 const SchoolsReviewCards: React.FunctionComponent<ISchoolsCardsProps> = ({
   schoolChineseName,
@@ -14,7 +10,7 @@ const SchoolsReviewCards: React.FunctionComponent<ISchoolsCardsProps> = ({
   schoolShortName,
   totalReports,
   type,
-  id,
+  id
 }) => {
   return (
     <BaseReviewCard
@@ -25,10 +21,10 @@ const SchoolsReviewCards: React.FunctionComponent<ISchoolsCardsProps> = ({
       totalReports={totalReports}
       type={type}
     >
-      <div className='absolute top-0 h-full w-full  px-8 py-5 md:p-4 md:mt-5 '>
+      <div className="absolute top-0 h-full w-full  px-8 py-5 md:p-4 md:mt-5 ">
         <BaseRadar
           scores={[3, 3.6, 3.7, 3.6, 4]}
-          labels={['January', 'February', 'March', 'April', 'May']}
+          labels={["January", "February", "March", "April", "May"]}
         />
       </div>
     </BaseReviewCard>

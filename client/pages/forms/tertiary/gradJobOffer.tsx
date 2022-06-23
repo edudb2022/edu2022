@@ -1,11 +1,10 @@
-import { useFormik } from "formik";
-import React, { useEffect } from "react";
-import BaseSalaryNumberInput from "../../../components/common/inputs/number/baseSalary";
-import BonusNumberInput from "../../../components/common/inputs/number/Bonus";
-import StockOptionNumberInput from "../../../components/common/inputs/number/stockOption";
-import TitleTextInput from "../../../components/common/inputs/text/title";
-import BaseTestArea from "../../../components/common/inputs/textArea";
-import LongQuestionsSection from "../../../components/common/sections/longQuestions";
+import { useFormik } from "formik"
+import React, { useEffect } from "react"
+import BaseSalaryNumberInput from "../../../components/common/inputs/number/baseSalary"
+import BonusNumberInput from "../../../components/common/inputs/number/Bonus"
+import StockOptionNumberInput from "../../../components/common/inputs/number/stockOption"
+import TitleTextInput from "../../../components/common/inputs/text/title"
+import LongQuestionsSection from "../../../components/common/sections/longQuestions"
 
 const GradJobOfferFormPage: React.FunctionComponent = () => {
   const initialValues = {
@@ -21,36 +20,30 @@ const GradJobOfferFormPage: React.FunctionComponent = () => {
     offerDate: "",
     isAnonymous: false,
     hope: null,
-    contact: "",
-  };
-  var errors = { title: "123" };
+    contact: ""
+  }
+  var errors = { title: "123" }
 
   const handleSubmit = () => {
-    console.log();
-  };
+    console.log()
+  }
 
   const formik = useFormik({
     initialValues: initialValues,
     onSubmit: handleSubmit,
     validate: (values) => {
       if (!values.title) {
-        errors.title = "on99";
+        errors.title = "on99"
       }
 
-      return errors;
-    },
-  });
+      return errors
+    }
+  })
 
   useEffect(() => {
     formik.values.totalSalary =
-      formik.values.baseSalary +
-      formik.values.stockOption +
-      formik.values.bonus;
-  }, [
-    formik.values.baseSalary,
-    formik.values.stockOption,
-    formik.values.bonus,
-  ]);
+      formik.values.baseSalary + formik.values.stockOption + formik.values.bonus
+  }, [formik.values.baseSalary, formik.values.stockOption, formik.values.bonus])
 
   return (
     <div>
@@ -100,7 +93,7 @@ const GradJobOfferFormPage: React.FunctionComponent = () => {
         />
       </form>
     </div>
-  );
-};
+  )
+}
 
-export default GradJobOfferFormPage;
+export default GradJobOfferFormPage
