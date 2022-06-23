@@ -13,10 +13,10 @@ import SuperTokensReact from "supertokens-auth-react"
 import React from "react"
 import { frontendConfig } from "../service/supertoken/config/frontendConfig"
 
-// if (typeof window !== "undefined") {
-//   // we only want to call this init function on the frontend, so we check typeof window !== 'undefined'
-//   SuperTokensReact.init(frontendConfig())
-// }
+if (typeof window !== "undefined") {
+  // we only want to call this init function on the frontend, so we check typeof window !== 'undefined'
+  SuperTokensReact.init(frontendConfig())
+}
 
 interface IMyAppProps extends AppProps {}
 
