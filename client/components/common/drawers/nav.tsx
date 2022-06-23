@@ -1,7 +1,7 @@
 import React from "react"
 import BaseDrawer, { IBaseDrawerProps } from "."
-import BaseNavDraweritem from "./items/nav"
-import NavDrawerProfileItem from "./items/nav/Profile"
+import NavDrawerProfileItem from "./items/nav/profile"
+
 import NavDrawerSignInitem from "./items/nav/signIn"
 import NavDrawerSignOutitem from "./items/nav/singnOut"
 

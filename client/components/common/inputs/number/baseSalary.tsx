@@ -1,6 +1,6 @@
-import { InputAdornment } from "@mui/material";
-import React from "react";
-import BaseNumberInput, { IBaseNumberInputProps } from ".";
+import { InputAdornment } from "@mui/material"
+import React from "react"
+import BaseNumberInput, { IBaseNumberInputProps } from "."
 
 interface IBaseSalaryNumberInputProps extends IBaseNumberInputProps {}
 
@@ -11,13 +11,13 @@ const BaseSalaryNumberInput: React.FunctionComponent<
     <BaseNumberInput
       label="基本薪金"
       name="baseSalary"
-      inputProps={{ min: "0", step: "1" }}
+      inputProps={{ min: 0, step: 1 }}
       InputProps={{
-        startAdornment: <InputAdornment position="start">HKD</InputAdornment>,
+        startAdornment: <InputAdornment position="start">HKD</InputAdornment>
       }}
       {...props}
     />
-  );
-};
+  )
+}
 
-export default BaseSalaryNumberInput;
+export default BaseSalaryNumberInput
