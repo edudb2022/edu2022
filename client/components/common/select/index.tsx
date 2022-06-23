@@ -6,7 +6,7 @@ interface ISelectMenuItems {
   title: string
 }
 
-interface IBaseSelectProps extends SelectProps {
+export interface IBaseSelectProps extends SelectProps {
   inputLabel?: string
   inputLabelClassName?: string
   selectLabel?: string

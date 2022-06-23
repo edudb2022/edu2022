@@ -1,7 +1,9 @@
 import { NextPage } from "next"
 import React from "react"
+import SearchButton from "../../../../components/common/buttons/search"
 import AdmissionOfferReviewDetailCard from "../../../../components/common/cards/reviewDetail/admission"
 import AdmissionScoreCircularBarGroup from "../../../../components/common/groups/cirmularBar/admissionScore"
+import ReviewSelect from "../../../../components/common/select/review"
 import ReviewHeaderContainer from "../../../../components/containers/reviewHeader"
 import CardDisplayLayout from "../../../../components/layouts/cardDisplay"
 import PageLayout from "../../../../components/layouts/page"
@@ -25,6 +27,11 @@ const AdmissionOfferReviewPage: NextPage = () => {
           />
         </div>
       </ReviewHeaderContainer>
+
+      <div className="flex flex-row">
+        <ReviewSelect className="ring-none outline-none" />
+        <SearchButton />
+      </div>
       <CardDisplayLayout>
         <AdmissionOfferReviewDetailCard
           jupasBestFiveValue={23}
