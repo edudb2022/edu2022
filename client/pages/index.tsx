@@ -10,7 +10,7 @@ import { SCHOOL_TYPE } from "../types/common"
 
 const schoolsType = [
   { value: SCHOOL_TYPE.UNIVERSITY, title: "大學" },
-  { value: SCHOOL_TYPE.COLLEGE, title: "大專" },
+  { value: SCHOOL_TYPE.COLLEGE, title: "大專" }
 ]
 
 const Home: NextPage = (props) => {
@@ -31,6 +31,11 @@ const Home: NextPage = (props) => {
     setSearch(e.target.value)
   }
 
+  // console.log(
+  //   process.env.NEXT_PUBLIC_SUPERTOKEN_URL,
+  //   process.env.NEXT_PUBLIC_SUPERTOKEN_API_KEY,
+  //   123
+  // )
   return (
     <PageLayout>
       <div className="flex justify-center gap-x-4">

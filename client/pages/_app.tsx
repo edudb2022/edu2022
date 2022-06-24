@@ -9,14 +9,24 @@ import { ReactQueryDevtools } from "react-query/devtools"
 import CommonLayout from "../components/layouts"
 import SuperTokensReact from "supertokens-auth-react"
 // import { frontendConfig } from "../service/supertoken/config/frontendConfig"
-
+import EmailPassword from "supertokens-auth-react/recipe/emailpassword"
+import ProtectedPage from "./protectedPage"
 import React from "react"
 import { frontendConfig } from "../service/supertoken/config/frontendConfig"
+import dynamic from "next/dynamic"
+// import { frontendConfig } from "../service/supertoken/config/frontendConfig"
 
 if (typeof window !== "undefined") {
   // we only want to call this init function on the frontend, so we check typeof window !== 'undefined'
   SuperTokensReact.init(frontendConfig())
 }
+
+const EmailPasswordAuthNoSSR = dynamic(
+  new Promise<typeof EmailPassword.EmailPasswordAuth>((res) =>
+    res(EmailPassword.EmailPasswordAuth)
+  ),
+  { ssr: false }
+)
 
 interface IMyAppProps extends AppProps {}
 
@@ -35,6 +45,7 @@ const MyApp: React.FunctionComponent<IMyAppProps> = ({
       })
   )
   return (
+    // <EmailPasswordAuthNoSSR>
     <QueryClientProvider client={queryClient}>
       <Hydrate state={pageProps.dehydratedState}>
         <Provider store={store}>
@@ -46,6 +57,7 @@ const MyApp: React.FunctionComponent<IMyAppProps> = ({
         <ReactQueryDevtools initialIsOpen={false} />
       </Hydrate>
     </QueryClientProvider>
+    // </EmailPasswordAuthNoSSR>
   )
 }
 
