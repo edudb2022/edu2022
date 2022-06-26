@@ -7,6 +7,7 @@ import AuthButtonGroup from "../common/groups/button/auth"
 import { FiAlignJustify } from "react-icons/fi"
 import { useRouter } from "next/router"
 import NavDrawer from "../common/drawers/nav"
+import { signOut } from "supertokens-auth-react/recipe/emailpassword"
 
 const Navbar: React.FunctionComponent = () => {
   const router = useRouter()
@@ -14,6 +15,10 @@ const Navbar: React.FunctionComponent = () => {
 
   const handleClick = (e: any) => {
     setIsOpen(!isOpen)
+  }
+  async function onLogout() {
+    await signOut()
+    console.log("log out")
   }
 
   return (
@@ -27,6 +32,7 @@ const Navbar: React.FunctionComponent = () => {
           <a>icon</a>
         </Link>
         <div className="flex-row gap-x-1 h-full hidden md:flex ">
+          <button onClick={onLogout}>sign out</button>
           <DiscordButton />
           <AuthButtonGroup />
         </div>

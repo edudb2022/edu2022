@@ -13,6 +13,10 @@ const schoolsType = [
   { value: SCHOOL_TYPE.COLLEGE, title: "大專" }
 ]
 
+// import dynamic from "next/dynamic"
+// import EmailPassword from "supertokens-auth-react/recipe/emailpassword"
+// import { EmailPasswordAuth } from "supertokens-auth-react/recipe/emailpassword"
+
 const Home: NextPage = (props) => {
   // const { data, isLoading, isFetching } = useQuery("posts", fetchTodoList, {
   //   // refetchOnWindowFocus: false,
@@ -36,7 +40,16 @@ const Home: NextPage = (props) => {
   //   process.env.NEXT_PUBLIC_SUPERTOKEN_API_KEY,
   //   123
   // )
+  // const EmailPasswordAuthNoSSR = dynamic(
+  //   new Promise<typeof EmailPassword.EmailPasswordAuth>((res) =>
+  //     res(EmailPassword.EmailPasswordAuth)
+  //   ),
+  //   { ssr: false }
+  // )
+
   return (
+    // <EmailPasswordAuthNoSSR>
+    //   <EmailPasswordAuth>
     <PageLayout>
       <div className="flex justify-center gap-x-4">
         <TextField
