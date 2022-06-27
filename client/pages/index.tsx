@@ -1,13 +1,13 @@
 import { TextField } from "@mui/material"
 import type { NextPage } from "next"
-import { ChangeEventHandler, useState } from "react"
+import { ChangeEventHandler, useEffect, useState } from "react"
 import BaseTextInput from "../components/common/inputs/text"
 
 import SchoolsPanel from "../components/common/panel/schools"
 import BaseSelect from "../components/common/select"
 import PageLayout from "../components/layouts/page"
 import { SCHOOL_TYPE } from "../types/common"
-
+import Session from "supertokens-auth-react/recipe/session"
 const schoolsType = [
   { value: SCHOOL_TYPE.UNIVERSITY, title: "大學" },
   { value: SCHOOL_TYPE.COLLEGE, title: "大專" }
@@ -23,6 +23,15 @@ const Home: NextPage = (props) => {
   //   staleTime: 0,
   // });
   // console.log(data, isLoading, isFetching);
+
+  useEffect(() => {
+    async function getJWT() {
+      const data = await Session.doesSessionExist()
+      console.log(123, data)
+    }
+
+    getJWT()
+  }, [])
 
   const [type, setType] = useState(SCHOOL_TYPE.UNIVERSITY)
   const [search, setSearch] = useState("")
