@@ -8,6 +8,7 @@ import { FiAlignJustify } from "react-icons/fi"
 import { useRouter } from "next/router"
 import NavDrawer from "../common/drawers/nav"
 import { signOut } from "supertokens-auth-react/recipe/emailpassword"
+import LoginGroup from "../common/groups/login.tsx"
 
 const Navbar: React.FunctionComponent = () => {
   const router = useRouter()
@@ -31,6 +32,7 @@ const Navbar: React.FunctionComponent = () => {
         <Link href={"/"}>
           <a>icon</a>
         </Link>
+        <LoginGroup username="213" />
         <div className="flex-row gap-x-1 h-full hidden md:flex ">
           <button onClick={onLogout}>sign out</button>
           <DiscordButton />

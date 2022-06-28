@@ -4,7 +4,7 @@ import { appInfo } from "./appInfo"
 
 SuperTokens.init({
   supertokens: {
-    connectionURI: "..."
+    connectionURI: `${process.env.NEXT_PUBLIC_SUPERTOKEN_URL}`
   },
   appInfo: appInfo,
   recipeList: [

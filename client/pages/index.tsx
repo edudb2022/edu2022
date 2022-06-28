@@ -25,12 +25,14 @@ const Home: NextPage = (props) => {
   // console.log(data, isLoading, isFetching);
 
   useEffect(() => {
-    async function getJWT() {
-      const data = await Session.doesSessionExist()
-      console.log(123, data)
+    const fetch = async () => {
+      // const data = await Session.doesSessionExist()
+      // const dataOne = await Session.getAccessTokenPayloadSecurely()
+      // const dataTwo = await Session.getUserId()
+      // console.log(123, data, dataOne, dataTwo)
     }
 
-    getJWT()
+    fetch()
   }, [])
 
   const [type, setType] = useState(SCHOOL_TYPE.UNIVERSITY)
