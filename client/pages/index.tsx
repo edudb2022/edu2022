@@ -8,6 +8,7 @@ import BaseSelect from "../components/common/select"
 import PageLayout from "../components/layouts/page"
 import { SCHOOL_TYPE } from "../types/common"
 import Session from "supertokens-auth-react/recipe/session"
+import { useAppSelector } from "../hooks/common/useAppSelector"
 const schoolsType = [
   { value: SCHOOL_TYPE.UNIVERSITY, title: "大學" },
   { value: SCHOOL_TYPE.COLLEGE, title: "大專" }
@@ -24,6 +25,8 @@ const Home: NextPage = (props) => {
   // });
   // console.log(data, isLoading, isFetching);
 
+  const data = useAppSelector((state) => state.user)
+  console.log(data)
   useEffect(() => {
     const fetch = async () => {
       // const data = await Session.doesSessionExist()

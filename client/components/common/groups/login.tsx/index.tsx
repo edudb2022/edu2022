@@ -4,6 +4,10 @@ import { MdArrowDropDown } from "react-icons/md"
 import { UserName } from "../../../../types/common"
 import UserIcon from "../../icons/User"
 import Session from "supertokens-auth-react/recipe/session"
+import { STSignOut } from "../../../../service/supertoken/Sesstion"
+import { useDispatch } from "react-redux"
+import { type } from "os"
+import { IUserActionTypes } from "../../../../state/user/actions"
 
 interface ILoginGroupProps {
   username: UserName
@@ -11,6 +15,7 @@ interface ILoginGroupProps {
 const LoginGroup: React.FunctionComponent<ILoginGroupProps> = ({
   username
 }) => {
+  const dispatch = useDispatch()
   const [anchorEl, setAnchorEl] = React.useState(null)
   const open = Boolean(anchorEl)
   const handleClick = (e: any) => {
@@ -20,8 +25,9 @@ const LoginGroup: React.FunctionComponent<ILoginGroupProps> = ({
     setAnchorEl(null)
   }
 
-  const handleSignOut = () => {
-    Session.signOut()
+  const handleSignOut = async () => {
+    await STSignOut()
+    dispatch({ type: IUserActionTypes.USER_SIGN_OUT })
   }
   return (
     <div className="flex flex-row justify-content items-center  border-2">

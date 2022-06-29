@@ -1,13 +1,13 @@
-import { IUserActions, IUserActionTypes, IUserState } from "./actions";
-import { ROLE } from "../../types/common";
+import { IUserActions, IUserActionTypes, IUserState } from "./actions"
+import { ROLE } from "../../types/common"
 
 const initialState = {
   isLogin: false,
   role: ROLE.USER,
   username: "",
   userId: "",
-  isVerified: false,
-};
+  isVerified: false
+}
 
 const userReducer = (
   state: IUserState = initialState,
@@ -15,13 +15,21 @@ const userReducer = (
 ) => {
   switch (type) {
     case IUserActionTypes.USER_SIGN_IN:
-      return state;
+      const SignInState = { ...state, isLogin: payload.isLogin }
+      return SignInState
 
     case IUserActionTypes.USER_SIGN_OUT:
-      return state;
+      const SignOutState = {
+        isLogin: false,
+        role: ROLE.USER,
+        username: "",
+        userId: "",
+        isVerified: false
+      }
+      return SignOutState
     default:
-      return state;
+      return state
   }
-};
+}
 
-export default userReducer;
+export default userReducer

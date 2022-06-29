@@ -9,17 +9,16 @@ import { useRouter } from "next/router"
 import NavDrawer from "../common/drawers/nav"
 import { signOut } from "supertokens-auth-react/recipe/emailpassword"
 import LoginGroup from "../common/groups/login.tsx"
+import { useAppSelector } from "../../hooks/common/useAppSelector"
 
 const Navbar: React.FunctionComponent = () => {
   const router = useRouter()
   const [isOpen, setIsOpen] = useState(false)
 
+  const { isLogin } = useAppSelector((state) => state.user)
+
   const handleClick = (e: any) => {
     setIsOpen(!isOpen)
-  }
-  async function onLogout() {
-    await signOut()
-    console.log("log out")
   }
 
   return (
@@ -32,11 +31,16 @@ const Navbar: React.FunctionComponent = () => {
         <Link href={"/"}>
           <a>icon</a>
         </Link>
-        <LoginGroup username="213" />
+
         <div className="flex-row gap-x-1 h-full hidden md:flex ">
-          <button onClick={onLogout}>sign out</button>
           <DiscordButton />
-          <AuthButtonGroup />
+          {isLogin ? (
+            <>
+              <LoginGroup username="213" />
+            </>
+          ) : (
+            <AuthButtonGroup />
+          )}
         </div>
         <button onClick={handleClick} className="flex md:hidden">
           <FiAlignJustify />
