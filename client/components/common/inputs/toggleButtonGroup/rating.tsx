@@ -1,7 +1,6 @@
 import { ToggleButton } from "@mui/material"
 import React from "react"
 import BaseToggleButtonGroup, { IBaseToggleButtonGroupProps } from "."
-import { recommendRating } from "../../../../constants/rating"
 
 interface IRatingToggleButtonGroupProps extends IBaseToggleButtonGroupProps {
   ratingTitle: any
