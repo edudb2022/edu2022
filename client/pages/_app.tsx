@@ -9,12 +9,12 @@ import { ReactQueryDevtools } from "react-query/devtools"
 import CommonLayout from "../components/layouts"
 import SuperTokensReact from "supertokens-auth-react"
 // import { frontendConfig } from "../service/supertoken/config/frontendConfig"
-import EmailPassword from "supertokens-auth-react/recipe/emailpassword"
+
 // import ProtectedPage from "./protectedPage"
 import React from "react"
 import { frontendConfig } from "../service/supertoken/config/frontendConfig"
 import dynamic from "next/dynamic"
-import { EmailPasswordAuth } from "supertokens-auth-react/recipe/emailpassword"
+
 // import { frontendConfig } from "../service/supertoken/config/frontendConfig"
 
 if (typeof window !== "undefined") {
