@@ -7,7 +7,7 @@ const FormPageLayout: React.FunctionComponent<
 > = ({ children }) => {
   return (
     <div className="flex flex-col justify-center items-center border-2  ">
-      <div className="flex min-w-[20rem] w-[80rem] border-2 border-green-500 ">
+      <div className="flex p-2 w-full md:w-11/12 border-2 border-green-500 ">
         {children}
       </div>
     </div>

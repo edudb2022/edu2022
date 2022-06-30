@@ -4,7 +4,7 @@ import ReviewHeaderContainer, {
 } from "./reviewHeader"
 import { MdOutlineReportGmailerrorred } from "react-icons/md"
 import BaseButton from "../common/buttons"
-import LikeAndDisLikeButtonGroup from "../common/buttonGroups/likeAndDisLike"
+import LikeAndDisLikeButtonGroup from "../common/groups/button/likeAndDisLike"
 import LikeRating, { ILikeRatingProps } from "../common/specical/likeRating"
 
 interface IDetailReviewHeader

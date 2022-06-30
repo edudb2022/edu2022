@@ -1,6 +1,6 @@
 import React from "react"
-import LongTextDisplayContainer from "../../containers/longTextDisplay"
-import BaseTextArea, { IBaseTextAreaProps } from "../inputs/textArea"
+import LongTextDisplayContainer from "../../../containers/longTextDisplay"
+import BaseTextArea, { IBaseTextAreaProps } from "../textArea"
 
 interface ILongQuestionsSectionProps extends Partial<IBaseTextAreaProps> {
   title: string

@@ -4,7 +4,7 @@ import { ChangeEventHandler, useEffect, useState } from "react"
 import BaseTextInput from "../components/common/inputs/text"
 
 import SchoolsPanel from "../components/common/panel/schools"
-import BaseSelect from "../components/common/select"
+import BaseSelect from "../components/common/inputs/select"
 import PageLayout from "../components/layouts/page"
 import { SCHOOL_TYPE } from "../types/common"
 import Session from "supertokens-auth-react/recipe/session"

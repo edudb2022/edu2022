@@ -8,7 +8,7 @@ import BaseButton from "../../../components/common/buttons"
 import ProgrammeCard from "../../../components/common/cards/programme"
 import BaseRadar from "../../../components/common/charts/radar"
 import ReviewRankingCircularBar from "../../../components/common/circularBar/reviewRanking"
-import BaseSelect from "../../../components/common/select"
+import BaseSelect from "../../../components/common/inputs/select"
 
 import ReviewHeaderContainer from "../../../components/containers/reviewHeader"
 import CardDisplayLayout from "../../../components/layouts/cardDisplay"

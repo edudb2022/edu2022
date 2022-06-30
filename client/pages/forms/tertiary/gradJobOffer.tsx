@@ -4,7 +4,7 @@ import BaseSalaryNumberInput from "../../../components/common/inputs/number/base
 import BonusNumberInput from "../../../components/common/inputs/number/Bonus"
 import StockOptionNumberInput from "../../../components/common/inputs/number/stockOption"
 import TitleTextInput from "../../../components/common/inputs/text/title"
-import LongQuestionsSection from "../../../components/common/sections/longQuestions"
+import LongQuestionsSection from "../../../components/common/inputs/sections/longQuestions"
 
 const GradJobOfferFormPage: React.FunctionComponent = () => {
   const initialValues = {

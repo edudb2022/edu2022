@@ -1,6 +1,6 @@
 import { NextPage } from "next"
 import React from "react"
-import LongQuestionsSection from "../../../../components/common/sections/longQuestions"
+import LongQuestionsSection from "../../../../components/common/inputs/sections/longQuestions"
 import RatingTag from "../../../../components/common/tags/rating"
 import DetailReviewHeaderContainer from "../../../../components/containers/detailReviewHeader"
 import DetailReviewInfoContainer from "../../../../components/containers/detailReviewInfo"

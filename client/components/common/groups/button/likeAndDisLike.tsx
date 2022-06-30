@@ -1,6 +1,6 @@
 import React from "react"
-import DisLikeButton from "../buttons/rating/dislike"
-import LikeButton from "../buttons/rating/like"
+import DisLikeButton from "../../buttons/rating/dislike"
+import LikeButton from "../../buttons/rating/like"
 
 const LikeAndDisLikeButtonGroup: React.FunctionComponent = () => {
   return (
