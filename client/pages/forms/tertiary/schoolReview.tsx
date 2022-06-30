@@ -8,7 +8,6 @@ import { recommendRating } from "../../../constants/rating"
 
 const SchoolReviewFormPage: React.FunctionComponent = () => {
   const initialValues = { overRating: 0 }
-  var errors = { title: "123" }
 
   const handleSubmit = () => {
     console.log()
@@ -19,11 +18,6 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
     onSubmit: handleSubmit
   })
 
-  console.log(2222, formik.values.overRating)
-
-  const aa = (e) => {
-    console.log(333, e.target.value)
-  }
   return (
     <FormPageLayout>
       <RatingToggleButtonGroup
