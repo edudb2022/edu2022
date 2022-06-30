@@ -11,6 +11,7 @@ const CommonLayout: React.FunctionComponent<
   PropsWithChildren<ICommonLayoutProps>
 > = ({ children }) => {
   useAuth()
+
   return (
     <>
       <header>
