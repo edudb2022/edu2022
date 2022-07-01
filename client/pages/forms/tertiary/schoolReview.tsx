@@ -1,7 +1,7 @@
 import { useFormik } from "formik"
 import React from "react"
 
-import RatingToggleButtonGroup from "../../../components/common/inputs/toggleButtonGroup/rating"
+import RatingToggleButtonGroup from "../../../components/common/groups/toggleButton/rating"
 
 import FormPageLayout from "../../../components/layouts/form"
 import { recommendRating } from "../../../constants/rating"
