@@ -18,6 +18,7 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
     onSubmit: handleSubmit
   })
 
+  console.log(formik.values.overRating)
   return (
     <FormPageLayout>
       <RatingToggleButtonGroup

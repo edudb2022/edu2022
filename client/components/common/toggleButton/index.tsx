@@ -1,4 +1,8 @@
-import { ExtendButtonBase, ToggleButtonTypeMap } from "@mui/material"
+import {
+  ExtendButtonBase,
+  ToggleButton,
+  ToggleButtonTypeMap
+} from "@mui/material"
 import React, { PropsWithChildren } from "react"
 import { styled } from "@mui/material/styles"
 import MuiToggleButton from "@mui/material/ToggleButton"
@@ -10,22 +14,22 @@ import { rankColor } from "../../../constants/colors"
 export interface IBaseToggleButtonProps {
   value: string
   id: string
+  className?: string
+  color?:
+    | "standard"
+    | "primary"
+    | "secondary"
+    | "error"
+    | "info"
+    | "success"
+    | "warning"
 }
-
-const BgColor = rankColor
-
-const ToggleButton = styled(MuiToggleButton)(({ value }: string) => ({
-  "&.Mui-selected, &.Mui-selected:hover": {
-    color: "white",
-    backgroundColor: BgColor[parseInt(value) - 1]
-  }
-}))
 
 const BaseToggleButton: React.FunctionComponent<
   PropsWithChildren<IBaseToggleButtonProps>
-> = ({ children, value, ...props }) => {
+> = ({ children, className, color, ...props }) => {
   return (
-    <ToggleButton value={value} {...props}>
+    <ToggleButton className={className} color={color} {...props}>
       {children}
     </ToggleButton>
   )
