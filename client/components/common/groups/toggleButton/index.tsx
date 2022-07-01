@@ -2,7 +2,7 @@ import { ToggleButtonGroup, ToggleButtonGroupProps } from "@mui/material"
 import React from "react"
 
 export interface IBaseToggleButtonGroupProps extends ToggleButtonGroupProps {
-  className: string
+  className?: string
 }
 
 const BaseToggleButtonGroup: React.FunctionComponent<

@@ -19,6 +19,7 @@
     "date-fns": "^2.28.0",
     "formik": "^2.2.9",
     "immer": "^9.0.14",
+    "moment": "^2.29.3",
     "next": "12.1.5",
     "next-redux-wrapper": "^7.0.5",
     "nextjs-cors": "^2.1.1",
