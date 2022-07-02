@@ -4,17 +4,18 @@ import BaseTextArea, { IBaseTextAreaProps } from "../textArea"
 
 interface ILongQuestionsSectionProps extends Partial<IBaseTextAreaProps> {
   title: string
-  isDisplay?: boolean
+
+  content?: string
 }
 
 const LongQuestionsSection: React.FunctionComponent<
   ILongQuestionsSectionProps
-> = ({ title, className, isTouched, errorMessages, isDisplay, ...props }) => {
+> = ({ title, className, isTouched, errorMessages, content, ...props }) => {
   return (
     <div>
       <h1>{title}</h1>
       <div className="mt-4">
-        {isDisplay ? (
+        {content ? (
           <LongTextDisplayContainer
             content=" 123 
             123 "
@@ -23,7 +24,7 @@ const LongQuestionsSection: React.FunctionComponent<
           <BaseTextArea
             isTouched={isTouched}
             errorMessages={errorMessages}
-            className={className}
+            className={`rounded-lg bg-[#F8FAFC] border-2 ${className}`}
             {...props}
           />
         )}

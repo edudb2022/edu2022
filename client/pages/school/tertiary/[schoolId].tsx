@@ -52,7 +52,7 @@ const TertiarySchoolPage: NextPage = () => {
             </div>
 
             <div className="w-2/5  py-12">
-              <ReviewRankingCircularBar currentValue={4} title={"red"} />
+              <ReviewRankingCircularBar currentValue={1} title={"red"} />
               <Link href={`/review/tertiary/school/${schoolId}`}>
                 <a>
                   <BaseButton className="w-full justify-center gap-x-2  text-sm md:text-base mt-4 bg-theme-one-500 text-white shrink-0">

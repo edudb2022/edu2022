@@ -46,7 +46,6 @@ const MyApp: React.FunctionComponent<IMyAppProps> = ({
             <Component {...pageProps} />
           </CommonLayout>
         </Provider>
-
         <ReactQueryDevtools initialIsOpen={false} />
       </Hydrate>
     </QueryClientProvider>

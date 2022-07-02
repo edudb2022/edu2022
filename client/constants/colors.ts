@@ -1,4 +1,11 @@
-const rankColor = ["#f43f5e", "#ec4899", "#eab308", "#14b8a6", "#22c55e"]
+const rankColor = [
+  "#f43f5e",
+  "#ec4899",
+  "#f59e0b",
+  "#eab308",
+  "#14b8a6",
+  "#22c55e"
+]
 
 // const ratingTextAndBackgroundColor = [
 //   "bg-rating-1-200 text-rating-1-700",

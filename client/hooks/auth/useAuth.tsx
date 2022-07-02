@@ -1,7 +1,11 @@
 import { type } from "os"
 import React, { useEffect } from "react"
 import { useDispatch } from "react-redux"
-import { STCheckExist, STGetUserId } from "../../service/supertoken/Sesstion"
+import {
+  STCheckExist,
+  STGetPayload,
+  STGetUserId
+} from "../../service/supertoken/Sesstion"
 import { IUserActionTypes } from "../../state/user/actions"
 import { useAppSelector } from "../common/useAppSelector"
 // import { IUserActionTypes } from "../../state/user/actions"
@@ -16,6 +20,8 @@ const useAuth = () => {
 
         if (session) {
           const userId = await STGetUserId()
+          const payload = await STGetPayload()
+          console.log(543, payload)
 
           dispatch({
             type: IUserActionTypes.USER_SIGN_IN,

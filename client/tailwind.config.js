@@ -53,6 +53,18 @@ const theme = {
     800: "#9d174d",
     900: "#831843"
   },
+  Amber: {
+    50: "#fffbeb",
+    100: "#fef3c7",
+    200: "#fde68a",
+    300: "#fcd34d",
+    400: "#fbbf24",
+    500: "#f59e0b",
+    600: "#d97706",
+    700: "#b45309",
+    800: "#92400e",
+    900: "#78350f"
+  },
   yellow: {
     50: "#fefce8",
     100: "#fef9c3",
@@ -96,9 +108,10 @@ const theme = {
 const rating = {
   1: theme.rose,
   2: theme.pink,
-  3: theme.yellow,
-  4: theme.teal,
-  5: theme.green
+  3: theme.Amber,
+  4: theme.yellow,
+  5: theme.teal,
+  6: theme.green
 }
 
 module.exports = {

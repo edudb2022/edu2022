@@ -9,6 +9,8 @@ import FormPageLayout from "../../../components/layouts/form"
 import { recommendRating } from "../../../constants/rating"
 import SchoolTypeSelect from "../../../components/common/inputs/select/schoolType"
 import { ContactSelect } from "../../../components/common/inputs/select/contact"
+import { EmailPasswordAuth } from "supertokens-auth-react/recipe/emailpassword"
+import LongQuestionsSection from "../../../components/common/inputs/sections/longQuestions"
 
 const SchoolReviewFormPage: React.FunctionComponent = () => {
   const initialValues = {
@@ -142,6 +144,17 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
       </div>
 
       <ContactSelect />
+
+      <LongQuestionsSection title="123" />
+      <LongQuestionsSection title="123" />
+      <LongQuestionsSection title="123" />
+      <LongQuestionsSection title="123" />
+      <LongQuestionsSection title="123" />
+
+      <LongQuestionsSection title="123" />
+      <LongQuestionsSection title="123" />
+      <LongQuestionsSection title="123" />
+      <LongQuestionsSection title="123" />
     </FormPageLayout>
   )
 }

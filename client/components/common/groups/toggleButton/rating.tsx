@@ -22,6 +22,7 @@ const theme = createTheme({
     warning: {
       main: "#ec4899"
     },
+    success: { main: "#f59e0b" },
     info: {
       main: "#eab308"
     },
@@ -72,7 +73,7 @@ const RatingToggleButtonGroup: React.FunctionComponent<
               {`${ratingTitle[1].label}`}
             </RatingToggleButton>
             <RatingToggleButton
-              color="info"
+              color="success"
               id={id!}
               value={"3"}
               aria-label={"3"}

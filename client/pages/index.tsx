@@ -27,16 +27,6 @@ const Home: NextPage = (props) => {
 
   const data = useAppSelector((state) => state.user)
   console.log(data)
-  useEffect(() => {
-    const fetch = async () => {
-      // const data = await Session.doesSessionExist()
-      // const dataOne = await Session.getAccessTokenPayloadSecurely()
-      // const dataTwo = await Session.getUserId()
-      // console.log(123, data, dataOne, dataTwo)
-    }
-
-    fetch()
-  }, [])
 
   const [type, setType] = useState(SCHOOL_TYPE.UNIVERSITY)
   const [search, setSearch] = useState("")

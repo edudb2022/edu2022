@@ -70,12 +70,13 @@ const STlanguageTranslations = {
       EMAIL_PASSWORD_RESET_SEND_SUCCESS: "請檢查郵箱(或者垃圾郵箱)",
       EMAIL_PASSWORD_RESET_RESEND_LINK: "未收到",
       //verification email
-      EMAIL_VERIFICATION_SEND_TITLE: "驗證電郵已經發出！",
+      EMAIL_VERIFICATION_SEND_TITLE: "驗證電郵已經送出！",
       EMAIL_VERIFICATION_SEND_DESC_START: "如果未收到請查看",
-      EMAIL_VERIFICATION_SEND_DESC_STRONG: "",
-      EMAIL_VERIFICATION_SEND_DESC_END: "垃圾郵箱",
-      EMAIL_VERIFICATION_RESEND_BTN: "重新發出驗證電郵",
+      EMAIL_VERIFICATION_SEND_DESC_STRONG: "垃圾郵箱",
+      EMAIL_VERIFICATION_SEND_DESC_END: "",
+      EMAIL_VERIFICATION_RESEND_BTN: "重新送出驗證電郵",
       EMAIL_VERIFICATION_LOGOUT: "登出",
+      EMAIL_VERIFICATION_RESEND_SUCCESS: "已經送出！！請Check Check",
 
       //verification success
       EMAIL_VERIFICATION_SUCCESS: "驗證成功！多謝支持！",

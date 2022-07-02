@@ -1,4 +1,5 @@
 import React, { PropsWithChildren } from "react"
+import { EmailPasswordAuth } from "supertokens-auth-react/recipe/emailpassword"
 
 interface FormPageLayoutProps {}
 
