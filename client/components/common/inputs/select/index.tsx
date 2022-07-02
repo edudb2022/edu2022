@@ -1,12 +1,19 @@
-import { InputLabel, MenuItem, Select, SelectProps } from "@mui/material"
+import {
+  FormControl,
+  InputLabel,
+  MenuItem,
+  Select,
+  SelectProps
+} from "@mui/material"
 import React from "react"
+import ErrorMessage, { IErrorMessageProps } from "../../messages/error"
 
 interface ISelectMenuItems {
   value: string
   title: string
 }
 
-export interface IBaseSelectProps extends SelectProps {
+export interface IBaseSelectProps extends SelectProps, IErrorMessageProps {
   inputLabel?: string
   inputLabelClassName?: string
   selectLabel?: string
@@ -26,18 +33,22 @@ const BaseSelect: React.FunctionComponent<IBaseSelectProps> = ({
   selectId,
   items,
   itemsClassName,
+  errorMessages,
+  isTouched,
+  id,
   ...props
 }) => {
   return (
-    <div className="flex flex-col  w-auto">
+    <FormControl>
       {inputLabel && (
-        <InputLabel className={`${inputLabelClassName}`}>
+        <InputLabel id={selectId} className={`${inputLabelClassName}`}>
           {inputLabel}
         </InputLabel>
       )}
-      <InputLabel className={`${inputLabelClassName}`}>{inputLabel}</InputLabel>
       <Select
         id={selectId}
+        label={inputLabel}
+        labelId={selectId}
         value={selectValue}
         className={`${selectClassName}`}
         variant="outlined"
@@ -55,7 +66,8 @@ const BaseSelect: React.FunctionComponent<IBaseSelectProps> = ({
           )
         })}
       </Select>
-    </div>
+      <ErrorMessage errorMessages={errorMessages} isTouched={isTouched} />
+    </FormControl>
   )
 }
 

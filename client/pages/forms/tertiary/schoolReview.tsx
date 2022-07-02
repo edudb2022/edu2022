@@ -7,11 +7,14 @@ import TitleTextInput from "../../../components/common/inputs/text/title"
 import moment from "moment"
 import FormPageLayout from "../../../components/layouts/form"
 import { recommendRating } from "../../../constants/rating"
+import SchoolTypeSelect from "../../../components/common/inputs/select/schoolType"
+import { ContactSelect } from "../../../components/common/inputs/select/contact"
 
 const SchoolReviewFormPage: React.FunctionComponent = () => {
   const initialValues = {
+    schoolType: "",
     title: "",
-    admissionDate: new Date(),
+    admissionDate: moment(new Date()).format("DD/MM/YYYY"),
     campusRating: 0,
     resourceRating: 0,
     policyRating: 0,
@@ -31,6 +34,30 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
   console.table(formik.values)
   return (
     <FormPageLayout>
+      <div className="grid grid-cols-2">
+        <SchoolTypeSelect
+          selectId="schoolType"
+          inputLabel="Schhol type"
+          selectValue={formik.values.schoolType}
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          errorMessages={formik.errors.schoolType}
+          isTouched={formik.touched.schoolType}
+          fullWidth
+        />
+        {/* school select */}
+        <SchoolTypeSelect
+          selectId="schoolType"
+          inputLabel="Schhol type"
+          selectValue={formik.values.schoolType}
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          errorMessages={formik.errors.schoolType}
+          isTouched={formik.touched.schoolType}
+          fullWidth
+        />
+      </div>
+
       <div className="flex flex-row justify-evenly">
         <TitleTextInput
           variant="outlined"
@@ -41,12 +68,12 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
           isTouched={formik.touched.title}
         />
         <BaseDatePicker
-          label="Admission Year"
+          label="Admission Year (MM/DD/YYYY)"
           value={formik.values.admissionDate}
           onChange={(newValue: any) => {
             formik.setFieldValue(
               "admissionDate",
-              moment(newValue).format("DD-MM-YYYY")
+              moment(newValue).format("MM/DD/YYYY")
             )
           }}
         />
@@ -78,7 +105,7 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
         />
 
         <RatingToggleButtonGroup
-          id="rpolicyRating"
+          id="policyRating"
           value={formik.values.policyRating}
           onChange={formik.handleChange}
           ratingTitle={recommendRating}
@@ -113,6 +140,8 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
           headerRequired={true}
         />
       </div>
+
+      <ContactSelect />
     </FormPageLayout>
   )
 }

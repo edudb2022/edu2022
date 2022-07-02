@@ -5,6 +5,8 @@ interface IReviewSelectProps extends Partial<IBaseSelectProps> {}
 
 const ReviewSelect: React.FunctionComponent<IReviewSelectProps> = ({
   selectValue,
+  isTouched,
+  errorMessages,
   ...props
 }) => {
   const options = [
@@ -13,7 +15,15 @@ const ReviewSelect: React.FunctionComponent<IReviewSelectProps> = ({
       title: "123"
     }
   ]
-  return <BaseSelect items={options} selectValue={selectValue!} {...props} />
+  return (
+    <BaseSelect
+      isTouched={isTouched}
+      errorMessages={errorMessages}
+      items={options}
+      selectValue={selectValue!}
+      {...props}
+    />
+  )
 }
 
 export default ReviewSelect

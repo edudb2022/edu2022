@@ -18,13 +18,14 @@ const BaseDatePicker: React.FunctionComponent<IBaseDatePickerProps> = ({
   value,
   onChange,
   label,
+
   ...props
 }) => {
   return (
     <>
       <LocalizationProvider dateAdapter={AdapterDateFns}>
         <div>
-          <MobileDatePicker
+          <DatePicker
             label={label}
             value={value}
             renderInput={(params) => <TextField {...params} />}
