@@ -75,7 +75,11 @@ const STlanguageTranslations = {
       EMAIL_VERIFICATION_SEND_DESC_STRONG: "",
       EMAIL_VERIFICATION_SEND_DESC_END: "垃圾郵箱",
       EMAIL_VERIFICATION_RESEND_BTN: "重新發出驗證電郵",
-      EMAIL_VERIFICATION_LOGOUT: "登出"
+      EMAIL_VERIFICATION_LOGOUT: "登出",
+
+      //verification success
+      EMAIL_VERIFICATION_SUCCESS: "驗證成功！多謝支持！",
+      EMAIL_VERIFICATION_CONTINUE_BTN: "繼續"
     }
   },
   defaultLanguage: "can"
