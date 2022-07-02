@@ -1,35 +1,30 @@
 const signInAndUpConFig = {
-  signInAndUpFeature: {
-    signUpForm: {
-      formFields: [
-        // {
-        //   id: "email",
-        //   label: "Email (如用大專學生Email會有學生Icon)",
-        //   validate: async (value: string) => {
-        //     // Your own validation returning a string or undefined if no errors.
-        //     return "..."
-        //   }
-        // },
-        // {
-        //   id: "password",
-        //   label: "...",
-        //   validate: async (value: string) => {
-        //     // Your own validation returning a string or undefined if no errors.
-        //     return "..."
-        //   }
-        // },
-        // {
-        //   id: "username",
-        //   label: "username",
-        //   placeholder: "username"
-        // }
-      ],
-      termsOfServiceLink: "/TNC",
-      privacyPolicyLink: "/PP"
-    }
-  },
-  emailVerificationFeature: {
-    mode: "REQUIRED"
+  signUpForm: {
+    formFields: [
+      // {
+      //   id: "email",
+      //   label: "Email (如用大專學生Email會有學生Icon)",
+      //   validate: async (value: string) => {
+      //     // Your own validation returning a string or undefined if no errors.
+      //     return "..."
+      //   }
+      // },
+      // {
+      //   id: "password",
+      //   label: "...",
+      //   validate: async (value: string) => {
+      //     // Your own validation returning a string or undefined if no errors.
+      //     return "..."
+      //   }
+      // },
+      // {
+      //   id: "username",
+      //   label: "username",
+      //   placeholder: "username"
+      // }
+    ],
+    termsOfServiceLink: "/TNC",
+    privacyPolicyLink: "/PP"
   }
 }
 

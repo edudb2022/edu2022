@@ -8,7 +8,12 @@ export const frontendConfig = () => {
     languageTranslations: STlanguageTranslations,
     appInfo,
     recipeList: [
-      EmailPasswordReact.init(signInAndUpConFig),
+      EmailPasswordReact.init({
+        signInAndUpFeature: signInAndUpConFig,
+        emailVerificationFeature: {
+          mode: "REQUIRED"
+        }
+      }),
       SessionReact.init()
     ]
   }
