@@ -27,12 +27,19 @@ const signInAndUpConFig = {
       termsOfServiceLink: "/TNC",
       privacyPolicyLink: "/PP"
     }
+  },
+  emailVerificationFeature: {
+    mode: "REQUIRED"
   }
 }
 
 const STlanguageTranslations = {
   translations: {
     can: {
+      //errors
+      EMAIL_PASSWORD_SIGN_IN_WRONG_CREDENTIALS_ERROR: "電郵或密碼錯誤",
+
+      //sign in
       EMAIL_PASSWORD_SIGN_UP_HEADER_TITLE: "立即申請！永遠唔會遲!",
       EMAIL_PASSWORD_SIGN_UP_HEADER_SUBTITLE_START: "已經有帳號？",
       EMAIL_PASSWORD_SIGN_UP_HEADER_SUBTITLE_SIGN_IN_LINK: "撳呢到",
@@ -47,6 +54,7 @@ const STlanguageTranslations = {
       EMAIL_PASSWORD_SIGN_UP_FOOTER_END: "123",
       BRANDING_POWERED_BY_START: "用咗Open Source Package —",
       BRANDING_POWERED_BY_END: "123",
+      EMAIL_PASSWORD_EMAIL_ALREADY_EXISTS: "此Email已經存在",
 
       //sign in
       EMAIL_PASSWORD_SIGN_IN_HEADER_TITLE: "登入",
@@ -55,9 +63,24 @@ const STlanguageTranslations = {
       EMAIL_PASSWORD_SIGN_IN_HEADER_SUBTITLE_END: "立即申請！永遠唔會遲!",
       EMAIL_PASSWORD_SIGN_IN_SUBMIT_BTN: "確定",
       EMAIL_PASSWORD_SIGN_IN_FOOTER_FORGOT_PW_LINK:
-        "忘記密碼？哭𠹌左 ﹐撳呢到幫你"
+        "忘記密碼？哭𠹌左 ﹐撳呢到幫你",
       // This key is associated with an empty string by default, but you can override these as well.
       // BRANDING_POWERED_BY_END: "123"
+
+      //forget email
+      EMAIL_PASSWORD_RESET_HEADER_TITLE: "忘記密碼",
+      EMAIL_PASSWORD_RESET_HEADER_SUBTITLE: "輸入電郵地址重置密碼",
+      EMAIL_PASSWORD_EMAIL_LABEL: "Email電郵地址",
+      EMAIL_PASSWORD_RESET_SEND_BTN: "確定",
+      EMAIL_PASSWORD_RESET_SEND_SUCCESS: "請檢查郵箱(或者垃圾郵箱)",
+      EMAIL_PASSWORD_RESET_RESEND_LINK: "未收到",
+      //verification email
+      EMAIL_VERIFICATION_SEND_TITLE: "驗證電郵已經發出！",
+      EMAIL_VERIFICATION_SEND_DESC_START: "如果未收到請查看",
+      EMAIL_VERIFICATION_SEND_DESC_STRONG: "",
+      EMAIL_VERIFICATION_SEND_DESC_END: "垃圾郵箱",
+      EMAIL_VERIFICATION_RESEND_BTN: "重新發出驗證電郵",
+      EMAIL_VERIFICATION_LOGOUT: "登出"
     }
   },
   defaultLanguage: "can"
