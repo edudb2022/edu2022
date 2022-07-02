@@ -25,6 +25,7 @@ const LongQuestionsSection: React.FunctionComponent<
             isTouched={isTouched}
             errorMessages={errorMessages}
             className={`rounded-lg bg-[#F8FAFC] border-2 ${className}`}
+            minRows={7}
             {...props}
           />
         )}
