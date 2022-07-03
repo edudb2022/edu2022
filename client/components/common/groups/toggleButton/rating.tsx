@@ -50,10 +50,11 @@ const RatingToggleButtonGroup: React.FunctionComponent<
     <ThemeProvider theme={theme}>
       <div className="flex flex-col">
         <InputHeader header={header} headerRequired={headerRequired} />
-        <div className="flex flex-row justify-center items-center gap-x-6 ">
-          <h6>0</h6>
+        <div className="flex flex-row justify-center items-center gap-x-3 ">
+          <h6 className="text-gray-600">0</h6>
           <BaseToggleButtonGroup
             exclusive
+            size="small"
             {...props}
             // size={{ xs: "small", md: "large" }}
             // sx={{ size: { sx: "small", md: "large" } }}
@@ -105,7 +106,7 @@ const RatingToggleButtonGroup: React.FunctionComponent<
               {`${ratingTitle[5].label}`}
             </RatingToggleButton>
           </BaseToggleButtonGroup>
-          <h6>5</h6>
+          <h6 className="text-gray-600">5</h6>
         </div>
         <ErrorMessage isTouched={isTouched} errorMessages={errorMessages} />
       </div>

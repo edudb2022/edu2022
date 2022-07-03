@@ -1,19 +1,34 @@
 import React from "react"
 import LongTextDisplayContainer from "../../../containers/longTextDisplay"
+import InputHeader, { IInputHeaderProps } from "../../header/input"
 import BaseTextArea, { IBaseTextAreaProps } from "../textArea"
 
-interface ILongQuestionsSectionProps extends Partial<IBaseTextAreaProps> {
-  title: string
-
+interface ILongQuestionsSectionProps
+  extends Partial<IBaseTextAreaProps>,
+    IInputHeaderProps {
   content?: string
 }
 
 const LongQuestionsSection: React.FunctionComponent<
   ILongQuestionsSectionProps
-> = ({ title, className, isTouched, errorMessages, content, ...props }) => {
+> = ({
+  className,
+  isTouched,
+  errorMessages,
+  content,
+  header,
+  headerRequired,
+  subHeader,
+  ...props
+}) => {
   return (
     <div>
-      <h1>{title}</h1>
+      <InputHeader
+        header={header}
+        headerRequired={headerRequired}
+        subHeader={subHeader}
+      />
+
       <div className="mt-4">
         {content ? (
           <LongTextDisplayContainer

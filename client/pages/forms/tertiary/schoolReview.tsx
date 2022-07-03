@@ -1,5 +1,5 @@
 import { useFormik } from "formik"
-import React from "react"
+import React, { useEffect } from "react"
 
 import RatingToggleButtonGroup from "../../../components/common/groups/toggleButton/rating"
 import BaseDatePicker from "../../../components/common/inputs/date"
@@ -11,6 +11,9 @@ import SchoolTypeSelect from "../../../components/common/inputs/select/schoolTyp
 import { ContactSelect } from "../../../components/common/inputs/select/contact"
 import { EmailPasswordAuth } from "supertokens-auth-react/recipe/emailpassword"
 import LongQuestionsSection from "../../../components/common/inputs/sections/longQuestions"
+import dynamic from "next/dynamic"
+import SuperTokens from "supertokens-auth-react"
+import { STRedirectToSignIn } from "../../../service/supertoken/function"
 
 const SchoolReviewFormPage: React.FunctionComponent = () => {
   const initialValues = {
@@ -35,6 +38,7 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
 
   console.table(formik.values)
   return (
+    // <EmailPasswordAuth>
     <FormPageLayout>
       <div className="grid grid-cols-2">
         <SchoolTypeSelect
@@ -145,17 +149,9 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
 
       <ContactSelect />
 
-      <LongQuestionsSection title="123" />
-      <LongQuestionsSection title="123" />
-      <LongQuestionsSection title="123" />
-      <LongQuestionsSection title="123" />
-      <LongQuestionsSection title="123" />
-
-      <LongQuestionsSection title="123" />
-      <LongQuestionsSection title="123" />
-      <LongQuestionsSection title="123" />
-      <LongQuestionsSection title="123" />
+      <LongQuestionsSection header="HWta doasdasdoin thabtp oandiosanidoans" />
     </FormPageLayout>
+    // </EmailPasswordAuth>
   )
 }
 

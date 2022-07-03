@@ -13,10 +13,10 @@ const InputHeader: React.FunctionComponent<IInputHeaderProps> = ({
   subHeader
 }) => {
   return (
-    <div className="flex flex-row">
-      {header && <h2>{header} </h2>}
-      {headerRequired && <h2>* </h2>}
-      {subHeader && <h2>* </h2>}
+    <div className="flex flex-row ml-6 mb-2">
+      {header && <h6 className=" text-gray-600 ">{header} </h6>}
+      {headerRequired && <h6 className=" text-gray-600 ">* </h6>}
+      {subHeader && <h2> {subHeader}</h2>}
     </div>
   )
 }
