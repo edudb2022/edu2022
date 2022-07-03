@@ -34,7 +34,7 @@ const SchoolReviewDetailPage: NextPage = () => {
         />
       </DetailReviewHeaderContainer>
 
-      <LongQuestionsSection title="123" isDisplay={true} />
+      <LongQuestionsSection title="123" />
     </PageLayout>
   )
 }
