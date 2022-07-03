@@ -54,7 +54,7 @@ const RatingToggleButtonGroup: React.FunctionComponent<
           <h6 className="text-gray-600">0</h6>
           <BaseToggleButtonGroup
             exclusive
-            size="small"
+            size="large"
             {...props}
             // size={{ xs: "small", md: "large" }}
             // sx={{ size: { sx: "small", md: "large" } }}

@@ -9,7 +9,7 @@ const BaseToggleButtonGroup: React.FunctionComponent<
   IBaseToggleButtonGroupProps
 > = ({ children, className, ...props }) => {
   return (
-    <ToggleButtonGroup className={`${className}`} {...props}>
+    <ToggleButtonGroup className={` ${className}`} {...props}>
       {children}
     </ToggleButtonGroup>
   )

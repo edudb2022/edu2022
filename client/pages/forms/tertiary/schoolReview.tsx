@@ -9,7 +9,10 @@ import FormPageLayout from "../../../components/layouts/form"
 import { recommendRating } from "../../../constants/rating"
 import SchoolTypeSelect from "../../../components/common/inputs/select/schoolType"
 import { ContactSelect } from "../../../components/common/inputs/select/contact"
-import { EmailPasswordAuth } from "supertokens-auth-react/recipe/emailpassword"
+import {
+  EmailPasswordAuth,
+  redirectToAuth
+} from "supertokens-auth-react/recipe/emailpassword"
 import LongQuestionsSection from "../../../components/common/inputs/sections/longQuestions"
 import dynamic from "next/dynamic"
 import SuperTokens from "supertokens-auth-react"
@@ -38,7 +41,6 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
 
   console.table(formik.values)
   return (
-    // <EmailPasswordAuth>
     <FormPageLayout>
       <div className="grid grid-cols-2">
         <SchoolTypeSelect
@@ -84,8 +86,9 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
           }}
         />
       </div>
-
-      <div className="flex flex-wrap flex-row justify-center items-center gap-x-10 gap-y-5">
+      {/* 
+      <div className="flex flex-wrap flex-row justify-center items-center gap-x-10 gap-y-5"> */}
+      <div className="flex flex-col justify-center items-center">
         <RatingToggleButtonGroup
           id="campusRating"
           value={formik.values.campusRating}
@@ -151,7 +154,6 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
 
       <LongQuestionsSection header="HWta doasdasdoin thabtp oandiosanidoans" />
     </FormPageLayout>
-    // </EmailPasswordAuth>
   )
 }
 
