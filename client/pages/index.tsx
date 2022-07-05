@@ -9,6 +9,8 @@ import PageLayout from "../components/layouts/page"
 import { SCHOOL_TYPE } from "../types/common"
 import Session from "supertokens-auth-react/recipe/session"
 import { useAppSelector } from "../hooks/common/useAppSelector"
+import { dehydrate, QueryClient, useQuery } from "react-query"
+import axios from "axios"
 const schoolsType = [
   { value: SCHOOL_TYPE.UNIVERSITY, title: "大學" },
   { value: SCHOOL_TYPE.COLLEGE, title: "大專" }
@@ -19,14 +21,17 @@ const schoolsType = [
 // import { EmailPasswordAuth } from "supertokens-auth-react/recipe/emailpassword"
 
 const Home: NextPage = (props) => {
+  // const fetchTodoList = () => {
+  //   return axios.get("https://random-data-api.com/api/address/random_address")
+  // }
   // const { data, isLoading, isFetching } = useQuery("posts", fetchTodoList, {
   //   // refetchOnWindowFocus: false,
-  //   staleTime: 0,
-  // });
+  //   staleTime: 0
+  // })
   // console.log(data, isLoading, isFetching);
 
-  const data = useAppSelector((state) => state.user)
-  console.log(data)
+  // const data = useAppSelector((state) => state.user)
+  // console.log(11, data)
 
   const [type, setType] = useState(SCHOOL_TYPE.UNIVERSITY)
   const [search, setSearch] = useState("")
@@ -77,14 +82,14 @@ const Home: NextPage = (props) => {
 }
 
 // export async function getServerSideProps() {
-//   const queryClient = new QueryClient();
+//   const queryClient = new QueryClient()
 
 //   // await queryClient.prefetchQuery("posts", fetchTodoList);
 
 //   return {
 //     props: {
-//       dehydratedState: dehydrate(queryClient),
-//     },
-//   };
+//       dehydratedState: dehydrate(queryClient)
+//     }
+//   }
 // }
 export default Home
