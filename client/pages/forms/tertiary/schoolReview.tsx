@@ -71,7 +71,6 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
 
       <div className="flex flex-row justify-evenly">
         <TitleTextInput
-          variant="outlined"
           value={formik.values.title}
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
@@ -166,7 +165,7 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
       </div>
 
       <ContactSelect variant="standard" />
-      <BaseTextInput variant="standard" label="contect detail" />
+      <BaseTextInput label="contect detail" />
 
       <LongQuestionsSection
         name="longQ"
