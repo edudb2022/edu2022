@@ -17,6 +17,7 @@ import LongQuestionsSection from "../../../components/common/inputs/sections/lon
 import dynamic from "next/dynamic"
 import SuperTokens from "supertokens-auth-react"
 import { STRedirectToSignIn } from "../../../service/supertoken/function"
+import BaseTextInput from "../../../components/common/inputs/text"
 
 const SchoolReviewFormPage: React.FunctionComponent = () => {
   const initialValues = {
@@ -27,11 +28,13 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
     resourceRating: 0,
     policyRating: 0,
     canteenRating: 0,
-    overRating: 0
+    selfOfBelonging: 0,
+    overRating: 0,
+    longQ: ""
   }
 
   const handleSubmit = () => {
-    console.log()
+    console.log("sumit")
   }
 
   const formik = useFormik({
@@ -138,6 +141,18 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
         />
 
         <RatingToggleButtonGroup
+          id="selfOfBelonging"
+          value={formik.values.selfOfBelonging}
+          onChange={formik.handleChange}
+          ratingTitle={recommendRating}
+          onBlur={formik.handleBlur}
+          errorMessages={formik.errors.selfOfBelonging}
+          isTouched={formik.touched.selfOfBelonging}
+          header="selfOfBelonging"
+          headerRequired={true}
+        />
+
+        <RatingToggleButtonGroup
           id="overRating"
           value={formik.values.overRating}
           onChange={formik.handleChange}
@@ -150,9 +165,19 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
         />
       </div>
 
-      <ContactSelect />
+      <ContactSelect variant="standard" />
+      <BaseTextInput variant="standard" label="contect detail" />
 
-      <LongQuestionsSection header="HWta doasdasdoin thabtp oandiosanidoans" />
+      <LongQuestionsSection
+        name="longQ"
+        header="HWta doasdasdoin thabtp oandiosanidoans"
+        value={formik.values.longQ}
+        valueLength={formik.values.longQ.length}
+        onChange={formik.handleChange}
+        onBlur={formik.handleBlur}
+        errorMessages={formik.errors.longQ}
+        isTouched={formik.touched.longQ}
+      />
     </FormPageLayout>
   )
 }

@@ -31,15 +31,13 @@ const LongQuestionsSection: React.FunctionComponent<
 
       <div className="mt-4">
         {content ? (
-          <LongTextDisplayContainer
-            content=" 123 
-            123 "
-          />
+          <LongTextDisplayContainer content={content} />
         ) : (
           <BaseTextArea
             isTouched={isTouched}
             errorMessages={errorMessages}
-            className={`rounded-lg bg-[#F8FAFC] border-2 ${className}`}
+            maxLength={255}
+            className={` bg-[#F8FAFC] border-2 ${className}`}
             minRows={7}
             {...props}
           />

@@ -49,7 +49,6 @@ const GradJobOfferFormPage: React.FunctionComponent = () => {
     <div>
       <form onSubmit={formik.handleSubmit} className="p-12">
         <TitleTextInput
-          variant="outlined"
           value={formik.values.title}
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
@@ -60,7 +59,6 @@ const GradJobOfferFormPage: React.FunctionComponent = () => {
 
         <div className="flex flex-col md:flex-row w-full gap-x-3 gap-y-6 justify-end">
           <BaseSalaryNumberInput
-            variant="outlined"
             name="baseSalary"
             value={formik.values.baseSalary}
             onChange={formik.handleChange}
@@ -69,7 +67,6 @@ const GradJobOfferFormPage: React.FunctionComponent = () => {
             errorMessages={formik.errors.baseSalary}
           />
           <BonusNumberInput
-            variant="outlined"
             value={formik.values.bonus}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
@@ -77,7 +74,6 @@ const GradJobOfferFormPage: React.FunctionComponent = () => {
             errorMessages={formik.errors.bonus}
           />
           <StockOptionNumberInput
-            variant="outlined"
             value={formik.values.stockOption}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}

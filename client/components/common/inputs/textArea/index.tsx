@@ -4,20 +4,30 @@ import ErrorMessage, { IErrorMessageProps } from "../../messages/error"
 
 export interface IBaseTextAreaProps
   extends TextareaAutosizeProps,
-    IErrorMessageProps {}
+    IErrorMessageProps {
+  valueLength?: number
+}
 
 const BaseTextArea: React.FunctionComponent<IBaseTextAreaProps> = ({
   isTouched,
   errorMessages,
   className,
+  valueLength,
   ...props
 }) => {
   return (
-    <div className="flex flex-col">
-      <TextareaAutosize
-        className={` p-2 ring-none border-2 ${className}`}
-        {...props}
-      />
+    <div className="flex flex-col  ">
+      <div className=" relative">
+        <TextareaAutosize
+          className={` p-2 ring-none border-2 w-full ${className}`}
+          {...props}
+        />
+        {valueLength && (
+          <div className="absolute right-3 bottom-5 text-theme-three-500">
+            {`${valueLength}/255`}
+          </div>
+        )}
+      </div>
 
       <div className="flex justify-end">
         <ErrorMessage isTouched={isTouched} errorMessages={errorMessages} />

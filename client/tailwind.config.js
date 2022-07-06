@@ -28,6 +28,9 @@ const theme = {
   two: {
     500: "#FFF5EC"
   },
+  three: {
+    500: "#6F7482"
+  },
 
   rose: {
     50: "#fff1f2",

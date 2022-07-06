@@ -1,10 +1,10 @@
-import React from "react";
-import BaseTextInput from ".";
-import { IBaseInputTextProps } from ".";
+import React from "react"
+import BaseTextInput from "."
+import { IBaseInputTextProps } from "."
 
 type ITitleTextInputProps = IBaseInputTextProps & {
-  className?: string;
-};
+  className?: string
+}
 
 const TitleTextInput: React.FunctionComponent<ITitleTextInputProps> = ({
   className,
@@ -13,11 +13,11 @@ const TitleTextInput: React.FunctionComponent<ITitleTextInputProps> = ({
   return (
     <BaseTextInput
       name="title"
-      className={`${className}`}
+      className={`TextFieldProps ${className}`}
       label="標題"
       {...props}
     />
-  );
-};
+  )
+}
 
-export default TitleTextInput;
+export default TitleTextInput

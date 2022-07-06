@@ -1,9 +1,7 @@
 import React from "react"
 import BaseTextInput, { IBaseInputTextProps } from "../text"
 
-export type IBaseNumberInputProps = IBaseInputTextProps & {
-  className?: string
-}
+export interface IBaseNumberInputProps extends IBaseInputTextProps {}
 
 const BaseNumberInput: React.FunctionComponent<IBaseNumberInputProps> = ({
   ...props
