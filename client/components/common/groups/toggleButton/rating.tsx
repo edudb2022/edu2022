@@ -2,15 +2,15 @@ import { ThemeProvider } from "@emotion/react"
 import { createTheme, ToggleButton } from "@mui/material"
 import React from "react"
 import BaseToggleButtonGroup, { IBaseToggleButtonGroupProps } from "."
+import InputContainer, { IInputContainerProps } from "../../../containers/input"
 import InputHeader from "../../header/input"
-import InputContainer, { IInputHeaderProps } from "../../header/input"
+import { IInputHeaderProps } from "../../header/input"
 import ErrorMessage, { IErrorMessageProps } from "../../messages/error"
 import RatingToggleButton from "../../toggleButton/rating"
 
 interface IRatingToggleButtonGroupProps
   extends IBaseToggleButtonGroupProps,
-    IErrorMessageProps,
-    IInputHeaderProps {
+    IInputContainerProps {
   ratingTitle: any
 }
 
@@ -44,21 +44,23 @@ const RatingToggleButtonGroup: React.FunctionComponent<
   errorMessages,
   header,
   headerRequired,
+  inputContainerClassName,
+  subHeader,
   ...props
 }) => {
   return (
     <ThemeProvider theme={theme}>
-      <div className="flex flex-col">
-        <InputHeader header={header} headerRequired={headerRequired} />
+      <InputContainer
+        header={header}
+        headerRequired={headerRequired}
+        errorMessages={errorMessages}
+        inputContainerClassName={inputContainerClassName}
+        isTouched={isTouched}
+        subHeader={subHeader}
+      >
         <div className="flex flex-row justify-center items-center gap-x-3 ">
           <h6 className="text-gray-600">0</h6>
-          <BaseToggleButtonGroup
-            exclusive
-            size="large"
-            {...props}
-            // size={{ xs: "small", md: "large" }}
-            // sx={{ size: { sx: "small", md: "large" } }}
-          >
+          <BaseToggleButtonGroup exclusive size="large" {...props}>
             <RatingToggleButton
               color="error"
               id={id!}
@@ -108,8 +110,7 @@ const RatingToggleButtonGroup: React.FunctionComponent<
           </BaseToggleButtonGroup>
           <h6 className="text-gray-600">5</h6>
         </div>
-        <ErrorMessage isTouched={isTouched} errorMessages={errorMessages} />
-      </div>
+      </InputContainer>
     </ThemeProvider>
   )
 }

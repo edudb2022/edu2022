@@ -78,7 +78,8 @@ const GradJobOfferFormPage: React.FunctionComponent = () => {
           // errorMessages={formik.errors.baseSalary}
         />
         <BaseTextInput
-          label="jobTitle"
+          header="jobTitle"
+          headerRequired={true}
           name="jobTitle"
           value={formik.values.jobTitle}
           onChange={formik.handleChange}
@@ -87,6 +88,8 @@ const GradJobOfferFormPage: React.FunctionComponent = () => {
           errorMessages={formik.errors.jobTitle}
         />
         <BaseTextInput
+          header="companyName"
+          headerRequired={true}
           label="companyName"
           name="companyName"
           value={formik.values.companyName}
@@ -148,7 +151,7 @@ const GradJobOfferFormPage: React.FunctionComponent = () => {
         <LongQuestionsSection
           isTouched={true}
           errorMessages={"123"}
-          title="123"
+          header="123"
           minRows={5}
         />
       </form>

@@ -1,10 +1,11 @@
 import { TextareaAutosize, TextareaAutosizeProps } from "@mui/material"
 import React from "react"
+import InputContainer, { IInputContainerProps } from "../../../containers/input"
 import ErrorMessage, { IErrorMessageProps } from "../../messages/error"
 
 export interface IBaseTextAreaProps
   extends TextareaAutosizeProps,
-    IErrorMessageProps {
+    IInputContainerProps {
   valueLength?: number
 }
 
@@ -13,11 +14,22 @@ const BaseTextArea: React.FunctionComponent<IBaseTextAreaProps> = ({
   errorMessages,
   className,
   valueLength,
+  header,
+  headerRequired,
+  inputContainerClassName,
+  subHeader,
   ...props
 }) => {
   return (
-    <div className="flex flex-col  ">
-      <div className=" relative">
+    <InputContainer
+      isTouched={isTouched}
+      errorMessages={errorMessages}
+      header={header}
+      headerRequired={headerRequired}
+      inputContainerClassName={inputContainerClassName}
+      subHeader={subHeader}
+    >
+      <div className="relative">
         <TextareaAutosize
           className={` p-2 ring-none border-2 w-full ${className}`}
           {...props}
@@ -28,11 +40,7 @@ const BaseTextArea: React.FunctionComponent<IBaseTextAreaProps> = ({
           </div>
         )}
       </div>
-
-      <div className="flex justify-end">
-        <ErrorMessage isTouched={isTouched} errorMessages={errorMessages} />
-      </div>
-    </div>
+    </InputContainer>
   )
 }
 
