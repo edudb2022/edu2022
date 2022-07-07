@@ -13,7 +13,7 @@ const TitleTextInput: React.FunctionComponent<ITitleTextInputProps> = ({
   return (
     <BaseTextInput
       name="title"
-      className={`TextFieldProps ${className}`}
+      className={`${className}`}
       label="標題"
       {...props}
     />
