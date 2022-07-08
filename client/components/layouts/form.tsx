@@ -23,11 +23,17 @@ const FormPageLayout: React.FunctionComponent<
     }
   }, [])
   return (
-    <div className="flex justify-center items-center border-2  ">
-      <div className="flex  flex-col  p-2 w-full md:w-11/12 border-2 border-green-500 ">
-        <EmailPasswordAuth>{children}</EmailPasswordAuth>
-      </div>
-    </div>
+    <EmailPasswordAuthNoSSR>
+      <EmailPassword.EmailPasswordAuth>
+        {/* //   <EmailPasswordAuth> */}
+        <div className="flex justify-center items-center border-2  ">
+          <div className="flex  flex-col  p-2 w-full md:w-11/12 border-2 border-green-500 ">
+            {children}
+          </div>
+        </div>
+        {/* //   </EmailPasswordAuth> */}
+      </EmailPassword.EmailPasswordAuth>
+    </EmailPasswordAuthNoSSR>
   )
 }
 
