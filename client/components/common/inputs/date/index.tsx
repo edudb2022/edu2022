@@ -25,7 +25,8 @@ const BaseDatePicker: React.FunctionComponent<IBaseDatePickerProps> = ({
     <>
       <LocalizationProvider dateAdapter={AdapterDateFns}>
         <div>
-          <DatePicker
+          <MobileDatePicker
+            inputFormat="dd/MM/yyyy"
             label={label}
             value={value}
             renderInput={(params) => <TextField {...params} />}

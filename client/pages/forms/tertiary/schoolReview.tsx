@@ -23,7 +23,7 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
   const initialValues = {
     schoolType: "",
     title: "",
-    admissionDate: moment(new Date()).format("DD/MM/YYYY"),
+    admissionDate: moment(new Date()).format("YYYY-MM-DD"),
     campusRating: 0,
     resourceRating: 0,
     policyRating: 0,
@@ -78,14 +78,15 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
           isTouched={formik.touched.title}
         />
         <BaseDatePicker
-          label="Admission Year (MM/DD/YYYY)"
+          label="Admission Year (YYYY-MM-DD)"
           value={formik.values.admissionDate}
           onChange={(newValue: any) => {
             formik.setFieldValue(
               "admissionDate",
-              moment(newValue).format("MM/DD/YYYY")
+              moment(newValue).format("YYYY-MM-DD")
             )
           }}
+          // format="DD/MM/YYYY"
         />
       </div>
       {/* 
