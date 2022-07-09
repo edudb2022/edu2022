@@ -4,16 +4,25 @@ import React from "react"
 import RatingToggleButtonGroup from "../../../components/common/groups/toggleButton/rating"
 import BaseDatePicker from "../../../components/common/inputs/date"
 import LongQuestionsSection from "../../../components/common/inputs/sections/longQuestions"
+import BaseSelect from "../../../components/common/inputs/select"
 import { ContactSelect } from "../../../components/common/inputs/select/contact"
 import SchoolTypeSelect from "../../../components/common/inputs/select/schoolType"
 import BaseTextInput from "../../../components/common/inputs/text"
 import TitleTextInput from "../../../components/common/inputs/text/title"
 import FormPageLayout from "../../../components/layouts/form"
+import {
+  dummyFactculty,
+  dummyProgramme,
+  dummySchool
+} from "../../../constants/dummy"
 import { recommendRating } from "../../../constants/rating"
 
 const AdmissionOfferFormPage: React.FunctionComponent = () => {
   const initialValues = {
     schoolType: "",
+    school: "",
+    faculty: "",
+    programme: "",
     title: "",
     offerDate: moment(new Date()).format("YYYY-MM-DD"),
     campusRating: 0,
@@ -47,14 +56,39 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
           fullWidth
         />
         {/* school select */}
-        <SchoolTypeSelect
-          selectId="schoolType"
-          inputLabel="Schhol type"
-          selectValue={formik.values.schoolType}
+        <BaseSelect
+          items={dummySchool}
+          selectId="school"
+          inputLabel="school"
+          selectValue={formik.values.school}
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
-          errorMessages={formik.errors.schoolType}
-          isTouched={formik.touched.schoolType}
+          errorMessages={formik.errors.school}
+          isTouched={formik.touched.school}
+          fullWidth
+        />
+
+        <BaseSelect
+          items={dummyFactculty}
+          selectId="faculty"
+          inputLabel="faculty"
+          selectValue={formik.values.faculty}
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          errorMessages={formik.errors.faculty}
+          isTouched={formik.touched.faculty}
+          fullWidth
+        />
+
+        <BaseSelect
+          items={dummyProgramme}
+          selectId="programme"
+          inputLabel="programme"
+          selectValue={formik.values.programme}
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          errorMessages={formik.errors.programme}
+          isTouched={formik.touched.programme}
           fullWidth
         />
       </div>
