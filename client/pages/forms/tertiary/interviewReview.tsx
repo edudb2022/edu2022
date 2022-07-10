@@ -5,24 +5,31 @@ import React from "react"
 import RatingToggleButtonGroup from "../../../components/common/groups/toggleButton/rating"
 import BaseDatePicker from "../../../components/common/inputs/date"
 import LongQuestionsSection from "../../../components/common/inputs/sections/longQuestions"
+import BaseSelect from "../../../components/common/inputs/select"
 import { ContactSelect } from "../../../components/common/inputs/select/contact"
 import SchoolTypeSelect from "../../../components/common/inputs/select/schoolType"
 import BaseTextInput from "../../../components/common/inputs/text"
 import TitleTextInput from "../../../components/common/inputs/text/title"
 import FormPageLayout from "../../../components/layouts/form"
+import {
+  dummyFactculty,
+  dummyProgramme,
+  dummySchool
+} from "../../../constants/dummy"
 import { recommendRating } from "../../../constants/rating"
 
 const InterviewReviewPage: NextPage = () => {
   const initialValues = {
     schoolType: "",
+    school: "",
+    faculty: "",
+    programme: "",
     title: "",
-    admissionDate: moment(new Date()).format("YYYY-MM-DD"),
-    campusRating: 0,
-    resourceRating: 0,
-    policyRating: 0,
-    canteenRating: 0,
-    selfOfBelonging: 0,
-    overRating: 0,
+    offerDate: moment(new Date()).format("YYYY-MM-DD"),
+    exprience: 0,
+    difficulty: 0,
+    contactMethod: "",
+    contactDetail: "",
     longQ: ""
   }
 
@@ -34,11 +41,10 @@ const InterviewReviewPage: NextPage = () => {
     initialValues: initialValues,
     onSubmit: handleSubmit
   })
-
-  console.table(formik.values)
   return (
     <FormPageLayout>
-      <div className="grid grid-cols-2">
+      <div className="grid md:grid-cols-4 md:gap-x-9">
+        {/* <div className="flex flex-row border-2 gap-x-9"> */}
         <SchoolTypeSelect
           selectId="schoolType"
           inputLabel="Schhol type"
@@ -47,35 +53,62 @@ const InterviewReviewPage: NextPage = () => {
           onBlur={formik.handleBlur}
           errorMessages={formik.errors.schoolType}
           isTouched={formik.touched.schoolType}
-          fullWidth
         />
         {/* school select */}
-        <SchoolTypeSelect
-          selectId="schoolType"
-          inputLabel="Schhol type"
-          selectValue={formik.values.schoolType}
+        <BaseSelect
+          name="school"
+          items={dummySchool}
+          selectId="school"
+          inputLabel="school"
+          selectValue={formik.values.school}
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
-          errorMessages={formik.errors.schoolType}
-          isTouched={formik.touched.schoolType}
-          fullWidth
+          errorMessages={formik.errors.school}
+          isTouched={formik.touched.school}
+        />
+
+        <BaseSelect
+          name="faculty"
+          items={dummyFactculty}
+          selectId="faculty"
+          inputLabel="faculty"
+          selectValue={formik.values.faculty}
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          errorMessages={formik.errors.faculty}
+          isTouched={formik.touched.faculty}
+        />
+
+        <BaseSelect
+          name="programmes"
+          items={dummyProgramme}
+          selectId="programme"
+          inputLabel="programme"
+          selectValue={formik.values.programme}
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          errorMessages={formik.errors.programme}
+          isTouched={formik.touched.programme}
         />
       </div>
-
-      <div className="flex flex-row justify-evenly">
+      <div className="grid grid-cols-2 md:gap-x-9 items-end">
         <TitleTextInput
           value={formik.values.title}
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
           errorMessages={formik.errors.title}
           isTouched={formik.touched.title}
+          // style={{ width: "100%" }}
+          className="col-span-3"
+          required
         />
+
         <BaseDatePicker
-          label="Admission Year (YYYY-MM-DD)"
-          value={formik.values.admissionDate}
+          label="offerDate (YYYY-MM-DD)"
+          value={formik.values.offerDate}
           onChange={(newValue: any) => {
             formik.setFieldValue(
-              "admissionDate",
+              "offerDate",
               moment(newValue).format("YYYY-MM-DD")
             )
           }}
@@ -86,80 +119,56 @@ const InterviewReviewPage: NextPage = () => {
 <div className="flex flex-wrap flex-row justify-center items-center gap-x-10 gap-y-5"> */}
       <div className="flex flex-col justify-center items-center">
         <RatingToggleButtonGroup
-          id="campusRating"
-          value={formik.values.campusRating}
+          id="exprience"
+          value={formik.values.exprience}
           onChange={formik.handleChange}
           ratingTitle={recommendRating}
           onBlur={formik.handleBlur}
-          errorMessages={formik.errors.campusRating}
-          isTouched={formik.touched.campusRating}
-          header="學校設施及環境"
+          errorMessages={formik.errors.exprience}
+          isTouched={formik.touched.exprience}
+          header="Interview experience"
           headerRequired={true}
         />
 
         <RatingToggleButtonGroup
-          id="resourceRating"
-          value={formik.values.resourceRating}
+          id="difficulty"
+          value={formik.values.difficulty}
           onChange={formik.handleChange}
           ratingTitle={recommendRating}
           onBlur={formik.handleBlur}
-          errorMessages={formik.errors.resourceRating}
-          isTouched={formik.touched.resourceRating}
-          header="資源及支援"
-          headerRequired={true}
-        />
-
-        <RatingToggleButtonGroup
-          id="policyRating"
-          value={formik.values.policyRating}
-          onChange={formik.handleChange}
-          ratingTitle={recommendRating}
-          onBlur={formik.handleBlur}
-          errorMessages={formik.errors.policyRating}
-          isTouched={formik.touched.policyRating}
-          header="學校政策"
-          headerRequired={true}
-        />
-
-        <RatingToggleButtonGroup
-          id="canteenRating"
-          value={formik.values.canteenRating}
-          onChange={formik.handleChange}
-          ratingTitle={recommendRating}
-          onBlur={formik.handleBlur}
-          errorMessages={formik.errors.canteenRating}
-          isTouched={formik.touched.canteenRating}
-          header="校內膳食"
-          headerRequired={true}
-        />
-
-        <RatingToggleButtonGroup
-          id="selfOfBelonging"
-          value={formik.values.selfOfBelonging}
-          onChange={formik.handleChange}
-          ratingTitle={recommendRating}
-          onBlur={formik.handleBlur}
-          errorMessages={formik.errors.selfOfBelonging}
-          isTouched={formik.touched.selfOfBelonging}
-          header="selfOfBelonging"
-          headerRequired={true}
-        />
-
-        <RatingToggleButtonGroup
-          id="overRating"
-          value={formik.values.overRating}
-          onChange={formik.handleChange}
-          ratingTitle={recommendRating}
-          onBlur={formik.handleBlur}
-          errorMessages={formik.errors.overRating}
-          isTouched={formik.touched.overRating}
-          header="整體評價"
+          errorMessages={formik.errors.difficulty}
+          isTouched={formik.touched.difficulty}
+          header="Interview difficulty"
           headerRequired={true}
         />
       </div>
 
-      <ContactSelect variant="standard" />
-      <BaseTextInput label="contect detail" />
+      <div className="grid md:grid-cols-4  md:gap-x-9 md:items-end ">
+        <div className="grid  col-span-3 md:col-span-1">
+          <ContactSelect
+            placeholder="123"
+            name="contactMethod"
+            selectId="contactMethod"
+            inputLabel="contactMethod"
+            selectValue={formik.values.contactMethod}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            errorMessages={formik.errors.contactMethod}
+            isTouched={formik.touched.contactMethod}
+          />
+        </div>
+        <div className="md:col-span-3 col-span-3 ">
+          <BaseTextInput
+            label="contect detail"
+            name="contactDetail"
+            value={formik.values.contactDetail}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            errorMessages={formik.errors.contactDetail}
+            isTouched={formik.touched.contactDetail}
+          />
+        </div>
+      </div>
 
       <LongQuestionsSection
         name="longQ"
