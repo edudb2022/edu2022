@@ -34,11 +34,11 @@ const BaseTextArea: React.FunctionComponent<IBaseTextAreaProps> = ({
           className={` p-2 ring-none border-2 w-full ${className}`}
           {...props}
         />
-        {valueLength && (
-          <div className="absolute right-3 bottom-5 text-theme-three-500">
-            {`${valueLength}/255`}
-          </div>
-        )}
+        {/* {valueLength && ( */}
+        <div className="absolute right-3 bottom-5 text-theme-three-500">
+          {`${valueLength}/255`}
+        </div>
+        {/* )} */}
       </div>
     </InputContainer>
   )

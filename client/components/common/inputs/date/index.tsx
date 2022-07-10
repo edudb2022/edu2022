@@ -12,13 +12,14 @@ interface IBaseDatePickerProps {
   value: any
   onChange: any
   label: string
+  className?: string
 }
 
 const BaseDatePicker: React.FunctionComponent<IBaseDatePickerProps> = ({
   value,
   onChange,
   label,
-
+  className,
   ...props
 }) => {
   return (
@@ -31,6 +32,7 @@ const BaseDatePicker: React.FunctionComponent<IBaseDatePickerProps> = ({
             value={value}
             renderInput={(params) => <TextField {...params} />}
             onChange={onChange}
+            className={className}
             {...props}
           />
         </div>

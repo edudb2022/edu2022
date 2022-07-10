@@ -30,10 +30,7 @@ const BaseTextInput: React.FunctionComponent<IBaseInputTextProps> = ({
       headerRequired={headerRequired}
       isTouched={isTouched}
     >
-      <TextField
-        className={`ring-red-500 outline-red-500 bg-[#F8FAFC]  ${className}`}
-        {...props}
-      />
+      <TextField className={` bg-[#F8FAFC]  ${className}`} {...props} />
     </InputContainer>
   )
 }

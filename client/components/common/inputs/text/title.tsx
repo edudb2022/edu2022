@@ -12,10 +12,11 @@ const TitleTextInput: React.FunctionComponent<ITitleTextInputProps> = ({
 }) => {
   return (
     <BaseTextInput
-      header="標題"
-      headerRequired={true}
+      // header="標題"
+      label="標題"
+      // headerRequired={true}
       name="title"
-      className={`${className}`}
+      className={` ${className}`}
       {...props}
     />
   )

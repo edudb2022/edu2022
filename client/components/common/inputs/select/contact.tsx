@@ -33,6 +33,7 @@ export const ContactSelect: React.FunctionComponent<IContactSelectProps> = ({
   ]
   return (
     <BaseSelect
+      variant="outlined"
       isTouched={isTouched}
       errorMessages={errorMessages}
       items={options}
