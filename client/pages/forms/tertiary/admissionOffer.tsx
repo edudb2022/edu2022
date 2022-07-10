@@ -57,6 +57,7 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
         />
         {/* school select */}
         <BaseSelect
+          name="school"
           items={dummySchool}
           selectId="school"
           inputLabel="school"
@@ -69,6 +70,7 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
         />
 
         <BaseSelect
+          name="faculty"
           items={dummyFactculty}
           selectId="faculty"
           inputLabel="faculty"
@@ -81,6 +83,7 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
         />
 
         <BaseSelect
+          name="programmes"
           items={dummyProgramme}
           selectId="programme"
           inputLabel="programme"
