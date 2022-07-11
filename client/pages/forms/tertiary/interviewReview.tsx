@@ -25,7 +25,7 @@ const InterviewReviewPage: NextPage = () => {
     faculty: "",
     programme: "",
     title: "",
-    offerDate: moment(new Date()).format("YYYY-MM-DD"),
+    interviewDate: moment(new Date()).format("YYYY-MM-DD"),
     exprience: 0,
     difficulty: 0,
     contactMethod: "",
@@ -104,11 +104,11 @@ const InterviewReviewPage: NextPage = () => {
         />
 
         <BaseDatePicker
-          label="offerDate (YYYY-MM-DD)"
-          value={formik.values.offerDate}
+          label="interviewDate (YYYY-MM-DD)"
+          value={formik.values.interviewDate}
           onChange={(newValue: any) => {
             formik.setFieldValue(
-              "offerDate",
+              "interviewDate",
               moment(newValue).format("YYYY-MM-DD")
             )
           }}

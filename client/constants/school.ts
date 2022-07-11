@@ -1,3 +1,5 @@
+import { SCHOOL_TYPE } from "../types/common"
+
 export const uni = [
   {
     id: "1",
@@ -5,7 +7,7 @@ export const uni = [
     schoolEnglishName: "Hong Kong University of Science and Technology",
     schoolShortName: "hkust",
     type: "大學",
-    totalReports: 1,
+    totalReports: 1
   },
   {
     id: "2",
@@ -13,7 +15,7 @@ export const uni = [
     schoolEnglishName: "University of Hong Kong",
     schoolShortName: "hku",
     type: "大學",
-    totalReports: 123123123,
+    totalReports: 123123123
   },
   {
     id: "3",
@@ -21,7 +23,7 @@ export const uni = [
     schoolEnglishName: "The Chinese University of Hong Kong",
     schoolShortName: "hkcu",
     type: "大學",
-    totalReports: 1,
+    totalReports: 1
   },
   {
     id: "4",
@@ -29,8 +31,8 @@ export const uni = [
     schoolEnglishName: "The Chinese University of Hong Kong",
     schoolShortName: "hkcu",
     type: "大學",
-    totalReports: 1,
-  },
+    totalReports: 1
+  }
   // {
   //   id: "5",
   //   schoolChineseName: "香港中文大學",
@@ -49,6 +51,17 @@ export const uni = [
   // },
 ]
 
+const schoolTypeOptions = [
+  {
+    value: SCHOOL_TYPE.COLLEGE,
+    title: SCHOOL_TYPE.COLLEGE
+  },
+  {
+    value: SCHOOL_TYPE.UNIVERSITY,
+    title: SCHOOL_TYPE.UNIVERSITY
+  }
+]
+
 export const college = [
   {
     id: "1",
@@ -56,6 +69,8 @@ export const college = [
     schoolEnglishName: "Hong Kong Institute of Vocational Education",
     schoolShortName: "IVE",
     type: "大學",
-    totalReports: 1,
-  },
+    totalReports: 1
+  }
 ]
+
+export { schoolTypeOptions }

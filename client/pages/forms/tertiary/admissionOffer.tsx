@@ -2,6 +2,7 @@ import { Grid } from "@mui/material"
 import { useFormik } from "formik"
 import moment from "moment"
 import React from "react"
+import CommonToggleButtonGroup from "../../../components/common/groups/toggleButton/common"
 import RatingToggleButtonGroup from "../../../components/common/groups/toggleButton/rating"
 import BaseDatePicker from "../../../components/common/inputs/date"
 import LongQuestionsSection from "../../../components/common/inputs/sections/longQuestions"
@@ -17,6 +18,7 @@ import {
   dummySchool
 } from "../../../constants/dummy"
 import { recommendRating } from "../../../constants/rating"
+import { schoolTypeOptions } from "../../../constants/school"
 
 const AdmissionOfferFormPage: React.FunctionComponent = () => {
   const initialValues = {
@@ -26,8 +28,13 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
     programme: "",
     title: "",
     offerDate: moment(new Date()).format("YYYY-MM-DD"),
+    currentSchoolType: "",
+    currentSchool: "",
+    currentFaculty: "",
+    currentProgramme: "",
     exprience: 0,
     difficulty: 0,
+    offerType: "",
     contactMethod: "",
     contactDetail: "",
     longQ: ""
@@ -41,11 +48,14 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
     initialValues: initialValues,
     onSubmit: handleSubmit
   })
+
+  console.log(formik.values)
   return (
     <FormPageLayout>
       <div className="grid md:grid-cols-4 md:gap-x-9">
-        {/* <div className="flex flex-row border-2 gap-x-9"> */}
-        <SchoolTypeSelect
+        <BaseSelect
+          items={schoolTypeOptions}
+          name="schoolType"
           selectId="schoolType"
           inputLabel="Schhol type"
           selectValue={formik.values.schoolType}
@@ -54,7 +64,6 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
           errorMessages={formik.errors.schoolType}
           isTouched={formik.touched.schoolType}
         />
-        {/* school select */}
         <BaseSelect
           name="school"
           items={dummySchool}
@@ -112,7 +121,6 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
               moment(newValue).format("YYYY-MM-DD")
             )
           }}
-          // format="DD/MM/YYYY"
         />
       </div>
       {/* 
@@ -142,7 +150,54 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
           headerRequired={true}
         />
       </div>
+      <div className="grid md:grid-cols-4 md:gap-x-9">
+        <BaseSelect
+          items={schoolTypeOptions}
+          name="currentSchoolType"
+          selectId="currentSchoolType"
+          inputLabel="currentSchoolType"
+          selectValue={formik.values.currentSchoolType}
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          errorMessages={formik.errors.currentSchoolType}
+          isTouched={formik.touched.currentSchoolType}
+        />
+        <BaseSelect
+          name="currentSchool"
+          items={dummySchool}
+          selectId="currentSchool"
+          inputLabel="currentSchool"
+          selectValue={formik.values.currentSchool}
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          errorMessages={formik.errors.currentSchool}
+          isTouched={formik.touched.currentSchool}
+        />
 
+        <BaseSelect
+          name="currentFaculty"
+          items={dummyFactculty}
+          selectId="currentFaculty"
+          inputLabel="currentFaculty"
+          selectValue={formik.values.currentFaculty}
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          errorMessages={formik.errors.currentFaculty}
+          isTouched={formik.touched.currentFaculty}
+        />
+
+        <BaseSelect
+          name="currentProgramme"
+          items={dummyProgramme}
+          selectId="currentProgramme"
+          inputLabel="currentProgramme"
+          selectValue={formik.values.currentProgramme}
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          errorMessages={formik.errors.currentProgramme}
+          isTouched={formik.touched.currentProgramme}
+        />
+      </div>
       <div className="grid md:grid-cols-4  md:gap-x-9 md:items-end ">
         <div className="grid  col-span-3 md:col-span-1">
           <ContactSelect
@@ -169,6 +224,18 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
           />
         </div>
       </div>
+
+      <CommonToggleButtonGroup
+        id="offerType"
+        value={formik.values.offerType}
+        onChange={formik.handleChange}
+        // ratingTitle={recommendRating}
+        onBlur={formik.handleBlur}
+        errorMessages={formik.errors.offerType}
+        isTouched={formik.touched.offerType}
+        header="offerType"
+        headerRequired={true}
+      />
 
       <LongQuestionsSection
         name="longQ"
