@@ -31,8 +31,6 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
   const initialValues = {
     schoolType: "",
     school: "",
-    faculty: "",
-    programme: "",
     title: "",
     admissionDate: moment(new Date()).format("YYYY-MM-DD"),
     academicStatus: "",
@@ -83,41 +81,6 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
           isTouched={formik.touched.school}
         />
 
-        <BaseSelect
-          name="faculty"
-          items={dummyFactculty}
-          selectId="faculty"
-          inputLabel="faculty"
-          selectValue={formik.values.faculty}
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
-          errorMessages={formik.errors.faculty}
-          isTouched={formik.touched.faculty}
-        />
-
-        <BaseSelect
-          name="programmes"
-          items={dummyProgramme}
-          selectId="programme"
-          inputLabel="programme"
-          selectValue={formik.values.programme}
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
-          errorMessages={formik.errors.programme}
-          isTouched={formik.touched.programme}
-        />
-      </div>
-      <div className="grid md:grid-cols-4 md:gap-x-9 md:items-end gap-y-2">
-        <div className="grid md:col-span-2">
-          <TitleTextInput
-            value={formik.values.title}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            errorMessages={formik.errors.title}
-            isTouched={formik.touched.title}
-          />
-        </div>
-
         <BaseDatePicker
           label="Admission Year (YYYY-MM-DD)"
           value={formik.values.admissionDate}
@@ -129,6 +92,7 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
           }}
           // format="DD/MM/YYYY"
         />
+
         <BaseSelect
           name="academicStatus"
           items={dummyProgramme}
@@ -141,6 +105,17 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
           isTouched={formik.touched.academicStatus}
         />
       </div>
+      {/* <div className="grid md:grid-cols-4 md:gap-x-9 md:items-end gap-y-2">
+        <div className="grid md:col-span-2"> */}
+      <TitleTextInput
+        value={formik.values.title}
+        onChange={formik.handleChange}
+        onBlur={formik.handleBlur}
+        errorMessages={formik.errors.title}
+        isTouched={formik.touched.title}
+      />
+      {/* </div>
+      </div> */}
 
       {/* 
       <div className="flex flex-wrap flex-row justify-center items-center gap-x-10 gap-y-5"> */}
