@@ -6,11 +6,13 @@ import {
 } from "supertokens-auth-react/recipe/emailpassword"
 import EmailPassword from "supertokens-auth-react/recipe/emailpassword"
 import SuperTokens from "supertokens-auth-react"
-interface FormPageLayoutProps {}
+interface FormPageLayoutProps {
+  pageTitle: string
+}
 
 const FormPageLayout: React.FunctionComponent<
   PropsWithChildren<FormPageLayoutProps>
-> = ({ children }) => {
+> = ({ pageTitle, children }) => {
   const EmailPasswordAuthNoSSR = dynamic(
     new Promise<typeof EmailPassword.EmailPasswordAuth>((res) =>
       res(EmailPassword.EmailPasswordAuth)
@@ -24,7 +26,8 @@ const FormPageLayout: React.FunctionComponent<
   }, [])
   return (
     <div className="flex justify-center items-center border-2  ">
-      <div className="flex  flex-col  p-2 w-full md:w-11/12 border-2 border-green-500 ">
+      <div className="flex  flex-col  p-2 w-full md:w-11/12 border-2 gap-y-6 ">
+        <h1 className="font-black mt-2 mb-6">{pageTitle}</h1>
         {children}
       </div>
     </div>

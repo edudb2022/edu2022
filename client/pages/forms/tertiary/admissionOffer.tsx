@@ -51,7 +51,7 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
 
   console.log(formik.values)
   return (
-    <FormPageLayout>
+    <FormPageLayout pageTitle="123">
       <div className="grid md:grid-cols-4 md:gap-x-9">
         <BaseSelect
           items={schoolTypeOptions}
@@ -108,7 +108,7 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
           errorMessages={formik.errors.title}
           isTouched={formik.touched.title}
           // style={{ width: "100%" }}
-          className="col-span-3"
+
           required
         />
 

@@ -10,6 +10,7 @@ import { ContactSelect } from "../../../components/common/inputs/select/contact"
 import SchoolTypeSelect from "../../../components/common/inputs/select/schoolType"
 import BaseTextInput from "../../../components/common/inputs/text"
 import TitleTextInput from "../../../components/common/inputs/text/title"
+import AnonymousSwitch from "../../../components/common/switch/anonymous"
 import FormPageLayout from "../../../components/layouts/form"
 import {
   dummyFactculty,
@@ -26,6 +27,7 @@ const InterviewReviewPage: NextPage = () => {
     programme: "",
     title: "",
     interviewDate: moment(new Date()).format("YYYY-MM-DD"),
+    academicStatus: "",
     exprience: 0,
     difficulty: 0,
     contactMethod: "",
@@ -42,7 +44,7 @@ const InterviewReviewPage: NextPage = () => {
     onSubmit: handleSubmit
   })
   return (
-    <FormPageLayout>
+    <FormPageLayout pageTitle="123">
       <div className="grid md:grid-cols-4 md:gap-x-9">
         {/* <div className="flex flex-row border-2 gap-x-9"> */}
         <SchoolTypeSelect
@@ -91,7 +93,7 @@ const InterviewReviewPage: NextPage = () => {
           isTouched={formik.touched.programme}
         />
       </div>
-      <div className="grid grid-cols-2 md:gap-x-9 items-end">
+      <div className="grid grid-cols-3 md:gap-x-9 items-end">
         <TitleTextInput
           value={formik.values.title}
           onChange={formik.handleChange}
@@ -169,6 +171,8 @@ const InterviewReviewPage: NextPage = () => {
           />
         </div>
       </div>
+
+      <AnonymousSwitch />
 
       <LongQuestionsSection
         name="longQ"

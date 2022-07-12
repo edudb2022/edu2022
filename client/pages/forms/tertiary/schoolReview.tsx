@@ -18,18 +18,33 @@ import dynamic from "next/dynamic"
 import SuperTokens from "supertokens-auth-react"
 import { STRedirectToSignIn } from "../../../service/supertoken/function"
 import BaseTextInput from "../../../components/common/inputs/text"
+import BaseSelect from "../../../components/common/inputs/select"
+import {
+  dummyFactculty,
+  dummyProgramme,
+  dummySchool
+} from "../../../constants/dummy"
+import InputContainer from "../../../components/containers/input"
+import AnonymousSwitch from "../../../components/common/switch/anonymous"
 
 const SchoolReviewFormPage: React.FunctionComponent = () => {
   const initialValues = {
     schoolType: "",
+    school: "",
+    faculty: "",
+    programme: "",
     title: "",
     admissionDate: moment(new Date()).format("YYYY-MM-DD"),
+    academicStatus: "",
     campusRating: 0,
     resourceRating: 0,
     policyRating: 0,
     canteenRating: 0,
     selfOfBelonging: 0,
     overRating: 0,
+    contactMethod: "",
+    contactDetail: "",
+    isAnonymous: false,
     longQ: ""
   }
 
@@ -44,8 +59,8 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
 
   console.table(formik.values)
   return (
-    <FormPageLayout>
-      <div className="grid grid-cols-2">
+    <FormPageLayout pageTitle="School Review">
+      <div className="grid md:grid-cols-4 md:gap-x-9 gap-y-2">
         <SchoolTypeSelect
           selectId="schoolType"
           inputLabel="Schhol type"
@@ -54,29 +69,55 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
           onBlur={formik.handleBlur}
           errorMessages={formik.errors.schoolType}
           isTouched={formik.touched.schoolType}
-          fullWidth
         />
-        {/* school select */}
-        <SchoolTypeSelect
-          selectId="schoolType"
-          inputLabel="Schhol type"
-          selectValue={formik.values.schoolType}
+
+        <BaseSelect
+          name="school"
+          items={dummySchool}
+          selectId="school"
+          inputLabel="school"
+          selectValue={formik.values.school}
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
-          errorMessages={formik.errors.schoolType}
-          isTouched={formik.touched.schoolType}
-          fullWidth
+          errorMessages={formik.errors.school}
+          isTouched={formik.touched.school}
+        />
+
+        <BaseSelect
+          name="faculty"
+          items={dummyFactculty}
+          selectId="faculty"
+          inputLabel="faculty"
+          selectValue={formik.values.faculty}
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          errorMessages={formik.errors.faculty}
+          isTouched={formik.touched.faculty}
+        />
+
+        <BaseSelect
+          name="programmes"
+          items={dummyProgramme}
+          selectId="programme"
+          inputLabel="programme"
+          selectValue={formik.values.programme}
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          errorMessages={formik.errors.programme}
+          isTouched={formik.touched.programme}
         />
       </div>
+      <div className="grid md:grid-cols-4 md:gap-x-9 md:items-end gap-y-2">
+        <div className="grid md:col-span-2">
+          <TitleTextInput
+            value={formik.values.title}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            errorMessages={formik.errors.title}
+            isTouched={formik.touched.title}
+          />
+        </div>
 
-      <div className="flex flex-row justify-evenly">
-        <TitleTextInput
-          value={formik.values.title}
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
-          errorMessages={formik.errors.title}
-          isTouched={formik.touched.title}
-        />
         <BaseDatePicker
           label="Admission Year (YYYY-MM-DD)"
           value={formik.values.admissionDate}
@@ -88,10 +129,22 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
           }}
           // format="DD/MM/YYYY"
         />
+        <BaseSelect
+          name="academicStatus"
+          items={dummyProgramme}
+          selectId="academicStatus"
+          inputLabel="academicStatus"
+          selectValue={formik.values.academicStatus}
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          errorMessages={formik.errors.academicStatus}
+          isTouched={formik.touched.academicStatus}
+        />
       </div>
+
       {/* 
       <div className="flex flex-wrap flex-row justify-center items-center gap-x-10 gap-y-5"> */}
-      <div className="flex flex-col justify-center items-center">
+      <div className="flex flex-col gap-y-6 sjustify-center items-center">
         <RatingToggleButtonGroup
           id="campusRating"
           value={formik.values.campusRating}
@@ -113,6 +166,7 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
           errorMessages={formik.errors.resourceRating}
           isTouched={formik.touched.resourceRating}
           header="資源及支援"
+          subHeader="eg. Scholarship, career support..."
           headerRequired={true}
         />
 
@@ -165,9 +219,45 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
         />
       </div>
 
-      <ContactSelect variant="standard" />
-      <BaseTextInput label="contect detail" />
+      <InputContainer
+        header="contact method"
+        subHeader="Indicate the desired communication method"
+      >
+        <div className="grid   md:grid-cols-4  md:gap-x-9 md:items-end gap-y-2 mt-2">
+          <div className="grid  md:col-span-1">
+            <ContactSelect
+              placeholder="123"
+              name="contactMethod"
+              selectId="contactMethod"
+              inputLabel="contactMethod"
+              selectValue={formik.values.contactMethod}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              errorMessages={formik.errors.contactMethod}
+              isTouched={formik.touched.contactMethod}
+            />
+          </div>
+          <div className="md:col-span-3 ">
+            <BaseTextInput
+              label="contect detail"
+              name="contactDetail"
+              value={formik.values.contactDetail}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              errorMessages={formik.errors.contactDetail}
+              isTouched={formik.touched.contactDetail}
+            />
+          </div>
+        </div>
+      </InputContainer>
 
+      <AnonymousSwitch
+        className="ml-8"
+        value={formik.values.isAnonymous}
+        onChange={formik.handleChange}
+      />
+
+      <h1 className="font-black ml-6">Long Question</h1>
       <LongQuestionsSection
         name="longQ"
         header="HWta doasdasdoin thabtp oandiosanidoans"

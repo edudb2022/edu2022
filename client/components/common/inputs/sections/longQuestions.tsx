@@ -1,4 +1,5 @@
 import React from "react"
+import InputContainer from "../../../containers/input"
 import LongTextDisplayContainer from "../../../containers/longTextDisplay"
 import InputHeader, { IInputHeaderProps } from "../../header/input"
 import BaseTextArea, { IBaseTextAreaProps } from "../textArea"
@@ -19,6 +20,8 @@ const LongQuestionsSection: React.FunctionComponent<
   header,
   headerRequired,
   subHeader,
+  headerClassName,
+  subHeaderClassName,
   ...props
 }) => {
   return (
@@ -27,9 +30,11 @@ const LongQuestionsSection: React.FunctionComponent<
         header={header}
         headerRequired={headerRequired}
         subHeader={subHeader}
+        headerClassName={headerClassName}
+        subHeaderClassName={subHeaderClassName}
       />
 
-      <div className="mt-4">
+      <div>
         {content ? (
           <LongTextDisplayContainer content={content} />
         ) : (
