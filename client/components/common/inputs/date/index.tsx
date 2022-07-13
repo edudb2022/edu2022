@@ -30,7 +30,7 @@ const BaseDatePicker: React.FunctionComponent<IBaseDatePickerProps> = ({
             inputFormat="dd/MM/yyyy"
             label={label}
             value={value}
-            renderInput={(params) => <TextField {...params} />}
+            renderInput={(params) => <TextField {...params} fullWidth />}
             onChange={onChange}
             className={className}
             {...props}

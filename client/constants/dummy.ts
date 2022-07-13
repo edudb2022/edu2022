@@ -8,8 +8,8 @@ const dummyFactculty = [
   { value: "misuxc", title: "music" }
 ]
 const dummyProgramme = [
-  { value: "engine", title: "engine" },
-  { value: "misuxc", title: "music" }
+  { value: "elecengine", title: "elecengine" },
+  { value: "ba", title: "ba" }
 ]
 
 export { dummySchool, dummyFactculty, dummyProgramme }

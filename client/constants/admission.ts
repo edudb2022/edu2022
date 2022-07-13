@@ -1,17 +1,18 @@
 const admissionType = [
   { value: "jupas", title: "Jupas" },
   { value: "nonJuspas", title: "Non-jupas" },
-];
+  { value: "bachelor", title: "Bachelor" }
+]
 
 const admissionCondition = [
   { value: "conditional", title: "Conditional Offer" },
-  { value: "direct", title: "Direct Offer" },
-];
+  { value: "direct", title: "Direct Offer" }
+]
 
 const admissionLevel = [
   { value: "junior", title: "Junior" },
-  { value: "senior", title: "Senior" },
-];
+  { value: "senior", title: "Senior" }
+]
 
 const dseScore = [
   { value: "0", title: "U" },
@@ -21,8 +22,8 @@ const dseScore = [
   { value: "4", title: "4" },
   { value: "5", title: "5" },
   { value: "6", title: "5*" },
-  { value: "7", title: "5**" },
-];
+  { value: "7", title: "5**" }
+]
 
 const CategoryA = [
   { value: "chinese-language", title: "中國語文" },
@@ -35,7 +36,7 @@ const CategoryA = [
   { value: "economics", title: "經濟" },
   {
     value: "business-accounting-and-financial-studies",
-    title: "企業、會計與財務概論",
+    title: "企業、會計與財務概論"
   },
   { value: "physics", title: "物理" },
   { value: "geography", title: "地理" },
@@ -44,7 +45,7 @@ const CategoryA = [
   { value: "chinese-history", title: "中國歷史" },
   {
     value: "Information-and-communication-technology",
-    title: "資訊及通訊科技",
+    title: "資訊及通訊科技"
   },
   { value: "tourism-and-hospitality-studies", title: "旅遊與款待" },
   { value: "visual-arts", title: "視覺藝術" },
@@ -58,8 +59,8 @@ const CategoryA = [
   { value: "technology-and-living", title: "科技與生活" },
   { value: "music", title: "音樂" },
   { value: "integrated-science", title: "綜合科學" },
-  { value: "7", title: "" },
-];
+  { value: "7", title: "" }
+]
 
 const CategoryB = [
   { value: "display-and-jewellery-design", title: "展示及首飾設計" },
@@ -72,7 +73,7 @@ const CategoryB = [
   { value: "the-essentials-of-dramatic-artss", title: "由戲開始 • 劇藝縱橫" },
   {
     value: "digital-media-and-radio-production",
-    title: "數碼媒體及電台製作",
+    title: "數碼媒體及電台製作"
   },
   { value: "film-and-transmedia", title: "電影及超媒體" },
   { value: "pr-and-Multimedia-communication", title: "公關及媒體傳訊" },
@@ -81,7 +82,7 @@ const CategoryB = [
   { value: "marketing-and-online-promotion", title: "市場營銷及網上推廣" },
   {
     value: "law-Enforcement-in-hong-kong",
-    title: "香港執法實務",
+    title: "香港執法實務"
   },
   { value: "patisserie-and-cafe-operations", title: "甜品及咖啡店營運" },
   { value: "western-cuisine", title: "西式食品製作" },
@@ -112,8 +113,8 @@ const CategoryB = [
   { value: "english-for-service-professionals", title: "服務業專業英語" },
   { value: "chinese-in-business-service", title: "商業服務中文" },
   { value: "chinese-in-practical-context", title: "實用情境中文" },
-  { value: "practical-chinese", title: "實務中文" },
-];
+  { value: "practical-chinese", title: "實務中文" }
+]
 
 const CategoryC = [
   { value: "french", title: "法語" },
@@ -121,8 +122,8 @@ const CategoryC = [
   { value: "japanese", title: "日語" },
   { value: "spanish", title: "西班牙語" },
   { value: "hindi", title: "印地語" },
-  { value: "urdu", title: "烏爾都語" },
-];
+  { value: "urdu", title: "烏爾都語" }
+]
 // { value: "7", title: "" },
 // const dseSubjects = [
 //   {
@@ -176,5 +177,5 @@ export {
   admissionType,
   admissionCondition,
   CategoryB,
-  CategoryC,
-};
+  CategoryC
+}

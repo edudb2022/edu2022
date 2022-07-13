@@ -89,7 +89,7 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
         />
 
         <BaseSelect
-          name="programmes"
+          name="programme"
           items={dummyProgramme}
           selectId="programme"
           inputLabel="programme"

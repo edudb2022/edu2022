@@ -4,14 +4,21 @@ import { NextPage } from "next"
 import React from "react"
 import RatingToggleButtonGroup from "../../../components/common/groups/toggleButton/rating"
 import BaseDatePicker from "../../../components/common/inputs/date"
+import BaseNumberInput from "../../../components/common/inputs/number"
 import LongQuestionsSection from "../../../components/common/inputs/sections/longQuestions"
 import BaseSelect from "../../../components/common/inputs/select"
 import { ContactSelect } from "../../../components/common/inputs/select/contact"
+import DseGradeSelect from "../../../components/common/inputs/select/dseGrade"
+import DseSubjectsSelect from "../../../components/common/inputs/select/dseSubjects"
 import SchoolTypeSelect from "../../../components/common/inputs/select/schoolType"
+import GpaSlider from "../../../components/common/inputs/slider/gpa"
 import BaseTextInput from "../../../components/common/inputs/text"
 import TitleTextInput from "../../../components/common/inputs/text/title"
 import AnonymousSwitch from "../../../components/common/switch/anonymous"
+import InputContainer from "../../../components/containers/input"
 import FormPageLayout from "../../../components/layouts/form"
+import { admissionType } from "../../../constants/admission"
+import { dressCodeOptions } from "../../../constants/common"
 import {
   dummyFactculty,
   dummyProgramme,
@@ -30,8 +37,24 @@ const InterviewReviewPage: NextPage = () => {
     academicStatus: "",
     exprience: 0,
     difficulty: 0,
+    dressCode: "",
+    gpa: 0,
+    applicaiotnType: "",
+    desSubjectOne: "",
+    desSubjectGradeOne: "",
+    desSubjectTwo: "",
+    desSubjectGradeTwo: "",
+    desSubjectThree: "",
+    desSubjectGradeThree: "",
+    desSubjectFour: "",
+    desSubjectGradeFour: "",
+    desSubjectFive: "",
+    desSubjectGradeFive: "",
+    desSubjectSix: "",
+    desSubjectGradeSix: "",
     contactMethod: "",
     contactDetail: "",
+    isAnonymous: false,
     longQ: ""
   }
 
@@ -43,11 +66,14 @@ const InterviewReviewPage: NextPage = () => {
     initialValues: initialValues,
     onSubmit: handleSubmit
   })
+
+  console.table(formik.values)
   return (
-    <FormPageLayout pageTitle="123">
-      <div className="grid md:grid-cols-4 md:gap-x-9">
-        {/* <div className="flex flex-row border-2 gap-x-9"> */}
-        <SchoolTypeSelect
+    <FormPageLayout pageTitle="Interview">
+      <div className="grid md:grid-cols-4 md:gap-x-9 gap-y-2">
+        <BaseSelect
+          name="schoolType"
+          items={dummySchool}
           selectId="schoolType"
           inputLabel="Schhol type"
           selectValue={formik.values.schoolType}
@@ -56,7 +82,7 @@ const InterviewReviewPage: NextPage = () => {
           errorMessages={formik.errors.schoolType}
           isTouched={formik.touched.schoolType}
         />
-        {/* school select */}
+
         <BaseSelect
           name="school"
           items={dummySchool}
@@ -82,7 +108,7 @@ const InterviewReviewPage: NextPage = () => {
         />
 
         <BaseSelect
-          name="programmes"
+          name="programme"
           items={dummyProgramme}
           selectId="programme"
           inputLabel="programme"
@@ -93,33 +119,35 @@ const InterviewReviewPage: NextPage = () => {
           isTouched={formik.touched.programme}
         />
       </div>
-      <div className="grid grid-cols-3 md:gap-x-9 items-end">
-        <TitleTextInput
-          value={formik.values.title}
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
-          errorMessages={formik.errors.title}
-          isTouched={formik.touched.title}
-          // style={{ width: "100%" }}
-          className="col-span-3"
-          required
-        />
+      <div className="grid grid-cols-1 md:grid-cols-4 md:gap-x-9 items-end gap-y-2">
+        <div className="col-span-3">
+          <TitleTextInput
+            value={formik.values.title}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            errorMessages={formik.errors.title}
+            isTouched={formik.touched.title}
+            // style={{ width: "100%" }}
+            required
+          />
+        </div>
 
-        <BaseDatePicker
-          label="interviewDate (YYYY-MM-DD)"
-          value={formik.values.interviewDate}
-          onChange={(newValue: any) => {
-            formik.setFieldValue(
-              "interviewDate",
-              moment(newValue).format("YYYY-MM-DD")
-            )
-          }}
-          // format="DD/MM/YYYY"
-        />
+        <div className="grid">
+          <BaseDatePicker
+            label="interviewDate (YYYY-MM-DD)"
+            value={formik.values.interviewDate}
+            onChange={(newValue: any) => {
+              formik.setFieldValue(
+                "interviewDate",
+                moment(newValue).format("YYYY-MM-DD")
+              )
+            }}
+            // format="DD/MM/YYYY"
+          />
+        </div>
       </div>
-      {/* 
-<div className="flex flex-wrap flex-row justify-center items-center gap-x-10 gap-y-5"> */}
-      <div className="flex flex-col justify-center items-center">
+
+      <div className="flex flex-col gap-y-6 justify-center items-center">
         <RatingToggleButtonGroup
           id="exprience"
           value={formik.values.exprience}
@@ -145,35 +173,199 @@ const InterviewReviewPage: NextPage = () => {
         />
       </div>
 
-      <div className="grid md:grid-cols-4  md:gap-x-9 md:items-end ">
-        <div className="grid  col-span-3 md:col-span-1">
-          <ContactSelect
-            placeholder="123"
-            name="contactMethod"
-            selectId="contactMethod"
-            inputLabel="contactMethod"
-            selectValue={formik.values.contactMethod}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            errorMessages={formik.errors.contactMethod}
-            isTouched={formik.touched.contactMethod}
-          />
-        </div>
-        <div className="md:col-span-3 col-span-3 ">
-          <BaseTextInput
-            label="contect detail"
-            name="contactDetail"
-            value={formik.values.contactDetail}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            errorMessages={formik.errors.contactDetail}
-            isTouched={formik.touched.contactDetail}
-          />
-        </div>
+      <div className="grid md:grid-cols-4 md:gap-x-9 gap-y-2">
+        <BaseSelect
+          name="dressCode"
+          items={dressCodeOptions}
+          selectId="dressCode"
+          inputLabel="dressCode"
+          selectValue={formik.values.dressCode}
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          errorMessages={formik.errors.dressCode}
+          isTouched={formik.touched.dressCode}
+        />
+        <BaseSelect
+          name="applicaiotnType"
+          items={admissionType}
+          selectId="applicaiotnType"
+          inputLabel="applicaiotnType"
+          selectValue={formik.values.applicaiotnType}
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          errorMessages={formik.errors.applicaiotnType}
+          isTouched={formik.touched.applicaiotnType}
+        />
+
+        <BaseNumberInput
+          name="gpa"
+          id="gpa"
+          label="gpa"
+          value={formik.values.gpa}
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          errorMessages={formik.errors.gpa}
+          isTouched={formik.touched.gpa}
+          inputProps={{ min: 0, max: 4.3, step: 1 }}
+        />
       </div>
 
-      <AnonymousSwitch />
+      <InputContainer
+        header="DSE results (if applicable)"
+        subHeader="Please at least enter best 5 subjects"
+      >
+        <div className="grid md:grid-cols-4 md:gap-x-9 gap-y-2">
+          <DseSubjectsSelect
+            inputLabel="123"
+            name="desSubjectOne"
+            selectId="desSubjectOne"
+            selectValue={formik.values.desSubjectOne}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            errorMessages={formik.errors.desSubjectOne}
+            isTouched={formik.touched.desSubjectOne}
+          />
+          <DseGradeSelect
+            name="desSubjectGradeOne"
+            selectId="desSubjectGradeOne"
+            selectValue={formik.values.desSubjectGradeOne}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            errorMessages={formik.errors.desSubjectGradeOne}
+            isTouched={formik.touched.desSubjectGradeOne}
+          />
+          <DseSubjectsSelect
+            name="desSubjectTwo"
+            selectId="desSubjectTwo"
+            selectValue={formik.values.desSubjectTwo}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            errorMessages={formik.errors.desSubjectTwo}
+            isTouched={formik.touched.desSubjectTwo}
+          />
+          <DseGradeSelect
+            name="desSubjectGradeTwo"
+            selectId="desSubjectGradeTwo"
+            selectValue={formik.values.desSubjectGradeTwo}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            errorMessages={formik.errors.desSubjectGradeTwo}
+            isTouched={formik.touched.desSubjectGradeTwo}
+          />
+          <DseSubjectsSelect
+            name="desSubjectThree"
+            selectId="desSubjectThree"
+            selectValue={formik.values.desSubjectThree}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            errorMessages={formik.errors.desSubjectThree}
+            isTouched={formik.touched.desSubjectThree}
+          />
+          <DseGradeSelect
+            name="desSubjectGradeThree"
+            selectId="desSubjectGradeThree"
+            selectValue={formik.values.desSubjectGradeThree}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            errorMessages={formik.errors.desSubjectGradeThree}
+            isTouched={formik.touched.desSubjectGradeThree}
+          />
+          <DseSubjectsSelect
+            name="desSubjectFour"
+            selectId="desSubjectFour"
+            selectValue={formik.values.desSubjectFour}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            errorMessages={formik.errors.desSubjectFour}
+            isTouched={formik.touched.desSubjectFour}
+          />
+          <DseGradeSelect
+            name="desSubjectGradeFour"
+            selectId="desSubjectGradeFour"
+            selectValue={formik.values.desSubjectGradeFour}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            errorMessages={formik.errors.desSubjectGradeFour}
+            isTouched={formik.touched.desSubjectGradeFour}
+          />
+          <DseSubjectsSelect
+            name="desSubjectFive"
+            selectId="desSubjectFive"
+            selectValue={formik.values.desSubjectFive}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            errorMessages={formik.errors.desSubjectFive}
+            isTouched={formik.touched.desSubjectFive}
+          />
+          <DseGradeSelect
+            name="desSubjectGradeFive"
+            selectId="desSubjectGradeFive"
+            selectValue={formik.values.desSubjectGradeFive}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            errorMessages={formik.errors.desSubjectGradeFive}
+            isTouched={formik.touched.desSubjectGradeSix}
+          />
+          <DseSubjectsSelect
+            name="desSubjectSix"
+            selectId="desSubjectSix"
+            selectValue={formik.values.desSubjectSix}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            errorMessages={formik.errors.desSubjectSix}
+            isTouched={formik.touched.desSubjectSix}
+          />
+          <DseGradeSelect
+            name="desSubjectGradeSix"
+            selectId="desSubjectGradeSix"
+            selectValue={formik.values.desSubjectGradeSix}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            errorMessages={formik.errors.desSubjectGradeSix}
+            isTouched={formik.touched.desSubjectGradeSix}
+          />
+        </div>
+      </InputContainer>
 
+      <InputContainer
+        header="contact method"
+        subHeader="Indicate the desired communication method"
+      >
+        <div className="grid   md:grid-cols-4  md:gap-x-9 md:items-end gap-y-2 mt-2">
+          <div className="grid  md:col-span-1">
+            <ContactSelect
+              placeholder="123"
+              name="contactMethod"
+              selectId="contactMethod"
+              inputLabel="contactMethod"
+              selectValue={formik.values.contactMethod}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              errorMessages={formik.errors.contactMethod}
+              isTouched={formik.touched.contactMethod}
+            />
+          </div>
+          <div className="md:col-span-3 ">
+            <BaseTextInput
+              label="contect detail"
+              name="contactDetail"
+              value={formik.values.contactDetail}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              errorMessages={formik.errors.contactDetail}
+              isTouched={formik.touched.contactDetail}
+            />
+          </div>
+        </div>
+      </InputContainer>
+
+      <AnonymousSwitch
+        className="ml-8"
+        value={formik.values.isAnonymous}
+        onChange={formik.handleChange}
+      />
+
+      <h1 className="font-black ml-6">Long Question</h1>
       <LongQuestionsSection
         name="longQ"
         header="HWta doasdasdoin thabtp oandiosanidoans"

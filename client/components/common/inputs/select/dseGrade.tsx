@@ -12,6 +12,7 @@ const DseGradeSelect: React.FunctionComponent<IDseGradeSelectProps> = ({
 }) => {
   return (
     <BaseSelect
+      inputLabel="Grade"
       isTouched={isTouched}
       errorMessages={errorMessages}
       items={dseScore}

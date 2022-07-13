@@ -55,7 +55,6 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
     onSubmit: handleSubmit
   })
 
-  console.table(formik.values)
   return (
     <FormPageLayout pageTitle="School Review">
       <div className="grid md:grid-cols-4 md:gap-x-9 gap-y-2">
@@ -105,8 +104,7 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
           isTouched={formik.touched.academicStatus}
         />
       </div>
-      {/* <div className="grid md:grid-cols-4 md:gap-x-9 md:items-end gap-y-2">
-        <div className="grid md:col-span-2"> */}
+
       <TitleTextInput
         value={formik.values.title}
         onChange={formik.handleChange}
@@ -114,12 +112,8 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
         errorMessages={formik.errors.title}
         isTouched={formik.touched.title}
       />
-      {/* </div>
-      </div> */}
 
-      {/* 
-      <div className="flex flex-wrap flex-row justify-center items-center gap-x-10 gap-y-5"> */}
-      <div className="flex flex-col gap-y-6 sjustify-center items-center">
+      <div className="flex flex-col gap-y-6 justify-center items-center">
         <RatingToggleButtonGroup
           id="campusRating"
           value={formik.values.campusRating}

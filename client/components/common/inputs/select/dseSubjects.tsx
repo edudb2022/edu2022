@@ -1,4 +1,5 @@
 import {
+  FormControl,
   InputLabel,
   ListSubheader,
   MenuItem,
@@ -11,8 +12,9 @@ import {
   CategoryB,
   CategoryC
 } from "../../../../constants/admission"
+import ErrorMessage, { IErrorMessageProps } from "../../messages/error"
 
-interface IDseSubjectsSelectProps extends SelectProps {
+interface IDseSubjectsSelectProps extends SelectProps, IErrorMessageProps {
   //   inputLabel?: string;
   //   inputLabelClassName?: string;
   //   selectLabel: string;
@@ -20,6 +22,8 @@ interface IDseSubjectsSelectProps extends SelectProps {
   selectValue: string
   selectId?: string
   itemsClassName?: string
+  inputLabelClassName?: string
+  inputLabel?: string
   // items: ISelectMenuItems[];
 }
 
@@ -31,17 +35,26 @@ const DseSubjectsSelect: React.FunctionComponent<IDseSubjectsSelectProps> = ({
   selecClassName,
   selectId,
   //   items,
+  errorMessages,
+  isTouched,
   itemsClassName,
+  inputLabelClassName,
+  inputLabel,
   ...props
 }) => {
   return (
-    <div className="flex flex-col  w-auto">
-      {/* {inputLabel && ( */}
-      {/* <InputLabel className={`${inputLabelClassName}`}>科目</InputLabel> */}
-      {/* //)} */}
+    <FormControl>
+      {inputLabel && (
+        <InputLabel id={selectId} className={`${inputLabelClassName}`}>
+          {inputLabel}
+        </InputLabel>
+      )}
+
       <Select
         id={selectId}
         value={selectValue}
+        label={inputLabel}
+        labelId={selectId}
         className={`${selecClassName}`}
         variant="outlined"
         {...props}
@@ -83,7 +96,8 @@ const DseSubjectsSelect: React.FunctionComponent<IDseSubjectsSelectProps> = ({
           )
         })}
       </Select>
-    </div>
+      <ErrorMessage errorMessages={errorMessages} isTouched={isTouched} />
+    </FormControl>
   )
 }
 
