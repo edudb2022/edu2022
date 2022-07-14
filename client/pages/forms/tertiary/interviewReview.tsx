@@ -5,6 +5,7 @@ import React from "react"
 import RatingToggleButtonGroup from "../../../components/common/groups/toggleButton/rating"
 import BaseDatePicker from "../../../components/common/inputs/date"
 import BaseNumberInput from "../../../components/common/inputs/number"
+import GpaNumberInput from "../../../components/common/inputs/number/gpa"
 import LongQuestionsSection from "../../../components/common/inputs/sections/longQuestions"
 import BaseSelect from "../../../components/common/inputs/select"
 import { ContactSelect } from "../../../components/common/inputs/select/contact"
@@ -173,7 +174,7 @@ const InterviewReviewPage: NextPage = () => {
         />
       </div>
 
-      <div className="grid md:grid-cols-4 md:gap-x-9 gap-y-2">
+      <div className="grid  md:grid-cols-4 md:gap-x-9 gap-y-2">
         <BaseSelect
           name="dressCode"
           items={dressCodeOptions}
@@ -197,16 +198,12 @@ const InterviewReviewPage: NextPage = () => {
           isTouched={formik.touched.applicaiotnType}
         />
 
-        <BaseNumberInput
-          name="gpa"
-          id="gpa"
-          label="gpa"
+        <GpaNumberInput
           value={formik.values.gpa}
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
           errorMessages={formik.errors.gpa}
           isTouched={formik.touched.gpa}
-          inputProps={{ min: 0, max: 4.3, step: 1 }}
         />
       </div>
 
@@ -214,35 +211,44 @@ const InterviewReviewPage: NextPage = () => {
         header="DSE results (if applicable)"
         subHeader="Please at least enter best 5 subjects"
       >
-        <div className="grid md:grid-cols-4 md:gap-x-9 gap-y-2">
-          <DseSubjectsSelect
-            inputLabel="123"
-            name="desSubjectOne"
-            selectId="desSubjectOne"
-            selectValue={formik.values.desSubjectOne}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            errorMessages={formik.errors.desSubjectOne}
-            isTouched={formik.touched.desSubjectOne}
-          />
-          <DseGradeSelect
-            name="desSubjectGradeOne"
-            selectId="desSubjectGradeOne"
-            selectValue={formik.values.desSubjectGradeOne}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            errorMessages={formik.errors.desSubjectGradeOne}
-            isTouched={formik.touched.desSubjectGradeOne}
-          />
-          <DseSubjectsSelect
-            name="desSubjectTwo"
-            selectId="desSubjectTwo"
-            selectValue={formik.values.desSubjectTwo}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            errorMessages={formik.errors.desSubjectTwo}
-            isTouched={formik.touched.desSubjectTwo}
-          />
+        <div className="grid  grid-cols-3 md:grid-cols-4 md:gap-x-9 gap-y-2">
+          <div className="grid col-span-2 md:col-span-1">
+            <DseSubjectsSelect
+              inputLabel="123"
+              name="desSubjectOne"
+              selectId="desSubjectOne"
+              selectValue={formik.values.desSubjectOne}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              errorMessages={formik.errors.desSubjectOne}
+              isTouched={formik.touched.desSubjectOne}
+            />
+          </div>
+
+          <div className="grid col-span-1">
+            <DseGradeSelect
+              name="desSubjectGradeOne"
+              selectId="desSubjectGradeOne"
+              selectValue={formik.values.desSubjectGradeOne}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              errorMessages={formik.errors.desSubjectGradeOne}
+              isTouched={formik.touched.desSubjectGradeOne}
+            />
+          </div>
+
+          <div className="grid col-span-2 md:col-span-1">
+            <DseSubjectsSelect
+              name="desSubjectTwo"
+              selectId="desSubjectTwo"
+              selectValue={formik.values.desSubjectTwo}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              errorMessages={formik.errors.desSubjectTwo}
+              isTouched={formik.touched.desSubjectTwo}
+            />
+          </div>
+
           <DseGradeSelect
             name="desSubjectGradeTwo"
             selectId="desSubjectGradeTwo"
@@ -252,15 +258,17 @@ const InterviewReviewPage: NextPage = () => {
             errorMessages={formik.errors.desSubjectGradeTwo}
             isTouched={formik.touched.desSubjectGradeTwo}
           />
-          <DseSubjectsSelect
-            name="desSubjectThree"
-            selectId="desSubjectThree"
-            selectValue={formik.values.desSubjectThree}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            errorMessages={formik.errors.desSubjectThree}
-            isTouched={formik.touched.desSubjectThree}
-          />
+          <div className="grid col-span-2 md:col-span-1">
+            <DseSubjectsSelect
+              name="desSubjectThree"
+              selectId="desSubjectThree"
+              selectValue={formik.values.desSubjectThree}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              errorMessages={formik.errors.desSubjectThree}
+              isTouched={formik.touched.desSubjectThree}
+            />
+          </div>
           <DseGradeSelect
             name="desSubjectGradeThree"
             selectId="desSubjectGradeThree"
@@ -270,15 +278,17 @@ const InterviewReviewPage: NextPage = () => {
             errorMessages={formik.errors.desSubjectGradeThree}
             isTouched={formik.touched.desSubjectGradeThree}
           />
-          <DseSubjectsSelect
-            name="desSubjectFour"
-            selectId="desSubjectFour"
-            selectValue={formik.values.desSubjectFour}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            errorMessages={formik.errors.desSubjectFour}
-            isTouched={formik.touched.desSubjectFour}
-          />
+          <div className="grid col-span-2 md:col-span-1">
+            <DseSubjectsSelect
+              name="desSubjectFour"
+              selectId="desSubjectFour"
+              selectValue={formik.values.desSubjectFour}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              errorMessages={formik.errors.desSubjectFour}
+              isTouched={formik.touched.desSubjectFour}
+            />
+          </div>
           <DseGradeSelect
             name="desSubjectGradeFour"
             selectId="desSubjectGradeFour"
@@ -288,15 +298,17 @@ const InterviewReviewPage: NextPage = () => {
             errorMessages={formik.errors.desSubjectGradeFour}
             isTouched={formik.touched.desSubjectGradeFour}
           />
-          <DseSubjectsSelect
-            name="desSubjectFive"
-            selectId="desSubjectFive"
-            selectValue={formik.values.desSubjectFive}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            errorMessages={formik.errors.desSubjectFive}
-            isTouched={formik.touched.desSubjectFive}
-          />
+          <div className="grid col-span-2 md:col-span-1">
+            <DseSubjectsSelect
+              name="desSubjectFive"
+              selectId="desSubjectFive"
+              selectValue={formik.values.desSubjectFive}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              errorMessages={formik.errors.desSubjectFive}
+              isTouched={formik.touched.desSubjectFive}
+            />
+          </div>
           <DseGradeSelect
             name="desSubjectGradeFive"
             selectId="desSubjectGradeFive"
@@ -306,15 +318,18 @@ const InterviewReviewPage: NextPage = () => {
             errorMessages={formik.errors.desSubjectGradeFive}
             isTouched={formik.touched.desSubjectGradeSix}
           />
-          <DseSubjectsSelect
-            name="desSubjectSix"
-            selectId="desSubjectSix"
-            selectValue={formik.values.desSubjectSix}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            errorMessages={formik.errors.desSubjectSix}
-            isTouched={formik.touched.desSubjectSix}
-          />
+
+          <div className="grid col-span-2 md:col-span-1">
+            <DseSubjectsSelect
+              name="desSubjectSix"
+              selectId="desSubjectSix"
+              selectValue={formik.values.desSubjectSix}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              errorMessages={formik.errors.desSubjectSix}
+              isTouched={formik.touched.desSubjectSix}
+            />
+          </div>
           <DseGradeSelect
             name="desSubjectGradeSix"
             selectId="desSubjectGradeSix"

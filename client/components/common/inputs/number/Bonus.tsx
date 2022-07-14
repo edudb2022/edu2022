@@ -9,6 +9,7 @@ const BonusNumberInput: React.FunctionComponent<IBonusNumberInputProps> = ({
 }) => {
   return (
     <BaseNumberInput
+      id="bonus"
       label="花紅"
       name="bonus"
       inputProps={{ min: 0, step: 1 }}

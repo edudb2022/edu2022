@@ -9,6 +9,7 @@ const StockOptionNumberInput: React.FunctionComponent<
 > = ({ ...props }) => {
   return (
     <BaseNumberInput
+      id="stockOption"
       label="股票/股票期权"
       name="stockOption"
       inputProps={{ min: 0, step: 1 }}

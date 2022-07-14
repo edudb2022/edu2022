@@ -9,6 +9,7 @@ const BaseSalaryNumberInput: React.FunctionComponent<
 > = ({ ...props }) => {
   return (
     <BaseNumberInput
+      id="baseSalary"
       label="基本薪金"
       name="baseSalary"
       inputProps={{ min: 0, step: 1 }}

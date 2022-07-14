@@ -26,7 +26,7 @@ const FormPageLayout: React.FunctionComponent<
   }, [])
   return (
     <div className="flex justify-center items-center border-2  ">
-      <div className="flex  flex-col  p-2 w-full md:w-11/12 w-full gap-y-6 ">
+      <div className="flex  flex-col  p-2 w-full md:w-11/12  gap-y-6 ">
         <h1 className="font-black mt-2 mb-6">{pageTitle}</h1>
         {children}
       </div>

@@ -5,4 +5,21 @@ const dressCodeOptions = [
   { value: "upToYou", title: "Up to You" }
 ]
 
-export { dressCodeOptions }
+const jobSourceOptions = [
+  { value: "jijis", title: "Jijis" },
+  { value: "universityCareerCentre", title: "University Career Centre" },
+  { value: "linkedIn", title: "LinkedIn" },
+  { value: "jobsDb", title: "JobsDb" },
+  { value: "indeed", title: "Indeed" },
+  { value: "CompanyWebsite", title: "CompanyWebsite" },
+  { value: "Friends", title: "frends recommendation" },
+  { value: "others", title: "others " }
+]
+
+const internTypeOptions = [
+  { value: "summer", title: "summer" },
+  { value: "winter", title: "winter" },
+  { value: "placement", title: "placement" }
+]
+
+export { dressCodeOptions, jobSourceOptions, internTypeOptions }

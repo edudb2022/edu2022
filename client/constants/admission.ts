@@ -10,8 +10,11 @@ const admissionCondition = [
 ]
 
 const admissionLevel = [
-  { value: "junior", title: "Junior" },
-  { value: "senior", title: "Senior" }
+  { value: "1", title: "Year 1" },
+  { value: "2", title: "Year 2" },
+  { value: "3", title: "Year 3" },
+  { value: "4", title: "Year 4" },
+  { value: "5+", title: "Year 5+" }
 ]
 
 const dseScore = [
@@ -58,8 +61,7 @@ const CategoryA = [
   { value: "literature-in-english", title: "英語文學" },
   { value: "technology-and-living", title: "科技與生活" },
   { value: "music", title: "音樂" },
-  { value: "integrated-science", title: "綜合科學" },
-  { value: "7", title: "" }
+  { value: "integrated-science", title: "綜合科學" }
 ]
 
 const CategoryB = [
