@@ -12,6 +12,8 @@ const FormSumitButton: React.FunctionComponent<IFormSumitButtonProps> = () => {
     >
       <div>Submit</div>
 
+      {/* <ImArrowRight2 className="animate-bounceHorizontal" /> */}
+
       <ImArrowRight2 className="animate-bounceHorizontal" />
     </BaseButton>
   )
