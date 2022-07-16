@@ -23,6 +23,7 @@ import InputContainer from "../../../components/containers/input"
 import { jobSourceOptions } from "../../../constants/common"
 import { ContactSelect } from "../../../components/common/inputs/select/contact"
 import AnonymousSwitch from "../../../components/common/switch/anonymous"
+import FormSumitButton from "../../../components/common/buttons/formSubmit"
 
 const GradJobOfferFormPage: React.FunctionComponent = () => {
   const initialValues = {
@@ -123,32 +124,17 @@ const GradJobOfferFormPage: React.FunctionComponent = () => {
           />
         </div>
 
-        <div className="grid md:grid-cols-4 md:gap-x-9 items-end  gap-y-2">
-          <div className="grid md:col-span-3">
-            <TitleTextInput
-              value={formik.values.title}
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-              errorMessages={formik.errors.title}
-              isTouched={formik.touched.title}
-              // style={{ width: "100%" }}
-              required
-            />
-          </div>
+        <TitleTextInput
+          value={formik.values.title}
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          errorMessages={formik.errors.title}
+          isTouched={formik.touched.title}
+          // style={{ width: "100%" }}
+          required
+        />
 
-          <BaseDatePicker
-            label="offerRecievedDate (YYYY-MM-DD)"
-            value={formik.values.offerRecievedDate}
-            onChange={(newValue: any) => {
-              formik.setFieldValue(
-                "offerRecievedDate",
-                moment(newValue).format("YYYY-MM-DD")
-              )
-            }}
-          />
-        </div>
-
-        <div className="grid md:grid-cols-2 md:gap-x-9 items-end  gap-y-2">
+        <div className="grid md:grid-cols-3 md:gap-x-9 items-end  gap-y-2">
           <BaseTextInput
             label="jobTitle"
             name="jobTitle"
@@ -166,6 +152,17 @@ const GradJobOfferFormPage: React.FunctionComponent = () => {
             onBlur={formik.handleBlur}
             isTouched={formik.touched.companyName}
             errorMessages={formik.errors.companyName}
+          />
+
+          <BaseDatePicker
+            label="offerRecievedDate (YYYY-MM-DD)"
+            value={formik.values.offerRecievedDate}
+            onChange={(newValue: any) => {
+              formik.setFieldValue(
+                "offerRecievedDate",
+                moment(newValue).format("YYYY-MM-DD")
+              )
+            }}
           />
         </div>
 
@@ -296,6 +293,10 @@ const GradJobOfferFormPage: React.FunctionComponent = () => {
           header="123"
           minRows={5}
         />
+
+        <div className="flex flex-row justify-center">
+          <FormSumitButton />
+        </div>
       </FormPageLayout>
     </form>
   )

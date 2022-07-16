@@ -6,6 +6,7 @@ import {
   SelectProps
 } from "@mui/material"
 import React from "react"
+import InputContainer from "../../../containers/input"
 import ErrorMessage, { IErrorMessageProps } from "../../messages/error"
 
 interface ISelectMenuItems {
@@ -18,7 +19,7 @@ export interface IBaseSelectProps extends SelectProps, IErrorMessageProps {
   inputLabelClassName?: string
   selectLabel?: string
   selectClassName?: string
-  selectValue: string
+  selectValue: string | null
   selectId?: string
   itemsClassName?: string
   items: ISelectMenuItems[]
@@ -39,35 +40,37 @@ const BaseSelect: React.FunctionComponent<IBaseSelectProps> = ({
   ...props
 }) => {
   return (
-    <FormControl>
-      {inputLabel && (
-        <InputLabel id={selectId} className={`${inputLabelClassName}`}>
-          {inputLabel}
-        </InputLabel>
-      )}
-      <Select
-        id={selectId}
-        label={inputLabel}
-        labelId={selectId}
-        value={selectValue}
-        className={`${selectClassName}`}
-        variant="outlined"
-        {...props}
-      >
-        {items.map((data, index) => {
-          return (
-            <MenuItem
-              key={index}
-              className={`${itemsClassName}`}
-              value={data.value}
-            >
-              {data.title}
-            </MenuItem>
-          )
-        })}
-      </Select>
-      <ErrorMessage errorMessages={errorMessages} isTouched={isTouched} />
-    </FormControl>
+    <InputContainer errorMessages={errorMessages} isTouched={isTouched}>
+      <FormControl>
+        {inputLabel && (
+          <InputLabel id={selectId} className={`${inputLabelClassName}`}>
+            {inputLabel}
+          </InputLabel>
+        )}
+        <Select
+          id={selectId}
+          label={inputLabel}
+          labelId={selectId}
+          value={selectValue}
+          className={`${selectClassName}`}
+          variant="outlined"
+          {...props}
+        >
+          {items.map((data, index) => {
+            return (
+              <MenuItem
+                key={index}
+                className={`${itemsClassName}`}
+                value={data.value}
+              >
+                {data.title}
+              </MenuItem>
+            )
+          })}
+        </Select>
+        <ErrorMessage />
+      </FormControl>
+    </InputContainer>
   )
 }
 

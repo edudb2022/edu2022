@@ -2,6 +2,7 @@ import { Grid } from "@mui/material"
 import { useFormik } from "formik"
 import moment from "moment"
 import React from "react"
+import FormSumitButton from "../../../components/common/buttons/formSubmit"
 import CommonToggleButtonGroup from "../../../components/common/groups/toggleButton/common"
 import RatingToggleButtonGroup from "../../../components/common/groups/toggleButton/rating"
 import BaseDatePicker from "../../../components/common/inputs/date"
@@ -432,6 +433,10 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
         errorMessages={formik.errors.longQ}
         isTouched={formik.touched.longQ}
       />
+
+      <div className="flex flex-row justify-center">
+        <FormSumitButton />
+      </div>
     </FormPageLayout>
   )
 }

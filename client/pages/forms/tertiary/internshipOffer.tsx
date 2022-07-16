@@ -1,6 +1,7 @@
 import { useFormik } from "formik"
 import moment from "moment"
 import React, { useEffect } from "react"
+import FormSumitButton from "../../../components/common/buttons/formSubmit"
 import RatingToggleButtonGroup from "../../../components/common/groups/toggleButton/rating"
 import BaseDatePicker from "../../../components/common/inputs/date"
 import BaseSalaryNumberInput from "../../../components/common/inputs/number/baseSalary"
@@ -290,6 +291,9 @@ const InternshipOfferFormPage: React.FunctionComponent = () => {
           title="123"
           minRows={5}
         />
+        <div className="flex flex-row justify-center">
+          <FormSumitButton />
+        </div>
       </FormPageLayout>
     </form>
   )

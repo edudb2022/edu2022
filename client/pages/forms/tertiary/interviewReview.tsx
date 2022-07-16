@@ -2,6 +2,7 @@ import { useFormik } from "formik"
 import moment from "moment"
 import { NextPage } from "next"
 import React from "react"
+import FormSumitButton from "../../../components/common/buttons/formSubmit"
 import RatingToggleButtonGroup from "../../../components/common/groups/toggleButton/rating"
 import BaseDatePicker from "../../../components/common/inputs/date"
 import BaseNumberInput from "../../../components/common/inputs/number"
@@ -391,6 +392,9 @@ const InterviewReviewPage: NextPage = () => {
         errorMessages={formik.errors.longQ}
         isTouched={formik.touched.longQ}
       />
+      <div className="flex flex-row justify-center">
+        <FormSumitButton />
+      </div>
     </FormPageLayout>
   )
 }
