@@ -6,6 +6,7 @@ import CountUp from "react-countup"
 import CardDisplayLayout from "../../../../components/layouts/cardDisplay"
 import GradJobReviewDetailCard from "../../../../components/common/cards/reviewDetail/gradJob"
 import ReviewRankingCircularBar from "../../../../components/common/circularBar/reviewRanking"
+import RatingTag from "../../../../components/common/tags/rating"
 
 const GradJobReviewPage: NextPage = () => {
   return (
@@ -17,10 +18,6 @@ const GradJobReviewPage: NextPage = () => {
         schoolShortName={"hku"}
       >
         <div className="flex flex-col md:flex-row w-full justify-center gap-x-12 items-center ">
-          <div className="w-1/2 md:w-1/6">
-            <ReviewRankingCircularBar title="123" currentValue={2} />
-          </div>
-
           <div className="text-center mt-4 md:mt-0">
             <h6 className="text-gray-500">平均年薪</h6>
             <h1>
@@ -32,6 +29,10 @@ const GradJobReviewPage: NextPage = () => {
                 suffix="HKD"
               />
             </h1>
+          </div>
+
+          <div className="w-1/2 md:w-1/6">
+            <RatingTag rating={2} title="123" />
           </div>
         </div>
       </ReviewHeaderContainer>

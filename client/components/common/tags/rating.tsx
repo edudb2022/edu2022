@@ -4,6 +4,7 @@ import BaseTag, { IBaseTagProps } from "."
 interface IRantingTagProps extends IBaseTagProps {
   title: string
   rating: number
+  header?: string
 }
 
 export const ratingTextAndBackgroundColor = [
@@ -28,18 +29,22 @@ const RatingTag: React.FunctionComponent<IRantingTagProps> = ({
   className,
   rating,
   ratingClassName,
+  header,
   ...props
 }) => {
   const ROUNDED_OFF_RATING = Math.round(rating) - 1
 
   return (
-    <BaseTag
-      title={title}
-      rating={rating - 1}
-      className={ratingTextAndBackgroundColor[ROUNDED_OFF_RATING]}
-      ratingClassName={ratingBorderColor[ROUNDED_OFF_RATING]}
-      {...props}
-    />
+    <>
+      <p className="text-xs text-gray-400">{header}</p>
+      <BaseTag
+        title={title}
+        rating={rating - 1}
+        className={ratingTextAndBackgroundColor[ROUNDED_OFF_RATING]}
+        ratingClassName={ratingBorderColor[ROUNDED_OFF_RATING]}
+        {...props}
+      />
+    </>
   )
 }
 

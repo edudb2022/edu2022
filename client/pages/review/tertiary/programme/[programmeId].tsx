@@ -3,6 +3,7 @@ import React from "react"
 import ProgrammeReviewDetailCard from "../../../../components/common/cards/reviewDetail/programme"
 import BaseRadar from "../../../../components/common/charts/radar"
 import ReviewRankingCircularBar from "../../../../components/common/circularBar/reviewRanking"
+import RatingTag from "../../../../components/common/tags/rating"
 import ReviewHeaderContainer from "../../../../components/containers/reviewHeader"
 import CardDisplayLayout from "../../../../components/layouts/cardDisplay"
 import PageLayout from "../../../../components/layouts/page"
@@ -25,8 +26,8 @@ const ProgrammeReviewPage: NextPage = () => {
               />
             </div>
 
-            <div className="w-2/5  py-12">
-              <ReviewRankingCircularBar currentValue={4} title={"red"} />
+            <div className="w-2/5  py-12 flex flex-col justify-center items-center">
+              <RatingTag title={"red"} rating={4} />
             </div>
           </div>
         </div>

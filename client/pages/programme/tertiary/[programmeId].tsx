@@ -7,6 +7,7 @@ import InterviewReviewCard from "../../../components/common/cards/review/intervi
 import ProgrammeReviewCard from "../../../components/common/cards/review/programme"
 import BaseRadar from "../../../components/common/charts/radar"
 import ReviewRankingCircularBar from "../../../components/common/circularBar/reviewRanking"
+import RatingTag from "../../../components/common/tags/rating"
 import ReviewHeaderContainer from "../../../components/containers/reviewHeader"
 import CardDisplayLayout from "../../../components/layouts/cardDisplay"
 import PageLayout from "../../../components/layouts/page"
@@ -29,8 +30,8 @@ const ProgrammePage: React.FunctionComponent = () => {
               />
             </div>
 
-            <div className="w-2/5  py-12">
-              <ReviewRankingCircularBar currentValue={4} title="123" />
+            <div className="w-2/5  py-12 flex flex-col justify-center items-center">
+              <RatingTag title="123" rating={4} />
             </div>
           </div>
         </div>

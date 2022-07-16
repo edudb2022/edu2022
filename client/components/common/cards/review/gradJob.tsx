@@ -2,6 +2,7 @@ import React from "react"
 import BaseReviewCard, { IBaseReviewCardProps } from "."
 import CountUp from "react-countup"
 import ReviewRankingCircularBar from "../../circularBar/reviewRanking"
+import RatingTag from "../../tags/rating"
 
 interface IGradJobOfferReviewCardProps extends Partial<IBaseReviewCardProps> {
   salary: number
@@ -40,7 +41,7 @@ const GradJobOfferReviewCard: React.FunctionComponent<
             />
           </h1>
           <div className="absolute  w-full  px-20 mt-2 md:px-16  ">
-            <ReviewRankingCircularBar currentValue={hope} title="123" />
+            <RatingTag title="123" rating={hope} />
           </div>
         </div>
       </div>

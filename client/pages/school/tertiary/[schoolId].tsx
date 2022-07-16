@@ -9,6 +9,7 @@ import ProgrammeCard from "../../../components/common/cards/programme"
 import BaseRadar from "../../../components/common/charts/radar"
 import ReviewRankingCircularBar from "../../../components/common/circularBar/reviewRanking"
 import BaseSelect from "../../../components/common/inputs/select"
+import RatingTag from "../../../components/common/tags/rating"
 
 import ReviewHeaderContainer from "../../../components/containers/reviewHeader"
 import CardDisplayLayout from "../../../components/layouts/cardDisplay"
@@ -51,8 +52,8 @@ const TertiarySchoolPage: NextPage = () => {
               />
             </div>
 
-            <div className="w-2/5  py-12">
-              <ReviewRankingCircularBar currentValue={1} title={"red"} />
+            <div className="w-2/5  py-12 flex flex-col justify-center items-center">
+              <RatingTag title={"red"} rating={1} />
               <Link href={`/review/tertiary/school/${schoolId}`}>
                 <a>
                   <BaseButton className="w-full justify-center gap-x-2  text-sm md:text-base mt-4 bg-theme-one-500 text-white shrink-0">
