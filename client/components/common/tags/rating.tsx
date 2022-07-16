@@ -1,7 +1,7 @@
 import React from "react"
 import BaseTag, { IBaseTagProps } from "."
 
-interface IRantingTagProps extends IBaseTagProps {
+export interface IRantingTagProps extends IBaseTagProps {
   title: string
   rating: number
   header?: string
@@ -32,19 +32,19 @@ const RatingTag: React.FunctionComponent<IRantingTagProps> = ({
   header,
   ...props
 }) => {
-  const ROUNDED_OFF_RATING = Math.round(rating) - 1
+  const ROUNDED_OFF_RATING = Math.round(rating)
 
   return (
-    <>
-      <p className="text-xs text-gray-400">{header}</p>
+    <div className="flex flex-col justify-center items-center">
+      <p className="text-mb text-gray-400 mb-0">{header}</p>
       <BaseTag
         title={title}
-        rating={rating - 1}
-        className={ratingTextAndBackgroundColor[ROUNDED_OFF_RATING]}
+        rating={rating}
+        className={` ${className} ${ratingTextAndBackgroundColor[ROUNDED_OFF_RATING]}`}
         ratingClassName={ratingBorderColor[ROUNDED_OFF_RATING]}
         {...props}
       />
-    </>
+    </div>
   )
 }
 

@@ -7,6 +7,7 @@ import CardDisplayLayout from "../../../../components/layouts/cardDisplay"
 import GradJobReviewDetailCard from "../../../../components/common/cards/reviewDetail/gradJob"
 import ReviewRankingCircularBar from "../../../../components/common/circularBar/reviewRanking"
 import RatingTag from "../../../../components/common/tags/rating"
+import RatingLargeTag from "../../../../components/common/tags/ratingLarge"
 
 const GradJobReviewPage: NextPage = () => {
   return (
@@ -31,8 +32,13 @@ const GradJobReviewPage: NextPage = () => {
             </h1>
           </div>
 
-          <div className="w-1/2 md:w-1/6">
-            <RatingTag rating={2} title="123" />
+          <div className="w-1/2 md:w-1/6 flex flex-row gap-x-6  justify-center items-center">
+            <RatingLargeTag title={"hope"} rating={1} header={"hope"} />
+            <RatingLargeTag
+              title={"difficulty"}
+              rating={1}
+              header={"difficulty"}
+            />
           </div>
         </div>
       </ReviewHeaderContainer>

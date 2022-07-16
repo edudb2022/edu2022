@@ -2,6 +2,7 @@ import React from "react"
 import SchoolReviewDetailCard from "../../../../components/common/cards/reviewDetail/school"
 import BaseRadar from "../../../../components/common/charts/radar"
 import ReviewRankingCircularBar from "../../../../components/common/circularBar/reviewRanking"
+import RatingLargeTag from "../../../../components/common/tags/ratingLarge"
 import ReviewHeaderContainer from "../../../../components/containers/reviewHeader"
 import CardDisplayLayout from "../../../../components/layouts/cardDisplay"
 import PageLayout from "../../../../components/layouts/page"
@@ -16,16 +17,16 @@ const SchoolReviewPage = () => {
         schoolShortName={"hku"}
       >
         <div className="md:flex md:justify-center ">
-          <div className="flex flex-row md:w-2/5 ">
-            <div className="w-3/5 ">
+          <div className="flex flex-col justify-center items-center md:flex-row md:w-2/5 ">
+            <div className="w-4/5 md:w-3/5 ">
               <BaseRadar
                 scores={[1, 2, 3, 4, 5]}
                 labels={["January", "February", "March", "April", "May"]}
               />
             </div>
 
-            <div className="w-2/5  py-12">
-              <ReviewRankingCircularBar currentValue={4} title={"red"} />
+            <div className="w-2/5 flex justify-center items-center py-12">
+              <RatingLargeTag title={"red"} rating={1} />
             </div>
           </div>
         </div>
