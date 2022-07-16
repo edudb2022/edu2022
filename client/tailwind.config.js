@@ -126,18 +126,18 @@ module.exports = {
     extend: {
       width: width,
       colors: { school, theme, rating, intern },
-      fontSize: { xxs: "0.5rem" },
-      keyframes: {
-        bounceHorizontal: {
-          "0%:": { transform: "translateX(0)" },
-          "20%": { transform: "translateX(2px)" },
-          "80%": { transform: "translateX(-2px)" },
-          "100%": { transform: "translateX(0)" }
-        }
-      },
-      animation: {
-        bounceHorizontal: "bounceHorizontal 1s  infinite"
-      }
+      fontSize: { xxs: "0.5rem" }
+      // keyframes: {
+      //   bounceHorizontal: {
+      //     "0%:": { transform: "translateX(0)" },
+      //     "20%": { transform: "translateX(2px)" },
+      //     "80%": { transform: "translateX(-2px)" },
+      //     "100%": { transform: "translateX(0)" }
+      //   }
+      // },
+      // animation: {
+      //   bounceHorizontal: "bounceHorizontal 1s  infinite"
+      // }
     }
   },
   plugins: []
