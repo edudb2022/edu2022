@@ -9,21 +9,11 @@ import FormPageLayout from "../../../components/layouts/form"
 import { recommendRating } from "../../../constants/rating"
 import SchoolTypeSelect from "../../../components/common/inputs/select/schoolType"
 import { ContactSelect } from "../../../components/common/inputs/select/contact"
-import {
-  EmailPasswordAuth,
-  redirectToAuth
-} from "supertokens-auth-react/recipe/emailpassword"
 import LongQuestionsSection from "../../../components/common/inputs/sections/longQuestions"
-import dynamic from "next/dynamic"
-import SuperTokens from "supertokens-auth-react"
-import { STRedirectToSignIn } from "../../../service/supertoken/function"
+
 import BaseTextInput from "../../../components/common/inputs/text"
 import BaseSelect from "../../../components/common/inputs/select"
-import {
-  dummyFactculty,
-  dummyProgramme,
-  dummySchool
-} from "../../../constants/dummy"
+import { dummyProgramme, dummySchool } from "../../../constants/dummy"
 import InputContainer from "../../../components/containers/input"
 import AnonymousSwitch from "../../../components/common/switch/anonymous"
 import * as yup from "yup"
@@ -36,7 +26,7 @@ import FormSumitButton from "../../../components/common/buttons/formSubmit"
 
 const SchoolReviewFormPage: React.FunctionComponent = () => {
   const initialValues = {
-    schoolType: null,
+    schoolType: "",
     school: null,
     title: "",
     admissionDate: moment(new Date()).format("YYYY-MM-DD"),
@@ -73,7 +63,7 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
     validationSchema: schoolReviewFormSchema
   })
 
-  console.log(formik.errors)
+  console.log(222, formik.touched)
   return (
     <form onSubmit={formik.handleSubmit}>
       <FormPageLayout pageTitle="School Review">
@@ -86,6 +76,7 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
             onBlur={formik.handleBlur}
             errorMessages={formik.errors.schoolType}
             isTouched={formik.touched.schoolType}
+            isRequired
           />
 
           <BaseSelect
@@ -98,6 +89,7 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
             onBlur={formik.handleBlur}
             errorMessages={formik.errors.school}
             isTouched={formik.touched.school}
+            isRequired
           />
 
           <BaseDatePicker
@@ -109,6 +101,7 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
                 moment(newValue).format("YYYY-MM-DD")
               )
             }}
+
             // format="DD/MM/YYYY"
           />
 

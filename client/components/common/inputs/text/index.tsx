@@ -11,7 +11,9 @@ import ErrorMessage, { IErrorMessageProps } from "../../messages/error"
 
 export type IBaseInputTextProps = Partial<FilledTextFieldProps> &
   Partial<StandardTextFieldProps> &
-  IInputContainerProps
+  IInputContainerProps & {
+    isRequired?: boolean
+  }
 
 const BaseTextInput: React.FunctionComponent<IBaseInputTextProps> = ({
   isTouched,
@@ -20,6 +22,8 @@ const BaseTextInput: React.FunctionComponent<IBaseInputTextProps> = ({
   inputContainerClassName,
   header,
   headerRequired,
+  isRequired,
+  label,
   ...props
 }) => {
   return (
@@ -30,7 +34,11 @@ const BaseTextInput: React.FunctionComponent<IBaseInputTextProps> = ({
       headerRequired={headerRequired}
       isTouched={isTouched}
     >
-      <TextField className={` ${className}`} {...props} />
+      <TextField
+        className={` ${className}`}
+        label={`${label}${isRequired ? "*" : ""}`}
+        {...props}
+      />
     </InputContainer>
   )
 }

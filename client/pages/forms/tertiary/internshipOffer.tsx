@@ -23,13 +23,20 @@ import {
 } from "../../../constants/dummy"
 import { recommendRating } from "../../../constants/rating"
 import { schoolTypeOptions } from "../../../constants/school"
+import * as yup from "yup"
+import {
+  RatingValidationSchema,
+  SalaryValidationSchema,
+  SlectCommonValidationSchema,
+  TitleValidationSchema
+} from "../../../utils/validation/form/schema"
 
 const InternshipOfferFormPage: React.FunctionComponent = () => {
   const initialValues = {
-    schoolType: "",
-    school: "",
-    faculty: "",
-    programme: "",
+    schoolType: null,
+    school: null,
+    faculty: null,
+    programme: null,
     offerRecievedDate: new Date(),
     title: "",
     jobTitle: "",
@@ -38,30 +45,41 @@ const InternshipOfferFormPage: React.FunctionComponent = () => {
     bonus: 0,
     stockOption: 0,
     totalSalary: 0,
-    industry: "",
-    jobSource: "",
-    internType: "",
-    contactMethod: "",
-    contactDetail: "",
-    isAnonymous: false,
-    difficulty: 0
+    difficulty: null,
+    industry: null,
+    jobSource: null,
+    internType: null,
+    contactMethod: null,
+    contactDetail: null,
+    isAnonymous: false
   }
-  var errors = { title: "123" }
 
   const handleSubmit = () => {
     console.log()
   }
 
+  const intershipOfferFormSchema = yup.object().shape({
+    schoolType: SlectCommonValidationSchema,
+    school: SlectCommonValidationSchema,
+    faculty: SlectCommonValidationSchema,
+    programme: SlectCommonValidationSchema,
+    title: TitleValidationSchema,
+    jobTitle: TitleValidationSchema,
+    companyName: TitleValidationSchema,
+    industry: SlectCommonValidationSchema,
+    internType: SlectCommonValidationSchema,
+    baseSalary: SalaryValidationSchema,
+    bonus: SalaryValidationSchema,
+    stockOption: SalaryValidationSchema,
+    difficulty: RatingValidationSchema,
+    applicaiotnType: SlectCommonValidationSchema,
+    offerType: SlectCommonValidationSchema
+  })
+
   const formik = useFormik({
     initialValues: initialValues,
     onSubmit: handleSubmit,
-    validate: (values) => {
-      if (!values.title) {
-        errors.title = "on99"
-      }
-
-      return errors
-    }
+    validationSchema: intershipOfferFormSchema
   })
 
   console.log(formik.values)
@@ -84,6 +102,7 @@ const InternshipOfferFormPage: React.FunctionComponent = () => {
             onBlur={formik.handleBlur}
             errorMessages={formik.errors.schoolType}
             isTouched={formik.touched.schoolType}
+            isRequired
           />
           <BaseSelect
             name="school"
@@ -95,6 +114,7 @@ const InternshipOfferFormPage: React.FunctionComponent = () => {
             onBlur={formik.handleBlur}
             errorMessages={formik.errors.school}
             isTouched={formik.touched.school}
+            isRequired
           />
 
           <BaseSelect
@@ -107,6 +127,7 @@ const InternshipOfferFormPage: React.FunctionComponent = () => {
             onBlur={formik.handleBlur}
             errorMessages={formik.errors.faculty}
             isTouched={formik.touched.faculty}
+            isRequired
           />
 
           <BaseSelect
@@ -119,17 +140,15 @@ const InternshipOfferFormPage: React.FunctionComponent = () => {
             onBlur={formik.handleBlur}
             errorMessages={formik.errors.programme}
             isTouched={formik.touched.programme}
+            isRequired
           />
         </div>
-
         <TitleTextInput
           value={formik.values.title}
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
           errorMessages={formik.errors.title}
           isTouched={formik.touched.title}
-          // style={{ width: "100%" }}
-          required
         />
 
         <div className="grid md:grid-cols-3 md:gap-x-9 items-end  gap-y-2">
@@ -163,7 +182,6 @@ const InternshipOfferFormPage: React.FunctionComponent = () => {
             }}
           />
         </div>
-
         <InputContainer
           header="總年薪(HKD)"
           subHeader={`${formik.values.totalSalary} HKD`}
@@ -176,6 +194,7 @@ const InternshipOfferFormPage: React.FunctionComponent = () => {
               onBlur={formik.handleBlur}
               isTouched={formik.touched.baseSalary}
               errorMessages={formik.errors.baseSalary}
+              isRequired
             />
             <BonusNumberInput
               value={formik.values.bonus}
@@ -194,7 +213,6 @@ const InternshipOfferFormPage: React.FunctionComponent = () => {
           </div>
           {/* </div> */}
         </InputContainer>
-
         <div className="grid md:grid-cols-3 md:gap-x-9 mt-4 gap-y-2">
           <BaseSelect
             name="internType"
@@ -206,6 +224,7 @@ const InternshipOfferFormPage: React.FunctionComponent = () => {
             onBlur={formik.handleBlur}
             errorMessages={formik.errors.internType}
             isTouched={formik.touched.internType}
+            isRequired
           />
 
           <BaseSelect
@@ -218,6 +237,7 @@ const InternshipOfferFormPage: React.FunctionComponent = () => {
             onBlur={formik.handleBlur}
             errorMessages={formik.errors.industry}
             isTouched={formik.touched.industry}
+            isRequired
           />
 
           <BaseSelect
@@ -232,7 +252,6 @@ const InternshipOfferFormPage: React.FunctionComponent = () => {
             isTouched={formik.touched.jobSource}
           />
         </div>
-
         <div className="flex flex-col  justify-center items-center">
           <RatingToggleButtonGroup
             id="difficulty"
@@ -246,7 +265,6 @@ const InternshipOfferFormPage: React.FunctionComponent = () => {
             headerRequired={true}
           />
         </div>
-
         <InputContainer
           header="contact method"
           subHeader="Indicate the desired communication method"
@@ -278,7 +296,6 @@ const InternshipOfferFormPage: React.FunctionComponent = () => {
             </div>
           </div>
         </InputContainer>
-
         <AnonymousSwitch
           className="ml-8"
           value={formik.values.isAnonymous}

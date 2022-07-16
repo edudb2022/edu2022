@@ -19,7 +19,7 @@ interface IDseSubjectsSelectProps extends SelectProps, IErrorMessageProps {
   //   inputLabelClassName?: string;
   //   selectLabel: string;
   selecClassName?: string
-  selectValue: string
+  selectValue: string | null
   selectId?: string
   itemsClassName?: string
   inputLabelClassName?: string

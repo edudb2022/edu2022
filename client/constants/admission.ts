@@ -1,7 +1,9 @@
+import { ADMISSION_TYPE } from "../types/common"
+
 const admissionType = [
-  { value: "jupas", title: "Jupas" },
-  { value: "nonJuspas", title: "Non-jupas" },
-  { value: "bachelor", title: "Bachelor" }
+  { value: ADMISSION_TYPE.JUPAS, title: "Jupas" },
+  { value: ADMISSION_TYPE.NON_JUPAS, title: "Non-jupas" },
+  { value: ADMISSION_TYPE.BACHELOR, title: "Bachelor" }
 ]
 
 const admissionCondition = [

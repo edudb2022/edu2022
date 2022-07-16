@@ -18,6 +18,7 @@ const TitleTextInput: React.FunctionComponent<ITitleTextInputProps> = ({
       name="title"
       className={` ${className}`}
       {...props}
+      isRequired
     />
   )
 }

@@ -24,46 +24,63 @@ import { jobSourceOptions } from "../../../constants/common"
 import { ContactSelect } from "../../../components/common/inputs/select/contact"
 import AnonymousSwitch from "../../../components/common/switch/anonymous"
 import FormSumitButton from "../../../components/common/buttons/formSubmit"
+import {
+  RatingValidationSchema,
+  SalaryValidationSchema,
+  SlectCommonValidationSchema,
+  TitleValidationSchema
+} from "../../../utils/validation/form/schema"
+import * as yup from "yup"
 
 const GradJobOfferFormPage: React.FunctionComponent = () => {
   const initialValues = {
-    schoolType: "",
-    school: "",
-    faculty: "",
-    programme: "",
+    schoolType: null,
+    school: null,
+    faculty: null,
+    programme: null,
     offerRecievedDate: new Date(),
     title: "",
     jobTitle: "",
     companyName: "",
-    jobSource: "",
-    industry: "",
     baseSalary: 0,
     bonus: 0,
     stockOption: 0,
     totalSalary: 0,
-    contactMethod: "",
-    contactDetail: "",
-    isAnonymous: false,
     difficulty: 0,
-    hope: 0
+    hope: 0,
+    industry: null,
+    jobSource: null,
+    contactMethod: null,
+    contactDetail: "",
+    isAnonymous: false
   }
-
-  var errors = { title: "123" }
 
   const handleSubmit = () => {
     console.log()
   }
 
+  const gradJobOfferFormSchema = yup.object().shape({
+    schoolType: SlectCommonValidationSchema,
+    school: SlectCommonValidationSchema,
+    faculty: SlectCommonValidationSchema,
+    programme: SlectCommonValidationSchema,
+    title: TitleValidationSchema,
+    jobTitle: TitleValidationSchema,
+    companyName: TitleValidationSchema,
+    industry: SlectCommonValidationSchema,
+    baseSalary: SalaryValidationSchema,
+    bonus: SalaryValidationSchema,
+    hope: RatingValidationSchema,
+    difficulty: RatingValidationSchema,
+    stockOption: SalaryValidationSchema,
+    applicaiotnType: SlectCommonValidationSchema,
+    offerType: SlectCommonValidationSchema
+  })
+
   const formik = useFormik({
     initialValues: initialValues,
     onSubmit: handleSubmit,
-    validate: (values) => {
-      if (!values.title) {
-        errors.title = "on99"
-      }
-
-      return errors
-    }
+    validationSchema: gradJobOfferFormSchema
   })
 
   console.log(formik.values)
@@ -86,6 +103,7 @@ const GradJobOfferFormPage: React.FunctionComponent = () => {
             onBlur={formik.handleBlur}
             errorMessages={formik.errors.schoolType}
             isTouched={formik.touched.schoolType}
+            isRequired
           />
           <BaseSelect
             name="school"
@@ -97,6 +115,7 @@ const GradJobOfferFormPage: React.FunctionComponent = () => {
             onBlur={formik.handleBlur}
             errorMessages={formik.errors.school}
             isTouched={formik.touched.school}
+            isRequired
           />
 
           <BaseSelect
@@ -109,6 +128,7 @@ const GradJobOfferFormPage: React.FunctionComponent = () => {
             onBlur={formik.handleBlur}
             errorMessages={formik.errors.faculty}
             isTouched={formik.touched.faculty}
+            isRequired
           />
 
           <BaseSelect
@@ -121,6 +141,7 @@ const GradJobOfferFormPage: React.FunctionComponent = () => {
             onBlur={formik.handleBlur}
             errorMessages={formik.errors.programme}
             isTouched={formik.touched.programme}
+            isRequired
           />
         </div>
 
@@ -131,7 +152,7 @@ const GradJobOfferFormPage: React.FunctionComponent = () => {
           errorMessages={formik.errors.title}
           isTouched={formik.touched.title}
           // style={{ width: "100%" }}
-          required
+          isRequired
         />
 
         <div className="grid md:grid-cols-3 md:gap-x-9 items-end  gap-y-2">
@@ -143,6 +164,7 @@ const GradJobOfferFormPage: React.FunctionComponent = () => {
             onBlur={formik.handleBlur}
             isTouched={formik.touched.jobTitle}
             errorMessages={formik.errors.jobTitle}
+            isRequired
           />
           <BaseTextInput
             label="companyName"
@@ -152,6 +174,7 @@ const GradJobOfferFormPage: React.FunctionComponent = () => {
             onBlur={formik.handleBlur}
             isTouched={formik.touched.companyName}
             errorMessages={formik.errors.companyName}
+            isRequired
           />
 
           <BaseDatePicker
@@ -208,6 +231,7 @@ const GradJobOfferFormPage: React.FunctionComponent = () => {
             onBlur={formik.handleBlur}
             errorMessages={formik.errors.industry}
             isTouched={formik.touched.industry}
+            isRequired
           />
 
           <BaseSelect

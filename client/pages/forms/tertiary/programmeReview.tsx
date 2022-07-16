@@ -6,7 +6,6 @@ import BaseDatePicker from "../../../components/common/inputs/date"
 import LongQuestionsSection from "../../../components/common/inputs/sections/longQuestions"
 import BaseSelect from "../../../components/common/inputs/select"
 import { ContactSelect } from "../../../components/common/inputs/select/contact"
-import SchoolTypeSelect from "../../../components/common/inputs/select/schoolType"
 import BaseTextInput from "../../../components/common/inputs/text"
 import TitleTextInput from "../../../components/common/inputs/text/title"
 import AnonymousSwitch from "../../../components/common/switch/anonymous"
@@ -21,40 +20,45 @@ import { recommendRating } from "../../../constants/rating"
 import * as yup from "yup"
 import {
   SlectCommonValidationSchema,
-  TitleValidationSchema
+  TitleValidationSchema,
+  RatingValidationSchema
 } from "../../../utils/validation/form/schema"
 import FormSumitButton from "../../../components/common/buttons/formSubmit"
 
 const ProgrammeReviewFormPage: React.FunctionComponent = () => {
   const initialValues = {
-    schoolType: "",
-    school: "",
-    faculty: "",
-    programme: "",
+    schoolType: null,
+    school: null,
+    faculty: null,
+    programme: null,
     title: "",
     admissionDate: moment(new Date()).format("YYYY-MM-DD"),
-    academicStatus: "",
-    workload: 0,
-    programmeStructure: 0,
-    teachingQuality: 0,
-    resources: 0,
-    learningExprience: 0,
-    recommendation: 0,
-    contactMethod: "",
+    academicStatus: null,
+    workload: null,
+    programmeStructure: null,
+    teachingQuality: null,
+    resources: null,
+    learningExprience: null,
+    recommendation: null,
+    contactMethod: null,
     contactDetail: "",
     isAnonymous: false,
     longQ: ""
   }
 
   const programmeReviewFormSchema = yup.object().shape({
-    progrmme: SlectCommonValidationSchema,
-    workload: TitleValidationSchema,
-    programmeStructure: TitleValidationSchema,
-    teachingQuality: TitleValidationSchema,
-    resources: TitleValidationSchema,
-    learningExprience: TitleValidationSchema,
-    recommendation: TitleValidationSchema,
-    title: TitleValidationSchema
+    schoolType: SlectCommonValidationSchema,
+    school: SlectCommonValidationSchema,
+    faculty: SlectCommonValidationSchema,
+    programme: SlectCommonValidationSchema,
+    title: TitleValidationSchema,
+    progrmme: RatingValidationSchema,
+    workload: RatingValidationSchema,
+    programmeStructure: RatingValidationSchema,
+    teachingQuality: RatingValidationSchema,
+    resources: RatingValidationSchema,
+    learningExprience: RatingValidationSchema,
+    recommendation: RatingValidationSchema
   })
   const handleSubmit = () => {
     console.log("sumit")
@@ -80,6 +84,7 @@ const ProgrammeReviewFormPage: React.FunctionComponent = () => {
             onBlur={formik.handleBlur}
             errorMessages={formik.errors.schoolType}
             isTouched={formik.touched.schoolType}
+            isRequired
           />
 
           <BaseSelect
@@ -92,6 +97,7 @@ const ProgrammeReviewFormPage: React.FunctionComponent = () => {
             onBlur={formik.handleBlur}
             errorMessages={formik.errors.school}
             isTouched={formik.touched.school}
+            isRequired
           />
 
           <BaseSelect
@@ -104,6 +110,7 @@ const ProgrammeReviewFormPage: React.FunctionComponent = () => {
             onBlur={formik.handleBlur}
             errorMessages={formik.errors.faculty}
             isTouched={formik.touched.faculty}
+            isRequired
           />
 
           <BaseSelect
@@ -116,6 +123,7 @@ const ProgrammeReviewFormPage: React.FunctionComponent = () => {
             onBlur={formik.handleBlur}
             errorMessages={formik.errors.programme}
             isTouched={formik.touched.programme}
+            isRequired
           />
         </div>
 

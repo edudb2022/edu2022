@@ -23,6 +23,8 @@ export interface IBaseSelectProps extends SelectProps, IErrorMessageProps {
   selectId?: string
   itemsClassName?: string
   items: ISelectMenuItems[]
+  equired?: boolean
+  isRequired?: boolean
 }
 
 const BaseSelect: React.FunctionComponent<IBaseSelectProps> = ({
@@ -37,6 +39,7 @@ const BaseSelect: React.FunctionComponent<IBaseSelectProps> = ({
   errorMessages,
   isTouched,
   id,
+  isRequired,
   ...props
 }) => {
   return (
@@ -45,6 +48,7 @@ const BaseSelect: React.FunctionComponent<IBaseSelectProps> = ({
         {inputLabel && (
           <InputLabel id={selectId} className={`${inputLabelClassName}`}>
             {inputLabel}
+            {isRequired && "*"}
           </InputLabel>
         )}
         <Select

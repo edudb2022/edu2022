@@ -4,7 +4,9 @@ import BaseTextInput, { IBaseInputTextProps } from "../text"
 
 export interface IBaseNumberInputProps
   extends IBaseInputTextProps,
-    IInputContainerProps {}
+    IInputContainerProps {
+  isRequired?: boolean
+}
 
 const BaseNumberInput: React.FunctionComponent<IBaseNumberInputProps> = ({
   errorMessages,
@@ -15,6 +17,8 @@ const BaseNumberInput: React.FunctionComponent<IBaseNumberInputProps> = ({
   subHeaderClassName,
   inputContainerClassName,
   name,
+  label,
+  isRequired,
   ...props
 }) => {
   return (
@@ -27,7 +31,11 @@ const BaseNumberInput: React.FunctionComponent<IBaseNumberInputProps> = ({
       subHeaderClassName={subHeaderClassName}
       inputContainerClassName={inputContainerClassName}
     >
-      <BaseTextInput type={"number"} {...props} />
+      <BaseTextInput
+        type={"number"}
+        label={`${label}${isRequired ? "*" : ""}`}
+        {...props}
+      />
     </InputContainer>
   )
 }

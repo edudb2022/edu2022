@@ -12,8 +12,13 @@ const SlectCommonValidationSchema = yup
   .required("Required")
   .nullable(true)
 
+const SalaryValidationSchema = yup
+  .number()
+  .min(0, ERROR_MESSAGES.SALARY_NEGATIVE)
+
 export {
   TitleValidationSchema,
   RatingValidationSchema,
-  SlectCommonValidationSchema
+  SlectCommonValidationSchema,
+  SalaryValidationSchema
 }
