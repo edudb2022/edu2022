@@ -28,7 +28,6 @@ import * as yup from "yup"
 import {
   RatingValidationSchema,
   SlectCommonValidationSchema,
-  SlectDseValidationSchema,
   TitleValidationSchema
 } from "../../../utils/validation/form/schema"
 import { schoolTypeOptions } from "../../../constants/school"
