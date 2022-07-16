@@ -8,7 +8,7 @@ const FormSumitButton: React.FunctionComponent<IFormSumitButtonProps> = () => {
   return (
     <BaseButton
       type="submit"
-      className="border-2 rounded-xsm flex flex-row justify-center text-base items-center font-black gap-x-2 w-60 px-0 py-2  "
+      className="border-2 rounded-sm flex flex-row justify-center text-base items-center font-black gap-x-2 w-60 px-0 py-2  "
     >
       <div>Submit</div>
 
