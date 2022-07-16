@@ -34,10 +34,10 @@ import * as yup from "yup"
 
 const GradJobOfferFormPage: React.FunctionComponent = () => {
   const initialValues = {
-    schoolType: null,
-    school: null,
-    faculty: null,
-    programme: null,
+    schoolType: "",
+    school: "",
+    faculty: "",
+    programme: "",
     offerRecievedDate: new Date(),
     title: "",
     jobTitle: "",
@@ -48,9 +48,9 @@ const GradJobOfferFormPage: React.FunctionComponent = () => {
     totalSalary: 0,
     difficulty: 0,
     hope: 0,
-    industry: null,
-    jobSource: null,
-    contactMethod: null,
+    industry: "",
+    jobSource: "",
+    contactMethod: "",
     contactDetail: "",
     isAnonymous: false
   }

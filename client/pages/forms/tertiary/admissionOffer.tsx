@@ -37,43 +37,47 @@ import {
 } from "../../../utils/validation/form/schema"
 import { ERROR_MESSAGES } from "../../../utils/validation/errorMessages/form"
 import { ADMISSION_TYPE } from "../../../types/common"
+import { useDispatch } from "react-redux"
+import { ISystemActionTypes } from "../../../state/system/actions"
 
 const AdmissionOfferFormPage: React.FunctionComponent = () => {
+  const dispatch = useDispatch()
   const initialValues = {
-    schoolType: null,
-    school: null,
-    faculty: null,
-    programme: null,
+    schoolType: "",
+    school: "",
+    faculty: "",
+    programme: "",
     title: "",
     offerDate: moment(new Date()).format("YYYY-MM-DD"),
-    currentSchoolType: null,
-    currentSchool: null,
-    currentFaculty: null,
-    currentProgramme: null,
-    offerType: null,
-    admissionType: null,
-    admissionLevel: null,
-    gpa: null,
-    applicaiotnType: null,
-    desSubjectOne: null,
-    desSubjectGradeOne: null,
-    desSubjectTwo: null,
-    desSubjectGradeTwo: null,
-    desSubjectThree: null,
-    desSubjectGradeThree: null,
-    desSubjectFour: null,
-    desSubjectGradeFour: null,
-    desSubjectFive: null,
-    desSubjectGradeFive: null,
-    desSubjectSix: null,
-    desSubjectGradeSix: null,
-    contactMethod: null,
+    currentSchoolType: "",
+    currentSchool: "",
+    currentFaculty: "",
+    currentProgramme: "",
+    offerType: "",
+    admissionType: "",
+    admissionLevel: "",
+    gpa: 0,
+    applicaiotnType: "",
+    desSubjectOne: "",
+    desSubjectGradeOne: "",
+    desSubjectTwo: "",
+    desSubjectGradeTwo: "",
+    desSubjectThree: "",
+    desSubjectGradeThree: "",
+    desSubjectFour: "",
+    desSubjectGradeFour: "",
+    desSubjectFive: "",
+    desSubjectGradeFive: "",
+    desSubjectSix: "",
+    desSubjectGradeSix: "",
+    contactMethod: "",
     contactDetail: "",
     isAnonymous: false,
     longQ: ""
   }
 
   const handleSubmit = () => {
+    dispatch({ type: ISystemActionTypes.SYSTEM_IS_LOADING, payload: true })
     console.log("sumit")
   }
 
@@ -214,7 +218,7 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
               errorMessages={formik.errors.title}
               isTouched={formik.touched.title}
               // style={{ width: "100%" }}
-              required
+              isRequired
             />
           </div>
 

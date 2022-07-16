@@ -33,10 +33,10 @@ import {
 
 const InternshipOfferFormPage: React.FunctionComponent = () => {
   const initialValues = {
-    schoolType: null,
-    school: null,
-    faculty: null,
-    programme: null,
+    schoolType: "",
+    school: "",
+    faculty: "",
+    programme: "",
     offerRecievedDate: new Date(),
     title: "",
     jobTitle: "",
@@ -45,12 +45,12 @@ const InternshipOfferFormPage: React.FunctionComponent = () => {
     bonus: 0,
     stockOption: 0,
     totalSalary: 0,
-    difficulty: null,
-    industry: null,
-    jobSource: null,
-    internType: null,
-    contactMethod: null,
-    contactDetail: null,
+    difficulty: 0,
+    industry: "",
+    jobSource: "",
+    internType: "",
+    contactMethod: "",
+    contactDetail: "",
     isAnonymous: false
   }
 
