@@ -151,7 +151,6 @@ const InterviewReviewPage: NextPage = () => {
     validationSchema: interviewReviewFormSchema
   })
 
-  console.log(222, formik.errors.gpa)
   return (
     <form onSubmit={formik.handleSubmit}>
       <FormPageLayout pageTitle="Interview">

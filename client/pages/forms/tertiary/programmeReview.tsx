@@ -70,7 +70,6 @@ const ProgrammeReviewFormPage: React.FunctionComponent = () => {
     validationSchema: programmeReviewFormSchema
   })
 
-  console.table(formik.values)
   return (
     <form onSubmit={formik.handleSubmit}>
       <FormPageLayout pageTitle="Programme Revi">

@@ -82,7 +82,6 @@ const InternshipOfferFormPage: React.FunctionComponent = () => {
     validationSchema: intershipOfferFormSchema
   })
 
-  console.log(formik.values)
   useEffect(() => {
     formik.values.totalSalary =
       formik.values.baseSalary + formik.values.stockOption + formik.values.bonus

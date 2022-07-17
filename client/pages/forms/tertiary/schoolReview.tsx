@@ -63,7 +63,6 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
     validationSchema: schoolReviewFormSchema
   })
 
-  console.log(222, formik.values.longQ)
   return (
     <form onSubmit={formik.handleSubmit}>
       <FormPageLayout pageTitle="School Review">

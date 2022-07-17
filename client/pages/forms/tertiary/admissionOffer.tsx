@@ -159,7 +159,6 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
     validationSchema: admissionOfferFormSchema
   })
 
-  console.log(formik.values)
   return (
     <form onSubmit={formik.handleSubmit}>
       <FormPageLayout pageTitle="Offer Review">
