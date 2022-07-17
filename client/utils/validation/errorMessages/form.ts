@@ -1,4 +1,4 @@
-export enum ERROR_MESSAGES {
+export enum ERROR_FORM_MESSAGES {
   REQUIRED = "required",
   DSE_GRAD_REQUIRED = "required",
   GPA_NOT_REQUIRED = "not required",

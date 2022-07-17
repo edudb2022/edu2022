@@ -35,7 +35,7 @@ import {
   SlectCommonValidationSchema,
   TitleValidationSchema
 } from "../../../utils/validation/form/schema"
-import { ERROR_MESSAGES } from "../../../utils/validation/errorMessages/form"
+import { ERROR_FORM_MESSAGES } from "../../../utils/validation/errorMessages/form"
 import { ADMISSION_TYPE } from "../../../types/common"
 import { useDispatch } from "react-redux"
 import { ISystemActionTypes } from "../../../state/system/actions"
@@ -95,21 +95,21 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
     admissionLevel: SlectCommonValidationSchema,
     gpa: yup
       .number()
-      .min(0, ERROR_MESSAGES.GPA_NEGATIVE)
-      .max(4.3, ERROR_MESSAGES.GPA_TOO_LARGE)
+      .min(0, ERROR_FORM_MESSAGES.GPA_NEGATIVE)
+      .max(4.3, ERROR_FORM_MESSAGES.GPA_TOO_LARGE)
       .when("admissionType", (admissionType, schema) => {
         if (
           admissionType === ADMISSION_TYPE.NON_JUPAS ||
           ADMISSION_TYPE.BACHELOR
         )
-          return schema.required(ERROR_MESSAGES.REQUIRED)
+          return schema.required(ERROR_FORM_MESSAGES.REQUIRED)
       })
       .nullable(true),
     desSubjectGradeOne: yup
       .string()
       .when("desSubjectOne", (desSubjectOne, schema) => {
         if (desSubjectOne)
-          return schema.required(ERROR_MESSAGES.DSE_GRAD_REQUIRED)
+          return schema.required(ERROR_FORM_MESSAGES.DSE_GRAD_REQUIRED)
       })
       .nullable(true),
 
@@ -117,7 +117,7 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
       .string()
       .when("desSubjectTwo", (desSubjectTwo, schema) => {
         if (desSubjectTwo)
-          return schema.required(ERROR_MESSAGES.DSE_GRAD_REQUIRED)
+          return schema.required(ERROR_FORM_MESSAGES.DSE_GRAD_REQUIRED)
       })
       .nullable(true),
 
@@ -125,7 +125,7 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
       .string()
       .when("desSubjectThree", (desSubjectThree, schema) => {
         if (desSubjectThree)
-          return schema.required(ERROR_MESSAGES.DSE_GRAD_REQUIRED)
+          return schema.required(ERROR_FORM_MESSAGES.DSE_GRAD_REQUIRED)
       })
       .nullable(true),
 
@@ -133,7 +133,7 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
       .string()
       .when("desSubjectFour", (desSubjectFour, schema) => {
         if (desSubjectFour)
-          return schema.required(ERROR_MESSAGES.DSE_GRAD_REQUIRED)
+          return schema.required(ERROR_FORM_MESSAGES.DSE_GRAD_REQUIRED)
       })
       .nullable(true),
 
@@ -141,7 +141,7 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
       .string()
       .when("desSubjectFive", (desSubjectFive, schema) => {
         if (desSubjectFive)
-          return schema.required(ERROR_MESSAGES.DSE_GRAD_REQUIRED)
+          return schema.required(ERROR_FORM_MESSAGES.DSE_GRAD_REQUIRED)
       })
       .nullable(true),
 
@@ -149,7 +149,7 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
       .string()
       .when("desSubjectSix", (desSubjectSix, schema) => {
         if (desSubjectSix)
-          return schema.required(ERROR_MESSAGES.DSE_GRAD_REQUIRED)
+          return schema.required(ERROR_FORM_MESSAGES.DSE_GRAD_REQUIRED)
       })
       .nullable(true)
   })
