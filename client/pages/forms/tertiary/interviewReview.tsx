@@ -292,6 +292,10 @@ const InterviewReviewPage: NextPage = () => {
             onBlur={formik.handleBlur}
             errorMessages={formik.errors.gpa}
             isTouched={formik.touched.gpa}
+            disabled={
+              formik.values.applicaiotnType === ADMISSION_TYPE.JUPAS ||
+              formik.values.applicaiotnType === ""
+            }
           />
         </div>
 
@@ -515,6 +519,7 @@ const InterviewReviewPage: NextPage = () => {
                 onBlur={formik.handleBlur}
                 errorMessages={formik.errors.contactDetail}
                 isTouched={formik.touched.contactDetail}
+                disabled={formik.values.contactMethod === ""}
               />
             </div>
           </div>

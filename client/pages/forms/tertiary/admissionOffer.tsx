@@ -56,7 +56,7 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
     offerType: "",
     admissionType: "",
     admissionLevel: "",
-    gpa: 0,
+    gpa: null,
     applicaiotnType: "",
     desSubjectOne: "",
     desSubjectGradeOne: "",
@@ -77,7 +77,6 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
   }
 
   const handleSubmit = () => {
-    dispatch({ type: ISystemActionTypes.SYSTEM_IS_LOADING, payload: true })
     console.log("sumit")
   }
 
@@ -90,7 +89,7 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
     currentSchool: SlectCommonValidationSchema,
     currentFaculty: SlectCommonValidationSchema,
     currentProgramme: SlectCommonValidationSchema,
-    applicaiotnType: SlectCommonValidationSchema,
+    // applicaiotnType: SlectCommonValidationSchema,
     offerType: SlectCommonValidationSchema,
     admissionType: SlectCommonValidationSchema,
     admissionLevel: SlectCommonValidationSchema,
@@ -98,8 +97,11 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
       .number()
       .min(0, ERROR_MESSAGES.GPA_NEGATIVE)
       .max(4.3, ERROR_MESSAGES.GPA_TOO_LARGE)
-      .when("applicaiotnType", (applicaiotnType, schema) => {
-        if (applicaiotnType === ADMISSION_TYPE.NON_JUPAS)
+      .when("admissionType", (admissionType, schema) => {
+        if (
+          admissionType === ADMISSION_TYPE.NON_JUPAS ||
+          ADMISSION_TYPE.BACHELOR
+        )
           return schema.required(ERROR_MESSAGES.REQUIRED)
       })
       .nullable(true),
@@ -331,6 +333,10 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
             onBlur={formik.handleBlur}
             errorMessages={formik.errors.gpa}
             isTouched={formik.touched.gpa}
+            disabled={
+              formik.values.admissionType === ADMISSION_TYPE.JUPAS ||
+              formik.values.admissionType === ""
+            }
           />
         </div>
 
@@ -496,6 +502,7 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
                 onBlur={formik.handleBlur}
                 errorMessages={formik.errors.contactDetail}
                 isTouched={formik.touched.contactDetail}
+                disabled={formik.values.contactMethod === ""}
               />
             </div>
           </div>

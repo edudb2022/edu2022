@@ -63,7 +63,7 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
     validationSchema: schoolReviewFormSchema
   })
 
-  console.log(222, formik.touched)
+  console.log(222, formik.values.longQ)
   return (
     <form onSubmit={formik.handleSubmit}>
       <FormPageLayout pageTitle="School Review">
@@ -228,6 +228,7 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
                 onBlur={formik.handleBlur}
                 errorMessages={formik.errors.contactDetail}
                 isTouched={formik.touched.contactDetail}
+                disabled={formik.values.contactMethod === ""}
               />
             </div>
           </div>
