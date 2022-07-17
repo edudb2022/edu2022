@@ -48,6 +48,7 @@ const GradJobOfferFormPage: React.FunctionComponent = () => {
     totalSalary: 0,
     difficulty: 0,
     hope: 0,
+    honour: "",
     industry: "",
     jobSource: "",
     contactMethod: "",
@@ -219,7 +220,7 @@ const GradJobOfferFormPage: React.FunctionComponent = () => {
           {/* </div> */}
         </InputContainer>
 
-        <div className="grid md:grid-cols-2 md:gap-x-9 mt-4 gap-y-2">
+        <div className="grid md:grid-cols-3 md:gap-x-9 mt-4 gap-y-2">
           <BaseSelect
             name="industry"
             items={dummyFactculty}
@@ -243,6 +244,18 @@ const GradJobOfferFormPage: React.FunctionComponent = () => {
             onBlur={formik.handleBlur}
             errorMessages={formik.errors.jobSource}
             isTouched={formik.touched.jobSource}
+          />
+
+          <BaseSelect
+            name="honour"
+            items={jobSourceOptions}
+            selectId="honour"
+            inputLabel="honour"
+            selectValue={formik.values.honour}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            errorMessages={formik.errors.honour}
+            isTouched={formik.touched.honour}
           />
         </div>
 
