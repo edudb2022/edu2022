@@ -36,7 +36,7 @@ const ProgrammeReviewFormPage: React.FunctionComponent = () => {
     academicStatus: "",
     workload: 0,
     programmeStructure: 0,
-    teachingQuality: 0,
+    gpaRating: 0,
     resources: 0,
     learningExprience: 0,
     recommendation: 0,
@@ -176,15 +176,16 @@ const ProgrammeReviewFormPage: React.FunctionComponent = () => {
           />
 
           <RatingToggleButtonGroup
-            id="teachingQuality"
-            value={formik.values.teachingQuality}
+            id="gpaRating"
+            value={formik.values.gpaRating}
             onChange={formik.handleChange}
             ratingTitle={recommendRating}
             onBlur={formik.handleBlur}
-            errorMessages={formik.errors.teachingQuality}
-            isTouched={formik.touched.teachingQuality}
-            header="teachingQuality"
+            errorMessages={formik.errors.gpaRating}
+            isTouched={formik.touched.gpaRating}
+            header="gpaRating"
             headerRequired={true}
+            subHeader="gpaRating"
           />
 
           <RatingToggleButtonGroup
@@ -209,6 +210,7 @@ const ProgrammeReviewFormPage: React.FunctionComponent = () => {
             isTouched={formik.touched.learningExprience}
             header="learningExprience"
             headerRequired={true}
+            subHeader="teachingQuality"
           />
 
           <RatingToggleButtonGroup
