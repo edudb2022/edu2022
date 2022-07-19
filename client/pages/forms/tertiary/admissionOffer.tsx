@@ -54,10 +54,10 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
     currentFaculty: "",
     currentProgramme: "",
     offerType: "",
+    jupasBanding: "",
     admissionType: "",
     admissionLevel: "",
     gpa: null,
-    applicaiotnType: "",
     desSubjectOne: "",
     desSubjectGradeOne: "",
     desSubjectTwo: "",
@@ -90,6 +90,7 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
     currentFaculty: SlectCommonValidationSchema,
     currentProgramme: SlectCommonValidationSchema,
     // applicaiotnType: SlectCommonValidationSchema,
+
     offerType: SlectCommonValidationSchema,
     admissionType: SlectCommonValidationSchema,
     admissionLevel: SlectCommonValidationSchema,
@@ -211,7 +212,7 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
           />
         </div>
         <div className="grid md:grid-cols-4 md:gap-x-9 items-end  gap-y-2">
-          <div className="grid md:col-span-3">
+          <div className="grid md:col-span-2">
             <TitleTextInput
               value={formik.values.title}
               onChange={formik.handleChange}
@@ -232,6 +233,18 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
                 moment(newValue).format("YYYY-MM-DD")
               )
             }}
+          />
+          <BaseSelect
+            name="admissionType"
+            items={admissionType}
+            selectId="admissionType"
+            inputLabel="admissionType"
+            selectValue={formik.values.admissionType}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            errorMessages={formik.errors.admissionType}
+            isTouched={formik.touched.admissionType}
+            isRequired
           />
         </div>
         {/* 
@@ -288,18 +301,21 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
 
         <div className="grid  md:grid-cols-4  md:gap-x-9 md:items-end gap-y-2">
           <BaseSelect
-            name="offerType"
-            items={admissionCondition}
-            selectId="offerType"
-            inputLabel="offerType"
-            selectValue={formik.values.offerType}
+            name="jupasBanding"
+            items={admissionType}
+            selectId="jupasBanding"
+            inputLabel="jupasBanding"
+            selectValue={formik.values.jupasBanding}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
-            errorMessages={formik.errors.offerType}
-            isTouched={formik.touched.offerType}
-            isRequired
+            errorMessages={formik.errors.jupasBanding}
+            isTouched={formik.touched.jupasBanding}
+            disabled={
+              formik.values.admissionType === ADMISSION_TYPE.NON_JUPAS ||
+              formik.values.admissionType === ADMISSION_TYPE.BACHELOR ||
+              formik.values.admissionType === ""
+            }
           />
-
           <BaseSelect
             name="admissionLevel"
             items={admissionLevel}
@@ -314,18 +330,17 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
           />
 
           <BaseSelect
-            name="admissionType"
-            items={admissionType}
-            selectId="admissionType"
-            inputLabel="admissionType"
-            selectValue={formik.values.admissionType}
+            name="offerType"
+            items={admissionCondition}
+            selectId="offerType"
+            inputLabel="offerType"
+            selectValue={formik.values.offerType}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
-            errorMessages={formik.errors.admissionType}
-            isTouched={formik.touched.admissionType}
+            errorMessages={formik.errors.offerType}
+            isTouched={formik.touched.offerType}
             isRequired
           />
-
           <GpaNumberInput
             value={formik.values.gpa}
             onChange={formik.handleChange}
