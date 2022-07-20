@@ -1,12 +1,16 @@
-import React from "react";
-import BaseButton from "..";
-import { AiOutlineDislike } from "react-icons/ai";
-const DisLikeButton: React.FunctionComponent = () => {
+import React from "react"
+import BaseButton, { IBaseButtonProps } from ".."
+import { AiOutlineDislike } from "react-icons/ai"
+
+interface IDisLikeButtonProps extends IBaseButtonProps {}
+const DisLikeButton: React.FunctionComponent<IDisLikeButtonProps> = ({
+  ...props
+}) => {
   return (
-    <BaseButton className="">
+    <BaseButton {...props}>
       <AiOutlineDislike />
     </BaseButton>
-  );
-};
+  )
+}
 
-export default DisLikeButton;
+export default DisLikeButton

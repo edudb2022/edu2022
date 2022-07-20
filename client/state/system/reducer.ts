@@ -1,8 +1,10 @@
+import produce from "immer"
 import { ISystemActions, ISystemActionTypes, ISystemState } from "./actions"
 
 const initialState = {
   isLoading: false,
-  error: ""
+  error: "",
+  isAuthModalOpen: false
 }
 
 const systemReducer = (
@@ -15,6 +17,11 @@ const systemReducer = (
 
     case ISystemActionTypes.SYSTEM_ERROR:
       return state
+
+    case ISystemActionTypes.SYSTEM_IS_AUTH_MODAL_OPEN:
+      return produce(state, (draft) => {
+        draft.isAuthModalOpen = payload
+      })
 
     default:
       return state

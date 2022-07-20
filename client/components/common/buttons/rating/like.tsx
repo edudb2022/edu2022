@@ -1,13 +1,17 @@
-import React from "react";
-import BaseButton from "..";
-import { AiOutlineLike } from "react-icons/ai";
+import React from "react"
+import BaseButton, { IBaseButtonProps } from ".."
+import { AiOutlineLike } from "react-icons/ai"
 
-const LikeButton: React.FunctionComponent = () => {
+interface ILikeButtonProps extends IBaseButtonProps {}
+
+const LikeButton: React.FunctionComponent<ILikeButtonProps> = ({
+  ...props
+}) => {
   return (
-    <BaseButton className="">
+    <BaseButton {...props}>
       <AiOutlineLike />
     </BaseButton>
-  );
-};
+  )
+}
 
-export default LikeButton;
+export default LikeButton

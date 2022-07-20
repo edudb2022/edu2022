@@ -8,7 +8,10 @@ import RatingTag from "../../../../components/common/tags/rating"
 import ReviewHeaderContainer from "../../../../components/containers/reviewHeader"
 import CardDisplayLayout from "../../../../components/layouts/cardDisplay"
 import PageLayout from "../../../../components/layouts/page"
-import { difficultyRating, gpaRating } from "../../../../constants/rating"
+import {
+  difficultyRating,
+  programmeGpaRating
+} from "../../../../constants/rating"
 
 const InterviewReviewPage: NextPage = () => {
   return (
@@ -29,7 +32,11 @@ const InterviewReviewPage: NextPage = () => {
           />
 
           <div className="flex flex-row md:flex-col md:w-1/5 w-full  justify-center items-center gap-y-4  md:h-48 ">
-            <RatingTag rating={3.1} title={gpaRating[4].label} header="123" />
+            <RatingTag
+              rating={3.1}
+              title={programmeGpaRating[4].label}
+              header="123"
+            />
             <RatingTag
               rating={4}
               title={difficultyRating[2].label}

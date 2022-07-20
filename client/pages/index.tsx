@@ -11,6 +11,7 @@ import Session from "supertokens-auth-react/recipe/session"
 import { useAppSelector } from "../hooks/common/useAppSelector"
 import { dehydrate, QueryClient, useQuery } from "react-query"
 import axios from "axios"
+import BaseModal from "../components/common/modals"
 const schoolsType = [
   { value: SCHOOL_TYPE.UNIVERSITY, title: "大學" },
   { value: SCHOOL_TYPE.COLLEGE, title: "大專" }
@@ -61,6 +62,7 @@ const Home: NextPage = (props) => {
     //   <EmailPasswordAuth>
     <PageLayout>
       <div className="flex justify-center gap-x-4">
+        {/* <BaseModal isOpen={true} /> */}
         <TextField
           className="bg-white w-3/5 "
           variant="outlined"

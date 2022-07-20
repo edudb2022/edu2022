@@ -22,21 +22,31 @@
 export enum ISystemActionTypes {
   SYSTEM_IS_LOADING = "SYSTEM:IS_LOADING",
   SYSTEM_ERROR = "SYSTEM:ERROR",
+  SYSTEM_IS_AUTH_MODAL_OPEN = "SYSTEM:IS_AUTH_MODAL_OPRN"
 }
 
 export interface ISystemState {
-  isLoading: boolean;
-  error: string;
+  isLoading: boolean
+  error: string
+  isAuthModalOpen: boolean
 }
 
 export interface ISystemIsLoadingAction {
-  payload: ISystemState;
-  type: typeof ISystemActionTypes.SYSTEM_IS_LOADING;
+  payload: ISystemState
+  type: typeof ISystemActionTypes.SYSTEM_IS_LOADING
 }
 
 export interface ISystemErrorAction {
-  payload: ISystemState;
-  type: typeof ISystemActionTypes.SYSTEM_ERROR;
+  payload: ISystemState
+  type: typeof ISystemActionTypes.SYSTEM_ERROR
 }
 
-export type ISystemActions = ISystemIsLoadingAction | ISystemErrorAction;
+export interface ISystemIsAuthModalOpenAction {
+  payload: boolean
+  type: typeof ISystemActionTypes.SYSTEM_IS_AUTH_MODAL_OPEN
+}
+
+export type ISystemActions =
+  | ISystemIsLoadingAction
+  | ISystemErrorAction
+  | ISystemIsAuthModalOpenAction

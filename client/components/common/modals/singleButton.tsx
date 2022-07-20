@@ -1,7 +1,9 @@
-import React, { PropsWithChildren } from "react"
+import React, { ButtonHTMLAttributes, PropsWithChildren } from "react"
 import BaseModal, { IBaseModalProps } from "."
 
-interface ISingleButtonModalProps extends IBaseModalProps {
+export interface ISingleButtonModalProps
+  extends IBaseModalProps,
+    ButtonHTMLAttributes<HTMLButtonElement> {
   //   isOpen: boolean;
   buttonTitle: string
   buttonClassName?: string
@@ -14,6 +16,7 @@ const SingleButtonModal: React.FunctionComponent<
   buttonTitle,
   buttonClassName,
   children,
+  onClick,
   ...props
 }) => {
   return (
@@ -23,6 +26,7 @@ const SingleButtonModal: React.FunctionComponent<
 
         <button
           className={`absolute bottom-0 left-0 w-full p-2 rounded-b-2xl  bg-[#319795] text-white ${buttonClassName}`}
+          onClick={onClick}
         >
           {buttonTitle}
         </button>
