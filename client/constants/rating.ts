@@ -3,12 +3,13 @@ export interface IRating {
   label: string
 }
 
-export const commonRating: IRating[] = [
+export const recommendRating: IRating[] = [
   { value: "1", label: "極之垃圾" },
   { value: "2", label: "垃圾" },
   { value: "3", label: "普通" },
   { value: "4", label: "幾好" },
-  { value: "5", label: "Firm啊!" }
+  { value: "5", label: "Firm啊!" },
+  { value: "6", label: "完美" }
 ]
 //school
 export const schoolCampusRating: IRating[] = [
