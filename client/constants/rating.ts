@@ -10,14 +10,58 @@ export const commonRating: IRating[] = [
   { value: "4", label: "幾好" },
   { value: "5", label: "Firm啊!" }
 ]
+//school
+export const schoolCampusRating: IRating[] = [
+  { value: "1", label: "垃圾" },
+  { value: "2", label: "好差" },
+  { value: "3", label: "強差人意" },
+  { value: "4", label: "不過不失" },
+  { value: "5", label: "良好" },
+  { value: "6", label: "完美" }
+]
 
-export const recommendRating: IRating[] = [
-  { value: "1", label: "絕對不建議" },
-  { value: "2", label: "不建議" },
-  { value: "3", label: "中立" },
-  { value: "4", label: "應該會" },
-  { value: "5", label: "絕對會" },
-  { value: "6", label: "絕對會2" }
+export const schoolRecourcesRating: IRating[] = [
+  { value: "1", label: "完全冇" },
+  { value: "2", label: "少量" },
+  { value: "3", label: "都叫有" },
+  { value: "4", label: "足夠" },
+  { value: "5", label: "不錯" },
+  { value: "6", label: "完善" }
+]
+
+export const schoolPolicyRating: IRating[] = [
+  { value: "1", label: "on9" },
+  { value: "2", label: "垃圾" },
+  { value: "3", label: "頗差" },
+  { value: "4", label: "不錯" },
+  { value: "5", label: "大致上合理" },
+  { value: "6", label: "貼地" }
+]
+
+export const shcoolCafeteriaRating: IRating[] = [
+  { value: "1", label: "食物沙漠" },
+  { value: "2", label: "冇乜野食" },
+  { value: "3", label: "都叫有得揀" },
+  { value: "4", label: "不錯" },
+  { value: "5", label: "很好" },
+  { value: "6", label: "選擇多質素好" }
+]
+export const schoolSelfOfBelongingRating: IRating[] = [
+  { value: "1", label: "極反感" },
+  { value: "2", label: "少反感" },
+  { value: "3", label: "普通" },
+  { value: "4", label: "少量" },
+  { value: "5", label: "感覺良好" },
+  { value: "6", label: "極強烈" }
+]
+
+export const schoolOverallRating: IRating[] = [
+  { value: "1", label: "垃圾學校" },
+  { value: "2", label: "好差" },
+  { value: "3", label: "普通" },
+  { value: "4", label: "幾好嘅" },
+  { value: "5", label: "大致不錯" },
+  { value: "6", label: "極好" }
 ]
 
 export const workLoadRating: IRating[] = [

@@ -207,6 +207,59 @@ const InterviewReviewPage: NextPage = () => {
             isRequired
           />
         </div>
+
+        <div className="grid md:grid-cols-4 md:gap-x-9  gap-y-2">
+          <BaseSelect
+            items={schoolTypeOptions}
+            name="currentSchoolType"
+            selectId="currentSchoolType"
+            inputLabel="currentSchoolType"
+            selectValue={formik.values.currentSchoolType}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            errorMessages={formik.errors.currentSchoolType}
+            isTouched={formik.touched.currentSchoolType}
+            isRequired
+          />
+          <BaseSelect
+            name="currentSchool"
+            items={dummySchool}
+            selectId="currentSchool"
+            inputLabel="currentSchool"
+            selectValue={formik.values.currentSchool}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            errorMessages={formik.errors.currentSchool}
+            isTouched={formik.touched.currentSchool}
+            isRequired
+          />
+
+          <BaseSelect
+            name="currentFaculty"
+            items={dummyFactculty}
+            selectId="currentFaculty"
+            inputLabel="currentFaculty"
+            selectValue={formik.values.currentFaculty}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            errorMessages={formik.errors.currentFaculty}
+            isTouched={formik.touched.currentFaculty}
+            isRequired
+          />
+
+          <BaseSelect
+            name="currentProgramme"
+            items={dummyProgramme}
+            selectId="currentProgramme"
+            inputLabel="currentProgramme"
+            selectValue={formik.values.currentProgramme}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            errorMessages={formik.errors.currentProgramme}
+            isTouched={formik.touched.currentProgramme}
+            isRequired
+          />
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-4 md:gap-x-9 items-end gap-y-2">
           <div className="col-span-3">
             <TitleTextInput
@@ -298,58 +351,6 @@ const InterviewReviewPage: NextPage = () => {
           />
         </div>
 
-        <div className="grid md:grid-cols-4 md:gap-x-9  gap-y-2">
-          <BaseSelect
-            items={schoolTypeOptions}
-            name="currentSchoolType"
-            selectId="currentSchoolType"
-            inputLabel="currentSchoolType"
-            selectValue={formik.values.currentSchoolType}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            errorMessages={formik.errors.currentSchoolType}
-            isTouched={formik.touched.currentSchoolType}
-            isRequired
-          />
-          <BaseSelect
-            name="currentSchool"
-            items={dummySchool}
-            selectId="currentSchool"
-            inputLabel="currentSchool"
-            selectValue={formik.values.currentSchool}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            errorMessages={formik.errors.currentSchool}
-            isTouched={formik.touched.currentSchool}
-            isRequired
-          />
-
-          <BaseSelect
-            name="currentFaculty"
-            items={dummyFactculty}
-            selectId="currentFaculty"
-            inputLabel="currentFaculty"
-            selectValue={formik.values.currentFaculty}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            errorMessages={formik.errors.currentFaculty}
-            isTouched={formik.touched.currentFaculty}
-            isRequired
-          />
-
-          <BaseSelect
-            name="currentProgramme"
-            items={dummyProgramme}
-            selectId="currentProgramme"
-            inputLabel="currentProgramme"
-            selectValue={formik.values.currentProgramme}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            errorMessages={formik.errors.currentProgramme}
-            isTouched={formik.touched.currentProgramme}
-            isRequired
-          />
-        </div>
         <InputContainer
           header="DSE results (if applicable)"
           subHeader="Please at least enter best 5 subjects"

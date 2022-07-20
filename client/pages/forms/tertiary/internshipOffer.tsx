@@ -84,7 +84,9 @@ const InternshipOfferFormPage: React.FunctionComponent = () => {
 
   useEffect(() => {
     formik.values.totalSalary =
-      formik.values.baseSalary + formik.values.stockOption + formik.values.bonus
+      formik?.values?.baseSalary +
+      formik?.values?.stockOption +
+      formik.values.bonus
   }, [formik.values.baseSalary, formik.values.stockOption, formik.values.bonus])
 
   return (

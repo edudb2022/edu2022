@@ -19,6 +19,7 @@ const BaseNumberInput: React.FunctionComponent<IBaseNumberInputProps> = ({
   name,
   label,
   isRequired,
+  helpText,
   ...props
 }) => {
   return (
@@ -30,6 +31,7 @@ const BaseNumberInput: React.FunctionComponent<IBaseNumberInputProps> = ({
       isTouched={isTouched}
       subHeaderClassName={subHeaderClassName}
       inputContainerClassName={inputContainerClassName}
+      helpText={helpText}
     >
       <BaseTextInput
         type={"number"}

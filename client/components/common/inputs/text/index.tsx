@@ -24,6 +24,7 @@ const BaseTextInput: React.FunctionComponent<IBaseInputTextProps> = ({
   headerRequired,
   isRequired,
   label,
+  helpText,
   ...props
 }) => {
   return (
@@ -33,6 +34,7 @@ const BaseTextInput: React.FunctionComponent<IBaseInputTextProps> = ({
       header={header}
       headerRequired={headerRequired}
       isTouched={isTouched}
+      helpText={helpText}
     >
       <TextField
         className={` ${className}`}

@@ -7,6 +7,7 @@ export interface IInputContainerProps
   extends IInputHeaderProps,
     IErrorMessageProps {
   inputContainerClassName?: string
+  helpText?: string
 }
 
 const InputContainer: React.FunctionComponent<
@@ -18,6 +19,7 @@ const InputContainer: React.FunctionComponent<
   children,
   errorMessages,
   inputContainerClassName,
+  helpText,
   isTouched
 }) => {
   return (
@@ -28,7 +30,8 @@ const InputContainer: React.FunctionComponent<
         subHeader={subHeader}
       />
       {children}
-      <div className="flex justify-end">
+      <div className="flex flex-row justify-between items-center px-2">
+        <p className="text-xs font-thin">{helpText}</p>
         <ErrorMessage isTouched={isTouched} errorMessages={errorMessages} />
       </div>
     </div>

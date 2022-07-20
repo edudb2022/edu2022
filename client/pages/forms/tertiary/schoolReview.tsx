@@ -6,7 +6,14 @@ import BaseDatePicker from "../../../components/common/inputs/date"
 import TitleTextInput from "../../../components/common/inputs/text/title"
 import moment from "moment"
 import FormPageLayout from "../../../components/layouts/form"
-import { recommendRating } from "../../../constants/rating"
+import {
+  schoolCampusRating,
+  schoolRecourcesRating,
+  schoolPolicyRating,
+  shcoolCafeteriaRating,
+  schoolSelfOfBelongingRating,
+  schoolOverallRating
+} from "../../../constants/rating"
 import SchoolTypeSelect from "../../../components/common/inputs/select/schoolType"
 import { ContactSelect } from "../../../components/common/inputs/select/contact"
 import LongQuestionsSection from "../../../components/common/inputs/sections/longQuestions"
@@ -23,6 +30,7 @@ import {
   TitleValidationSchema
 } from "../../../utils/validation/form/schema"
 import FormSumitButton from "../../../components/common/buttons/formSubmit"
+import FormSection from "../../../components/common/sections/form"
 
 const SchoolReviewFormPage: React.FunctionComponent = () => {
   const initialValues = {
@@ -66,10 +74,11 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
   return (
     <form onSubmit={formik.handleSubmit}>
       <FormPageLayout pageTitle="School Review">
+        {/* <FormSection header="123"> */}
         <div className="grid md:grid-cols-4 md:gap-x-9 gap-y-2">
           <SchoolTypeSelect
-            selectId="schoolType"
-            inputLabel="Schhol type"
+            selectId="Schhol type"
+            inputLabel="學校類型"
             selectValue={formik.values.schoolType}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
@@ -82,7 +91,7 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
             name="school"
             items={dummySchool}
             selectId="school"
-            inputLabel="school"
+            inputLabel="學校"
             selectValue={formik.values.school}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
@@ -92,7 +101,7 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
           />
 
           <BaseDatePicker
-            label="Admission Year (YYYY-MM-DD)"
+            label="入學日期 (YYYY-MM-DD)"
             value={formik.values.admissionDate}
             onChange={(newValue: any) => {
               formik.setFieldValue(
@@ -108,7 +117,7 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
             name="academicStatus"
             items={dummyProgramme}
             selectId="academicStatus"
-            inputLabel="academicStatus"
+            inputLabel="現時學業狀態"
             selectValue={formik.values.academicStatus}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
@@ -116,13 +125,14 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
             isTouched={formik.touched.academicStatus}
           />
         </div>
-
+        {/* </FormSection> */}
         <TitleTextInput
           value={formik.values.title}
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
           errorMessages={formik.errors.title}
           isTouched={formik.touched.title}
+          helpText={"123"}
         />
 
         <div className="flex flex-col gap-y-6 justify-center items-center">
@@ -130,7 +140,7 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
             id="campusRating"
             value={formik.values.campusRating}
             onChange={formik.handleChange}
-            ratingTitle={recommendRating}
+            ratingTitle={schoolCampusRating}
             onBlur={formik.handleBlur}
             errorMessages={formik.errors.campusRating}
             isTouched={formik.touched.campusRating}
@@ -142,7 +152,7 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
             id="resourceRating"
             value={formik.values.resourceRating}
             onChange={formik.handleChange}
-            ratingTitle={recommendRating}
+            ratingTitle={schoolRecourcesRating}
             onBlur={formik.handleBlur}
             errorMessages={formik.errors.resourceRating}
             isTouched={formik.touched.resourceRating}
@@ -155,7 +165,7 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
             id="policyRating"
             value={formik.values.policyRating}
             onChange={formik.handleChange}
-            ratingTitle={recommendRating}
+            ratingTitle={schoolPolicyRating}
             onBlur={formik.handleBlur}
             errorMessages={formik.errors.policyRating}
             isTouched={formik.touched.policyRating}
@@ -167,7 +177,7 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
             id="canteenRating"
             value={formik.values.canteenRating}
             onChange={formik.handleChange}
-            ratingTitle={recommendRating}
+            ratingTitle={shcoolCafeteriaRating}
             onBlur={formik.handleBlur}
             errorMessages={formik.errors.canteenRating}
             isTouched={formik.touched.canteenRating}
@@ -179,11 +189,11 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
             id="selfOfBelonging"
             value={formik.values.selfOfBelonging}
             onChange={formik.handleChange}
-            ratingTitle={recommendRating}
+            ratingTitle={schoolSelfOfBelongingRating}
             onBlur={formik.handleBlur}
             errorMessages={formik.errors.selfOfBelonging}
             isTouched={formik.touched.selfOfBelonging}
-            header="selfOfBelonging"
+            header="歸屬感"
             headerRequired={true}
           />
 
@@ -191,7 +201,7 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
             id="overRating"
             value={formik.values.overRating}
             onChange={formik.handleChange}
-            ratingTitle={recommendRating}
+            ratingTitle={schoolOverallRating}
             onBlur={formik.handleBlur}
             errorMessages={formik.errors.overRating}
             isTouched={formik.touched.overRating}
@@ -201,8 +211,8 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
         </div>
 
         <InputContainer
-          header="contact method"
-          subHeader="Indicate the desired communication method"
+          header="聯絡資訊"
+          subHeader="有疑問者可以直接搵你了解詳情"
         >
           <div className="grid   md:grid-cols-4  md:gap-x-9 md:items-end gap-y-2 mt-2">
             <div className="grid  md:col-span-1">
@@ -210,7 +220,7 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
                 placeholder="123"
                 name="contactMethod"
                 selectId="contactMethod"
-                inputLabel="contactMethod"
+                inputLabel="聯絡資訊類型"
                 selectValue={formik.values.contactMethod}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
@@ -220,7 +230,7 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
             </div>
             <div className="md:col-span-3 ">
               <BaseTextInput
-                label="contect detail"
+                label="聯絡資訊"
                 name="contactDetail"
                 value={formik.values.contactDetail}
                 onChange={formik.handleChange}
@@ -238,11 +248,11 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
           value={formik.values.isAnonymous}
           onChange={formik.handleChange}
         />
-
-        <h1 className="font-black ml-6">Long Question</h1>
+        {/* 
+        <h1 className="font-black ml-6">Long Question</h1> */}
         <LongQuestionsSection
           name="longQ"
-          header="HWta doasdasdoin thabtp oandiosanidoans"
+          header="請講吓學校設施同環境係點"
           value={formik.values.longQ}
           valueLength={formik.values.longQ.length}
           onChange={formik.handleChange}
