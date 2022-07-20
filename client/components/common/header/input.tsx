@@ -7,6 +7,7 @@ export interface IInputHeaderProps {
   subHeader?: string
   headerClassName?: string
   subHeaderClassName?: string
+  headerContainerClassName?: string
 }
 
 const InputHeader: React.FunctionComponent<IInputHeaderProps> = ({
@@ -14,10 +15,11 @@ const InputHeader: React.FunctionComponent<IInputHeaderProps> = ({
   headerRequired,
   subHeader,
   headerClassName,
-  subHeaderClassName
+  subHeaderClassName,
+  headerContainerClassName
 }) => {
   return (
-    <div className="flex flex-col ml-6">
+    <div className={`flex flex-col ${headerContainerClassName}`}>
       <div
         className={`flex flex-row text-gray-600 text-lg font-bold  ${headerClassName}`}
       >

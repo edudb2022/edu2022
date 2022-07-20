@@ -78,6 +78,7 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
 
   const handleSubmit = () => {
     console.log("sumit")
+    dispatch({ type: ISystemActionTypes.SYSTEM_IS_LOADING, payload: true })
   }
 
   const admissionOfferFormSchema = yup.object().shape({
@@ -211,45 +212,6 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
             isTouched={formik.touched.programme}
           />
         </div>
-        <div className="grid md:grid-cols-4 md:gap-x-9 items-end  gap-y-2">
-          <div className="grid md:col-span-2">
-            <TitleTextInput
-              value={formik.values.title}
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-              errorMessages={formik.errors.title}
-              isTouched={formik.touched.title}
-              // style={{ width: "100%" }}
-              isRequired
-            />
-          </div>
-
-          <BaseDatePicker
-            label="offerDate (YYYY-MM-DD)"
-            value={formik.values.offerDate}
-            onChange={(newValue: any) => {
-              formik.setFieldValue(
-                "offerDate",
-                moment(newValue).format("YYYY-MM-DD")
-              )
-            }}
-          />
-          <BaseSelect
-            name="admissionType"
-            items={admissionType}
-            selectId="admissionType"
-            inputLabel="admissionType"
-            selectValue={formik.values.admissionType}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            errorMessages={formik.errors.admissionType}
-            isTouched={formik.touched.admissionType}
-            isRequired
-          />
-        </div>
-        {/* 
-  <div className="flex flex-wrap flex-row justify-center items-center gap-x-10 gap-y-5"> */}
-
         <div className="grid md:grid-cols-4 md:gap-x-9  gap-y-2">
           <BaseSelect
             items={schoolTypeOptions}
@@ -298,6 +260,44 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
             isTouched={formik.touched.currentProgramme}
           />
         </div>
+        <div className="grid md:grid-cols-4 md:gap-x-9 items-end  gap-y-2">
+          <div className="grid md:col-span-2">
+            <TitleTextInput
+              value={formik.values.title}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              errorMessages={formik.errors.title}
+              isTouched={formik.touched.title}
+              // style={{ width: "100%" }}
+              isRequired
+            />
+          </div>
+
+          <BaseDatePicker
+            label="offerDate (YYYY-MM-DD)"
+            value={formik.values.offerDate}
+            onChange={(newValue: any) => {
+              formik.setFieldValue(
+                "offerDate",
+                moment(newValue).format("YYYY-MM-DD")
+              )
+            }}
+          />
+          <BaseSelect
+            name="admissionType"
+            items={admissionType}
+            selectId="admissionType"
+            inputLabel="admissionType"
+            selectValue={formik.values.admissionType}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            errorMessages={formik.errors.admissionType}
+            isTouched={formik.touched.admissionType}
+            isRequired
+          />
+        </div>
+        {/* 
+  <div className="flex flex-wrap flex-row justify-center items-center gap-x-10 gap-y-5"> */}
 
         <div className="grid  md:grid-cols-4  md:gap-x-9 md:items-end gap-y-2">
           <BaseSelect

@@ -77,7 +77,7 @@ const ProgrammeReviewFormPage: React.FunctionComponent = () => {
           <BaseSelect
             items={dummySchool}
             selectId="schoolType"
-            inputLabel="Schhol type"
+            inputLabel="學校類型"
             selectValue={formik.values.schoolType}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
@@ -90,7 +90,7 @@ const ProgrammeReviewFormPage: React.FunctionComponent = () => {
             name="school"
             items={dummySchool}
             selectId="school"
-            inputLabel="school"
+            inputLabel="學校"
             selectValue={formik.values.school}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
@@ -103,7 +103,7 @@ const ProgrammeReviewFormPage: React.FunctionComponent = () => {
             name="faculty"
             items={dummyFactculty}
             selectId="faculty"
-            inputLabel="faculty"
+            inputLabel="學院/分類"
             selectValue={formik.values.faculty}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
@@ -116,7 +116,7 @@ const ProgrammeReviewFormPage: React.FunctionComponent = () => {
             name="programme"
             items={dummyProgramme}
             selectId="programme"
-            inputLabel="programme"
+            inputLabel="課程"
             selectValue={formik.values.programme}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
@@ -138,7 +138,7 @@ const ProgrammeReviewFormPage: React.FunctionComponent = () => {
           </div>
 
           <BaseDatePicker
-            label="Admission Year (YYYY-MM-DD)"
+            label="入學日期"
             value={formik.values.admissionDate}
             onChange={(newValue: any) => {
               formik.setFieldValue(
@@ -153,7 +153,7 @@ const ProgrammeReviewFormPage: React.FunctionComponent = () => {
             name="academicStatus"
             items={dummyProgramme}
             selectId="academicStatus"
-            inputLabel="academicStatus"
+            inputLabel="現時學業狀態"
             selectValue={formik.values.academicStatus}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
@@ -171,7 +171,7 @@ const ProgrammeReviewFormPage: React.FunctionComponent = () => {
             onBlur={formik.handleBlur}
             errorMessages={formik.errors.programmeStructure}
             isTouched={formik.touched.programmeStructure}
-            header="programmeStructure"
+            header="課程結構"
             headerRequired={true}
           />
 
@@ -183,9 +183,8 @@ const ProgrammeReviewFormPage: React.FunctionComponent = () => {
             onBlur={formik.handleBlur}
             errorMessages={formik.errors.gpaRating}
             isTouched={formik.touched.gpaRating}
-            header="gpaRating"
+            header="爛龜(Grade)指數"
             headerRequired={true}
-            subHeader="gpaRating"
           />
 
           <RatingToggleButtonGroup
@@ -196,7 +195,7 @@ const ProgrammeReviewFormPage: React.FunctionComponent = () => {
             onBlur={formik.handleBlur}
             errorMessages={formik.errors.workload}
             isTouched={formik.touched.workload}
-            header="workload"
+            header="爆肝指數"
             headerRequired={true}
           />
 
@@ -208,7 +207,7 @@ const ProgrammeReviewFormPage: React.FunctionComponent = () => {
             onBlur={formik.handleBlur}
             errorMessages={formik.errors.learningExprience}
             isTouched={formik.touched.learningExprience}
-            header="learningExprience"
+            header="例如學習氣氛，教師質素等"
             headerRequired={true}
             subHeader="teachingQuality"
           />
@@ -221,7 +220,7 @@ const ProgrammeReviewFormPage: React.FunctionComponent = () => {
             onBlur={formik.handleBlur}
             errorMessages={formik.errors.resources}
             isTouched={formik.touched.resources}
-            header="resources"
+            header="資源"
             headerRequired={true}
           />
 
@@ -233,7 +232,7 @@ const ProgrammeReviewFormPage: React.FunctionComponent = () => {
             onBlur={formik.handleBlur}
             errorMessages={formik.errors.recommendation}
             isTouched={formik.touched.recommendation}
-            header="recommendation"
+            header="推薦指數"
             headerRequired={true}
           />
         </div>

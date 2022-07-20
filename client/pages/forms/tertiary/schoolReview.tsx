@@ -73,7 +73,7 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
 
   return (
     <form onSubmit={formik.handleSubmit}>
-      <FormPageLayout pageTitle="School Review">
+      <FormPageLayout pageTitle="學校評價">
         {/* <FormSection header="123"> */}
         <div className="grid md:grid-cols-4 md:gap-x-9 gap-y-2">
           <SchoolTypeSelect
@@ -101,16 +101,15 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
           />
 
           <BaseDatePicker
-            label="入學日期 (YYYY-MM-DD)"
+            label="入學日期"
             value={formik.values.admissionDate}
             onChange={(newValue: any) => {
               formik.setFieldValue(
                 "admissionDate",
-                moment(newValue).format("YYYY-MM-DD")
+                moment(newValue).format("dd/MM/yyyy")
               )
             }}
-
-            // format="DD/MM/YYYY"
+            helpText="123"
           />
 
           <BaseSelect

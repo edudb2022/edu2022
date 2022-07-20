@@ -20,7 +20,8 @@ const InputContainer: React.FunctionComponent<
   errorMessages,
   inputContainerClassName,
   helpText,
-  isTouched
+  isTouched,
+  headerContainerClassName
 }) => {
   return (
     <div className={`flex flex-col ${inputContainerClassName}`}>
@@ -28,6 +29,7 @@ const InputContainer: React.FunctionComponent<
         header={header}
         headerRequired={headerRequired}
         subHeader={subHeader}
+        headerContainerClassName={headerContainerClassName}
       />
       {children}
       <div className="flex flex-row justify-between items-center px-2">

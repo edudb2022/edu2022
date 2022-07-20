@@ -6,7 +6,7 @@ import {
   SelectProps
 } from "@mui/material"
 import React from "react"
-import InputContainer from "../../../containers/input"
+import InputContainer, { IInputContainerProps } from "../../../containers/input"
 import ErrorMessage, { IErrorMessageProps } from "../../messages/error"
 
 interface ISelectMenuItems {
@@ -14,7 +14,7 @@ interface ISelectMenuItems {
   title: string
 }
 
-export interface IBaseSelectProps extends SelectProps, IErrorMessageProps {
+export interface IBaseSelectProps extends SelectProps, IInputContainerProps {
   inputLabel?: string
   inputLabelClassName?: string
   selectLabel?: string
@@ -40,10 +40,15 @@ const BaseSelect: React.FunctionComponent<IBaseSelectProps> = ({
   isTouched,
   id,
   isRequired,
+  helpText,
   ...props
 }) => {
   return (
-    <InputContainer errorMessages={errorMessages} isTouched={isTouched}>
+    <InputContainer
+      helpText={helpText}
+      errorMessages={errorMessages}
+      isTouched={isTouched}
+    >
       <FormControl>
         {inputLabel && (
           <InputLabel id={selectId} className={`${inputLabelClassName}`}>
@@ -72,7 +77,6 @@ const BaseSelect: React.FunctionComponent<IBaseSelectProps> = ({
             )
           })}
         </Select>
-        <ErrorMessage />
       </FormControl>
     </InputContainer>
   )
