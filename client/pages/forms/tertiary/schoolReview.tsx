@@ -219,7 +219,7 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
                 placeholder="123"
                 name="contactMethod"
                 selectId="contactMethod"
-                inputLabel="聯絡資訊類型"
+                inputLabel="聯絡方式"
                 selectValue={formik.values.contactMethod}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
@@ -229,7 +229,7 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
             </div>
             <div className="md:col-span-3 ">
               <BaseTextInput
-                label="聯絡資訊"
+                label="Email/電話號碼/Username"
                 name="contactDetail"
                 value={formik.values.contactDetail}
                 onChange={formik.handleChange}

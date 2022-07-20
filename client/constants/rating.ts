@@ -3,13 +3,21 @@ export interface IRating {
   label: string
 }
 
+export const commonRating: IRating[] = [
+  { value: "1", label: "極之垃圾" },
+  { value: "2", label: "垃圾" },
+  { value: "3", label: "普通" },
+  { value: "4", label: "幾好" },
+  { value: "5", label: "良好" },
+  { value: "6", label: "Firm啊!" }
+]
 export const recommendRating: IRating[] = [
   { value: "1", label: "極之垃圾" },
   { value: "2", label: "垃圾" },
   { value: "3", label: "普通" },
   { value: "4", label: "幾好" },
-  { value: "5", label: "Firm啊!" },
-  { value: "6", label: "完美" }
+  { value: "5", label: "良好" },
+  { value: "6", label: "Firm啊!" }
 ]
 //school
 export const schoolCampusRating: IRating[] = [
@@ -65,20 +73,33 @@ export const schoolOverallRating: IRating[] = [
   { value: "6", label: "極好" }
 ]
 
-export const workLoadRating: IRating[] = [
-  { value: "1", label: "讀死人" },
-  { value: "2", label: "幾辛苦" },
-  { value: "3", label: "ok啦" },
-  { value: "4", label: "冇乜野Do" },
-  { value: "5", label: "輕鬆過" }
-]
+//programme
 
-export const gpaRating: IRating[] = [
+export const programmeGpaRating: IRating[] = [
   { value: "1", label: "爛到Sir" },
   { value: "2", label: "爛爛地" },
   { value: "3", label: "普通" },
-  { value: "4", label: "不錯" },
-  { value: "5", label: "靚𠹌到Sir" }
+  { value: "4", label: "良好" },
+  { value: "5", label: "算係咁" },
+  { value: "6", label: "靚𠹌到Sir" }
+]
+
+export const progrmmeWorkLoadRating: IRating[] = [
+  { value: "1", label: "爆兩個肝" },
+  { value: "2", label: "爆一個肝" },
+  { value: "3", label: "正常" },
+  { value: "4", label: "算舒服" },
+  { value: "5", label: "好Chill" },
+  { value: "6", label: "養肝Mode" }
+]
+
+export const progrmmeRecommendRating: IRating[] = [
+  { value: "1", label: "遠離呢科" },
+  { value: "2", label: "三思而後行" },
+  { value: "3", label: "想讀就讀" },
+  { value: "4", label: "可以一戰" },
+  { value: "5", label: "力推！" },
+  { value: "6", label: "唔讀就傻仔啦" }
 ]
 
 export const difficultyRating: IRating[] = [

@@ -16,7 +16,12 @@ import {
   dummyProgramme,
   dummySchool
 } from "../../../constants/dummy"
-import { recommendRating } from "../../../constants/rating"
+import {
+  commonRating,
+  programmeGpaRating,
+  progrmmeRecommendRating,
+  recommendRating
+} from "../../../constants/rating"
 import * as yup from "yup"
 import {
   SlectCommonValidationSchema,
@@ -167,7 +172,7 @@ const ProgrammeReviewFormPage: React.FunctionComponent = () => {
             id="programmeStructure"
             value={formik.values.programmeStructure}
             onChange={formik.handleChange}
-            ratingTitle={recommendRating}
+            ratingTitle={commonRating}
             onBlur={formik.handleBlur}
             errorMessages={formik.errors.programmeStructure}
             isTouched={formik.touched.programmeStructure}
@@ -179,7 +184,7 @@ const ProgrammeReviewFormPage: React.FunctionComponent = () => {
             id="gpaRating"
             value={formik.values.gpaRating}
             onChange={formik.handleChange}
-            ratingTitle={recommendRating}
+            ratingTitle={programmeGpaRating}
             onBlur={formik.handleBlur}
             errorMessages={formik.errors.gpaRating}
             isTouched={formik.touched.gpaRating}
@@ -191,7 +196,7 @@ const ProgrammeReviewFormPage: React.FunctionComponent = () => {
             id="workload"
             value={formik.values.workload}
             onChange={formik.handleChange}
-            ratingTitle={recommendRating}
+            ratingTitle={commonRating}
             onBlur={formik.handleBlur}
             errorMessages={formik.errors.workload}
             isTouched={formik.touched.workload}
@@ -203,20 +208,20 @@ const ProgrammeReviewFormPage: React.FunctionComponent = () => {
             id="learningExprience"
             value={formik.values.learningExprience}
             onChange={formik.handleChange}
-            ratingTitle={recommendRating}
+            ratingTitle={commonRating}
             onBlur={formik.handleBlur}
             errorMessages={formik.errors.learningExprience}
             isTouched={formik.touched.learningExprience}
-            header="例如學習氣氛，教師質素等"
+            header="學習經歷"
             headerRequired={true}
-            subHeader="teachingQuality"
+            subHeader="例如學習氣氛，教師質素等"
           />
 
           <RatingToggleButtonGroup
             id="resources"
             value={formik.values.resources}
             onChange={formik.handleChange}
-            ratingTitle={recommendRating}
+            ratingTitle={commonRating}
             onBlur={formik.handleBlur}
             errorMessages={formik.errors.resources}
             isTouched={formik.touched.resources}
@@ -228,7 +233,7 @@ const ProgrammeReviewFormPage: React.FunctionComponent = () => {
             id="recommendation"
             value={formik.values.recommendation}
             onChange={formik.handleChange}
-            ratingTitle={recommendRating}
+            ratingTitle={progrmmeRecommendRating}
             onBlur={formik.handleBlur}
             errorMessages={formik.errors.recommendation}
             isTouched={formik.touched.recommendation}
@@ -238,8 +243,8 @@ const ProgrammeReviewFormPage: React.FunctionComponent = () => {
         </div>
 
         <InputContainer
-          header="contact method"
-          subHeader="Indicate the desired communication method"
+          header="聯絡資訊"
+          subHeader="有疑問者可以直接搵你了解詳情"
         >
           <div className="grid   md:grid-cols-4  md:gap-x-9 md:items-end gap-y-2 mt-2">
             <div className="grid  md:col-span-1">
@@ -247,7 +252,7 @@ const ProgrammeReviewFormPage: React.FunctionComponent = () => {
                 placeholder="123"
                 name="contactMethod"
                 selectId="contactMethod"
-                inputLabel="contactMethod"
+                inputLabel="聯絡方式"
                 selectValue={formik.values.contactMethod}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
@@ -257,7 +262,7 @@ const ProgrammeReviewFormPage: React.FunctionComponent = () => {
             </div>
             <div className="md:col-span-3 ">
               <BaseTextInput
-                label="contect detail"
+                label="Email/電話號碼/Username"
                 name="contactDetail"
                 value={formik.values.contactDetail}
                 onChange={formik.handleChange}
