@@ -17,11 +17,11 @@ const signInAndUpConFig = {
       //     return "..."
       //   }
       // },
-      // {
-      //   id: "username",
-      //   label: "username",
-      //   placeholder: "username"
-      // }
+      {
+        id: "username",
+        label: "username",
+        placeholder: "username"
+      }
     ],
     termsOfServiceLink: "/TNC",
     privacyPolicyLink: "/PP"
@@ -47,7 +47,7 @@ const STlanguageTranslations = {
       EMAIL_PASSWORD_SIGN_UP_FOOTER_AND: "並同意",
       EMAIL_PASSWORD_SIGN_UP_FOOTER_PP: "pravacy",
       EMAIL_PASSWORD_SIGN_UP_FOOTER_END: "123",
-      BRANDING_POWERED_BY_START: "用咗Open Source Package —",
+      BRANDING_POWERED_BY_START: "用咗Open Source —",
       BRANDING_POWERED_BY_END: "123",
       EMAIL_PASSWORD_EMAIL_ALREADY_EXISTS: "此Email已經存在",
 

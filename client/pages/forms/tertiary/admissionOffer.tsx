@@ -41,7 +41,6 @@ import { useDispatch } from "react-redux"
 import { ISystemActionTypes } from "../../../state/system/actions"
 import InputHeader from "../../../components/common/header/input"
 import { useEffect } from "react"
-import useDesGrade from "../../../hooks/common/useDesGrade"
 
 const AdmissionOfferFormPage: React.FunctionComponent = () => {
   const dispatch = useDispatch()
@@ -83,9 +82,6 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
     console.log("sumit")
     dispatch({ type: ISystemActionTypes.SYSTEM_IS_LOADING, payload: true })
   }
-
-  const { bestFive } = useDesGrade({ one: desSubjectGradeOne })
-  console.log(" bestFive", bestFive)
 
   const admissionOfferFormSchema = yup.object().shape({
     schoolType: SlectCommonValidationSchema,
@@ -166,6 +162,19 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
     onSubmit: handleSubmit,
     validationSchema: admissionOfferFormSchema
   })
+
+  useEffect(() => {
+    if (
+      formik.values.admissionType === ADMISSION_TYPE.BACHELOR ||
+      ADMISSION_TYPE.NON_JUPAS
+    ) {
+      formik.values.jupasBanding = ""
+    }
+
+    if (formik.values.admissionType === ADMISSION_TYPE.JUPAS) {
+      formik.values.gpa = null
+    }
+  }, [formik.values.admissionType])
 
   return (
     <form onSubmit={formik.handleSubmit}>
@@ -364,13 +373,15 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
           header="DSE results (if applicable)"
           subHeader="Please at least enter best 5 subjects"
         > */}
-        <div>
+        <div className="flex flex-row justify-between items-center">
           <InputHeader
             header="DSE results (if applicable)"
             subHeader="Please at least enter best 5 subjects"
           />
-          <h2>{"Best ${}"}</h2>
-          <h2>{"Best ${}"}</h2>
+          <div>
+            <p className="text-md font-bold">{"Best 5: 34"}</p>
+            <p className="text-md font-bold">{"Best 6: 32"}</p>
+          </div>
         </div>
 
         <div className="grid  grid-cols-3 md:grid-cols-4 md:gap-x-9 gap-y-2">
