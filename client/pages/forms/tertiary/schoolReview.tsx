@@ -134,7 +134,7 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
           helpText={"123"}
         />
 
-        <div className="flex flex-col gap-y-6 justify-center items-center">
+        <div className="flex flex-col gap-y-6  items-start border-2">
           <RatingToggleButtonGroup
             id="campusRating"
             value={formik.values.campusRating}

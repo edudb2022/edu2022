@@ -64,7 +64,7 @@ const RatingToggleButtonGroup: React.FunctionComponent<
             <h6 className="p-2 text-rating-1-500 bg-rating-1-50 rounded-2xl">
               0
             </h6>
-            <BaseToggleButtonGroup exclusive size="large" {...props}>
+            <BaseToggleButtonGroup exclusive size="medium" {...props}>
               <RatingToggleButton
                 color="error"
                 id={id!}
