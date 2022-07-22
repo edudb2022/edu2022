@@ -24,7 +24,13 @@ const SchoolsReviewCards: React.FunctionComponent<ISchoolsCardsProps> = ({
       <div className="absolute top-0 h-full w-full  px-8 py-5 md:p-4 md:mt-5 ">
         <BaseRadar
           scores={[3, 3.6, 3.7, 3.6, 4]}
-          labels={["January", "February", "March", "April", "May"]}
+          labels={[
+            "學校設施及環境",
+            "資源及支援",
+            "學校政策",
+            "校內膳食",
+            "歸屬感"
+          ]}
         />
       </div>
     </BaseReviewCard>

@@ -1,6 +1,6 @@
-import React from 'react'
-import BaseReviewCard, { IBaseReviewCardProps } from '.'
-import BaseRadar from '../../charts/radar'
+import React from "react"
+import BaseReviewCard, { IBaseReviewCardProps } from "."
+import BaseRadar from "../../charts/radar"
 
 interface IProgrammeReviewCard extends Partial<IBaseReviewCardProps> {}
 
@@ -9,7 +9,7 @@ const ProgrammeReviewCard: React.FunctionComponent<IProgrammeReviewCard> = ({
   schoolEnglishName,
   schoolShortName,
   totalReports,
-  id,
+  id
 }) => {
   return (
     <BaseReviewCard
@@ -18,12 +18,12 @@ const ProgrammeReviewCard: React.FunctionComponent<IProgrammeReviewCard> = ({
       schoolEnglishName={schoolEnglishName!}
       schoolShortName={schoolShortName!}
       totalReports={totalReports!}
-      type={'Review'}
+      type={"Review"}
     >
-      <div className='absolute top-0 h-full w-full  px-8 py-4 md:p-4 '>
+      <div className="absolute top-0 h-full w-full  px-8 py-4 md:p-4 ">
         <BaseRadar
           scores={[1, 2, 3, 4, 5]}
-          labels={['January', 'February', 'March', 'April', 'May']}
+          labels={["課程結構", "爛龜指數", "爆肝指數", "學習經歷", "資源"]}
         />
       </div>
     </BaseReviewCard>
