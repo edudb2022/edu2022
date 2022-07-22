@@ -25,7 +25,7 @@ const SingleButtonModal: React.FunctionComponent<
         {children}
 
         <button
-          className={`absolute bottom-0 left-0 w-full p-2 rounded-b-2xl  bg-[#319795] text-white ${buttonClassName}`}
+          className={`absolute bottom-0 left-0 w-full p-2 rounded-b-2xl  ${buttonClassName}`}
           onClick={onClick}
         >
           {buttonTitle}
