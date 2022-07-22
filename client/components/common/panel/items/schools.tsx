@@ -1,7 +1,7 @@
 import Link from "next/link"
 import React from "react"
 import { IBaseReviewCardProps } from "../../cards/review"
-import SchoolsReviewCards from "../../cards/review/schools"
+import SchoolsReviewCards from "../../cards/review/school"
 
 export interface SchoolsPanelItemsProps {
   index: string
