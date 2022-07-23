@@ -49,7 +49,13 @@ const TertiarySchoolPage: NextPage = () => {
             <div className="w-4/5 md:w-3/5 ">
               <BaseRadar
                 scores={[3, 3.6, 3.7, 3.6, 4]}
-                labels={["January", "February", "March", "April", "May"]}
+                labels={[
+                  "學校設施及環境",
+                  "資源及支援",
+                  "學校政策",
+                  "校內膳食",
+                  "歸屬感"
+                ]}
               />
             </div>
 

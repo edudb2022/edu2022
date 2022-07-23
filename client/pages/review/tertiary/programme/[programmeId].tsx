@@ -23,7 +23,13 @@ const ProgrammeReviewPage: NextPage = () => {
             <div className="w-4/5 md:w-3/5 ">
               <BaseRadar
                 scores={[3, 3.6, 3.7, 3.6, 4]}
-                labels={["January", "February", "March", "April", "May"]}
+                labels={[
+                  "課程結構",
+                  "爛龜指數",
+                  "爆肝指數",
+                  "學習經歷",
+                  "資源"
+                ]}
               />
             </div>
 
