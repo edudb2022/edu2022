@@ -6,13 +6,14 @@ import BaseTextInput from "../components/common/inputs/text"
 import SchoolsPanel from "../components/common/panel/schools"
 import BaseSelect from "../components/common/inputs/select"
 import PageLayout from "../components/layouts/page"
-import { SCHOOL_TYPE } from "../types/common"
+import { SCHOOL_TYPE, SCORE_TYPE } from "../types/common"
 import Session from "supertokens-auth-react/recipe/session"
 import { useAppSelector } from "../hooks/common/useAppSelector"
 import { dehydrate, QueryClient, useQuery } from "react-query"
 import axios from "axios"
 import BaseModal from "../components/common/modals"
 import SuccessModal from "../components/common/modals/succuss"
+import { schoolCampusRating } from "../constants/rating"
 const schoolsType = [
   { value: SCHOOL_TYPE.UNIVERSITY, title: "大學" },
   { value: SCHOOL_TYPE.COLLEGE, title: "大專" }

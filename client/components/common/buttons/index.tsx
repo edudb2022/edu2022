@@ -1,9 +1,9 @@
-import React from "react";
+import React from "react"
 
 export type IBaseButtonProps = React.DetailedHTMLProps<
   React.ButtonHTMLAttributes<HTMLButtonElement>,
   HTMLButtonElement
->;
+>
 
 const BaseButton: React.FunctionComponent<IBaseButtonProps> = ({
   children,
@@ -17,7 +17,7 @@ const BaseButton: React.FunctionComponent<IBaseButtonProps> = ({
     >
       {children}
     </button>
-  );
-};
+  )
+}
 
-export default BaseButton;
+export default BaseButton

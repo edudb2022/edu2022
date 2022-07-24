@@ -27,7 +27,13 @@ const ProgrammePage: React.FunctionComponent = () => {
             <div className="w-4/5 md:w-3/5 ">
               <BaseRadar
                 scores={[1, 2, 3, 4, 5]}
-                labels={["January", "February", "March", "April", "May"]}
+                labels={[
+                  "課程結構",
+                  "爛龜指數",
+                  "爆肝指數",
+                  "學習經歷",
+                  "資源"
+                ]}
               />
             </div>
 

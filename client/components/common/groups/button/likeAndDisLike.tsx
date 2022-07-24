@@ -30,8 +30,11 @@ const LikeAndDisLikeButtonGroup: React.FunctionComponent = () => {
 
   return (
     <div className="flex flex-row border-black text-2xl p-2">
-      <LikeButton onClick={handleLikeClick} />{" "}
-      <DisLikeButton onClick={handleRightClick} />
+      <LikeButton onClick={handleLikeClick} className="text-theme-teal-700" />
+      <DisLikeButton
+        onClick={handleRightClick}
+        className="text-theme-rose-700"
+      />
     </div>
   )
 }
