@@ -3,12 +3,16 @@ import React from "react"
 import SearchButton from "../../../../components/common/buttons/search"
 import AdmissionOfferReviewDetailCard from "../../../../components/common/cards/reviewDetail/admission"
 import AdmissionScoreCircularBarGroup from "../../../../components/common/groups/cirmularBar/admissionScore"
+import AdmissionFilterGroup from "../../../../components/common/groups/filter/admission"
 import ReviewSelect from "../../../../components/common/inputs/select/review"
 import ReviewHeaderContainer from "../../../../components/containers/reviewHeader"
 import CardDisplayLayout from "../../../../components/layouts/cardDisplay"
+import DetailedCardDetailLayout from "../../../../components/layouts/cards/detailCardDsplay"
 import PageLayout from "../../../../components/layouts/page"
+import { useAppSelector } from "../../../../hooks/common/useAppSelector"
 
 const AdmissionOfferReviewPage: NextPage = () => {
+  const state = useAppSelector((state) => state.filter.admission)
   return (
     <PageLayout>
       <ReviewHeaderContainer
@@ -32,18 +36,227 @@ const AdmissionOfferReviewPage: NextPage = () => {
         <ReviewSelect className="ring-none outline-none" />
         <SearchButton />
       </div>
-      <CardDisplayLayout>
-        <AdmissionOfferReviewDetailCard
-          jupasBestFiveValue={23}
-          jupasBestSixValue={33}
-          nonJupasBestGpaValue={3.3}
-          postDate="20/23"
-          score={23}
-          label="23"
-          id="23"
-          isStudent={true}
-        />
-      </CardDisplayLayout>
+      {/* <CardDisplayLayout> */}
+
+      <div className="grid grid-cols-12 gap-x-4">
+        <div className="grid col-span-3 border-2 ">
+          <AdmissionFilterGroup />
+        </div>
+        <DetailedCardDetailLayout>
+          <AdmissionOfferReviewDetailCard
+            jupasBestFiveValue={23}
+            jupasBestSixValue={33}
+            nonJupasBestGpaValue={3.3}
+            postDate="20/23"
+            score={23}
+            label="23"
+            id="23"
+            isStudent={true}
+          />
+          <AdmissionOfferReviewDetailCard
+            jupasBestFiveValue={23}
+            jupasBestSixValue={33}
+            nonJupasBestGpaValue={3.3}
+            postDate="20/23"
+            score={23}
+            label="23"
+            id="23"
+            isStudent={true}
+          />
+          <AdmissionOfferReviewDetailCard
+            jupasBestFiveValue={23}
+            jupasBestSixValue={33}
+            nonJupasBestGpaValue={3.3}
+            postDate="20/23"
+            score={23}
+            label="23"
+            id="23"
+            isStudent={true}
+          />
+          <AdmissionOfferReviewDetailCard
+            jupasBestFiveValue={23}
+            jupasBestSixValue={33}
+            nonJupasBestGpaValue={3.3}
+            postDate="20/23"
+            score={23}
+            label="23"
+            id="23"
+            isStudent={true}
+          />
+          <AdmissionOfferReviewDetailCard
+            jupasBestFiveValue={23}
+            jupasBestSixValue={33}
+            nonJupasBestGpaValue={3.3}
+            postDate="20/23"
+            score={23}
+            label="23"
+            id="23"
+            isStudent={true}
+          />
+          <AdmissionOfferReviewDetailCard
+            jupasBestFiveValue={23}
+            jupasBestSixValue={33}
+            nonJupasBestGpaValue={3.3}
+            postDate="20/23"
+            score={23}
+            label="23"
+            id="23"
+            isStudent={true}
+          />
+          <AdmissionOfferReviewDetailCard
+            jupasBestFiveValue={23}
+            jupasBestSixValue={33}
+            nonJupasBestGpaValue={3.3}
+            postDate="20/23"
+            score={23}
+            label="23"
+            id="23"
+            isStudent={true}
+          />
+          <AdmissionOfferReviewDetailCard
+            jupasBestFiveValue={23}
+            jupasBestSixValue={33}
+            nonJupasBestGpaValue={3.3}
+            postDate="20/23"
+            score={23}
+            label="23"
+            id="23"
+            isStudent={true}
+          />
+          <AdmissionOfferReviewDetailCard
+            jupasBestFiveValue={23}
+            jupasBestSixValue={33}
+            nonJupasBestGpaValue={3.3}
+            postDate="20/23"
+            score={23}
+            label="23"
+            id="23"
+            isStudent={true}
+          />
+          <AdmissionOfferReviewDetailCard
+            jupasBestFiveValue={23}
+            jupasBestSixValue={33}
+            nonJupasBestGpaValue={3.3}
+            postDate="20/23"
+            score={23}
+            label="23"
+            id="23"
+            isStudent={true}
+          />
+          <AdmissionOfferReviewDetailCard
+            jupasBestFiveValue={23}
+            jupasBestSixValue={33}
+            nonJupasBestGpaValue={3.3}
+            postDate="20/23"
+            score={23}
+            label="23"
+            id="23"
+            isStudent={true}
+          />
+          <AdmissionOfferReviewDetailCard
+            jupasBestFiveValue={23}
+            jupasBestSixValue={33}
+            nonJupasBestGpaValue={3.3}
+            postDate="20/23"
+            score={23}
+            label="23"
+            id="23"
+            isStudent={true}
+          />
+          <AdmissionOfferReviewDetailCard
+            jupasBestFiveValue={23}
+            jupasBestSixValue={33}
+            nonJupasBestGpaValue={3.3}
+            postDate="20/23"
+            score={23}
+            label="23"
+            id="23"
+            isStudent={true}
+          />
+          <AdmissionOfferReviewDetailCard
+            jupasBestFiveValue={23}
+            jupasBestSixValue={33}
+            nonJupasBestGpaValue={3.3}
+            postDate="20/23"
+            score={23}
+            label="23"
+            id="23"
+            isStudent={true}
+          />
+          <AdmissionOfferReviewDetailCard
+            jupasBestFiveValue={23}
+            jupasBestSixValue={33}
+            nonJupasBestGpaValue={3.3}
+            postDate="20/23"
+            score={23}
+            label="23"
+            id="23"
+            isStudent={true}
+          />
+          <AdmissionOfferReviewDetailCard
+            jupasBestFiveValue={23}
+            jupasBestSixValue={33}
+            nonJupasBestGpaValue={3.3}
+            postDate="20/23"
+            score={23}
+            label="23"
+            id="23"
+            isStudent={true}
+          />
+          <AdmissionOfferReviewDetailCard
+            jupasBestFiveValue={23}
+            jupasBestSixValue={33}
+            nonJupasBestGpaValue={3.3}
+            postDate="20/23"
+            score={23}
+            label="23"
+            id="23"
+            isStudent={true}
+          />
+          <AdmissionOfferReviewDetailCard
+            jupasBestFiveValue={23}
+            jupasBestSixValue={33}
+            nonJupasBestGpaValue={3.3}
+            postDate="20/23"
+            score={23}
+            label="23"
+            id="23"
+            isStudent={true}
+          />
+          <AdmissionOfferReviewDetailCard
+            jupasBestFiveValue={23}
+            jupasBestSixValue={33}
+            nonJupasBestGpaValue={3.3}
+            postDate="20/23"
+            score={23}
+            label="23"
+            id="23"
+            isStudent={true}
+          />
+          <AdmissionOfferReviewDetailCard
+            jupasBestFiveValue={23}
+            jupasBestSixValue={33}
+            nonJupasBestGpaValue={3.3}
+            postDate="20/23"
+            score={23}
+            label="23"
+            id="23"
+            isStudent={true}
+          />
+          <AdmissionOfferReviewDetailCard
+            jupasBestFiveValue={23}
+            jupasBestSixValue={33}
+            nonJupasBestGpaValue={3.3}
+            postDate="20/23"
+            score={23}
+            label="23"
+            id="23"
+            isStudent={true}
+          />
+        </DetailedCardDetailLayout>
+      </div>
+
+      {/* </CardDisplayLayout> */}
     </PageLayout>
   )
 }

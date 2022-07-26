@@ -79,7 +79,6 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
   }
 
   const handleSubmit = () => {
-    console.log("sumit")
     dispatch({ type: ISystemActionTypes.SYSTEM_IS_LOADING, payload: true })
   }
 

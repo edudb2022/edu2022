@@ -30,7 +30,7 @@ export enum ADMISSION_OFFER_TYPE {
   CONDITIONAL = "Conditional"
 }
 
-export enum ADMISSION_YEAR_TYPE {
+export enum ADMISSION_LEVEL_TYPE {
   ONE = "Year 1",
   TWO = "Year 2",
   THREE = "Year 3",

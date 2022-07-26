@@ -6,10 +6,11 @@ import DetailReviewHeaderContainer from "../../../../components/containers/detai
 import DetailReviewInfoContainer from "../../../../components/containers/detailReviewInfo"
 
 import PageLayout from "../../../../components/layouts/page"
+import { useAppSelector } from "../../../../hooks/common/useAppSelector"
 import {
   ADMISSION_OFFER_TYPE,
   ADMISSION_TYPE,
-  ADMISSION_YEAR_TYPE,
+  ADMISSION_LEVEL_TYPE,
   SCORE_TYPE
 } from "../../../../types/common"
 
@@ -33,7 +34,7 @@ const AdmissionReviewDetailPage: NextPage = () => {
 
         <TextTag title={ADMISSION_TYPE.NON_JUPAS} type="admission" />
         <TextTag title={ADMISSION_OFFER_TYPE.CONDITIONAL} type="offer_type" />
-        <TextTag title={ADMISSION_YEAR_TYPE.FIVE_PLUS} type="admission_year" />
+        <TextTag title={ADMISSION_LEVEL_TYPE.FIVE_PLUS} type="admission_year" />
 
         <ReviewNumberItem detail={123} title={SCORE_TYPE.BEST_FIVE} />
         <ReviewNumberItem detail={123} title={SCORE_TYPE.BEST_SIX} />

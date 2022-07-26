@@ -4,7 +4,7 @@ import BaseReviewDetailCard, { IBaseReviewDetailCardProps } from "."
 import {
   ADMISSION_OFFER_TYPE,
   ADMISSION_TYPE,
-  ADMISSION_YEAR_TYPE,
+  ADMISSION_LEVEL_TYPE,
   ID,
   SCORE_TYPE
 } from "../../../../types/common"
@@ -49,7 +49,7 @@ const AdmissionOfferReviewDetailCard: React.FunctionComponent<
                 type="offer_type"
               />
               <TextTag
-                title={ADMISSION_YEAR_TYPE.FIVE_PLUS}
+                title={ADMISSION_LEVEL_TYPE.FIVE_PLUS}
                 type="admission_year"
               />
             </div>
