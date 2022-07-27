@@ -1,5 +1,5 @@
 import { combineReducers } from "redux"
-import admissionFilterReducer from "./admission/actions"
+import admissionFilterReducer from "./admission/reducer"
 
 export const rootFilterReducer = combineReducers({
   admission: admissionFilterReducer

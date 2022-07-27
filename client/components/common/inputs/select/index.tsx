@@ -63,6 +63,7 @@ const BaseSelect: React.FunctionComponent<IBaseSelectProps> = ({
           value={selectValue}
           className={`${selectClassName}`}
           variant="outlined"
+          fullWidth
           {...props}
         >
           {items.map((data, index) => {

@@ -1,4 +1,5 @@
 const dressCodeOptions = [
+  { value: "", title: "Please Select" },
   { value: "formal", title: "formal" },
   { value: "smartCasual", title: "Smart Casual" },
   { value: "casual", title: "Casual" },
@@ -6,6 +7,7 @@ const dressCodeOptions = [
 ]
 
 const jobSourceOptions = [
+  { value: "", title: "Please Select" },
   { value: "jijis", title: "Jijis" },
   { value: "universityCareerCentre", title: "University Career Centre" },
   { value: "linkedIn", title: "LinkedIn" },
@@ -17,6 +19,7 @@ const jobSourceOptions = [
 ]
 
 const internTypeOptions = [
+  { value: "", title: "Please Select" },
   { value: "summer", title: "summer" },
   { value: "winter", title: "winter" },
   { value: "placement", title: "placement" }

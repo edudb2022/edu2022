@@ -3,10 +3,11 @@ import React from "react"
 import { useDispatch } from "react-redux"
 import { jobSourceOptions } from "../../../../constants/common"
 import { useAppSelector } from "../../../../hooks/common/useAppSelector"
-import { IAdmissionFilterActionTypes } from "../../../../state/filters/admission/reducer"
+import { IAdmissionFilterActionTypes } from "../../../../state/filters/admission/actions"
+import BaseFilterContainer from "../../../containers/filters"
 import BaseSelect from "../../inputs/select"
 
-const AdmissionFilterGroup: React.FunctionComponent = () => {
+const AdmissionFilterInputGroup: React.FunctionComponent = () => {
   const { sorting, offerType, admissionType, admissionLevel, yearOfStudy } =
     useAppSelector((state) => state.filter.admission)
   const dispatch = useDispatch()
@@ -48,24 +49,27 @@ const AdmissionFilterGroup: React.FunctionComponent = () => {
     }
   }
   return (
-    <div className="flex flex-col p-2 ">
+    <BaseFilterContainer>
       <BaseSelect
         name="sorting"
         onChange={handleChange}
         selectValue={sorting}
         items={jobSourceOptions}
+        inputLabel="sorting"
       />
       <BaseSelect
         name="offerType"
         onChange={handleChange}
         selectValue={offerType}
         items={jobSourceOptions}
+        inputLabel="offerType"
       />
       <BaseSelect
         name="admissionType"
         onChange={handleChange}
         selectValue={admissionType}
         items={jobSourceOptions}
+        inputLabel="admissionType"
       />
 
       <BaseSelect
@@ -73,6 +77,7 @@ const AdmissionFilterGroup: React.FunctionComponent = () => {
         onChange={handleChange}
         selectValue={admissionLevel}
         items={jobSourceOptions}
+        inputLabel="admissionLevel"
       />
 
       <BaseSelect
@@ -80,9 +85,10 @@ const AdmissionFilterGroup: React.FunctionComponent = () => {
         onChange={handleChange}
         selectValue={yearOfStudy}
         items={jobSourceOptions}
+        inputLabel="yearOfStudy"
       />
-    </div>
+    </BaseFilterContainer>
   )
 }
 
-export default AdmissionFilterGroup
+export default AdmissionFilterInputGroup

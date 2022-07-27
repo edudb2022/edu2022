@@ -1,20 +1,38 @@
 import { NextPage } from "next"
-import React from "react"
-import SearchButton from "../../../../components/common/buttons/search"
+import React, { useState } from "react"
+import BaseButton from "../../../../components/common/buttons"
 import AdmissionOfferReviewDetailCard from "../../../../components/common/cards/reviewDetail/admission"
+import AdmissionFilterDrawer from "../../../../components/common/drawers/filters/admission"
+import AdmissionFilter from "../../../../components/common/filters/admission"
 import AdmissionScoreCircularBarGroup from "../../../../components/common/groups/cirmularBar/admissionScore"
-import AdmissionFilterGroup from "../../../../components/common/groups/filter/admission"
-import ReviewSelect from "../../../../components/common/inputs/select/review"
 import ReviewHeaderContainer from "../../../../components/containers/reviewHeader"
-import CardDisplayLayout from "../../../../components/layouts/cardDisplay"
 import DetailedCardDetailLayout from "../../../../components/layouts/cards/detailCardDsplay"
 import PageLayout from "../../../../components/layouts/page"
 import { useAppSelector } from "../../../../hooks/common/useAppSelector"
 
 const AdmissionOfferReviewPage: NextPage = () => {
   const state = useAppSelector((state) => state.filter.admission)
+  const [isOpen, setIsOpen] = useState(false)
+  const hanldeMobileFliterOpen = () => {
+    setIsOpen(!isOpen)
+  }
+
+  const handleSearch = () => {
+    console.log("searhcing")
+  }
+
+  const handleMobileSeach = () => {
+    console.log("searhcing")
+    setIsOpen(!isOpen)
+  }
+
   return (
     <PageLayout>
+      <AdmissionFilterDrawer
+        isOpen={isOpen}
+        onClose={hanldeMobileFliterOpen}
+        onSearchClick={handleMobileSeach}
+      />
       <ReviewHeaderContainer
         ChineseTitle={"計量金融學及風險管理科學"}
         EnglishTitle={"Quantitative Finance and Risk Management Science"}
@@ -32,15 +50,9 @@ const AdmissionOfferReviewPage: NextPage = () => {
         </div>
       </ReviewHeaderContainer>
 
-      <div className="flex flex-row">
-        <ReviewSelect className="ring-none outline-none" />
-        <SearchButton />
-      </div>
-      {/* <CardDisplayLayout> */}
-
-      <div className="grid grid-cols-12 gap-x-4">
-        <div className="grid col-span-3 border-2 ">
-          <AdmissionFilterGroup />
+      <div className="md:grid md:grid-cols-12 gap-x-4">
+        <div className="md:grid md:col-span-3 hidden">
+          <AdmissionFilter onSearch={handleSearch} />
         </div>
         <DetailedCardDetailLayout>
           <AdmissionOfferReviewDetailCard
@@ -256,7 +268,12 @@ const AdmissionOfferReviewPage: NextPage = () => {
         </DetailedCardDetailLayout>
       </div>
 
-      {/* </CardDisplayLayout> */}
+      <BaseButton
+        onClick={hanldeMobileFliterOpen}
+        className="bg-theme-one-500 text-white fixed bottom-0 w-full rounded-none flex justify-center"
+      >
+        <h2>Filter</h2>
+      </BaseButton>
     </PageLayout>
   )
 }
