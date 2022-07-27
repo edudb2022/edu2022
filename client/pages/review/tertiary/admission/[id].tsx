@@ -270,7 +270,7 @@ const AdmissionOfferReviewPage: NextPage = () => {
 
       <BaseButton
         onClick={hanldeMobileFliterOpen}
-        className="bg-theme-one-500 text-white fixed bottom-0 w-full rounded-none flex justify-center"
+        className="bg-theme-one-500 text-white fixed bottom-0 w-full rounded-none flex justify-center md:hidden"
       >
         <h2>Filter</h2>
       </BaseButton>
