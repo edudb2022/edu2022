@@ -126,18 +126,28 @@ module.exports = {
     extend: {
       width: width,
       colors: { school, theme, rating, intern },
-      fontSize: { xxs: "0.5rem" }
-      // keyframes: {
-      //   bounceHorizontal: {
-      //     "0%:": { transform: "translateX(0)" },
-      //     "20%": { transform: "translateX(2px)" },
-      //     "80%": { transform: "translateX(-2px)" },
-      //     "100%": { transform: "translateX(0)" }
-      //   }
-      // },
-      // animation: {
-      //   bounceHorizontal: "bounceHorizontal 1s  infinite"
-      // }
+      fontSize: { xxs: "0.5rem" },
+      keyframes: {
+        // bounceHorizontal: {
+        //   "0%:": { transform: "translateX(0)" },
+        //   "20%": { transform: "translateX(2px)" },
+        //   "80%": { transform: "translateX(-2px)" },
+        //   "100%": { transform: "translateX(0)" }
+        // }
+        borderGrayDeep: {
+          "0%:": { borderColor: "rgb(209 213 219)" },
+          "100%": { borderColor: "rgb(55 65 81)" }
+        },
+        borderThemeOneDeep: {
+          "0%:": { borderColor: "#FFBF9F" },
+          "100%": { borderColor: "#F2994A" }
+        }
+      },
+      animation: {
+        // bounceHorizontal: "bounceHorizontal 1s  infinite"
+        borderGrayDeep: "borderGrayDeep 1s ease-in-out forwards ",
+        borderThemeOneDeep: "borderThemeOneDeep 1s ease-in-out forwards"
+      }
     }
   },
   plugins: []

@@ -14,12 +14,24 @@ const BaseFilter: React.FunctionComponent<
   return (
     <div
       className={`flex flex-col items-center gap-y-2 w-full h-fit px-2 py-4 rounded-2xl ${
-        !isMobile && "border-theme-one-100 hover:border-theme-one-500 border-2 "
+        !isMobile &&
+        "border-theme-one-100 hover:animate-borderThemeOneDeep border-2 "
       }`}
     >
       {children}
-      <BaseButton onClick={onClick}> REset</BaseButton>
-      {isMobile ? <></> : <FormSumitButton onClick={onSearch} />}
+      <BaseButton className="test-xs text-gray-500 font-thin" onClick={onClick}>
+        reset
+      </BaseButton>
+      {isMobile ? (
+        <></>
+      ) : (
+        <BaseButton
+          onClick={onSearch}
+          className="border-2 rounded-3xl hover:animate-borderGrayDeep"
+        >
+          Search
+        </BaseButton>
+      )}
     </div>
   )
 }

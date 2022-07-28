@@ -25,7 +25,7 @@ const BaseReviewDetailCard: React.FunctionComponent<
             </h1>
           )}
         </div>
-        <p className="w-1/5 text-center h-full  ">
+        <p className="w-1/5 text-xs md:text-base text-center h-full  ">
           <span>發布日期 {postDate}</span>
         </p>
       </div>

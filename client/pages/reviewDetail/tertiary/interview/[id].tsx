@@ -21,8 +21,8 @@ const InterviewReviewDetailPage: NextPage = () => {
         ShortTitle="123"
       >
         <div className="flex flex-wrap flex-around w-full border-2">
-          <RatingTag rating={5} title="12313" header="Difficulty" />
-          <RatingTag rating={4} title="12313" header="Experience" />
+          <RatingTag rating={1} title="12313" header="Difficulty" />
+          <RatingTag rating={1} title="12313" header="Experience" />
           <TextTag title="123" header="Year 1" type="admission_year" />
         </div>
         <div>

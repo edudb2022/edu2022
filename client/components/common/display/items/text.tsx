@@ -14,7 +14,7 @@ const ReviewTextItem: React.FunctionComponent<IReviewTextItemProps> = ({
 }) => {
   return (
     <ReviewBaseItem title={title} subtitle={subtitle}>
-      <h6 className="text-xl h-full ">{detail}</h6>
+      <h6 className="text-xs md:text-xl ">{detail}</h6>
     </ReviewBaseItem>
   )
 }

@@ -12,6 +12,11 @@ export const frontendConfig = () => {
         signInAndUpFeature: signInAndUpConFig,
         emailVerificationFeature: {
           mode: "REQUIRED"
+        },
+        style: {
+          superTokensBranding: {
+            display: "none"
+          }
         }
       }),
       SessionReact.init()
