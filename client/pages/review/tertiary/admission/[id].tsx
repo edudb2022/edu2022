@@ -1,6 +1,7 @@
 import { NextPage } from "next"
 import React, { useState } from "react"
 import BaseButton from "../../../../components/common/buttons"
+import StickyBottomButton from "../../../../components/common/buttons/stickyBottom"
 import AdmissionOfferReviewDetailCard from "../../../../components/common/cards/reviewDetail/admission"
 import AdmissionFilterDrawer from "../../../../components/common/drawers/filters/admission"
 import AdmissionFilter from "../../../../components/common/filters/admission"
@@ -13,7 +14,7 @@ import { useAppSelector } from "../../../../hooks/common/useAppSelector"
 const AdmissionOfferReviewPage: NextPage = () => {
   const state = useAppSelector((state) => state.filter.admission)
   const [isOpen, setIsOpen] = useState(false)
-  const hanldeMobileFliterOpen = () => {
+  const handleMobileFilterOpen = () => {
     setIsOpen(!isOpen)
   }
 
@@ -21,7 +22,7 @@ const AdmissionOfferReviewPage: NextPage = () => {
     console.log("searhcing")
   }
 
-  const handleMobileSeach = () => {
+  const handleMobileSearch = () => {
     console.log("searhcing")
     setIsOpen(!isOpen)
   }
@@ -30,8 +31,8 @@ const AdmissionOfferReviewPage: NextPage = () => {
     <PageLayout>
       <AdmissionFilterDrawer
         isOpen={isOpen}
-        onClose={hanldeMobileFliterOpen}
-        onSearchClick={handleMobileSeach}
+        onClose={handleMobileFilterOpen}
+        onSearchClick={handleMobileSearch}
       />
       <ReviewHeaderContainer
         ChineseTitle={"計量金融學及風險管理科學"}
@@ -268,12 +269,7 @@ const AdmissionOfferReviewPage: NextPage = () => {
         </DetailedCardDetailLayout>
       </div>
 
-      <BaseButton
-        onClick={hanldeMobileFliterOpen}
-        className="bg-theme-one-500 text-white fixed bottom-0 w-full rounded-none flex justify-center md:hidden"
-      >
-        <h2>Filter</h2>
-      </BaseButton>
+      <StickyBottomButton onClick={handleMobileFilterOpen} title="filter" />
     </PageLayout>
   )
 }

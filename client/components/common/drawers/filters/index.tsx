@@ -1,6 +1,7 @@
 import React, { MouseEventHandler, PropsWithChildren } from "react"
 import BaseDrawer, { IBaseDrawerProps } from ".."
 import BaseButton from "../../buttons"
+import StickyBottomButton from "../../buttons/stickyBottom"
 
 export interface IBaseFilterDrawerProps extends IBaseDrawerProps {
   isOpen: boolean
@@ -16,12 +17,7 @@ const BaseFilterDrawer: React.FunctionComponent<
         {children}
       </div>
 
-      <BaseButton
-        onClick={onSearchClick}
-        className="bg-theme-one-500 text-white fixed bottom-0 w-full rounded-none flex justify-center"
-      >
-        <h2>Search</h2>
-      </BaseButton>
+      <StickyBottomButton onClick={onSearchClick} title="Search" />
     </BaseDrawer>
   )
 }

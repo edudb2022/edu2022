@@ -9,7 +9,7 @@ const DetailedCardDetailLayout: React.FunctionComponent<
     // <div className="flex justify-center mt-4 ">
     //   <div className={`w-full flex flex-col items-end  border-2`}>
     //     <div className={`w-4/6 flex flex-col gap-x-12 items-end border-2`}>
-    <div className="grid md:col-span-9 col-start-4">{children}</div>
+    <div className="md:grid md:col-span-9 md:col-start-4">{children}</div>
 
     //         </div>
     //       </div>
