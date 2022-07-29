@@ -14,7 +14,7 @@ const BaseReviewDetailCard: React.FunctionComponent<
 > = ({ children, score, postDate, title, isStudent }) => {
   return (
     <BaseCard
-      className={`w-full flex flex-col h-fit p-2  border-b-2 border-black `}
+      className={`w-full flex flex-col h-fit p-2  border-b-2  border-black md:border-gray-100 md:hover:animate-borderGrayDeep`}
     >
       <div className="flex flex-row">
         <div className="w-4/5 h-fit flex flex-row gap-x-2 ">
@@ -32,7 +32,7 @@ const BaseReviewDetailCard: React.FunctionComponent<
 
       <div className="flex flex-row ">
         <div className="w-4/5">{children}</div>
-        <div className="w-1/5 border-l-2 border-black flex items-center justify-center">
+        <div className="w-1/5 border-l-2 border-black md:border-gray-100 flex items-center justify-center md:hover:animate-borderGrayDeep ">
           <LikeRating score={score} />
         </div>
       </div>
