@@ -1,7 +1,7 @@
 import React from "react"
-import { BsArrowRight } from "react-icons/bs"
 import { ImArrowRight2 } from "react-icons/im"
 import BaseButton, { IBaseButtonProps } from "."
+import RightArrowIcon from "../icons/rightArrow"
 
 interface IFormSumitButtonProps extends IBaseButtonProps {}
 const FormSumitButton: React.FunctionComponent<IFormSumitButtonProps> = () => {
@@ -12,9 +12,7 @@ const FormSumitButton: React.FunctionComponent<IFormSumitButtonProps> = () => {
     >
       <div>Submit</div>
 
-      {/* <ImArrowRight2 className="animate-bounceHorizontal" /> */}
-
-      <ImArrowRight2 className="animate-bounceHorizontal" />
+      <RightArrowIcon className="hover:animate-bounceHorizontal" />
     </BaseButton>
   )
 }
