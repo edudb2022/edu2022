@@ -31,25 +31,25 @@ const InterviewReviewDetailCard: React.FunctionComponent<
             <ReviewNumberItem detail={3.3} title={SCORE_TYPE.GPA} />
 
             {/* <div className="flex flex-col justify-center items-center"> */}
-            <div className="flex  md:text-md gap-x-2 justify-center items-center">
-              <div className="hidden md:flex  gap-x-2">
+            <div className="flex flex-col md:flex-row md:text-md gap-x-2 justify-center items-center">
+              <div className="flex  gap-x-2">
                 <RatingTag
                   rating={3.1}
                   title={programmeGpaRating[4].label}
                   header="面試難度"
                 />
-                <RatingTag
-                  rating={4}
-                  title={difficultyRating[2].label}
-                  header="exp"
-                />
+                <div className="hidden md:flex">
+                  <RatingTag
+                    rating={4}
+                    title={difficultyRating[2].label}
+                    header="exp"
+                  />
+                </div>
               </div>
 
-              <TextTag
-                title={ADMISSION_TYPE.NON_JUPAS}
-                header="123"
-                type="admission"
-              />
+              <div className="mt-0 md:mt-4">
+                <TextTag title={ADMISSION_TYPE.NON_JUPAS} type="admission" />
+              </div>
             </div>
             {/* <TextTag title={ADMISSION_TYPE.NON_JUPAS} type="admission" /> */}
             {/* </div> */}

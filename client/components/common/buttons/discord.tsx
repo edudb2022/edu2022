@@ -1,6 +1,5 @@
 import React from "react"
 import BaseButton, { IBaseButtonProps } from "."
-import { FaDiscord } from "react-icons/fa"
 import DiscordIcon from "../icons/discord"
 
 interface IDiscordButtonProps extends IBaseButtonProps {}
@@ -11,7 +10,7 @@ const DiscordButton: React.FunctionComponent<IDiscordButtonProps> = ({
 }) => {
   return (
     <BaseButton
-      className={` gap-x-1 text-sm bg-[#5865F2]  text-white hover:shadow-md  hover:shadow-[#5865F2] ${className}`}
+      className={` gap-x-1 text-sm bg-[#5865F2] border-[#5865F2] text-white border-2 rounded-3xl hover:animate-discordHover  ${className}`}
       {...props}
     >
       <DiscordIcon />

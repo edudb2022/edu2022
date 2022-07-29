@@ -26,7 +26,7 @@ const BaseTag: React.FunctionComponent<IBaseTagProps> = ({
         )}
 
         <div
-          className={`max-w-full items-center text-xs md:text-base ${
+          className={`max-w-full items-center  md:text-base ${
             !rating ? "px-4 py-[2px]" : "px-2"
           }`}
         >

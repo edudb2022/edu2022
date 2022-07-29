@@ -11,7 +11,7 @@ const SignUpButton: React.FunctionComponent<ISignUpButtonProps> = ({
   }
   return (
     <BaseButton
-      className="text-white bg-theme-one-500 text-sm"
+      className="text-white bg-theme-one-500 border-2 border-theme-one-500 text-sm rounded-3xl hover:animate-themeOneHover"
       onClick={handleClick}
       {...props}
     >

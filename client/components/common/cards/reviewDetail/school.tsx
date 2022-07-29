@@ -19,6 +19,12 @@ const SchoolReviewDetailCard: React.FunctionComponent<
         <a>
           <div className="flex flex-col-reverse md:flex-row h-full items-center justify-center gap-x-4">
             <RatingTag rating={2} title={`${label}`} />
+            <RatingTag rating={2} title={`12`} />
+            <RatingTag rating={2} title={`12`} />
+            <RatingTag rating={2} title={`12`} />
+            <RatingTag rating={2} title={`12`} />
+            <RatingTag rating={2} title={`12`} />
+            <RatingTag rating={2} title={`12`} />
           </div>
         </a>
       </Link>

@@ -133,9 +133,6 @@ module.exports = {
           "20%": { transform: "translateX(2px)" },
           "80%": { transform: "translateX(-2px)" },
           "100%": { transform: "translateX(0)" }
-          // "0%": { transform: "translateX(0)" },
-
-          // "100%": { transform: "translateX(30px)", opacity: '0' }
         },
         borderGrayDeep: {
           "0%": { borderColor: "rgb(209 213 219)" },
@@ -144,12 +141,30 @@ module.exports = {
         borderThemeOneDeep: {
           "0%": { borderColor: "#FFBF9F" },
           "100%": { borderColor: "#F2994A" }
+        },
+        discordHover: {
+          "0%": {},
+          "100%": {
+            borderColor: "#5865F2",
+            backgroundColor: "#FFFFFF",
+            color: "#5865F2"
+          }
+        },
+        themeOneHover: {
+          "0%": {},
+          "100%": {
+            borderColor: "#F2994A",
+            backgroundColor: "#FFFFFF",
+            color: "#F2994A"
+          }
         }
       },
       animation: {
         bounceHorizontal: "bounceHorizontal 1s  infinite",
         borderGrayDeep: "borderGrayDeep 1s ease-in-out forwards",
-        borderThemeOneDeep: "borderThemeOneDeep 1s ease-in-out forwards"
+        borderThemeOneDeep: "borderThemeOneDeep 1s ease-in-out forwards",
+        discordHover: "discordHover 1.5s ease-in-out forwards",
+        themeOneHover: " themeOneHover 1.5s ease-in-out forwards"
       }
     }
   },
