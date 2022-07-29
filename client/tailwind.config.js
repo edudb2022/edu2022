@@ -133,6 +133,9 @@ module.exports = {
           "20%": { transform: "translateX(2px)" },
           "80%": { transform: "translateX(-2px)" },
           "100%": { transform: "translateX(0)" }
+          // "0%": { transform: "translateX(0)" },
+
+          // "100%": { transform: "translateX(30px)", opacity: '0' }
         },
         borderGrayDeep: {
           "0%": { borderColor: "rgb(209 213 219)" },
