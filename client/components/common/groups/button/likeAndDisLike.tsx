@@ -1,5 +1,6 @@
 import React from "react"
-import { useDispatch } from "react-redux"
+import { useAppDispatch } from "../../../../hooks/common/useAppDispatch"
+
 import { useAppSelector } from "../../../../hooks/common/useAppSelector"
 import { ISystemActionTypes } from "../../../../state/system/actions"
 import DisLikeButton from "../../buttons/rating/dislike"
@@ -7,7 +8,7 @@ import LikeButton from "../../buttons/rating/like"
 
 const LikeAndDisLikeButtonGroup: React.FunctionComponent = () => {
   const { isLogin, isVerified } = useAppSelector((state) => state.user)
-  const dispatch = useDispatch()
+  const dispatch = useAppDispatch()
   const isValidUser = isLogin && isVerified
 
   const handleLikeClick = () => {

@@ -1,6 +1,6 @@
 import React from "react"
-import { useDispatch } from "react-redux"
 import BaseFilter, { IBaseFilterPorps } from "."
+import { useAppDispatch } from "../../../hooks/common/useAppDispatch"
 import { IInterviewFilterActionTypes } from "../../../state/filters/interview/actions"
 import InterviewFilterInputGroup from "../groups/filter/interview"
 
@@ -11,7 +11,7 @@ const InterviewFilter: React.FunctionComponent<IInterviewFilterFilterPorps> = ({
   onSearch,
   isMobile
 }) => {
-  const dispatch = useDispatch()
+  const dispatch = useAppDispatch()
 
   const hanldeClick = () => {
     dispatch({ type: IInterviewFilterActionTypes.RESET })

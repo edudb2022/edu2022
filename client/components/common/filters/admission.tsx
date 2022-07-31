@@ -1,6 +1,7 @@
 import React from "react"
-import { useDispatch } from "react-redux"
+
 import BaseFilter, { IBaseFilterPorps } from "."
+import { useAppDispatch } from "../../../hooks/common/useAppDispatch"
 import { IAdmissionFilterActionTypes } from "../../../state/filters/admission/actions"
 import BaseFilterContainer from "../../containers/filters"
 import AdmissionFilterInputGroup from "../groups/filter/admission"
@@ -11,7 +12,7 @@ const AdmissionFilter: React.FunctionComponent<IAdmissionFilterPorps> = ({
   onSearch,
   isMobile
 }) => {
-  const dispatch = useDispatch()
+  const dispatch = useAppDispatch()
 
   const hanldeClick = () => {
     dispatch({ type: IAdmissionFilterActionTypes.RESET })

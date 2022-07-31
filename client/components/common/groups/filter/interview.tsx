@@ -1,6 +1,6 @@
 import { SelectChangeEvent } from "@mui/material"
 import React from "react"
-import { useDispatch } from "react-redux"
+import { useAppDispatch } from "../../../../hooks/common/useAppDispatch"
 import { jobSourceOptions } from "../../../../constants/common"
 import { useAppSelector } from "../../../../hooks/common/useAppSelector"
 import { IAdmissionFilterActionTypes } from "../../../../state/filters/admission/actions"
@@ -12,7 +12,7 @@ const InterviewFilterInputGroup: React.FunctionComponent = () => {
   const { sorting, admissionType, scoreSorting } = useAppSelector(
     (state) => state.filter.interview
   )
-  const dispatch = useDispatch()
+  const dispatch = useAppDispatch()
   const handleChange = (e: SelectChangeEvent<unknown>) => {
     const { name, value } = e.target
 

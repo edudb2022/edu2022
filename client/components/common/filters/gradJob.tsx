@@ -1,6 +1,7 @@
 import React from "react"
-import { useDispatch } from "react-redux"
+
 import BaseFilter, { IBaseFilterPorps } from "."
+import { useAppDispatch } from "../../../hooks/common/useAppDispatch"
 
 import { IGradJobFilterActionTypes } from "../../../state/filters/gradJob/actions"
 
@@ -12,7 +13,7 @@ const GradJobFilter: React.FunctionComponent<IGradJobFilterPorps> = ({
   onSearch,
   isMobile
 }) => {
-  const dispatch = useDispatch()
+  const dispatch = useAppDispatch()
 
   const hanldeClick = () => {
     dispatch({ type: IGradJobFilterActionTypes.RESET })

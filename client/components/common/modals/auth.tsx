@@ -1,5 +1,6 @@
 import React from "react"
-import { useDispatch } from "react-redux"
+import { useAppDispatch } from "../../../hooks/common/useAppDispatch"
+
 import { useAppSelector } from "../../../hooks/common/useAppSelector"
 import { STRedirectToSignIn } from "../../../service/supertoken/function"
 import { ISystemActionTypes } from "../../../state/system/actions"
@@ -10,7 +11,7 @@ interface IAuthModalProps {}
 
 const AuthModal: React.FunctionComponent<IAuthModalProps> = () => {
   const { isAuthModalOpen } = useAppSelector((state) => state.system)
-  const dispatch = useDispatch()
+  const dispatch = useAppDispatch()
   const handleLeftClick = () => {
     dispatch({
       type: ISystemActionTypes.SYSTEM_IS_AUTH_MODAL_OPEN,

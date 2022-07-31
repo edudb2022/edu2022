@@ -1,6 +1,7 @@
 import React from "react"
-import { useDispatch } from "react-redux"
 import BaseFilter, { IBaseFilterPorps } from "."
+import { useAppDispatch } from "../../../hooks/common/useAppDispatch"
+
 import { IAdmissionFilterActionTypes } from "../../../state/filters/admission/actions"
 import { IIntershipFilterActionTypes } from "../../../state/filters/intership/actions"
 import BaseFilterContainer from "../../containers/filters"
@@ -13,7 +14,7 @@ const IntershipFilter: React.FunctionComponent<IIntershipFilterPorps> = ({
   onSearch,
   isMobile
 }) => {
-  const dispatch = useDispatch()
+  const dispatch = useAppDispatch()
 
   const hanldeClick = () => {
     dispatch({ type: IIntershipFilterActionTypes.RESET })

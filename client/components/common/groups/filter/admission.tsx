@@ -1,7 +1,8 @@
 import { SelectChangeEvent } from "@mui/material"
 import React from "react"
-import { useDispatch } from "react-redux"
+
 import { jobSourceOptions } from "../../../../constants/common"
+import { useAppDispatch } from "../../../../hooks/common/useAppDispatch"
 import { useAppSelector } from "../../../../hooks/common/useAppSelector"
 import { IAdmissionFilterActionTypes } from "../../../../state/filters/admission/actions"
 import BaseFilterContainer from "../../../containers/filters"
@@ -10,7 +11,7 @@ import BaseSelect from "../../inputs/select"
 const AdmissionFilterInputGroup: React.FunctionComponent = () => {
   const { sorting, offerType, admissionType, admissionLevel, yearOfStudy } =
     useAppSelector((state) => state.filter.admission)
-  const dispatch = useDispatch()
+  const dispatch = useAppDispatch()
   const handleChange = (e: SelectChangeEvent<unknown>) => {
     const { name, value } = e.target
 

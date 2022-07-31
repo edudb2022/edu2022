@@ -1,17 +1,18 @@
 import { type } from "os"
 import React, { useEffect } from "react"
-import { useDispatch } from "react-redux"
+
 import {
   STCheckExist,
   STGetPayload,
   STGetUserId
 } from "../../service/supertoken/Sesstion"
 import { IUserActionTypes } from "../../state/user/actions"
+import { useAppDispatch } from "../common/useAppDispatch"
 import { useAppSelector } from "../common/useAppSelector"
 // import { IUserActionTypes } from "../../state/user/actions"
 
 const useAuth = () => {
-  const dispatch = useDispatch()
+  const dispatch = useAppDispatch()
   const UserState = useAppSelector((state) => state.user)
   useEffect(() => {
     const getUser = async () => {

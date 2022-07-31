@@ -1,7 +1,8 @@
 import { SelectChangeEvent } from "@mui/material"
 import React from "react"
-import { useDispatch } from "react-redux"
+
 import { jobSourceOptions } from "../../../../constants/common"
+import { useAppDispatch } from "../../../../hooks/common/useAppDispatch"
 import { useAppSelector } from "../../../../hooks/common/useAppSelector"
 import { IGradJobFilterActionTypes } from "../../../../state/filters/gradJob/actions"
 
@@ -12,7 +13,7 @@ const GradJobFilterInputGroup: React.FunctionComponent = () => {
   const { sorting, industry, gradJobType } = useAppSelector(
     (state) => state.filter.gradJob
   )
-  const dispatch = useDispatch()
+  const dispatch = useAppDispatch()
   const handleChange = (e: SelectChangeEvent<unknown>) => {
     const { name, value } = e.target
 

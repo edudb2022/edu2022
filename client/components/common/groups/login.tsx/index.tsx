@@ -5,10 +5,11 @@ import { UserName } from "../../../../types/common"
 // import UserIcon from "../../icons/user"
 import Session from "supertokens-auth-react/recipe/session"
 import { STSignOut } from "../../../../service/supertoken/Sesstion"
-import { useDispatch } from "react-redux"
+
 import { type } from "os"
 import { IUserActionTypes } from "../../../../state/user/actions"
-import UserIcon from "../../icons/User"
+import UserIcon from "../../icons/user"
+import { useAppDispatch } from "../../../../hooks/common/useAppDispatch"
 
 interface ILoginGroupProps {
   username: UserName
@@ -16,7 +17,7 @@ interface ILoginGroupProps {
 const LoginGroup: React.FunctionComponent<ILoginGroupProps> = ({
   username
 }) => {
-  const dispatch = useDispatch()
+  const dispatch = useAppDispatch()
   const [anchorEl, setAnchorEl] = React.useState(null)
   const open = Boolean(anchorEl)
   const handleClick = (e: any) => {

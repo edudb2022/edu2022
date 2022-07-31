@@ -37,13 +37,14 @@ import {
 } from "../../../utils/validation/form/schema"
 import { ERROR_FORM_MESSAGES } from "../../../utils/validation/errorMessages/form"
 import { ADMISSION_TYPE } from "../../../types/common"
-import { useDispatch } from "react-redux"
+
 import { ISystemActionTypes } from "../../../state/system/actions"
 import InputHeader from "../../../components/common/header/input"
 import { useEffect } from "react"
+import { useAppDispatch } from "../../../hooks/common/useAppDispatch"
 
 const AdmissionOfferFormPage: React.FunctionComponent = () => {
-  const dispatch = useDispatch()
+  const dispatch = useAppDispatch()
   const initialValues = {
     schoolType: "",
     school: "",

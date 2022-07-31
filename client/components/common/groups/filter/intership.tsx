@@ -1,7 +1,8 @@
 import { SelectChangeEvent } from "@mui/material"
 import React from "react"
-import { useDispatch } from "react-redux"
+
 import { jobSourceOptions } from "../../../../constants/common"
+import { useAppDispatch } from "../../../../hooks/common/useAppDispatch"
 import { useAppSelector } from "../../../../hooks/common/useAppSelector"
 import { IIntershipFilterActionTypes } from "../../../../state/filters/intership/actions"
 
@@ -12,7 +13,7 @@ const InternshipFilterInputGroup: React.FunctionComponent = () => {
   const { sorting, industry, internshipType } = useAppSelector(
     (state) => state.filter.internship
   )
-  const dispatch = useDispatch()
+  const dispatch = useAppDispatch()
   const handleChange = (e: SelectChangeEvent<unknown>) => {
     const { name, value } = e.target
 
