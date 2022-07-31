@@ -134,6 +134,12 @@ module.exports = {
           "80%": { transform: "translateX(-2px)" },
           "100%": { transform: "translateX(0)" }
         },
+        bounceVertical: {
+          "0%": { transform: "translateY(0)" },
+          "20%": { transform: "translateY(2px)" },
+          "80%": { transform: "translateY(-2px)" },
+          "100%": { transform: "translateY(0)" }
+        },
         borderGrayDeep: {
           "0%": { borderColor: "rgb(209 213 219)" },
           "100%": { borderColor: "rgb(55 65 81)" }
@@ -161,6 +167,7 @@ module.exports = {
       },
       animation: {
         bounceHorizontal: "bounceHorizontal 1s  infinite",
+        bounceVertical: "bounceVertical 1s  infinite",
         borderGrayDeep: "borderGrayDeep 1s ease-in-out forwards",
         borderThemeOneDeep: "borderThemeOneDeep 1s ease-in-out forwards",
         discordHover: "discordHover 0.5s ease-in-out forwards",

@@ -1,40 +1,31 @@
-import React from "react"
+import React, { MouseEventHandler } from "react"
 import { useAppDispatch } from "../../../../hooks/common/useAppDispatch"
 
 import { useAppSelector } from "../../../../hooks/common/useAppSelector"
 import { ISystemActionTypes } from "../../../../state/system/actions"
+import { VOTE_TYPE } from "../../../../types/common"
 import DisLikeButton from "../../buttons/rating/dislike"
 import LikeButton from "../../buttons/rating/like"
 
-const LikeAndDisLikeButtonGroup: React.FunctionComponent = () => {
-  const { isLogin, isVerified } = useAppSelector((state) => state.user)
-  const dispatch = useAppDispatch()
-  const isValidUser = isLogin && isVerified
+interface ILikeAndDisLikeButtonGroupProps {
+  handleLikeClick: MouseEventHandler<HTMLButtonElement>
+  handleRightClick: MouseEventHandler<HTMLButtonElement>
+  voteType: VOTE_TYPE | ""
+}
 
-  const handleLikeClick = () => {
-    if (!isValidUser) {
-      dispatch({
-        type: ISystemActionTypes.SYSTEM_IS_AUTH_MODAL_OPEN,
-        payload: true
-      })
-    }
-  }
-
-  const handleRightClick = () => {
-    if (!isValidUser) {
-      dispatch({
-        type: ISystemActionTypes.SYSTEM_IS_AUTH_MODAL_OPEN,
-        payload: true
-      })
-    }
-  }
-
+const LikeAndDisLikeButtonGroup: React.FunctionComponent<
+  ILikeAndDisLikeButtonGroupProps
+> = ({ handleLikeClick, handleRightClick, voteType }) => {
+  console.log("123123", voteType)
   return (
     <div className="flex flex-row border-black text-2xl p-2">
-      <LikeButton onClick={handleLikeClick} className="text-theme-teal-700" />
+      <LikeButton
+        onClick={handleLikeClick}
+        className={`${voteType === VOTE_TYPE.LIKED && "text-theme-teal-700"}`}
+      />
       <DisLikeButton
         onClick={handleRightClick}
-        className="text-theme-rose-700"
+        className={`${voteType === VOTE_TYPE.DISLIKE && "text-theme-rose-700"}`}
       />
     </div>
   )

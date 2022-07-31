@@ -38,3 +38,8 @@ export enum ADMISSION_LEVEL_TYPE {
   FIVE = "Year 5",
   FIVE_PLUS = "Year 5+"
 }
+
+export enum VOTE_TYPE {
+  LIKED = "like",
+  DISLIKE = "dislike"
+}
