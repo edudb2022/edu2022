@@ -8,8 +8,9 @@ import { STSignOut } from "../../../../service/supertoken/Sesstion"
 
 import { type } from "os"
 import { IUserActionTypes } from "../../../../state/user/actions"
-import UserIcon from "../../icons/user"
+// import UserIcon from "../../icons/user"
 import { useAppDispatch } from "../../../../hooks/common/useAppDispatch"
+import UserIcon from "../../icons/user"
 
 interface ILoginGroupProps {
   username: UserName
