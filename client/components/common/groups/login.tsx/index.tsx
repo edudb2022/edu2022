@@ -2,12 +2,13 @@ import { Button, Menu, MenuItem } from "@mui/material"
 import React from "react"
 import { MdArrowDropDown } from "react-icons/md"
 import { UserName } from "../../../../types/common"
-import UserIcon from "../../icons/User"
+// import UserIcon from "../../icons/user"
 import Session from "supertokens-auth-react/recipe/session"
 import { STSignOut } from "../../../../service/supertoken/Sesstion"
 import { useDispatch } from "react-redux"
 import { type } from "os"
 import { IUserActionTypes } from "../../../../state/user/actions"
+import UserIcon from "../../icons/User"
 
 interface ILoginGroupProps {
   username: UserName

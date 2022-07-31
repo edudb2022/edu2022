@@ -1,15 +1,37 @@
-import React from "react"
+import React, { useState } from "react"
+import StickyBottomButton from "../../../../components/common/buttons/stickyBottom"
 import SchoolReviewDetailCard from "../../../../components/common/cards/reviewDetail/school"
 import BaseRadar from "../../../../components/common/charts/radar"
-import ReviewRankingCircularBar from "../../../../components/common/circularBar/reviewRanking"
+
+import SchoolFilterDrawer from "../../../../components/common/drawers/filters/school"
+import SchoolFilter from "../../../../components/common/filters/school"
 import RatingLargeTag from "../../../../components/common/tags/ratingLarge"
 import ReviewHeaderContainer from "../../../../components/containers/reviewHeader"
-import CardDisplayLayout from "../../../../components/layouts/cardDisplay"
+
+import DetailedCardDetailLayout from "../../../../components/layouts/cards/detailCardDsplay"
 import PageLayout from "../../../../components/layouts/page"
 
 const SchoolReviewPage = () => {
+  const [isOpen, setIsOpen] = useState(false)
+  const handleMobileFilterOpen = () => {
+    setIsOpen(!isOpen)
+  }
+
+  const handleSearch = () => {
+    console.log("searhcing")
+  }
+
+  const handleMobileSearch = () => {
+    console.log("searhcing")
+    setIsOpen(!isOpen)
+  }
   return (
     <PageLayout>
+      <SchoolFilterDrawer
+        isOpen={isOpen}
+        onClose={handleMobileFilterOpen}
+        onSearchClick={handleMobileSearch}
+      />
       <ReviewHeaderContainer
         ChineseTitle={"計量金融學及風險管理科學"}
         EnglishTitle={"Quantitative Finance and Risk Management Science"}
@@ -32,17 +54,23 @@ const SchoolReviewPage = () => {
         </div>
       </ReviewHeaderContainer>
 
-      <CardDisplayLayout>
-        <SchoolReviewDetailCard
-          isStudent={true}
-          score={1223}
-          value={0}
-          postDate="20/23"
-          label="絕對不建議"
-          title="title"
-          id="1"
-        />
-      </CardDisplayLayout>
+      <div className="md:grid md:grid-cols-12 gap-x-4 mt-20">
+        <div className="md:grid md:col-span-3 hidden">
+          <SchoolFilter onSearch={handleSearch} />
+        </div>
+        <DetailedCardDetailLayout>
+          <SchoolReviewDetailCard
+            isStudent={true}
+            score={1223}
+            value={0}
+            postDate="20/23"
+            label="絕對不建議"
+            title="title"
+            id="1"
+          />
+        </DetailedCardDetailLayout>
+        <StickyBottomButton onClick={handleMobileFilterOpen} title="filter" />
+      </div>
     </PageLayout>
   )
 }

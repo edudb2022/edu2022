@@ -2,11 +2,7 @@ import React from "react"
 import { FaUser } from "react-icons/fa"
 
 const UserIcon: React.FunctionComponent = () => {
-  return (
-    <>
-      <FaUser />
-    </>
-  )
+  return <FaUser />
 }
 
 export default UserIcon

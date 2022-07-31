@@ -163,8 +163,8 @@ module.exports = {
         bounceHorizontal: "bounceHorizontal 1s  infinite",
         borderGrayDeep: "borderGrayDeep 1s ease-in-out forwards",
         borderThemeOneDeep: "borderThemeOneDeep 1s ease-in-out forwards",
-        discordHover: "discordHover 1.5s ease-in-out forwards",
-        themeOneHover: " themeOneHover 1.5s ease-in-out forwards"
+        discordHover: "discordHover 0.5s ease-in-out forwards",
+        themeOneHover: " themeOneHover 0.5s ease-in-out forwards"
       }
     }
   },

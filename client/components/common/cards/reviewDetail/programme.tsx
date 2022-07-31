@@ -19,6 +19,13 @@ const ProgrammeReviewDetailCard: React.FunctionComponent<
         <a>
           <div className="flex flex-col-reverse md:flex-row h-full items-center justify-center gap-x-4">
             <RatingTag rating={3} title={`${label}`} />
+            <div className="hidden md:flex">
+              <RatingTag rating={3} title={`123`} />
+              <RatingTag rating={3} title={`123`} />
+              <RatingTag rating={3} title={`123`} />
+              <RatingTag rating={3} title={`123`} />
+              <RatingTag rating={3} title={`123`} />
+            </div>
           </div>
         </a>
       </Link>
