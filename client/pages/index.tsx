@@ -36,6 +36,10 @@ const Home: NextPage = (props) => {
   // const data = useAppSelector((state) => state.user)
   // console.log(11, data)
 
+  console.log(
+    "process.env.NEXT_PUBLIC_BASE_URL",
+    process.env.NEXT_PUBLIC_BASE_URL
+  )
   const [type, setType] = useState(SCHOOL_TYPE.UNIVERSITY)
   const [search, setSearch] = useState("")
 
