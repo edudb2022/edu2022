@@ -1,14 +1,10 @@
-import { Button, Menu, MenuItem } from "@mui/material"
+import { Menu, MenuItem } from "@mui/material"
 import React from "react"
 import { MdArrowDropDown } from "react-icons/md"
 import { UserName } from "../../../../types/common"
-// import UserIcon from "../../icons/user"
-import Session from "supertokens-auth-react/recipe/session"
 import { STSignOut } from "../../../../service/supertoken/Sesstion"
 
-import { type } from "os"
 import { IUserActionTypes } from "../../../../state/user/actions"
-// import UserIcon from "../../icons/user"
 import { useAppDispatch } from "../../../../hooks/common/useAppDispatch"
 import UserIcon from "../../icons/user"
 
