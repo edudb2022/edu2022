@@ -6,7 +6,7 @@ import { STSignOut } from "../../../../service/supertoken/Sesstion"
 
 import { IUserActionTypes } from "../../../../state/user/actions"
 import { useAppDispatch } from "../../../../hooks/common/useAppDispatch"
-import UserIcon from "../../icons/user"
+// import UserIcon from "../../icons/user"
 
 interface ILoginGroupProps {
   username: UserName
@@ -30,7 +30,7 @@ const LoginGroup: React.FunctionComponent<ILoginGroupProps> = ({
   }
   return (
     <div className="flex flex-row justify-content items-center  border-2">
-      <UserIcon />
+      {/* <UserIcon /> */}
       <h6>{username}</h6>
       <button
         id="basic-button"
