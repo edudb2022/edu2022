@@ -77,7 +77,7 @@ const IntershipReviewPage: NextPage = () => {
             industry="123"
             isStudent={true}
             postDate="04/22"
-            score={33}
+            score={10000}
             key={1}
             title="1123"
             id="1"

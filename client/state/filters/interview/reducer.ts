@@ -11,7 +11,7 @@ const initialState = {
   scoreSorting: ""
 } as IInterviewFilterState
 
-const InterviewFilterReducer = (
+const interviewFilterReducer = (
   state: IInterviewFilterState = initialState,
   { payload, type }: IInterviewFilterAction
 ) => {
@@ -42,4 +42,4 @@ const InterviewFilterReducer = (
   }
 }
 
-export default InterviewFilterReducer
+export default interviewFilterReducer

@@ -3,14 +3,14 @@ import React from "react"
 import { useDispatch } from "react-redux"
 import { jobSourceOptions } from "../../../../constants/common"
 import { useAppSelector } from "../../../../hooks/common/useAppSelector"
-import { IIntershipFilterActionTypes } from "../../../../state/filters/intership/actions"
+import { IGradJobFilterActionTypes } from "../../../../state/filters/gradJob/actions"
 
 import BaseFilterContainer from "../../../containers/filters"
 import BaseSelect from "../../inputs/select"
 
-const InternshipFilterInputGroup: React.FunctionComponent = () => {
-  const { sorting, industry, internshipType } = useAppSelector(
-    (state) => state.filter.internship
+const GradJobFilterInputGroup: React.FunctionComponent = () => {
+  const { sorting, industry, gradJobType } = useAppSelector(
+    (state) => state.filter.gradJob
   )
   const dispatch = useDispatch()
   const handleChange = (e: SelectChangeEvent<unknown>) => {
@@ -18,20 +18,20 @@ const InternshipFilterInputGroup: React.FunctionComponent = () => {
 
     if (name === "sorting") {
       dispatch({
-        type: IIntershipFilterActionTypes.SET_SORTING,
+        type: IGradJobFilterActionTypes.SET_SORTING,
         payload: value
       })
     }
-    if (name === "intershipType") {
+    if (name === "gradJobType") {
       dispatch({
-        type: IIntershipFilterActionTypes.SET_INTERSHIP_TYPE,
+        type: IGradJobFilterActionTypes.SET_GRADJOB_TYPE,
         payload: value
       })
     }
 
     if (name === "industry") {
       dispatch({
-        type: IIntershipFilterActionTypes.SET_INDUESTY,
+        type: IGradJobFilterActionTypes.SET_INDUESTY,
         payload: value
       })
     }
@@ -46,11 +46,11 @@ const InternshipFilterInputGroup: React.FunctionComponent = () => {
         inputLabel="sorting"
       />
       <BaseSelect
-        name="intershipType"
+        name="gradJobType"
         onChange={handleChange}
-        selectValue={internshipType}
+        selectValue={gradJobType}
         items={jobSourceOptions}
-        inputLabel="internshipType"
+        inputLabel="gradJobType"
       />
       <BaseSelect
         name="industry"
@@ -63,4 +63,4 @@ const InternshipFilterInputGroup: React.FunctionComponent = () => {
   )
 }
 
-export default InternshipFilterInputGroup
+export default GradJobFilterInputGroup

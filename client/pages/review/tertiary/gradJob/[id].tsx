@@ -1,5 +1,5 @@
 import { NextPage } from "next"
-import React from "react"
+import React, { useState } from "react"
 import ReviewHeaderContainer from "../../../../components/containers/reviewHeader"
 import PageLayout from "../../../../components/layouts/page"
 import CountUp from "react-countup"
@@ -8,10 +8,34 @@ import GradJobReviewDetailCard from "../../../../components/common/cards/reviewD
 import ReviewRankingCircularBar from "../../../../components/common/circularBar/reviewRanking"
 import RatingTag from "../../../../components/common/tags/rating"
 import RatingLargeTag from "../../../../components/common/tags/ratingLarge"
+import GradJobDrawer from "../../../../components/common/drawers/filters/gradJob"
+import GradJobFilter from "../../../../components/common/filters/gradJob"
+import GradJobFilterDrawer from "../../../../components/common/drawers/filters/gradJob"
+import StickyBottomButton from "../../../../components/common/buttons/stickyBottom"
+import IntershipFilter from "../../../../components/common/filters/internship"
+import DetailedCardDetailLayout from "../../../../components/layouts/cards/detailCardDsplay"
 
 const GradJobReviewPage: NextPage = () => {
+  const [isOpen, setIsOpen] = useState(false)
+  const handleMobileFilterOpen = () => {
+    setIsOpen(!isOpen)
+  }
+
+  const handleSearch = () => {
+    console.log("searhcing")
+  }
+
+  const handleMobileSearch = () => {
+    console.log("searhcing")
+    setIsOpen(!isOpen)
+  }
   return (
     <PageLayout>
+      <GradJobFilterDrawer
+        isOpen={isOpen}
+        onClose={handleMobileFilterOpen}
+        onSearchClick={handleMobileSearch}
+      />
       <ReviewHeaderContainer
         ChineseTitle={"計量金融學及風險管理科學"}
         EnglishTitle={"Quantitative Finance and Risk Management Science"}
@@ -43,20 +67,28 @@ const GradJobReviewPage: NextPage = () => {
         </div>
       </ReviewHeaderContainer>
 
-      <CardDisplayLayout>
-        <GradJobReviewDetailCard
-          offerDate="02/23"
-          industry="123"
-          isStudent={true}
-          postDate="04/22"
-          score={33}
-          key={1}
-          title="The worse offer ever"
-          id="1"
-          salary={2400000}
-          gradDate="20/23"
-        />
-      </CardDisplayLayout>
+      <div className="md:grid md:grid-cols-12 gap-x-4 mt-20">
+        <div className="md:grid md:col-span-3 hidden">
+          <GradJobFilter onSearch={handleSearch} />
+        </div>
+
+        <DetailedCardDetailLayout>
+          <GradJobReviewDetailCard
+            offerDate="02/23"
+            industry="123"
+            isStudent={true}
+            postDate="04/22"
+            score={33}
+            key={1}
+            title="The worse offer ever"
+            id="1"
+            salary={2400000}
+            gradDate="20/23"
+          />
+        </DetailedCardDetailLayout>
+      </div>
+
+      <StickyBottomButton onClick={handleMobileFilterOpen} title="filter" />
     </PageLayout>
   )
 }

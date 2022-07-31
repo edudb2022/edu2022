@@ -17,7 +17,7 @@ const initialState = {
   industry: ""
 } as IIntershipFilterState
 
-const IntershipFilterReducer = (
+const intershipFilterReducer = (
   state: IIntershipFilterState = initialState,
   { payload, type }: IIntershipFilterAction
 ) => {
@@ -29,10 +29,10 @@ const IntershipFilterReducer = (
 
     case IIntershipFilterActionTypes.SET_INTERSHIP_TYPE:
       return produce(state, (draft) => {
-        draft.industry = payload
+        draft.internshipType = payload
       })
 
-    case IIntershipFilterActionTypes.SET_INDUESTY_SORTING:
+    case IIntershipFilterActionTypes.SET_INDUESTY:
       return produce(state, (draft) => {
         draft.industry = payload
       })
@@ -48,4 +48,4 @@ const IntershipFilterReducer = (
   }
 }
 
-export default IntershipFilterReducer
+export default intershipFilterReducer

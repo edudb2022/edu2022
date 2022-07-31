@@ -3,7 +3,7 @@ import { ADMISSION_TYPE } from "../../../types/common"
 export enum IIntershipFilterActionTypes {
   SET_SORTING = "FILTER:INTERSHIP:SET_SORTING",
   SET_INTERSHIP_TYPE = "FILTER:INTERSHIP:SET_INTERSHIP_TYPE",
-  SET_INDUESTY_SORTING = "FILTER:INTERSHIP:SET_INDUESTY_SORTING",
+  SET_INDUESTY = "FILTER:INTERSHIP:SET_INDUESTY",
   RESET = "FILTER:INTERSHIP:RESET"
 }
 
@@ -23,9 +23,9 @@ export interface SET_INTERSHIP_TYPE {
   type: typeof IIntershipFilterActionTypes.SET_INTERSHIP_TYPE
 }
 
-export interface SET_INDUESTY_SORTING {
+export interface SET_INDUESTY {
   payload: string
-  type: typeof IIntershipFilterActionTypes.SET_INDUESTY_SORTING
+  type: typeof IIntershipFilterActionTypes.SET_INDUESTY
 }
 
 export interface RESET {
@@ -36,5 +36,5 @@ export interface RESET {
 export type IIntershipFilterAction =
   | SET_SORTING
   | SET_INTERSHIP_TYPE
-  | SET_INDUESTY_SORTING
+  | SET_INDUESTY
   | RESET

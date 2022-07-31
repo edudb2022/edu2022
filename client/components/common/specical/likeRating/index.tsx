@@ -1,10 +1,10 @@
-import React from "react";
-import { IoIosArrowUp } from "react-icons/io";
-import { IoIosArrowDown } from "react-icons/io";
-import CountUp from "react-countup";
+import React from "react"
+import { IoIosArrowUp } from "react-icons/io"
+import { IoIosArrowDown } from "react-icons/io"
+import CountUp from "react-countup"
 
 export interface ILikeRatingProps {
-  score: number;
+  score: number
 }
 
 const LikeRating: React.FunctionComponent<ILikeRatingProps> = ({ score }) => {
@@ -15,7 +15,7 @@ const LikeRating: React.FunctionComponent<ILikeRatingProps> = ({ score }) => {
 
       <IoIosArrowDown />
     </div>
-  );
-};
+  )
+}
 
-export default LikeRating;
+export default LikeRating
