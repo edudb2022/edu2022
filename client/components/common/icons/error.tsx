@@ -1,7 +1,7 @@
 import React from "react"
 import { BiError } from "react-icons/bi"
 
-const ErrorIcon = ({ ...props }) => {
+const ErrorIcon: React.FunctionComponent = ({ ...props }) => {
   return <BiError {...props} />
 }
 
