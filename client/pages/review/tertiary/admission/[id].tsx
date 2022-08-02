@@ -89,7 +89,11 @@ const AdmissionOfferReviewPage: NextPage = () => {
         </DetailedCardDetailLayout>
       </div>
 
-      <StickyBottomButton onClick={handleMobileFilterOpen} title="filter" />
+      <StickyBottomButton
+        onClick={handleMobileFilterOpen}
+        className="md:hidden"
+        title="filter"
+      />
     </PageLayout>
   )
 }
