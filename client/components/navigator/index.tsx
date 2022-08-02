@@ -29,7 +29,9 @@ const Navbar: React.FunctionComponent = () => {
     >
       <div className="flex justify-between p-2">
         <Link href={"/"}>
-          <a>icon</a>
+          <a className="text-theme-one-500 stroke-black font-black text-4xl">
+            Bauu4
+          </a>
         </Link>
 
         <div className="flex-row gap-x-1 h-full hidden md:flex ">

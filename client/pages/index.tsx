@@ -2,7 +2,7 @@ import { TextField } from "@mui/material"
 import type { NextPage } from "next"
 import { ChangeEventHandler, useEffect, useState } from "react"
 import BaseTextInput from "../components/common/inputs/text"
-
+import ReactGA from "react-ga"
 import SchoolsPanel from "../components/common/panel/schools"
 import BaseSelect from "../components/common/inputs/select"
 import PageLayout from "../components/layouts/page"
@@ -35,6 +35,10 @@ const Home: NextPage = (props) => {
 
   // const data = useAppSelector((state) => state.user)
   // console.log(11, data)
+
+  useEffect(() => {
+    ReactGA.pageview(window.location.pathname + window.location.search)
+  }, [])
 
   console.log(
     "process.env.NEXT_PUBLIC_BASE_URL",
