@@ -7,6 +7,8 @@ import ReviewRankingCircularBar from "../../../../components/common/circularBar/
 import InterviewFilterDrawer from "../../../../components/common/drawers/filters/interview"
 import InterviewFilter from "../../../../components/common/filters/interview"
 import AdmissionScoreCircularBarGroup from "../../../../components/common/groups/cirmularBar/admissionScore"
+import ReviewDetailSkeletonCardGroup from "../../../../components/common/groups/skeleton/ReviewDetail"
+import ReviewDetailSkeletonCard from "../../../../components/common/skeleton/card/reviewDetail"
 import RatingTag from "../../../../components/common/tags/rating"
 import ReviewHeaderContainer from "../../../../components/containers/reviewHeader"
 import CardDisplayLayout from "../../../../components/layouts/cardDisplay"
@@ -31,6 +33,8 @@ const InterviewReviewPage: NextPage = () => {
     console.log("searhcing")
     setIsOpen(!isOpen)
   }
+
+  const isLoading = true
 
   return (
     <PageLayout>
@@ -74,16 +78,20 @@ const InterviewReviewPage: NextPage = () => {
           <InterviewFilter onSearch={handleSearch} />
         </div>
         <DetailedCardDetailLayout>
-          <InterviewReviewDetailCard
-            interviewDate="02/23"
-            industry="123"
-            isStudent={true}
-            postDate="04/22"
-            score={33}
-            key={1}
-            title="1123"
-            id="1"
-          />
+          {isLoading ? (
+            <ReviewDetailSkeletonCardGroup />
+          ) : (
+            <InterviewReviewDetailCard
+              interviewDate="02/23"
+              industry="123"
+              isStudent={true}
+              postDate="04/22"
+              score={33}
+              key={1}
+              title="1123"
+              id="1"
+            />
+          )}
         </DetailedCardDetailLayout>
       </div>
 
