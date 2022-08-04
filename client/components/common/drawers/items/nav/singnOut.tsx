@@ -1,14 +1,26 @@
 import React, { PropsWithChildren } from "react"
 import BaseNavDraweritem, { IBaseNavDrawerItemProps } from "."
-import { ImPacman } from "react-icons/im"
+import { FiLogOut } from "react-icons/fi"
+import { STSignOut } from "../../../../../service/supertoken/Sesstion"
+import { useDispatch } from "react-redux"
+import { IUserActionTypes } from "../../../../../state/user/actions"
 
 interface INavDrawerSignOutitemProps extends Partial<IBaseNavDrawerItemProps> {}
 
 const NavDrawerSignOutitem: React.FunctionComponent<
   INavDrawerSignOutitemProps
 > = ({ ...props }) => {
+  const dispatch = useDispatch()
   return (
-    <BaseNavDraweritem icon={<ImPacman />} title="sign out" {...props}>
+    <BaseNavDraweritem
+      icon={<FiLogOut />}
+      title="sign out"
+      handleClick={async () => {
+        await STSignOut()
+        dispatch({ type: IUserActionTypes.USER_SIGN_OUT })
+      }}
+      {...props}
+    >
       Sign Out
     </BaseNavDraweritem>
   )
