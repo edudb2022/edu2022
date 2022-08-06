@@ -25,11 +25,11 @@ const BaseReviewCard: React.FunctionComponent<
   type,
   id
 }) => {
-  const school = "cuhk"
+  const school = "hku-cuhk"
 
   const schoolColor = ` bg-school-${school}`
   return (
-    <BaseCard className="flex flex-row  md:w-92  w-88 h-60 md:h-72 shadow-lg rounded-2xl bg-white">
+    <BaseCard className="flex flex-row  md:w-92  w-88 h-72 md:h-72 shadow-lg rounded-2xl bg-white">
       <div
         className={`flex flex-col py-4 justify-between items-center w-1/4 ${schoolColor} rounded-l-2xl `}
       >

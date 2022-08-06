@@ -21,7 +21,7 @@ const SchoolsReviewCards: React.FunctionComponent<ISchoolsCardsProps> = ({
       totalReports={totalReports}
       type={type}
     >
-      <div className="absolute top-0 h-full w-full  px-8 py-5 md:p-4 md:mt-5 ">
+      <div className="absolute top-0 h-full w-full  px-2 py-5 md:p-4 md:mt-5 ">
         <BaseRadar
           scores={[3, 3.6, 3.7, 3.6, 4]}
           labels={[
