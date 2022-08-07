@@ -22,6 +22,7 @@
     "moment": "^2.29.3",
     "next": "12.1.5",
     "next-redux-wrapper": "^7.0.5",
+    "next-seo": "^5.5.0",
     "nextjs-cors": "^2.1.1",
     "react": "18.0.0",
     "react-chartjs-2": "^4.1.0",

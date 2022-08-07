@@ -66,7 +66,7 @@ const Home: NextPage = (props) => {
   //   ),
   //   { ssr: false }
   // )
-  console.log(123, process)
+
   return (
     // <EmailPasswordAuthNoSSR>
     //   <EmailPasswordAuth>
