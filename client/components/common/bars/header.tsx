@@ -13,19 +13,19 @@ const formRoutes = [
     route: "programmeReview"
   },
   {
-    title: "面試評價",
+    title: "面試情報",
     route: "interviewReview"
   },
   {
-    title: "入學offer",
+    title: "入學情報",
     route: "admissionOffer"
   },
   {
-    title: "實習offer",
+    title: "實習情報",
     route: "internshipOffer"
   },
   {
-    title: "工作offer",
+    title: "工作情報",
     route: "gradJobOffer"
   }
 ]

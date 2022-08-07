@@ -93,6 +93,15 @@ export const progrmmeWorkLoadRating: IRating[] = [
   { value: "6", label: "養肝Mode" }
 ]
 
+export const progrmmeResourcedRating: IRating[] = [
+  { value: "1", label: "0資源" },
+  { value: "2", label: "極少" },
+  { value: "3", label: "啱啱好" },
+  { value: "4", label: "不錯 " },
+  { value: "5", label: "極多" },
+  { value: "6", label: "極度豐富" }
+]
+
 export const progrmmeRecommendRating: IRating[] = [
   { value: "1", label: "遠離呢科" },
   { value: "2", label: "三思而後行" },

@@ -25,7 +25,7 @@ const BaseReviewCard: React.FunctionComponent<
   type,
   id
 }) => {
-  const school = "hku-cuhk"
+  const school = "cuhk"
 
   const schoolColor = ` bg-school-${school}`
   return (

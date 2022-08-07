@@ -153,13 +153,13 @@ const InterviewReviewPage: NextPage = () => {
 
   return (
     <form onSubmit={formik.handleSubmit}>
-      <FormPageLayout pageTitle="Interview">
+      <FormPageLayout pageTitle="面試情報">
         <div className="grid md:grid-cols-4 md:gap-x-9 gap-y-2">
           <BaseSelect
             name="schoolType"
             items={dummySchool}
             selectId="schoolType"
-            inputLabel="Schhol type"
+            inputLabel="學校類型"
             selectValue={formik.values.schoolType}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
@@ -172,7 +172,7 @@ const InterviewReviewPage: NextPage = () => {
             name="school"
             items={dummySchool}
             selectId="school"
-            inputLabel="school"
+            inputLabel="學校"
             selectValue={formik.values.school}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
@@ -185,7 +185,7 @@ const InterviewReviewPage: NextPage = () => {
             name="faculty"
             items={dummyFactculty}
             selectId="faculty"
-            inputLabel="faculty"
+            inputLabel="學院/分類"
             selectValue={formik.values.faculty}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
@@ -198,7 +198,7 @@ const InterviewReviewPage: NextPage = () => {
             name="programme"
             items={dummyProgramme}
             selectId="programme"
-            inputLabel="programme"
+            inputLabel="課程"
             selectValue={formik.values.programme}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
@@ -208,58 +208,60 @@ const InterviewReviewPage: NextPage = () => {
           />
         </div>
 
-        <div className="grid md:grid-cols-4 md:gap-x-9  gap-y-2">
-          <BaseSelect
-            items={schoolTypeOptions}
-            name="currentSchoolType"
-            selectId="currentSchoolType"
-            inputLabel="currentSchoolType"
-            selectValue={formik.values.currentSchoolType}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            errorMessages={formik.errors.currentSchoolType}
-            isTouched={formik.touched.currentSchoolType}
-            isRequired
-          />
-          <BaseSelect
-            name="currentSchool"
-            items={dummySchool}
-            selectId="currentSchool"
-            inputLabel="currentSchool"
-            selectValue={formik.values.currentSchool}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            errorMessages={formik.errors.currentSchool}
-            isTouched={formik.touched.currentSchool}
-            isRequired
-          />
+        <InputContainer header="最近的教育程度/狀態">
+          <div className="grid md:grid-cols-4 md:gap-x-9  gap-y-2 mt-2">
+            <BaseSelect
+              items={schoolTypeOptions}
+              name="currentSchoolType"
+              selectId="currentSchoolType"
+              inputLabel="學校類型/學習狀態"
+              selectValue={formik.values.currentSchoolType}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              errorMessages={formik.errors.currentSchoolType}
+              isTouched={formik.touched.currentSchoolType}
+              isRequired
+            />
+            <BaseSelect
+              name="currentSchool"
+              items={dummySchool}
+              selectId="currentSchool"
+              inputLabel="學校"
+              selectValue={formik.values.currentSchool}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              errorMessages={formik.errors.currentSchool}
+              isTouched={formik.touched.currentSchool}
+              isRequired
+            />
 
-          <BaseSelect
-            name="currentFaculty"
-            items={dummyFactculty}
-            selectId="currentFaculty"
-            inputLabel="currentFaculty"
-            selectValue={formik.values.currentFaculty}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            errorMessages={formik.errors.currentFaculty}
-            isTouched={formik.touched.currentFaculty}
-            isRequired
-          />
+            <BaseSelect
+              name="currentFaculty"
+              items={dummyFactculty}
+              selectId="currentFaculty"
+              inputLabel="學院/分類"
+              selectValue={formik.values.currentFaculty}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              errorMessages={formik.errors.currentFaculty}
+              isTouched={formik.touched.currentFaculty}
+              isRequired
+            />
 
-          <BaseSelect
-            name="currentProgramme"
-            items={dummyProgramme}
-            selectId="currentProgramme"
-            inputLabel="currentProgramme"
-            selectValue={formik.values.currentProgramme}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            errorMessages={formik.errors.currentProgramme}
-            isTouched={formik.touched.currentProgramme}
-            isRequired
-          />
-        </div>
+            <BaseSelect
+              name="currentProgramme"
+              items={dummyProgramme}
+              selectId="currentProgramme"
+              inputLabel="課程"
+              selectValue={formik.values.currentProgramme}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              errorMessages={formik.errors.currentProgramme}
+              isTouched={formik.touched.currentProgramme}
+              isRequired
+            />
+          </div>
+        </InputContainer>
         <div className="grid grid-cols-1 md:grid-cols-4 md:gap-x-9 items-end gap-y-2">
           <div className="col-span-3">
             <TitleTextInput
@@ -296,7 +298,7 @@ const InterviewReviewPage: NextPage = () => {
             onBlur={formik.handleBlur}
             errorMessages={formik.errors.exprience}
             isTouched={formik.touched.exprience}
-            header="Interview experience"
+            header="面試體驗"
             headerRequired={true}
           />
 
@@ -308,7 +310,7 @@ const InterviewReviewPage: NextPage = () => {
             onBlur={formik.handleBlur}
             errorMessages={formik.errors.difficulty}
             isTouched={formik.touched.difficulty}
-            header="Interview difficulty"
+            header="面試難度"
             headerRequired={true}
           />
         </div>
@@ -318,7 +320,7 @@ const InterviewReviewPage: NextPage = () => {
             name="dressCode"
             items={dressCodeOptions}
             selectId="dressCode"
-            inputLabel="dressCode"
+            inputLabel="穿着要求(Dress Code)"
             selectValue={formik.values.dressCode}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
@@ -329,7 +331,7 @@ const InterviewReviewPage: NextPage = () => {
             name="applicaiotnType"
             items={admissionType}
             selectId="applicaiotnType"
-            inputLabel="applicaiotnType"
+            inputLabel="入學類型"
             selectValue={formik.values.applicaiotnType}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
@@ -348,17 +350,18 @@ const InterviewReviewPage: NextPage = () => {
               formik.values.applicaiotnType === ADMISSION_TYPE.JUPAS ||
               formik.values.applicaiotnType === ""
             }
+            helpText="Non-Jupas/學士請填寫"
           />
         </div>
 
         <InputContainer
-          header="DSE results (if applicable)"
-          subHeader="Please at least enter best 5 subjects"
+          header="DSE成績"
+          subHeader="請至少填寫五科成績 (Best 5)"
         >
           <div className="grid  grid-cols-3 md:grid-cols-4 md:gap-x-9 gap-y-2">
             <div className="grid col-span-2 md:col-span-1">
               <DseSubjectsSelect
-                inputLabel="123"
+                inputLabel="科目一"
                 name="desSubjectOne"
                 selectId="desSubjectOne"
                 selectValue={formik.values.desSubjectOne}
@@ -384,6 +387,7 @@ const InterviewReviewPage: NextPage = () => {
 
             <div className="grid col-span-2 md:col-span-1">
               <DseSubjectsSelect
+                inputLabel="科目二"
                 name="desSubjectTwo"
                 selectId="desSubjectTwo"
                 selectValue={formik.values.desSubjectTwo}
@@ -406,6 +410,7 @@ const InterviewReviewPage: NextPage = () => {
             />
             <div className="grid col-span-2 md:col-span-1">
               <DseSubjectsSelect
+                inputLabel="科學三"
                 name="desSubjectThree"
                 selectId="desSubjectThree"
                 selectValue={formik.values.desSubjectThree}
@@ -427,6 +432,7 @@ const InterviewReviewPage: NextPage = () => {
             />
             <div className="grid col-span-2 md:col-span-1">
               <DseSubjectsSelect
+                inputLabel="科目四"
                 name="desSubjectFour"
                 selectId="desSubjectFour"
                 selectValue={formik.values.desSubjectFour}
@@ -448,6 +454,7 @@ const InterviewReviewPage: NextPage = () => {
             />
             <div className="grid col-span-2 md:col-span-1">
               <DseSubjectsSelect
+                inputLabel="科目五"
                 name="desSubjectFive"
                 selectId="desSubjectFive"
                 selectValue={formik.values.desSubjectFive}
@@ -470,6 +477,7 @@ const InterviewReviewPage: NextPage = () => {
 
             <div className="grid col-span-2 md:col-span-1">
               <DseSubjectsSelect
+                inputLabel="科目六"
                 name="desSubjectSix"
                 selectId="desSubjectSix"
                 selectValue={formik.values.desSubjectSix}
@@ -493,16 +501,15 @@ const InterviewReviewPage: NextPage = () => {
         </InputContainer>
 
         <InputContainer
-          header="contact method"
-          subHeader="Indicate the desired communication method"
+          header="聯絡資訊"
+          subHeader="有疑問者可以直接搵你了解詳情"
         >
           <div className="grid   md:grid-cols-4  md:gap-x-9 md:items-end gap-y-2 mt-2">
             <div className="grid  md:col-span-1">
               <ContactSelect
-                placeholder="123"
                 name="contactMethod"
                 selectId="contactMethod"
-                inputLabel="contactMethod"
+                inputLabel="聯絡方式"
                 selectValue={formik.values.contactMethod}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
@@ -512,7 +519,7 @@ const InterviewReviewPage: NextPage = () => {
             </div>
             <div className="md:col-span-3 ">
               <BaseTextInput
-                label="contect detail"
+                label="Email/電話號碼/Username"
                 name="contactDetail"
                 value={formik.values.contactDetail}
                 onChange={formik.handleChange}

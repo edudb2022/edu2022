@@ -91,13 +91,13 @@ const InternshipOfferFormPage: React.FunctionComponent = () => {
 
   return (
     <form onSubmit={formik.handleSubmit}>
-      <FormPageLayout pageTitle="INtern">
+      <FormPageLayout pageTitle="實習情報">
         <div className="grid md:grid-cols-4 md:gap-x-9 gap-y-2">
           <BaseSelect
-            items={schoolTypeOptions}
             name="schoolType"
+            items={dummySchool}
             selectId="schoolType"
-            inputLabel="Schhol type"
+            inputLabel="學校類型"
             selectValue={formik.values.schoolType}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
@@ -105,11 +105,12 @@ const InternshipOfferFormPage: React.FunctionComponent = () => {
             isTouched={formik.touched.schoolType}
             isRequired
           />
+
           <BaseSelect
             name="school"
             items={dummySchool}
             selectId="school"
-            inputLabel="school"
+            inputLabel="學校"
             selectValue={formik.values.school}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
@@ -122,7 +123,7 @@ const InternshipOfferFormPage: React.FunctionComponent = () => {
             name="faculty"
             items={dummyFactculty}
             selectId="faculty"
-            inputLabel="faculty"
+            inputLabel="學院/分類"
             selectValue={formik.values.faculty}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
@@ -135,7 +136,7 @@ const InternshipOfferFormPage: React.FunctionComponent = () => {
             name="programme"
             items={dummyProgramme}
             selectId="programme"
-            inputLabel="programme"
+            inputLabel="課程"
             selectValue={formik.values.programme}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
@@ -154,7 +155,7 @@ const InternshipOfferFormPage: React.FunctionComponent = () => {
 
         <div className="grid md:grid-cols-3 md:gap-x-9 items-end  gap-y-2">
           <BaseTextInput
-            label="jobTitle"
+            label="職位名稱"
             name="jobTitle"
             value={formik.values.jobTitle}
             onChange={formik.handleChange}
@@ -163,7 +164,7 @@ const InternshipOfferFormPage: React.FunctionComponent = () => {
             errorMessages={formik.errors.jobTitle}
           />
           <BaseTextInput
-            label="companyName"
+            label="公司名稱"
             name="companyName"
             value={formik.values.companyName}
             onChange={formik.handleChange}
@@ -173,7 +174,7 @@ const InternshipOfferFormPage: React.FunctionComponent = () => {
           />
 
           <BaseDatePicker
-            label="offerRecievedDate (YYYY-MM-DD)"
+            label="收Offer日期"
             value={formik.values.offerRecievedDate}
             onChange={(newValue: any) => {
               formik.setFieldValue(
@@ -219,7 +220,7 @@ const InternshipOfferFormPage: React.FunctionComponent = () => {
             name="internType"
             items={internTypeOptions}
             selectId="internType"
-            inputLabel="internType"
+            inputLabel="實習類型"
             selectValue={formik.values.internType}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
@@ -232,7 +233,7 @@ const InternshipOfferFormPage: React.FunctionComponent = () => {
             name="industry"
             items={dummyFactculty}
             selectId="industry"
-            inputLabel="industry"
+            inputLabel="行業"
             selectValue={formik.values.industry}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
@@ -245,7 +246,7 @@ const InternshipOfferFormPage: React.FunctionComponent = () => {
             name="jobSource"
             items={jobSourceOptions}
             selectId="jobSource"
-            inputLabel="Where do you find the work oppotunity?"
+            inputLabel="如果得知這工作？"
             selectValue={formik.values.jobSource}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
@@ -262,21 +263,21 @@ const InternshipOfferFormPage: React.FunctionComponent = () => {
             onBlur={formik.handleBlur}
             errorMessages={formik.errors.difficulty}
             isTouched={formik.touched.difficulty}
-            header="difficulty"
+            header="搵工難度"
             headerRequired={true}
           />
         </div>
+
         <InputContainer
-          header="contact method"
-          subHeader="Indicate the desired communication method"
+          header="聯絡資訊"
+          subHeader="有疑問者可以直接搵你了解詳情"
         >
           <div className="grid   md:grid-cols-4  md:gap-x-9 md:items-end gap-y-2 mt-2">
             <div className="grid  md:col-span-1">
               <ContactSelect
-                placeholder="123"
                 name="contactMethod"
                 selectId="contactMethod"
-                inputLabel="contactMethod"
+                inputLabel="聯絡方式"
                 selectValue={formik.values.contactMethod}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
@@ -286,7 +287,7 @@ const InternshipOfferFormPage: React.FunctionComponent = () => {
             </div>
             <div className="md:col-span-3 ">
               <BaseTextInput
-                label="contect detail"
+                label="Email/電話號碼/Username"
                 name="contactDetail"
                 value={formik.values.contactDetail}
                 onChange={formik.handleChange}
@@ -298,6 +299,7 @@ const InternshipOfferFormPage: React.FunctionComponent = () => {
             </div>
           </div>
         </InputContainer>
+
         <AnonymousSwitch
           className="ml-8"
           value={formik.values.isAnonymous}

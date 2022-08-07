@@ -10,7 +10,7 @@ const GpaNumberInput: React.FunctionComponent<IGpaNumberInputProps> = ({
     <BaseNumberInput
       name="gpa"
       id="gpa"
-      label="gpa"
+      label="GPA"
       inputProps={{ min: 0 }}
       {...props}
     />

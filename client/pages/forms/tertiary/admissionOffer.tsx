@@ -178,103 +178,114 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
 
   return (
     <form onSubmit={formik.handleSubmit}>
-      <FormPageLayout pageTitle="Offer Review">
+      <FormPageLayout pageTitle="入學情報">
         <div className="grid md:grid-cols-4 md:gap-x-9 gap-y-2">
           <BaseSelect
-            items={schoolTypeOptions}
             name="schoolType"
+            items={dummySchool}
             selectId="schoolType"
-            inputLabel="Schhol type"
+            inputLabel="學校類型"
             selectValue={formik.values.schoolType}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             errorMessages={formik.errors.schoolType}
             isTouched={formik.touched.schoolType}
+            isRequired
           />
+
           <BaseSelect
             name="school"
             items={dummySchool}
             selectId="school"
-            inputLabel="school"
+            inputLabel="學校"
             selectValue={formik.values.school}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             errorMessages={formik.errors.school}
             isTouched={formik.touched.school}
+            isRequired
           />
 
           <BaseSelect
             name="faculty"
             items={dummyFactculty}
             selectId="faculty"
-            inputLabel="faculty"
+            inputLabel="學院/分類"
             selectValue={formik.values.faculty}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             errorMessages={formik.errors.faculty}
             isTouched={formik.touched.faculty}
+            isRequired
           />
 
           <BaseSelect
             name="programme"
             items={dummyProgramme}
             selectId="programme"
-            inputLabel="programme"
+            inputLabel="課程"
             selectValue={formik.values.programme}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             errorMessages={formik.errors.programme}
             isTouched={formik.touched.programme}
+            isRequired
           />
         </div>
-        <div className="grid md:grid-cols-4 md:gap-x-9  gap-y-2">
-          <BaseSelect
-            items={schoolTypeOptions}
-            name="currentSchoolType"
-            selectId="currentSchoolType"
-            inputLabel="currentSchoolType"
-            selectValue={formik.values.currentSchoolType}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            errorMessages={formik.errors.currentSchoolType}
-            isTouched={formik.touched.currentSchoolType}
-          />
-          <BaseSelect
-            name="currentSchool"
-            items={dummySchool}
-            selectId="currentSchool"
-            inputLabel="currentSchool"
-            selectValue={formik.values.currentSchool}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            errorMessages={formik.errors.currentSchool}
-            isTouched={formik.touched.currentSchool}
-          />
+        <InputContainer header="最近的教育程度/狀態">
+          <div className="grid md:grid-cols-4 md:gap-x-9  gap-y-2 mt-2">
+            <BaseSelect
+              items={schoolTypeOptions}
+              name="currentSchoolType"
+              selectId="currentSchoolType"
+              inputLabel="學校類型/學習狀態"
+              selectValue={formik.values.currentSchoolType}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              errorMessages={formik.errors.currentSchoolType}
+              isTouched={formik.touched.currentSchoolType}
+              isRequired
+            />
+            <BaseSelect
+              name="currentSchool"
+              items={dummySchool}
+              selectId="currentSchool"
+              inputLabel="學校"
+              selectValue={formik.values.currentSchool}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              errorMessages={formik.errors.currentSchool}
+              isTouched={formik.touched.currentSchool}
+              isRequired
+            />
 
-          <BaseSelect
-            name="currentFaculty"
-            items={dummyFactculty}
-            selectId="currentFaculty"
-            inputLabel="currentFaculty"
-            selectValue={formik.values.currentFaculty}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            errorMessages={formik.errors.currentFaculty}
-            isTouched={formik.touched.currentFaculty}
-          />
+            <BaseSelect
+              name="currentFaculty"
+              items={dummyFactculty}
+              selectId="currentFaculty"
+              inputLabel="學院/分類"
+              selectValue={formik.values.currentFaculty}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              errorMessages={formik.errors.currentFaculty}
+              isTouched={formik.touched.currentFaculty}
+              isRequired
+            />
 
-          <BaseSelect
-            name="currentProgramme"
-            items={dummyProgramme}
-            selectId="currentProgramme"
-            inputLabel="currentProgramme"
-            selectValue={formik.values.currentProgramme}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            errorMessages={formik.errors.currentProgramme}
-            isTouched={formik.touched.currentProgramme}
-          />
-        </div>
+            <BaseSelect
+              name="currentProgramme"
+              items={dummyProgramme}
+              selectId="currentProgramme"
+              inputLabel="課程"
+              selectValue={formik.values.currentProgramme}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              errorMessages={formik.errors.currentProgramme}
+              isTouched={formik.touched.currentProgramme}
+              isRequired
+            />
+          </div>
+        </InputContainer>
         <div className="grid md:grid-cols-4 md:gap-x-9 items-end  gap-y-2">
           <div className="grid md:col-span-2">
             <TitleTextInput
@@ -289,7 +300,7 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
           </div>
 
           <BaseDatePicker
-            label="offerDate (YYYY-MM-DD)"
+            label="收Offer日期"
             value={formik.values.offerDate}
             onChange={(newValue: any) => {
               formik.setFieldValue(
@@ -302,7 +313,7 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
             name="admissionType"
             items={admissionType}
             selectId="admissionType"
-            inputLabel="admissionType"
+            inputLabel="入學類型"
             selectValue={formik.values.admissionType}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
@@ -319,7 +330,7 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
             name="jupasBanding"
             items={admissionType}
             selectId="jupasBanding"
-            inputLabel="jupasBanding"
+            inputLabel="Jupas志願排名"
             selectValue={formik.values.jupasBanding}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
@@ -335,7 +346,7 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
             name="admissionLevel"
             items={admissionLevel}
             selectId="admissionLevel"
-            inputLabel="admissionLevel"
+            inputLabel="入學年級"
             selectValue={formik.values.admissionLevel}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
@@ -348,7 +359,7 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
             name="offerType"
             items={admissionCondition}
             selectId="offerType"
-            inputLabel="offerType"
+            inputLabel="Offer類型"
             selectValue={formik.values.offerType}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
@@ -366,6 +377,7 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
               formik.values.admissionType === ADMISSION_TYPE.JUPAS ||
               formik.values.admissionType === ""
             }
+            // helpText="Non-Jupas/學士請填寫"
           />
         </div>
 
@@ -387,7 +399,7 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
         <div className="grid  grid-cols-3 md:grid-cols-4 md:gap-x-9 gap-y-2">
           <div className="grid col-span-2 md:col-span-1">
             <DseSubjectsSelect
-              inputLabel="123"
+              inputLabel="科目一"
               name="desSubjectOne"
               selectId="desSubjectOne"
               selectValue={formik.values.desSubjectOne}
@@ -407,11 +419,13 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
               onBlur={formik.handleBlur}
               errorMessages={formik.errors.desSubjectGradeOne}
               isTouched={formik.touched.desSubjectGradeOne}
+              disabled={!!!formik.values.desSubjectOne}
             />
           </div>
 
           <div className="grid col-span-2 md:col-span-1">
             <DseSubjectsSelect
+              inputLabel="科目二"
               name="desSubjectTwo"
               selectId="desSubjectTwo"
               selectValue={formik.values.desSubjectTwo}
@@ -430,9 +444,11 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
             onBlur={formik.handleBlur}
             errorMessages={formik.errors.desSubjectGradeTwo}
             isTouched={formik.touched.desSubjectGradeTwo}
+            disabled={!!!formik.values.desSubjectTwo}
           />
           <div className="grid col-span-2 md:col-span-1">
             <DseSubjectsSelect
+              inputLabel="科學三"
               name="desSubjectThree"
               selectId="desSubjectThree"
               selectValue={formik.values.desSubjectThree}
@@ -450,9 +466,11 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
             onBlur={formik.handleBlur}
             errorMessages={formik.errors.desSubjectGradeThree}
             isTouched={formik.touched.desSubjectGradeThree}
+            disabled={!!!formik.values.desSubjectThree}
           />
           <div className="grid col-span-2 md:col-span-1">
             <DseSubjectsSelect
+              inputLabel="科目四"
               name="desSubjectFour"
               selectId="desSubjectFour"
               selectValue={formik.values.desSubjectFour}
@@ -470,9 +488,11 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
             onBlur={formik.handleBlur}
             errorMessages={formik.errors.desSubjectGradeFour}
             isTouched={formik.touched.desSubjectGradeFour}
+            disabled={!!!formik.values.desSubjectFour}
           />
           <div className="grid col-span-2 md:col-span-1">
             <DseSubjectsSelect
+              inputLabel="科目五"
               name="desSubjectFive"
               selectId="desSubjectFive"
               selectValue={formik.values.desSubjectFive}
@@ -490,10 +510,12 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
             onBlur={formik.handleBlur}
             errorMessages={formik.errors.desSubjectGradeFive}
             isTouched={formik.touched.desSubjectGradeSix}
+            disabled={!!!formik.values.desSubjectFive}
           />
 
           <div className="grid col-span-2 md:col-span-1">
             <DseSubjectsSelect
+              inputLabel="科目六"
               name="desSubjectSix"
               selectId="desSubjectSix"
               selectValue={formik.values.desSubjectSix}
@@ -511,21 +533,22 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
             onBlur={formik.handleBlur}
             errorMessages={formik.errors.desSubjectGradeSix}
             isTouched={formik.touched.desSubjectGradeSix}
+            disabled={!!!formik.values.desSubjectSix}
           />
         </div>
+
         {/* </InputContainer> */}
 
         <InputContainer
-          header="contact method"
-          subHeader="Indicate the desired communication method"
+          header="聯絡資訊"
+          subHeader="有疑問者可以直接搵你了解詳情"
         >
           <div className="grid   md:grid-cols-4  md:gap-x-9 md:items-end gap-y-2 mt-2">
             <div className="grid  md:col-span-1">
               <ContactSelect
-                placeholder="123"
                 name="contactMethod"
                 selectId="contactMethod"
-                inputLabel="contactMethod"
+                inputLabel="聯絡方式"
                 selectValue={formik.values.contactMethod}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
@@ -535,7 +558,7 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
             </div>
             <div className="md:col-span-3 ">
               <BaseTextInput
-                label="contect detail"
+                label="Email/電話號碼/Username"
                 name="contactDetail"
                 value={formik.values.contactDetail}
                 onChange={formik.handleChange}

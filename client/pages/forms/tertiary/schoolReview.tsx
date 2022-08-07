@@ -109,7 +109,6 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
                 moment(newValue).format("dd/MM/yyyy")
               )
             }}
-            helpText="123"
           />
 
           <BaseSelect
@@ -134,7 +133,7 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
           helpText={"123"}
         />
 
-        <div className="flex flex-col gap-y-6  items-start border-2">
+        <div className="flex flex-col gap-y-6  items-center">
           <RatingToggleButtonGroup
             id="campusRating"
             value={formik.values.campusRating}
@@ -156,7 +155,7 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
             errorMessages={formik.errors.resourceRating}
             isTouched={formik.touched.resourceRating}
             header="資源及支援"
-            subHeader="eg. Scholarship, career support..."
+            subHeader="例如Scholarship數量，Exchange支援，就業及情緒輔導等等"
             headerRequired={true}
           />
 

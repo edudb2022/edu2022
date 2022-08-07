@@ -20,6 +20,8 @@ import {
   commonRating,
   programmeGpaRating,
   progrmmeRecommendRating,
+  progrmmeResourcedRating,
+  progrmmeWorkLoadRating,
   recommendRating
 } from "../../../constants/rating"
 import * as yup from "yup"
@@ -77,7 +79,7 @@ const ProgrammeReviewFormPage: React.FunctionComponent = () => {
 
   return (
     <form onSubmit={formik.handleSubmit}>
-      <FormPageLayout pageTitle="Programme Revi">
+      <FormPageLayout pageTitle="課程評價">
         <div className="grid md:grid-cols-4 md:gap-x-9 gap-y-2">
           <BaseSelect
             items={dummySchool}
@@ -178,6 +180,7 @@ const ProgrammeReviewFormPage: React.FunctionComponent = () => {
             isTouched={formik.touched.programmeStructure}
             header="課程結構"
             headerRequired={true}
+            subHeader="各科內容質素"
           />
 
           <RatingToggleButtonGroup
@@ -196,7 +199,7 @@ const ProgrammeReviewFormPage: React.FunctionComponent = () => {
             id="workload"
             value={formik.values.workload}
             onChange={formik.handleChange}
-            ratingTitle={commonRating}
+            ratingTitle={progrmmeWorkLoadRating}
             onBlur={formik.handleBlur}
             errorMessages={formik.errors.workload}
             isTouched={formik.touched.workload}
@@ -221,11 +224,12 @@ const ProgrammeReviewFormPage: React.FunctionComponent = () => {
             id="resources"
             value={formik.values.resources}
             onChange={formik.handleChange}
-            ratingTitle={commonRating}
+            ratingTitle={progrmmeResourcedRating}
             onBlur={formik.handleBlur}
             errorMessages={formik.errors.resources}
             isTouched={formik.touched.resources}
             header="資源"
+            subHeader="例如學習資源，如免費影印紙張上限，Exchange 支援等等"
             headerRequired={true}
           />
 
@@ -249,7 +253,6 @@ const ProgrammeReviewFormPage: React.FunctionComponent = () => {
           <div className="grid   md:grid-cols-4  md:gap-x-9 md:items-end gap-y-2 mt-2">
             <div className="grid  md:col-span-1">
               <ContactSelect
-                placeholder="123"
                 name="contactMethod"
                 selectId="contactMethod"
                 inputLabel="聯絡方式"
