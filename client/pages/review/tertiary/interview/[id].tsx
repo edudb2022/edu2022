@@ -34,7 +34,7 @@ const InterviewReviewPage: NextPage = () => {
     setIsOpen(!isOpen)
   }
 
-  const isLoading = true
+  const isLoading = false
 
   return (
     <PageLayout>

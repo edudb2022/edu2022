@@ -60,6 +60,7 @@ const SchoolReviewPage = () => {
         </div>
         <DetailedCardDetailLayout>
           <SchoolReviewDetailCard
+            admissionDate="23/2022"
             isStudent={true}
             score={1223}
             value={0}

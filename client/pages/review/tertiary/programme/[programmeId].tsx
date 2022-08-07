@@ -69,6 +69,7 @@ const ProgrammeReviewPage: NextPage = () => {
         </div>
         <DetailedCardDetailLayout>
           <ProgrammeReviewDetailCard
+            admissionDate="02/2022"
             isStudent={true}
             score={1223}
             value={0}
