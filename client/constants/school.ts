@@ -27,9 +27,9 @@ export const uni = [
   },
   {
     id: "4",
-    schoolChineseName: "香港中文大學",
+    schoolChineseName: "香港大學",
     schoolEnglishName: "The Chinese University of Hong Kong",
-    schoolShortName: "hkcu",
+    schoolShortName: "Poly",
     type: "大學",
     totalReports: 1
   }

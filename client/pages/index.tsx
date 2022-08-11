@@ -1,6 +1,6 @@
 import { TextField } from "@mui/material"
 import type { NextPage } from "next"
-import { ChangeEventHandler, useEffect, useState } from "react"
+import { ChangeEventHandler, useEffect, useMemo, useState } from "react"
 import BaseTextInput from "../components/common/inputs/text"
 import ReactGA from "react-ga"
 import SchoolsPanel from "../components/common/panel/schools"
@@ -14,6 +14,13 @@ import axios from "axios"
 import BaseModal from "../components/common/modals"
 import SuccessModal from "../components/common/modals/succuss"
 import { schoolCampusRating } from "../constants/rating"
+import SEO from "../components/seo"
+import { college, uni } from "../constants/school"
+import SchoolsReviewCards from "../components/common/cards/review/school"
+import Link from "next/link"
+import { CommonHelper } from "../helpers"
+import CardDisplayLayout from "../components/layouts/cardDisplay"
+import { IBaseReviewCardProps } from "../components/common/cards/review"
 const schoolsType = [
   { value: SCHOOL_TYPE.UNIVERSITY, title: "大學" },
   { value: SCHOOL_TYPE.COLLEGE, title: "大專" }
@@ -40,12 +47,9 @@ const Home: NextPage = (props) => {
     ReactGA.pageview(window.location.pathname + window.location.search)
   }, [])
 
-  console.log(
-    "process.env.NEXT_PUBLIC_BASE_URL",
-    process.env.NEXT_PUBLIC_BASE_URL
-  )
   const [type, setType] = useState(SCHOOL_TYPE.UNIVERSITY)
   const [search, setSearch] = useState("")
+  const [list, setList] = useState<IBaseReviewCardProps[]>([])
 
   const handleTypeChange = (e: any) => {
     setType(e.target.value)
@@ -66,6 +70,37 @@ const Home: NextPage = (props) => {
   //   ),
   //   { ssr: false }
   // )
+  // const abc = uni
+
+  // useEffect(() => {
+  //   const arr = []
+  //   uni.forEach((data) => {
+  //     if (
+  //       // search.length ||
+  //       data.schoolChineseName.includes(search) ||
+  //       data.schoolEnglishName.includes(search) ||
+  //       data.schoolShortName.includes(search)
+  //     ) {
+  //       // console.log("data", data)
+  //       // setList([...list, data])
+  //       arr.push(data)
+  //     }
+  //   })
+  //   setList(arr)
+  // }, [search])
+  // console.log(list)
+  useEffect(() => {
+    // if (search.lengt) {
+    const res = CommonHelper.schoolFilter(uni, search.trim(), type)
+    console.log("123")
+    // if (res !== list) {
+    setList(res)
+    // }
+
+    // }
+  }, [search, type])
+
+  // console.log(res)
 
   return (
     // <EmailPasswordAuthNoSSR>
@@ -89,7 +124,25 @@ const Home: NextPage = (props) => {
         />
       </div>
 
-      <SchoolsPanel searchText={search} currentIndex={type} />
+      <CardDisplayLayout>
+        {list.map((data) => {
+          return (
+            <Link key={data.id} href={`/school/tertiary/${data.id}`}>
+              <a key={data.id}>
+                <SchoolsReviewCards
+                  key={data.id}
+                  id={data.id}
+                  schoolChineseName={data.schoolChineseName}
+                  schoolEnglishName={data.schoolEnglishName}
+                  totalReports={data.totalReports}
+                  type={data.type}
+                  schoolShortName={data.schoolShortName}
+                />
+              </a>
+            </Link>
+          )
+        })}
+      </CardDisplayLayout>
     </PageLayout>
   )
 }
