@@ -163,6 +163,15 @@ module.exports = {
             backgroundColor: "#FFFFFF",
             color: "#F2994A"
           }
+        },
+        blackBorderHover: {
+          "0%": {},
+          "100%": {
+            borderColor: "#000",
+            // backgroundColor: "#FFFFFF",
+            fontWeight: 900,
+            color: "#000"
+          }
         }
       },
       animation: {
@@ -171,7 +180,8 @@ module.exports = {
         borderGrayDeep: "borderGrayDeep 1s ease-in-out forwards",
         borderThemeOneDeep: "borderThemeOneDeep 1s ease-in-out forwards",
         discordHover: "discordHover 0.5s ease-in-out forwards",
-        themeOneHover: " themeOneHover 0.5s ease-in-out forwards"
+        themeOneHover: "themeOneHover 0.5s ease-in-out forwards",
+        blackBorderHover: "blackBorderHover 0.5s ease-in-out forwards"
       }
     }
   },

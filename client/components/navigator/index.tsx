@@ -34,7 +34,7 @@ const Navbar: React.FunctionComponent = () => {
           </a>
         </Link>
 
-        <div className="flex-row gap-x-1 h-full hidden md:flex ">
+        <div className="flex-row gap-x-4 h-full hidden md:flex ">
           <DiscordButton />
           {isLogin ? (
             <>

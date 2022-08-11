@@ -11,7 +11,7 @@ const SignInButton: React.FunctionComponent<ISignInButtonProps> = ({
   }
   return (
     <BaseButton
-      className="text-black-500 text-sm"
+      className="text-black-500 text-sm font-normal border-2 rounded-2xl hover:animate-blackBorderHover"
       onClick={handleClick}
       {...props}
     >
