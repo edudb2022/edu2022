@@ -30,6 +30,7 @@ const RatingTag: React.FunctionComponent<IRantingTagProps> = ({
   rating,
   ratingClassName,
   header,
+  titleClassName,
   ...props
 }) => {
   const ROUNDED_OFF_RATING = Math.round(rating)
@@ -41,7 +42,8 @@ const RatingTag: React.FunctionComponent<IRantingTagProps> = ({
         title={title}
         rating={rating}
         className={` ${className} ${ratingTextAndBackgroundColor[ROUNDED_OFF_RATING]}`}
-        ratingClassName={ratingBorderColor[ROUNDED_OFF_RATING]}
+        ratingClassName={`${ratingBorderColor[ROUNDED_OFF_RATING]}  ${ratingClassName}`}
+        titleClassName={`${titleClassName}`}
         {...props}
       />
     </div>

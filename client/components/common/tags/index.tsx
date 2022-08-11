@@ -5,6 +5,7 @@ export interface IBaseTagProps {
   rating?: number
   className?: string
   ratingClassName?: string
+  titleClassName?: string
   header?: string
 }
 
@@ -13,7 +14,8 @@ const BaseTag: React.FunctionComponent<IBaseTagProps> = ({
   rating,
   header,
   className,
-  ratingClassName
+  ratingClassName,
+  titleClassName
 }) => {
   return (
     <div className={`flex flex-col w-fit items-center rounded-2xl `}>
@@ -26,7 +28,7 @@ const BaseTag: React.FunctionComponent<IBaseTagProps> = ({
         )}
 
         <div
-          className={`max-w-full items-center  md:text-base ${
+          className={`max-w-full items-center  md:text-base ${titleClassName} ${
             !rating ? "px-4 py-[2px]" : "px-2"
           }`}
         >
