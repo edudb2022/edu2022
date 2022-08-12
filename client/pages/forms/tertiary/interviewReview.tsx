@@ -153,7 +153,7 @@ const InterviewReviewPage: NextPage = () => {
 
   return (
     <form onSubmit={formik.handleSubmit}>
-      <FormPageLayout pageTitle="面試情報">
+      <FormPageLayout title="面試情報" subTitle="可以提交多次面試情報">
         <div className="grid md:grid-cols-4 md:gap-x-9 gap-y-2">
           <BaseSelect
             name="schoolType"

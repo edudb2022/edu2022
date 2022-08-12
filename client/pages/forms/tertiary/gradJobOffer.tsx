@@ -91,7 +91,7 @@ const GradJobOfferFormPage: React.FunctionComponent = () => {
 
   return (
     <form onSubmit={formik.handleSubmit}>
-      <FormPageLayout pageTitle="Grad job offer">
+      <FormPageLayout title="Grad job offer" subTitle="可以提交多次工作情報">
         <div className="grid md:grid-cols-4 md:gap-x-9 gap-y-2">
           <BaseSelect
             name="schoolType"

@@ -79,7 +79,7 @@ const ProgrammeReviewFormPage: React.FunctionComponent = () => {
 
   return (
     <form onSubmit={formik.handleSubmit}>
-      <FormPageLayout pageTitle="課程評價">
+      <FormPageLayout title="課程評價" subTitle="每個課程只可以作一次評價">
         <div className="grid md:grid-cols-4 md:gap-x-9 gap-y-2">
           <BaseSelect
             items={dummySchool}

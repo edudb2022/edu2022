@@ -73,7 +73,7 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
 
   return (
     <form onSubmit={formik.handleSubmit}>
-      <FormPageLayout pageTitle="學校評價">
+      <FormPageLayout title="學校評價" subTitle="每間學校只可以作一次評價">
         {/* <FormSection header="123"> */}
         <div className="grid md:grid-cols-4 md:gap-x-9 gap-y-2">
           <SchoolTypeSelect
