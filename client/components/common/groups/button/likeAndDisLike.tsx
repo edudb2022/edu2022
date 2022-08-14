@@ -16,7 +16,6 @@ interface ILikeAndDisLikeButtonGroupProps {
 const LikeAndDisLikeButtonGroup: React.FunctionComponent<
   ILikeAndDisLikeButtonGroupProps
 > = ({ handleLikeClick, handleRightClick, voteType }) => {
-  console.log("123123", voteType)
   return (
     <div className="flex flex-row border-black text-2xl p-2">
       <LikeButton

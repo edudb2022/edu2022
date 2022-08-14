@@ -22,7 +22,6 @@ const useAuth = () => {
         if (session) {
           const userId = await STGetUserId()
           const payload = await STGetPayload()
-          console.log(543, payload)
 
           dispatch({
             type: IUserActionTypes.USER_SIGN_IN,

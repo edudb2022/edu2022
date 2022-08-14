@@ -171,7 +171,7 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
       formik.values.gpa = null
     }
   }, [formik.values.admissionType])
-  console.log(formik.errors)
+
   return (
     <FormPageLayout
       title="入學情報"

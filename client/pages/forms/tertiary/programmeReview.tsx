@@ -79,7 +79,6 @@ const ProgrammeReviewFormPage: React.FunctionComponent = () => {
     validationSchema: programmeReviewFormSchema
   })
 
-  console.log(formik.touched.admissionDate)
   return (
     <FormPageLayout
       title="課程評價"

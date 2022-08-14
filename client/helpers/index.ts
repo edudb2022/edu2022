@@ -18,7 +18,7 @@ export const CommonHelper = {
         data.type === schoolTypes
       ) {
         // if(data not in)
-        // console.log("data", data)
+
         // setList([...list, data])
         arr.push(data)
       }

@@ -7,7 +7,7 @@ const PageLayout: React.FunctionComponent<
   PropsWithChildren<PageLayoutProps>
 > = ({ children }) => {
   // let data = useSessionContext()
-  // console.log(123, data)
+
   const router = useRouter()
   // {
   //   router.pathname === "/" ? "bg-theme-two-500" : "bg-white"
