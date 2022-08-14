@@ -93,7 +93,7 @@ const GradJobOfferFormPage: React.FunctionComponent = () => {
 
   return (
     <FormPageLayout
-      title="Grad job offer"
+      title="工作情報"
       subTitle="可以提交多次工作情報"
       onSubmit={formik.handleSubmit}
     >
