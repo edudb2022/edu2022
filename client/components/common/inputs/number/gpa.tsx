@@ -11,7 +11,7 @@ const GpaNumberInput: React.FunctionComponent<IGpaNumberInputProps> = ({
       name="gpa"
       id="gpa"
       label="GPA"
-      inputProps={{ min: 0 }}
+      // inputProps={{ min: 0 }}
       {...props}
     />
   )

@@ -31,6 +31,8 @@ const schoolsType = [
 // import { EmailPasswordAuth } from "supertokens-auth-react/recipe/emailpassword"
 
 const Home: NextPage = (props) => {
+  // const { modals } = useAppSelector((state) => state.system)
+  // console.log(modals)
   // const fetchTodoList = () => {
   //   return axios.get("https://random-data-api.com/api/address/random_address")
   // }

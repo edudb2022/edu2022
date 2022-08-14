@@ -25,14 +25,19 @@ export enum ISystemActionTypes {
   SYSTEM_IS_AUTH_MODAL_OPEN = "SYSTEM:IS_AUTH_MODAL_OPRN"
 }
 
+export interface I123State {
+  loading: boolean
+  auth: boolean
+}
 export interface ISystemState {
-  isLoading: boolean
+  // isLoading: boolean
   error: string
-  isAuthModalOpen: boolean
+  // isAuthModalOpen: boolean
+  modals: { isLoading: boolean; auth: boolean }
 }
 
 export interface ISystemIsLoadingAction {
-  payload: ISystemState
+  payload: boolean
   type: typeof ISystemActionTypes.SYSTEM_IS_LOADING
 }
 

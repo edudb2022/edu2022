@@ -1,3 +1,4 @@
+import { modalClasses } from "@mui/material"
 import React from "react"
 import { useAppDispatch } from "../../../hooks/common/useAppDispatch"
 
@@ -10,7 +11,7 @@ import DoubleButtonModal, { IDoubleButtonModalProps } from "./doubleButton"
 interface IAuthModalProps {}
 
 const AuthModal: React.FunctionComponent<IAuthModalProps> = () => {
-  const { isAuthModalOpen } = useAppSelector((state) => state.system)
+  const { modals } = useAppSelector((state) => state.system)
   const dispatch = useAppDispatch()
   const handleLeftClick = () => {
     dispatch({
@@ -31,7 +32,7 @@ const AuthModal: React.FunctionComponent<IAuthModalProps> = () => {
     <DoubleButtonModal
       leftButtonTitle="OK 明白"
       rightButtonTile="登入"
-      isOpen={isAuthModalOpen}
+      isOpen={modals.auth}
       onLeftClick={handleLeftClick}
       onRightCick={handleRightClick}
       className=" h-48 w-80 md:h-56 md:w-96  "

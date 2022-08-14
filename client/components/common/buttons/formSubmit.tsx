@@ -10,7 +10,7 @@ const FormSumitButton: React.FunctionComponent<IFormSumitButtonProps> = () => {
       type="submit"
       className="border-2 rounded-sm flex flex-row justify-center text-base items-center font-black gap-x-2 w-60 px-0 py-2 hover:animate-borderGrayDeep"
     >
-      <div>Submit</div>
+      <div>完成</div>
 
       <RightArrowIcon className="hover:animate-bounceHorizontal" />
     </BaseButton>

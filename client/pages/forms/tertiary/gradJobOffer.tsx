@@ -25,6 +25,7 @@ import { ContactSelect } from "../../../components/common/inputs/select/contact"
 import AnonymousSwitch from "../../../components/common/switch/anonymous"
 import FormSumitButton from "../../../components/common/buttons/formSubmit"
 import {
+  DateValidationSchema,
   RatingValidationSchema,
   SalaryValidationSchema,
   SlectCommonValidationSchema,
@@ -38,7 +39,7 @@ const GradJobOfferFormPage: React.FunctionComponent = () => {
     school: "",
     faculty: "",
     programme: "",
-    offerRecievedDate: new Date(),
+    offerRecievedDate: null,
     title: "",
     jobTitle: "",
     companyName: "",
@@ -57,7 +58,7 @@ const GradJobOfferFormPage: React.FunctionComponent = () => {
   }
 
   const handleSubmit = () => {
-    console.log()
+    console.log("sumit")
   }
 
   const gradJobOfferFormSchema = yup.object().shape({
@@ -67,6 +68,7 @@ const GradJobOfferFormPage: React.FunctionComponent = () => {
     programme: SlectCommonValidationSchema,
     title: TitleValidationSchema,
     jobTitle: TitleValidationSchema,
+    offerRecievedDate: DateValidationSchema,
     companyName: TitleValidationSchema,
     industry: SlectCommonValidationSchema,
     baseSalary: SalaryValidationSchema,
@@ -90,249 +92,250 @@ const GradJobOfferFormPage: React.FunctionComponent = () => {
   }, [formik.values.baseSalary, formik.values.stockOption, formik.values.bonus])
 
   return (
-    <form onSubmit={formik.handleSubmit}>
-      <FormPageLayout title="Grad job offer" subTitle="可以提交多次工作情報">
-        <div className="grid md:grid-cols-4 md:gap-x-9 gap-y-2">
-          <BaseSelect
-            name="schoolType"
-            items={dummySchool}
-            selectId="schoolType"
-            inputLabel="學校類型"
-            selectValue={formik.values.schoolType}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            errorMessages={formik.errors.schoolType}
-            isTouched={formik.touched.schoolType}
-            isRequired
-          />
-
-          <BaseSelect
-            name="school"
-            items={dummySchool}
-            selectId="school"
-            inputLabel="學校"
-            selectValue={formik.values.school}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            errorMessages={formik.errors.school}
-            isTouched={formik.touched.school}
-            isRequired
-          />
-
-          <BaseSelect
-            name="faculty"
-            items={dummyFactculty}
-            selectId="faculty"
-            inputLabel="學院/分類"
-            selectValue={formik.values.faculty}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            errorMessages={formik.errors.faculty}
-            isTouched={formik.touched.faculty}
-            isRequired
-          />
-
-          <BaseSelect
-            name="programme"
-            items={dummyProgramme}
-            selectId="programme"
-            inputLabel="課程"
-            selectValue={formik.values.programme}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            errorMessages={formik.errors.programme}
-            isTouched={formik.touched.programme}
-            isRequired
-          />
-        </div>
-
-        <TitleTextInput
-          value={formik.values.title}
+    <FormPageLayout
+      title="Grad job offer"
+      subTitle="可以提交多次工作情報"
+      onSubmit={formik.handleSubmit}
+    >
+      <div className="grid md:grid-cols-4 md:gap-x-9 gap-y-2">
+        <BaseSelect
+          name="schoolType"
+          items={dummySchool}
+          selectId="schoolType"
+          inputLabel="學校類型"
+          selectValue={formik.values.schoolType}
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
-          errorMessages={formik.errors.title}
-          isTouched={formik.touched.title}
-          // style={{ width: "100%" }}
+          errorMessages={formik.errors.schoolType}
+          isTouched={formik.touched.schoolType}
           isRequired
         />
 
-        <div className="grid md:grid-cols-3 md:gap-x-9 items-end  gap-y-2">
-          <BaseTextInput
-            label="職位名稱"
-            name="jobTitle"
-            value={formik.values.jobTitle}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            isTouched={formik.touched.jobTitle}
-            errorMessages={formik.errors.jobTitle}
-          />
-          <BaseTextInput
-            label="公司名稱"
-            name="companyName"
-            value={formik.values.companyName}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            isTouched={formik.touched.companyName}
-            errorMessages={formik.errors.companyName}
-          />
-
-          <BaseDatePicker
-            label="收Offer日期"
-            value={formik.values.offerRecievedDate}
-            onChange={(newValue: any) => {
-              formik.setFieldValue(
-                "offerRecievedDate",
-                moment(newValue).format("YYYY-MM-DD")
-              )
-            }}
-          />
-        </div>
-
-        <InputContainer
-          header="總年薪(HKD)"
-          subHeader={`${formik.values.totalSalary} HKD`}
-        >
-          {/* <div className="flex flex-col md:flex-row w-full gap-x-3 gap-y-6 justify-end"> */}
-          <div className="grid md:grid-cols-3 md:gap-x-9 mt-4 gap-y-2">
-            <BaseSalaryNumberInput
-              value={formik.values.baseSalary}
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-              isTouched={formik.touched.baseSalary}
-              errorMessages={formik.errors.baseSalary}
-            />
-            <BonusNumberInput
-              value={formik.values.bonus}
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-              isTouched={formik.touched.bonus}
-              errorMessages={formik.errors.bonus}
-            />
-            <StockOptionNumberInput
-              value={formik.values.stockOption}
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-              isTouched={formik.touched.stockOption}
-              errorMessages={formik.errors.stockOption}
-            />
-          </div>
-          {/* </div> */}
-        </InputContainer>
-
-        <div className="grid md:grid-cols-3 md:gap-x-9 mt-4 gap-y-2">
-          <BaseSelect
-            name="industry"
-            items={dummyFactculty}
-            selectId="industry"
-            inputLabel="行業"
-            selectValue={formik.values.industry}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            errorMessages={formik.errors.industry}
-            isTouched={formik.touched.industry}
-            isRequired
-          />
-
-          <BaseSelect
-            name="jobSource"
-            items={jobSourceOptions}
-            selectId="jobSource"
-            inputLabel="如果得知這工作？"
-            selectValue={formik.values.jobSource}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            errorMessages={formik.errors.jobSource}
-            isTouched={formik.touched.jobSource}
-          />
-
-          <BaseSelect
-            name="honour"
-            items={jobSourceOptions}
-            selectId="honour"
-            inputLabel="畢業榮譽 (Honour)"
-            selectValue={formik.values.honour}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            errorMessages={formik.errors.honour}
-            isTouched={formik.touched.honour}
-          />
-        </div>
-
-        <div className="flex flex-col gap-y-6  justify-center items-center">
-          <RatingToggleButtonGroup
-            id="difficulty"
-            value={formik.values.difficulty}
-            onChange={formik.handleChange}
-            ratingTitle={recommendRating}
-            onBlur={formik.handleBlur}
-            errorMessages={formik.errors.difficulty}
-            isTouched={formik.touched.difficulty}
-            header="搵工難度"
-            headerRequired={true}
-          />
-
-          <RatingToggleButtonGroup
-            id="hope"
-            value={formik.values.hope}
-            onChange={formik.handleChange}
-            ratingTitle={recommendRating}
-            onBlur={formik.handleBlur}
-            errorMessages={formik.errors.hope}
-            isTouched={formik.touched.hope}
-            header="未來希望程度"
-            headerRequired={true}
-          />
-        </div>
-        <InputContainer
-          header="聯絡資訊"
-          subHeader="有疑問者可以直接搵你了解詳情"
-        >
-          <div className="grid   md:grid-cols-4  md:gap-x-9 md:items-end gap-y-2 mt-2">
-            <div className="grid  md:col-span-1">
-              <ContactSelect
-                name="contactMethod"
-                selectId="contactMethod"
-                inputLabel="聯絡方式"
-                selectValue={formik.values.contactMethod}
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                errorMessages={formik.errors.contactMethod}
-                isTouched={formik.touched.contactMethod}
-              />
-            </div>
-            <div className="md:col-span-3 ">
-              <BaseTextInput
-                label="Email/電話號碼/Username"
-                name="contactDetail"
-                value={formik.values.contactDetail}
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                errorMessages={formik.errors.contactDetail}
-                isTouched={formik.touched.contactDetail}
-                disabled={formik.values.contactMethod === ""}
-              />
-            </div>
-          </div>
-        </InputContainer>
-
-        <AnonymousSwitch
-          className="ml-8"
-          value={formik.values.isAnonymous}
+        <BaseSelect
+          name="school"
+          items={dummySchool}
+          selectId="school"
+          inputLabel="學校"
+          selectValue={formik.values.school}
           onChange={formik.handleChange}
-        />
-        <h1 className="font-black ml-6">Long Question</h1>
-        <LongQuestionsSection
-          isTouched={true}
-          errorMessages={"123"}
-          header="123"
-          minRows={5}
+          onBlur={formik.handleBlur}
+          errorMessages={formik.errors.school}
+          isTouched={formik.touched.school}
+          isRequired
         />
 
-        <div className="flex flex-row justify-center">
-          <FormSumitButton />
+        <BaseSelect
+          name="faculty"
+          items={dummyFactculty}
+          selectId="faculty"
+          inputLabel="學院/分類"
+          selectValue={formik.values.faculty}
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          errorMessages={formik.errors.faculty}
+          isTouched={formik.touched.faculty}
+          isRequired
+        />
+
+        <BaseSelect
+          name="programme"
+          items={dummyProgramme}
+          selectId="programme"
+          inputLabel="課程"
+          selectValue={formik.values.programme}
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          errorMessages={formik.errors.programme}
+          isTouched={formik.touched.programme}
+          isRequired
+        />
+      </div>
+
+      <TitleTextInput
+        value={formik.values.title}
+        onChange={formik.handleChange}
+        onBlur={formik.handleBlur}
+        errorMessages={formik.errors.title}
+        isTouched={formik.touched.title}
+        // style={{ width: "100%" }}
+        isRequired
+      />
+
+      <div className="grid md:grid-cols-3 md:gap-x-9  gap-y-2">
+        <BaseTextInput
+          label="職位名稱"
+          name="jobTitle"
+          value={formik.values.jobTitle}
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          isTouched={formik.touched.jobTitle}
+          errorMessages={formik.errors.jobTitle}
+        />
+        <BaseTextInput
+          label="公司名稱"
+          name="companyName"
+          value={formik.values.companyName}
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          isTouched={formik.touched.companyName}
+          errorMessages={formik.errors.companyName}
+        />
+
+        <BaseDatePicker
+          label="收Offer日期"
+          value={formik.values.offerRecievedDate}
+          onChange={(newValue: any) => {
+            formik.setFieldValue(
+              "offerRecievedDate",
+              moment(newValue).format("YYYY-MM-DD")
+            )
+          }}
+          errorMessages={formik.errors.offerRecievedDate}
+          isTouched={formik.touched.offerRecievedDate}
+          helpText="只會顯示MM/YYYY"
+        />
+      </div>
+
+      <InputContainer
+        header="總年薪(HKD)"
+        subHeader={`${formik.values.totalSalary} HKD`}
+      >
+        {/* <div className="flex flex-col md:flex-row w-full gap-x-3 gap-y-6 justify-end"> */}
+        <div className="grid md:grid-cols-3 md:gap-x-9 mt-4 gap-y-2">
+          <BaseSalaryNumberInput
+            value={formik.values.baseSalary}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            isTouched={formik.touched.baseSalary}
+            errorMessages={formik.errors.baseSalary}
+          />
+          <BonusNumberInput
+            value={formik.values.bonus}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            isTouched={formik.touched.bonus}
+            errorMessages={formik.errors.bonus}
+          />
+          <StockOptionNumberInput
+            value={formik.values.stockOption}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            isTouched={formik.touched.stockOption}
+            errorMessages={formik.errors.stockOption}
+          />
         </div>
-      </FormPageLayout>
-    </form>
+        {/* </div> */}
+      </InputContainer>
+
+      <div className="grid md:grid-cols-3 md:gap-x-9 mt-4 gap-y-2">
+        <BaseSelect
+          name="industry"
+          items={dummyFactculty}
+          selectId="industry"
+          inputLabel="行業"
+          selectValue={formik.values.industry}
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          errorMessages={formik.errors.industry}
+          isTouched={formik.touched.industry}
+          isRequired
+        />
+
+        <BaseSelect
+          name="jobSource"
+          items={jobSourceOptions}
+          selectId="jobSource"
+          inputLabel="如果得知這工作？"
+          selectValue={formik.values.jobSource}
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          errorMessages={formik.errors.jobSource}
+          isTouched={formik.touched.jobSource}
+        />
+
+        <BaseSelect
+          name="honour"
+          items={jobSourceOptions}
+          selectId="honour"
+          inputLabel="畢業榮譽 (Honour)"
+          selectValue={formik.values.honour}
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          errorMessages={formik.errors.honour}
+          isTouched={formik.touched.honour}
+        />
+      </div>
+
+      <div className="flex flex-col gap-y-6  justify-center items-center">
+        <RatingToggleButtonGroup
+          id="difficulty"
+          value={formik.values.difficulty}
+          onChange={formik.handleChange}
+          ratingTitle={recommendRating}
+          onBlur={formik.handleBlur}
+          errorMessages={formik.errors.difficulty}
+          isTouched={formik.touched.difficulty}
+          header="搵工難度"
+          headerRequired={true}
+        />
+
+        <RatingToggleButtonGroup
+          id="hope"
+          value={formik.values.hope}
+          onChange={formik.handleChange}
+          ratingTitle={recommendRating}
+          onBlur={formik.handleBlur}
+          errorMessages={formik.errors.hope}
+          isTouched={formik.touched.hope}
+          header="未來希望程度"
+          headerRequired={true}
+        />
+      </div>
+      <InputContainer
+        header="聯絡資訊"
+        subHeader="有疑問者可以直接搵你了解詳情"
+      >
+        <div className="grid   md:grid-cols-4  md:gap-x-9 md:items-end gap-y-2 mt-2">
+          <div className="grid  md:col-span-1">
+            <ContactSelect
+              name="contactMethod"
+              selectId="contactMethod"
+              inputLabel="聯絡方式"
+              selectValue={formik.values.contactMethod}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              errorMessages={formik.errors.contactMethod}
+              isTouched={formik.touched.contactMethod}
+            />
+          </div>
+          <div className="md:col-span-3 ">
+            <BaseTextInput
+              label="Email/電話號碼/Username"
+              name="contactDetail"
+              value={formik.values.contactDetail}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              errorMessages={formik.errors.contactDetail}
+              isTouched={formik.touched.contactDetail}
+              disabled={formik.values.contactMethod === ""}
+            />
+          </div>
+        </div>
+      </InputContainer>
+
+      <AnonymousSwitch
+        className="ml-8"
+        value={formik.values.isAnonymous}
+        onChange={formik.handleChange}
+      />
+      <h1 className="font-black ml-6">Long Question</h1>
+      <LongQuestionsSection
+        isTouched={true}
+        errorMessages={"123"}
+        header="123"
+        minRows={5}
+      />
+    </FormPageLayout>
   )
 }
 
