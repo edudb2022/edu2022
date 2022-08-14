@@ -81,7 +81,7 @@ const DetailReviewHeaderContainer: React.FunctionComponent<
           isOpen={voteTypeModalOpen}
           onClick={handleClick}
         />
-        <BaseButton className=" bg-red-500 text-white gap-x-1">
+        <BaseButton className=" bg-theme-rose-500 text-white gap-x-1 rounded-2xl hover:border-2 hover:animate-warningBorderHover">
           <MdOutlineReportGmailerrorred />
           {"舉報"}
         </BaseButton>
