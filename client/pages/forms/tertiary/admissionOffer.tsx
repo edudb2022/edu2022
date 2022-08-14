@@ -312,15 +312,15 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
           helpText="只會顯示MM/YYYY"
         />
         <BaseSelect
-          name="admissionType"
-          items={admissionType}
-          selectId="admissionType"
-          inputLabel="入學類型"
-          selectValue={formik.values.admissionType}
+          name="admissionLevel"
+          items={admissionLevel}
+          selectId="admissionLevel"
+          inputLabel="入學年級"
+          selectValue={formik.values.admissionLevel}
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
-          errorMessages={formik.errors.admissionType}
-          isTouched={formik.touched.admissionType}
+          errorMessages={formik.errors.admissionLevel}
+          isTouched={formik.touched.admissionLevel}
           isRequired
         />
       </div>
@@ -344,18 +344,6 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
             formik.values.admissionType === ""
           }
         />
-        <BaseSelect
-          name="admissionLevel"
-          items={admissionLevel}
-          selectId="admissionLevel"
-          inputLabel="入學年級"
-          selectValue={formik.values.admissionLevel}
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
-          errorMessages={formik.errors.admissionLevel}
-          isTouched={formik.touched.admissionLevel}
-          isRequired
-        />
 
         <BaseSelect
           name="offerType"
@@ -367,6 +355,18 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
           onBlur={formik.handleBlur}
           errorMessages={formik.errors.offerType}
           isTouched={formik.touched.offerType}
+          isRequired
+        />
+        <BaseSelect
+          name="admissionType"
+          items={admissionType}
+          selectId="admissionType"
+          inputLabel="入學類型"
+          selectValue={formik.values.admissionType}
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          errorMessages={formik.errors.admissionType}
+          isTouched={formik.touched.admissionType}
           isRequired
         />
         <GpaNumberInput
