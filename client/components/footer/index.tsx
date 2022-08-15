@@ -1,6 +1,8 @@
 import Link from "next/link"
 import React from "react"
-import { FaDiscord, FaFacebook, FaInstagram } from "react-icons/fa"
+import DiscordIcon from "../common/icons/discord"
+import FBIcon from "../common/icons/FB"
+import IGIcon from "../common/icons/IG"
 
 const Footer: React.FunctionComponent = () => {
   return (
@@ -56,18 +58,18 @@ const Footer: React.FunctionComponent = () => {
             <Link href={"mailto:abc@abc.com"}>Email: abc@abc.com</Link>
             <div className="w-24 sm:w-3/4 flex justify-between mt-3">
               <Link href={"http://www.facebook.com"}>
-                <a>
-                  <FaFacebook size={30} />
+                <a className="text-3xl">
+                  <FBIcon />
                 </a>
               </Link>
               <Link href={"http://www.instagram.com"}>
-                <a>
-                  <FaInstagram size={30} />
+                <a className="text-3xl">
+                  <IGIcon />
                 </a>
               </Link>
               <Link href={"http://www.discord.com"}>
-                <a>
-                  <FaDiscord size={30} color="5865F2" />
+                <a className="text-indigo-600 text-3xl">
+                  <DiscordIcon />
                 </a>
               </Link>
             </div>

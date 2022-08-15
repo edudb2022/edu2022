@@ -1,13 +1,12 @@
 import React from "react"
 import BaseNavDraweritem, { IBaseNavDrawerItemProps } from "."
-import { ImPacman } from "react-icons/im"
-import { AiFillAlipayCircle } from "react-icons/ai"
+import ProfileIcon from "../../../icons/profile"
 interface INavDrawerProfileItemProps extends Partial<IBaseNavDrawerItemProps> {}
 
 const NavDrawerProfileItem: React.FunctionComponent<
   INavDrawerProfileItemProps
 > = ({ ...props }) => {
-  return <BaseNavDraweritem icon={<ImPacman />} title="Profile" {...props} />
+  return <BaseNavDraweritem icon={<ProfileIcon />} title="Profile" {...props} />
 }
 
 export default NavDrawerProfileItem

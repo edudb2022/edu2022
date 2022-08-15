@@ -1,8 +1,7 @@
 import React from "react"
 import BaseNavDraweritem, { IBaseNavDrawerItemProps } from "."
-import { AiFillAlipayCircle, AiOutlineForm } from "react-icons/ai"
-import { ImPacman } from "react-icons/im"
 import { STRedirectToSignUp } from "../../../../../service/supertoken/function"
+import SignUpIcon from "../../../icons/signUp"
 
 interface IDrawerSignUpProps extends Partial<IBaseNavDrawerItemProps> {}
 
@@ -12,7 +11,7 @@ const NavDrawerSignUpitem: React.FunctionComponent<IDrawerSignUpProps> = ({
   return (
     <BaseNavDraweritem
       title="Sign Up"
-      icon={<AiOutlineForm />}
+      icon={<SignUpIcon />}
       handleClick={() => STRedirectToSignUp()}
       {...props}
     />

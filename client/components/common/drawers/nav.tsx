@@ -1,6 +1,5 @@
 import Link from "next/link"
 import React from "react"
-import { FaDiscord } from "react-icons/fa"
 import BaseDrawer, { IBaseDrawerProps } from "."
 import { useAppSelector } from "../../../hooks/common/useAppSelector"
 import NavDrawerDiscorditem from "./items/nav/discord"

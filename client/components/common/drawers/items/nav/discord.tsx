@@ -1,7 +1,7 @@
 import { link } from "fs"
 import React from "react"
-import { FaDiscord } from "react-icons/fa"
 import BaseNavDraweritem, { IBaseNavDrawerItemProps } from "."
+import DiscordIcon from "../../../icons/discord"
 
 interface IDrawerDiscordProps extends Partial<IBaseNavDrawerItemProps> {}
 
@@ -11,7 +11,7 @@ const NavDrawerDiscorditem: React.FunctionComponent<IDrawerDiscordProps> = ({
   return (
     <BaseNavDraweritem
       title="Discord"
-      icon={<FaDiscord />}
+      icon={<DiscordIcon />}
       link="http://www.discord.com"
       {...props}
     />
