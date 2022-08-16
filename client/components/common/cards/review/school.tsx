@@ -1,25 +1,31 @@
 import React from "react"
 import BaseReviewCard, { IBaseReviewCardProps } from "."
+import { schoolTypesList } from "../../../../constants/common"
+import { SchoolTypeId } from "../../../../types/common"
 import BaseRadar from "../../charts/radar"
 
-interface ISchoolsCardsProps extends IBaseReviewCardProps {}
+export interface ISchoolsReviewCardProps extends Partial<IBaseReviewCardProps> {
+  schoolTypeId: SchoolTypeId
+}
 
-const SchoolsReviewCards: React.FunctionComponent<ISchoolsCardsProps> = ({
+const SchoolsReviewCards: React.FunctionComponent<ISchoolsReviewCardProps> = ({
   schoolChineseName,
   schoolEnglishName,
   schoolShortName,
   totalReports,
-  type,
+  schoolTypeId,
   id
 }) => {
+  const title =
+    schoolTypesList.find((ele) => ele.id === schoolTypeId)?.ChiTitle ?? ""
   return (
     <BaseReviewCard
-      id={id}
-      schoolChineseName={schoolChineseName}
-      schoolEnglishName={schoolEnglishName}
-      schoolShortName={schoolShortName}
-      totalReports={totalReports}
-      type={type}
+      id={id!}
+      schoolChineseName={schoolChineseName!}
+      schoolEnglishName={schoolEnglishName!}
+      schoolShortName={schoolShortName!}
+      totalReports={totalReports!}
+      type={title}
     >
       <div className="absolute top-0 h-full w-full  px-2 py-5 md:p-4 md:mt-5 ">
         <BaseRadar

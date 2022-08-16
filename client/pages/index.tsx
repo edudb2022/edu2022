@@ -6,7 +6,7 @@ import ReactGA from "react-ga"
 import SchoolsPanel from "../components/common/panel/schools"
 import BaseSelect from "../components/common/inputs/select"
 import PageLayout from "../components/layouts/page"
-import { SCHOOL_TYPE, SCORE_TYPE } from "../types/common"
+import { SchoolTypeId, SCHOOL_TYPE, SCORE_TYPE } from "../types/common"
 import Session from "supertokens-auth-react/recipe/session"
 import { useAppSelector } from "../hooks/common/useAppSelector"
 import { dehydrate, QueryClient, useQuery } from "react-query"
@@ -16,14 +16,17 @@ import SuccessModal from "../components/common/modals/succuss"
 import { schoolCampusRating } from "../constants/rating"
 import SEO from "../components/seo"
 import { college, uni } from "../constants/school"
-import SchoolsReviewCards from "../components/common/cards/review/school"
+import SchoolsReviewCards, {
+  ISchoolsReviewCardProps
+} from "../components/common/cards/review/school"
 import Link from "next/link"
-import { CommonHelper } from "../helpers"
+// import { CommonHelper } from "../helpers"
 import CardDisplayLayout from "../components/layouts/cardDisplay"
 import { IBaseReviewCardProps } from "../components/common/cards/review"
-const schoolsType = [
-  { value: SCHOOL_TYPE.UNIVERSITY, title: "大學" },
-  { value: SCHOOL_TYPE.COLLEGE, title: "大專" }
+import { CommonHelpers } from "../helpers"
+const SchoolType = [
+  { value: SchoolTypeId.UNIVERSITY, title: "大學" },
+  { value: SchoolTypeId.COLLEGE, title: "大專" }
 ]
 
 // import dynamic from "next/dynamic"
@@ -49,9 +52,9 @@ const Home: NextPage = (props) => {
     ReactGA.pageview(window.location.pathname + window.location.search)
   }, [])
 
-  const [type, setType] = useState(SCHOOL_TYPE.UNIVERSITY)
+  const [type, setType] = useState(SchoolTypeId.UNIVERSITY)
   const [search, setSearch] = useState("")
-  const [list, setList] = useState<IBaseReviewCardProps[]>([])
+  const [list, setList] = useState<ISchoolsReviewCardProps[]>([])
 
   const handleTypeChange = (e: any) => {
     setType(e.target.value)
@@ -93,7 +96,7 @@ const Home: NextPage = (props) => {
   // console.log(list)
   useEffect(() => {
     // if (search.lengt) {
-    const res = CommonHelper.schoolFilter(uni, search.trim(), type)
+    const res = CommonHelpers.schoolFilter(uni, search.trim(), type)
     console.log("123")
     // if (res !== list) {
     setList(res)
@@ -119,7 +122,7 @@ const Home: NextPage = (props) => {
           value={search}
         />
         <BaseSelect
-          items={schoolsType}
+          items={SchoolType}
           selectValue={type}
           selectClassName="bg-white  px-2"
           onChange={handleTypeChange}
@@ -139,6 +142,7 @@ const Home: NextPage = (props) => {
                   totalReports={data.totalReports}
                   type={data.type}
                   schoolShortName={data.schoolShortName}
+                  schoolTypeId={type}
                 />
               </a>
             </Link>

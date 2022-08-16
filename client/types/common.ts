@@ -43,3 +43,21 @@ export enum VOTE_TYPE {
   LIKED = "like",
   DISLIKE = "dislike"
 }
+
+export interface ISelectMenuItemsType<T, U> {
+  value: T
+  title: U
+}
+
+// interface KeyPair<T, U> {
+//   key: T
+//   value: U
+// }
+
+export interface ISchoolTypeIdTypes
+  extends ISelectMenuItemsType<SchoolTypeId, string> {}
+
+export enum SchoolTypeId {
+  UNIVERSITY = 1,
+  COLLEGE
+}

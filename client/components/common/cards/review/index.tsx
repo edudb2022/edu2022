@@ -2,7 +2,7 @@ import Image from "next/image"
 import React, { PropsWithChildren } from "react"
 import BaseCard, { IBaseCardProps } from ".."
 import { HiOutlineDocumentText } from "react-icons/hi"
-import { ID, SchoolName } from "../../../../types/common"
+import { ID, SchoolName, SchoolTypeId } from "../../../../types/common"
 
 export interface IBaseReviewCardProps extends IBaseCardProps {
   id: ID

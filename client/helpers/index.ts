@@ -1,21 +1,24 @@
-import { IBaseReviewCardProps } from "../components/common/cards/review"
-import { SCHOOL_TYPE } from "../types/common"
+// import { ISchoolsReviewCardProps } from "../components/common/cards/review"
+import { ISchoolsReviewCardProps } from "../components/common/cards/review/school"
+import { ISchoolTypeIdTypes, SchoolTypeId } from "../types/common"
 
-export const CommonHelper = {
+export const CommonHelpers = {
   schoolFilter: (
-    list: IBaseReviewCardProps[],
+    list: ISchoolsReviewCardProps[],
     search: string,
-    schoolTypes: SCHOOL_TYPE
-  ): IBaseReviewCardProps[] => {
-    const arr: IBaseReviewCardProps[] = []
+    schoolTypesId: SchoolTypeId
+  ): ISchoolsReviewCardProps[] => {
+    const arr: ISchoolsReviewCardProps[] = []
 
-    list.map((data: IBaseReviewCardProps) => {
+    list.map((data: ISchoolsReviewCardProps) => {
       if (
-        // search.length ||
-        data.schoolChineseName.includes(search) ||
-        data.schoolEnglishName.includes(search) ||
-        data.schoolShortName.includes(search) ||
-        data.type === schoolTypes
+        data.schoolChineseName &&
+        data.schoolEnglishName &&
+        data.schoolShortName &&
+        (data.schoolChineseName.includes(search) ||
+          data.schoolEnglishName.includes(search) ||
+          data.schoolShortName.includes(search) ||
+          data.schoolTypeId === schoolTypesId)
       ) {
         // if(data not in)
 

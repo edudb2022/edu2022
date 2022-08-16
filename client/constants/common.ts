@@ -1,3 +1,5 @@
+import { SchoolTypeId } from "../types/common"
+
 const dressCodeOptions = [
   { value: "", title: "Please Select" },
   { value: "formal", title: "formal" },
@@ -25,4 +27,14 @@ const internTypeOptions = [
   { value: "placement", title: "placement" }
 ]
 
-export { dressCodeOptions, jobSourceOptions, internTypeOptions }
+const schoolTypesList = [
+  { id: SchoolTypeId.UNIVERSITY, ChiTitle: "大學" },
+  { id: SchoolTypeId.COLLEGE, ChiTitle: "大專" }
+]
+
+export {
+  dressCodeOptions,
+  jobSourceOptions,
+  internTypeOptions,
+  schoolTypesList
+}
