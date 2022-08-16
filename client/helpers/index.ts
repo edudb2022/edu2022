@@ -4,22 +4,21 @@ import { ISchoolTypeIdTypes, SchoolTypeId } from "../types/common"
 
 export const CommonHelpers = {
   schoolFilter: (
-    list: ISchoolsReviewCardProps[],
+    list: Omit<ISchoolsReviewCardProps, "type">[],
     search: string,
-    schoolTypesId: SchoolTypeId
-  ): ISchoolsReviewCardProps[] => {
-    const arr: ISchoolsReviewCardProps[] = []
+    type: SchoolTypeId
+  ): Omit<ISchoolsReviewCardProps, "type">[] => {
+    const arr: Omit<ISchoolsReviewCardProps, "type">[] = []
 
-    list.map((data: ISchoolsReviewCardProps) => {
+    console.log("type", type)
+    list.forEach((data: Omit<ISchoolsReviewCardProps, "type">) => {
       if (
-        data.schoolChineseName &&
-        data.schoolEnglishName &&
-        data.schoolShortName &&
         (data.schoolChineseName.includes(search) ||
           data.schoolEnglishName.includes(search) ||
-          data.schoolShortName.includes(search) ||
-          data.schoolTypeId === schoolTypesId)
+          data.schoolShortName.includes(search)) &&
+        data.schoolTypeId === type
       ) {
+        console.log("type", data.schoolTypeId === type)
         // if(data not in)
 
         // setList([...list, data])

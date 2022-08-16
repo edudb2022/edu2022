@@ -24,6 +24,7 @@ import Link from "next/link"
 import CardDisplayLayout from "../components/layouts/cardDisplay"
 import { IBaseReviewCardProps } from "../components/common/cards/review"
 import { CommonHelpers } from "../helpers"
+import { schoolTypesList } from "../constants/common"
 const SchoolType = [
   { value: SchoolTypeId.UNIVERSITY, title: "大學" },
   { value: SchoolTypeId.COLLEGE, title: "大專" }
@@ -54,7 +55,7 @@ const Home: NextPage = (props) => {
 
   const [type, setType] = useState(SchoolTypeId.UNIVERSITY)
   const [search, setSearch] = useState("")
-  const [list, setList] = useState<ISchoolsReviewCardProps[]>([])
+  const [list, setList] = useState<Omit<ISchoolsReviewCardProps, "type">[]>([])
 
   const handleTypeChange = (e: any) => {
     setType(e.target.value)
@@ -131,6 +132,9 @@ const Home: NextPage = (props) => {
 
       <CardDisplayLayout>
         {list.map((data) => {
+          const title =
+            schoolTypesList.find((ele) => ele.id === data.schoolTypeId)
+              ?.ChiTitle ?? ""
           return (
             <Link key={data.id} href={`/school/tertiary/${data.id}`}>
               <a key={data.id}>
@@ -140,7 +144,7 @@ const Home: NextPage = (props) => {
                   schoolChineseName={data.schoolChineseName}
                   schoolEnglishName={data.schoolEnglishName}
                   totalReports={data.totalReports}
-                  type={data.type}
+                  type={title}
                   schoolShortName={data.schoolShortName}
                   schoolTypeId={type}
                 />
