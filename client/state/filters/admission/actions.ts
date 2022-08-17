@@ -1,7 +1,11 @@
 import {
+  AdmissionLevelTypesId,
+  AdmissionOfferTypeId,
   ADMISSION_LEVEL_TYPE,
   ADMISSION_OFFER_TYPE,
-  ADMISSION_TYPE
+  ADMISSION_TYPE,
+  ApplicationTypeId,
+  YearOfStudyTypeslId
 } from "../../../types/common"
 
 export enum IAdmissionFilterActionTypes {
@@ -15,10 +19,10 @@ export enum IAdmissionFilterActionTypes {
 
 export interface IAdmissionFilterState {
   sorting: "" | string
-  offerType: "" | ADMISSION_OFFER_TYPE
-  admissionType: "" | ADMISSION_TYPE
-  admissionLevel: "" | ADMISSION_LEVEL_TYPE
-  yearOfStudy: string
+  offerType: "" | AdmissionOfferTypeId
+  admissionType: "" | ApplicationTypeId
+  admissionLevel: "" | AdmissionLevelTypesId
+  yearOfStudy: "" | YearOfStudyTypeslId
 }
 
 export interface SET_SORTING {
@@ -27,22 +31,22 @@ export interface SET_SORTING {
 }
 
 export interface SET_OFFER_TYPE {
-  payload: "" | ADMISSION_OFFER_TYPE
+  payload: "" | AdmissionOfferTypeId
   type: typeof IAdmissionFilterActionTypes.SET_OFFER_TYPE
 }
 
 export interface SET_ADMISSION_TYPE {
-  payload: "" | ADMISSION_TYPE
+  payload: "" | ApplicationTypeId
   type: typeof IAdmissionFilterActionTypes.SET_ADMISSION_TYPE
 }
 
 export interface SET_ADMISSION_LEVEL {
-  payload: "" | ADMISSION_LEVEL_TYPE
+  payload: "" | AdmissionLevelTypesId
   type: typeof IAdmissionFilterActionTypes.SET_ADMISSION_LEVEL
 }
 
 export interface SET_YEAT_OF_STUDY {
-  payload: string
+  payload: YearOfStudyTypeslId
   type: typeof IAdmissionFilterActionTypes.SET_YEAT_OF_STUDY
 }
 

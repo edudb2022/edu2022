@@ -18,7 +18,6 @@ import {
 
 const initialState = {
   sorting: "",
-  gradJobType: "",
   industry: ""
 } as IGradJobFilterState
 
@@ -32,11 +31,6 @@ const gradJobFilterReducer = (
         draft.sorting = payload
       })
 
-    case IGradJobFilterActionTypes.SET_GRADJOB_TYPE:
-      return produce(state, (draft) => {
-        draft.gradJobType = payload
-      })
-
     case IGradJobFilterActionTypes.SET_INDUESTY:
       return produce(state, (draft) => {
         draft.industry = payload
@@ -45,7 +39,6 @@ const gradJobFilterReducer = (
     case IGradJobFilterActionTypes.RESET:
       return produce(state, (draft) => {
         draft.sorting = ""
-        draft.gradJobType = ""
         draft.industry = ""
       })
     default:

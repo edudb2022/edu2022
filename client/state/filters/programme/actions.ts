@@ -2,7 +2,6 @@ import { ADMISSION_TYPE } from "../../../types/common"
 
 export enum IProgrammeFilterActionTypes {
   SET_SORTING = "FILTER:PROGRAMME:SET_SORTING",
-
   RESET = "FILTER:PROGRAMME:RESET"
 }
 

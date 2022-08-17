@@ -9,18 +9,12 @@ export enum IGradJobFilterActionTypes {
 
 export interface IGradJobFilterState {
   sorting: "" | string
-  gradJobType: string
   industry: string
 }
 
 export interface SET_SORTING {
   payload: string
   type: typeof IGradJobFilterActionTypes.SET_SORTING
-}
-
-export interface SET_GRADJOB_TYPE {
-  payload: "" | ADMISSION_TYPE
-  type: typeof IGradJobFilterActionTypes.SET_GRADJOB_TYPE
 }
 
 export interface SET_INDUESTY {
@@ -33,8 +27,4 @@ export interface RESET {
   type: typeof IGradJobFilterActionTypes.RESET
 }
 
-export type IGradJobFilterAction =
-  | SET_SORTING
-  | SET_GRADJOB_TYPE
-  | SET_INDUESTY
-  | RESET
+export type IGradJobFilterAction = SET_SORTING | SET_INDUESTY | RESET

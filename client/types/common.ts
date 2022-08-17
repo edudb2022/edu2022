@@ -68,3 +68,45 @@ export enum SchoolTypeId {
   UNIVERSITY = 1,
   COLLEGE
 }
+
+export enum ApplicationTypeId {
+  JUPAS = 1,
+  NON_JUPAS,
+  BACHELOR
+}
+
+export enum DSEJupasChoicePriorityId {
+  BAND_A_ONE = 1,
+  BAND_A_TWO,
+  BAND_A_THREE,
+  BAND_B,
+  BAND_C,
+  OTHER
+}
+
+export enum AdmissionOfferTypeId {
+  CONDITIONAL = 1,
+  DIRECT
+}
+
+export enum InternshipTypesId {
+  SUMMER = 1,
+  WINTER,
+  PLACEMENT
+}
+
+export enum AdmissionLevelTypesId {
+  YEAR_ONE = 1,
+  YEAR_TWO,
+  YEAR_THREE,
+  YEAR_FOUR,
+  YEAR_FIVE_PLUS
+}
+
+export enum YearOfStudyTypeslId {
+  YEAR_ONE = 1,
+  YEAR_TWO,
+  YEAR_THREE,
+  YEAR_FOUR,
+  YEAR_FIVE_PLUS
+}
