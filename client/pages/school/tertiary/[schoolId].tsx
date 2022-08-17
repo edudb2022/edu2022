@@ -15,6 +15,7 @@ import RatingLargeTag from "../../../components/common/tags/ratingLarge"
 import ReviewHeaderContainer from "../../../components/containers/reviewHeader"
 import CardDisplayLayout from "../../../components/layouts/cardDisplay"
 import PageLayout from "../../../components/layouts/page"
+import { contactMethodTypesList } from "../../../constants/common"
 
 const TertiarySchoolPage: NextPage = () => {
   const router = useRouter()
@@ -82,7 +83,7 @@ const TertiarySchoolPage: NextPage = () => {
           value={search}
         />
         <BaseSelect
-          items={facultyType}
+          items={contactMethodTypesList}
           selectValue={type}
           selectClassName="bg-white  px-2"
           onChange={handleTypeChange}
