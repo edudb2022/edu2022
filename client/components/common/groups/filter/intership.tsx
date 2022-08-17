@@ -1,7 +1,11 @@
 import { SelectChangeEvent } from "@mui/material"
 import React from "react"
 
-import { jobSourceOptions } from "../../../../constants/common"
+import {
+  admissionOfferTypesList,
+  internshipTypesList,
+  jobSourceOptions
+} from "../../../../constants/common"
 import { useAppDispatch } from "../../../../hooks/common/useAppDispatch"
 import { useAppSelector } from "../../../../hooks/common/useAppSelector"
 import { IIntershipFilterActionTypes } from "../../../../state/filters/intership/actions"
@@ -43,21 +47,21 @@ const InternshipFilterInputGroup: React.FunctionComponent = () => {
         name="sorting"
         onChange={handleChange}
         selectValue={sorting}
-        items={jobSourceOptions}
+        items={admissionOfferTypesList}
         inputLabel="sorting"
       />
       <BaseSelect
         name="intershipType"
         onChange={handleChange}
         selectValue={internshipType}
-        items={jobSourceOptions}
+        items={internshipTypesList}
         inputLabel="internshipType"
       />
       <BaseSelect
         name="industry"
         onChange={handleChange}
         selectValue={industry}
-        items={jobSourceOptions}
+        items={internshipTypesList}
         inputLabel="industry"
       />
     </BaseFilterContainer>

@@ -1,7 +1,12 @@
 import { SelectChangeEvent } from "@mui/material"
 import React from "react"
 
-import { jobSourceOptions } from "../../../../constants/common"
+import {
+  admissionLevelTypesList,
+  admissionOfferTypesList,
+  applicationTypesList,
+  yearOfStudyTypesList
+} from "../../../../constants/common"
 import { useAppDispatch } from "../../../../hooks/common/useAppDispatch"
 import { useAppSelector } from "../../../../hooks/common/useAppSelector"
 import { IAdmissionFilterActionTypes } from "../../../../state/filters/admission/actions"
@@ -55,21 +60,21 @@ const AdmissionFilterInputGroup: React.FunctionComponent = () => {
         name="sorting"
         onChange={handleChange}
         selectValue={sorting}
-        items={jobSourceOptions}
+        items={admissionOfferTypesList}
         inputLabel="sorting"
       />
       <BaseSelect
         name="offerType"
         onChange={handleChange}
         selectValue={offerType}
-        items={jobSourceOptions}
+        items={admissionOfferTypesList}
         inputLabel="offerType"
       />
       <BaseSelect
         name="admissionType"
         onChange={handleChange}
         selectValue={admissionType}
-        items={jobSourceOptions}
+        items={applicationTypesList}
         inputLabel="admissionType"
       />
 
@@ -77,7 +82,7 @@ const AdmissionFilterInputGroup: React.FunctionComponent = () => {
         name="admissionLevel"
         onChange={handleChange}
         selectValue={admissionLevel}
-        items={jobSourceOptions}
+        items={admissionLevelTypesList}
         inputLabel="admissionLevel"
       />
 
@@ -85,7 +90,7 @@ const AdmissionFilterInputGroup: React.FunctionComponent = () => {
         name="yearOfStudy"
         onChange={handleChange}
         selectValue={yearOfStudy}
-        items={jobSourceOptions}
+        items={yearOfStudyTypesList}
         inputLabel="yearOfStudy"
       />
     </BaseFilterContainer>

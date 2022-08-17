@@ -5,6 +5,7 @@ import {
   DressCodeTypeId,
   DSEJupasChoicePriorityId,
   InternshipTypesId,
+  JobSourceTypesId,
   SchoolTypeId,
   YearOfStudyTypeslId
 } from "../types/common"
@@ -41,7 +42,7 @@ const schoolTypesList = [
   { value: SchoolTypeId.COLLEGE, title: "大專" }
 ]
 
-const aplicationTypesList = [
+const applicationTypesList = [
   { value: ApplicationTypeId.JUPAS, title: "Jupas" },
   { value: ApplicationTypeId.NON_JUPAS, title: "Non-Jupas" },
   { value: ApplicationTypeId.BACHELOR, title: "Bachelor" }
@@ -89,16 +90,31 @@ const yearOfStudyTypesList = [
   { value: YearOfStudyTypeslId.YEAR_FIVE_PLUS, title: "5+" }
 ]
 
+const jobSourceTypesList = [
+  { value: JobSourceTypesId.JIJIS, title: "Jijis" },
+  { value: JobSourceTypesId.LINKEDIN, title: "LinkedIn" },
+  { value: JobSourceTypesId.JOBSDB, title: "JobsDb" },
+  { value: JobSourceTypesId.INDEED, title: "Indeed" },
+  {
+    value: JobSourceTypesId.UNIVERSITY_CAREER_CENTER,
+    title: "University Career Centre"
+  },
+  { value: JobSourceTypesId.COMPANY_WEBSITE, title: "CompanyWebsite" },
+  { value: JobSourceTypesId.FRIENDS, title: "frends recommendation" },
+  { value: JobSourceTypesId.OTHERS, title: "others " }
+]
+
 export {
   dressCodeOptions,
   jobSourceOptions,
   internTypeOptions,
   schoolTypesList,
   dressCodeTypesList,
-  aplicationTypesList,
+  applicationTypesList,
   DSEJupasChoicePriorityTypesList,
   admissionOfferTypesList,
   internshipTypesList,
   admissionLevelTypesList,
-  yearOfStudyTypesList
+  yearOfStudyTypesList,
+  jobSourceTypesList
 }

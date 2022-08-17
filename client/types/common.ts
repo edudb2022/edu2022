@@ -110,3 +110,14 @@ export enum YearOfStudyTypeslId {
   YEAR_FOUR,
   YEAR_FIVE_PLUS
 }
+
+export enum JobSourceTypesId {
+  JIJIS = 1,
+  LINKEDIN,
+  INDEED,
+  JOBSDB,
+  COMPANY_WEBSITE,
+  UNIVERSITY_CAREER_CENTER,
+  FRIENDS,
+  OTHERS
+}

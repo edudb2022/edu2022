@@ -7,8 +7,7 @@ import {
 
 const initialState = {
   sorting: "",
-  admissionType: "",
-  scoreSorting: ""
+  admissionType: ""
 } as IInterviewFilterState
 
 const interviewFilterReducer = (
@@ -24,11 +23,6 @@ const interviewFilterReducer = (
     case IInterviewFilterActionTypes.SET_ADMISSION_TYPE:
       return produce(state, (draft) => {
         draft.admissionType = payload
-      })
-
-    case IInterviewFilterActionTypes.SET_SCORE_SORTING:
-      return produce(state, (draft) => {
-        draft.scoreSorting = payload
       })
 
     case IInterviewFilterActionTypes.RESET:

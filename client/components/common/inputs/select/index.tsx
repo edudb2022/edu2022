@@ -6,7 +6,16 @@ import {
   SelectProps
 } from "@mui/material"
 import React from "react"
-import { ISelectMenuItemsType, SchoolTypeId } from "../../../../types/common"
+import {
+  AdmissionLevelTypesId,
+  AdmissionOfferTypeId,
+  ApplicationTypeId,
+  InternshipTypesId,
+  ISelectMenuItemsType,
+  JobSourceTypesId,
+  SchoolTypeId,
+  YearOfStudyTypeslId
+} from "../../../../types/common"
 import InputContainer, { IInputContainerProps } from "../../../containers/input"
 import ErrorMessage, { IErrorMessageProps } from "../../messages/error"
 
@@ -15,7 +24,15 @@ export interface IBaseSelectProps extends SelectProps, IInputContainerProps {
   inputLabelClassName?: string
   selectLabel?: string
   selectClassName?: string
-  selectValue: string | null | SchoolTypeId
+  selectValue:
+    | string
+    | SchoolTypeId
+    | JobSourceTypesId
+    | YearOfStudyTypeslId
+    | AdmissionLevelTypesId
+    | AdmissionOfferTypeId
+    | InternshipTypesId
+    | ApplicationTypeId
   selectId?: string
   itemsClassName?: string
   items: ISelectMenuItemsType<number, string>[]
