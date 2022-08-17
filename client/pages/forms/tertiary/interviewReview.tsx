@@ -18,7 +18,7 @@ import InputContainer from "../../../components/containers/input"
 import FormPageLayout from "../../../components/layouts/form"
 import { admissionType } from "../../../constants/admission"
 import {
-  dressCodeTypeList,
+  dressCodeTypesList,
   dressCodeOptions,
   schoolTypesList
 } from "../../../constants/common"
@@ -332,7 +332,7 @@ const InterviewReviewPage: NextPage = () => {
       <div className="grid  md:grid-cols-4 md:gap-x-9 gap-y-2">
         <BaseSelect
           name="dressCode"
-          items={dressCodeTypeList}
+          items={dressCodeTypesList}
           selectId="dressCode"
           inputLabel="穿着要求(Dress Code)"
           selectValue={formik.values.dressCode}
