@@ -1,6 +1,7 @@
 import React from "react"
 import BaseSelect, { IBaseSelectProps } from "."
 import { dseScore } from "../../../../constants/admission"
+import { DSEGradeTypesList } from "../../../../constants/common"
 
 interface IDseGradeSelectProps extends Partial<IBaseSelectProps> {}
 
@@ -15,7 +16,7 @@ const DseGradeSelect: React.FunctionComponent<IDseGradeSelectProps> = ({
       inputLabel="成績"
       isTouched={isTouched}
       errorMessages={errorMessages}
-      items={dseScore}
+      items={DSEGradeTypesList}
       selectValue={selectValue!}
       {...props}
     />

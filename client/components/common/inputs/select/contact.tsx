@@ -1,5 +1,6 @@
 import React from "react"
 import BaseSelect, { IBaseSelectProps } from "."
+import { contactMethodTypesList } from "../../../../constants/common"
 
 interface IContactSelectProps extends Partial<IBaseSelectProps> {}
 
@@ -36,7 +37,7 @@ export const ContactSelect: React.FunctionComponent<IContactSelectProps> = ({
       variant="outlined"
       isTouched={isTouched}
       errorMessages={errorMessages}
-      items={options}
+      items={contactMethodTypesList}
       selectValue={selectValue!}
       {...props}
     />

@@ -16,13 +16,14 @@ const ReviewSelect: React.FunctionComponent<IReviewSelectProps> = ({
     }
   ]
   return (
-    <BaseSelect
-      isTouched={isTouched}
-      errorMessages={errorMessages}
-      items={options}
-      selectValue={selectValue!}
-      {...props}
-    />
+    // <BaseSelect
+    //   isTouched={isTouched}
+    //   errorMessages={errorMessages}
+    //   items={options}
+    //   selectValue={selectValue!}
+    //   {...props}
+    // />
+    <></>
   )
 }
 

@@ -121,3 +121,59 @@ export enum JobSourceTypesId {
   FRIENDS,
   OTHERS
 }
+
+export enum AcademicStatusId {
+  YEAR_ONE = 1,
+  YEAR_TWO,
+  YEAR_THERE,
+  YEAR_FOUR,
+  YEAR_FIVE_PLUS,
+  POSTGRAD,
+  ALUMI,
+  OTHER
+}
+
+export enum ContactMethodTypeId {
+  EMAIL = 1,
+  TELEGRAM = 2,
+  WHATSAPP = 3,
+  SIGNAL = 4,
+  OTHERS = 5
+}
+
+export enum HonorId {
+  FIRST = 1,
+  SECOND_UP,
+  SECOND_LOW,
+  THIRD,
+  SUMMA_CUM_LAUDE,
+  MAGNA_CUM_LAUDE,
+  CUM_LAUDE,
+  PASS
+}
+
+export enum DSEGradeId {
+  UNCLASSIFIED = 1,
+  ONE,
+  TWO,
+  THREE,
+  FOUR,
+  FIVE,
+  FIVE_START,
+  FIVE_DOUBLE_STAR,
+  PASS, //displat Text :達標/合格不
+  FAIL //displat Text :不達標/不合格
+}
+
+export enum DSEGradeTypesId {
+  ONE = 1,
+  TWO,
+  THREE,
+  FOUR,
+  FIVE,
+  FIVE_START,
+  FIVE_DOUBLE_STAR,
+  PASS, //displat Text :達標/合格不
+  FAIL, //displat Text :不達標/不合格
+  UNCLASSIFIED = 1
+}

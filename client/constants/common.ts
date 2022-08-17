@@ -2,7 +2,9 @@ import {
   AdmissionLevelTypesId,
   AdmissionOfferTypeId,
   ApplicationTypeId,
+  ContactMethodTypeId,
   DressCodeTypeId,
+  DSEGradeTypesId,
   DSEJupasChoicePriorityId,
   InternshipTypesId,
   JobSourceTypesId,
@@ -104,6 +106,27 @@ const jobSourceTypesList = [
   { value: JobSourceTypesId.OTHERS, title: "others " }
 ]
 
+const contactMethodTypesList = [
+  { value: ContactMethodTypeId.EMAIL, title: "Email" },
+  { value: ContactMethodTypeId.SIGNAL, title: "Signal" },
+  { value: ContactMethodTypeId.WHATSAPP, title: "Whatsapp" },
+  { value: ContactMethodTypeId.TELEGRAM, title: "Telegram" },
+  { value: ContactMethodTypeId.OTHERS, title: "Others" }
+]
+
+const DSEGradeTypesList = [
+  { value: DSEGradeTypesId.ONE, title: "1" },
+  { value: DSEGradeTypesId.TWO, title: "2" },
+  { value: DSEGradeTypesId.THREE, title: "3" },
+  { value: DSEGradeTypesId.FOUR, title: "4" },
+  { value: DSEGradeTypesId.FIVE, title: "5" },
+  { value: DSEGradeTypesId.FIVE_START, title: "5*" },
+  { value: DSEGradeTypesId.FIVE_DOUBLE_STAR, title: "5**" },
+  { value: DSEGradeTypesId.PASS, title: "Pass" },
+  { value: DSEGradeTypesId.FAIL, title: "fail" },
+  { value: DSEGradeTypesId.UNCLASSIFIED, title: "U" }
+]
+
 export {
   dressCodeOptions,
   jobSourceOptions,
@@ -116,5 +139,7 @@ export {
   internshipTypesList,
   admissionLevelTypesList,
   yearOfStudyTypesList,
-  jobSourceTypesList
+  jobSourceTypesList,
+  contactMethodTypesList,
+  DSEGradeTypesList
 }
