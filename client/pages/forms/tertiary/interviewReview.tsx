@@ -22,11 +22,7 @@ import {
   dressCodeOptions,
   schoolTypesList
 } from "../../../constants/common"
-import {
-  dummyFactculty,
-  dummyProgramme,
-  dummySchool
-} from "../../../constants/dummy"
+
 import { recommendRating } from "../../../constants/rating"
 import * as yup from "yup"
 import {

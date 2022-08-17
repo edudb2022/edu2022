@@ -20,7 +20,7 @@ import LongQuestionsSection from "../../../components/common/inputs/sections/lon
 
 import BaseTextInput from "../../../components/common/inputs/text"
 import BaseSelect from "../../../components/common/inputs/select"
-import { dummyProgramme, dummySchool } from "../../../constants/dummy"
+
 import InputContainer from "../../../components/containers/input"
 import AnonymousSwitch from "../../../components/common/switch/anonymous"
 import * as yup from "yup"

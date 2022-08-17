@@ -11,11 +11,7 @@ import TitleTextInput from "../../../components/common/inputs/text/title"
 import AnonymousSwitch from "../../../components/common/switch/anonymous"
 import InputContainer from "../../../components/containers/input"
 import FormPageLayout from "../../../components/layouts/form"
-import {
-  dummyFactculty,
-  dummyProgramme,
-  dummySchool
-} from "../../../constants/dummy"
+
 import {
   commonRating,
   programmeGpaRating,
