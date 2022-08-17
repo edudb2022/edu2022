@@ -30,6 +30,7 @@ const SchoolsPanelItems: React.FunctionComponent<SchoolsPanelItemsProps> = ({
                   totalReports={data.totalReports}
                   type={data.type}
                   schoolShortName={data.schoolShortName}
+                  schoolTypeId={123}
                 />
               </a>
             </Link>
