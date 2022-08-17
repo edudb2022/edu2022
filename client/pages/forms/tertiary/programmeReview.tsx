@@ -32,6 +32,7 @@ import {
   DateValidationSchema
 } from "../../../utils/validation/form/schema"
 import FormSumitButton from "../../../components/common/buttons/formSubmit"
+import { schoolTypesList } from "../../../constants/common"
 
 const ProgrammeReviewFormPage: React.FunctionComponent = () => {
   const initialValues = {
@@ -87,7 +88,7 @@ const ProgrammeReviewFormPage: React.FunctionComponent = () => {
     >
       <div className="grid md:grid-cols-4 md:gap-x-9 gap-y-2">
         <BaseSelect
-          items={dummySchool}
+          items={schoolTypesList}
           selectId="schoolType"
           inputLabel="學校類型"
           selectValue={formik.values.schoolType}
@@ -100,7 +101,7 @@ const ProgrammeReviewFormPage: React.FunctionComponent = () => {
 
         <BaseSelect
           name="school"
-          items={dummySchool}
+          items={schoolTypesList}
           selectId="school"
           inputLabel="學校"
           selectValue={formik.values.school}
@@ -113,7 +114,7 @@ const ProgrammeReviewFormPage: React.FunctionComponent = () => {
 
         <BaseSelect
           name="faculty"
-          items={dummyFactculty}
+          items={schoolTypesList}
           selectId="faculty"
           inputLabel="學院/分類"
           selectValue={formik.values.faculty}
@@ -126,7 +127,7 @@ const ProgrammeReviewFormPage: React.FunctionComponent = () => {
 
         <BaseSelect
           name="programme"
-          items={dummyProgramme}
+          items={schoolTypesList}
           selectId="programme"
           inputLabel="課程"
           selectValue={formik.values.programme}
@@ -166,7 +167,7 @@ const ProgrammeReviewFormPage: React.FunctionComponent = () => {
 
         <BaseSelect
           name="academicStatus"
-          items={dummyProgramme}
+          items={schoolTypesList}
           selectId="academicStatus"
           inputLabel="現時學業狀態"
           selectValue={formik.values.academicStatus}

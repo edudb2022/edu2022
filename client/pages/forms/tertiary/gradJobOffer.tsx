@@ -13,14 +13,10 @@ import { recommendRating } from "../../../constants/rating"
 import BaseNumberInput from "../../../components/common/inputs/number"
 import FormPageLayout from "../../../components/layouts/form"
 import BaseSelect from "../../../components/common/inputs/select"
-import {
-  dummyFactculty,
-  dummyProgramme,
-  dummySchool
-} from "../../../constants/dummy"
+
 import { schoolTypeOptions } from "../../../constants/school"
 import InputContainer from "../../../components/containers/input"
-import { jobSourceOptions } from "../../../constants/common"
+import { jobSourceOptions, schoolTypesList } from "../../../constants/common"
 import { ContactSelect } from "../../../components/common/inputs/select/contact"
 import AnonymousSwitch from "../../../components/common/switch/anonymous"
 import FormSumitButton from "../../../components/common/buttons/formSubmit"
@@ -100,7 +96,7 @@ const GradJobOfferFormPage: React.FunctionComponent = () => {
       <div className="grid md:grid-cols-4 md:gap-x-9 gap-y-2">
         <BaseSelect
           name="schoolType"
-          items={dummySchool}
+          items={schoolTypesList}
           selectId="schoolType"
           inputLabel="學校類型"
           selectValue={formik.values.schoolType}
@@ -113,7 +109,7 @@ const GradJobOfferFormPage: React.FunctionComponent = () => {
 
         <BaseSelect
           name="school"
-          items={dummySchool}
+          items={schoolTypesList}
           selectId="school"
           inputLabel="學校"
           selectValue={formik.values.school}
@@ -126,7 +122,7 @@ const GradJobOfferFormPage: React.FunctionComponent = () => {
 
         <BaseSelect
           name="faculty"
-          items={dummyFactculty}
+          items={schoolTypesList}
           selectId="faculty"
           inputLabel="學院/分類"
           selectValue={formik.values.faculty}
@@ -139,7 +135,7 @@ const GradJobOfferFormPage: React.FunctionComponent = () => {
 
         <BaseSelect
           name="programme"
-          items={dummyProgramme}
+          items={schoolTypesList}
           selectId="programme"
           inputLabel="課程"
           selectValue={formik.values.programme}
@@ -230,7 +226,7 @@ const GradJobOfferFormPage: React.FunctionComponent = () => {
       <div className="grid md:grid-cols-3 md:gap-x-9 mt-4 gap-y-2">
         <BaseSelect
           name="industry"
-          items={dummyFactculty}
+          items={schoolTypesList}
           selectId="industry"
           inputLabel="行業"
           selectValue={formik.values.industry}
@@ -243,7 +239,7 @@ const GradJobOfferFormPage: React.FunctionComponent = () => {
 
         <BaseSelect
           name="jobSource"
-          items={jobSourceOptions}
+          items={schoolTypesList}
           selectId="jobSource"
           inputLabel="如果得知這工作？"
           selectValue={formik.values.jobSource}
@@ -255,7 +251,7 @@ const GradJobOfferFormPage: React.FunctionComponent = () => {
 
         <BaseSelect
           name="honour"
-          items={jobSourceOptions}
+          items={schoolTypesList}
           selectId="honour"
           inputLabel="畢業榮譽 (Honour)"
           selectValue={formik.values.honour}

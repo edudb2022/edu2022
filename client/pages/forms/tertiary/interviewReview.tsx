@@ -17,7 +17,11 @@ import AnonymousSwitch from "../../../components/common/switch/anonymous"
 import InputContainer from "../../../components/containers/input"
 import FormPageLayout from "../../../components/layouts/form"
 import { admissionType } from "../../../constants/admission"
-import { dressCodeOptions } from "../../../constants/common"
+import {
+  dressCodeList,
+  dressCodeOptions,
+  schoolTypesList
+} from "../../../constants/common"
 import {
   dummyFactculty,
   dummyProgramme,
@@ -158,7 +162,7 @@ const InterviewReviewPage: NextPage = () => {
       <div className="grid md:grid-cols-4 md:gap-x-9 gap-y-2">
         <BaseSelect
           name="schoolType"
-          items={dummySchool}
+          items={schoolTypesList}
           selectId="schoolType"
           inputLabel="學校類型"
           selectValue={formik.values.schoolType}
@@ -171,7 +175,7 @@ const InterviewReviewPage: NextPage = () => {
 
         <BaseSelect
           name="school"
-          items={dummySchool}
+          items={schoolTypesList}
           selectId="school"
           inputLabel="學校"
           selectValue={formik.values.school}
@@ -184,7 +188,7 @@ const InterviewReviewPage: NextPage = () => {
 
         <BaseSelect
           name="faculty"
-          items={dummyFactculty}
+          items={schoolTypesList}
           selectId="faculty"
           inputLabel="學院/分類"
           selectValue={formik.values.faculty}
@@ -197,7 +201,7 @@ const InterviewReviewPage: NextPage = () => {
 
         <BaseSelect
           name="programme"
-          items={dummyProgramme}
+          items={schoolTypesList}
           selectId="programme"
           inputLabel="課程"
           selectValue={formik.values.programme}
@@ -212,7 +216,7 @@ const InterviewReviewPage: NextPage = () => {
       <InputContainer header="最近的教育程度/狀態">
         <div className="grid md:grid-cols-4 md:gap-x-9  gap-y-2 mt-2">
           <BaseSelect
-            items={schoolTypeOptions}
+            items={schoolTypesList}
             name="currentSchoolType"
             selectId="currentSchoolType"
             inputLabel="學校類型/學習狀態"
@@ -225,7 +229,7 @@ const InterviewReviewPage: NextPage = () => {
           />
           <BaseSelect
             name="currentSchool"
-            items={dummySchool}
+            items={schoolTypesList}
             selectId="currentSchool"
             inputLabel="學校"
             selectValue={formik.values.currentSchool}
@@ -238,7 +242,7 @@ const InterviewReviewPage: NextPage = () => {
 
           <BaseSelect
             name="currentFaculty"
-            items={dummyFactculty}
+            items={schoolTypesList}
             selectId="currentFaculty"
             inputLabel="學院/分類"
             selectValue={formik.values.currentFaculty}
@@ -251,7 +255,7 @@ const InterviewReviewPage: NextPage = () => {
 
           <BaseSelect
             name="currentProgramme"
-            items={dummyProgramme}
+            items={schoolTypesList}
             selectId="currentProgramme"
             inputLabel="課程"
             selectValue={formik.values.currentProgramme}
@@ -328,7 +332,7 @@ const InterviewReviewPage: NextPage = () => {
       <div className="grid  md:grid-cols-4 md:gap-x-9 gap-y-2">
         <BaseSelect
           name="dressCode"
-          items={dressCodeOptions}
+          items={dressCodeList}
           selectId="dressCode"
           inputLabel="穿着要求(Dress Code)"
           selectValue={formik.values.dressCode}
@@ -339,7 +343,7 @@ const InterviewReviewPage: NextPage = () => {
         />
         <BaseSelect
           name="applicaiotnType"
-          items={admissionType}
+          items={schoolTypesList}
           selectId="applicaiotnType"
           inputLabel="入學類型"
           selectValue={formik.values.applicaiotnType}

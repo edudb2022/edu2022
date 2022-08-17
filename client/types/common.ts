@@ -54,8 +54,15 @@ export interface ISelectMenuItemsType<T, U> {
 //   value: U
 // }
 
-export interface ISchoolTypeIdTypes
-  extends ISelectMenuItemsType<SchoolTypeId, string> {}
+// export interface ISchoolTypeIdTypes
+//   extends ISelectMenuItemsType<SchoolTypeId, string> {}
+
+export enum DressCodeTypeId {
+  FORMAL = 1,
+  SMART_CASUAL,
+  CASUAL,
+  FREE
+}
 
 export enum SchoolTypeId {
   UNIVERSITY = 1,

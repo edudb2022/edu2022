@@ -15,12 +15,12 @@ import TitleTextInput from "../../../components/common/inputs/text/title"
 import AnonymousSwitch from "../../../components/common/switch/anonymous"
 import InputContainer from "../../../components/containers/input"
 import FormPageLayout from "../../../components/layouts/form"
-import { internTypeOptions, jobSourceOptions } from "../../../constants/common"
 import {
-  dummyFactculty,
-  dummyProgramme,
-  dummySchool
-} from "../../../constants/dummy"
+  internTypeOptions,
+  jobSourceOptions,
+  schoolTypesList
+} from "../../../constants/common"
+
 import { recommendRating } from "../../../constants/rating"
 import { schoolTypeOptions } from "../../../constants/school"
 import * as yup from "yup"
@@ -101,7 +101,7 @@ const InternshipOfferFormPage: React.FunctionComponent = () => {
       <div className="grid md:grid-cols-4 md:gap-x-9 gap-y-2">
         <BaseSelect
           name="schoolType"
-          items={dummySchool}
+          items={schoolTypesList}
           selectId="schoolType"
           inputLabel="學校類型"
           selectValue={formik.values.schoolType}
@@ -114,7 +114,7 @@ const InternshipOfferFormPage: React.FunctionComponent = () => {
 
         <BaseSelect
           name="school"
-          items={dummySchool}
+          items={schoolTypesList}
           selectId="school"
           inputLabel="學校"
           selectValue={formik.values.school}
@@ -127,7 +127,7 @@ const InternshipOfferFormPage: React.FunctionComponent = () => {
 
         <BaseSelect
           name="faculty"
-          items={dummyFactculty}
+          items={schoolTypesList}
           selectId="faculty"
           inputLabel="學院/分類"
           selectValue={formik.values.faculty}
@@ -140,7 +140,7 @@ const InternshipOfferFormPage: React.FunctionComponent = () => {
 
         <BaseSelect
           name="programme"
-          items={dummyProgramme}
+          items={schoolTypesList}
           selectId="programme"
           inputLabel="課程"
           selectValue={formik.values.programme}
@@ -227,7 +227,7 @@ const InternshipOfferFormPage: React.FunctionComponent = () => {
       <div className="grid md:grid-cols-3 md:gap-x-9 mt-4 gap-y-2">
         <BaseSelect
           name="internType"
-          items={internTypeOptions}
+          items={schoolTypesList}
           selectId="internType"
           inputLabel="實習類型"
           selectValue={formik.values.internType}
@@ -240,7 +240,7 @@ const InternshipOfferFormPage: React.FunctionComponent = () => {
 
         <BaseSelect
           name="industry"
-          items={dummyFactculty}
+          items={schoolTypesList}
           selectId="industry"
           inputLabel="行業"
           selectValue={formik.values.industry}
@@ -253,7 +253,7 @@ const InternshipOfferFormPage: React.FunctionComponent = () => {
 
         <BaseSelect
           name="jobSource"
-          items={jobSourceOptions}
+          items={schoolTypesList}
           selectId="jobSource"
           inputLabel="如果得知這工作？"
           selectValue={formik.values.jobSource}

@@ -1,4 +1,4 @@
-import { SchoolTypeId } from "../types/common"
+import { DressCodeTypeId, SchoolTypeId } from "../types/common"
 
 const dressCodeOptions = [
   { value: "", title: "Please Select" },
@@ -28,13 +28,21 @@ const internTypeOptions = [
 ]
 
 const schoolTypesList = [
-  { id: SchoolTypeId.UNIVERSITY, ChiTitle: "大學" },
-  { id: SchoolTypeId.COLLEGE, ChiTitle: "大專" }
+  { value: SchoolTypeId.UNIVERSITY, title: "大學" },
+  { value: SchoolTypeId.COLLEGE, title: "大專" }
+]
+
+const dressCodeList = [
+  { value: DressCodeTypeId.FORMAL, title: "Formal" },
+  { value: DressCodeTypeId.SMART_CASUAL, title: "Smart caual" },
+  { value: DressCodeTypeId.CASUAL, title: "Casual" },
+  { value: DressCodeTypeId.FREE, title: "Free" }
 ]
 
 export {
   dressCodeOptions,
   jobSourceOptions,
   internTypeOptions,
-  schoolTypesList
+  schoolTypesList,
+  dressCodeList
 }

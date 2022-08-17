@@ -24,11 +24,7 @@ import {
   admissionLevel,
   admissionType
 } from "../../../constants/admission"
-import {
-  dummyFactculty,
-  dummyProgramme,
-  dummySchool
-} from "../../../constants/dummy"
+import { dummyFactculty, dummyProgramme } from "../../../constants/dummy"
 import { recommendRating } from "../../../constants/rating"
 import { schoolTypeOptions } from "../../../constants/school"
 import {
@@ -43,6 +39,7 @@ import { ISystemActionTypes } from "../../../state/system/actions"
 import InputHeader from "../../../components/common/header/input"
 import { useEffect } from "react"
 import { useAppDispatch } from "../../../hooks/common/useAppDispatch"
+import { schoolTypesList } from "../../../constants/common"
 
 const AdmissionOfferFormPage: React.FunctionComponent = () => {
   const dispatch = useAppDispatch()
@@ -181,7 +178,7 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
       <div className="grid md:grid-cols-4 md:gap-x-9 gap-y-2">
         <BaseSelect
           name="schoolType"
-          items={dummySchool}
+          items={schoolTypesList}
           selectId="schoolType"
           inputLabel="學校類型"
           selectValue={formik.values.schoolType}
@@ -194,7 +191,7 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
 
         <BaseSelect
           name="school"
-          items={dummySchool}
+          items={schoolTypesList}
           selectId="school"
           inputLabel="學校"
           selectValue={formik.values.school}
@@ -207,7 +204,7 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
 
         <BaseSelect
           name="faculty"
-          items={dummyFactculty}
+          items={schoolTypesList}
           selectId="faculty"
           inputLabel="學院/分類"
           selectValue={formik.values.faculty}
@@ -220,7 +217,7 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
 
         <BaseSelect
           name="programme"
-          items={dummyProgramme}
+          items={schoolTypesList}
           selectId="programme"
           inputLabel="課程"
           selectValue={formik.values.programme}
@@ -234,7 +231,7 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
       <InputContainer header="最近的教育程度/狀態">
         <div className="grid md:grid-cols-4 md:gap-x-9  gap-y-2 mt-2">
           <BaseSelect
-            items={schoolTypeOptions}
+            items={schoolTypesList}
             name="currentSchoolType"
             selectId="currentSchoolType"
             inputLabel="學校類型/學習狀態"
@@ -247,7 +244,7 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
           />
           <BaseSelect
             name="currentSchool"
-            items={dummySchool}
+            items={schoolTypesList}
             selectId="currentSchool"
             inputLabel="學校"
             selectValue={formik.values.currentSchool}
@@ -260,7 +257,7 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
 
           <BaseSelect
             name="currentFaculty"
-            items={dummyFactculty}
+            items={schoolTypesList}
             selectId="currentFaculty"
             inputLabel="學院/分類"
             selectValue={formik.values.currentFaculty}
@@ -273,7 +270,7 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
 
           <BaseSelect
             name="currentProgramme"
-            items={dummyProgramme}
+            items={schoolTypesList}
             selectId="currentProgramme"
             inputLabel="課程"
             selectValue={formik.values.currentProgramme}
@@ -313,7 +310,7 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
         />
         <BaseSelect
           name="admissionLevel"
-          items={admissionLevel}
+          items={schoolTypesList}
           selectId="admissionLevel"
           inputLabel="入學年級"
           selectValue={formik.values.admissionLevel}
@@ -330,7 +327,7 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
       <div className="grid  md:grid-cols-4  md:gap-x-9 md:items-end gap-y-2">
         <BaseSelect
           name="jupasBanding"
-          items={admissionType}
+          items={schoolTypesList}
           selectId="jupasBanding"
           inputLabel="Jupas志願排名"
           selectValue={formik.values.jupasBanding}
@@ -347,7 +344,7 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
 
         <BaseSelect
           name="offerType"
-          items={admissionCondition}
+          items={schoolTypesList}
           selectId="offerType"
           inputLabel="Offer類型"
           selectValue={formik.values.offerType}
@@ -359,7 +356,7 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
         />
         <BaseSelect
           name="admissionType"
-          items={admissionType}
+          items={schoolTypesList}
           selectId="admissionType"
           inputLabel="入學類型"
           selectValue={formik.values.admissionType}

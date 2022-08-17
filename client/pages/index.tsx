@@ -133,8 +133,8 @@ const Home: NextPage = (props) => {
       <CardDisplayLayout>
         {list.map((data) => {
           const title =
-            schoolTypesList.find((ele) => ele.id === data.schoolTypeId)
-              ?.ChiTitle ?? ""
+            schoolTypesList.find((ele) => ele.value === data.schoolTypeId)
+              ?.title ?? ""
           return (
             <Link key={data.id} href={`/school/tertiary/${data.id}`}>
               <a key={data.id}>
