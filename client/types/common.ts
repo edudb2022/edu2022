@@ -75,7 +75,7 @@ export enum ApplicationTypeId {
   BACHELOR
 }
 
-export enum DSEJupasChoicePriorityId {
+export enum DSEJupasChoicePriorityTypesId {
   BAND_A_ONE = 1,
   BAND_A_TWO,
   BAND_A_THREE,
@@ -119,10 +119,10 @@ export enum JobSourceTypesId {
   COMPANY_WEBSITE,
   UNIVERSITY_CAREER_CENTER,
   FRIENDS,
-  OTHERS
+  OTHER
 }
 
-export enum AcademicStatusId {
+export enum AcademicStatusTypesId {
   YEAR_ONE = 1,
   YEAR_TWO,
   YEAR_THERE,
@@ -138,10 +138,10 @@ export enum ContactMethodTypeId {
   TELEGRAM = 2,
   WHATSAPP = 3,
   SIGNAL = 4,
-  OTHERS = 5
+  OTHER = 5
 }
 
-export enum HonorId {
+export enum HonorTypesId {
   FIRST = 1,
   SECOND_UP,
   SECOND_LOW,

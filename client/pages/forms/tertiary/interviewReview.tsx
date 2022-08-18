@@ -20,7 +20,8 @@ import { admissionType } from "../../../constants/admission"
 import {
   dressCodeTypesList,
   dressCodeOptions,
-  schoolTypesList
+  schoolTypesList,
+  applicationTypesList
 } from "../../../constants/common"
 
 import { recommendRating } from "../../../constants/rating"
@@ -339,9 +340,9 @@ const InterviewReviewPage: NextPage = () => {
         />
         <BaseSelect
           name="applicaiotnType"
-          items={schoolTypesList}
+          items={applicationTypesList}
           selectId="applicaiotnType"
-          inputLabel="入學類型"
+          inputLabel="類型"
           selectValue={formik.values.applicaiotnType}
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}

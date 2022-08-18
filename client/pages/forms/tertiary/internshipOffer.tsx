@@ -16,6 +16,7 @@ import AnonymousSwitch from "../../../components/common/switch/anonymous"
 import InputContainer from "../../../components/containers/input"
 import FormPageLayout from "../../../components/layouts/form"
 import {
+  internshipTypesList,
   internTypeOptions,
   jobSourceOptions,
   schoolTypesList
@@ -227,7 +228,7 @@ const InternshipOfferFormPage: React.FunctionComponent = () => {
       <div className="grid md:grid-cols-3 md:gap-x-9 mt-4 gap-y-2">
         <BaseSelect
           name="internType"
-          items={schoolTypesList}
+          items={internshipTypesList}
           selectId="internType"
           inputLabel="實習類型"
           selectValue={formik.values.internType}

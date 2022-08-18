@@ -1,11 +1,13 @@
 import {
+  AcademicStatusTypesId,
   AdmissionLevelTypesId,
   AdmissionOfferTypeId,
   ApplicationTypeId,
   ContactMethodTypeId,
   DressCodeTypeId,
   DSEGradeTypesId,
-  DSEJupasChoicePriorityId,
+  DSEJupasChoicePriorityTypesId,
+  HonorTypesId,
   InternshipTypesId,
   JobSourceTypesId,
   SchoolTypeId,
@@ -58,12 +60,12 @@ const dressCodeTypesList = [
 ]
 
 const DSEJupasChoicePriorityTypesList = [
-  { value: DSEJupasChoicePriorityId.BAND_A_ONE, title: "A1" },
-  { value: DSEJupasChoicePriorityId.BAND_A_TWO, title: "A2" },
-  { value: DSEJupasChoicePriorityId.BAND_A_THREE, title: "A3" },
-  { value: DSEJupasChoicePriorityId.BAND_B, title: "B" },
-  { value: DSEJupasChoicePriorityId.BAND_C, title: "C" },
-  { value: DSEJupasChoicePriorityId.OTHER, title: "Others" }
+  { value: DSEJupasChoicePriorityTypesId.BAND_A_ONE, title: "A1" },
+  { value: DSEJupasChoicePriorityTypesId.BAND_A_TWO, title: "A2" },
+  { value: DSEJupasChoicePriorityTypesId.BAND_A_THREE, title: "A3" },
+  { value: DSEJupasChoicePriorityTypesId.BAND_B, title: "B" },
+  { value: DSEJupasChoicePriorityTypesId.BAND_C, title: "C" },
+  { value: DSEJupasChoicePriorityTypesId.OTHER, title: "Others" }
 ]
 
 const admissionOfferTypesList = [
@@ -103,7 +105,7 @@ const jobSourceTypesList = [
   },
   { value: JobSourceTypesId.COMPANY_WEBSITE, title: "CompanyWebsite" },
   { value: JobSourceTypesId.FRIENDS, title: "frends recommendation" },
-  { value: JobSourceTypesId.OTHERS, title: "others " }
+  { value: JobSourceTypesId.OTHER, title: "other " }
 ]
 
 const contactMethodTypesList = [
@@ -111,7 +113,7 @@ const contactMethodTypesList = [
   { value: ContactMethodTypeId.SIGNAL, title: "Signal" },
   { value: ContactMethodTypeId.WHATSAPP, title: "Whatsapp" },
   { value: ContactMethodTypeId.TELEGRAM, title: "Telegram" },
-  { value: ContactMethodTypeId.OTHERS, title: "Others" }
+  { value: ContactMethodTypeId.OTHER, title: "Other" }
 ]
 
 const DSEGradeTypesList = [
@@ -125,6 +127,28 @@ const DSEGradeTypesList = [
   { value: DSEGradeTypesId.PASS, title: "Pass" },
   { value: DSEGradeTypesId.FAIL, title: "fail" },
   { value: DSEGradeTypesId.UNCLASSIFIED, title: "U" }
+]
+
+const academicStatusTypesList = [
+  { value: AcademicStatusTypesId.YEAR_ONE, title: "Yean 1" },
+  { value: AcademicStatusTypesId.YEAR_TWO, title: "Yean 2" },
+  { value: AcademicStatusTypesId.YEAR_THERE, title: "Yean 3" },
+  { value: AcademicStatusTypesId.YEAR_FOUR, title: "Yean 4" },
+  { value: AcademicStatusTypesId.YEAR_FIVE_PLUS, title: "Yean 5" },
+  { value: AcademicStatusTypesId.POSTGRAD, title: "poast" },
+  { value: AcademicStatusTypesId.ALUMI, title: "alimi" },
+  { value: AcademicStatusTypesId.OTHER, title: "other" }
+]
+
+const honorTypesIdList = [
+  { value: HonorTypesId.FIRST, title: "F" },
+  { value: HonorTypesId.SECOND_UP, title: "SU" },
+  { value: HonorTypesId.SECOND_LOW, title: "SL" },
+  { value: HonorTypesId.THIRD, title: "T" },
+  { value: HonorTypesId.SUMMA_CUM_LAUDE, title: "SML" },
+  { value: HonorTypesId.MAGNA_CUM_LAUDE, title: "MCL" },
+  { value: HonorTypesId.CUM_LAUDE, title: "CL" },
+  { value: HonorTypesId.PASS, title: "PAss" }
 ]
 
 export {
@@ -141,5 +165,7 @@ export {
   yearOfStudyTypesList,
   jobSourceTypesList,
   contactMethodTypesList,
-  DSEGradeTypesList
+  DSEGradeTypesList,
+  academicStatusTypesList,
+  honorTypesIdList
 }

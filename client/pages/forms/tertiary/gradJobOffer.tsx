@@ -16,7 +16,12 @@ import BaseSelect from "../../../components/common/inputs/select"
 
 import { schoolTypeOptions } from "../../../constants/school"
 import InputContainer from "../../../components/containers/input"
-import { jobSourceOptions, schoolTypesList } from "../../../constants/common"
+import {
+  honorTypesIdList,
+  jobSourceOptions,
+  jobSourceTypesList,
+  schoolTypesList
+} from "../../../constants/common"
 import { ContactSelect } from "../../../components/common/inputs/select/contact"
 import AnonymousSwitch from "../../../components/common/switch/anonymous"
 import FormSumitButton from "../../../components/common/buttons/formSubmit"
@@ -239,7 +244,7 @@ const GradJobOfferFormPage: React.FunctionComponent = () => {
 
         <BaseSelect
           name="jobSource"
-          items={schoolTypesList}
+          items={jobSourceTypesList}
           selectId="jobSource"
           inputLabel="如果得知這工作？"
           selectValue={formik.values.jobSource}
@@ -251,7 +256,7 @@ const GradJobOfferFormPage: React.FunctionComponent = () => {
 
         <BaseSelect
           name="honour"
-          items={schoolTypesList}
+          items={honorTypesIdList}
           selectId="honour"
           inputLabel="畢業榮譽 (Honour)"
           selectValue={formik.values.honour}

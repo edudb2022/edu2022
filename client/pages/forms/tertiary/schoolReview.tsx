@@ -32,7 +32,10 @@ import {
 } from "../../../utils/validation/form/schema"
 import FormSumitButton from "../../../components/common/buttons/formSubmit"
 import FormSection from "../../../components/common/sections/form"
-import { yearOfStudyTypesList } from "../../../constants/common"
+import {
+  academicStatusTypesList,
+  yearOfStudyTypesList
+} from "../../../constants/common"
 
 const SchoolReviewFormPage: React.FunctionComponent = () => {
   const initialValues = {
@@ -128,7 +131,7 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
 
         <BaseSelect
           name="academicStatus"
-          items={yearOfStudyTypesList}
+          items={academicStatusTypesList}
           selectId="academicStatus"
           inputLabel="現時學業狀態"
           selectValue={formik.values.academicStatus}

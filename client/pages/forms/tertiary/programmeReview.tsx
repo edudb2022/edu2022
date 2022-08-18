@@ -28,7 +28,10 @@ import {
   DateValidationSchema
 } from "../../../utils/validation/form/schema"
 import FormSumitButton from "../../../components/common/buttons/formSubmit"
-import { schoolTypesList } from "../../../constants/common"
+import {
+  academicStatusTypesList,
+  schoolTypesList
+} from "../../../constants/common"
 
 const ProgrammeReviewFormPage: React.FunctionComponent = () => {
   const initialValues = {
@@ -163,7 +166,7 @@ const ProgrammeReviewFormPage: React.FunctionComponent = () => {
 
         <BaseSelect
           name="academicStatus"
-          items={schoolTypesList}
+          items={academicStatusTypesList}
           selectId="academicStatus"
           inputLabel="現時學業狀態"
           selectValue={formik.values.academicStatus}

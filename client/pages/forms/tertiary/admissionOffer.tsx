@@ -24,7 +24,7 @@ import {
   admissionLevel,
   admissionType
 } from "../../../constants/admission"
-import { dummyFactculty, dummyProgramme } from "../../../constants/dummy"
+
 import { recommendRating } from "../../../constants/rating"
 import { schoolTypeOptions } from "../../../constants/school"
 import {
@@ -39,7 +39,13 @@ import { ISystemActionTypes } from "../../../state/system/actions"
 import InputHeader from "../../../components/common/header/input"
 import { useEffect } from "react"
 import { useAppDispatch } from "../../../hooks/common/useAppDispatch"
-import { schoolTypesList } from "../../../constants/common"
+import {
+  admissionLevelTypesList,
+  admissionOfferTypesList,
+  applicationTypesList,
+  DSEJupasChoicePriorityTypesList,
+  schoolTypesList
+} from "../../../constants/common"
 
 const AdmissionOfferFormPage: React.FunctionComponent = () => {
   const dispatch = useAppDispatch()
@@ -310,7 +316,7 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
         />
         <BaseSelect
           name="admissionLevel"
-          items={schoolTypesList}
+          items={admissionLevelTypesList}
           selectId="admissionLevel"
           inputLabel="入學年級"
           selectValue={formik.values.admissionLevel}
@@ -326,8 +332,20 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
 
       <div className="grid  md:grid-cols-4  md:gap-x-9 md:items-end gap-y-2">
         <BaseSelect
+          name="admissionType"
+          items={applicationTypesList}
+          selectId="admissionType"
+          inputLabel="入學類型"
+          selectValue={formik.values.admissionType}
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          errorMessages={formik.errors.admissionType}
+          isTouched={formik.touched.admissionType}
+          isRequired
+        />
+        <BaseSelect
           name="jupasBanding"
-          items={schoolTypesList}
+          items={DSEJupasChoicePriorityTypesList}
           selectId="jupasBanding"
           inputLabel="Jupas志願排名"
           selectValue={formik.values.jupasBanding}
@@ -344,7 +362,7 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
 
         <BaseSelect
           name="offerType"
-          items={schoolTypesList}
+          items={admissionOfferTypesList}
           selectId="offerType"
           inputLabel="Offer類型"
           selectValue={formik.values.offerType}
@@ -354,18 +372,7 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
           isTouched={formik.touched.offerType}
           isRequired
         />
-        <BaseSelect
-          name="admissionType"
-          items={schoolTypesList}
-          selectId="admissionType"
-          inputLabel="入學類型"
-          selectValue={formik.values.admissionType}
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
-          errorMessages={formik.errors.admissionType}
-          isTouched={formik.touched.admissionType}
-          isRequired
-        />
+
         <GpaNumberInput
           value={formik.values.gpa}
           onChange={formik.handleChange}
