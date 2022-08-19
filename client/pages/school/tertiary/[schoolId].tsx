@@ -40,10 +40,10 @@ const TertiarySchoolPage: NextPage = () => {
   return (
     <PageLayout>
       <ReviewHeaderContainer
-        ChineseTitle={"計量金融學及風險管理科學"}
-        EnglishTitle={"Quantitative Finance and Risk Management Science"}
-        ShortTitle={"HKu"}
-        schoolShortName={"hku"}
+        ChineseTitle={"香港科技大學"}
+        EnglishTitle={"Hong Kong University of Science and Technology"}
+        ShortTitle={"大學"}
+        schoolShortName={"大學"}
       >
         <div className="md:flex md:justify-center ">
           <div className="flex flex-col justify-center items-center md:flex-row md:w-2/5 ">
@@ -60,14 +60,15 @@ const TertiarySchoolPage: NextPage = () => {
               />
             </div>
 
-            <div className="w-2/5 py-12 flex flex-col justify-center items-center">
+            <div className="w-2/5 py-12 flex flex-col justify-between items-center">
               <RatingLargeTag title={"red"} rating={1} />
               <Link href={`/review/tertiary/school/${schoolId}`}>
-                <a>
-                  <BaseButton className="w-full justify-center gap-x-2  text-sm md:text-base mt-4 bg-theme-one-500 text-white shrink-0">
+                <a className="text-theme-one-500 mt-4 border-b-2 border-theme-one-500">
+                  {/* <BaseButton className="w-full justify-center gap-x-2  text-sm md:text-base mt-4 bg-theme-one-500 text-white shrink-0">
                     <span>更多學校評價</span>
                     <FiArrowRight />
-                  </BaseButton>
+                  </BaseButton> */}
+                  更多學校評價
                 </a>
               </Link>
             </div>

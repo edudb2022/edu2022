@@ -20,7 +20,7 @@ const ProgrammePage: React.FunctionComponent = () => {
         ChineseTitle="應用及人本計算學（榮譽）文學士"
         EnglishTitle="Bachelor of Management Science and Information Management (Honours)"
         schoolShortName="cuhk"
-        ShortTitle="Programme"
+        ShortTitle="Bachelor"
       >
         <div className="md:flex md:justify-center ">
           <div className="flex flex-col md:flex-row justify-center items-center md:w-2/5 ">
