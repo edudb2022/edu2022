@@ -43,7 +43,7 @@ const TertiarySchoolPage: NextPage = () => {
         ChineseTitle={"香港科技大學"}
         EnglishTitle={"Hong Kong University of Science and Technology"}
         ShortTitle={"大學"}
-        schoolShortName={"大學"}
+        schoolShortName={"hku"}
       >
         <div className="md:flex md:justify-center ">
           <div className="flex flex-col justify-center items-center md:flex-row md:w-2/5 ">

@@ -39,7 +39,7 @@ export const schoolRecourcesRating: IRating[] = [
 ]
 
 export const schoolPolicyRating: IRating[] = [
-  { value: "1", label: "on9" },
+  { value: "1", label: "6uo" },
   { value: "2", label: "垃圾" },
   { value: "3", label: "頗差" },
   { value: "4", label: "不錯" },
@@ -74,6 +74,14 @@ export const schoolOverallRating: IRating[] = [
 ]
 
 //programme
+export const programmeStructureRating: IRating[] = [
+  { value: "1", label: "極之垃圾" },
+  { value: "2", label: "垃圾" },
+  { value: "3", label: "普通" },
+  { value: "4", label: "幾好" },
+  { value: "5", label: "良好" },
+  { value: "6", label: "完美" }
+]
 
 export const programmeGpaRating: IRating[] = [
   { value: "1", label: "爛到Sir" },
@@ -111,12 +119,24 @@ export const progrmmeRecommendRating: IRating[] = [
   { value: "6", label: "唔讀就傻仔啦" }
 ]
 
-export const difficultyRating: IRating[] = [
+//interview
+
+export const InterviewExperienceRating: IRating[] = [
+  { value: "1", label: "極惡劣" },
+  { value: "2", label: "好差" },
+  { value: "3", label: "普通" },
+  { value: "4", label: "幾好" },
+  { value: "5", label: "良好" },
+  { value: "6", label: "十分好" }
+]
+
+export const InterviewDifficultyRating: IRating[] = [
   { value: "1", label: "0識" },
-  { value: "2", label: "難難地" },
+  { value: "2", label: "好難" },
   { value: "3", label: "普通" },
   { value: "4", label: "幾輕鬆" },
-  { value: "5", label: "太易了" }
+  { value: "5", label: "輕鬆" },
+  { value: "6", label: "太易了" }
 ]
 
 // export const interviewExperienceRating: IRating[] = [

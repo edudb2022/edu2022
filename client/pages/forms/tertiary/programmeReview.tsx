@@ -15,6 +15,7 @@ import FormPageLayout from "../../../components/layouts/form"
 import {
   commonRating,
   programmeGpaRating,
+  programmeStructureRating,
   progrmmeRecommendRating,
   progrmmeResourcedRating,
   progrmmeWorkLoadRating,
@@ -182,13 +183,13 @@ const ProgrammeReviewFormPage: React.FunctionComponent = () => {
           id="programmeStructure"
           value={formik.values.programmeStructure}
           onChange={formik.handleChange}
-          ratingTitle={commonRating}
+          ratingTitle={programmeStructureRating}
           onBlur={formik.handleBlur}
           errorMessages={formik.errors.programmeStructure}
           isTouched={formik.touched.programmeStructure}
           header="課程結構"
           headerRequired={true}
-          subHeader="各科內容質素"
+          subHeader="各科內容質素，連貫性等"
         />
 
         <RatingToggleButtonGroup

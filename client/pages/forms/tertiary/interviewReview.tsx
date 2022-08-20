@@ -24,7 +24,11 @@ import {
   applicationTypesList
 } from "../../../constants/common"
 
-import { recommendRating } from "../../../constants/rating"
+import {
+  InterviewDifficultyRating,
+  InterviewExperienceRating,
+  recommendRating
+} from "../../../constants/rating"
 import * as yup from "yup"
 import {
   DateValidationSchema,
@@ -305,7 +309,7 @@ const InterviewReviewPage: NextPage = () => {
           id="exprience"
           value={formik.values.exprience}
           onChange={formik.handleChange}
-          ratingTitle={recommendRating}
+          ratingTitle={InterviewExperienceRating}
           onBlur={formik.handleBlur}
           errorMessages={formik.errors.exprience}
           isTouched={formik.touched.exprience}
@@ -317,7 +321,7 @@ const InterviewReviewPage: NextPage = () => {
           id="difficulty"
           value={formik.values.difficulty}
           onChange={formik.handleChange}
-          ratingTitle={recommendRating}
+          ratingTitle={InterviewDifficultyRating}
           onBlur={formik.handleBlur}
           errorMessages={formik.errors.difficulty}
           isTouched={formik.touched.difficulty}

@@ -288,7 +288,7 @@ const GradJobOfferFormPage: React.FunctionComponent = () => {
           onBlur={formik.handleBlur}
           errorMessages={formik.errors.hope}
           isTouched={formik.touched.hope}
-          header="未來希望程度"
+          header="前途評估"
           headerRequired={true}
         />
       </div>

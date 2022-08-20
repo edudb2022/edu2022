@@ -111,7 +111,7 @@ const Home: NextPage = (props) => {
     // <EmailPasswordAuthNoSSR>
     //   <EmailPasswordAuth>
     <PageLayout>
-      <div className="flex justify-center gap-x-4">
+      <div className="flex justify-center gap-x-4 mt-8">
         {/* <SuccessModal /> */}
         {/* <BaseModal isOpen={true} /> */}
         <TextField
