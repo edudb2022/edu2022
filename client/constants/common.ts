@@ -56,7 +56,7 @@ const dressCodeTypesList = [
   { value: DressCodeTypeId.FORMAL, title: "Formal" },
   { value: DressCodeTypeId.SMART_CASUAL, title: "Smart caual" },
   { value: DressCodeTypeId.CASUAL, title: "Casual" },
-  { value: DressCodeTypeId.FREE, title: "Free" }
+  { value: DressCodeTypeId.FREE, title: "是但" }
 ]
 
 const DSEJupasChoicePriorityTypesList = [
@@ -65,7 +65,7 @@ const DSEJupasChoicePriorityTypesList = [
   { value: DSEJupasChoicePriorityTypesId.BAND_A_THREE, title: "A3" },
   { value: DSEJupasChoicePriorityTypesId.BAND_B, title: "B" },
   { value: DSEJupasChoicePriorityTypesId.BAND_C, title: "C" },
-  { value: DSEJupasChoicePriorityTypesId.OTHER, title: "Others" }
+  { value: DSEJupasChoicePriorityTypesId.OTHER, title: "其他" }
 ]
 
 const admissionOfferTypesList = [
@@ -79,11 +79,11 @@ const internshipTypesList = [
 ]
 
 const admissionLevelTypesList = [
-  { value: AdmissionLevelTypesId.YEAR_ONE, title: "1" },
-  { value: AdmissionLevelTypesId.YEAR_TWO, title: "2" },
-  { value: AdmissionLevelTypesId.YEAR_THREE, title: "3" },
-  { value: AdmissionLevelTypesId.YEAR_FOUR, title: "4" },
-  { value: AdmissionLevelTypesId.YEAR_FIVE_PLUS, title: "5+" }
+  { value: AdmissionLevelTypesId.YEAR_ONE, title: "Year 1" },
+  { value: AdmissionLevelTypesId.YEAR_TWO, title: "Year 2" },
+  { value: AdmissionLevelTypesId.YEAR_THREE, title: "Year 3" },
+  { value: AdmissionLevelTypesId.YEAR_FOUR, title: "Year 4" },
+  { value: AdmissionLevelTypesId.YEAR_FIVE_PLUS, title: "Year 5+" }
 ]
 
 const yearOfStudyTypesList = [
@@ -97,15 +97,16 @@ const yearOfStudyTypesList = [
 const jobSourceTypesList = [
   { value: JobSourceTypesId.JIJIS, title: "Jijis" },
   { value: JobSourceTypesId.LINKEDIN, title: "LinkedIn" },
-  { value: JobSourceTypesId.JOBSDB, title: "JobsDb" },
+
   { value: JobSourceTypesId.INDEED, title: "Indeed" },
+  { value: JobSourceTypesId.JOBSDB, title: "JobsDb" },
+  { value: JobSourceTypesId.COMPANY_WEBSITE, title: "該公司網站" },
   {
     value: JobSourceTypesId.UNIVERSITY_CAREER_CENTER,
     title: "University Career Centre"
   },
-  { value: JobSourceTypesId.COMPANY_WEBSITE, title: "CompanyWebsite" },
-  { value: JobSourceTypesId.FRIENDS, title: "frends recommendation" },
-  { value: JobSourceTypesId.OTHER, title: "other " }
+  { value: JobSourceTypesId.FRIENDS, title: "朋友介紹" },
+  { value: JobSourceTypesId.OTHER, title: "其他" }
 ]
 
 const contactMethodTypesList = [
@@ -113,7 +114,7 @@ const contactMethodTypesList = [
   { value: ContactMethodTypeId.SIGNAL, title: "Signal" },
   { value: ContactMethodTypeId.WHATSAPP, title: "Whatsapp" },
   { value: ContactMethodTypeId.TELEGRAM, title: "Telegram" },
-  { value: ContactMethodTypeId.OTHER, title: "Other" }
+  { value: ContactMethodTypeId.OTHER, title: "其他" }
 ]
 
 const DSEGradeTypesList = [
@@ -124,31 +125,37 @@ const DSEGradeTypesList = [
   { value: DSEGradeTypesId.FIVE, title: "5" },
   { value: DSEGradeTypesId.FIVE_START, title: "5*" },
   { value: DSEGradeTypesId.FIVE_DOUBLE_STAR, title: "5**" },
-  { value: DSEGradeTypesId.PASS, title: "Pass" },
-  { value: DSEGradeTypesId.FAIL, title: "fail" },
+  { value: DSEGradeTypesId.PASS, title: "合格" },
+  { value: DSEGradeTypesId.FAIL, title: "肥𠹌佐嗚嗚嗚（不合格）" },
   { value: DSEGradeTypesId.UNCLASSIFIED, title: "U" }
 ]
 
 const academicStatusTypesList = [
-  { value: AcademicStatusTypesId.YEAR_ONE, title: "Yean 1" },
-  { value: AcademicStatusTypesId.YEAR_TWO, title: "Yean 2" },
-  { value: AcademicStatusTypesId.YEAR_THERE, title: "Yean 3" },
-  { value: AcademicStatusTypesId.YEAR_FOUR, title: "Yean 4" },
-  { value: AcademicStatusTypesId.YEAR_FIVE_PLUS, title: "Yean 5" },
-  { value: AcademicStatusTypesId.POSTGRAD, title: "poast" },
-  { value: AcademicStatusTypesId.ALUMI, title: "alimi" },
-  { value: AcademicStatusTypesId.OTHER, title: "other" }
+  { value: AcademicStatusTypesId.YEAR_ONE, title: "Year 1" },
+  { value: AcademicStatusTypesId.YEAR_TWO, title: "Year 2" },
+  { value: AcademicStatusTypesId.YEAR_THERE, title: "Year 3" },
+  { value: AcademicStatusTypesId.YEAR_FOUR, title: "Year 4" },
+  { value: AcademicStatusTypesId.YEAR_FIVE_PLUS, title: "Year 5+" },
+  { value: AcademicStatusTypesId.POSTGRAD, title: "PostGrad" },
+  { value: AcademicStatusTypesId.ALUMI, title: "校友" },
+  { value: AcademicStatusTypesId.OTHER, title: "其他" }
 ]
 
 const honorTypesIdList = [
-  { value: HonorTypesId.FIRST, title: "F" },
-  { value: HonorTypesId.SECOND_UP, title: "SU" },
-  { value: HonorTypesId.SECOND_LOW, title: "SL" },
-  { value: HonorTypesId.THIRD, title: "T" },
-  { value: HonorTypesId.SUMMA_CUM_LAUDE, title: "SML" },
-  { value: HonorTypesId.MAGNA_CUM_LAUDE, title: "MCL" },
-  { value: HonorTypesId.CUM_LAUDE, title: "CL" },
-  { value: HonorTypesId.PASS, title: "PAss" }
+  { value: HonorTypesId.FIRST, title: "甲等（First Class Honours）" },
+  {
+    value: HonorTypesId.SECOND_UP,
+    title: "乙等一級（Upper Second Class Honours）"
+  },
+  {
+    value: HonorTypesId.SECOND_LOW,
+    title: "乙等二級（Lower Second Class Honours）"
+  },
+  { value: HonorTypesId.THIRD, title: "丙等（Third Class Honours）" },
+  { value: HonorTypesId.SUMMA_CUM_LAUDE, title: "卓越(Summa Cum Laude)" },
+  { value: HonorTypesId.MAGNA_CUM_LAUDE, title: "優異(Magna Cum Laude)" },
+  { value: HonorTypesId.CUM_LAUDE, title: "優良(Cum Laude)" },
+  { value: HonorTypesId.PASS, title: "合格（Pass）" }
 ]
 
 export {

@@ -24,6 +24,9 @@ import CardDisplayLayout from "../components/layouts/cardDisplay"
 import { IBaseReviewCardProps } from "../components/common/cards/review"
 import { CommonHelpers } from "../helpers"
 import { schoolTypesList } from "../constants/common"
+
+import qs from "qs"
+import assert from "assert"
 const SchoolType = [
   { value: SchoolTypeId.UNIVERSITY, title: "大學" },
   { value: SchoolTypeId.COLLEGE, title: "大專" }

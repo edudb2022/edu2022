@@ -15,7 +15,7 @@ import CardDisplayLayout from "../../../../components/layouts/cardDisplay"
 import DetailedCardDetailLayout from "../../../../components/layouts/cards/detailCardDsplay"
 import PageLayout from "../../../../components/layouts/page"
 import {
-  difficultyRating,
+  InterviewDifficultyRating,
   programmeGpaRating
 } from "../../../../constants/rating"
 
@@ -66,7 +66,7 @@ const InterviewReviewPage: NextPage = () => {
             />
             <RatingTag
               rating={4}
-              title={difficultyRating[2].label}
+              title={InterviewDifficultyRating[2].label}
               header="123"
             />
           </div>
