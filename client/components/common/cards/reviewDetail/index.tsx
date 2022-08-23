@@ -32,7 +32,7 @@ const BaseReviewDetailCard: React.FunctionComponent<
 
       <div className="flex flex-row ">
         <div className="w-4/5">{children}</div>
-        <div className="w-1/5 border-l-2 border-black md:border-gray-100 flex items-center justify-center md:hover:animate-borderGrayDeep ">
+        <div className="w-1/5 border-l-2 border-gray-200 flex items-center justify-center ">
           <LikeRating score={score} />
         </div>
       </div>
