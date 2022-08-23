@@ -14,6 +14,7 @@ import ReactGA from "react-ga"
 import React from "react"
 import { frontendConfig } from "../service/supertoken/config/frontendConfig"
 import dynamic from "next/dynamic"
+import Script from "next/script"
 
 // import { frontendConfig } from "../service/supertoken/config/frontendConfig"
 ReactGA.initialize(`${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}`)
@@ -42,6 +43,21 @@ const MyApp: React.FunctionComponent<IMyAppProps> = ({
     <QueryClientProvider client={queryClient}>
       <Hydrate state={pageProps.dehydratedState}>
         <Provider store={store}>
+          <Script
+            async
+            src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}`}
+          />
+
+          <Script
+            dangerouslySetInnerHTML={{
+              __html: `
+   window.dataLayer = window.dataLayer || [];
+   function gtag(){dataLayer.push(arguments);}
+   gtag('js', new Date());
+   gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}', { 'send_page_view': true });
+            `
+            }}
+          />
           <CommonLayout>
             <Component {...pageProps} />
           </CommonLayout>

@@ -2,7 +2,7 @@ import { TextField } from "@mui/material"
 import { NextPage } from "next"
 import Link from "next/link"
 import { useRouter } from "next/router"
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import { FiArrowRight } from "react-icons/fi"
 import BaseButton from "../../../components/common/buttons"
 import ProgrammeCard from "../../../components/common/cards/programme"
@@ -16,6 +16,7 @@ import ReviewHeaderContainer from "../../../components/containers/reviewHeader"
 import CardDisplayLayout from "../../../components/layouts/cardDisplay"
 import PageLayout from "../../../components/layouts/page"
 import { contactMethodTypesList } from "../../../constants/common"
+import ReactGA from "react-ga"
 
 const TertiarySchoolPage: NextPage = () => {
   const router = useRouter()
@@ -37,6 +38,11 @@ const TertiarySchoolPage: NextPage = () => {
     { value: "law", title: "法律" }
   ]
 
+  useEffect(() => {
+    // if (typeof window !== "undefined") {
+    ReactGA.pageview("/123123123")
+    // }
+  }, [])
   return (
     <PageLayout>
       <ReviewHeaderContainer

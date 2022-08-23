@@ -52,8 +52,18 @@ const Home: NextPage = (props) => {
   // console.log(11, data)
 
   useEffect(() => {
-    ReactGA.pageview(window.location.pathname + window.location.search)
+    // if (typeof window !== "undefined") {
+    ReactGA.pageview("/main")
+    // }
   }, [])
+
+  // if (typeof window !== "undefined") {
+  //   console.log(
+  //     // "window.location.pathname + window.location.search",
+  //     // window.location.pathname + window.location.search
+  //     process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID
+  //   )
+  // }
 
   const [type, setType] = useState(SchoolTypeId.UNIVERSITY)
   const [search, setSearch] = useState("")
