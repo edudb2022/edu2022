@@ -43,7 +43,7 @@ const MyApp: React.FunctionComponent<IMyAppProps> = ({
     <QueryClientProvider client={queryClient}>
       <Hydrate state={pageProps.dehydratedState}>
         <Provider store={store}>
-          <Script
+          {/* <Script
             async
             src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}`}
           />
@@ -57,7 +57,21 @@ const MyApp: React.FunctionComponent<IMyAppProps> = ({
    gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}', { 'send_page_view': true });
             `
             }}
+          /> */}
+
+          <Script
+            src="https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}"
+            strategy="afterInteractive"
           />
+          <Script id="google-analytics" strategy="afterInteractive">
+            {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){window.dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}');
+        `}
+          </Script>
           <CommonLayout>
             <Component {...pageProps} />
           </CommonLayout>

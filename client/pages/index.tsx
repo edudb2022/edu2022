@@ -24,9 +24,11 @@ import CardDisplayLayout from "../components/layouts/cardDisplay"
 import { IBaseReviewCardProps } from "../components/common/cards/review"
 import { CommonHelpers } from "../helpers"
 import { schoolTypesList } from "../constants/common"
-
+// import ReactGA from "react-ga4"
 import qs from "qs"
 import assert from "assert"
+import { Router, useRouter } from "next/router"
+import Head from "next/head"
 const SchoolType = [
   { value: SchoolTypeId.UNIVERSITY, title: "大學" },
   { value: SchoolTypeId.COLLEGE, title: "大專" }
@@ -37,6 +39,7 @@ const SchoolType = [
 // import { EmailPasswordAuth } from "supertokens-auth-react/recipe/emailpassword"
 
 const Home: NextPage = (props) => {
+  const router = useRouter()
   // const { modals } = useAppSelector((state) => state.system)
   // console.log(modals)
   // const fetchTodoList = () => {
@@ -51,10 +54,46 @@ const Home: NextPage = (props) => {
   // const data = useAppSelector((state) => state.user)
   // console.log(11, data)
 
+  // useEffect(() => {
+  //   // if (typeof window !== "undefined") {
+  //   // ReactGA.send({ hitType: "pageview", page: "/my-path" })
+  //   ReactGA.pageview(window.location.pathname + window.location.search)
+  //   // }
+  // }, [])
+
+  // useEffect(() => {
+  //   window.onload = () => {
+  //     window.dataLayer?.push({ event: "page view from onload" })
+  //   }
+  // }, [])
+
+  const pageView = (url: string) => {
+    // window.gtag("config", process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID, {
+    //   paul_url: url
+    // })
+    window &&
+      window.gtag &&
+      window.gtag(
+        "config",
+        process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID as string,
+        { page_path: url }
+      )
+  }
+  // window &&
+  //   window.gtag &&
+  //   window.gtag(
+  //     "config",
+  //     process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID as string,
+  //     { page_path: url }
+  //   )
   useEffect(() => {
-    // if (typeof window !== "undefined") {
-    ReactGA.pageview("/main")
-    // }
+    const hanldeRouterChange = (url: string) => {
+      pageView(url)
+    }
+    router.events.on("hashChangeComplete", hanldeRouterChange)
+    return () => {
+      router.events.off("hashChangeComplete", hanldeRouterChange)
+    }
   }, [])
 
   // if (typeof window !== "undefined") {
@@ -124,6 +163,9 @@ const Home: NextPage = (props) => {
     // <EmailPasswordAuthNoSSR>
     //   <EmailPasswordAuth>
     <PageLayout>
+      <Head>
+        <title>23232323</title>
+      </Head>
       <div className="flex justify-center gap-x-4 mt-8">
         {/* <SuccessModal /> */}
         {/* <BaseModal isOpen={true} /> */}
