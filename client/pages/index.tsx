@@ -29,6 +29,7 @@ import qs from "qs"
 import assert from "assert"
 import { Router, useRouter } from "next/router"
 import Head from "next/head"
+import trackingEvent from "../utils/services/GoogleAnalytics/tracking"
 const SchoolType = [
   { value: SchoolTypeId.UNIVERSITY, title: "大學" },
   { value: SchoolTypeId.COLLEGE, title: "大專" }
@@ -40,69 +41,15 @@ const SchoolType = [
 
 const Home: NextPage = (props) => {
   const router = useRouter()
-  // const { modals } = useAppSelector((state) => state.system)
-  // console.log(modals)
-  // const fetchTodoList = () => {
-  //   return axios.get("https://random-data-api.com/api/address/random_address")
-  // }
-  // const { data, isLoading, isFetching } = useQuery("posts", fetchTodoList, {
-  //   // refetchOnWindowFocus: false,
-  //   staleTime: 0
-  // })
-  // console.log(data, isLoading, isFetching);
 
-  // const data = useAppSelector((state) => state.user)
-  // console.log(11, data)
-
-  // useEffect(() => {
-  //   // if (typeof window !== "undefined") {
-  //   // ReactGA.send({ hitType: "pageview", page: "/my-path" })
-  //   ReactGA.pageview(window.location.pathname + window.location.search)
-  //   // }
-  // }, [])
-
-  // useEffect(() => {
-  //   window.onload = () => {
-  //     window.dataLayer?.push({ event: "page view from onload" })
-  //   }
-  // }, [])
-
-  const pageView = (url: string) => {
-    // window.gtag("config", process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID, {
-    //   paul_url: url
-    // })
-    window &&
-      window.gtag &&
-      window.gtag(
-        "config",
-        process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID as string,
-        { page_path: url }
-      )
-  }
-  // window &&
-  //   window.gtag &&
-  //   window.gtag(
-  //     "config",
-  //     process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID as string,
-  //     { page_path: url }
-  //   )
   useEffect(() => {
-    const hanldeRouterChange = (url: string) => {
-      pageView(url)
-    }
-    router.events.on("hashChangeComplete", hanldeRouterChange)
-    return () => {
-      router.events.off("hashChangeComplete", hanldeRouterChange)
-    }
+    window.gtag("event", "page_view", {
+      page_title: "Main",
+      page_location: `{${router.pathname}}`,
+      page_path: `{${router.pathname}}`,
+      send_to: process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID
+    })
   }, [])
-
-  // if (typeof window !== "undefined") {
-  //   console.log(
-  //     // "window.location.pathname + window.location.search",
-  //     // window.location.pathname + window.location.search
-  //     process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID
-  //   )
-  // }
 
   const [type, setType] = useState(SchoolTypeId.UNIVERSITY)
   const [search, setSearch] = useState("")
@@ -116,36 +63,6 @@ const Home: NextPage = (props) => {
     setSearch(e.target.value)
   }
 
-  // console.log(
-  //   process.env.NEXT_PUBLIC_SUPERTOKEN_URL,
-  //   process.env.NEXT_PUBLIC_SUPERTOKEN_API_KEY,
-  //   123
-  // )
-  // const EmailPasswordAuthNoSSR = dynamic(
-  //   new Promise<typeof EmailPassword.EmailPasswordAuth>((res) =>
-  //     res(EmailPassword.EmailPasswordAuth)
-  //   ),
-  //   { ssr: false }
-  // )
-  // const abc = uni
-
-  // useEffect(() => {
-  //   const arr = []
-  //   uni.forEach((data) => {
-  //     if (
-  //       // search.length ||
-  //       data.schoolChineseName.includes(search) ||
-  //       data.schoolEnglishName.includes(search) ||
-  //       data.schoolShortName.includes(search)
-  //     ) {
-  //       // console.log("data", data)
-  //       // setList([...list, data])
-  //       arr.push(data)
-  //     }
-  //   })
-  //   setList(arr)
-  // }, [search])
-  // console.log(list)
   useEffect(() => {
     const res = CommonHelpers.schoolFilter(uni, search.trim(), type)
     setList(res)
@@ -156,6 +73,7 @@ const Home: NextPage = (props) => {
     //   <EmailPasswordAuth>
     <PageLayout>
       <SEO title="Main" description="123" />
+
       <div className="flex justify-center gap-x-4 mt-8">
         <TextField
           className="bg-white w-3/5 "

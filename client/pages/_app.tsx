@@ -4,7 +4,7 @@ import type { AppProps } from "next/app"
 import { Provider } from "react-redux"
 import { store } from "../state/store"
 import { Hydrate, QueryClient, QueryClientProvider } from "react-query"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { ReactQueryDevtools } from "react-query/devtools"
 import CommonLayout from "../components/layouts"
 import SuperTokensReact from "supertokens-auth-react"
@@ -15,6 +15,8 @@ import React from "react"
 import { frontendConfig } from "../service/supertoken/config/frontendConfig"
 import dynamic from "next/dynamic"
 import Script from "next/script"
+import trackingEvent from "../utils/services/GoogleAnalytics/tracking"
+import { useRouter } from "next/router"
 
 // import { frontendConfig } from "../service/supertoken/config/frontendConfig"
 ReactGA.initialize(`${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}`)
@@ -29,6 +31,7 @@ const MyApp: React.FunctionComponent<IMyAppProps> = ({
   Component,
   pageProps
 }) => {
+  const router = useRouter()
   const [queryClient] = useState(
     () =>
       new QueryClient({
@@ -39,6 +42,16 @@ const MyApp: React.FunctionComponent<IMyAppProps> = ({
         }
       })
   )
+
+  useEffect(() => {
+    const hanldeRouterChange = (url: string) => {
+      trackingEvent.pageView(url)
+    }
+    router.events.on("hashChangeComplete", hanldeRouterChange)
+    return () => {
+      router.events.off("hashChangeComplete", hanldeRouterChange)
+    }
+  }, [router.events])
   return (
     <QueryClientProvider client={queryClient}>
       <Hydrate state={pageProps.dehydratedState}>
@@ -60,7 +73,7 @@ const MyApp: React.FunctionComponent<IMyAppProps> = ({
           /> */}
 
           <Script
-            src="https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}"
+            src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}`}
             strategy="afterInteractive"
           />
           <Script id="google-analytics" strategy="afterInteractive">
