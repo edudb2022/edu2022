@@ -10,6 +10,7 @@ import {
   HonorTypesId,
   InternshipTypesId,
   JobSourceTypesId,
+  SchoolSortingTypes,
   SchoolTypeId,
   YearOfStudyTypeslId
 } from "../types/common"
@@ -158,6 +159,44 @@ const honorTypesIdList = [
   { value: HonorTypesId.PASS, title: "合格（Pass）" }
 ]
 
+const SchoolSortingTypesList = [
+  {
+    value: SchoolSortingTypes.ADIMSSION_DATE_DESCENDING,
+    title: "入學日期-新到舊"
+  },
+  {
+    value: SchoolSortingTypes.ADMISSION_DATE_ASCENDING,
+    title: "入學日期-舊到新"
+  },
+
+  {
+    value: SchoolSortingTypes.POST_DATE_DESCENDING,
+    title: "發佈日期-新到舊"
+  },
+  {
+    value: SchoolSortingTypes.POST_DATE_ASCENDING,
+    title: "發佈日期-舊到新"
+  },
+
+  {
+    value: SchoolSortingTypes.RECOMMENDATION_DESCENDING,
+    title: "推薦指數-高到低"
+  },
+  {
+    value: SchoolSortingTypes.RECOMMENDATION_ASCENDING,
+    title: "推薦指數-低到高"
+  },
+
+  {
+    value: SchoolSortingTypes.VOTE_DESCENDING,
+    title: "評分-高到低"
+  },
+  {
+    value: SchoolSortingTypes.VOTE_ASCENDING,
+    title: "評分-低到高"
+  }
+]
+
 export {
   dressCodeOptions,
   jobSourceOptions,
@@ -174,5 +213,6 @@ export {
   contactMethodTypesList,
   DSEGradeTypesList,
   academicStatusTypesList,
-  honorTypesIdList
+  honorTypesIdList,
+  SchoolSortingTypesList
 }

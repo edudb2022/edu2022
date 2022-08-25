@@ -51,6 +51,17 @@ const Home: NextPage = (props) => {
     })
   }, [])
 
+  const queryString = qs.stringify({
+    order: {
+      createdAt: "ASC"
+    },
+    industry: {
+      id: 1
+    },
+    limit: 10
+  })
+
+  console.log("123123213323", queryString)
   const [type, setType] = useState(SchoolTypeId.UNIVERSITY)
   const [search, setSearch] = useState("")
   const [list, setList] = useState<Omit<ISchoolsReviewCardProps, "type">[]>([])

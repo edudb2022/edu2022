@@ -1,14 +1,16 @@
+import { SchoolSortingTypes } from "../../../types/common"
+
 export enum ISchoolFilterActionTypes {
   SET_SORTING = "FILTER:SCHOOL:SET_SORTING",
   RESET = "FILTER:SCHOOL:RESET"
 }
 
 export interface ISchoolFilterState {
-  sorting: "" | string
+  sorting: SchoolSortingTypes
 }
 
 export interface SET_SORTING {
-  payload: string
+  payload: SchoolSortingTypes
   type: typeof ISchoolFilterActionTypes.SET_SORTING
 }
 

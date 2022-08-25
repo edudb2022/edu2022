@@ -10,8 +10,22 @@ import ReviewHeaderContainer from "../../../../components/containers/reviewHeade
 
 import DetailedCardDetailLayout from "../../../../components/layouts/cards/detailCardDsplay"
 import PageLayout from "../../../../components/layouts/page"
+import { useAppSelector } from "../../../../hooks/common/useAppSelector"
+import qs from "qs"
 
 const SchoolReviewPage = () => {
+  const { sorting } = useAppSelector((state) => state.filter.school)
+  const word = sorting.split(",")
+  console.log("word", word)
+
+  const queryString = qs.stringify({
+    order: {
+      [word[0]]: word[1]
+    },
+    limit: 10
+  })
+
+  console.log("queryString", queryString)
   const [isOpen, setIsOpen] = useState(false)
   const handleMobileFilterOpen = () => {
     setIsOpen(!isOpen)

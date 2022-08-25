@@ -135,10 +135,10 @@ export enum AcademicStatusTypesId {
 
 export enum ContactMethodTypeId {
   EMAIL = 1,
-  TELEGRAM = 2,
-  WHATSAPP = 3,
-  SIGNAL = 4,
-  OTHER = 5
+  TELEGRAM,
+  WHATSAPP,
+  SIGNAL,
+  OTHER
 }
 
 export enum HonorTypesId {
@@ -176,4 +176,16 @@ export enum DSEGradeTypesId {
   PASS, //displat Text :達標/合格不
   FAIL, //displat Text :不達標/不合格
   UNCLASSIFIED = 1
+}
+
+//sorting
+export enum SchoolSortingTypes {
+  POST_DATE_ASCENDING = "createdAt,ASC",
+  POST_DATE_DESCENDING = "createdAt,DESC",
+  ADMISSION_DATE_ASCENDING = "admissionDate,ASC",
+  ADIMSSION_DATE_DESCENDING = "admissionDate,DESC",
+  VOTE_ASCENDING = "vote,ASC",
+  VOTE_DESCENDING = "vote,DESC",
+  RECOMMENDATION_ASCENDING = "recommendation,ASC",
+  RECOMMENDATION_DESCENDING = "recommendation,DESC"
 }

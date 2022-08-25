@@ -13,6 +13,7 @@ import {
   InternshipTypesId,
   ISelectMenuItemsType,
   JobSourceTypesId,
+  SchoolSortingTypes,
   SchoolTypeId,
   YearOfStudyTypeslId
 } from "../../../../types/common"
@@ -33,9 +34,12 @@ export interface IBaseSelectProps extends SelectProps, IInputContainerProps {
     | AdmissionOfferTypeId
     | InternshipTypesId
     | ApplicationTypeId
+    | SchoolSortingTypes
   selectId?: string
   itemsClassName?: string
-  items: ISelectMenuItemsType<number, string>[]
+  items:
+    | ISelectMenuItemsType<number, string>[]
+    | ISelectMenuItemsType<SchoolSortingTypes, string>[]
   equired?: boolean
   isRequired?: boolean
 }

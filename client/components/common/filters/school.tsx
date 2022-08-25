@@ -3,6 +3,7 @@ import BaseFilter, { IBaseFilterPorps } from "."
 import { useAppDispatch } from "../../../hooks/common/useAppDispatch"
 import { ISchoolFilterActionTypes } from "../../../state/filters/school/actions"
 import ProgrammeFilterInputGroup from "../groups/filter/programme"
+import SchoolFilterInputGroup from "../groups/filter/school"
 
 export interface ISchoolFilterFilterPorps extends Partial<IBaseFilterPorps> {}
 
@@ -17,7 +18,7 @@ const SchoolFilter: React.FunctionComponent<ISchoolFilterFilterPorps> = ({
   }
   return (
     <BaseFilter onClick={hanldeClick} onSearch={onSearch!} isMobile={isMobile}>
-      <ProgrammeFilterInputGroup />
+      <SchoolFilterInputGroup />
     </BaseFilter>
   )
 }

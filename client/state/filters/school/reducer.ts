@@ -1,17 +1,13 @@
 import produce from "immer"
+import { SchoolSortingTypes } from "../../../types/common"
 import {
   ISchoolFilterAction,
   ISchoolFilterActionTypes,
   ISchoolFilterState
 } from "./actions"
-// import {
-//   ISchoolFilterAction,
-//   ISchoolFilterActionTypes,
-//   ISchoolFilterState
-// } from "./actions"
 
 const initialState = {
-  sorting: ""
+  sorting: SchoolSortingTypes.ADIMSSION_DATE_DESCENDING
 } as ISchoolFilterState
 
 const schoolFilterReducer = (
@@ -26,7 +22,7 @@ const schoolFilterReducer = (
 
     case ISchoolFilterActionTypes.RESET:
       return produce(state, (draft) => {
-        draft.sorting = ""
+        draft.sorting = SchoolSortingTypes.ADIMSSION_DATE_DESCENDING
       })
     default:
       return state
