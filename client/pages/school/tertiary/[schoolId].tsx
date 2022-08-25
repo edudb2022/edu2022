@@ -15,6 +15,7 @@ import RatingLargeTag from "../../../components/common/tags/ratingLarge"
 import ReviewHeaderContainer from "../../../components/containers/reviewHeader"
 import CardDisplayLayout from "../../../components/layouts/cardDisplay"
 import PageLayout from "../../../components/layouts/page"
+import SEO from "../../../components/seo"
 import { contactMethodTypesList } from "../../../constants/common"
 // import ReactGA from "react-ga"
 
@@ -38,13 +39,31 @@ const TertiarySchoolPage: NextPage = () => {
     { value: "law", title: "法律" }
   ]
 
-  // useEffect(() => {
-  //   // if (typeof window !== "undefined") {
-  //   ReactGA.pageview("/123123123")
-  //   // }
-  // }, [])
   return (
     <PageLayout>
+      <SEO
+        title="香港科技大學"
+        description="Hong Kong University of Science and Technology"
+        openGraph={{
+          title: "香港科技大學",
+          description: "Hong Kong University of Science and Technology",
+          site_name: "baau4",
+          article: {
+            //faculty
+            tags: [
+              "香港科技大學",
+              "HKUST",
+              "Hong Kong University of Science and Technology",
+              "學校設施及環境",
+              "資源及支援",
+              "學校政策",
+              "校內膳食",
+              "歸屬感"
+            ]
+          }
+        }}
+      />
+
       <ReviewHeaderContainer
         ChineseTitle={"香港科技大學"}
         EnglishTitle={"Hong Kong University of Science and Technology"}

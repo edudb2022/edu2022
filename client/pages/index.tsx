@@ -147,28 +147,16 @@ const Home: NextPage = (props) => {
   // }, [search])
   // console.log(list)
   useEffect(() => {
-    // if (search.lengt) {
     const res = CommonHelpers.schoolFilter(uni, search.trim(), type)
-    console.log("123")
-    // if (res !== list) {
     setList(res)
-    // }
-
-    // }
   }, [search, type])
-
-  // console.log(res)
 
   return (
     // <EmailPasswordAuthNoSSR>
     //   <EmailPasswordAuth>
     <PageLayout>
-      <Head>
-        <title>23232323</title>
-      </Head>
+      <SEO title="Main" description="123" />
       <div className="flex justify-center gap-x-4 mt-8">
-        {/* <SuccessModal /> */}
-        {/* <BaseModal isOpen={true} /> */}
         <TextField
           className="bg-white w-3/5 "
           variant="outlined"

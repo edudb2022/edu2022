@@ -12,10 +12,37 @@ import RatingLargeTag from "../../../components/common/tags/ratingLarge"
 import ReviewHeaderContainer from "../../../components/containers/reviewHeader"
 import CardDisplayLayout from "../../../components/layouts/cardDisplay"
 import PageLayout from "../../../components/layouts/page"
+import SEO from "../../../components/seo"
 
 const ProgrammePage: React.FunctionComponent = () => {
   return (
     <PageLayout>
+      <SEO
+        title="應用及人本計算學（榮譽）文學士"
+        description="Bachelor of Management Science and Information Management (Honours)"
+        openGraph={{
+          title: "應用及人本計算學（榮譽）文學士",
+          description:
+            "Bachelor of Management Science and Information Management (Honours)",
+          site_name: "baau4",
+          article: {
+            //card details
+
+            tags: [
+              "香港科技大學",
+              "HKUST",
+              "Hong Kong University of Science and Technology",
+              "應用及人本計算學（榮譽）文學士",
+              "Bachelor of Management Science and Information Management (Honours)",
+              "課程結構",
+              "爛龜指數",
+              "爆肝指數",
+              "學習經歷",
+              "資源"
+            ]
+          }
+        }}
+      />
       <ReviewHeaderContainer
         ChineseTitle="應用及人本計算學（榮譽）文學士"
         EnglishTitle="Bachelor of Management Science and Information Management (Honours)"

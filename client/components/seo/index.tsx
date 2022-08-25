@@ -1,12 +1,10 @@
-import Head from "next/head"
+import { NextSeo, NextSeoProps } from "next-seo"
 import React, { PropsWithChildren } from "react"
 
-interface ISEOProps {}
+interface ISEOProps extends NextSeoProps {}
 
-const SEO: React.FunctionComponent<PropsWithChildren<ISEOProps>> = ({
-  children
-}) => {
-  return <Head>{children}</Head>
+const SEO: React.FunctionComponent<ISEOProps> = ({ ...props }) => {
+  return <NextSeo {...props} />
 }
 
 export default SEO
