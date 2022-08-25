@@ -44,9 +44,9 @@ const Home: NextPage = (props) => {
 
   useEffect(() => {
     window.gtag("event", "page_view", {
-      page_title: "Main",
-      page_location: `{${router.pathname}}`,
-      page_path: `{${router.pathname}}`,
+      page_title: "M23232323ain",
+      page_location: `${router.pathname}`,
+      page_path: `${router.pathname}`,
       send_to: process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID
     })
   }, [])
@@ -67,6 +67,16 @@ const Home: NextPage = (props) => {
     const res = CommonHelpers.schoolFilter(uni, search.trim(), type)
     setList(res)
   }, [search, type])
+
+  // useEffect(() => {
+  //   const hanldeRouterChange = (url: string) => {
+  //     trackingEvent.pageView(url, "testing")
+  //   }
+  //   router.events.on("hashChangeComplete", hanldeRouterChange)
+  //   return () => {
+  //     router.events.off("hashChangeComplete", hanldeRouterChange)
+  //   }
+  // }, [router.events])
 
   return (
     // <EmailPasswordAuthNoSSR>
