@@ -57,12 +57,12 @@ const GradJobReviewPage: NextPage = () => {
           </div>
 
           <div className="w-1/2 md:w-1/6 flex flex-row gap-x-6  justify-center items-center">
-            <RatingLargeTag title={"hope"} rating={1} header={"hope"} />
             <RatingLargeTag
               title={"difficulty"}
               rating={1}
-              header={"difficulty"}
+              header={"搵工難度"}
             />
+            <RatingLargeTag title={"hope"} rating={1} header={"前途評估"} />
           </div>
         </div>
       </ReviewHeaderContainer>

@@ -9,7 +9,6 @@ import { ReactQueryDevtools } from "react-query/devtools"
 import CommonLayout from "../components/layouts"
 import SuperTokensReact from "supertokens-auth-react"
 // import { frontendConfig } from "../service/supertoken/config/frontendConfig"
-import ReactGA from "react-ga"
 // import ProtectedPage from "./protectedPage"
 import React from "react"
 import { frontendConfig } from "../service/supertoken/config/frontendConfig"
@@ -19,7 +18,6 @@ import trackingEvent from "../utils/services/GoogleAnalytics/tracking"
 import { useRouter } from "next/router"
 
 // import { frontendConfig } from "../service/supertoken/config/frontendConfig"
-ReactGA.initialize(`${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}`)
 if (typeof window !== "undefined") {
   // we only want to call this init function on the frontend, so we check typeof window !== 'undefined'
   SuperTokensReact.init(frontendConfig())

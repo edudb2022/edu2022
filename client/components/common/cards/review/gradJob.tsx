@@ -43,11 +43,11 @@ const GradJobOfferReviewCard: React.FunctionComponent<
           </h1>
           <div className="absolute  w-full  px-20 mt-2 md:px-16  ">
             <div className="flex flex-col gap-y-4">
-              <RatingLargeTag title={"hope"} rating={1} header={"hope"} />
+              <RatingLargeTag title={"hope"} rating={1} header={"前途評估"} />
               <RatingLargeTag
                 title={"difficulty"}
                 rating={1}
-                header={"difficulty"}
+                header={"搵工難度"}
               />
             </div>
           </div>

@@ -21,7 +21,7 @@ const SchoolReviewDetailCard: React.FunctionComponent<
         <a>
           <div className="flex flex-col-reverse md:flex-row h-full items-center justify-around gap-x-4">
             <ReviewTextItem detail={admissionDate} title="Admission Date" />
-            <RatingTag rating={2} title={`${label}`} />
+            <RatingTag rating={2} title={`${label}`} header="推薦指數" />
           </div>
         </a>
       </Link>

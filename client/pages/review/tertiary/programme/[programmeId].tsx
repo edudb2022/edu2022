@@ -57,7 +57,7 @@ const ProgrammeReviewPage: NextPage = () => {
             </div>
 
             <div className="w-2/5  py-12 flex flex-col justify-center items-center">
-              <RatingLargeTag title={"red"} rating={4} />
+              <RatingLargeTag title={"red"} rating={4} header="推薦指數" />
             </div>
           </div>
         </div>

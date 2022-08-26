@@ -29,8 +29,8 @@ const IntershipReviewDetailCard: React.FunctionComponent<
             <ReviewNumberItem detail={salary} title="月薪" />
 
             <div className="flex flex-col justify-center items-center md:flex-row text-xs md:text-base gap-x-12">
-              <RatingTag title="課程評價" rating={2} />
-              <TextTag title="winter" type="winter" />
+              <RatingTag title="課程評價" rating={2} header="搵工難度" />
+              <TextTag title="winter" type="winter" header="類型" />
             </div>
           </div>
         </a>

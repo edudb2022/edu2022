@@ -42,14 +42,16 @@ const InterviewReviewDetailCard: React.FunctionComponent<
                   <RatingTag
                     rating={4}
                     title={InterviewDifficultyRating[2].label}
-                    header="exp"
+                    header="面試體驗"
                   />
                 </div>
               </div>
 
-              <div className="mt-0 md:mt-4">
-                <TextTag title={ADMISSION_TYPE.NON_JUPAS} type="admission" />
-              </div>
+              <TextTag
+                title={ADMISSION_TYPE.NON_JUPAS}
+                type="admission"
+                header="類型"
+              />
             </div>
             {/* <TextTag title={ADMISSION_TYPE.NON_JUPAS} type="admission" /> */}
             {/* </div> */}

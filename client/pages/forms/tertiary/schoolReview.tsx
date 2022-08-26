@@ -49,7 +49,7 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
     policyRating: null,
     canteenRating: null,
     selfOfBelonging: null,
-    overRating: null,
+    recommendation: null,
     contactMethod: "",
     contactDetail: "",
     isAnonymous: false,
@@ -63,7 +63,7 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
     policyRating: RatingValidationSchema,
     canteenRating: RatingValidationSchema,
     selfOfBelonging: RatingValidationSchema,
-    overRating: RatingValidationSchema,
+    recommendation: RatingValidationSchema,
     admissionDate: DateValidationSchema
   })
 
@@ -213,14 +213,14 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
         />
 
         <RatingToggleButtonGroup
-          id="overRating"
-          value={formik.values.overRating}
+          id="recommendation"
+          value={formik.values.recommendation}
           onChange={formik.handleChange}
           ratingTitle={schoolOverallRating}
           onBlur={formik.handleBlur}
-          errorMessages={formik.errors.overRating}
-          isTouched={formik.touched.overRating}
-          header="整體評價"
+          errorMessages={formik.errors.recommendation}
+          isTouched={formik.touched.recommendation}
+          header="推薦指數"
           headerRequired={true}
         />
       </div>

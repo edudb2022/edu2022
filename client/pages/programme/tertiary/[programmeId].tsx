@@ -65,7 +65,7 @@ const ProgrammePage: React.FunctionComponent = () => {
             </div>
 
             <div className="w-2/5  py-12 flex flex-col justify-center items-center">
-              <RatingLargeTag title={"red"} rating={5} />
+              <RatingLargeTag title={"red"} rating={5} header="推薦指數" />
             </div>
           </div>
         </div>

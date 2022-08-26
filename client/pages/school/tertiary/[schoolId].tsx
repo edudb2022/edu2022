@@ -86,7 +86,7 @@ const TertiarySchoolPage: NextPage = () => {
             </div>
 
             <div className="w-2/5 py-12 flex flex-col justify-between items-center">
-              <RatingLargeTag title={"red"} rating={1} />
+              <RatingLargeTag title={"red"} rating={1} header="推薦指數" />
               <Link href={`/review/tertiary/school/${schoolId}`}>
                 <a className="text-theme-one-500 mt-4 border-b-2 border-theme-one-500">
                   {/* <BaseButton className="w-full justify-center gap-x-2  text-sm md:text-base mt-4 bg-theme-one-500 text-white shrink-0">
