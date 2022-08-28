@@ -3,17 +3,15 @@ import React from "react"
 import { useAppDispatch } from "../../../../hooks/common/useAppDispatch"
 import {
   applicationTypesList,
-  internshipTypesList,
-  jobSourceOptions
+  interviewSortingTypesList
 } from "../../../../constants/common"
 import { useAppSelector } from "../../../../hooks/common/useAppSelector"
-import { IAdmissionFilterActionTypes } from "../../../../state/filters/admission/actions"
 import { IInterviewFilterActionTypes } from "../../../../state/filters/interview/actions"
 import BaseFilterContainer from "../../../containers/filters"
 import BaseSelect from "../../inputs/select"
 
 const InterviewFilterInputGroup: React.FunctionComponent = () => {
-  const { sorting, admissionType, scoreSorting } = useAppSelector(
+  const { sorting, admissionType } = useAppSelector(
     (state) => state.filter.interview
   )
   const dispatch = useAppDispatch()
@@ -39,7 +37,7 @@ const InterviewFilterInputGroup: React.FunctionComponent = () => {
         name="sorting"
         onChange={handleChange}
         selectValue={sorting}
-        items={internshipTypesList}
+        items={interviewSortingTypesList}
         inputLabel="sorting"
       />
 

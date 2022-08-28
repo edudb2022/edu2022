@@ -4,7 +4,7 @@ import React from "react"
 import {
   internshipTypesList,
   jobSourceOptions,
-  SchoolSortingTypesList,
+  schoolSortingTypesList,
   schoolTypesList
 } from "../../../../constants/common"
 import { useAppDispatch } from "../../../../hooks/common/useAppDispatch"
@@ -35,7 +35,7 @@ const SchoolFilterInputGroup: React.FunctionComponent = () => {
         name="sorting"
         onChange={handleChange}
         selectValue={sorting}
-        items={SchoolSortingTypesList}
+        items={schoolSortingTypesList}
         inputLabel="sorting"
       />
     </BaseFilterContainer>

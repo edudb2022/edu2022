@@ -4,11 +4,13 @@ import React from "react"
 import {
   admissionOfferTypesList,
   internshipTypesList,
+  intershipOfferSortingTypesList,
   jobSourceOptions
 } from "../../../../constants/common"
 import { useAppDispatch } from "../../../../hooks/common/useAppDispatch"
 import { useAppSelector } from "../../../../hooks/common/useAppSelector"
 import { IIntershipFilterActionTypes } from "../../../../state/filters/intership/actions"
+import { InternshipOfferSortingTypes } from "../../../../types/common"
 
 import BaseFilterContainer from "../../../containers/filters"
 import BaseSelect from "../../inputs/select"
@@ -47,7 +49,7 @@ const InternshipFilterInputGroup: React.FunctionComponent = () => {
         name="sorting"
         onChange={handleChange}
         selectValue={sorting}
-        items={admissionOfferTypesList}
+        items={intershipOfferSortingTypesList}
         inputLabel="sorting"
       />
       <BaseSelect

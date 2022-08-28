@@ -39,7 +39,7 @@ export const schoolRecourcesRating: IRating[] = [
 ]
 
 export const schoolPolicyRating: IRating[] = [
-  { value: "1", label: "6uo" },
+  { value: "1", label: "離地" },
   { value: "2", label: "垃圾" },
   { value: "3", label: "頗差" },
   { value: "4", label: "不錯" },

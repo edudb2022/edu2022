@@ -3,6 +3,7 @@ import React from "react"
 
 import {
   admissionLevelTypesList,
+  admissionOfferSortingTypesList,
   admissionOfferTypesList,
   applicationTypesList,
   yearOfStudyTypesList
@@ -60,7 +61,7 @@ const AdmissionFilterInputGroup: React.FunctionComponent = () => {
         name="sorting"
         onChange={handleChange}
         selectValue={sorting}
-        items={admissionOfferTypesList}
+        items={admissionOfferSortingTypesList}
         inputLabel="sorting"
       />
       <BaseSelect

@@ -7,7 +7,7 @@ import {
 } from "./actions"
 
 const initialState = {
-  sorting: SchoolSortingTypes.ADIMSSION_DATE_DESCENDING
+  sorting: SchoolSortingTypes.POST_DATE_DESCENDING
 } as ISchoolFilterState
 
 const schoolFilterReducer = (
@@ -22,7 +22,7 @@ const schoolFilterReducer = (
 
     case ISchoolFilterActionTypes.RESET:
       return produce(state, (draft) => {
-        draft.sorting = SchoolSortingTypes.ADIMSSION_DATE_DESCENDING
+        draft.sorting = SchoolSortingTypes.POST_DATE_DESCENDING
       })
     default:
       return state

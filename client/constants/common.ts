@@ -1,15 +1,20 @@
 import {
   AcademicStatusTypesId,
   AdmissionLevelTypesId,
+  admissionOfferSortingTypes,
   AdmissionOfferTypeId,
   ApplicationTypeId,
   ContactMethodTypeId,
   DressCodeTypeId,
   DSEGradeTypesId,
   DSEJupasChoicePriorityTypesId,
+  gradJobOfferSortingTypes,
   HonorTypesId,
+  InternshipOfferSortingTypes,
   InternshipTypesId,
+  InterviewSortingTypes,
   JobSourceTypesId,
+  ProgrammeSortingTypes,
   SchoolSortingTypes,
   SchoolTypeId,
   YearOfStudyTypeslId
@@ -159,16 +164,7 @@ const honorTypesIdList = [
   { value: HonorTypesId.PASS, title: "合格（Pass）" }
 ]
 
-const SchoolSortingTypesList = [
-  {
-    value: SchoolSortingTypes.ADIMSSION_DATE_DESCENDING,
-    title: "入學日期-新到舊"
-  },
-  {
-    value: SchoolSortingTypes.ADMISSION_DATE_ASCENDING,
-    title: "入學日期-舊到新"
-  },
-
+const schoolSortingTypesList = [
   {
     value: SchoolSortingTypes.POST_DATE_DESCENDING,
     title: "發佈日期-新到舊"
@@ -176,6 +172,14 @@ const SchoolSortingTypesList = [
   {
     value: SchoolSortingTypes.POST_DATE_ASCENDING,
     title: "發佈日期-舊到新"
+  },
+  {
+    value: SchoolSortingTypes.ADIMSSION_DATE_DESCENDING,
+    title: "入學日期-新到舊"
+  },
+  {
+    value: SchoolSortingTypes.ADMISSION_DATE_ASCENDING,
+    title: "入學日期-舊到新"
   },
 
   {
@@ -197,6 +201,246 @@ const SchoolSortingTypesList = [
   }
 ]
 
+const programmeSortingTypesList = [
+  {
+    value: ProgrammeSortingTypes.POST_DATE_DESCENDING,
+    title: "發佈日期-新到舊"
+  },
+  {
+    value: ProgrammeSortingTypes.POST_DATE_ASCENDING,
+    title: "發佈日期-舊到新"
+  },
+  {
+    value: ProgrammeSortingTypes.ADIMSSION_DATE_DESCENDING,
+    title: "入學日期-新到舊"
+  },
+  {
+    value: ProgrammeSortingTypes.ADMISSION_DATE_ASCENDING,
+    title: "入學日期-舊到新"
+  },
+
+  {
+    value: ProgrammeSortingTypes.RECOMMENDATION_DESCENDING,
+    title: "推薦指數-高到低"
+  },
+  {
+    value: ProgrammeSortingTypes.RECOMMENDATION_ASCENDING,
+    title: "推薦指數-低到高"
+  },
+  {
+    value: ProgrammeSortingTypes.VOTE_DESCENDING,
+    title: "評分-高到低"
+  },
+  {
+    value: ProgrammeSortingTypes.VOTE_ASCENDING,
+    title: "評分-低到高"
+  }
+]
+
+const interviewSortingTypesList = [
+  {
+    value: InterviewSortingTypes.POST_DATE_DESCENDING,
+    title: "發佈日期-新到舊"
+  },
+  {
+    value: InterviewSortingTypes.POST_DATE_ASCENDING,
+    title: "發佈日期-舊到新"
+  },
+  {
+    value: InterviewSortingTypes.INTERVIEW_DATE_DESCENDING,
+    title: "面試日期-舊到新"
+  },
+  {
+    value: InterviewSortingTypes.INTERVIEW_DATE_ASCENDING,
+    title: "面試日期-舊到新"
+  },
+  {
+    value: InterviewSortingTypes.DIFFICULTY_DESCENDING,
+    title: "面試難度-高到低"
+  },
+  {
+    value: InterviewSortingTypes.DIFFICULTY_ASCENDING,
+    title: "面試難度-低到高"
+  },
+  {
+    value: InterviewSortingTypes.VOTE_DESCENDING,
+    title: "評分-高到低"
+  },
+  {
+    value: InterviewSortingTypes.VOTE_ASCENDING,
+    title: "評分-低到高"
+  },
+  {
+    value: InterviewSortingTypes.BESTFIVE_DESCENDING,
+    title: "Best 5-高到低"
+  },
+  {
+    value: InterviewSortingTypes.BESTFIVE_ASCENDING,
+    title: "Best 5-低到高"
+  },
+  {
+    value: InterviewSortingTypes.BESTSIX_DESCENDING,
+    title: "Best 6-高到低"
+  },
+  {
+    value: InterviewSortingTypes.BESTSIX_ASCENDING,
+    title: "best 6-低到高"
+  },
+  {
+    value: InterviewSortingTypes.GAP_DESCENDING,
+    title: "GPA-高到低"
+  },
+  {
+    value: InterviewSortingTypes.GPA_ASCENDING,
+    title: "GPA-低到高"
+  }
+]
+
+const admissionOfferSortingTypesList = [
+  {
+    value: admissionOfferSortingTypes.POST_DATE_DESCENDING,
+    title: "發佈日期-新到舊"
+  },
+  {
+    value: admissionOfferSortingTypes.POST_DATE_ASCENDING,
+    title: "發佈日期-舊到新"
+  },
+  {
+    value: admissionOfferSortingTypes.OFFER_RECEIVED_DATE_DESCENDING,
+    title: "收Offer日期-舊到新"
+  },
+  {
+    value: admissionOfferSortingTypes.OFFER_RECEIVED_DATE_ASCENDING,
+    title: "收Offer日期-舊到新"
+  },
+  {
+    value: admissionOfferSortingTypes.VOTE_DESCENDING,
+    title: "評分-高到低"
+  },
+  {
+    value: admissionOfferSortingTypes.VOTE_ASCENDING,
+    title: "評分-低到高"
+  },
+  {
+    value: admissionOfferSortingTypes.BESTFIVE_DESCENDING,
+    title: "Best 5-高到低"
+  },
+  {
+    value: admissionOfferSortingTypes.BESTFIVE_ASCENDING,
+    title: "Best 5-低到高"
+  },
+  {
+    value: admissionOfferSortingTypes.BESTSIX_DESCENDING,
+    title: "Best 6-高到低"
+  },
+  {
+    value: admissionOfferSortingTypes.BESTSIX_ASCENDING,
+    title: "best 6-低到高"
+  },
+  {
+    value: admissionOfferSortingTypes.GAP_DESCENDING,
+    title: "GPA-高到低"
+  },
+  {
+    value: admissionOfferSortingTypes.GPA_ASCENDING,
+    title: "GPA-低到高"
+  }
+]
+
+const intershipOfferSortingTypesList = [
+  {
+    value: InternshipOfferSortingTypes.POST_DATE_DESCENDING,
+    title: "發佈日期-新到舊"
+  },
+  {
+    value: InternshipOfferSortingTypes.POST_DATE_ASCENDING,
+    title: "發佈日期-舊到新"
+  },
+  {
+    value: InternshipOfferSortingTypes.OFFER_RECEIVED_DATE_DESCENDING,
+    title: "收Offer日期-舊到新"
+  },
+  {
+    value: InternshipOfferSortingTypes.OFFER_RECEIVED_DATE_ASCENDING,
+    title: "收Offer日期-舊到新"
+  },
+  {
+    value: InternshipOfferSortingTypes.VOTE_DESCENDING,
+    title: "評分-高到低"
+  },
+  {
+    value: InternshipOfferSortingTypes.VOTE_ASCENDING,
+    title: "評分-低到高"
+  },
+  {
+    value: InternshipOfferSortingTypes.DIFFICULTY_DESCENDING,
+    title: "搵工難度-高到低"
+  },
+  {
+    value: InternshipOfferSortingTypes.DIFFICULTY_ASCENDING,
+    title: "搵工難度-低到高"
+  },
+  {
+    value: InternshipOfferSortingTypes.SALARY_DESCENDING,
+    title: "年薪-高到低"
+  },
+  {
+    value: InternshipOfferSortingTypes.SALARY_ASCENDING,
+    title: "年薪-低到高"
+  }
+]
+
+const gradJobOfferSortingTypesList = [
+  {
+    value: gradJobOfferSortingTypes.POST_DATE_DESCENDING,
+    title: "發佈日期-新到舊"
+  },
+  {
+    value: gradJobOfferSortingTypes.POST_DATE_ASCENDING,
+    title: "發佈日期-舊到新"
+  },
+  {
+    value: gradJobOfferSortingTypes.OFFER_RECEIVED_DATE_DESCENDING,
+    title: "收Offer日期-舊到新"
+  },
+  {
+    value: gradJobOfferSortingTypes.OFFER_RECEIVED_DATE_ASCENDING,
+    title: "收Offer日期-舊到新"
+  },
+  {
+    value: gradJobOfferSortingTypes.VOTE_DESCENDING,
+    title: "評分-高到低"
+  },
+  {
+    value: gradJobOfferSortingTypes.VOTE_ASCENDING,
+    title: "評分-低到高"
+  },
+  {
+    value: gradJobOfferSortingTypes.DIFFICULTY_DESCENDING,
+    title: "搵工難度-高到低"
+  },
+  {
+    value: gradJobOfferSortingTypes.DIFFICULTY_ASCENDING,
+    title: "搵工難度-低到高"
+  },
+  {
+    value: gradJobOfferSortingTypes.HOPE_DESCENDING,
+    title: "前途評估-高到低"
+  },
+  {
+    value: gradJobOfferSortingTypes.HOPE_ASCENDING,
+    title: "前途評估-低到高"
+  },
+  {
+    value: gradJobOfferSortingTypes.SALARY_DESCENDING,
+    title: "月薪-高到低"
+  },
+  {
+    value: gradJobOfferSortingTypes.SALARY_ASCENDING,
+    title: "月薪-低到高"
+  }
+]
+
 export {
   dressCodeOptions,
   jobSourceOptions,
@@ -214,5 +458,10 @@ export {
   DSEGradeTypesList,
   academicStatusTypesList,
   honorTypesIdList,
-  SchoolSortingTypesList
+  schoolSortingTypesList,
+  programmeSortingTypesList,
+  interviewSortingTypesList,
+  admissionOfferSortingTypesList,
+  intershipOfferSortingTypesList,
+  gradJobOfferSortingTypesList
 }

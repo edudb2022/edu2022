@@ -1,4 +1,4 @@
-import { ADMISSION_TYPE, ApplicationTypeId } from "../../../types/common"
+import { ApplicationTypeId, InterviewSortingTypes } from "../../../types/common"
 
 export enum IInterviewFilterActionTypes {
   SET_SORTING = "FILTER:INTERVIEW:SET_SORTING",
@@ -7,13 +7,12 @@ export enum IInterviewFilterActionTypes {
 }
 
 export interface IInterviewFilterState {
-  sorting: "" | string
+  sorting: InterviewSortingTypes
   admissionType: "" | ApplicationTypeId
-  scoreSorting: string
 }
 
 export interface SET_SORTING {
-  payload: string
+  payload: InterviewSortingTypes.POST_DATE_DESCENDING
   type: typeof IInterviewFilterActionTypes.SET_SORTING
 }
 

@@ -8,11 +8,16 @@ import {
 import React from "react"
 import {
   AdmissionLevelTypesId,
+  admissionOfferSortingTypes,
   AdmissionOfferTypeId,
   ApplicationTypeId,
+  gradJobOfferSortingTypes,
+  InternshipOfferSortingTypes,
   InternshipTypesId,
+  InterviewSortingTypes,
   ISelectMenuItemsType,
   JobSourceTypesId,
+  ProgrammeSortingTypes,
   SchoolSortingTypes,
   SchoolTypeId,
   YearOfStudyTypeslId
@@ -40,6 +45,11 @@ export interface IBaseSelectProps extends SelectProps, IInputContainerProps {
   items:
     | ISelectMenuItemsType<number, string>[]
     | ISelectMenuItemsType<SchoolSortingTypes, string>[]
+    | ISelectMenuItemsType<ProgrammeSortingTypes, string>[]
+    | ISelectMenuItemsType<InterviewSortingTypes, string>[]
+    | ISelectMenuItemsType<admissionOfferSortingTypes, string>[]
+    | ISelectMenuItemsType<InternshipOfferSortingTypes, string>[]
+    | ISelectMenuItemsType<gradJobOfferSortingTypes, string>[]
   equired?: boolean
   isRequired?: boolean
 }

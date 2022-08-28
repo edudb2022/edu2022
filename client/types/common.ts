@@ -189,3 +189,74 @@ export enum SchoolSortingTypes {
   RECOMMENDATION_ASCENDING = "recommendation,ASC",
   RECOMMENDATION_DESCENDING = "recommendation,DESC"
 }
+
+export enum ProgrammeSortingTypes {
+  POST_DATE_ASCENDING = "createdAt,ASC",
+  POST_DATE_DESCENDING = "createdAt,DESC",
+  ADMISSION_DATE_ASCENDING = "admissionDate,ASC",
+  ADIMSSION_DATE_DESCENDING = "admissionDate,DESC",
+  VOTE_ASCENDING = "vote,ASC",
+  VOTE_DESCENDING = "vote,DESC",
+  RECOMMENDATION_ASCENDING = "recommendation,ASC",
+  RECOMMENDATION_DESCENDING = "recommendation,DESC"
+}
+
+export enum InterviewSortingTypes {
+  POST_DATE_ASCENDING = "createdAt,ASC",
+  POST_DATE_DESCENDING = "createdAt,DESC",
+  INTERVIEW_DATE_ASCENDING = "interviewDate,ASC",
+  INTERVIEW_DATE_DESCENDING = "interviewDate,DESC",
+  VOTE_ASCENDING = "vote,ASC",
+  VOTE_DESCENDING = "vote,DESC",
+  DIFFICULTY_ASCENDING = "difficulty,ASC",
+  DIFFICULTY_DESCENDING = "difficulty,DESC",
+  BESTFIVE_ASCENDING = "bestFive,ASC",
+  BESTFIVE_DESCENDING = "bestFive,DESC",
+  BESTSIX_ASCENDING = "bestSix,ASC",
+  BESTSIX_DESCENDING = "bestSix,DESC",
+  GPA_ASCENDING = "gpa,ASC",
+  GAP_DESCENDING = "gpa,DESC"
+}
+
+export enum admissionOfferSortingTypes {
+  POST_DATE_ASCENDING = "createdAt,ASC",
+  POST_DATE_DESCENDING = "createdAt,DESC",
+  OFFER_RECEIVED_DATE_ASCENDING = "offerReceivedDate,ASC",
+  OFFER_RECEIVED_DATE_DESCENDING = "offerReceivedDate,DESC",
+  VOTE_ASCENDING = "vote,ASC",
+  VOTE_DESCENDING = "vote,DESC",
+  BESTFIVE_ASCENDING = "bestFive,ASC",
+  BESTFIVE_DESCENDING = "bestFive,DESC",
+  BESTSIX_ASCENDING = "bestSix,ASC",
+  BESTSIX_DESCENDING = "bestSix,DESC",
+  GPA_ASCENDING = "gpa,ASC",
+  GAP_DESCENDING = "gpa,DESC"
+}
+
+export enum InternshipOfferSortingTypes {
+  POST_DATE_ASCENDING = "createdAt,ASC",
+  POST_DATE_DESCENDING = "createdAt,DESC",
+  OFFER_RECEIVED_DATE_ASCENDING = "offerReceivedDate,ASC",
+  OFFER_RECEIVED_DATE_DESCENDING = "offerReceivedDate,DESC",
+  VOTE_ASCENDING = "vote,ASC",
+  VOTE_DESCENDING = "vote,DESC",
+  DIFFICULTY_ASCENDING = "difficulty,ASC",
+  DIFFICULTY_DESCENDING = "difficulty,DESC",
+  SALARY_ASCENDING = "salary,ASC",
+  SALARY_DESCENDING = "salary,DESC"
+}
+
+export enum gradJobOfferSortingTypes {
+  POST_DATE_ASCENDING = "createdAt,ASC",
+  POST_DATE_DESCENDING = "createdAt,DESC",
+  OFFER_RECEIVED_DATE_ASCENDING = "offerReceivedDate,ASC",
+  OFFER_RECEIVED_DATE_DESCENDING = "offerReceivedDate,DESC",
+  VOTE_ASCENDING = "vote,ASC",
+  VOTE_DESCENDING = "vote,DESC",
+  DIFFICULTY_ASCENDING = "difficulty,ASC",
+  DIFFICULTY_DESCENDING = "difficulty,DESC",
+  HOPE_ASCENDING = "hope,ASC",
+  HOPE_DESCENDING = "hope,DESC",
+  SALARY_ASCENDING = "salary,ASC",
+  SALARY_DESCENDING = "salary,DESC"
+}

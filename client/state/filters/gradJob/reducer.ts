@@ -1,4 +1,5 @@
 import produce from "immer"
+import { gradJobOfferSortingTypes } from "../../../types/common"
 import {
   IGradJobFilterAction,
   IGradJobFilterActionTypes,
@@ -17,7 +18,7 @@ import {
 // } from "./actions"
 
 const initialState = {
-  sorting: "",
+  sorting: gradJobOfferSortingTypes.POST_DATE_DESCENDING,
   industry: ""
 } as IGradJobFilterState
 
@@ -38,7 +39,7 @@ const gradJobFilterReducer = (
 
     case IGradJobFilterActionTypes.RESET:
       return produce(state, (draft) => {
-        draft.sorting = ""
+        draft.sorting = gradJobOfferSortingTypes.POST_DATE_DESCENDING
         draft.industry = ""
       })
     default:

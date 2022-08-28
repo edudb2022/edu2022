@@ -3,7 +3,8 @@ import React from "react"
 
 import {
   internshipTypesList,
-  jobSourceOptions
+  jobSourceOptions,
+  programmeSortingTypesList
 } from "../../../../constants/common"
 import { useAppDispatch } from "../../../../hooks/common/useAppDispatch"
 import { useAppSelector } from "../../../../hooks/common/useAppSelector"
@@ -32,7 +33,7 @@ const ProgrammeFilterInputGroup: React.FunctionComponent = () => {
         name="sorting"
         onChange={handleChange}
         selectValue={sorting}
-        items={internshipTypesList}
+        items={programmeSortingTypesList}
         inputLabel="sorting"
       />
     </BaseFilterContainer>

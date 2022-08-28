@@ -1,5 +1,6 @@
 import {
   AdmissionLevelTypesId,
+  admissionOfferSortingTypes,
   AdmissionOfferTypeId,
   ADMISSION_LEVEL_TYPE,
   ADMISSION_OFFER_TYPE,
@@ -18,7 +19,7 @@ export enum IAdmissionFilterActionTypes {
 }
 
 export interface IAdmissionFilterState {
-  sorting: "" | string
+  sorting: admissionOfferSortingTypes
   offerType: "" | AdmissionOfferTypeId
   admissionType: "" | ApplicationTypeId
   admissionLevel: "" | AdmissionLevelTypesId
@@ -26,7 +27,7 @@ export interface IAdmissionFilterState {
 }
 
 export interface SET_SORTING {
-  payload: string
+  payload: admissionOfferSortingTypes
   type: typeof IAdmissionFilterActionTypes.SET_SORTING
 }
 

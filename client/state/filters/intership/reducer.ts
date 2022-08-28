@@ -1,18 +1,13 @@
 import produce from "immer"
+import { InternshipOfferSortingTypes } from "../../../types/common"
 import {
   IIntershipFilterAction,
   IIntershipFilterActionTypes,
   IIntershipFilterState
 } from "./actions"
-// import { IIntershipState } from "./actions"
-// import {
-//   IIntershipFilterAction,
-//   IIntershipFilterActionTypes,
-//   IIntershipFilterState
-// } from "./actions"
 
 const initialState = {
-  sorting: "",
+  sorting: InternshipOfferSortingTypes.POST_DATE_DESCENDING,
   internshipType: "",
   industry: ""
 } as IIntershipFilterState
@@ -39,7 +34,7 @@ const intershipFilterReducer = (
 
     case IIntershipFilterActionTypes.RESET:
       return produce(state, (draft) => {
-        draft.sorting = ""
+        draft.sorting = InternshipOfferSortingTypes.POST_DATE_DESCENDING
         draft.internshipType = ""
         draft.industry = ""
       })

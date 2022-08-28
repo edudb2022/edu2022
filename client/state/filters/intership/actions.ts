@@ -1,4 +1,8 @@
-import { ADMISSION_TYPE, InternshipTypesId } from "../../../types/common"
+import {
+  ADMISSION_TYPE,
+  InternshipOfferSortingTypes,
+  InternshipTypesId
+} from "../../../types/common"
 
 export enum IIntershipFilterActionTypes {
   SET_SORTING = "FILTER:INTERSHIP:SET_SORTING",
@@ -8,13 +12,13 @@ export enum IIntershipFilterActionTypes {
 }
 
 export interface IIntershipFilterState {
-  sorting: "" | string
+  sorting: InternshipOfferSortingTypes
   internshipType: "" | InternshipTypesId
   industry: string
 }
 
 export interface SET_SORTING {
-  payload: string
+  payload: InternshipOfferSortingTypes
   type: typeof IIntershipFilterActionTypes.SET_SORTING
 }
 

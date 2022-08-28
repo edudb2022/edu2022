@@ -3,6 +3,7 @@ import React from "react"
 
 import {
   admissionOfferTypesList,
+  gradJobOfferSortingTypesList,
   jobSourceOptions
 } from "../../../../constants/common"
 import { useAppDispatch } from "../../../../hooks/common/useAppDispatch"
@@ -38,7 +39,7 @@ const GradJobFilterInputGroup: React.FunctionComponent = () => {
         name="sorting"
         onChange={handleChange}
         selectValue={sorting}
-        items={admissionOfferTypesList}
+        items={gradJobOfferSortingTypesList}
         inputLabel="sorting"
       />
 

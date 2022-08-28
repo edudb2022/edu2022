@@ -1,4 +1,6 @@
 import produce from "immer"
+import { admissionType } from "../../../constants/admission"
+import { admissionOfferSortingTypes } from "../../../types/common"
 import {
   IAdmissionFilterAction,
   IAdmissionFilterActionTypes,
@@ -6,7 +8,7 @@ import {
 } from "./actions"
 
 const initialState = {
-  sorting: "",
+  sorting: admissionOfferSortingTypes.POST_DATE_DESCENDING,
   offerType: "",
   admissionType: "",
   admissionLevel: "",
@@ -45,7 +47,7 @@ const admissionFilterReducer = (
 
     case IAdmissionFilterActionTypes.RESET:
       return produce(state, (draft) => {
-        draft.sorting = ""
+        draft.sorting = admissionOfferSortingTypes.POST_DATE_DESCENDING
         draft.offerType = ""
         draft.admissionType = ""
         draft.admissionLevel = ""

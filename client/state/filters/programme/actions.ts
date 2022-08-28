@@ -1,4 +1,4 @@
-import { ADMISSION_TYPE } from "../../../types/common"
+import { ADMISSION_TYPE, ProgrammeSortingTypes } from "../../../types/common"
 
 export enum IProgrammeFilterActionTypes {
   SET_SORTING = "FILTER:PROGRAMME:SET_SORTING",
@@ -6,11 +6,11 @@ export enum IProgrammeFilterActionTypes {
 }
 
 export interface IProgrammeFilterState {
-  sorting: "" | string
+  sorting: "" | ProgrammeSortingTypes
 }
 
 export interface SET_SORTING {
-  payload: string
+  payload: ProgrammeSortingTypes
   type: typeof IProgrammeFilterActionTypes.SET_SORTING
 }
 

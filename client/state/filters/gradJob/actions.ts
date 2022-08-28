@@ -1,4 +1,4 @@
-import { ADMISSION_TYPE } from "../../../types/common"
+import { ADMISSION_TYPE, gradJobOfferSortingTypes } from "../../../types/common"
 
 export enum IGradJobFilterActionTypes {
   SET_SORTING = "FILTER:GRAD_JOB:SET_SORTING",
@@ -7,12 +7,12 @@ export enum IGradJobFilterActionTypes {
 }
 
 export interface IGradJobFilterState {
-  sorting: "" | string
+  sorting: gradJobOfferSortingTypes
   industry: string
 }
 
 export interface SET_SORTING {
-  payload: string
+  payload: gradJobOfferSortingTypes
   type: typeof IGradJobFilterActionTypes.SET_SORTING
 }
 

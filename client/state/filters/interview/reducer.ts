@@ -1,4 +1,5 @@
 import produce from "immer"
+import { InterviewSortingTypes } from "../../../types/common"
 import {
   IInterviewFilterAction,
   IInterviewFilterActionTypes,
@@ -6,7 +7,7 @@ import {
 } from "./actions"
 
 const initialState = {
-  sorting: "",
+  sorting: InterviewSortingTypes.POST_DATE_DESCENDING,
   admissionType: ""
 } as IInterviewFilterState
 
@@ -27,9 +28,8 @@ const interviewFilterReducer = (
 
     case IInterviewFilterActionTypes.RESET:
       return produce(state, (draft) => {
-        draft.sorting = ""
+        draft.sorting = InterviewSortingTypes.POST_DATE_DESCENDING
         draft.admissionType = ""
-        draft.scoreSorting = ""
       })
     default:
       return state

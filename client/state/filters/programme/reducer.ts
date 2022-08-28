@@ -1,4 +1,5 @@
 import produce from "immer"
+import { ProgrammeSortingTypes } from "../../../types/common"
 import {
   IProgrammeFilterAction,
   IProgrammeFilterActionTypes,
@@ -6,7 +7,7 @@ import {
 } from "./actions"
 
 const initialState = {
-  sorting: ""
+  sorting: ProgrammeSortingTypes.POST_DATE_DESCENDING
 } as IProgrammeFilterState
 
 const programmeFilterReducer = (
@@ -21,7 +22,7 @@ const programmeFilterReducer = (
 
     case IProgrammeFilterActionTypes.RESET:
       return produce(state, (draft) => {
-        draft.sorting = ""
+        draft.sorting = ProgrammeSortingTypes.POST_DATE_DESCENDING
       })
     default:
       return state
