@@ -33,6 +33,7 @@ import {
   TitleValidationSchema
 } from "../../../utils/validation/form/schema"
 import * as yup from "yup"
+import InputHeader from "../../../components/common/header/input"
 
 const GradJobOfferFormPage: React.FunctionComponent = () => {
   const initialValues = {
@@ -55,7 +56,8 @@ const GradJobOfferFormPage: React.FunctionComponent = () => {
     jobSource: "",
     contactMethod: "",
     contactDetail: "",
-    isAnonymous: false
+    isAnonymous: false,
+    longQ: ""
   }
 
   const handleSubmit = () => {
@@ -329,12 +331,124 @@ const GradJobOfferFormPage: React.FunctionComponent = () => {
         value={formik.values.isAnonymous}
         onChange={formik.handleChange}
       />
-      <h1 className="font-black ml-6">Long Question</h1>
+      <InputHeader
+        header="詳細問題 !"
+        headerClassName="text-2xl font-black"
+        subHeader="內容愈詳盡愈能夠幫到其他人，歡迎大家寫千字文！！！"
+        subHeaderClassName="text-base"
+      />
+
       <LongQuestionsSection
-        isTouched={true}
-        errorMessages={"123"}
-        header="123"
-        minRows={5}
+        name="longQ"
+        header="對搵工難度嘅評價有冇補充？"
+        value={formik.values.longQ}
+        valueLength={formik.values.longQ.length}
+        onChange={formik.handleChange}
+        onBlur={formik.handleBlur}
+        errorMessages={formik.errors.longQ}
+        isTouched={formik.touched.longQ}
+      />
+
+      <LongQuestionsSection
+        name="longQ"
+        header="對前途評估嘅評價有冇補充？"
+        placeholder="例如career path係點，晉升機會，人工升幅等等"
+        value={formik.values.longQ}
+        valueLength={formik.values.longQ.length}
+        onChange={formik.handleChange}
+        onBlur={formik.handleBlur}
+        errorMessages={formik.errors.longQ}
+        isTouched={formik.touched.longQ}
+      />
+      <LongQuestionsSection
+        name="longQ"
+        header="面試過程係點？"
+        value={formik.values.longQ}
+        valueLength={formik.values.longQ.length}
+        onChange={formik.handleChange}
+        onBlur={formik.handleBlur}
+        errorMessages={formik.errors.longQ}
+        isTouched={formik.touched.longQ}
+      />
+
+      <LongQuestionsSection
+        name="longQ"
+        header="你點樣裝備自己去搵工？"
+        value={formik.values.longQ}
+        valueLength={formik.values.longQ.length}
+        onChange={formik.handleChange}
+        onBlur={formik.handleBlur}
+        errorMessages={formik.errors.longQ}
+        isTouched={formik.touched.longQ}
+      />
+
+      <LongQuestionsSection
+        name="longQ"
+        header="返工前有咩要準備？"
+        value={formik.values.longQ}
+        valueLength={formik.values.longQ.length}
+        onChange={formik.handleChange}
+        onBlur={formik.handleBlur}
+        errorMessages={formik.errors.longQ}
+        isTouched={formik.touched.longQ}
+      />
+
+      <LongQuestionsSection
+        name="longQ"
+        header="工作環境點樣？"
+        placeholder="例如設施，福利，地點，伙食，管理層"
+        value={formik.values.longQ}
+        valueLength={formik.values.longQ.length}
+        onChange={formik.handleChange}
+        onBlur={formik.handleBlur}
+        errorMessages={formik.errors.longQ}
+        isTouched={formik.touched.longQ}
+      />
+
+      <LongQuestionsSection
+        name="longQ"
+        header="工作文化點樣？"
+        placeholder="例如OT程度，語言，同事，氣氛"
+        value={formik.values.longQ}
+        valueLength={formik.values.longQ.length}
+        onChange={formik.handleChange}
+        onBlur={formik.handleBlur}
+        errorMessages={formik.errors.longQ}
+        isTouched={formik.touched.longQ}
+      />
+
+      <LongQuestionsSection
+        name="longQ"
+        header="點解會揀呢間公司？"
+        placeholder="優點?缺點？對比其他offer？"
+        value={formik.values.longQ}
+        valueLength={formik.values.longQ.length}
+        onChange={formik.handleChange}
+        onBlur={formik.handleBlur}
+        errorMessages={formik.errors.longQ}
+        isTouched={formik.touched.longQ}
+      />
+
+      <LongQuestionsSection
+        name="longQ"
+        header="對師弟師妹嘅忠告？"
+        value={formik.values.longQ}
+        valueLength={formik.values.longQ.length}
+        onChange={formik.handleChange}
+        onBlur={formik.handleBlur}
+        errorMessages={formik.errors.longQ}
+        isTouched={formik.touched.longQ}
+      />
+
+      <LongQuestionsSection
+        name="longQ"
+        header="最後補充?"
+        value={formik.values.longQ}
+        valueLength={formik.values.longQ.length}
+        onChange={formik.handleChange}
+        onBlur={formik.handleBlur}
+        errorMessages={formik.errors.longQ}
+        isTouched={formik.touched.longQ}
       />
     </FormPageLayout>
   )

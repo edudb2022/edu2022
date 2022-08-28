@@ -33,6 +33,7 @@ import {
   academicStatusTypesList,
   schoolTypesList
 } from "../../../constants/common"
+import InputHeader from "../../../components/common/header/input"
 
 const ProgrammeReviewFormPage: React.FunctionComponent = () => {
   const initialValues = {
@@ -293,10 +294,105 @@ const ProgrammeReviewFormPage: React.FunctionComponent = () => {
         onChange={formik.handleChange}
       />
 
-      <h1 className="font-black ml-6">Long Question</h1>
+      <InputHeader
+        header="詳細問題 !"
+        headerClassName="text-2xl font-black"
+        subHeader="內容愈詳盡愈能夠幫到其他人，歡迎大家寫千字文！！！"
+        subHeaderClassName="text-base"
+      />
       <LongQuestionsSection
         name="longQ"
-        header="HWta doasdasdoin thabtp oandiosanidoans"
+        header="對課程結構嘅評價有冇補充？"
+        value={formik.values.longQ}
+        valueLength={formik.values.longQ.length}
+        onChange={formik.handleChange}
+        onBlur={formik.handleBlur}
+        errorMessages={formik.errors.longQ}
+        isTouched={formik.touched.longQ}
+      />
+
+      <LongQuestionsSection
+        name="longQ"
+        header="對爛龜(Grade)指數嘅評價有冇補充？"
+        value={formik.values.longQ}
+        valueLength={formik.values.longQ.length}
+        onChange={formik.handleChange}
+        onBlur={formik.handleBlur}
+        errorMessages={formik.errors.longQ}
+        isTouched={formik.touched.longQ}
+      />
+
+      <LongQuestionsSection
+        name="longQ"
+        header="對爆肝指數嘅評價有冇補充？"
+        value={formik.values.longQ}
+        valueLength={formik.values.longQ.length}
+        onChange={formik.handleChange}
+        onBlur={formik.handleBlur}
+        errorMessages={formik.errors.longQ}
+        isTouched={formik.touched.longQ}
+      />
+
+      <LongQuestionsSection
+        name="longQ"
+        header="對學習經歷嘅評價有冇補充？"
+        value={formik.values.longQ}
+        valueLength={formik.values.longQ.length}
+        onChange={formik.handleChange}
+        onBlur={formik.handleBlur}
+        errorMessages={formik.errors.longQ}
+        isTouched={formik.touched.longQ}
+      />
+
+      <LongQuestionsSection
+        name="longQ"
+        header="對資源嘅評價有冇補充？"
+        value={formik.values.longQ}
+        valueLength={formik.values.longQ.length}
+        onChange={formik.handleChange}
+        onBlur={formik.handleBlur}
+        errorMessages={formik.errors.longQ}
+        isTouched={formik.touched.longQ}
+      />
+
+      <LongQuestionsSection
+        name="longQ"
+        header="有咩想同學系主任反映？"
+        value={formik.values.longQ}
+        valueLength={formik.values.longQ.length}
+        onChange={formik.handleChange}
+        onBlur={formik.handleBlur}
+        errorMessages={formik.errors.longQ}
+        isTouched={formik.touched.longQ}
+      />
+
+      <LongQuestionsSection
+        name="longQ"
+        header="喺到讀書，你快樂嗎？"
+        value={formik.values.longQ}
+        valueLength={formik.values.longQ.length}
+        onChange={formik.handleChange}
+        onBlur={formik.handleBlur}
+        errorMessages={formik.errors.longQ}
+        isTouched={formik.touched.longQ}
+      />
+
+      <LongQuestionsSection
+        name="longQ"
+        header="對後人嘅忠告？"
+        placeholder="例如:入學準備/選課策略"
+        value={formik.values.longQ}
+        valueLength={formik.values.longQ.length}
+        onChange={formik.handleChange}
+        onBlur={formik.handleBlur}
+        errorMessages={formik.errors.longQ}
+        isTouched={formik.touched.longQ}
+      />
+
+      <LongQuestionsSection
+        name="longQ"
+        header="最後補充?"
+        placeholder={``}
         value={formik.values.longQ}
         valueLength={formik.values.longQ.length}
         onChange={formik.handleChange}

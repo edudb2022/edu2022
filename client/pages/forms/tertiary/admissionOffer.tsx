@@ -598,10 +598,40 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
         value={formik.values.isAnonymous}
         onChange={formik.handleChange}
       />
-      <h1 className="font-black ml-6">Long Question</h1>
+      <InputHeader
+        header="詳細問題 !"
+        headerClassName="text-2xl font-black"
+        subHeader="內容愈詳盡愈能夠幫到其他人，歡迎大家寫千字文！！！"
+        subHeaderClassName="text-base"
+      />
+
       <LongQuestionsSection
         name="longQ"
-        header="HWta doasdasdoin thabtp oandiosanidoans"
+        header="點解會揀呢間學校？"
+        placeholder="優點?缺點？對比其他offer？"
+        value={formik.values.longQ}
+        valueLength={formik.values.longQ.length}
+        onChange={formik.handleChange}
+        onBlur={formik.handleBlur}
+        errorMessages={formik.errors.longQ}
+        isTouched={formik.touched.longQ}
+      />
+
+      <LongQuestionsSection
+        name="longQ"
+        header="點解會揀呢科？"
+        placeholder="優點?缺點？對比其他offer？"
+        value={formik.values.longQ}
+        valueLength={formik.values.longQ.length}
+        onChange={formik.handleChange}
+        onBlur={formik.handleBlur}
+        errorMessages={formik.errors.longQ}
+        isTouched={formik.touched.longQ}
+      />
+
+      <LongQuestionsSection
+        name="longQ"
+        header="最後補充?"
         value={formik.values.longQ}
         valueLength={formik.values.longQ.length}
         onChange={formik.handleChange}
