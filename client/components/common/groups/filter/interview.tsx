@@ -38,7 +38,7 @@ const InterviewFilterInputGroup: React.FunctionComponent = () => {
         onChange={handleChange}
         selectValue={sorting}
         items={interviewSortingTypesList}
-        inputLabel="sorting"
+        inputLabel="排序"
       />
 
       <BaseSelect
@@ -46,7 +46,7 @@ const InterviewFilterInputGroup: React.FunctionComponent = () => {
         onChange={handleChange}
         selectValue={admissionType}
         items={applicationTypesList}
-        inputLabel="admissionType"
+        inputLabel="入學類型"
       />
     </BaseFilterContainer>
   )

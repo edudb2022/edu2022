@@ -50,21 +50,21 @@ const InternshipFilterInputGroup: React.FunctionComponent = () => {
         onChange={handleChange}
         selectValue={sorting}
         items={intershipOfferSortingTypesList}
-        inputLabel="sorting"
+        inputLabel="排序"
       />
       <BaseSelect
         name="intershipType"
         onChange={handleChange}
         selectValue={internshipType}
         items={internshipTypesList}
-        inputLabel="internshipType"
+        inputLabel="實習類型"
       />
       <BaseSelect
         name="industry"
         onChange={handleChange}
         selectValue={industry}
         items={internshipTypesList}
-        inputLabel="industry"
+        inputLabel="行業"
       />
     </BaseFilterContainer>
   )

@@ -18,7 +18,7 @@ const BaseTag: React.FunctionComponent<IBaseTagProps> = ({
   titleClassName
 }) => {
   return (
-    <div className={`flex flex-col w-fit items-center rounded-2xl `}>
+    <div className={`flex flex-col w-fit items-center rounded-2xl`}>
       {header && <p className="text-mb text-gray-400 mb-0 ">{header}</p>}
       <div className={` flex flex-row items-center rounded-2xl ${className}`}>
         {rating! >= 0 && (

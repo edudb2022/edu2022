@@ -34,7 +34,7 @@ const ProgrammeFilterInputGroup: React.FunctionComponent = () => {
         onChange={handleChange}
         selectValue={sorting}
         items={programmeSortingTypesList}
-        inputLabel="sorting"
+        inputLabel="排序"
       />
     </BaseFilterContainer>
   )

@@ -12,7 +12,7 @@ import {
   schoolPolicyRating,
   shcoolCafeteriaRating,
   schoolSelfOfBelongingRating,
-  schoolOverallRating
+  schoolRecommendRating
 } from "../../../constants/rating"
 import SchoolTypeSelect from "../../../components/common/inputs/select/schoolType"
 import { ContactSelect } from "../../../components/common/inputs/select/contact"
@@ -216,7 +216,7 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
           id="recommendation"
           value={formik.values.recommendation}
           onChange={formik.handleChange}
-          ratingTitle={schoolOverallRating}
+          ratingTitle={schoolRecommendRating}
           onBlur={formik.handleBlur}
           errorMessages={formik.errors.recommendation}
           isTouched={formik.touched.recommendation}

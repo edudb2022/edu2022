@@ -64,13 +64,13 @@ export const schoolSelfOfBelongingRating: IRating[] = [
   { value: "6", label: "極強烈" }
 ]
 
-export const schoolOverallRating: IRating[] = [
-  { value: "1", label: "垃圾學校" },
+export const schoolRecommendRating: IRating[] = [
+  { value: "1", label: "讀咗會後悔" },
   { value: "2", label: "好差" },
   { value: "3", label: "普通" },
   { value: "4", label: "幾好嘅" },
-  { value: "5", label: "大致不錯" },
-  { value: "6", label: "極好" }
+  { value: "5", label: "幾推薦" },
+  { value: "6", label: "極度推薦" }
 ]
 
 //programme

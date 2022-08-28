@@ -36,7 +36,7 @@ const SchoolFilterInputGroup: React.FunctionComponent = () => {
         onChange={handleChange}
         selectValue={sorting}
         items={schoolSortingTypesList}
-        inputLabel="sorting"
+        inputLabel="排序"
       />
     </BaseFilterContainer>
   )

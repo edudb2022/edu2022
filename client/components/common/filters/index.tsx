@@ -20,7 +20,7 @@ const BaseFilter: React.FunctionComponent<
     >
       {children}
       <BaseButton className="test-xs text-gray-500 font-thin" onClick={onClick}>
-        reset
+        重設
       </BaseButton>
       {isMobile ? (
         <></>
@@ -29,7 +29,7 @@ const BaseFilter: React.FunctionComponent<
           onClick={onSearch}
           className="border-2 rounded-3xl hover:animate-borderGrayDeep"
         >
-          Search
+          搜尋
         </BaseButton>
       )}
     </div>

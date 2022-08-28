@@ -20,7 +20,7 @@ const ProgrammeReviewDetailCard: React.FunctionComponent<
       <Link href={`/reviewDetail/tertiary/programme/${id}`}>
         <a>
           <div className="flex flex-col-reverse md:flex-row h-full items-center justify-around gap-x-4">
-            <ReviewTextItem detail={admissionDate} title="Admission Date" />
+            <ReviewTextItem detail={admissionDate} title="入學日期" />
             <RatingTag rating={2} title={`${label}`} header="推薦指數" />
           </div>
         </a>

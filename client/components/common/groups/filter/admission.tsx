@@ -62,21 +62,21 @@ const AdmissionFilterInputGroup: React.FunctionComponent = () => {
         onChange={handleChange}
         selectValue={sorting}
         items={admissionOfferSortingTypesList}
-        inputLabel="sorting"
+        inputLabel="排序"
       />
       <BaseSelect
         name="offerType"
         onChange={handleChange}
         selectValue={offerType}
         items={admissionOfferTypesList}
-        inputLabel="offerType"
+        inputLabel="offer類型"
       />
       <BaseSelect
         name="admissionType"
         onChange={handleChange}
         selectValue={admissionType}
         items={applicationTypesList}
-        inputLabel="admissionType"
+        inputLabel="入學類型"
       />
 
       <BaseSelect
@@ -84,7 +84,7 @@ const AdmissionFilterInputGroup: React.FunctionComponent = () => {
         onChange={handleChange}
         selectValue={admissionLevel}
         items={admissionLevelTypesList}
-        inputLabel="admissionLevel"
+        inputLabel="入學年級"
       />
 
       <BaseSelect
@@ -92,7 +92,7 @@ const AdmissionFilterInputGroup: React.FunctionComponent = () => {
         onChange={handleChange}
         selectValue={yearOfStudy}
         items={yearOfStudyTypesList}
-        inputLabel="yearOfStudy"
+        inputLabel="現時學業年級"
       />
     </BaseFilterContainer>
   )

@@ -60,7 +60,7 @@ const IntershipReviewPage: NextPage = () => {
                 />
               </h1>
             </div>
-            <RatingTag title="diffcukty" rating={3} header="搵工難度" />
+            <RatingLargeTag title="diffcukty" rating={3} header="搵工難度" />
           </div>
         </div>
       </ReviewHeaderContainer>

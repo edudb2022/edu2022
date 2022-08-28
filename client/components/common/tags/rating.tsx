@@ -5,6 +5,7 @@ export interface IRantingTagProps extends IBaseTagProps {
   title: string
   rating: number
   header?: string
+  headerClassName?: string
 }
 
 export const ratingTextAndBackgroundColor = [
@@ -31,13 +32,16 @@ const RatingTag: React.FunctionComponent<IRantingTagProps> = ({
   ratingClassName,
   header,
   titleClassName,
+  headerClassName,
   ...props
 }) => {
   const ROUNDED_OFF_RATING = Math.round(rating)
 
   return (
     <div className="flex flex-col justify-center items-center">
-      <p className="text-mb text-gray-400 mb-0">{header}</p>
+      <p className={`text-mb text-gray-400 mb-0 ${headerClassName}`}>
+        {header}
+      </p>
       <BaseTag
         title={title}
         rating={rating}

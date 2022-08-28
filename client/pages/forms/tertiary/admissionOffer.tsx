@@ -44,7 +44,8 @@ import {
   admissionOfferTypesList,
   applicationTypesList,
   DSEJupasChoicePriorityTypesList,
-  schoolTypesList
+  schoolTypesList,
+  yearOfStudyTypesList
 } from "../../../constants/common"
 
 const AdmissionOfferFormPage: React.FunctionComponent = () => {
@@ -60,6 +61,7 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
     currentSchool: "",
     currentFaculty: "",
     currentProgramme: "",
+    yearofStudy: "",
     offerType: "",
     jupasBanding: "",
     admissionType: "",
@@ -235,7 +237,7 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
         />
       </div>
       <InputContainer header="最近的教育程度/狀態">
-        <div className="grid md:grid-cols-4 md:gap-x-9  gap-y-2 mt-2">
+        <div className="grid md:grid-cols-5 md:gap-x-9  gap-y-2 mt-2">
           <BaseSelect
             items={schoolTypesList}
             name="currentSchoolType"
@@ -286,8 +288,22 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
             isTouched={formik.touched.currentProgramme}
             isRequired
           />
+
+          <BaseSelect
+            name="yearofStudy"
+            items={yearOfStudyTypesList}
+            selectId="yearofStudy"
+            inputLabel=" 現時學業年級"
+            selectValue={formik.values.yearofStudy}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            errorMessages={formik.errors.yearofStudy}
+            isTouched={formik.touched.yearofStudy}
+            isRequired
+          />
         </div>
       </InputContainer>
+
       <div className="grid md:grid-cols-4 md:gap-x-9   gap-y-2">
         <div className="grid md:col-span-2">
           <TitleTextInput

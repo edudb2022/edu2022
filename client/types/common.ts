@@ -20,8 +20,8 @@ export enum SCHOOL_TYPE {
 }
 
 export enum ADMISSION_TYPE {
-  JUPAS = "jupas",
-  NON_JUPAS = "non-jupas",
+  JUPAS = "Jupas",
+  NON_JUPAS = "Non-jupas",
   BACHELOR = "Bachelor"
 }
 

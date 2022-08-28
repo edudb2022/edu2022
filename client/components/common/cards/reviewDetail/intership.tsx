@@ -25,7 +25,7 @@ const IntershipReviewDetailCard: React.FunctionComponent<
           <div className="flex flex-row justify-around items-center  mt-2 md:mt-0">
             <ReviewTextItem detail={offerDate} title="offer日期" />
             <ReviewTextItem detail={"課程評價"} title="行業" />
-            <ReviewTextItem detail={"123"} title="title" />
+            <ReviewTextItem detail={"123"} title="職位名稱" />
             <ReviewNumberItem detail={salary} title="月薪" />
 
             <div className="flex flex-col justify-center items-center md:flex-row text-xs md:text-base gap-x-12">

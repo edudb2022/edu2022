@@ -10,6 +10,7 @@ const RatingLargeTag: React.FunctionComponent<IRatingLargeTagProps> = ({
     <RatingTag
       className={"text-xl md:text-2xl"}
       titleClassName={"md:text-xl"}
+      headerClassName="text-lg font-medium"
       {...props}
     />
   )

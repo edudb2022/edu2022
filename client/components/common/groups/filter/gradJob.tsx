@@ -40,7 +40,7 @@ const GradJobFilterInputGroup: React.FunctionComponent = () => {
         onChange={handleChange}
         selectValue={sorting}
         items={gradJobOfferSortingTypesList}
-        inputLabel="sorting"
+        inputLabel="排序"
       />
 
       <BaseSelect
@@ -48,7 +48,7 @@ const GradJobFilterInputGroup: React.FunctionComponent = () => {
         onChange={handleChange}
         selectValue={industry}
         items={admissionOfferTypesList}
-        inputLabel="industry"
+        inputLabel="行業"
       />
     </BaseFilterContainer>
   )
