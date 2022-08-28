@@ -108,8 +108,8 @@ const jobSourceTypesList = [
   { value: JobSourceTypesId.JOBSDB, title: "JobsDb" },
   { value: JobSourceTypesId.COMPANY_WEBSITE, title: "該公司網站" },
   {
-    value: JobSourceTypesId.UNIVERSITY_CAREER_CENTER,
-    title: "University Career Centre"
+    value: JobSourceTypesId.UNIVERSITY,
+    title: "大學"
   },
   { value: JobSourceTypesId.FRIENDS, title: "朋友介紹" },
   { value: JobSourceTypesId.OTHER, title: "其他" }
