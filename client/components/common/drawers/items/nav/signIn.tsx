@@ -1,14 +1,24 @@
 import React from "react"
 import BaseNavDraweritem, { IBaseNavDrawerItemProps } from "."
-import { AiFillAlipayCircle } from "react-icons/ai"
-import { ImPacman } from "react-icons/im"
+import { STRedirectToSignIn } from "../../../../../service/supertoken/function"
+import LogInIcon from "../../../icons/logIn"
 
 interface IDrawerSignInProps extends Partial<IBaseNavDrawerItemProps> {}
 
 const NavDrawerSignInitem: React.FunctionComponent<IDrawerSignInProps> = ({
   ...props
 }) => {
-  return <BaseNavDraweritem title="Sign In" icon={<ImPacman />} {...props} />
+  const hanldeClick = () => {
+    STRedirectToSignIn()
+  }
+  return (
+    <BaseNavDraweritem
+      title="Sign In"
+      icon={<LogInIcon />}
+      handleClick={hanldeClick}
+      {...props}
+    />
+  )
 }
 
 export default NavDrawerSignInitem
