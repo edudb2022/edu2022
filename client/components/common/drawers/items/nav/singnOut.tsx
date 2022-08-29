@@ -11,14 +11,16 @@ const NavDrawerSignOutitem: React.FunctionComponent<
   INavDrawerSignOutitemProps
 > = ({ ...props }) => {
   const dispatch = useAppDispatch()
+
+  const handleSignOut = async () => {
+    await STSignOut()
+    dispatch({ type: IUserActionTypes.USER_SIGN_OUT })
+  }
   return (
     <BaseNavDraweritem
       icon={<LogOutIcon />}
       title="sign out"
-      handleClick={async () => {
-        await STSignOut()
-        dispatch({ type: IUserActionTypes.USER_SIGN_OUT })
-      }}
+      handleClick={handleSignOut}
       {...props}
     >
       Sign Out

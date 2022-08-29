@@ -8,11 +8,14 @@ interface IDrawerSignUpProps extends Partial<IBaseNavDrawerItemProps> {}
 const NavDrawerSignUpitem: React.FunctionComponent<IDrawerSignUpProps> = ({
   ...props
 }) => {
+  const hanldeClick = () => {
+    STRedirectToSignUp()
+  }
   return (
     <BaseNavDraweritem
       title="Sign Up"
       icon={<SignUpIcon />}
-      handleClick={() => STRedirectToSignUp()}
+      handleClick={hanldeClick}
       {...props}
     />
   )

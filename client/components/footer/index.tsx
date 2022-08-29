@@ -1,12 +1,12 @@
 import Link from "next/link"
 import React from "react"
 import DiscordIcon from "../common/icons/discord"
-import FBIcon from "../common/icons/FB"
-import IGIcon from "../common/icons/IG"
+import FaceBookIcon from "../common/icons/facebook"
+import InstagramIcon from "../common/icons/instagram"
 
 const Footer: React.FunctionComponent = () => {
   return (
-    <footer className="border-2 w-full bg-theme-two-500 p-6">
+    <footer className="w-full bg-theme-two-500 p-6">
       <div
         id="footer-upper"
         className="md:container md:mx-auto w-full py-4 flex flex-col sm:flex-row"
@@ -15,7 +15,7 @@ const Footer: React.FunctionComponent = () => {
           Icon
           <p>
             This is a place for self introduction. Maybe Slogan. Maybe some on9
-            stuff. This is a place for self introduction. Maybe Slogan.{" "}
+            stuff. This is a place for self introduction. Maybe Slogan.
           </p>
         </div>
         <div className="w-full sm:w-3/5 flex flex-col sm:flex-row justify-end">
@@ -59,12 +59,12 @@ const Footer: React.FunctionComponent = () => {
             <div className="w-24 sm:w-3/4 flex justify-between mt-3">
               <Link href={"http://www.facebook.com"}>
                 <a className="text-3xl">
-                  <FBIcon />
+                  <FaceBookIcon />
                 </a>
               </Link>
               <Link href={"http://www.instagram.com"}>
                 <a className="text-3xl">
-                  <IGIcon />
+                  <InstagramIcon />
                 </a>
               </Link>
               <Link href={"http://www.discord.com"}>

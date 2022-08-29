@@ -1,8 +1,8 @@
 import React from "react"
 import { FaInstagram } from "react-icons/fa"
 
-const IGIcon: React.FunctionComponent = () => {
+const InstagramIcon: React.FunctionComponent = () => {
   return <FaInstagram />
 }
 
-export default IGIcon
+export default InstagramIcon

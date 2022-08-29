@@ -23,13 +23,15 @@ const NavDrawer: React.FunctionComponent<INavDrawer> = ({
     <BaseDrawer anchor="right" open={isOpen} onClose={onClose}>
       <div className="w-full p-4">
         <h2 className="mb-3">Icon</h2>
-        <div className="w-60">
-          {isLogin ? (
+        <div className="w-36">
+          {isLogin && (
             <div>
               <NavDrawerProfileItem />
               <NavDrawerSignOutitem />
             </div>
-          ) : (
+          )}
+
+          {!isLogin && (
             <div>
               <NavDrawerSignInitem />
               <NavDrawerSignUpitem />
