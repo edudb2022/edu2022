@@ -113,6 +113,7 @@ const Home: NextPage = (props) => {
 
       <CardDisplayLayout>
         {list.map((data) => {
+          //need refactor no inline defination
           const title =
             schoolTypesList.find((ele) => ele.value === data.schoolTypeId)
               ?.title ?? ""

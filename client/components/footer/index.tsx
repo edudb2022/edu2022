@@ -6,7 +6,7 @@ import InstagramIcon from "../common/icons/instagram"
 
 const Footer: React.FunctionComponent = () => {
   return (
-    <footer className="w-full bg-theme-two-500 p-6">
+    <footer className=" w-full bg-theme-two-500 p-6">
       <div
         id="footer-upper"
         className="md:container md:mx-auto w-full py-4 flex flex-col sm:flex-row"

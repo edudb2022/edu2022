@@ -13,7 +13,7 @@ const PageLayout: React.FunctionComponent<
   //   router.pathname === "/" ? "bg-theme-two-500" : "bg-white"
   // }`}
   return (
-    <div className={`flex justify-center w-full  bg-white`}>
+    <div className={`flex justify-center w-full h-screen bg-white`}>
       <div className="w-full md:w-9/10">{children}</div>
     </div>
   )
