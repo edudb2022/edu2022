@@ -1,7 +1,7 @@
 import { Grid } from "@mui/material"
 import { useFormik } from "formik"
 import moment from "moment"
-import React from "react"
+import React, { useMemo, useState } from "react"
 import FormSumitButton from "../../../components/common/buttons/formSubmit"
 import CommonToggleButtonGroup from "../../../components/common/groups/toggleButton/common"
 import RatingToggleButtonGroup from "../../../components/common/groups/toggleButton/rating"
@@ -33,7 +33,7 @@ import {
   TitleValidationSchema
 } from "../../../utils/validation/form/schema"
 import { ERROR_FORM_MESSAGES } from "../../../utils/validation/errorMessages/form"
-import { ADMISSION_TYPE } from "../../../types/common"
+import { ADMISSION_TYPE, DSEGradeTypesId } from "../../../types/common"
 
 import { ISystemActionTypes } from "../../../state/system/actions"
 import InputHeader from "../../../components/common/header/input"
@@ -47,6 +47,8 @@ import {
   schoolTypesList,
   yearOfStudyTypesList
 } from "../../../constants/common"
+import { DSE_GRADE_TO_SOCRE_MAPPER } from "../../../mappers/dseGrade"
+import { CommonHelpers } from "../../../helpers"
 
 const AdmissionOfferFormPage: React.FunctionComponent = () => {
   const dispatch = useAppDispatch()
@@ -68,17 +70,17 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
     admissionLevel: "",
     gpa: null,
     desSubjectOne: "",
-    desSubjectGradeOne: "",
+    desSubjectGradeOne: null,
     desSubjectTwo: "",
-    desSubjectGradeTwo: "",
+    desSubjectGradeTwo: null,
     desSubjectThree: "",
-    desSubjectGradeThree: "",
+    desSubjectGradeThree: null,
     desSubjectFour: "",
-    desSubjectGradeFour: "",
+    desSubjectGradeFour: null,
     desSubjectFive: "",
-    desSubjectGradeFive: "",
+    desSubjectGradeFive: null,
     desSubjectSix: "",
-    desSubjectGradeSix: "",
+    desSubjectGradeSix: null,
     contactMethod: "",
     contactDetail: "",
     isAnonymous: false,
@@ -177,6 +179,56 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
     }
   }, [formik.values.admissionType])
 
+  // console.log("res", DSEGradeTypesId.)
+  // const { bestFive, bestSix } = useDesGrade([
+  //   formik.values.desSubjectGradeOne,
+  //   formik.values.desSubjectGradeTwo,
+  //   formik.values.desSubjectGradeThree,
+  //   formik.values.desSubjectGradeFour,
+  //   formik.values.desSubjectGradeFive,
+  //   formik.values.desSubjectGradeSix
+  // ])
+  const gradeMeta = [
+    formik.values.desSubjectGradeOne,
+    formik.values.desSubjectGradeTwo,
+    formik.values.desSubjectGradeThree,
+    formik.values.desSubjectGradeFour,
+    formik.values.desSubjectGradeFive,
+    formik.values.desSubjectGradeSix
+  ]
+  // useMemo(() => {
+
+  // }, [])
+  const [bestFive, setBestFive] = useState(0)
+  const [bestSix, setBestSix] = useState<number | "/">(0)
+
+  useEffect(() => {
+    const res = CommonHelpers.DseGradeToScore([
+      formik.values.desSubjectGradeOne,
+      formik.values.desSubjectGradeTwo,
+      formik.values.desSubjectGradeThree,
+      formik.values.desSubjectGradeFour,
+      formik.values.desSubjectGradeFive,
+      formik.values.desSubjectGradeSix
+    ])
+
+    setBestFive(res.bestFiveScore)
+    setBestSix(res.bestSixScore)
+    // if (res.bestSixScore !== -1) {
+    //   setBestSix(res.bestSixScore)
+    // } else {
+    //   setBestSix("/")
+    // }
+  }, [
+    formik.values.desSubjectGradeOne,
+    formik.values.desSubjectGradeTwo,
+    formik.values.desSubjectGradeThree,
+    formik.values.desSubjectGradeFour,
+    formik.values.desSubjectGradeFive,
+    formik.values.desSubjectGradeSix
+  ])
+
+  console.log(123, bestFive, bestSix)
   return (
     <FormPageLayout
       title="入學情報"
@@ -413,8 +465,8 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
           subHeader="Please at least enter best 5 subjects"
         />
         <div>
-          <p className="text-md font-bold">{"Best 5: 34"}</p>
-          <p className="text-md font-bold">{"Best 6: 32"}</p>
+          <p className="text-md font-bold">{`Best 5: ${bestFive}`}</p>
+          <p className="text-md font-bold">{`Best 6: ${bestSix}`}</p>
         </div>
       </div>
 

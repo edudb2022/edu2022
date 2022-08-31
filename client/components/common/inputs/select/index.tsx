@@ -31,6 +31,7 @@ export interface IBaseSelectProps extends SelectProps, IInputContainerProps {
   selectLabel?: string
   selectClassName?: string
   selectValue:
+    | null
     | string
     | SchoolTypeId
     | JobSourceTypesId
