@@ -24,28 +24,30 @@ const InterviewReviewDetailCard: React.FunctionComponent<
     <BaseReviewDetailCard {...props}>
       <Link href={`/reviewDetail/tertiary/interview/${id}`}>
         <a>
-          <div className="flex flex-row justify-around items-center">
-            <ReviewTextItem detail={interviewDate} title="面試日期" />
+          <div className="w-full flex flex-row justify-around">
+            <ReviewTextItem
+              detail={interviewDate}
+              title="面試日期"
+              className="text-sm"
+            />
             <ReviewNumberItem detail={23} title={SCORE_TYPE.BEST_FIVE} />
             <ReviewNumberItem detail={23} title={SCORE_TYPE.BEST_SIX} />
             <ReviewNumberItem detail={3.3} title={SCORE_TYPE.GPA} />
+            {/* 
+            <div className="hidden md:grid md:col-span-2">
+              <RatingTag
+                rating={4}
+                title={InterviewDifficultyRating[2].label}
+                header="面試體驗"
+              />
+            </div> */}
 
-            {/* <div className="flex flex-col justify-center items-center"> */}
-            <div className="flex flex-col md:flex-row md:text-md gap-x-2 justify-center items-center">
-              <div className="flex  gap-x-2">
-                <RatingTag
-                  rating={3.1}
-                  title={programmeGpaRating[4].label}
-                  header="面試難度"
-                />
-                <div className="hidden md:flex">
-                  <RatingTag
-                    rating={4}
-                    title={InterviewDifficultyRating[2].label}
-                    header="面試體驗"
-                  />
-                </div>
-              </div>
+            <div>
+              <RatingTag
+                rating={3.1}
+                title={programmeGpaRating[4].label}
+                header="面試難度"
+              />
 
               <TextTag
                 title={ADMISSION_TYPE.NON_JUPAS}
@@ -53,10 +55,6 @@ const InterviewReviewDetailCard: React.FunctionComponent<
                 header="類型"
               />
             </div>
-            {/* <TextTag title={ADMISSION_TYPE.NON_JUPAS} type="admission" /> */}
-            {/* </div> */}
-            {/* <ReviewTextItem detail={"123"} title="面試難度" /> */}
-            {/* <ReviewTextItem detail={"123"} title="exp" /> */}
           </div>
         </a>
       </Link>
