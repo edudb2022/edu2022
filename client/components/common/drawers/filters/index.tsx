@@ -17,7 +17,7 @@ const BaseFilterDrawer: React.FunctionComponent<
         {children}
       </div>
 
-      <StickyBottomButton onClick={onSearchClick} title="Search" />
+      <StickyBottomButton onClick={onSearchClick} title="搜尋" />
     </BaseDrawer>
   )
 }

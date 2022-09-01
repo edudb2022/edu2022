@@ -2,6 +2,7 @@ import Link from "next/link"
 import React from "react"
 import { useRouter } from "next/router"
 import { BsFillPencilFill } from "react-icons/bs"
+import PencilIcon from "../icons/Pencil"
 
 const formRoutes = [
   {
@@ -46,7 +47,7 @@ const HeaderBar: React.FunctionComponent = () => {
                     : "text-black"
                 }`}
               >
-                <BsFillPencilFill /> {data.title}
+                <PencilIcon /> {data.title}
               </a>
             </Link>
           </React.Fragment>

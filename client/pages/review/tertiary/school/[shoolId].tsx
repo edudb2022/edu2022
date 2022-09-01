@@ -87,7 +87,7 @@ const SchoolReviewPage = () => {
         <StickyBottomButton
           onClick={handleMobileFilterOpen}
           className="md:hidden"
-          title="filter"
+          title="篩選"
         />
       </div>
     </PageLayout>

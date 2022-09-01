@@ -84,7 +84,7 @@ const ProgrammeReviewPage: NextPage = () => {
       <StickyBottomButton
         onClick={handleMobileFilterOpen}
         className="md:hidden"
-        title="filter"
+        title="篩選"
       />
     </PageLayout>
   )
