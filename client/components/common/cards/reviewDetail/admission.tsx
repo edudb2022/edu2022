@@ -10,11 +10,13 @@ import {
 } from "../../../../types/common"
 import TextTag from "../../tags/text"
 import ReviewNumberItem from "../../display/items/number"
+import ReviewTextItem from "../../display/items/text"
 
 interface IAdmissionOfferReviewDetailCardProps
   extends IBaseReviewDetailCardProps {
   label: string
   id: ID
+  offerReceivedDate: string
   className?: string
   jupasBestFiveValue: number
   jupasBestSixValue: number
@@ -29,6 +31,7 @@ const AdmissionOfferReviewDetailCard: React.FunctionComponent<
   nonJupasBestGpaValue,
   className,
   id,
+  offerReceivedDate,
   ...props
 }) => {
   return (
@@ -37,6 +40,7 @@ const AdmissionOfferReviewDetailCard: React.FunctionComponent<
         <a>
           <div className="flex md:flex-col w-full h-full justify-evenly ">
             <div className="flex flex-row justify-around  items-center w-full">
+              <ReviewTextItem detail={offerReceivedDate} title="Offer date" />
               <ReviewNumberItem detail={23} title={SCORE_TYPE.BEST_FIVE} />
               <ReviewNumberItem detail={23} title={SCORE_TYPE.BEST_SIX} />
               <ReviewNumberItem detail={3.3} title={SCORE_TYPE.GPA} />

@@ -65,6 +65,7 @@ const AdmissionOfferReviewPage: NextPage = () => {
             label="23"
             id="23"
             isStudent={true}
+            offerReceivedDate="20/23"
           />
           <AdmissionOfferReviewDetailCard
             jupasBestFiveValue={23}
@@ -75,6 +76,7 @@ const AdmissionOfferReviewPage: NextPage = () => {
             label="23"
             id="23"
             isStudent={true}
+            offerReceivedDate="20/23"
           />
           <AdmissionOfferReviewDetailCard
             jupasBestFiveValue={23}
@@ -84,6 +86,7 @@ const AdmissionOfferReviewPage: NextPage = () => {
             score={23}
             label="23"
             id="23"
+            offerReceivedDate="20/23"
             isStudent={true}
           />
         </DetailedCardDetailLayout>
