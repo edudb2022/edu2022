@@ -59,7 +59,7 @@ const InterviewReviewPage: NextPage = () => {
             className=" md:w-1/3 w-full "
           />
 
-          <div className="flex flex-row md:flex-col md:w-1/5 w-full  justify-center items-center gap-y-4  md:h-48 ">
+          <div className="flex flex-row md:flex-col md:w-1/5 w-full  justify-center items-center gap-y-4  gap-x-4 md:h-48 mt-4">
             <RatingTag
               rating={3.1}
               title={InterviewExperienceRating[4].label}

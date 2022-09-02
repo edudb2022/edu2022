@@ -50,5 +50,12 @@ export const CommonHelpers = {
     // }
 
     return { bestFiveScore, bestSixScore }
+  },
+
+  salaryConvertor: (salary: number) => {
+    if (salary > 1000000) return `${salary / 1000000}M`
+    if (salary > 1000) return `${salary / 1000}k`
+    if (salary > 0) return `${salary}`
+    else return `${salary}`
   }
 }

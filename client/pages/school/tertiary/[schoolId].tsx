@@ -2,14 +2,12 @@ import { TextField } from "@mui/material"
 import { NextPage } from "next"
 import Link from "next/link"
 import { useRouter } from "next/router"
-import React, { useEffect, useState } from "react"
-import { FiArrowRight } from "react-icons/fi"
-import BaseButton from "../../../components/common/buttons"
+import React, { useState } from "react"
+
 import ProgrammeCard from "../../../components/common/cards/programme"
 import BaseRadar from "../../../components/common/charts/radar"
-import ReviewRankingCircularBar from "../../../components/common/circularBar/reviewRanking"
+
 import BaseSelect from "../../../components/common/inputs/select"
-import RatingTag from "../../../components/common/tags/rating"
 import RatingLargeTag from "../../../components/common/tags/ratingLarge"
 
 import ReviewHeaderContainer from "../../../components/containers/reviewHeader"
@@ -85,14 +83,10 @@ const TertiarySchoolPage: NextPage = () => {
               />
             </div>
 
-            <div className="w-2/5 py-12 flex flex-col justify-between items-center">
+            <div className="md:w-2/5 w-full py-12 flex flex-row md:flex-col md:justify-between justify-center gap-x-4 items-center">
               <RatingLargeTag title={"red"} rating={1} header="推薦指數" />
               <Link href={`/review/tertiary/school/${schoolId}`}>
                 <a className="text-theme-one-500 mt-4 border-b-2 border-theme-one-500">
-                  {/* <BaseButton className="w-full justify-center gap-x-2  text-sm md:text-base mt-4 bg-theme-one-500 text-white shrink-0">
-                    <span>更多學校評價</span>
-                    <FiArrowRight />
-                  </BaseButton> */}
                   更多學校評價
                 </a>
               </Link>

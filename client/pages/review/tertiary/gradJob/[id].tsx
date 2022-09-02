@@ -82,7 +82,7 @@ const GradJobReviewPage: NextPage = () => {
             key={1}
             title="The worse offer ever"
             id="1"
-            salary={2400000}
+            salary={258019}
             gradDate="20/23"
           />
         </DetailedCardDetailLayout>

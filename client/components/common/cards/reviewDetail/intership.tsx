@@ -22,13 +22,15 @@ const IntershipReviewDetailCard: React.FunctionComponent<
     <BaseReviewDetailCard {...props}>
       <Link href={`/reviewDetail/tertiary/internship/${id}`}>
         <a>
+          <div>
+            <span className="text-gray-400"> 職位名稱 :</span>
+            <span> Senior software enigner</span>
+          </div>
+
           <div className="flex flex-row justify-around items-center  mt-2 md:mt-0">
             <ReviewTextItem detail={offerDate} title="offer日期" />
             <ReviewTextItem detail={"課程評價"} title="行業" />
-            <ReviewTextItem
-              detail={"Senior software enigner"}
-              title="職位名稱"
-            />
+
             <ReviewNumberItem detail={salary} title="月薪" />
 
             <div className="flex flex-col justify-center items-center">
