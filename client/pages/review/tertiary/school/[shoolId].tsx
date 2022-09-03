@@ -57,12 +57,18 @@ const SchoolReviewPage = () => {
             <div className="w-4/5 md:w-3/5 ">
               <BaseRadar
                 scores={[1, 2, 3, 4, 5]}
-                labels={["January", "February", "March", "April", "May"]}
+                labels={[
+                  "學校設施及環境",
+                  "資源及支援",
+                  "學校政策",
+                  "校內膳食",
+                  "歸屬感"
+                ]}
               />
             </div>
 
             <div className="w-2/5 flex justify-center items-center py-12">
-              <RatingLargeTag title={"red"} rating={1} />
+              <RatingLargeTag title={"red"} rating={1} header="推薦指數" />
             </div>
           </div>
         </div>

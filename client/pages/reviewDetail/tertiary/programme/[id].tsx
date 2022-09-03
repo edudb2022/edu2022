@@ -7,6 +7,13 @@ import DetailReviewInfoContainer from "../../../../components/containers/detailR
 import PageLayout from "../../../../components/layouts/page"
 
 const ProgrammeReviewDetailPage: NextPage = () => {
+  // labels={[
+  //   "課程結構",
+  //   "爛龜指數",
+  //   "爆肝指數",
+  //   "學習經歷",
+  //   "資源"
+  // ]}
   return (
     <PageLayout>
       <DetailReviewHeaderContainer
@@ -16,14 +23,13 @@ const ProgrammeReviewDetailPage: NextPage = () => {
         schoolShortName="hku"
         ShortTitle="123"
       >
-        <RatingTag rating={5} title="12313" header="Overall" />
-        <div className="flex flex-wrap flex-around w-full border-2">
-          <RatingTag rating={4} title="12313" header="Programme" />
-          <RatingTag rating={1} title="12313" header="Teaching quality" />
-          <RatingTag rating={2} title="12313" header="GPA" />
-          <RatingTag rating={3} title="12313" header="Worker" />
-          <RatingTag rating={3} title="12313" header="Learning Experience" />
-          <RatingTag rating={3} title="12313" header="Resource" />
+        <div className="flex flex-wrap flex-row justify-evenly w-full border-2">
+          <RatingTag rating={5} title="12313" header="推薦指數" />
+          <RatingTag rating={4} title="12313" header="課程結構" />
+          <RatingTag rating={2} title="12313" header="爛龜指數" />
+          <RatingTag rating={3} title="12313" header="爆肝指數" />
+          <RatingTag rating={3} title="12313" header="學習經歷" />
+          <RatingTag rating={3} title="12313" header="資源" />
         </div>
 
         <DetailReviewInfoContainer

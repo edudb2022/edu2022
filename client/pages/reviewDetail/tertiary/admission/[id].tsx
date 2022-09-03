@@ -24,21 +24,34 @@ const AdmissionReviewDetailPage: NextPage = () => {
         schoolShortName="hku"
         ShortTitle="123"
       >
-        {/* <RatingTag rating={5} title="12313" header="Overall" />
-        <div className="flex flex-wrap flex-around w-full border-2">
-          <RatingTag rating={4} title="12313" header="Facility" />
-          <RatingTag rating={1} title="12313" header="Policy" />
-          <RatingTag rating={2} title="12313" header="Resources" />
-          <RatingTag rating={3} title="12313" header="Canteen" />
-        </div> */}
+        <div className="flex flex-wrap flex-row justify-evenly w-full border-2">
+          <TextTag
+            title={ADMISSION_TYPE.NON_JUPAS}
+            type="admission"
+            header="入學類型"
+          />
+          <TextTag
+            title={ADMISSION_OFFER_TYPE.CONDITIONAL}
+            type="offer_type"
+            header="Offer類型"
+          />
+          <TextTag
+            title={ADMISSION_LEVEL_TYPE.FIVE_PLUS}
+            type="admission_year"
+            header="入學年級"
+          />
+          <TextTag
+            title={ADMISSION_LEVEL_TYPE.FIVE_PLUS}
+            type="year_of_study"
+            header="現時學業年級"
+          />
+        </div>
 
-        <TextTag title={ADMISSION_TYPE.NON_JUPAS} type="admission" />
-        <TextTag title={ADMISSION_OFFER_TYPE.CONDITIONAL} type="offer_type" />
-        <TextTag title={ADMISSION_LEVEL_TYPE.FIVE_PLUS} type="admission_year" />
-
-        <ReviewNumberItem detail={123} title={SCORE_TYPE.BEST_FIVE} />
-        <ReviewNumberItem detail={123} title={SCORE_TYPE.BEST_SIX} />
-        <ReviewNumberItem detail={123} title={SCORE_TYPE.GPA} />
+        <div className="flex flex-wrap flex-row justify-evenly  w-full border-2">
+          <ReviewNumberItem detail={123} title={SCORE_TYPE.BEST_FIVE} />
+          <ReviewNumberItem detail={123} title={SCORE_TYPE.BEST_SIX} />
+          <ReviewNumberItem detail={123} title={SCORE_TYPE.GPA} />
+        </div>
 
         <DetailReviewInfoContainer
           offerDate="02/23"

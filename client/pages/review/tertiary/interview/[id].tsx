@@ -61,14 +61,14 @@ const InterviewReviewPage: NextPage = () => {
 
           <div className="flex flex-row md:flex-col md:w-1/5 w-full  justify-center items-center gap-y-4  gap-x-4 md:h-48 mt-4">
             <RatingTag
-              rating={3.1}
-              title={InterviewExperienceRating[4].label}
-              header="面試體驗"
-            />
-            <RatingTag
               rating={4}
               title={InterviewDifficultyRating[2].label}
               header="面試難度"
+            />
+            <RatingTag
+              rating={3.1}
+              title={InterviewExperienceRating[4].label}
+              header="面試體驗"
             />
           </div>
         </div>

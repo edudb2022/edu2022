@@ -17,12 +17,13 @@ const SchoolReviewDetailPage: NextPage = () => {
         schoolShortName="hku"
         ShortTitle="123"
       >
-        <RatingTag rating={5} title="12313" header="Overall" />
-        <div className="flex flex-wrap flex-around w-full border-2">
-          <RatingTag rating={4} title="12313" header="Facility" />
-          <RatingTag rating={1} title="12313" header="Policy" />
-          <RatingTag rating={2} title="12313" header="Resources" />
-          <RatingTag rating={3} title="12313" header="Canteen" />
+        <div className="flex flex-wrap flex-row justify-evenly w-full border-2">
+          <RatingTag rating={5} title="12313" header="推薦指數" />
+          <RatingTag rating={4} title="12313" header="學校設施及環境" />
+          <RatingTag rating={4} title="12313" header="學校政策" />
+          <RatingTag rating={1} title="12313" header="資源及支援" />
+          <RatingTag rating={2} title="12313" header="校內膳食" />
+          <RatingTag rating={3} title="12313" header="歸屬感" />
         </div>
 
         <DetailReviewInfoContainer
@@ -34,7 +35,7 @@ const SchoolReviewDetailPage: NextPage = () => {
         />
       </DetailReviewHeaderContainer>
 
-      <LongQuestionsSection title="123" />
+      {/* <LongQuestionsSection title="123" /> */}
     </PageLayout>
   )
 }

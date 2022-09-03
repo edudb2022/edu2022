@@ -1,6 +1,7 @@
 import { NextPage } from "next"
 import React from "react"
 import ReviewSalaryItem from "../../../../components/common/display/items/salary"
+import RatingTag from "../../../../components/common/tags/rating"
 import TextTag from "../../../../components/common/tags/text"
 import DetailReviewHeaderContainer from "../../../../components/containers/detailReviewHeader"
 import DetailReviewInfoContainer from "../../../../components/containers/detailReviewInfo"
@@ -17,13 +18,11 @@ const GradJobReviewDetailPage: NextPage = () => {
         schoolShortName="hku"
         ShortTitle="123"
       >
-        <TextTag title="summer" type="summer" />
-        <TextTag title="winter" type="winter" />
-        <TextTag title="placement" type="placement" />
-        <ReviewSalaryItem salary={203444} title="123" subtitle="123" />
-        <ReviewSalaryItem salary={203444} title="123" subtitle="123" />
-        <ReviewSalaryItem salary={203444} title="123" subtitle="123" />
-        <ReviewSalaryItem salary={203444} title="123" subtitle="123" />
+        <div className="flex flex-wrap flex-row justify-evenly w-full border-2">
+          <RatingTag rating={5} title="12313" header="搵工難度" />
+          <RatingTag rating={5} title="12313" header="前途評估" />
+          <ReviewSalaryItem salary={203444} title="平均月薪" />
+        </div>
         <DetailReviewInfoContainer
           offerDate="02/2022"
           industry="Law"

@@ -20,12 +20,12 @@ const InterviewReviewDetailPage: NextPage = () => {
         schoolShortName="hku"
         ShortTitle="123"
       >
-        <div className="flex flex-wrap flex-around w-full border-2">
-          <RatingTag rating={1} title="12313" header="Difficulty" />
-          <RatingTag rating={1} title="12313" header="Experience" />
-          <TextTag title="123" header="Year 1" type="admission_year" />
+        <div className="flex flex-wrap flex-row justify-evenly w-full border-2">
+          <RatingTag rating={1} title="12313" header="面試難度" />
+          <RatingTag rating={1} title="12313" header="面試體驗" />
+          <TextTag title="year 1" header="類型" type="admission_year" />
         </div>
-        <div>
+        <div className="flex flex-wrap flex-row justify-evenly w-full border-2">
           <ReviewNumberItem title={SCORE_TYPE.BEST_FIVE} detail={123} />
           <ReviewNumberItem title={SCORE_TYPE.BEST_SIX} detail={123} />
           <ReviewNumberItem title={SCORE_TYPE.GPA} detail={123} />

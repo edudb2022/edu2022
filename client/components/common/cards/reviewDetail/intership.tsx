@@ -30,13 +30,11 @@ const IntershipReviewDetailCard: React.FunctionComponent<
           <div className="flex flex-row justify-around items-center  mt-2 md:mt-0">
             <ReviewTextItem detail={offerDate} title="offer日期" />
             <ReviewTextItem detail={"課程評價"} title="行業" />
-
             <ReviewNumberItem detail={salary} title="月薪" />
-
-            <div className="flex flex-col justify-center items-center">
-              <RatingTag title="課程評價" rating={2} header="搵工難度" />
-              <TextTag title="winter" type="winter" header="類型" />
-            </div>
+          </div>
+          <div className="flex flex-row justify-start gap-x-4 items-center">
+            <RatingTag title="課程評價" rating={2} />
+            <TextTag title="winter" type="winter" />
           </div>
         </a>
       </Link>
