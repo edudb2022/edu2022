@@ -3,7 +3,7 @@ import React, { PropsWithChildren } from "react"
 
 export interface IReviewHeaderContainerProps {
   ChineseTitle: string
-  EnglishTitle: string
+  EnglishTitle?: string
   ShortTitle?: string
   schoolShortName: string
   layoutClassName?: string

@@ -19,10 +19,10 @@ const AdmissionReviewDetailPage: NextPage = () => {
     <PageLayout>
       <DetailReviewHeaderContainer
         score={123}
-        ChineseTitle="123"
-        EnglishTitle="123"
+        ChineseTitle="Worse ever !"
+        // EnglishTitle="123"
         schoolShortName="hku"
-        ShortTitle="123"
+        ShortTitle="hku"
       >
         <div className="flex flex-wrap flex-row justify-evenly w-full border-2">
           <TextTag
