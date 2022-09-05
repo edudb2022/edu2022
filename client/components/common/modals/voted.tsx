@@ -2,7 +2,6 @@ import React from "react"
 import { VOTE_TYPE } from "../../../types/common"
 import DisLikeButton from "../buttons/rating/dislike"
 import LikeButton from "../buttons/rating/like"
-import ErrorIcon from "../icons/error"
 import SingleButtonModal, { ISingleButtonModalProps } from "./singleButton"
 
 interface IVotedModalProps extends Partial<ISingleButtonModalProps> {

@@ -5,7 +5,7 @@ import { useAppSelector } from "../../../hooks/common/useAppSelector"
 import { useAppDispatch } from "../../../hooks/common/useAppDispatch"
 import { ISystemActionTypes } from "../../../state/system/actions"
 // import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
-interface ISuccessModalProps extends ISingleButtonModalProps {}
+interface ISuccessModalProps {}
 
 const ErrorModal: React.FunctionComponent<ISuccessModalProps> = () => {
   const state = useAppSelector((state) => state.system.modals.error)
@@ -26,7 +26,6 @@ const ErrorModal: React.FunctionComponent<ISuccessModalProps> = () => {
     })
   }
 
-  console.log("222", state)
   return (
     <SingleButtonModal
       buttonTitle="OK"
