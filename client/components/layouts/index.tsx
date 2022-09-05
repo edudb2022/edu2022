@@ -7,6 +7,9 @@ import useAuth from "../../hooks/auth/useAuth"
 import AuthModal from "../common/modals/auth"
 import { useAppSelector } from "../../hooks/common/useAppSelector"
 
+import ErrorModal from "../common/modals/error"
+import { setDatasets } from "react-chartjs-2/dist/utils"
+
 export interface ICommonLayoutProps {}
 
 const CommonLayout: React.FunctionComponent<
@@ -14,11 +17,13 @@ const CommonLayout: React.FunctionComponent<
 > = ({ children }) => {
   // const { isAuthModalOpen } = useAppSelector((state) => state.system)
   useAuth()
+  // const state = useAppSelector((state) => state.system.error)
 
   return (
     <>
       <LoadingBackDrop />
       <AuthModal />
+      <ErrorModal />
       <header>
         <Navbar />
       </header>

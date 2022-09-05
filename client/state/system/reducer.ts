@@ -5,7 +5,7 @@ const initialState = {
   // isLoading: false,
   error: "",
   // isAuthModalOpen: false,
-  modals: { isLoading: false, auth: false }
+  modals: { isLoading: false, auth: false, error: "" }
 }
 
 const systemReducer = (
@@ -19,7 +19,9 @@ const systemReducer = (
       })
 
     case ISystemActionTypes.SYSTEM_ERROR:
-      return state
+      return produce(state, (draft) => {
+        draft.modals.error = payload
+      })
 
     case ISystemActionTypes.SYSTEM_IS_AUTH_MODAL_OPEN:
       return produce(state, (draft) => {
