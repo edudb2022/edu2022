@@ -6,7 +6,7 @@ import ErrorIcon from "../icons/error"
 import SingleButtonModal, { ISingleButtonModalProps } from "./singleButton"
 
 interface IVotedModalProps extends Partial<ISingleButtonModalProps> {
-  voteType: VOTE_TYPE
+  voteType: VOTE_TYPE | ""
 }
 
 const VotedModal: React.FunctionComponent<IVotedModalProps> = ({
