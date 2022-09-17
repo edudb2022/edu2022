@@ -294,7 +294,7 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
             items={schoolTypesList}
             name="currentSchoolType"
             selectId="currentSchoolType"
-            inputLabel="學校類型/學習狀態"
+            inputLabel="學校類型/學業狀態"
             selectValue={formik.values.currentSchoolType}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}

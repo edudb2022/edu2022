@@ -221,7 +221,7 @@ const InterviewReviewPage: NextPage = () => {
             items={schoolTypesList}
             name="currentSchoolType"
             selectId="currentSchoolType"
-            inputLabel="學校類型/學習狀態"
+            inputLabel="學校類型/學業狀態"
             selectValue={formik.values.currentSchoolType}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
@@ -283,7 +283,7 @@ const InterviewReviewPage: NextPage = () => {
 
         <div className="grid">
           <BaseDatePicker
-            label="interviewDate (YYYY-MM-DD)"
+            label="面試日期 (YYYY-MM-DD)"
             value={formik.values.interviewDate}
             onChange={(newValue: any) => {
               formik.setFieldValue(
@@ -336,7 +336,7 @@ const InterviewReviewPage: NextPage = () => {
           name="dressCode"
           items={dressCodeTypesList}
           selectId="dressCode"
-          inputLabel="穿着要求(Dress Code)"
+          inputLabel="衣著要求(Dress Code)"
           selectValue={formik.values.dressCode}
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}

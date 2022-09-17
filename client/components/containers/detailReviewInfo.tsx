@@ -46,14 +46,14 @@ const DetailReviewInfoContainer: React.FunctionComponent<
     return (
       <div className="text-center">
         <div className="text-theme-one-500 font-semibold text-xs">{header}</div>
-        <p className="text-base">{description}</p>
+        <p className="text-base text-gray-500">{description}</p>
       </div>
     )
   }
   return (
     <div className={`${className}`}>
-      <div className="flex flex-col items-center border-2 bg-theme-one-50">
-        <div className="flex flex-row justify-evenly border-2 w-full">
+      <div className="flex flex-col items-center bg-theme-one-50">
+        <div className="flex flex-row justify-evenly w-full">
           {admissionYear && (
             <InfoItem header="入學日期" description={admissionYear} />
           )}
@@ -61,7 +61,7 @@ const DetailReviewInfoContainer: React.FunctionComponent<
             <InfoItem header="面試日期" description={interviewDate} />
           )}
           {academicStatus && (
-            <InfoItem header="Academic Status" description={academicStatus} />
+            <InfoItem header="學業狀態" description={academicStatus} />
           )}
 
           {currentSchool && (
@@ -74,15 +74,17 @@ const DetailReviewInfoContainer: React.FunctionComponent<
           {companyName && (
             <InfoItem header="公司名稱" description={companyName} />
           )}
-          {jobSource && <InfoItem header="JobSource" description={jobSource} />}
-          {offerDate && <InfoItem header="OfferDate" description={offerDate} />}
-          {DressCode && <InfoItem header="DressCode" description={DressCode} />}
+          {jobSource && <InfoItem header="工作來源" description={jobSource} />}
+          {offerDate && (
+            <InfoItem header="收Offer日期" description={offerDate} />
+          )}
+          {DressCode && <InfoItem header="衣著要求" description={DressCode} />}
 
           {/* <div className="flex flex-row justify-evenly border-2 w-full"> */}
 
-          <InfoItem header="username" description={username || "Unknown"} />
-          <InfoItem header="Post Date" description={postDate} />
-          <InfoItem header="contact " description={contact} />
+          <InfoItem header="用戶名稱" description={username || "Unknown"} />
+          <InfoItem header="發布日期" description={postDate} />
+          <InfoItem header="聯絡資訊" description={contact} />
         </div>
         {/* </div> */}
       </div>
