@@ -51,17 +51,6 @@ const Home: NextPage = (props) => {
     })
   }, [])
 
-  const queryString = qs.stringify({
-    order: {
-      createdAt: "ASC"
-    },
-    industry: {
-      id: 1
-    },
-    limit: 10
-  })
-
-  console.log("123123213323", queryString)
   const [type, setType] = useState(SchoolTypeId.UNIVERSITY)
   const [search, setSearch] = useState("")
   const [list, setList] = useState<Omit<ISchoolsReviewCardProps, "type">[]>([])
@@ -80,6 +69,23 @@ const Home: NextPage = (props) => {
   }, [search, type])
 
   // useEffect(() => {
+  //   const abc = (type, ordered) => {
+  //     const queryString = qs.stringify(
+  //       {
+  //         order: {
+  //           type: ordered
+  //         }
+  //       },
+  //       {
+  //         skipNulls: true
+  //       }
+  //     )
+  //     return axios.post(`/111/${queryString}`)
+  //   }
+  //   abc(undefined, undefined)
+  // }, [])
+
+  // useEffect(() => {
   //   const hanldeRouterChange = (url: string) => {
   //     trackingEvent.pageView(url, "testing")
   //   }
@@ -92,6 +98,7 @@ const Home: NextPage = (props) => {
   return (
     // <EmailPasswordAuthNoSSR>
     //   <EmailPasswordAuth>
+
     <PageLayout>
       <SEO title="Main" description="123" />
 

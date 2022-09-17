@@ -1,5 +1,5 @@
 import { NextSeo, NextSeoProps } from "next-seo"
-import React, { PropsWithChildren } from "react"
+import React from "react"
 
 interface ISEOProps extends NextSeoProps {}
 
