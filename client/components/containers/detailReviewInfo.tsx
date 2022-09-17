@@ -52,7 +52,7 @@ const DetailReviewInfoContainer: React.FunctionComponent<
   }
   return (
     <div className={`${className}`}>
-      <div className="flex flex-col items-center bg-theme-one-50">
+      <div className="flex flex-col items-center bg-theme-one-50 rounded-2xl p-4">
         <div className="flex flex-row justify-evenly w-full">
           {admissionYear && (
             <InfoItem header="入學日期" description={admissionYear} />

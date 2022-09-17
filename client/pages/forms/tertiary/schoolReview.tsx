@@ -233,7 +233,7 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
         <div className="grid   md:grid-cols-4  md:gap-x-9 md:items-end gap-y-2 mt-2">
           <div className="grid  md:col-span-1">
             <ContactSelect
-              placeholder="123"
+              placeholder="Email/電話號碼/Username"
               name="contactMethod"
               selectId="contactMethod"
               inputLabel="聯絡方式"

@@ -142,7 +142,7 @@ const academicStatusTypesList = [
   { value: AcademicStatusTypesId.YEAR_THERE, title: "Year 3" },
   { value: AcademicStatusTypesId.YEAR_FOUR, title: "Year 4" },
   { value: AcademicStatusTypesId.YEAR_FIVE_PLUS, title: "Year 5+" },
-  { value: AcademicStatusTypesId.POSTGRAD, title: "PostGrad" },
+  { value: AcademicStatusTypesId.POSTGRAD, title: "研究生" },
   { value: AcademicStatusTypesId.ALUMI, title: "校友" },
   { value: AcademicStatusTypesId.OTHER, title: "其他" }
 ]
