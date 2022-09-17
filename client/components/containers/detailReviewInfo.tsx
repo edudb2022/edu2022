@@ -17,6 +17,10 @@ interface IDetailReviewInfoContainerProps {
   jobSource?: string
 }
 
+interface IInfoItemProps {
+  header: string
+  description: string | number
+}
 const DetailReviewInfoContainer: React.FunctionComponent<
   IDetailReviewInfoContainerProps
 > = ({
@@ -35,27 +39,50 @@ const DetailReviewInfoContainer: React.FunctionComponent<
   companyName,
   jobSource
 }) => {
+  const InfoItem: React.FunctionComponent<IInfoItemProps> = ({
+    header,
+    description
+  }) => {
+    return (
+      <div className="text-center">
+        <div className="text-theme-one-500 font-semibold text-xs">{header}</div>
+        <p className="text-base">{description}</p>
+      </div>
+    )
+  }
   return (
     <div className={`${className}`}>
-      <div className="flex flex-col items-center border-2">
+      <div className="flex flex-col items-center border-2 bg-theme-one-50">
         <div className="flex flex-row justify-evenly border-2 w-full">
-          {admissionYear && <p> {`Admission Year : ${admissionYear}`}</p>}
-          {interviewDate && <p> {`Interview Date : ${interviewDate}`}</p>}
-          {academicStatus && <p> {`Academic Status : ${academicStatus}`}</p>}
-          {currentSchool && <p> {`CurrentSchool : ${currentSchool}`}</p>}
-          {currentProgramme && (
-            <p> {`Current Programme : ${currentProgramme}`}</p>
+          {admissionYear && (
+            <InfoItem header="入學日期" description={admissionYear} />
           )}
-          {industry && <p> {`Industry  : ${industry}`}</p>}
-          {companyName && <p> {`CompanyName  : ${companyName}`}</p>}
-          {jobSource && <p> {`JobSource  : ${jobSource}`}</p>}
-          {offerDate && <p> {`OfferDate : ${offerDate}`}</p>}
-          {DressCode && <p> {`DressCode : ${DressCode}`}</p>}
+          {interviewDate && (
+            <InfoItem header="面試日期" description={interviewDate} />
+          )}
+          {academicStatus && (
+            <InfoItem header="Academic Status" description={academicStatus} />
+          )}
+
+          {currentSchool && (
+            <InfoItem header="最近就讀的學校" description={currentSchool} />
+          )}
+          {currentProgramme && (
+            <InfoItem header="最近就讀的課程" description={currentProgramme} />
+          )}
+          {industry && <InfoItem header="Industry" description={industry} />}
+          {companyName && (
+            <InfoItem header="公司名稱" description={companyName} />
+          )}
+          {jobSource && <InfoItem header="JobSource" description={jobSource} />}
+          {offerDate && <InfoItem header="OfferDate" description={offerDate} />}
+          {DressCode && <InfoItem header="DressCode" description={DressCode} />}
 
           {/* <div className="flex flex-row justify-evenly border-2 w-full"> */}
-          <p> {`username  : ${username ? username : "null"}`}</p>
-          <p> {`Post Date : ${postDate}`}</p>
-          <p> {`contact : ${contact ? contact : "null"}`}</p>
+
+          <InfoItem header="username" description={username || "Unknown"} />
+          <InfoItem header="Post Date" description={postDate} />
+          <InfoItem header="contact " description={contact} />
         </div>
         {/* </div> */}
       </div>

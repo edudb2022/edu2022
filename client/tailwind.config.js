@@ -14,7 +14,7 @@ const intern = {
 
 const theme = {
   one: {
-    50: "#FFC9AF",
+    50: "#FFF5EC",
     100: "#FFBF9F",
     200: "#FFAC81",
     300: "#FF9A62",

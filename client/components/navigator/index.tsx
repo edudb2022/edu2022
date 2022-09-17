@@ -24,7 +24,7 @@ const Navbar: React.FunctionComponent = () => {
   return (
     <nav
       className={`flex flex-col  w-full   p-2 ${
-        router.pathname === "/" ? "bg-[#FFF5EC]" : "bg-[#F1F2F2]"
+        router.pathname === "/" ? "bg-theme-one-50" : "bg-[#F1F2F2]"
       }`}
     >
       <div className="flex justify-between p-2">
