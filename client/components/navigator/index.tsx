@@ -30,7 +30,7 @@ const Navbar: React.FunctionComponent = () => {
       <div className="flex justify-between p-2">
         <Link href={"/"}>
           <a className="text-theme-one-500 stroke-black font-black text-4xl">
-            Bauu4
+            GoodTurtle
           </a>
         </Link>
 

@@ -5,7 +5,7 @@ import Session from "supertokens-auth-react/recipe/session"
 
 // DEV:
 export const DEFAULT_BASE_URL =
-  process.env.NODE_ENV === "development" ? "http://localhost:3001/" : ""
+  process.env.NODE_ENV === "development" ? "http://localhost:8001" : ""
 // process.env.GATSBY_API_URL;
 // const DEFAULT_BASE_URL = process.env.GATSBY_API_URL;
 
@@ -13,7 +13,7 @@ const instance: AxiosInstance = axios.create({
   baseURL: DEFAULT_BASE_URL,
   timeout: 5000,
   headers: {
-    "X-Custom-Header": "eduDB"
+    "X-Custom-Header": "GoodTurtle"
   }
 })
 

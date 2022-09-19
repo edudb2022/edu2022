@@ -1,6 +1,6 @@
 export const appInfo = {
   // learn more about this on https://supertokens.com/docs/emailpassword/appinfo
-  appName: "OpenEduDB",
+  appName: "GoodTurtle",
   apiDomain:
     process.env.NODE_ENV === "development"
       ? "http://localhost:3000"

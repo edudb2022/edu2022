@@ -5,7 +5,7 @@ import { HiOutlineDocumentText } from "react-icons/hi"
 import { ID, SchoolName, SchoolTypeId } from "../../../../types/common"
 
 export interface IBaseReviewCardProps extends IBaseCardProps {
-  id: ID
+  id: ID | number
   schoolChineseName: SchoolName
   schoolEnglishName: SchoolName
   schoolShortName: SchoolName

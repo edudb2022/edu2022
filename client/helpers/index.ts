@@ -1,27 +1,30 @@
 // import { ISchoolsReviewCardProps } from "../components/common/cards/review"
 import { ISchoolsReviewCardProps } from "../components/common/cards/review/school"
 import { DSE_GRADE_TO_SOCRE_MAPPER } from "../mappers/dseGrade"
+import { GetSchoolRes } from "../types/api"
 import { DSEGradeTypesId, SchoolTypeId } from "../types/common"
 
 type IGradeMeta = DSEGradeTypesId | null
 export const CommonHelpers = {
   schoolFilter: (
-    list: Omit<ISchoolsReviewCardProps, "type">[],
+    list: GetSchoolRes[] | undefined,
     search: string,
     type: SchoolTypeId
-  ): Omit<ISchoolsReviewCardProps, "type">[] => {
-    const arr: Omit<ISchoolsReviewCardProps, "type">[] = []
+  ): GetSchoolRes[] => {
+    const arr: GetSchoolRes[] = []
 
-    list.forEach((data: Omit<ISchoolsReviewCardProps, "type">) => {
-      if (
-        (data.schoolChineseName.includes(search) ||
-          data.schoolEnglishName.includes(search) ||
-          data.schoolShortName.includes(search)) &&
-        data.schoolTypeId === type
-      ) {
-        arr.push(data)
-      }
-    })
+    if (list) {
+      list.forEach((data) => {
+        if (
+          (data.chineseName.includes(search) ||
+            data.englishName.includes(search) ||
+            data.shortName.includes(search)) &&
+          data.type.id === type
+        ) {
+          arr.push(data)
+        }
+      })
+    }
     return arr
   },
 

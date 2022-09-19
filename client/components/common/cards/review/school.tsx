@@ -6,6 +6,7 @@ import BaseRadar from "../../charts/radar"
 
 export interface ISchoolsReviewCardProps extends IBaseReviewCardProps {
   schoolTypeId: SchoolTypeId
+  score: number[]
 }
 
 const SchoolsReviewCards: React.FunctionComponent<ISchoolsReviewCardProps> = ({
@@ -15,7 +16,8 @@ const SchoolsReviewCards: React.FunctionComponent<ISchoolsReviewCardProps> = ({
   totalReports,
   schoolTypeId,
   type,
-  id
+  id,
+  score
 }) => {
   return (
     <BaseReviewCard
@@ -28,7 +30,7 @@ const SchoolsReviewCards: React.FunctionComponent<ISchoolsReviewCardProps> = ({
     >
       <div className="absolute top-0 h-full w-full  px-2 py-5 md:p-4 md:mt-5 ">
         <BaseRadar
-          scores={[3, 3.6, 3.7, 3.6, 4]}
+          scores={score}
           labels={[
             "學校設施及環境",
             "資源及支援",
