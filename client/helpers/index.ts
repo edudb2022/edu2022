@@ -36,7 +36,6 @@ export const CommonHelpers = {
       const value = gradeMeta[i]
       if (value !== null) {
         bestFiveScore += DSE_GRADE_TO_SOCRE_MAPPER[value]
-        console.log(bestFiveScore, value)
       }
     }
 

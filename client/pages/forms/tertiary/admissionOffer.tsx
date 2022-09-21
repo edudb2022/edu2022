@@ -179,15 +179,6 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
     }
   }, [formik.values.admissionType])
 
-  // console.log("res", DSEGradeTypesId.)
-  // const { bestFive, bestSix } = useDesGrade([
-  //   formik.values.desSubjectGradeOne,
-  //   formik.values.desSubjectGradeTwo,
-  //   formik.values.desSubjectGradeThree,
-  //   formik.values.desSubjectGradeFour,
-  //   formik.values.desSubjectGradeFive,
-  //   formik.values.desSubjectGradeSix
-  // ])
   const gradeMeta = [
     formik.values.desSubjectGradeOne,
     formik.values.desSubjectGradeTwo,
@@ -228,7 +219,6 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
     formik.values.desSubjectGradeSix
   ])
 
-  console.log(123, bestFive, bestSix)
   return (
     <FormPageLayout
       title="入學情報"

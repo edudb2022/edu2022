@@ -16,7 +16,6 @@ import qs from "qs"
 const SchoolReviewPage = () => {
   const { sorting } = useAppSelector((state) => state.filter.school)
   const word = sorting.split(",")
-  console.log("word", word)
 
   const queryString = qs.stringify({
     order: {
@@ -25,7 +24,6 @@ const SchoolReviewPage = () => {
     limit: 10
   })
 
-  console.log("queryString", queryString)
   const [isOpen, setIsOpen] = useState(false)
   const handleMobileFilterOpen = () => {
     setIsOpen(!isOpen)

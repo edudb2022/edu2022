@@ -37,6 +37,7 @@ import {
   yearOfStudyTypesList
 } from "../../../constants/common"
 import InputHeader from "../../../components/common/header/input"
+import { schoolReviewLongQuestions } from "../../../constants/longQuestion"
 
 const SchoolReviewFormPage: React.FunctionComponent = () => {
   const initialValues = {
@@ -273,7 +274,8 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
       />
       <LongQuestionsSection
         name="longQ"
-        header="對校園環境同設施既評價有冇補充?"
+        // header="對校園環境同設施既評價有冇補充?"
+        header={schoolReviewLongQuestions[1].question}
         value={formik.values.longQ}
         valueLength={formik.values.longQ.length}
         onChange={formik.handleChange}
@@ -284,7 +286,8 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
 
       <LongQuestionsSection
         name="longQ"
-        header="對資源及支援嘅評價有冇補充？"
+        // header="對資源及支援嘅評價有冇補充？"
+        header={schoolReviewLongQuestions[2].question}
         value={formik.values.longQ}
         valueLength={formik.values.longQ.length}
         onChange={formik.handleChange}
@@ -295,7 +298,8 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
 
       <LongQuestionsSection
         name="longQ"
-        header="對學校政策嘅評價有冇補充？"
+        // header="對學校政策嘅評價有冇補充？"
+        header={schoolReviewLongQuestions[3].question}
         value={formik.values.longQ}
         valueLength={formik.values.longQ.length}
         onChange={formik.handleChange}
@@ -306,7 +310,8 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
 
       <LongQuestionsSection
         name="longQ"
-        header="對校內膳食嘅評價有冇補充？"
+        // header="對校內膳食嘅評價有冇補充？"
+        header={schoolReviewLongQuestions[4].question}
         value={formik.values.longQ}
         valueLength={formik.values.longQ.length}
         onChange={formik.handleChange}
@@ -317,7 +322,8 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
 
       <LongQuestionsSection
         name="longQ"
-        header="對歸屬感嘅評價有冇補充？"
+        header={schoolReviewLongQuestions[5].question}
+        // header="對歸屬感嘅評價有冇補充？"
         value={formik.values.longQ}
         valueLength={formik.values.longQ.length}
         onChange={formik.handleChange}
@@ -328,7 +334,8 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
 
       <LongQuestionsSection
         name="longQ"
-        header="有咩想向校方反映？"
+        header={schoolReviewLongQuestions[6].question}
+        // header="有咩想向校方反映？"
         value={formik.values.longQ}
         valueLength={formik.values.longQ.length}
         onChange={formik.handleChange}
@@ -339,7 +346,8 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
 
       <LongQuestionsSection
         name="longQ"
-        header="喺到讀書，你快樂嗎？"
+        header={schoolReviewLongQuestions[7].question}
+        // header="喺到讀書，你快樂嗎？"
         value={formik.values.longQ}
         valueLength={formik.values.longQ.length}
         onChange={formik.handleChange}
@@ -350,7 +358,8 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
 
       <LongQuestionsSection
         name="longQ"
-        header="對後人嘅忠告？"
+        header={schoolReviewLongQuestions[8].question}
+        // header="對後人嘅忠告？"
         value={formik.values.longQ}
         valueLength={formik.values.longQ.length}
         onChange={formik.handleChange}
@@ -361,7 +370,8 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
 
       <LongQuestionsSection
         name="longQ"
-        header="最後補充?"
+        // header="最後補充?"
+        header={schoolReviewLongQuestions[9].question}
         placeholder={``}
         value={formik.values.longQ}
         valueLength={formik.values.longQ.length}

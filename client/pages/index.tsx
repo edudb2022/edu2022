@@ -6,7 +6,7 @@ import BaseSelect from "../components/common/inputs/select"
 import PageLayout from "../components/layouts/page"
 import { SchoolTypeId } from "../types/common"
 
-import { dehydrate, QueryClient } from "react-query"
+import { dehydrate, QueryClient, useQueries, useQuery } from "react-query"
 
 import SEO from "../components/seo"
 
@@ -31,6 +31,7 @@ const SchoolType = [
 const Home: NextPage = (props) => {
   const router = useRouter()
   const { data } = useGetSchools()
+  // const { data } = useQuery(["schools"], apiService.getSchools)
   useEffect(() => {
     window.gtag("event", "page_view", {
       page_title: "M23232323ain",
@@ -57,8 +58,6 @@ const Home: NextPage = (props) => {
     setList(res)
   }, [search, type])
 
-  console.log(data)
-
   return (
     <PageLayout>
       <SEO title="Main" description="123" />
@@ -84,6 +83,8 @@ const Home: NextPage = (props) => {
           const title =
             schoolTypesList.find((ele) => ele.value === data.type.id)?.title ??
             ""
+
+          //change to object
           const score = [
             data.report[1]?.averageScore,
             data.report[4]?.averageScore,
@@ -118,7 +119,7 @@ const Home: NextPage = (props) => {
 export async function getServerSideProps() {
   const queryClient = new QueryClient()
 
-  await queryClient.prefetchQuery("schools", apiService.getSchools)
+  await queryClient.prefetchQuery(["schools"], apiService.getSchools)
 
   return {
     props: {

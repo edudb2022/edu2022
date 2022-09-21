@@ -1,8 +1,9 @@
 import { TextField } from "@mui/material"
+import axios from "axios"
 import { NextPage } from "next"
 import Link from "next/link"
 import { useRouter } from "next/router"
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 
 import ProgrammeCard from "../../../components/common/cards/programme"
 import BaseRadar from "../../../components/common/charts/radar"
@@ -36,6 +37,15 @@ const TertiarySchoolPage: NextPage = () => {
     { value: "engineering", title: "工程" },
     { value: "law", title: "法律" }
   ]
+
+  // useEffect(() => {
+  //   const fetch = async () => {
+  //     return await axios.get("localhost:8001/school-reviews")
+  //   }
+
+  //   const res = fetch()
+  //   console.log(res)
+  // }, [])
 
   return (
     <PageLayout>

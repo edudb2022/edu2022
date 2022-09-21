@@ -35,7 +35,7 @@ const useAuth = () => {
           })
         }
       } catch (err) {
-        console.error(err)
+        throw err
       }
     }
 
