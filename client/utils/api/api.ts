@@ -9,6 +9,15 @@ const apiService = {
     } catch (error) {
       console.error(error)
     }
+  },
+  getSchoolDetailReivew: async (props) => {
+    const id = props.queryKey[1].id
+    try {
+      const data = await axios.get(`${DEFAULT_BASE_URL}/school-reviews/${id}`)
+      return data.data.data
+    } catch (error) {
+      console.error(error)
+    }
   }
 }
 

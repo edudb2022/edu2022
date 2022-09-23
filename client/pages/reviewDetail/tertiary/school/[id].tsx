@@ -6,8 +6,10 @@ import DetailReviewHeaderContainer from "../../../../components/containers/detai
 import DetailReviewInfoContainer from "../../../../components/containers/detailReviewInfo"
 
 import PageLayout from "../../../../components/layouts/page"
+import useGetSchoolDetailReivew from "../../../../hooks/api/useGetSchoolDetailReview"
 
 const SchoolReviewDetailPage: NextPage = () => {
+  const { data } = useGetSchoolDetailReivew({ id: 32 })
   return (
     <PageLayout>
       <DetailReviewHeaderContainer

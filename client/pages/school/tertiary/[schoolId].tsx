@@ -38,15 +38,6 @@ const TertiarySchoolPage: NextPage = () => {
     { value: "law", title: "法律" }
   ]
 
-  // useEffect(() => {
-  //   const fetch = async () => {
-  //     return await axios.get("localhost:8001/school-reviews")
-  //   }
-
-  //   const res = fetch()
-  //   console.log(res)
-  // }, [])
-
   return (
     <PageLayout>
       <SEO

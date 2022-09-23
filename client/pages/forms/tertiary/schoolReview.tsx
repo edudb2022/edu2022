@@ -38,6 +38,7 @@ import {
 } from "../../../constants/common"
 import InputHeader from "../../../components/common/header/input"
 import { schoolReviewLongQuestions } from "../../../constants/longQuestion"
+import { schoolReviewratingQuestions } from "../../../constants/ratingQuestion"
 
 const SchoolReviewFormPage: React.FunctionComponent = () => {
   const initialValues = {
@@ -161,7 +162,7 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
           onBlur={formik.handleBlur}
           errorMessages={formik.errors.campusRating}
           isTouched={formik.touched.campusRating}
-          header="學校設施及環境"
+          header={schoolReviewratingQuestions[1].question}
           headerRequired={true}
         />
 
@@ -173,8 +174,8 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
           onBlur={formik.handleBlur}
           errorMessages={formik.errors.resourceRating}
           isTouched={formik.touched.resourceRating}
-          header="資源及支援"
-          subHeader="例如Scholarship數量，Exchange支援，就業及情緒輔導等等"
+          header={schoolReviewratingQuestions[2].question}
+          subHeader={schoolReviewratingQuestions[2].helpertext}
           headerRequired={true}
         />
 
@@ -186,7 +187,7 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
           onBlur={formik.handleBlur}
           errorMessages={formik.errors.policyRating}
           isTouched={formik.touched.policyRating}
-          header="學校政策"
+          header={schoolReviewratingQuestions[3].question}
           headerRequired={true}
         />
 
@@ -198,7 +199,7 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
           onBlur={formik.handleBlur}
           errorMessages={formik.errors.canteenRating}
           isTouched={formik.touched.canteenRating}
-          header="校內膳食"
+          header={schoolReviewratingQuestions[4].question}
           headerRequired={true}
         />
 
@@ -210,7 +211,7 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
           onBlur={formik.handleBlur}
           errorMessages={formik.errors.selfOfBelonging}
           isTouched={formik.touched.selfOfBelonging}
-          header="歸屬感"
+          header={schoolReviewratingQuestions[5].question}
           headerRequired={true}
         />
 
@@ -222,7 +223,7 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
           onBlur={formik.handleBlur}
           errorMessages={formik.errors.recommendation}
           isTouched={formik.touched.recommendation}
-          header="推薦指數"
+          header={schoolReviewratingQuestions[6].question}
           headerRequired={true}
         />
       </div>
