@@ -5,7 +5,7 @@ import Session from "supertokens-auth-react/recipe/session"
 
 // DEV:
 export const DEFAULT_BASE_URL =
-  process.env.NODE_ENV === "development" ? "http://localhost:8001" : ""
+  process.env.NODE_ENV === "development" ? "http://localhost:8001/api" : ""
 // process.env.GATSBY_API_URL;
 // const DEFAULT_BASE_URL = process.env.GATSBY_API_URL;
 
