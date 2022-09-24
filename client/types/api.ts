@@ -1,4 +1,4 @@
-import { SchoolTypeId } from "./common"
+import { AcademicStatusTypesId, SchoolTypeId } from "./common"
 
 export interface GetSchoolRes {
   id: number
@@ -9,6 +9,28 @@ export interface GetSchoolRes {
   report: IReport[]
   shortName: string
   type: ISchoolType
+}
+
+export interface GetSchoolDetailReivew {
+  id: string
+  createdAt: Date
+  likes: number
+  dislikes: number
+  title: string
+  admissionYear: string
+  user: { id: string; name: string }
+  academicStatus: {
+    id: number
+    displaytext: string
+  }[]
+  ratingQuestionResponses: {
+    optionId: 2
+    questionId: 1
+  }[]
+  longQuestionResponses: {
+    text: string
+    questionId: number
+  }[]
 }
 
 interface ISchoolType {

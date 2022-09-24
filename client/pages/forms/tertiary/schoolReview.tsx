@@ -38,7 +38,7 @@ import {
 } from "../../../constants/common"
 import InputHeader from "../../../components/common/header/input"
 import { schoolReviewLongQuestions } from "../../../constants/longQuestion"
-import { schoolReviewratingQuestions } from "../../../constants/ratingQuestion"
+import { schoolReviewRatingQuestions } from "../../../constants/ratingQuestion"
 
 const SchoolReviewFormPage: React.FunctionComponent = () => {
   const initialValues = {
@@ -162,7 +162,7 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
           onBlur={formik.handleBlur}
           errorMessages={formik.errors.campusRating}
           isTouched={formik.touched.campusRating}
-          header={schoolReviewratingQuestions[1].question}
+          header={schoolReviewRatingQuestions[1].question}
           headerRequired={true}
         />
 
@@ -174,8 +174,8 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
           onBlur={formik.handleBlur}
           errorMessages={formik.errors.resourceRating}
           isTouched={formik.touched.resourceRating}
-          header={schoolReviewratingQuestions[2].question}
-          subHeader={schoolReviewratingQuestions[2].helpertext}
+          header={schoolReviewRatingQuestions[2].question}
+          subHeader={schoolReviewRatingQuestions[2].helpertext}
           headerRequired={true}
         />
 
@@ -187,7 +187,7 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
           onBlur={formik.handleBlur}
           errorMessages={formik.errors.policyRating}
           isTouched={formik.touched.policyRating}
-          header={schoolReviewratingQuestions[3].question}
+          header={schoolReviewRatingQuestions[3].question}
           headerRequired={true}
         />
 
@@ -199,7 +199,7 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
           onBlur={formik.handleBlur}
           errorMessages={formik.errors.canteenRating}
           isTouched={formik.touched.canteenRating}
-          header={schoolReviewratingQuestions[4].question}
+          header={schoolReviewRatingQuestions[4].question}
           headerRequired={true}
         />
 
@@ -211,7 +211,7 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
           onBlur={formik.handleBlur}
           errorMessages={formik.errors.selfOfBelonging}
           isTouched={formik.touched.selfOfBelonging}
-          header={schoolReviewratingQuestions[5].question}
+          header={schoolReviewRatingQuestions[5].question}
           headerRequired={true}
         />
 
@@ -223,7 +223,7 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
           onBlur={formik.handleBlur}
           errorMessages={formik.errors.recommendation}
           isTouched={formik.touched.recommendation}
-          header={schoolReviewratingQuestions[6].question}
+          header={schoolReviewRatingQuestions[6].question}
           headerRequired={true}
         />
       </div>

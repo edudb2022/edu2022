@@ -30,7 +30,7 @@ const SchoolType = [
 
 const Home: NextPage = (props) => {
   const router = useRouter()
-  const { data } = useGetSchools()
+  const { data, isLoading } = useGetSchools()
   // const { data } = useQuery(["schools"], apiService.getSchools)
   useEffect(() => {
     window.gtag("event", "page_view", {

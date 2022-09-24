@@ -1,4 +1,4 @@
-export const schoolReviewratingQuestions = {
+export const schoolReviewRatingQuestions = {
   [1]: { id: 1, question: "學校設施及環境" },
   [2]: {
     id: 2,
