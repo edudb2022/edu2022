@@ -6,6 +6,8 @@ import LongQuestionsSection from "../../../../components/common/inputs/sections/
 import RatingTag from "../../../../components/common/tags/rating"
 import DetailReviewHeaderContainer from "../../../../components/containers/detailReviewHeader"
 import DetailReviewInfoContainer from "../../../../components/containers/detailReviewInfo"
+import LongTextDisplayContainer from "../../../../components/containers/longTextDisplay"
+import LongQuestionsDisplayLayout from "../../../../components/layouts/longQuestionsDisplay"
 
 import PageLayout from "../../../../components/layouts/page"
 import { schoolReviewLongQuestions } from "../../../../constants/longQuestion"
@@ -128,10 +130,16 @@ const SchoolReviewDetailPage: NextPage = () => {
         />
       </DetailReviewHeaderContainer>
 
-      <LongQuestionsSection
-        title={b}
-        content={data!.longQuestionResponses[0].text}
-      />
+      <LongQuestionsDisplayLayout>
+        {data?.longQuestionResponses.map((data) => {
+          return (
+            <LongTextDisplayContainer
+              title={schoolReviewLongQuestions[data!.questionId].question}
+              content={data!.text}
+            />
+          )
+        })}
+      </LongQuestionsDisplayLayout>
     </PageLayout>
   )
 }

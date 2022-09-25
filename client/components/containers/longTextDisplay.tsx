@@ -3,15 +3,15 @@ import React from "react"
 interface ILongTextDisplayContainerProps {
   content: string
   className?: string
+  title: string
 }
 
 const LongTextDisplayContainer: React.FunctionComponent<
   ILongTextDisplayContainerProps
-> = ({ content, className }) => {
+> = ({ content, className, title }) => {
   return (
-    <div
-      className={`border-2 border-dashed border-black md:p-6 p-3 rounded-lg whitespace-pre-line md:text-base text-sm  ${className}`}
-    >
+    <div className={`bg-theme-one-50 p-8 rounded-2xl ${className}`}>
+      <h5 className="text-theme-one-500">{title}</h5>
       {content}
     </div>
   )
