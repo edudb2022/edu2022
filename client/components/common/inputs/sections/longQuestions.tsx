@@ -6,9 +6,7 @@ import BaseTextArea, { IBaseTextAreaProps } from "../textArea"
 
 interface ILongQuestionsSectionProps
   extends Partial<IBaseTextAreaProps>,
-    IInputHeaderProps {
-  content?: string
-}
+    IInputHeaderProps {}
 
 const LongQuestionsSection: React.FunctionComponent<
   ILongQuestionsSectionProps
@@ -16,7 +14,6 @@ const LongQuestionsSection: React.FunctionComponent<
   className,
   isTouched,
   errorMessages,
-  content,
   header,
   headerRequired,
   subHeader,
@@ -35,18 +32,14 @@ const LongQuestionsSection: React.FunctionComponent<
       />
 
       <div>
-        {content ? (
-          <LongTextDisplayContainer content={content} />
-        ) : (
-          <BaseTextArea
-            isTouched={isTouched}
-            errorMessages={errorMessages}
-            maxLength={255}
-            className={` bg-[#F8FAFC] border-2 ${className}`}
-            minRows={7}
-            {...props}
-          />
-        )}
+        <BaseTextArea
+          isTouched={isTouched}
+          errorMessages={errorMessages}
+          maxLength={255}
+          className={` bg-[#F8FAFC] border-2 ${className}`}
+          minRows={7}
+          {...props}
+        />
       </div>
     </div>
   )
