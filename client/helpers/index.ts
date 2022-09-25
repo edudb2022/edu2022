@@ -12,13 +12,15 @@ export const CommonHelpers = {
     type: SchoolTypeId
   ): GetSchoolRes[] => {
     const arr: GetSchoolRes[] = []
-
+    const lowerCaseSearchtext = search.toLowerCase()
     if (list) {
       list.forEach((data) => {
         if (
-          (data.chineseName.includes(search) ||
-            data.englishName.includes(search) ||
-            data.shortName.includes(search)) &&
+          (data.chineseName.toLocaleLowerCase().includes(lowerCaseSearchtext) ||
+            data.englishName
+              .toLocaleLowerCase()
+              .includes(lowerCaseSearchtext) ||
+            data.shortName.toLocaleLowerCase().includes(lowerCaseSearchtext)) &&
           data.type.id === type
         ) {
           arr.push(data)

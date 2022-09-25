@@ -25,7 +25,7 @@ import { apiService } from "../../../../utils/api/api"
 const SchoolReviewDetailPage: NextPage = () => {
   const router = useRouter()
   const { id } = router.query
-  const { data, isLoading } = useGetSchoolDetailReivew(id as string)
+  const { data } = useGetSchoolDetailReivew(id as string)
 
   const campusRating = {
     rating: Number(
@@ -80,19 +80,14 @@ const SchoolReviewDetailPage: NextPage = () => {
         .question
   }
 
-  const b = schoolReviewLongQuestions[data!.longQuestionResponses[0].questionId]
-    .question as string
-
   return (
     <PageLayout>
       <DetailReviewHeaderContainer
         score={123}
         ChineseTitle={data!.title}
-        // EnglishTitle="123"
         schoolShortName="hku"
-        // ShortTitle="123"
       >
-        <div className="flex flex-wrap flex-row justify-evenly w-full border-2">
+        <div className="grid md:grid-cols-6 grid-cols-3">
           <RatingTag
             rating={campusRating.rating}
             title={campusRating.title}
