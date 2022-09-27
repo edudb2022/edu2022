@@ -1,8 +1,4 @@
 import React, { MouseEventHandler } from "react"
-import { useAppDispatch } from "../../../../hooks/common/useAppDispatch"
-
-import { useAppSelector } from "../../../../hooks/common/useAppSelector"
-import { ISystemActionTypes } from "../../../../state/system/actions"
 import { VOTE_TYPE } from "../../../../types/common"
 import DisLikeButton from "../../buttons/rating/dislike"
 import LikeButton from "../../buttons/rating/like"

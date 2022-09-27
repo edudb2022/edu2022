@@ -1,6 +1,4 @@
 import React from "react"
-import InputContainer from "../../../containers/input"
-import LongTextDisplayContainer from "../../../containers/longTextDisplay"
 import InputHeader, { IInputHeaderProps } from "../../header/input"
 import BaseTextArea, { IBaseTextAreaProps } from "../textArea"
 

@@ -10,7 +10,7 @@ import LongTextDisplayContainer from "../../../../components/containers/longText
 import LongQuestionsDisplayLayout from "../../../../components/layouts/longQuestionsDisplay"
 
 import PageLayout from "../../../../components/layouts/page"
-import { schoolReviewLongQuestions } from "../../../../constants/longQuestion"
+
 import {
   schoolCampusRating,
   schoolPolicyRating,
@@ -18,8 +18,10 @@ import {
   schoolSelfOfBelongingRating,
   shcoolCafeteriaRating
 } from "../../../../constants/rating"
-import { schoolReviewRatingQuestions } from "../../../../constants/ratingQuestion"
+
 import useGetSchoolDetailReivew from "../../../../hooks/api/useGetSchoolDetailReview"
+import { schoolReviewLongQuestionsMapper } from "../../../../mappers/longQuestion"
+import { schoolReviewRatingQuestionsMapper } from "../../../../mappers/ratingQuestions"
 import { apiService } from "../../../../utils/api/api"
 
 const SchoolReviewDetailPage: NextPage = () => {
@@ -33,8 +35,9 @@ const SchoolReviewDetailPage: NextPage = () => {
     ),
     title: schoolCampusRating[data!.ratingQuestionResponses[0]!.optionId].label,
     header:
-      schoolReviewRatingQuestions[data!.ratingQuestionResponses[0].questionId]
-        .question
+      schoolReviewRatingQuestionsMapper[
+        data!.ratingQuestionResponses[0].questionId
+      ].question
   }
 
   const resourceRating = {
@@ -44,8 +47,9 @@ const SchoolReviewDetailPage: NextPage = () => {
     title:
       schoolRecourcesRating[data!.ratingQuestionResponses[1]!.optionId].label,
     header:
-      schoolReviewRatingQuestions[data!.ratingQuestionResponses[1].questionId]
-        .question
+      schoolReviewRatingQuestionsMapper[
+        data!.ratingQuestionResponses[1].questionId
+      ].question
   }
   const policyRating = {
     rating: Number(
@@ -53,8 +57,9 @@ const SchoolReviewDetailPage: NextPage = () => {
     ),
     title: schoolPolicyRating[data!.ratingQuestionResponses[2]!.optionId].label,
     header:
-      schoolReviewRatingQuestions[data!.ratingQuestionResponses[2].questionId]
-        .question
+      schoolReviewRatingQuestionsMapper[
+        data!.ratingQuestionResponses[2].questionId
+      ].question
   }
   const cafeteriaRating = {
     rating: Number(
@@ -63,8 +68,9 @@ const SchoolReviewDetailPage: NextPage = () => {
     title:
       shcoolCafeteriaRating[data!.ratingQuestionResponses[3]!.optionId].label,
     header:
-      schoolReviewRatingQuestions[data!.ratingQuestionResponses[3].questionId]
-        .question
+      schoolReviewRatingQuestionsMapper[
+        data!.ratingQuestionResponses[3].questionId
+      ].question
   }
 
   const selfOfBelongingRating = {
@@ -76,8 +82,9 @@ const SchoolReviewDetailPage: NextPage = () => {
       schoolSelfOfBelongingRating[data!.ratingQuestionResponses[4]!.optionId]
         .label,
     header:
-      schoolReviewRatingQuestions[data!.ratingQuestionResponses[4].questionId]
-        .question
+      schoolReviewRatingQuestionsMapper[
+        data!.ratingQuestionResponses[4].questionId
+      ].question
   }
 
   return (
@@ -129,7 +136,7 @@ const SchoolReviewDetailPage: NextPage = () => {
         {data?.longQuestionResponses.map((data) => {
           return (
             <LongTextDisplayContainer
-              title={schoolReviewLongQuestions[data!.questionId].question}
+              title={schoolReviewLongQuestionsMapper[data!.questionId].question}
               content={data!.text}
             />
           )

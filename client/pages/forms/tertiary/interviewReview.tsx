@@ -40,6 +40,7 @@ import { schoolTypeOptions } from "../../../constants/school"
 import { ERROR_FORM_MESSAGES } from "../../../utils/validation/errorMessages/form"
 import { ADMISSION_TYPE } from "../../../types/common"
 import InputHeader from "../../../components/common/header/input"
+import { interviewReviewLongQuestionsMapper } from "../../../mappers/longQuestion"
 
 const InterviewReviewPage: NextPage = () => {
   const initialValues = {
@@ -559,7 +560,7 @@ const InterviewReviewPage: NextPage = () => {
       />
       <LongQuestionsSection
         name="longQ"
-        header="對面試體驗嘅評價有冇補充？"
+        header={interviewReviewLongQuestionsMapper[1].question}
         value={formik.values.longQ}
         valueLength={formik.values.longQ.length}
         onChange={formik.handleChange}
@@ -570,7 +571,7 @@ const InterviewReviewPage: NextPage = () => {
 
       <LongQuestionsSection
         name="longQ"
-        header="對面試難度嘅評價有冇補充？"
+        header={interviewReviewLongQuestionsMapper[2].question}
         value={formik.values.longQ}
         valueLength={formik.values.longQ.length}
         onChange={formik.handleChange}
@@ -581,7 +582,7 @@ const InterviewReviewPage: NextPage = () => {
 
       <LongQuestionsSection
         name="longQ"
-        header="你點樣準備？"
+        header={interviewReviewLongQuestionsMapper[3].question}
         value={formik.values.longQ}
         valueLength={formik.values.longQ.length}
         onChange={formik.handleChange}
@@ -592,7 +593,7 @@ const InterviewReviewPage: NextPage = () => {
 
       <LongQuestionsSection
         name="longQ"
-        header="面試形式係點？"
+        header={interviewReviewLongQuestionsMapper[4].question}
         placeholder="個人/小組？題目內容？面試咗幾耐？"
         value={formik.values.longQ}
         valueLength={formik.values.longQ.length}
@@ -604,7 +605,7 @@ const InterviewReviewPage: NextPage = () => {
 
       <LongQuestionsSection
         name="longQ"
-        header="對後人嘅忠告？"
+        header={interviewReviewLongQuestionsMapper[5].question}
         placeholder="例如:入學準備/選課策略"
         value={formik.values.longQ}
         valueLength={formik.values.longQ.length}
@@ -616,7 +617,19 @@ const InterviewReviewPage: NextPage = () => {
 
       <LongQuestionsSection
         name="longQ"
-        header="最後補充?"
+        header={interviewReviewLongQuestionsMapper[6].question}
+        placeholder={``}
+        value={formik.values.longQ}
+        valueLength={formik.values.longQ.length}
+        onChange={formik.handleChange}
+        onBlur={formik.handleBlur}
+        errorMessages={formik.errors.longQ}
+        isTouched={formik.touched.longQ}
+      />
+
+      <LongQuestionsSection
+        name="longQ"
+        header={interviewReviewLongQuestionsMapper[7].question}
         placeholder={``}
         value={formik.values.longQ}
         valueLength={formik.values.longQ.length}

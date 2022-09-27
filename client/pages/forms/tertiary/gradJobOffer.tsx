@@ -34,6 +34,7 @@ import {
 } from "../../../utils/validation/form/schema"
 import * as yup from "yup"
 import InputHeader from "../../../components/common/header/input"
+import { gradJobOfferOfferReviewLongQuestionsMapper } from "../../../mappers/longQuestion"
 
 const GradJobOfferFormPage: React.FunctionComponent = () => {
   const initialValues = {
@@ -340,7 +341,7 @@ const GradJobOfferFormPage: React.FunctionComponent = () => {
 
       <LongQuestionsSection
         name="longQ"
-        header="對搵工難度嘅評價有冇補充？"
+        header={gradJobOfferOfferReviewLongQuestionsMapper[1].question}
         value={formik.values.longQ}
         valueLength={formik.values.longQ.length}
         onChange={formik.handleChange}
@@ -351,7 +352,7 @@ const GradJobOfferFormPage: React.FunctionComponent = () => {
 
       <LongQuestionsSection
         name="longQ"
-        header="對前途評估嘅評價有冇補充？"
+        header={gradJobOfferOfferReviewLongQuestionsMapper[2].question}
         placeholder="例如career path係點，晉升機會，人工升幅等等"
         value={formik.values.longQ}
         valueLength={formik.values.longQ.length}
@@ -362,7 +363,7 @@ const GradJobOfferFormPage: React.FunctionComponent = () => {
       />
       <LongQuestionsSection
         name="longQ"
-        header="面試過程係點？"
+        header={gradJobOfferOfferReviewLongQuestionsMapper[3].question}
         value={formik.values.longQ}
         valueLength={formik.values.longQ.length}
         onChange={formik.handleChange}
@@ -373,7 +374,7 @@ const GradJobOfferFormPage: React.FunctionComponent = () => {
 
       <LongQuestionsSection
         name="longQ"
-        header="你點樣裝備自己去搵工？"
+        header={gradJobOfferOfferReviewLongQuestionsMapper[4].question}
         value={formik.values.longQ}
         valueLength={formik.values.longQ.length}
         onChange={formik.handleChange}
@@ -384,7 +385,7 @@ const GradJobOfferFormPage: React.FunctionComponent = () => {
 
       <LongQuestionsSection
         name="longQ"
-        header="返工前有咩要準備？"
+        header={gradJobOfferOfferReviewLongQuestionsMapper[5].question}
         value={formik.values.longQ}
         valueLength={formik.values.longQ.length}
         onChange={formik.handleChange}
@@ -395,7 +396,7 @@ const GradJobOfferFormPage: React.FunctionComponent = () => {
 
       <LongQuestionsSection
         name="longQ"
-        header="工作環境點樣？"
+        header={gradJobOfferOfferReviewLongQuestionsMapper[6].question}
         placeholder="例如設施，福利，地點，伙食，管理層"
         value={formik.values.longQ}
         valueLength={formik.values.longQ.length}
@@ -407,7 +408,7 @@ const GradJobOfferFormPage: React.FunctionComponent = () => {
 
       <LongQuestionsSection
         name="longQ"
-        header="工作文化點樣？"
+        header={gradJobOfferOfferReviewLongQuestionsMapper[7].question}
         placeholder="例如OT程度，語言，同事，氣氛"
         value={formik.values.longQ}
         valueLength={formik.values.longQ.length}
@@ -419,7 +420,7 @@ const GradJobOfferFormPage: React.FunctionComponent = () => {
 
       <LongQuestionsSection
         name="longQ"
-        header="點解會揀呢間公司？"
+        header={gradJobOfferOfferReviewLongQuestionsMapper[8].question}
         placeholder="優點?缺點？對比其他offer？"
         value={formik.values.longQ}
         valueLength={formik.values.longQ.length}
@@ -431,18 +432,7 @@ const GradJobOfferFormPage: React.FunctionComponent = () => {
 
       <LongQuestionsSection
         name="longQ"
-        header="對師弟師妹嘅忠告？"
-        value={formik.values.longQ}
-        valueLength={formik.values.longQ.length}
-        onChange={formik.handleChange}
-        onBlur={formik.handleBlur}
-        errorMessages={formik.errors.longQ}
-        isTouched={formik.touched.longQ}
-      />
-
-      <LongQuestionsSection
-        name="longQ"
-        header="最後補充?"
+        header={gradJobOfferOfferReviewLongQuestionsMapper[9].question}
         value={formik.values.longQ}
         valueLength={formik.values.longQ.length}
         onChange={formik.handleChange}

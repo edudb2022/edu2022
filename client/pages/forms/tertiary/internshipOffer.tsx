@@ -33,6 +33,7 @@ import {
   TitleValidationSchema
 } from "../../../utils/validation/form/schema"
 import InputHeader from "../../../components/common/header/input"
+import { internshipOfferReviewLongQuestionsMapper } from "../../../mappers/longQuestion"
 
 const InternshipOfferFormPage: React.FunctionComponent = () => {
   const initialValues = {
@@ -324,7 +325,7 @@ const InternshipOfferFormPage: React.FunctionComponent = () => {
       />
       <LongQuestionsSection
         name="longQ"
-        header="對搵工難度嘅評價有冇補充？"
+        header={internshipOfferReviewLongQuestionsMapper[1].question}
         value={formik.values.longQ}
         valueLength={formik.values.longQ.length}
         onChange={formik.handleChange}
@@ -335,7 +336,7 @@ const InternshipOfferFormPage: React.FunctionComponent = () => {
 
       <LongQuestionsSection
         name="longQ"
-        header="面試過程係點？"
+        header={internshipOfferReviewLongQuestionsMapper[2].question}
         value={formik.values.longQ}
         valueLength={formik.values.longQ.length}
         onChange={formik.handleChange}
@@ -346,7 +347,7 @@ const InternshipOfferFormPage: React.FunctionComponent = () => {
 
       <LongQuestionsSection
         name="longQ"
-        header="你點樣裝備自己去搵工？"
+        header={internshipOfferReviewLongQuestionsMapper[3].question}
         value={formik.values.longQ}
         valueLength={formik.values.longQ.length}
         onChange={formik.handleChange}
@@ -357,7 +358,7 @@ const InternshipOfferFormPage: React.FunctionComponent = () => {
 
       <LongQuestionsSection
         name="longQ"
-        header="返工前有咩要準備？"
+        header={internshipOfferReviewLongQuestionsMapper[4].question}
         value={formik.values.longQ}
         valueLength={formik.values.longQ.length}
         onChange={formik.handleChange}
@@ -368,7 +369,7 @@ const InternshipOfferFormPage: React.FunctionComponent = () => {
 
       <LongQuestionsSection
         name="longQ"
-        header="工作環境點樣？"
+        header={internshipOfferReviewLongQuestionsMapper[5].question}
         placeholder="例如設施，福利，地點，伙食，管理層"
         value={formik.values.longQ}
         valueLength={formik.values.longQ.length}
@@ -380,7 +381,7 @@ const InternshipOfferFormPage: React.FunctionComponent = () => {
 
       <LongQuestionsSection
         name="longQ"
-        header="工作文化點樣？"
+        header={internshipOfferReviewLongQuestionsMapper[6].question}
         placeholder="例如OT程度，語言，同事，氣氛"
         value={formik.values.longQ}
         valueLength={formik.values.longQ.length}
@@ -392,7 +393,7 @@ const InternshipOfferFormPage: React.FunctionComponent = () => {
 
       <LongQuestionsSection
         name="longQ"
-        header="點解會揀呢間公司？"
+        header={internshipOfferReviewLongQuestionsMapper[7].question}
         placeholder="優點?缺點？對比其他offer？"
         value={formik.values.longQ}
         valueLength={formik.values.longQ.length}
@@ -404,7 +405,7 @@ const InternshipOfferFormPage: React.FunctionComponent = () => {
 
       <LongQuestionsSection
         name="longQ"
-        header="最後補充?"
+        header={internshipOfferReviewLongQuestionsMapper[8].question}
         value={formik.values.longQ}
         valueLength={formik.values.longQ.length}
         onChange={formik.handleChange}
