@@ -12,17 +12,26 @@ import { ISystemActionTypes } from "../../state/system/actions"
 import { useCountUp } from "react-countup"
 import VotedModal from "../common/modals/voted"
 import { VOTE_TYPE } from "../../types/common"
+import { apiService } from "../../utils/api/api"
 
 interface IDetailReviewHeader
   extends IReviewHeaderContainerProps,
     ILikeRatingProps {
   containerClassName?: string
+  postId: number
 }
 
 const DetailReviewHeaderContainer: React.FunctionComponent<
   PropsWithChildren<IDetailReviewHeader>
-> = ({ children, score, containerClassName, layoutClassName, ...props }) => {
-  const { isLogin, isVerified } = useAppSelector((state) => state.user)
+> = ({
+  children,
+  score,
+  containerClassName,
+  layoutClassName,
+  postId,
+  ...props
+}) => {
+  const { isLogin } = useAppSelector((state) => state.user)
   const dispatch = useAppDispatch()
   //const isValidUser = isLogin && isVerified
   const isValidUser = isLogin
@@ -30,7 +39,7 @@ const DetailReviewHeaderContainer: React.FunctionComponent<
   const [voteType, setVoteType] = useState<VOTE_TYPE | "">("")
   const [voteTypeModalOpen, setVoteTypeModalOpen] = useState(false)
 
-  const handleLikeClick = () => {
+  const handleLikeClick = async () => {
     if (!isValidUser) {
       dispatch({
         type: ISystemActionTypes.SYSTEM_IS_AUTH_MODAL_OPEN,
@@ -39,7 +48,9 @@ const DetailReviewHeaderContainer: React.FunctionComponent<
     }
 
     if (isValidUser && !voteType.length) {
-      setCurrentScore(currtentScore + 1)
+      // setCurrentScore(currtentScore + 1)
+      await apiService.postVote({ id: postId, value: 1 })
+      console.log("runnnung")
       setVoteType(VOTE_TYPE.LIKED)
     }
 
@@ -89,7 +100,7 @@ const DetailReviewHeaderContainer: React.FunctionComponent<
         <LikeRating score={currtentScore} />
         <div>
           <LikeAndDisLikeButtonGroup
-            handleLikeClick={handleLikeClick}
+            handleLeftClick={handleLikeClick}
             handleRightClick={handleRightClick}
             voteType={voteType}
           />

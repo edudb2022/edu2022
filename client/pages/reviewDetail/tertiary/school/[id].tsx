@@ -93,6 +93,7 @@ const SchoolReviewDetailPage: NextPage = () => {
         score={123}
         ChineseTitle={data!.title}
         schoolShortName="hku"
+        postId={data!.id}
       >
         <div className="grid md:grid-cols-6 grid-cols-3">
           <RatingTag
@@ -138,6 +139,7 @@ const SchoolReviewDetailPage: NextPage = () => {
             <LongTextDisplayContainer
               title={schoolReviewLongQuestionsMapper[data!.questionId].question}
               content={data!.text}
+              key={data!.questionId}
             />
           )
         })}

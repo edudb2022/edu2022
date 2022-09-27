@@ -18,6 +18,19 @@ const apiService = {
     } catch (error) {
       console.error(error)
     }
+  },
+
+  postVote: async ({ id, value }: { id: number; value: number }) => {
+    // const id = queryKey[1].id
+    try {
+      await axios.post(`${DEFAULT_BASE_URL}/school-reviews/${id}/votes`, {
+        // body: {
+        value
+        // }
+      })
+    } catch (error) {
+      console.error(error)
+    }
   }
 }
 

@@ -12,7 +12,7 @@ export interface GetSchoolRes {
 }
 
 export interface GetSchoolDetailReivew {
-  id: string
+  id: number
   createdAt: Date
   likes: number
   dislikes: number
