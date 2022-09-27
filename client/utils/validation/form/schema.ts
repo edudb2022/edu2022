@@ -9,6 +9,10 @@ const RatingValidationSchema = yup.number().required("必須選擇").nullable(tr
 
 const DateValidationSchema = yup.date().required("必須填寫").nullable(true)
 
+const longQuestionValidationSchema = yup
+  .string()
+  .max(3000, ERROR_FORM_MESSAGES.TOO_LONG)
+
 const SlectCommonValidationSchema = yup
   .string()
   .required("必須選擇")
@@ -23,5 +27,6 @@ export {
   RatingValidationSchema,
   SlectCommonValidationSchema,
   SalaryValidationSchema,
-  DateValidationSchema
+  DateValidationSchema,
+  longQuestionValidationSchema
 }

@@ -37,7 +37,7 @@ const BaseTextInput: React.FunctionComponent<IBaseInputTextProps> = ({
       helpText={helpText}
     >
       <TextField
-        className={` ${className}`}
+        className={`${className}`}
         label={`${label}${isRequired ? "*" : ""}`}
         {...props}
       />

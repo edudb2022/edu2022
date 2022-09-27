@@ -51,7 +51,7 @@ const BaseDatePicker: React.FunctionComponent<IBaseDatePickerProps> = ({
             value={value}
             renderInput={(params) => <TextField {...params} fullWidth />}
             onChange={onChange}
-            className={className}
+            className={` ${className}`}
             {...props}
           />
         </InputContainer>

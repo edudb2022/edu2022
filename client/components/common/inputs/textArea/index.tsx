@@ -1,7 +1,11 @@
-import { TextareaAutosize, TextareaAutosizeProps } from "@mui/material"
+import {
+  TextareaAutosize,
+  TextareaAutosizeProps,
+  TextField
+} from "@mui/material"
+
 import React from "react"
 import InputContainer, { IInputContainerProps } from "../../../containers/input"
-import ErrorMessage, { IErrorMessageProps } from "../../messages/error"
 
 export interface IBaseTextAreaProps
   extends TextareaAutosizeProps,
@@ -18,6 +22,7 @@ const BaseTextArea: React.FunctionComponent<IBaseTextAreaProps> = ({
   headerRequired,
   inputContainerClassName,
   subHeader,
+  maxLength,
   ...props
 }) => {
   return (
@@ -36,7 +41,7 @@ const BaseTextArea: React.FunctionComponent<IBaseTextAreaProps> = ({
         />
         {/* {valueLength && ( */}
         <div className="absolute right-3 bottom-5 text-theme-three-500">
-          {`${valueLength}/255`}
+          {`${valueLength}/${maxLength}`}
         </div>
         {/* )} */}
       </div>

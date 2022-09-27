@@ -33,8 +33,8 @@ const LongQuestionsSection: React.FunctionComponent<
         <BaseTextArea
           isTouched={isTouched}
           errorMessages={errorMessages}
-          maxLength={255}
-          className={` bg-[#F8FAFC] border-2 ${className}`}
+          maxLength={3000}
+          className={` border-2 rounded-lg bg-theme-one-50  focus:outline-theme-one-500 border-none ${className}`}
           minRows={7}
           {...props}
         />
