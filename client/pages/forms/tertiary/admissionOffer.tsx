@@ -29,6 +29,7 @@ import { recommendRating } from "../../../constants/rating"
 import { schoolTypeOptions } from "../../../constants/school"
 import {
   DateValidationSchema,
+  longQuestionValidationSchema,
   SlectCommonValidationSchema,
   TitleValidationSchema
 } from "../../../utils/validation/form/schema"
@@ -49,6 +50,7 @@ import {
 } from "../../../constants/common"
 import { DSE_GRADE_TO_SOCRE_MAPPER } from "../../../mappers/dseGrade"
 import { CommonHelpers } from "../../../helpers"
+import { admissionOfferReviewLongQuestionsMapper } from "../../../mappers/longQuestion"
 
 const AdmissionOfferFormPage: React.FunctionComponent = () => {
   const dispatch = useAppDispatch()
@@ -84,7 +86,9 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
     contactMethod: "",
     contactDetail: "",
     isAnonymous: false,
-    longQ: ""
+    longQOne: "",
+    longQTwo: "",
+    longQThree: ""
   }
 
   const handleSubmit = () => {
@@ -105,6 +109,9 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
     offerType: SlectCommonValidationSchema,
     admissionType: SlectCommonValidationSchema,
     admissionLevel: SlectCommonValidationSchema,
+    longQOne: longQuestionValidationSchema,
+    longQTwo: longQuestionValidationSchema,
+    longQThree: longQuestionValidationSchema,
     gpa: yup
       .number()
       .min(0, ERROR_FORM_MESSAGES.GPA_NEGATIVE)
@@ -648,38 +655,38 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
       />
 
       <LongQuestionsSection
-        name="longQ"
-        header="點解會揀呢間學校？"
+        name="longQOne"
+        header={admissionOfferReviewLongQuestionsMapper[1].question}
         placeholder="優點?缺點？對比其他offer？"
-        value={formik.values.longQ}
-        valueLength={formik.values.longQ.length}
+        value={formik.values.longQOne}
+        valueLength={formik.values.longQOne.length}
         onChange={formik.handleChange}
         onBlur={formik.handleBlur}
-        errorMessages={formik.errors.longQ}
-        isTouched={formik.touched.longQ}
+        errorMessages={formik.errors.longQOne}
+        isTouched={formik.touched.longQOne}
       />
 
       <LongQuestionsSection
-        name="longQ"
-        header="點解會揀呢科？"
+        name="longQTwo"
+        header={admissionOfferReviewLongQuestionsMapper[2].question}
         placeholder="優點?缺點？對比其他offer？"
-        value={formik.values.longQ}
-        valueLength={formik.values.longQ.length}
+        value={formik.values.longQTwo}
+        valueLength={formik.values.longQTwo.length}
         onChange={formik.handleChange}
         onBlur={formik.handleBlur}
-        errorMessages={formik.errors.longQ}
-        isTouched={formik.touched.longQ}
+        errorMessages={formik.errors.longQTwo}
+        isTouched={formik.touched.longQTwo}
       />
 
       <LongQuestionsSection
-        name="longQ"
-        header="最後補充?"
-        value={formik.values.longQ}
-        valueLength={formik.values.longQ.length}
+        name="longQThree"
+        header={admissionOfferReviewLongQuestionsMapper[3].question}
+        value={formik.values.longQThree}
+        valueLength={formik.values.longQThree.length}
         onChange={formik.handleChange}
         onBlur={formik.handleBlur}
-        errorMessages={formik.errors.longQ}
-        isTouched={formik.touched.longQ}
+        errorMessages={formik.errors.longQThree}
+        isTouched={formik.touched.longQThree}
       />
     </FormPageLayout>
   )

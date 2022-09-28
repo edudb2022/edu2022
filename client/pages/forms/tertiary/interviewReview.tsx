@@ -32,6 +32,7 @@ import {
 import * as yup from "yup"
 import {
   DateValidationSchema,
+  longQuestionValidationSchema,
   RatingValidationSchema,
   SlectCommonValidationSchema,
   TitleValidationSchema
@@ -75,7 +76,13 @@ const InterviewReviewPage: NextPage = () => {
     contactMethod: "",
     contactDetail: "",
     isAnonymous: false,
-    longQ: ""
+    longQOne: "",
+    longQTwo: "",
+    longQThree: "",
+    longQFour: "",
+    longQFive: "",
+    longQSix: "",
+    longQSeven: ""
   }
 
   const handleSubmit = () => {
@@ -96,6 +103,13 @@ const InterviewReviewPage: NextPage = () => {
     currentFaculty: SlectCommonValidationSchema,
     currentProgramme: SlectCommonValidationSchema,
     applicaiotnType: SlectCommonValidationSchema,
+    longQOne: longQuestionValidationSchema,
+    longQTwo: longQuestionValidationSchema,
+    longQThree: longQuestionValidationSchema,
+    longQFour: longQuestionValidationSchema,
+    longQFive: longQuestionValidationSchema,
+    longQSix: longQuestionValidationSchema,
+    longQSeven: longQuestionValidationSchema,
 
     gpa: yup
       .number()
@@ -559,84 +573,84 @@ const InterviewReviewPage: NextPage = () => {
         subHeaderClassName="text-base"
       />
       <LongQuestionsSection
-        name="longQ"
+        name="longQOne"
         header={interviewReviewLongQuestionsMapper[1].question}
-        value={formik.values.longQ}
-        valueLength={formik.values.longQ.length}
+        value={formik.values.longQOne}
+        valueLength={formik.values.longQOne.length}
         onChange={formik.handleChange}
         onBlur={formik.handleBlur}
-        errorMessages={formik.errors.longQ}
-        isTouched={formik.touched.longQ}
+        errorMessages={formik.errors.longQOne}
+        isTouched={formik.touched.longQOne}
       />
 
       <LongQuestionsSection
-        name="longQ"
+        name="longQTwo"
         header={interviewReviewLongQuestionsMapper[2].question}
-        value={formik.values.longQ}
-        valueLength={formik.values.longQ.length}
+        value={formik.values.longQTwo}
+        valueLength={formik.values.longQTwo.length}
         onChange={formik.handleChange}
         onBlur={formik.handleBlur}
-        errorMessages={formik.errors.longQ}
-        isTouched={formik.touched.longQ}
+        errorMessages={formik.errors.longQTwo}
+        isTouched={formik.touched.longQTwo}
       />
 
       <LongQuestionsSection
-        name="longQ"
+        name="longQThree"
         header={interviewReviewLongQuestionsMapper[3].question}
-        value={formik.values.longQ}
-        valueLength={formik.values.longQ.length}
+        value={formik.values.longQThree}
+        valueLength={formik.values.longQThree.length}
         onChange={formik.handleChange}
         onBlur={formik.handleBlur}
-        errorMessages={formik.errors.longQ}
-        isTouched={formik.touched.longQ}
+        errorMessages={formik.errors.longQThree}
+        isTouched={formik.touched.longQThree}
       />
 
       <LongQuestionsSection
-        name="longQ"
+        name="longQFour"
         header={interviewReviewLongQuestionsMapper[4].question}
         placeholder="個人/小組？題目內容？面試咗幾耐？"
-        value={formik.values.longQ}
-        valueLength={formik.values.longQ.length}
+        value={formik.values.longQFour}
+        valueLength={formik.values.longQFour.length}
         onChange={formik.handleChange}
         onBlur={formik.handleBlur}
-        errorMessages={formik.errors.longQ}
-        isTouched={formik.touched.longQ}
+        errorMessages={formik.errors.longQFour}
+        isTouched={formik.touched.longQFour}
       />
 
       <LongQuestionsSection
-        name="longQ"
+        name="longQFive"
         header={interviewReviewLongQuestionsMapper[5].question}
         placeholder="例如:入學準備/選課策略"
-        value={formik.values.longQ}
-        valueLength={formik.values.longQ.length}
+        value={formik.values.longQFive}
+        valueLength={formik.values.longQFive.length}
         onChange={formik.handleChange}
         onBlur={formik.handleBlur}
-        errorMessages={formik.errors.longQ}
-        isTouched={formik.touched.longQ}
+        errorMessages={formik.errors.longQFive}
+        isTouched={formik.touched.longQFive}
       />
 
       <LongQuestionsSection
-        name="longQ"
+        name="longQSix"
         header={interviewReviewLongQuestionsMapper[6].question}
         placeholder={``}
-        value={formik.values.longQ}
-        valueLength={formik.values.longQ.length}
+        value={formik.values.longQSix}
+        valueLength={formik.values.longQSix.length}
         onChange={formik.handleChange}
         onBlur={formik.handleBlur}
-        errorMessages={formik.errors.longQ}
-        isTouched={formik.touched.longQ}
+        errorMessages={formik.errors.longQSix}
+        isTouched={formik.touched.longQSix}
       />
 
       <LongQuestionsSection
-        name="longQ"
+        name="longQSeven"
         header={interviewReviewLongQuestionsMapper[7].question}
         placeholder={``}
-        value={formik.values.longQ}
-        valueLength={formik.values.longQ.length}
+        value={formik.values.longQSeven}
+        valueLength={formik.values.longQSeven.length}
         onChange={formik.handleChange}
         onBlur={formik.handleBlur}
-        errorMessages={formik.errors.longQ}
-        isTouched={formik.touched.longQ}
+        errorMessages={formik.errors.longQSeven}
+        isTouched={formik.touched.longQSeven}
       />
     </FormPageLayout>
   )

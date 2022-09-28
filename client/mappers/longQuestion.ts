@@ -41,6 +41,12 @@ export const interviewReviewLongQuestionsMapper = {
   [7 as number]: { id: 7, question: "最後補充?" }
 }
 
+export const admissionOfferReviewLongQuestionsMapper = {
+  [1 as number]: { id: 1, question: "點解會揀呢間學校？" },
+  [2 as number]: { id: 2, question: "點解會揀呢科？" },
+  [3 as number]: { id: 3, question: "最後補充?" }
+}
+
 export const internshipOfferReviewLongQuestionsMapper = {
   [1 as number]: { id: 1, question: "對搵工難度嘅評價有冇補充？" },
   [2 as number]: { id: 2, question: "面試過程係點？" },

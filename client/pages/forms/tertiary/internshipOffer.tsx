@@ -27,6 +27,7 @@ import { schoolTypeOptions } from "../../../constants/school"
 import * as yup from "yup"
 import {
   DateValidationSchema,
+  longQuestionValidationSchema,
   RatingValidationSchema,
   SalaryValidationSchema,
   SlectCommonValidationSchema,
@@ -56,7 +57,14 @@ const InternshipOfferFormPage: React.FunctionComponent = () => {
     contactMethod: "",
     contactDetail: "",
     isAnonymous: false,
-    longQ: ""
+    longQOne: "",
+    longQTwo: "",
+    longQThree: "",
+    longQFour: "",
+    longQFive: "",
+    longQSix: "",
+    longQSeven: "",
+    longQEight: ""
   }
 
   const handleSubmit = () => {
@@ -79,7 +87,15 @@ const InternshipOfferFormPage: React.FunctionComponent = () => {
     stockOption: SalaryValidationSchema,
     difficulty: RatingValidationSchema,
     applicaiotnType: SlectCommonValidationSchema,
-    offerType: SlectCommonValidationSchema
+    offerType: SlectCommonValidationSchema,
+    longQOne: longQuestionValidationSchema,
+    longQTwo: longQuestionValidationSchema,
+    longQThree: longQuestionValidationSchema,
+    longQFour: longQuestionValidationSchema,
+    longQFive: longQuestionValidationSchema,
+    longQSix: longQuestionValidationSchema,
+    longQSeven: longQuestionValidationSchema,
+    longQEight: longQuestionValidationSchema
   })
 
   const formik = useFormik({
@@ -324,94 +340,94 @@ const InternshipOfferFormPage: React.FunctionComponent = () => {
         subHeaderClassName="text-base"
       />
       <LongQuestionsSection
-        name="longQ"
+        name="longQOne"
         header={internshipOfferReviewLongQuestionsMapper[1].question}
-        value={formik.values.longQ}
-        valueLength={formik.values.longQ.length}
+        value={formik.values.longQOne}
+        valueLength={formik.values.longQOne.length}
         onChange={formik.handleChange}
         onBlur={formik.handleBlur}
-        errorMessages={formik.errors.longQ}
-        isTouched={formik.touched.longQ}
+        errorMessages={formik.errors.longQOne}
+        isTouched={formik.touched.longQOne}
       />
 
       <LongQuestionsSection
-        name="longQ"
+        name="longQTwo"
         header={internshipOfferReviewLongQuestionsMapper[2].question}
-        value={formik.values.longQ}
-        valueLength={formik.values.longQ.length}
+        value={formik.values.longQTwo}
+        valueLength={formik.values.longQTwo.length}
         onChange={formik.handleChange}
         onBlur={formik.handleBlur}
-        errorMessages={formik.errors.longQ}
-        isTouched={formik.touched.longQ}
+        errorMessages={formik.errors.longQTwo}
+        isTouched={formik.touched.longQTwo}
       />
 
       <LongQuestionsSection
-        name="longQ"
+        name="longQThree"
         header={internshipOfferReviewLongQuestionsMapper[3].question}
-        value={formik.values.longQ}
-        valueLength={formik.values.longQ.length}
+        value={formik.values.longQThree}
+        valueLength={formik.values.longQThree.length}
         onChange={formik.handleChange}
         onBlur={formik.handleBlur}
-        errorMessages={formik.errors.longQ}
-        isTouched={formik.touched.longQ}
+        errorMessages={formik.errors.longQThree}
+        isTouched={formik.touched.longQThree}
       />
 
       <LongQuestionsSection
-        name="longQ"
+        name="longQFour"
         header={internshipOfferReviewLongQuestionsMapper[4].question}
-        value={formik.values.longQ}
-        valueLength={formik.values.longQ.length}
+        value={formik.values.longQFour}
+        valueLength={formik.values.longQFour.length}
         onChange={formik.handleChange}
         onBlur={formik.handleBlur}
-        errorMessages={formik.errors.longQ}
-        isTouched={formik.touched.longQ}
+        errorMessages={formik.errors.longQFour}
+        isTouched={formik.touched.longQFour}
       />
 
       <LongQuestionsSection
-        name="longQ"
+        name="longQFive"
         header={internshipOfferReviewLongQuestionsMapper[5].question}
         placeholder="例如設施，福利，地點，伙食，管理層"
-        value={formik.values.longQ}
-        valueLength={formik.values.longQ.length}
+        value={formik.values.longQFive}
+        valueLength={formik.values.longQFive.length}
         onChange={formik.handleChange}
         onBlur={formik.handleBlur}
-        errorMessages={formik.errors.longQ}
-        isTouched={formik.touched.longQ}
+        errorMessages={formik.errors.longQFive}
+        isTouched={formik.touched.longQFive}
       />
 
       <LongQuestionsSection
-        name="longQ"
+        name="longQSix"
         header={internshipOfferReviewLongQuestionsMapper[6].question}
         placeholder="例如OT程度，語言，同事，氣氛"
-        value={formik.values.longQ}
-        valueLength={formik.values.longQ.length}
+        value={formik.values.longQSix}
+        valueLength={formik.values.longQSix.length}
         onChange={formik.handleChange}
         onBlur={formik.handleBlur}
-        errorMessages={formik.errors.longQ}
-        isTouched={formik.touched.longQ}
+        errorMessages={formik.errors.longQSix}
+        isTouched={formik.touched.longQSix}
       />
 
       <LongQuestionsSection
-        name="longQ"
+        name="longQSeven"
         header={internshipOfferReviewLongQuestionsMapper[7].question}
         placeholder="優點?缺點？對比其他offer？"
-        value={formik.values.longQ}
-        valueLength={formik.values.longQ.length}
+        value={formik.values.longQSeven}
+        valueLength={formik.values.longQSeven.length}
         onChange={formik.handleChange}
         onBlur={formik.handleBlur}
-        errorMessages={formik.errors.longQ}
-        isTouched={formik.touched.longQ}
+        errorMessages={formik.errors.longQSeven}
+        isTouched={formik.touched.longQSeven}
       />
 
       <LongQuestionsSection
-        name="longQ"
+        name="longQEight"
         header={internshipOfferReviewLongQuestionsMapper[8].question}
-        value={formik.values.longQ}
-        valueLength={formik.values.longQ.length}
+        value={formik.values.longQEight}
+        valueLength={formik.values.longQEight.length}
         onChange={formik.handleChange}
         onBlur={formik.handleBlur}
-        errorMessages={formik.errors.longQ}
-        isTouched={formik.touched.longQ}
+        errorMessages={formik.errors.longQEight}
+        isTouched={formik.touched.longQEight}
       />
     </FormPageLayout>
   )
