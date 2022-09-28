@@ -9,14 +9,15 @@ const signInAndUpConFig = {
       //     return "..."
       //   }
       // },
-      // {
-      //   id: "password",
-      //   label: "...",
-      //   validate: async (value: string) => {
-      //     // Your own validation returning a string or undefined if no errors.
-      //     return "..."
-      //   }
-      // },
+      {
+        id: "pa1ssword",
+        label: "...",
+        validate: async (value: string) => {
+          console.log(123, value)
+          // Your own validation returning a string or undefined if no errors.
+          return "..."
+        }
+      },
       {
         id: "username",
         label: "username",

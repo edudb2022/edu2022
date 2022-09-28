@@ -18,7 +18,7 @@ interface IDetailReviewHeader
   extends IReviewHeaderContainerProps,
     ILikeRatingProps {
   containerClassName?: string
-  postId: number
+  // postId: number
 }
 
 const DetailReviewHeaderContainer: React.FunctionComponent<
@@ -28,7 +28,7 @@ const DetailReviewHeaderContainer: React.FunctionComponent<
   score,
   containerClassName,
   layoutClassName,
-  postId,
+  // postId,
   ...props
 }) => {
   const { isLogin } = useAppSelector((state) => state.user)
@@ -40,23 +40,26 @@ const DetailReviewHeaderContainer: React.FunctionComponent<
   const [voteTypeModalOpen, setVoteTypeModalOpen] = useState(false)
 
   const handleLikeClick = async () => {
-    if (!isValidUser) {
-      dispatch({
-        type: ISystemActionTypes.SYSTEM_IS_AUTH_MODAL_OPEN,
-        payload: true
-      })
-    }
+    // if (!isValidUser) {
+    //   dispatch({
+    //     type: ISystemActionTypes.SYSTEM_IS_AUTH_MODAL_OPEN,
+    //     payload: true
+    //   })
+    // }
 
-    if (isValidUser && !voteType.length) {
-      // setCurrentScore(currtentScore + 1)
-      await apiService.postVote({ id: postId, value: 1 })
-      console.log("runnnung")
-      setVoteType(VOTE_TYPE.LIKED)
-    }
+    // if (isValidUser && !voteType.length) {
+    //   // setCurrentScore(currtentScore + 1)
+    //   await apiService.postVote({ id: postId, value: 1 })
+    //   console.log("runnnung")
+    //   setVoteType(VOTE_TYPE.LIKED)
+    // }
 
-    if (isValidUser && voteType.length) {
-      setVoteTypeModalOpen(true)
-    }
+    // if (isValidUser && voteType.length) {
+    //   setVoteTypeModalOpen(true)
+    // }
+    try {
+      await apiService.postVote({ id: 32, value: 1 })
+    } catch (err) {}
   }
 
   const handleRightClick = () => {

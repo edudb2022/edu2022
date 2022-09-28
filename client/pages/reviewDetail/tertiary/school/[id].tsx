@@ -93,7 +93,7 @@ const SchoolReviewDetailPage: NextPage = () => {
         score={123}
         ChineseTitle={data!.title}
         schoolShortName="hku"
-        postId={data!.id}
+        // postId={data!.id}
       >
         <div className="grid md:grid-cols-6 grid-cols-3">
           <RatingTag
