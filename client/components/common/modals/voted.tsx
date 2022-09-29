@@ -1,11 +1,11 @@
 import React from "react"
-import { VOTE_TYPE } from "../../../types/common"
+import { VoteTypeId } from "../../../types/common"
 import DisLikeButton from "../buttons/rating/dislike"
 import LikeButton from "../buttons/rating/like"
 import SingleButtonModal, { ISingleButtonModalProps } from "./singleButton"
 
 interface IVotedModalProps extends Partial<ISingleButtonModalProps> {
-  voteType: VOTE_TYPE | ""
+  voteType: VoteTypeId | undefined
 }
 
 const VotedModal: React.FunctionComponent<IVotedModalProps> = ({
@@ -23,18 +23,18 @@ const VotedModal: React.FunctionComponent<IVotedModalProps> = ({
     >
       <div className="flex flex-col justify-center items-center h-40">
         <span className="text-8xl">
-          {voteType === VOTE_TYPE.LIKED && (
+          {voteType === VoteTypeId.LIKED && (
             <LikeButton className="text-theme-teal-700 animate-bounceVertical" />
           )}
 
-          {voteType === VOTE_TYPE.DISLIKE && (
+          {voteType === VoteTypeId.DISLIKE && (
             <DisLikeButton className="text-theme-rose-700  animate-bounceVertical" />
           )}
         </span>
 
-        {voteType === VOTE_TYPE.LIKED && <h6>你已正評了！</h6>}
+        {voteType === VoteTypeId.LIKED && <h6>你已正評了！</h6>}
 
-        {voteType === VOTE_TYPE.DISLIKE && <h6>你已負評了！</h6>}
+        {voteType === VoteTypeId.DISLIKE && <h6>你已負評了！</h6>}
       </div>
     </SingleButtonModal>
   )

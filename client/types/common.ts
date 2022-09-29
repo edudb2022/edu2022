@@ -39,10 +39,10 @@ export enum ADMISSION_LEVEL_TYPE {
   FIVE_PLUS = "Year 5+"
 }
 
-export enum VOTE_TYPE {
-  LIKED = "like",
-  DISLIKE = "dislike"
-}
+// export enum VOTE_TYPE {
+//   LIKED = "like",
+//   DISLIKE = "dislike"
+// }
 
 export interface ISelectMenuItemsType<T, U> {
   value: T
@@ -56,6 +56,10 @@ export interface ISelectMenuItemsType<T, U> {
 
 // export interface ISchoolTypeIdTypes
 //   extends ISelectMenuItemsType<SchoolTypeId, string> {}
+export enum VoteTypeId {
+  LIKED = 1,
+  DISLIKE = -1
+}
 
 export enum DressCodeTypeId {
   FORMAL = 1,

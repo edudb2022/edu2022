@@ -31,6 +31,7 @@ export interface GetSchoolDetailReivew {
     text: string
     questionId: number
   }[]
+  votes: number
 }
 
 interface ISchoolType {

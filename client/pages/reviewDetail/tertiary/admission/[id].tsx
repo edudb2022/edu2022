@@ -20,6 +20,7 @@ const AdmissionReviewDetailPage: NextPage = () => {
       <DetailReviewHeaderContainer
         score={123}
         ChineseTitle="Worse ever !"
+        postId={1}
         // EnglishTitle="123"
         schoolShortName="hku"
         ShortTitle="hku"

@@ -90,10 +90,10 @@ const SchoolReviewDetailPage: NextPage = () => {
   return (
     <PageLayout>
       <DetailReviewHeaderContainer
-        score={123}
+        score={data!.votes}
         ChineseTitle={data!.title}
         schoolShortName="hku"
-        // postId={data!.id}
+        postId={data!.id}
       >
         <div className="grid md:grid-cols-6 grid-cols-3">
           <RatingTag
