@@ -13,7 +13,7 @@ const NavDrawerSignUpitem: React.FunctionComponent<IDrawerSignUpProps> = ({
   }
   return (
     <BaseNavDraweritem
-      title="Sign Up"
+      title="注冊"
       icon={<SignUpIcon />}
       handleClick={hanldeClick}
       {...props}

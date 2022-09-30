@@ -21,9 +21,9 @@ const NavDrawer: React.FunctionComponent<INavDrawer> = ({
 
   return (
     <BaseDrawer anchor="right" open={isOpen} onClose={onClose}>
-      <div className="w-full p-4">
+      <div className="w-full p-4 bg-theme-one-50 h-full ">
         <h2 className="mb-3">Icon</h2>
-        <div className="w-36">
+        <div className="w-36 ">
           {isLogin && (
             <div>
               <NavDrawerProfileItem />

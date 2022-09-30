@@ -19,12 +19,10 @@ const NavDrawerSignOutitem: React.FunctionComponent<
   return (
     <BaseNavDraweritem
       icon={<LogOutIcon />}
-      title="sign out"
+      title="登出"
       handleClick={handleSignOut}
       {...props}
-    >
-      Sign Out
-    </BaseNavDraweritem>
+    />
   )
 }
 

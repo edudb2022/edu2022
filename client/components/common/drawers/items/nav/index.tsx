@@ -12,7 +12,7 @@ const BaseNavDraweritem: React.FunctionComponent<
   PropsWithChildren<IBaseNavDrawerItemProps>
 > = ({ icon, title, url, handleClick }) => {
   return (
-    <div className="text-xl">
+    <div className="text-xl w-full ">
       {url && (
         <a href={url} className="w-full flex flex-row items-center ">
           <div className="pr-4">{icon}</div>
@@ -25,7 +25,7 @@ const BaseNavDraweritem: React.FunctionComponent<
           className="w-full flex flex-row items-center"
           onClick={handleClick}
         >
-          <div className="pr-4">{icon}</div>
+          <div className="pr-8">{icon}</div>
           {title}
         </button>
       )}
