@@ -1,3 +1,4 @@
+import dayjs from "dayjs"
 import { GetServerSideProps, NextPage } from "next"
 import { useRouter } from "next/router"
 import React from "react"
@@ -28,7 +29,8 @@ const SchoolReviewDetailPage: NextPage = () => {
   const router = useRouter()
   const { id } = router.query
   const { data } = useGetSchoolDetailReivew(id as string)
-
+  const username = data?.anonymous === true ? "anonymous" : data?.user.name
+  const postDate = dayjs(data?.createdAt).format("MM/YY")
   const campusRating = {
     rating: Number(
       schoolCampusRating[data!.ratingQuestionResponses[0]!.optionId].value
@@ -127,8 +129,8 @@ const SchoolReviewDetailPage: NextPage = () => {
         <DetailReviewInfoContainer
           admissionYear={data!.admissionYear}
           academicStatus="Year 1"
-          username={data!.user.name}
-          postDate="01/02/23"
+          username={username!}
+          postDate={postDate}
           contact="tg : 123"
         />
       </DetailReviewHeaderContainer>

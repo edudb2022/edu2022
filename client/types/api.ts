@@ -18,6 +18,7 @@ export interface GetSchoolDetailReivew {
   dislikes: number
   title: string
   admissionYear: string
+  anonymous: boolean
   user: { id: string; name: string }
   academicStatus: {
     id: number

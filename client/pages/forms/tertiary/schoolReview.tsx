@@ -4,7 +4,6 @@ import React from "react"
 import RatingToggleButtonGroup from "../../../components/common/groups/toggleButton/rating"
 import BaseDatePicker from "../../../components/common/inputs/date"
 import TitleTextInput from "../../../components/common/inputs/text/title"
-import moment from "moment"
 import FormPageLayout from "../../../components/layouts/form"
 import {
   schoolCampusRating,
@@ -41,6 +40,7 @@ import InputHeader from "../../../components/common/header/input"
 
 import { schoolReviewLongQuestionsMapper } from "../../../mappers/longQuestion"
 import { schoolReviewRatingQuestionsMapper } from "../../../mappers/ratingQuestions"
+import dayjs from "dayjs"
 
 const SchoolReviewFormPage: React.FunctionComponent = () => {
   const initialValues = {
@@ -134,16 +134,10 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
         <BaseDatePicker
           label="入學日期"
           value={formik.values.admissionDate}
-          // onChange={(newValue: any) => {
-          //   formik.setFieldValue(
-          //     "admissionDate",
-          //     moment(newValue).format("dd/MM/yyyy")
-          //   )
-          // }}
           onChange={(newValue: any) => {
             formik.setFieldValue(
               "admissionDate",
-              moment(newValue).format("YYYY-MM-DD")
+              dayjs(newValue).format("YYYY-MM-DD")
             )
           }}
           errorMessages={formik.errors.admissionDate}
@@ -294,7 +288,6 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
       />
       <LongQuestionsSection
         name="longQOne"
-        // header="對校園環境同設施既評價有冇補充?"
         header={schoolReviewLongQuestionsMapper[1].question}
         value={formik.values.longQOne}
         valueLength={formik.values.longQOne.length}
@@ -306,7 +299,6 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
 
       <LongQuestionsSection
         name="longQTwo"
-        // header="對資源及支援嘅評價有冇補充？"
         header={schoolReviewLongQuestionsMapper[2].question}
         value={formik.values.longQTwo}
         valueLength={formik.values.longQTwo.length}
@@ -329,7 +321,6 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
 
       <LongQuestionsSection
         name="longQFour"
-        // header="對校內膳食嘅評價有冇補充？"
         header={schoolReviewLongQuestionsMapper[4].question}
         value={formik.values.longQFour}
         valueLength={formik.values.longQFour.length}
@@ -342,7 +333,6 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
       <LongQuestionsSection
         name="longQFive"
         header={schoolReviewLongQuestionsMapper[5].question}
-        // header="對歸屬感嘅評價有冇補充？"
         value={formik.values.longQFive}
         valueLength={formik.values.longQFive.length}
         onChange={formik.handleChange}
@@ -365,7 +355,6 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
       <LongQuestionsSection
         name="longQSeven"
         header={schoolReviewLongQuestionsMapper[7].question}
-        // header="喺到讀書，你快樂嗎？"
         value={formik.values.longQSeven}
         valueLength={formik.values.longQSeven.length}
         onChange={formik.handleChange}
@@ -377,7 +366,6 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
       <LongQuestionsSection
         name="longQEight"
         header={schoolReviewLongQuestionsMapper[8].question}
-        // header="對後人嘅忠告？"
         value={formik.values.longQEight}
         valueLength={formik.values.longQEight.length}
         onChange={formik.handleChange}

@@ -1,10 +1,6 @@
-import { Grid } from "@mui/material"
 import { useFormik } from "formik"
-import moment from "moment"
-import React, { useMemo, useState } from "react"
-import FormSumitButton from "../../../components/common/buttons/formSubmit"
-import CommonToggleButtonGroup from "../../../components/common/groups/toggleButton/common"
-import RatingToggleButtonGroup from "../../../components/common/groups/toggleButton/rating"
+import React, { useState } from "react"
+
 import BaseDatePicker from "../../../components/common/inputs/date"
 import GpaNumberInput from "../../../components/common/inputs/number/gpa"
 import LongQuestionsSection from "../../../components/common/inputs/sections/longQuestions"
@@ -12,7 +8,6 @@ import BaseSelect from "../../../components/common/inputs/select"
 import { ContactSelect } from "../../../components/common/inputs/select/contact"
 import DseGradeSelect from "../../../components/common/inputs/select/dseGrade"
 import DseSubjectsSelect from "../../../components/common/inputs/select/dseSubjects"
-import SchoolTypeSelect from "../../../components/common/inputs/select/schoolType"
 import BaseTextInput from "../../../components/common/inputs/text"
 import TitleTextInput from "../../../components/common/inputs/text/title"
 import AnonymousSwitch from "../../../components/common/switch/anonymous"
@@ -20,21 +15,12 @@ import InputContainer from "../../../components/containers/input"
 import FormPageLayout from "../../../components/layouts/form"
 import * as yup from "yup"
 import {
-  admissionCondition,
-  admissionLevel,
-  admissionType
-} from "../../../constants/admission"
-
-import { recommendRating } from "../../../constants/rating"
-import { schoolTypeOptions } from "../../../constants/school"
-import {
   DateValidationSchema,
   longQuestionValidationSchema,
-  SlectCommonValidationSchema,
-  TitleValidationSchema
+  SlectCommonValidationSchema
 } from "../../../utils/validation/form/schema"
 import { ERROR_FORM_MESSAGES } from "../../../utils/validation/errorMessages/form"
-import { ADMISSION_TYPE, DSEGradeTypesId } from "../../../types/common"
+import { ADMISSION_TYPE } from "../../../types/common"
 
 import { ISystemActionTypes } from "../../../state/system/actions"
 import InputHeader from "../../../components/common/header/input"
@@ -48,9 +34,10 @@ import {
   schoolTypesList,
   yearOfStudyTypesList
 } from "../../../constants/common"
-import { DSE_GRADE_TO_SOCRE_MAPPER } from "../../../mappers/dseGrade"
+
 import { CommonHelpers } from "../../../helpers"
 import { admissionOfferReviewLongQuestionsMapper } from "../../../mappers/longQuestion"
+import dayjs from "dayjs"
 
 const AdmissionOfferFormPage: React.FunctionComponent = () => {
   const dispatch = useAppDispatch()
@@ -372,7 +359,7 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
           onChange={(newValue: any) => {
             formik.setFieldValue(
               "offerDate",
-              moment(newValue).format("YYYY-MM-DD")
+              dayjs(newValue).format("YYYY-MM-DD")
             )
           }}
           errorMessages={formik.errors.offerDate}
@@ -392,8 +379,6 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
           isRequired
         />
       </div>
-      {/* 
-  <div className="flex flex-wrap flex-row justify-center items-center gap-x-10 gap-y-5"> */}
 
       <div className="grid  md:grid-cols-4  md:gap-x-9 md:items-end gap-y-2">
         <BaseSelect
@@ -452,10 +437,6 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
         />
       </div>
 
-      {/* <InputContainer
-          header="DSE results (if applicable)"
-          subHeader="Please at least enter best 5 subjects"
-        > */}
       <div className="flex flex-row justify-between items-center">
         <InputHeader
           header="DSE results (if applicable)"
@@ -607,8 +588,6 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
           disabled={!!!formik.values.desSubjectSix}
         />
       </div>
-
-      {/* </InputContainer> */}
 
       <InputContainer
         header="聯絡資訊"

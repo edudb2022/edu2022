@@ -1,5 +1,4 @@
 import { useFormik } from "formik"
-import moment from "moment"
 import React from "react"
 import RatingToggleButtonGroup from "../../../components/common/groups/toggleButton/rating"
 import BaseDatePicker from "../../../components/common/inputs/date"
@@ -36,6 +35,7 @@ import {
 } from "../../../constants/common"
 import InputHeader from "../../../components/common/header/input"
 import { programmeReviewLongQuestionsMapper } from "../../../mappers/longQuestion"
+import dayjs from "dayjs"
 
 const ProgrammeReviewFormPage: React.FunctionComponent = () => {
   const initialValues = {
@@ -176,7 +176,7 @@ const ProgrammeReviewFormPage: React.FunctionComponent = () => {
           onChange={(newValue: any) => {
             formik.setFieldValue(
               "admissionDate",
-              moment(newValue).format("YYYY-MM-DD")
+              dayjs(newValue).format("YYYY-MM-DD")
             )
           }}
           errorMessages={formik.errors.admissionDate}

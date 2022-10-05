@@ -26,19 +26,24 @@ const ProgrammeCard: React.FunctionComponent<IProgrammeCardProps> = ({
   return (
     <Link href={`/programme/tertiary/${programmeId}`}>
       <a>
-        <div className="relative shadow-lg w-92 h-40 text-start rounded-xl ">
-          <div className="bg-school-cuhk rounded-t-xl h-4"></div>
+        <div className="relative shadow-lg w-92 h-40 text-start rounded-lg ">
+          {/* <div className="bg-school-cuhk rounded-t-xl h-4"></div> */}
           <div className="p-4 flex flex-col h-full">
             <div className="flex flex-row justify-between">
               <h5 className="text-base">{programmeChineseName}</h5>
-              <p>{programmeType}</p>
+              <p className="border-b border-gray-400 text-gray-400 font-thin">
+                {"JS6578"}
+              </p>
             </div>
-
-            <h6 className="text-sm mt-2">{programmeEnglishName}</h6>
-
+            <h6 className="text-sm mt-2  text-gray-400">
+              {programmeEnglishName}
+            </h6>
             <div className="absolute bottom-1 w-9/10 ">
               <div className="flex flex-row justify-between">
-                <p>{faculty}</p>
+                <div>
+                  <p>{faculty}</p>
+                  <p>{programmeType}</p>
+                </div>
 
                 <p className="flex flex-row items-center  ">
                   {totalReports} <HiOutlineDocumentText />

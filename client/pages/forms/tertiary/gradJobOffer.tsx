@@ -6,25 +6,20 @@ import StockOptionNumberInput from "../../../components/common/inputs/number/sto
 import TitleTextInput from "../../../components/common/inputs/text/title"
 import LongQuestionsSection from "../../../components/common/inputs/sections/longQuestions"
 import BaseDatePicker from "../../../components/common/inputs/date"
-import moment from "moment"
 import BaseTextInput from "../../../components/common/inputs/text"
 import RatingToggleButtonGroup from "../../../components/common/groups/toggleButton/rating"
 import { recommendRating } from "../../../constants/rating"
-import BaseNumberInput from "../../../components/common/inputs/number"
 import FormPageLayout from "../../../components/layouts/form"
 import BaseSelect from "../../../components/common/inputs/select"
 
-import { schoolTypeOptions } from "../../../constants/school"
 import InputContainer from "../../../components/containers/input"
 import {
   honorTypesIdList,
-  jobSourceOptions,
   jobSourceTypesList,
   schoolTypesList
 } from "../../../constants/common"
 import { ContactSelect } from "../../../components/common/inputs/select/contact"
 import AnonymousSwitch from "../../../components/common/switch/anonymous"
-import FormSumitButton from "../../../components/common/buttons/formSubmit"
 import {
   DateValidationSchema,
   longQuestionValidationSchema,
@@ -36,6 +31,7 @@ import {
 import * as yup from "yup"
 import InputHeader from "../../../components/common/header/input"
 import { gradJobOfferOfferReviewLongQuestionsMapper } from "../../../mappers/longQuestion"
+import dayjs from "dayjs"
 
 const GradJobOfferFormPage: React.FunctionComponent = () => {
   const initialValues = {
@@ -179,7 +175,6 @@ const GradJobOfferFormPage: React.FunctionComponent = () => {
         onBlur={formik.handleBlur}
         errorMessages={formik.errors.title}
         isTouched={formik.touched.title}
-        // style={{ width: "100%" }}
         isRequired
       />
 
@@ -209,7 +204,7 @@ const GradJobOfferFormPage: React.FunctionComponent = () => {
           onChange={(newValue: any) => {
             formik.setFieldValue(
               "offerRecievedDate",
-              moment(newValue).format("YYYY-MM-DD")
+              dayjs(newValue).format("YYYY-MM-DD")
             )
           }}
           errorMessages={formik.errors.offerRecievedDate}
@@ -222,7 +217,6 @@ const GradJobOfferFormPage: React.FunctionComponent = () => {
         header="總年薪(HKD)"
         subHeader={`${formik.values.totalSalary} HKD`}
       >
-        {/* <div className="flex flex-col md:flex-row w-full gap-x-3 gap-y-6 justify-end"> */}
         <div className="grid md:grid-cols-3 md:gap-x-9 mt-4 gap-y-2">
           <BaseSalaryNumberInput
             value={formik.values.baseSalary}
@@ -246,7 +240,6 @@ const GradJobOfferFormPage: React.FunctionComponent = () => {
             errorMessages={formik.errors.stockOption}
           />
         </div>
-        {/* </div> */}
       </InputContainer>
 
       <div className="grid md:grid-cols-3 md:gap-x-9 mt-4 gap-y-2">

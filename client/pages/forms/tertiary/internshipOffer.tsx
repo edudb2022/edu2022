@@ -1,7 +1,7 @@
 import { useFormik } from "formik"
-import moment from "moment"
+
 import React, { useEffect } from "react"
-import FormSumitButton from "../../../components/common/buttons/formSubmit"
+
 import RatingToggleButtonGroup from "../../../components/common/groups/toggleButton/rating"
 import BaseDatePicker from "../../../components/common/inputs/date"
 import BaseSalaryNumberInput from "../../../components/common/inputs/number/baseSalary"
@@ -15,15 +15,10 @@ import TitleTextInput from "../../../components/common/inputs/text/title"
 import AnonymousSwitch from "../../../components/common/switch/anonymous"
 import InputContainer from "../../../components/containers/input"
 import FormPageLayout from "../../../components/layouts/form"
-import {
-  internshipTypesList,
-  internTypeOptions,
-  jobSourceOptions,
-  schoolTypesList
-} from "../../../constants/common"
+import { internshipTypesList, schoolTypesList } from "../../../constants/common"
 
 import { recommendRating } from "../../../constants/rating"
-import { schoolTypeOptions } from "../../../constants/school"
+
 import * as yup from "yup"
 import {
   DateValidationSchema,
@@ -35,6 +30,7 @@ import {
 } from "../../../utils/validation/form/schema"
 import InputHeader from "../../../components/common/header/input"
 import { internshipOfferReviewLongQuestionsMapper } from "../../../mappers/longQuestion"
+import dayjs from "dayjs"
 
 const InternshipOfferFormPage: React.FunctionComponent = () => {
   const initialValues = {
@@ -204,7 +200,7 @@ const InternshipOfferFormPage: React.FunctionComponent = () => {
           onChange={(newValue: any) => {
             formik.setFieldValue(
               "offerRecievedDate",
-              moment(newValue).format("YYYY-MM-DD")
+              dayjs(newValue).format("YYYY-MM-DD")
             )
           }}
           errorMessages={formik.errors.offerRecievedDate}

@@ -1,8 +1,6 @@
 import { useFormik } from "formik"
-import moment from "moment"
 import { NextPage } from "next"
 import React from "react"
-import FormSumitButton from "../../../components/common/buttons/formSubmit"
 import RatingToggleButtonGroup from "../../../components/common/groups/toggleButton/rating"
 import BaseDatePicker from "../../../components/common/inputs/date"
 import GpaNumberInput from "../../../components/common/inputs/number/gpa"
@@ -16,10 +14,9 @@ import TitleTextInput from "../../../components/common/inputs/text/title"
 import AnonymousSwitch from "../../../components/common/switch/anonymous"
 import InputContainer from "../../../components/containers/input"
 import FormPageLayout from "../../../components/layouts/form"
-import { admissionType } from "../../../constants/admission"
+
 import {
   dressCodeTypesList,
-  dressCodeOptions,
   schoolTypesList,
   applicationTypesList
 } from "../../../constants/common"
@@ -37,11 +34,11 @@ import {
   SlectCommonValidationSchema,
   TitleValidationSchema
 } from "../../../utils/validation/form/schema"
-import { schoolTypeOptions } from "../../../constants/school"
 import { ERROR_FORM_MESSAGES } from "../../../utils/validation/errorMessages/form"
 import { ADMISSION_TYPE } from "../../../types/common"
 import InputHeader from "../../../components/common/header/input"
 import { interviewReviewLongQuestionsMapper } from "../../../mappers/longQuestion"
+import dayjs from "dayjs"
 
 const InterviewReviewPage: NextPage = () => {
   const initialValues = {
@@ -298,22 +295,16 @@ const InterviewReviewPage: NextPage = () => {
 
         <div className="grid">
           <BaseDatePicker
-            label="面試日期 (YYYY-MM-DD)"
+            label="面試日期"
             value={formik.values.interviewDate}
             onChange={(newValue: any) => {
               formik.setFieldValue(
                 "interviewDate",
-                moment(newValue).format("YYYY-MM-DD")
+                dayjs(newValue).format("YYYY-MM-DD")
               )
             }}
             errorMessages={formik.errors.interviewDate}
             isTouched={formik.touched.interviewDate}
-            // onChange={(newValue: any) => {
-            //   formik.setFieldValue(
-            //     "admissionDate",
-            //     moment(newValue).format("YYYY-MM-DD")
-            //   )
-            // }}
             helpText="只會顯示MM/YYYY"
             // format="DD/MM/YYYY"
           />
