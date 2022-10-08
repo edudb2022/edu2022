@@ -3,7 +3,7 @@ export interface IRating {
   label: string
 }
 
-export const commonRating: IRating[] = [
+export const programmeLearningExprienceRating: IRating[] = [
   { value: "1", label: "極之垃圾" },
   { value: "2", label: "垃圾" },
   { value: "3", label: "普通" },
@@ -29,13 +29,13 @@ export const schoolCampusRating: IRating[] = [
   { value: "6", label: "完美" }
 ]
 
-export const schoolRecourcesRating: IRating[] = [
-  { value: "1", label: "完全冇" },
-  { value: "2", label: "少量" },
-  { value: "3", label: "都叫有" },
-  { value: "4", label: "足夠" },
-  { value: "5", label: "不錯" },
-  { value: "6", label: "完善" }
+export const schoolResourcesRating: IRating[] = [
+  { value: "1", label: "0資源" },
+  { value: "2", label: "極少" },
+  { value: "3", label: "啱啱好" },
+  { value: "4", label: "不錯 " },
+  { value: "5", label: "極多" },
+  { value: "6", label: "極度豐富" }
 ]
 
 export const schoolPolicyRating: IRating[] = [
@@ -89,7 +89,7 @@ export const programmeGpaRating: IRating[] = [
   { value: "3", label: "普通" },
   { value: "4", label: "良好" },
   { value: "5", label: "算係咁" },
-  { value: "6", label: "靚𠹌到Sir" }
+  { value: "6", label: "靚龜到Sir" }
 ]
 
 export const progrmmeWorkLoadRating: IRating[] = [
@@ -139,17 +139,29 @@ export const InterviewDifficultyRating: IRating[] = [
   { value: "6", label: "太易了" }
 ]
 
-// export const interviewExperienceRating: IRating[] = [
-//   { value: "1", label: "極差" },
-//   { value: "2", label: "唔多好" },
-//   { value: "3", label: "普通" },
-//   { value: "4", label: "幾輕鬆" },
-//   { value: "5", label: "太易了" },
-// ];
-export const hopeRating: IRating[] = [
+export const IntershipJobFindingDifficultyRating: IRating[] = [
+  { value: "1", label: "準備乞食" },
+  { value: "2", label: "困難" },
+  { value: "3", label: "正常" },
+  { value: "4", label: "幾易" },
+  { value: "5", label: "輕鬆" },
+  { value: "6", label: "一定有工開！" }
+]
+
+export const GradJobJobFindingDifficultyRating: IRating[] = [
+  { value: "1", label: "準備乞食" },
+  { value: "2", label: "困難" },
+  { value: "3", label: "正常" },
+  { value: "4", label: "幾易" },
+  { value: "5", label: "輕鬆" },
+  { value: "6", label: "一定有工開！" }
+]
+
+export const GradJobHopeRating: IRating[] = [
   { value: "1", label: "0希望" },
   { value: "2", label: "前路崎嶇" },
-  { value: "3", label: "ok啦" },
-  { value: "4", label: "幾掂" },
-  { value: "5", label: "急不及待好好玩玩了" }
+  { value: "3", label: "正常" },
+  { value: "4", label: "ok啦" },
+  { value: "5", label: "有希望" },
+  { value: "6", label: "急不及待好好玩玩了" }
 ]

@@ -8,7 +8,10 @@ import LongQuestionsSection from "../../../components/common/inputs/sections/lon
 import BaseDatePicker from "../../../components/common/inputs/date"
 import BaseTextInput from "../../../components/common/inputs/text"
 import RatingToggleButtonGroup from "../../../components/common/groups/toggleButton/rating"
-import { recommendRating } from "../../../constants/rating"
+import {
+  GradJobHopeRating,
+  GradJobJobFindingDifficultyRating
+} from "../../../constants/rating"
 import FormPageLayout from "../../../components/layouts/form"
 import BaseSelect from "../../../components/common/inputs/select"
 
@@ -286,7 +289,7 @@ const GradJobOfferFormPage: React.FunctionComponent = () => {
           id="difficulty"
           value={formik.values.difficulty}
           onChange={formik.handleChange}
-          ratingTitle={recommendRating}
+          ratingTitle={GradJobJobFindingDifficultyRating}
           onBlur={formik.handleBlur}
           errorMessages={formik.errors.difficulty}
           isTouched={formik.touched.difficulty}
@@ -298,7 +301,7 @@ const GradJobOfferFormPage: React.FunctionComponent = () => {
           id="hope"
           value={formik.values.hope}
           onChange={formik.handleChange}
-          ratingTitle={recommendRating}
+          ratingTitle={GradJobHopeRating}
           onBlur={formik.handleBlur}
           errorMessages={formik.errors.hope}
           isTouched={formik.touched.hope}

@@ -17,7 +17,10 @@ import InputContainer from "../../../components/containers/input"
 import FormPageLayout from "../../../components/layouts/form"
 import { internshipTypesList, schoolTypesList } from "../../../constants/common"
 
-import { recommendRating } from "../../../constants/rating"
+import {
+  IntershipJobFindingDifficultyRating,
+  recommendRating
+} from "../../../constants/rating"
 
 import * as yup from "yup"
 import {
@@ -283,7 +286,7 @@ const InternshipOfferFormPage: React.FunctionComponent = () => {
           id="difficulty"
           value={formik.values.difficulty}
           onChange={formik.handleChange}
-          ratingTitle={recommendRating}
+          ratingTitle={IntershipJobFindingDifficultyRating}
           onBlur={formik.handleBlur}
           errorMessages={formik.errors.difficulty}
           isTouched={formik.touched.difficulty}

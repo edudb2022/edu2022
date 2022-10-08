@@ -12,13 +12,12 @@ import InputContainer from "../../../components/containers/input"
 import FormPageLayout from "../../../components/layouts/form"
 
 import {
-  commonRating,
   programmeGpaRating,
+  programmeLearningExprienceRating,
   programmeStructureRating,
   progrmmeRecommendRating,
   progrmmeResourcedRating,
-  progrmmeWorkLoadRating,
-  recommendRating
+  progrmmeWorkLoadRating
 } from "../../../constants/rating"
 import * as yup from "yup"
 import {
@@ -28,7 +27,6 @@ import {
   DateValidationSchema,
   longQuestionValidationSchema
 } from "../../../utils/validation/form/schema"
-import FormSumitButton from "../../../components/common/buttons/formSubmit"
 import {
   academicStatusTypesList,
   schoolTypesList
@@ -240,7 +238,7 @@ const ProgrammeReviewFormPage: React.FunctionComponent = () => {
           id="learningExprience"
           value={formik.values.learningExprience}
           onChange={formik.handleChange}
-          ratingTitle={commonRating}
+          ratingTitle={programmeLearningExprienceRating}
           onBlur={formik.handleBlur}
           errorMessages={formik.errors.learningExprience}
           isTouched={formik.touched.learningExprience}

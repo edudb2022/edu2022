@@ -7,7 +7,7 @@ import TitleTextInput from "../../../components/common/inputs/text/title"
 import FormPageLayout from "../../../components/layouts/form"
 import {
   schoolCampusRating,
-  schoolRecourcesRating,
+  schoolResourcesRating,
   schoolPolicyRating,
   shcoolCafeteriaRating,
   schoolSelfOfBelongingRating,
@@ -183,7 +183,7 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
           id="resourceRating"
           value={formik.values.resourceRating}
           onChange={formik.handleChange}
-          ratingTitle={schoolRecourcesRating}
+          ratingTitle={schoolResourcesRating}
           onBlur={formik.handleBlur}
           errorMessages={formik.errors.resourceRating}
           isTouched={formik.touched.resourceRating}
