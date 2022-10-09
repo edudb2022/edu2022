@@ -15,9 +15,9 @@ import PageLayout from "../../../../components/layouts/page"
 import {
   schoolCampusRating,
   schoolPolicyRating,
-  schoolRecourcesRating,
   schoolSelfOfBelongingRating,
-  shcoolCafeteriaRating
+  shcoolCafeteriaRating,
+  schoolResourcesRating
 } from "../../../../constants/rating"
 
 import useGetSchoolDetailReivew from "../../../../hooks/api/useGetSchoolDetailReview"
@@ -44,10 +44,10 @@ const SchoolReviewDetailPage: NextPage = () => {
 
   const resourceRating = {
     rating: Number(
-      schoolRecourcesRating[data!.ratingQuestionResponses[1]!.optionId].value
+      schoolResourcesRating[data!.ratingQuestionResponses[1]!.optionId].value
     ),
     title:
-      schoolRecourcesRating[data!.ratingQuestionResponses[1]!.optionId].label,
+      schoolResourcesRating[data!.ratingQuestionResponses[1]!.optionId].label,
     header:
       schoolReviewRatingQuestionsMapper[
         data!.ratingQuestionResponses[1].questionId

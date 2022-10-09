@@ -17,6 +17,7 @@ const ProgrammeReviewDetailPage: NextPage = () => {
   return (
     <PageLayout>
       <DetailReviewHeaderContainer
+        postId={1}
         score={123}
         ChineseTitle="123"
         EnglishTitle="123"
