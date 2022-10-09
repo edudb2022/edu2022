@@ -2,7 +2,7 @@ import Link from "next/link"
 import React from "react"
 import BaseReviewDetailCard, { IBaseReviewDetailCardProps } from "."
 import {
-  InterviewDifficultyRating,
+  interviewDifficultyRating,
   programmeGpaRating
 } from "../../../../constants/rating"
 import { ADMISSION_TYPE, ID, SCORE_TYPE } from "../../../../types/common"
@@ -37,7 +37,7 @@ const InterviewReviewDetailCard: React.FunctionComponent<
             <div className="hidden md:grid md:col-span-2">
               <RatingTag
                 rating={4}
-                title={InterviewDifficultyRating[2].label}
+                title={interviewDifficultyRating[2].label}
                 header="面試體驗"
               />
             </div> */}

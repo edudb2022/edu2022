@@ -1,0 +1,36 @@
+Arguments: 
+  /Users/paulwong/.nvm/versions/node/v17.3.1/bin/node /Users/paulwong/.nvm/versions/node/v17.3.1/bin/yarn add day.js
+
+PATH: 
+  /Users/paulwong/.nvm/versions/node/v17.3.1/bin:/Library/Frameworks/Python.framework/Versions/3.10/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Users/paulwong/.nvm/versions/node/v17.3.1/bin:/Library/Frameworks/Python.framework/Versions/3.10/bin:/opt/homebrew/bin:/opt/homebrew/sbin
+
+Yarn version: 
+  1.22.18
+
+Node version: 
+  17.3.1
+
+Platform: 
+  darwin arm64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/day.js: Not found
+      at Request.params.callback [as _callback] (/Users/paulwong/.nvm/versions/node/v17.3.1/lib/node_modules/yarn/lib/cli.js:66138:18)
+      at Request.self.callback (/Users/paulwong/.nvm/versions/node/v17.3.1/lib/node_modules/yarn/lib/cli.js:140883:22)
+      at Request.emit (node:events:390:28)
+      at Request.<anonymous> (/Users/paulwong/.nvm/versions/node/v17.3.1/lib/node_modules/yarn/lib/cli.js:141855:10)
+      at Request.emit (node:events:390:28)
+      at IncomingMessage.<anonymous> (/Users/paulwong/.nvm/versions/node/v17.3.1/lib/node_modules/yarn/lib/cli.js:141777:12)
+      at Object.onceWrapper (node:events:509:28)
+      at IncomingMessage.emit (node:events:402:35)
+      at endReadableNT (node:internal/streams/readable:1343:12)
+      at processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+npm manifest: 
+  No manifest
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
