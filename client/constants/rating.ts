@@ -121,7 +121,7 @@ export const progrmmeRecommendRating: IRating[] = [
 
 //interview
 
-export const InterviewExperienceRating: IRating[] = [
+export const interviewExperienceRating: IRating[] = [
   { value: "1", label: "極惡劣" },
   { value: "2", label: "好差" },
   { value: "3", label: "普通" },
@@ -130,7 +130,7 @@ export const InterviewExperienceRating: IRating[] = [
   { value: "6", label: "十分好" }
 ]
 
-export const InterviewDifficultyRating: IRating[] = [
+export const interviewDifficultyRating: IRating[] = [
   { value: "1", label: "0識" },
   { value: "2", label: "好難" },
   { value: "3", label: "普通" },
@@ -139,7 +139,7 @@ export const InterviewDifficultyRating: IRating[] = [
   { value: "6", label: "太易了" }
 ]
 
-export const IntershipJobFindingDifficultyRating: IRating[] = [
+export const intershipJobFindingDifficultyRating: IRating[] = [
   { value: "1", label: "準備乞食" },
   { value: "2", label: "困難" },
   { value: "3", label: "正常" },
@@ -148,7 +148,7 @@ export const IntershipJobFindingDifficultyRating: IRating[] = [
   { value: "6", label: "一定有工開！" }
 ]
 
-export const GradJobJobFindingDifficultyRating: IRating[] = [
+export const gradJobJobFindingDifficultyRating: IRating[] = [
   { value: "1", label: "準備乞食" },
   { value: "2", label: "困難" },
   { value: "3", label: "正常" },
@@ -157,7 +157,7 @@ export const GradJobJobFindingDifficultyRating: IRating[] = [
   { value: "6", label: "一定有工開！" }
 ]
 
-export const GradJobHopeRating: IRating[] = [
+export const gradJobHopeRating: IRating[] = [
   { value: "1", label: "0希望" },
   { value: "2", label: "前路崎嶇" },
   { value: "3", label: "正常" },

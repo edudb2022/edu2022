@@ -1,8 +1,8 @@
 import React from "react"
 import BaseReviewCard, { IBaseReviewCardProps } from "."
 import {
-  InterviewDifficultyRating,
-  InterviewExperienceRating
+  interviewDifficultyRating,
+  interviewExperienceRating
 } from "../../../../constants/rating"
 
 import AdmissionScoreCircularBarGroup, {
@@ -44,12 +44,12 @@ const InterviewReviewCard: React.FunctionComponent<
       <div className="flex flex-row  justify-evenly">
         <RatingTag
           rating={2}
-          title={InterviewDifficultyRating[1].label}
+          title={interviewDifficultyRating[1].label}
           header="面試體驗"
         />
         <RatingTag
           rating={1}
-          title={InterviewExperienceRating[0].label}
+          title={interviewExperienceRating[0].label}
           header="面試難度"
         />
       </div>

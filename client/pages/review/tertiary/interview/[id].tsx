@@ -15,8 +15,8 @@ import CardDisplayLayout from "../../../../components/layouts/cardDisplay"
 import DetailedCardDetailLayout from "../../../../components/layouts/cards/detailCardDsplay"
 import PageLayout from "../../../../components/layouts/page"
 import {
-  InterviewDifficultyRating,
-  InterviewExperienceRating,
+  interviewDifficultyRating,
+  interviewExperienceRating,
   programmeGpaRating
 } from "../../../../constants/rating"
 
@@ -62,12 +62,12 @@ const InterviewReviewPage: NextPage = () => {
           <div className="flex flex-row md:flex-col md:w-1/5 w-full  justify-center items-center gap-y-4  gap-x-4 md:h-48 mt-4">
             <RatingTag
               rating={4}
-              title={InterviewDifficultyRating[2].label}
+              title={interviewDifficultyRating[2].label}
               header="面試難度"
             />
             <RatingTag
               rating={3.1}
-              title={InterviewExperienceRating[4].label}
+              title={interviewExperienceRating[4].label}
               header="面試體驗"
             />
           </div>

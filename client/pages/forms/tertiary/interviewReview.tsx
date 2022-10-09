@@ -22,8 +22,8 @@ import {
 } from "../../../constants/common"
 
 import {
-  InterviewDifficultyRating,
-  InterviewExperienceRating
+  interviewDifficultyRating,
+  interviewExperienceRating
 } from "../../../constants/rating"
 import * as yup from "yup"
 import {
@@ -358,7 +358,7 @@ const InterviewReviewPage: NextPage = () => {
           id="exprience"
           value={formik.values.exprience}
           onChange={formik.handleChange}
-          ratingTitle={InterviewExperienceRating}
+          ratingTitle={interviewExperienceRating}
           onBlur={formik.handleBlur}
           errorMessages={formik.errors.exprience}
           isTouched={formik.touched.exprience}
@@ -370,7 +370,7 @@ const InterviewReviewPage: NextPage = () => {
           id="difficulty"
           value={formik.values.difficulty}
           onChange={formik.handleChange}
-          ratingTitle={InterviewDifficultyRating}
+          ratingTitle={interviewDifficultyRating}
           onBlur={formik.handleBlur}
           errorMessages={formik.errors.difficulty}
           isTouched={formik.touched.difficulty}

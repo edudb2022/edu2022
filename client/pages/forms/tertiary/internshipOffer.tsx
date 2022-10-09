@@ -18,7 +18,7 @@ import FormPageLayout from "../../../components/layouts/form"
 import { internshipTypesList, schoolTypesList } from "../../../constants/common"
 
 import {
-  IntershipJobFindingDifficultyRating,
+  intershipJobFindingDifficultyRating,
   recommendRating
 } from "../../../constants/rating"
 
@@ -288,7 +288,7 @@ const InternshipOfferFormPage: React.FunctionComponent = () => {
           id="difficulty"
           value={formik.values.difficulty}
           onChange={formik.handleChange}
-          ratingTitle={IntershipJobFindingDifficultyRating}
+          ratingTitle={intershipJobFindingDifficultyRating}
           onBlur={formik.handleBlur}
           errorMessages={formik.errors.difficulty}
           isTouched={formik.touched.difficulty}
