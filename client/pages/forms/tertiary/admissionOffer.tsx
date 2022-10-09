@@ -20,7 +20,7 @@ import {
   SlectCommonValidationSchema
 } from "../../../utils/validation/form/schema"
 import { ERROR_FORM_MESSAGES } from "../../../utils/validation/errorMessages/form"
-import { ADMISSION_TYPE } from "../../../types/common"
+import { ApplicationTypeId } from "../../../types/common"
 
 import { ISystemActionTypes } from "../../../state/system/actions"
 import InputHeader from "../../../components/common/header/input"
@@ -55,23 +55,23 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
     yearofStudy: "",
     offerType: "",
     jupasBanding: "",
-    admissionType: "",
+    admissionType: undefined,
     admissionLevel: "",
-    gpa: null,
-    desSubjectOne: "",
+    gpa: "",
+    desSubjectOne: null,
     desSubjectGradeOne: null,
-    desSubjectTwo: "",
+    desSubjectTwo: null,
     desSubjectGradeTwo: null,
-    desSubjectThree: "",
+    desSubjectThree: null,
     desSubjectGradeThree: null,
-    desSubjectFour: "",
+    desSubjectFour: null,
     desSubjectGradeFour: null,
-    desSubjectFive: "",
+    desSubjectFive: null,
     desSubjectGradeFive: null,
-    desSubjectSix: "",
+    desSubjectSix: null,
     desSubjectGradeSix: null,
-    contactMethod: "",
-    contactDetail: "",
+    contactMethod: null,
+    contactDetail: null,
     isAnonymous: false,
     longQOne: "",
     longQTwo: "",
@@ -79,7 +79,8 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
   }
 
   const handleSubmit = () => {
-    dispatch({ type: ISystemActionTypes.SYSTEM_IS_LOADING, payload: true })
+    console.log("Submit")
+    // dispatch({ type: ISystemActionTypes.SYSTEM_IS_LOADING, payload: true })
   }
 
   const admissionOfferFormSchema = yup.object().shape({
@@ -91,7 +92,7 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
     currentSchool: SlectCommonValidationSchema,
     currentFaculty: SlectCommonValidationSchema,
     currentProgramme: SlectCommonValidationSchema,
-    // applicaiotnType: SlectCommonValidationSchema,
+
     offerDate: DateValidationSchema,
     offerType: SlectCommonValidationSchema,
     admissionType: SlectCommonValidationSchema,
@@ -105,9 +106,44 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
       .max(4.3, ERROR_FORM_MESSAGES.GPA_TOO_LARGE)
       .when("admissionType", (admissionType, schema) => {
         if (
-          admissionType === ADMISSION_TYPE.NON_JUPAS ||
-          ADMISSION_TYPE.BACHELOR
+          admissionType == ApplicationTypeId.NON_JUPAS ||
+          admissionType == ApplicationTypeId.BACHELOR
         )
+          return schema.required(ERROR_FORM_MESSAGES.REQUIRED)
+      })
+      .nullable(true),
+    desSubjectOne: yup
+      .string()
+      .when("admissionType", (admissionType, schema) => {
+        if (admissionType == ApplicationTypeId.JUPAS)
+          return schema.required(ERROR_FORM_MESSAGES.REQUIRED)
+      })
+      .nullable(true),
+    desSubjectTwo: yup
+      .string()
+      .when("admissionType", (admissionType, schema) => {
+        if (admissionType == ApplicationTypeId.JUPAS)
+          return schema.required(ERROR_FORM_MESSAGES.REQUIRED)
+      })
+      .nullable(true),
+    desSubjectThree: yup
+      .string()
+      .when("admissionType", (admissionType, schema) => {
+        if (admissionType == ApplicationTypeId.JUPAS)
+          return schema.required(ERROR_FORM_MESSAGES.REQUIRED)
+      })
+      .nullable(true),
+    desSubjectFour: yup
+      .string()
+      .when("admissionType", (admissionType, schema) => {
+        if (admissionType == ApplicationTypeId.JUPAS)
+          return schema.required(ERROR_FORM_MESSAGES.REQUIRED)
+      })
+      .nullable(true),
+    desSubjectFive: yup
+      .string()
+      .when("admissionType", (admissionType, schema) => {
+        if (admissionType == ApplicationTypeId.JUPAS)
           return schema.required(ERROR_FORM_MESSAGES.REQUIRED)
       })
       .nullable(true),
@@ -162,25 +198,24 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
 
   useEffect(() => {
     if (
-      formik.values.admissionType === ADMISSION_TYPE.BACHELOR ||
-      ADMISSION_TYPE.NON_JUPAS
+      formik.values.admissionType === ApplicationTypeId.BACHELOR ||
+      ApplicationTypeId.NON_JUPAS
     ) {
       formik.values.jupasBanding = ""
     }
 
-    if (formik.values.admissionType === ADMISSION_TYPE.JUPAS) {
-      formik.values.gpa = null
+    if (formik.values.admissionType === ApplicationTypeId.JUPAS) {
+      formik.values.gpa = ""
     }
   }, [formik.values.admissionType])
-
-  const gradeMeta = [
-    formik.values.desSubjectGradeOne,
-    formik.values.desSubjectGradeTwo,
-    formik.values.desSubjectGradeThree,
-    formik.values.desSubjectGradeFour,
-    formik.values.desSubjectGradeFive,
-    formik.values.desSubjectGradeSix
-  ]
+  // const gradeMeta = [
+  //   formik.values.desSubjectGradeOne,
+  //   formik.values.desSubjectGradeTwo,
+  //   formik.values.desSubjectGradeThree,
+  //   formik.values.desSubjectGradeFour,
+  //   formik.values.desSubjectGradeFive,
+  //   formik.values.desSubjectGradeSix
+  // ]
   // useMemo(() => {
 
   // }, [])
@@ -348,6 +383,8 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
             onBlur={formik.handleBlur}
             errorMessages={formik.errors.title}
             isTouched={formik.touched.title}
+            valueLength={formik.values.title.length}
+            maxLength={25}
             // style={{ width: "100%" }}
             isRequired
           />
@@ -404,8 +441,8 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
           errorMessages={formik.errors.jupasBanding}
           isTouched={formik.touched.jupasBanding}
           disabled={
-            formik.values.admissionType === ADMISSION_TYPE.NON_JUPAS ||
-            formik.values.admissionType === ADMISSION_TYPE.BACHELOR ||
+            formik.values.admissionType === ApplicationTypeId.NON_JUPAS ||
+            formik.values.admissionType === ApplicationTypeId.BACHELOR ||
             formik.values.admissionType === ""
           }
         />
@@ -430,8 +467,8 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
           errorMessages={formik.errors.gpa}
           isTouched={formik.touched.gpa}
           disabled={
-            formik.values.admissionType === ADMISSION_TYPE.JUPAS ||
-            formik.values.admissionType === ""
+            formik.values.admissionType === ApplicationTypeId.JUPAS ||
+            formik.values.admissionType === undefined
           }
           // helpText="Non-Jupas/學士請填寫"
         />

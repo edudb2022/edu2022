@@ -30,8 +30,7 @@ import {
   SlectCommonValidationSchema,
   TitleValidationSchema
 } from "../../../utils/validation/form/schema"
-import FormSumitButton from "../../../components/common/buttons/formSubmit"
-import FormSection from "../../../components/common/sections/form"
+
 import {
   academicStatusTypesList,
   yearOfStudyTypesList
@@ -164,6 +163,8 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
         onBlur={formik.handleBlur}
         errorMessages={formik.errors.title}
         isTouched={formik.touched.title}
+        valueLength={formik.values.title.length}
+        maxLength={25}
       />
 
       <div className="flex flex-col gap-y-6  items-center">

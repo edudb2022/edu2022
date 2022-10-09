@@ -71,7 +71,7 @@ const DseSubjectsSelect: React.FunctionComponent<IDseSubjectsSelectProps> = ({
             </MenuItem>
           )
         })}
-        <ListSubheader>乙類：應用學習科目</ListSubheader>
+        {/* <ListSubheader>乙類：應用學習科目</ListSubheader>
         {CategoryB.map((data, index) => {
           return (
             <MenuItem
@@ -94,7 +94,7 @@ const DseSubjectsSelect: React.FunctionComponent<IDseSubjectsSelectProps> = ({
               {data.title}
             </MenuItem>
           )
-        })}
+        })} */}
       </Select>
       <ErrorMessage errorMessages={errorMessages} isTouched={isTouched} />
     </FormControl>

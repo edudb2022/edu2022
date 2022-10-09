@@ -41,6 +41,7 @@ export interface IBaseSelectProps extends SelectProps, IInputContainerProps {
     | InternshipTypesId
     | ApplicationTypeId
     | SchoolSortingTypes
+    | undefined
   selectId?: string
   itemsClassName?: string
   items:

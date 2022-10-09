@@ -2,7 +2,7 @@ import * as yup from "yup"
 import { ERROR_FORM_MESSAGES } from "../errorMessages/form"
 const TitleValidationSchema = yup
   .string()
-  .max(20, ERROR_FORM_MESSAGES.TOO_LONG)
+  .max(25, ERROR_FORM_MESSAGES.TOO_LONG)
   .required("必須填寫")
 
 const RatingValidationSchema = yup.number().required("必須選擇").nullable(true)

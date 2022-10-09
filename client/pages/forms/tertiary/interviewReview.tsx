@@ -1,6 +1,6 @@
 import { useFormik } from "formik"
 import { NextPage } from "next"
-import React from "react"
+import React, { useEffect } from "react"
 import RatingToggleButtonGroup from "../../../components/common/groups/toggleButton/rating"
 import BaseDatePicker from "../../../components/common/inputs/date"
 import GpaNumberInput from "../../../components/common/inputs/number/gpa"
@@ -23,8 +23,7 @@ import {
 
 import {
   InterviewDifficultyRating,
-  InterviewExperienceRating,
-  recommendRating
+  InterviewExperienceRating
 } from "../../../constants/rating"
 import * as yup from "yup"
 import {
@@ -35,7 +34,7 @@ import {
   TitleValidationSchema
 } from "../../../utils/validation/form/schema"
 import { ERROR_FORM_MESSAGES } from "../../../utils/validation/errorMessages/form"
-import { ADMISSION_TYPE } from "../../../types/common"
+import { ADMISSION_TYPE, ApplicationTypeId } from "../../../types/common"
 import InputHeader from "../../../components/common/header/input"
 import { interviewReviewLongQuestionsMapper } from "../../../mappers/longQuestion"
 import dayjs from "dayjs"
@@ -56,22 +55,22 @@ const InterviewReviewPage: NextPage = () => {
     exprience: 0,
     difficulty: 0,
     dressCode: "",
-    gpa: null,
-    applicaiotnType: "",
-    desSubjectOne: "",
-    desSubjectGradeOne: "",
-    desSubjectTwo: "",
-    desSubjectGradeTwo: "",
-    desSubjectThree: "",
-    desSubjectGradeThree: "",
-    desSubjectFour: "",
-    desSubjectGradeFour: "",
-    desSubjectFive: "",
-    desSubjectGradeFive: "",
-    desSubjectSix: "",
-    desSubjectGradeSix: "",
-    contactMethod: "",
-    contactDetail: "",
+    gpa: "",
+    admissionType: null,
+    desSubjectOne: null,
+    desSubjectGradeOne: null,
+    desSubjectTwo: null,
+    desSubjectGradeTwo: null,
+    desSubjectThree: null,
+    desSubjectGradeThree: null,
+    desSubjectFour: null,
+    desSubjectGradeFour: null,
+    desSubjectFive: null,
+    desSubjectGradeFive: null,
+    desSubjectSix: null,
+    desSubjectGradeSix: null,
+    contactMethod: null,
+    contactDetail: null,
     isAnonymous: false,
     longQOne: "",
     longQTwo: "",
@@ -99,7 +98,7 @@ const InterviewReviewPage: NextPage = () => {
     currentSchool: SlectCommonValidationSchema,
     currentFaculty: SlectCommonValidationSchema,
     currentProgramme: SlectCommonValidationSchema,
-    applicaiotnType: SlectCommonValidationSchema,
+    admissionType: SlectCommonValidationSchema,
     longQOne: longQuestionValidationSchema,
     longQTwo: longQuestionValidationSchema,
     longQThree: longQuestionValidationSchema,
@@ -114,6 +113,41 @@ const InterviewReviewPage: NextPage = () => {
       .max(4.3, ERROR_FORM_MESSAGES.GPA_TOO_LARGE)
       .when("applicaiotnType", (applicaiotnType, schema) => {
         if (applicaiotnType === ADMISSION_TYPE.NON_JUPAS)
+          return schema.required(ERROR_FORM_MESSAGES.REQUIRED)
+      })
+      .nullable(true),
+    desSubjectOne: yup
+      .string()
+      .when("admissionType", (admissionType, schema) => {
+        if (admissionType == ApplicationTypeId.JUPAS)
+          return schema.required(ERROR_FORM_MESSAGES.REQUIRED)
+      })
+      .nullable(true),
+    desSubjectTwo: yup
+      .string()
+      .when("admissionType", (admissionType, schema) => {
+        if (admissionType == ApplicationTypeId.JUPAS)
+          return schema.required(ERROR_FORM_MESSAGES.REQUIRED)
+      })
+      .nullable(true),
+    desSubjectThree: yup
+      .string()
+      .when("admissionType", (admissionType, schema) => {
+        if (admissionType == ApplicationTypeId.JUPAS)
+          return schema.required(ERROR_FORM_MESSAGES.REQUIRED)
+      })
+      .nullable(true),
+    desSubjectFour: yup
+      .string()
+      .when("admissionType", (admissionType, schema) => {
+        if (admissionType == ApplicationTypeId.JUPAS)
+          return schema.required(ERROR_FORM_MESSAGES.REQUIRED)
+      })
+      .nullable(true),
+    desSubjectFive: yup
+      .string()
+      .when("admissionType", (admissionType, schema) => {
+        if (admissionType == ApplicationTypeId.JUPAS)
           return schema.required(ERROR_FORM_MESSAGES.REQUIRED)
       })
       .nullable(true),
@@ -166,6 +200,12 @@ const InterviewReviewPage: NextPage = () => {
     onSubmit: handleSubmit,
     validationSchema: interviewReviewFormSchema
   })
+
+  useEffect(() => {
+    if (formik.values.admissionType === ApplicationTypeId.JUPAS) {
+      formik.values.gpa = ""
+    }
+  }, [formik.values.admissionType])
 
   return (
     <FormPageLayout
@@ -289,6 +329,8 @@ const InterviewReviewPage: NextPage = () => {
             onBlur={formik.handleBlur}
             errorMessages={formik.errors.title}
             isTouched={formik.touched.title}
+            valueLength={formik.values.title.length}
+            maxLength={25}
             // style={{ width: "100%" }}
           />
         </div>
@@ -350,15 +392,15 @@ const InterviewReviewPage: NextPage = () => {
           isTouched={formik.touched.dressCode}
         />
         <BaseSelect
-          name="applicaiotnType"
+          name="admissionType"
           items={applicationTypesList}
-          selectId="applicaiotnType"
+          selectId="admissionType"
           inputLabel="類型"
-          selectValue={formik.values.applicaiotnType}
+          selectValue={formik.values.admissionType}
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
-          errorMessages={formik.errors.applicaiotnType}
-          isTouched={formik.touched.applicaiotnType}
+          errorMessages={formik.errors.admissionType}
+          isTouched={formik.touched.admissionType}
           isRequired
         />
 
@@ -369,8 +411,8 @@ const InterviewReviewPage: NextPage = () => {
           errorMessages={formik.errors.gpa}
           isTouched={formik.touched.gpa}
           disabled={
-            formik.values.applicaiotnType === ADMISSION_TYPE.JUPAS ||
-            formik.values.applicaiotnType === ""
+            formik.values.admissionType === ApplicationTypeId.JUPAS ||
+            formik.values.admissionType === null
           }
           helpText="Non-Jupas/學士請填寫"
         />

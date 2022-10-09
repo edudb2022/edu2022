@@ -178,6 +178,8 @@ const GradJobOfferFormPage: React.FunctionComponent = () => {
         onBlur={formik.handleBlur}
         errorMessages={formik.errors.title}
         isTouched={formik.touched.title}
+        valueLength={formik.values.title.length}
+        maxLength={25}
         isRequired
       />
 

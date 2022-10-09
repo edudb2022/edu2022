@@ -175,6 +175,8 @@ const InternshipOfferFormPage: React.FunctionComponent = () => {
         onBlur={formik.handleBlur}
         errorMessages={formik.errors.title}
         isTouched={formik.touched.title}
+        valueLength={formik.values.title.length}
+        maxLength={25}
       />
 
       <div className="grid md:grid-cols-3 md:gap-x-9  gap-y-2">
