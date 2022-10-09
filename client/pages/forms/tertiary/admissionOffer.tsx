@@ -55,7 +55,7 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
     yearofStudy: "",
     offerType: "",
     jupasBanding: "",
-    admissionType: undefined,
+    applicationType: undefined,
     admissionLevel: "",
     gpa: "",
     desSubjectOne: null,
@@ -95,7 +95,7 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
 
     offerDate: DateValidationSchema,
     offerType: SlectCommonValidationSchema,
-    admissionType: SlectCommonValidationSchema,
+    applicationType: SlectCommonValidationSchema,
     admissionLevel: SlectCommonValidationSchema,
     longQOne: longQuestionValidationSchema,
     longQTwo: longQuestionValidationSchema,
@@ -104,46 +104,46 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
       .number()
       .min(0, ERROR_FORM_MESSAGES.GPA_NEGATIVE)
       .max(4.3, ERROR_FORM_MESSAGES.GPA_TOO_LARGE)
-      .when("admissionType", (admissionType, schema) => {
+      .when("applicationType", (applicationType, schema) => {
         if (
-          admissionType == ApplicationTypeId.NON_JUPAS ||
-          admissionType == ApplicationTypeId.BACHELOR
+          applicationType == ApplicationTypeId.NON_JUPAS ||
+          applicationType == ApplicationTypeId.BACHELOR
         )
           return schema.required(ERROR_FORM_MESSAGES.REQUIRED)
       })
       .nullable(true),
     desSubjectOne: yup
       .string()
-      .when("admissionType", (admissionType, schema) => {
-        if (admissionType == ApplicationTypeId.JUPAS)
+      .when("applicationType", (applicationType, schema) => {
+        if (applicationType == ApplicationTypeId.JUPAS)
           return schema.required(ERROR_FORM_MESSAGES.REQUIRED)
       })
       .nullable(true),
     desSubjectTwo: yup
       .string()
-      .when("admissionType", (admissionType, schema) => {
-        if (admissionType == ApplicationTypeId.JUPAS)
+      .when("applicationType", (applicationType, schema) => {
+        if (applicationType == ApplicationTypeId.JUPAS)
           return schema.required(ERROR_FORM_MESSAGES.REQUIRED)
       })
       .nullable(true),
     desSubjectThree: yup
       .string()
-      .when("admissionType", (admissionType, schema) => {
-        if (admissionType == ApplicationTypeId.JUPAS)
+      .when("applicationType", (applicationType, schema) => {
+        if (applicationType == ApplicationTypeId.JUPAS)
           return schema.required(ERROR_FORM_MESSAGES.REQUIRED)
       })
       .nullable(true),
     desSubjectFour: yup
       .string()
-      .when("admissionType", (admissionType, schema) => {
-        if (admissionType == ApplicationTypeId.JUPAS)
+      .when("applicationType", (applicationType, schema) => {
+        if (applicationType == ApplicationTypeId.JUPAS)
           return schema.required(ERROR_FORM_MESSAGES.REQUIRED)
       })
       .nullable(true),
     desSubjectFive: yup
       .string()
-      .when("admissionType", (admissionType, schema) => {
-        if (admissionType == ApplicationTypeId.JUPAS)
+      .when("applicationType", (applicationType, schema) => {
+        if (applicationType == ApplicationTypeId.JUPAS)
           return schema.required(ERROR_FORM_MESSAGES.REQUIRED)
       })
       .nullable(true),
@@ -198,16 +198,16 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
 
   useEffect(() => {
     if (
-      formik.values.admissionType === ApplicationTypeId.BACHELOR ||
+      formik.values.applicationType === ApplicationTypeId.BACHELOR ||
       ApplicationTypeId.NON_JUPAS
     ) {
       formik.values.jupasBanding = ""
     }
 
-    if (formik.values.admissionType === ApplicationTypeId.JUPAS) {
+    if (formik.values.applicationType === ApplicationTypeId.JUPAS) {
       formik.values.gpa = ""
     }
-  }, [formik.values.admissionType])
+  }, [formik.values.applicationType])
   // const gradeMeta = [
   //   formik.values.desSubjectGradeOne,
   //   formik.values.desSubjectGradeTwo,
@@ -419,15 +419,15 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
 
       <div className="grid  md:grid-cols-4  md:gap-x-9 md:items-end gap-y-2">
         <BaseSelect
-          name="admissionType"
+          name="applicationType"
           items={applicationTypesList}
-          selectId="admissionType"
+          selectId="applicationType"
           inputLabel="入學類型"
-          selectValue={formik.values.admissionType}
+          selectValue={formik.values.applicationType}
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
-          errorMessages={formik.errors.admissionType}
-          isTouched={formik.touched.admissionType}
+          errorMessages={formik.errors.applicationType}
+          isTouched={formik.touched.applicationType}
           isRequired
         />
         <BaseSelect
@@ -441,9 +441,9 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
           errorMessages={formik.errors.jupasBanding}
           isTouched={formik.touched.jupasBanding}
           disabled={
-            formik.values.admissionType === ApplicationTypeId.NON_JUPAS ||
-            formik.values.admissionType === ApplicationTypeId.BACHELOR ||
-            formik.values.admissionType === ""
+            formik.values.applicationType === ApplicationTypeId.NON_JUPAS ||
+            formik.values.applicationType === ApplicationTypeId.BACHELOR ||
+            formik.values.applicationType === ""
           }
         />
 
@@ -467,8 +467,8 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
           errorMessages={formik.errors.gpa}
           isTouched={formik.touched.gpa}
           disabled={
-            formik.values.admissionType === ApplicationTypeId.JUPAS ||
-            formik.values.admissionType === undefined
+            formik.values.applicationType === ApplicationTypeId.JUPAS ||
+            formik.values.applicationType === undefined
           }
           // helpText="Non-Jupas/學士請填寫"
         />

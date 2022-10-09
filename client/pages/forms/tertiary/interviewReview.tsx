@@ -56,7 +56,7 @@ const InterviewReviewPage: NextPage = () => {
     difficulty: 0,
     dressCode: "",
     gpa: "",
-    admissionType: null,
+    applicationType: null,
     desSubjectOne: null,
     desSubjectGradeOne: null,
     desSubjectTwo: null,
@@ -98,7 +98,7 @@ const InterviewReviewPage: NextPage = () => {
     currentSchool: SlectCommonValidationSchema,
     currentFaculty: SlectCommonValidationSchema,
     currentProgramme: SlectCommonValidationSchema,
-    admissionType: SlectCommonValidationSchema,
+    applicationType: SlectCommonValidationSchema,
     longQOne: longQuestionValidationSchema,
     longQTwo: longQuestionValidationSchema,
     longQThree: longQuestionValidationSchema,
@@ -118,36 +118,36 @@ const InterviewReviewPage: NextPage = () => {
       .nullable(true),
     desSubjectOne: yup
       .string()
-      .when("admissionType", (admissionType, schema) => {
-        if (admissionType == ApplicationTypeId.JUPAS)
+      .when("applicationType", (applicationType, schema) => {
+        if (applicationType == ApplicationTypeId.JUPAS)
           return schema.required(ERROR_FORM_MESSAGES.REQUIRED)
       })
       .nullable(true),
     desSubjectTwo: yup
       .string()
-      .when("admissionType", (admissionType, schema) => {
-        if (admissionType == ApplicationTypeId.JUPAS)
+      .when("applicationType", (applicationType, schema) => {
+        if (applicationType == ApplicationTypeId.JUPAS)
           return schema.required(ERROR_FORM_MESSAGES.REQUIRED)
       })
       .nullable(true),
     desSubjectThree: yup
       .string()
-      .when("admissionType", (admissionType, schema) => {
-        if (admissionType == ApplicationTypeId.JUPAS)
+      .when("applicationType", (applicationType, schema) => {
+        if (applicationType == ApplicationTypeId.JUPAS)
           return schema.required(ERROR_FORM_MESSAGES.REQUIRED)
       })
       .nullable(true),
     desSubjectFour: yup
       .string()
-      .when("admissionType", (admissionType, schema) => {
-        if (admissionType == ApplicationTypeId.JUPAS)
+      .when("applicationType", (applicationType, schema) => {
+        if (applicationType == ApplicationTypeId.JUPAS)
           return schema.required(ERROR_FORM_MESSAGES.REQUIRED)
       })
       .nullable(true),
     desSubjectFive: yup
       .string()
-      .when("admissionType", (admissionType, schema) => {
-        if (admissionType == ApplicationTypeId.JUPAS)
+      .when("applicationType", (applicationType, schema) => {
+        if (applicationType == ApplicationTypeId.JUPAS)
           return schema.required(ERROR_FORM_MESSAGES.REQUIRED)
       })
       .nullable(true),
@@ -202,10 +202,10 @@ const InterviewReviewPage: NextPage = () => {
   })
 
   useEffect(() => {
-    if (formik.values.admissionType === ApplicationTypeId.JUPAS) {
+    if (formik.values.applicationType === ApplicationTypeId.JUPAS) {
       formik.values.gpa = ""
     }
-  }, [formik.values.admissionType])
+  }, [formik.values.applicationType])
 
   return (
     <FormPageLayout
@@ -392,15 +392,15 @@ const InterviewReviewPage: NextPage = () => {
           isTouched={formik.touched.dressCode}
         />
         <BaseSelect
-          name="admissionType"
+          name="applicationType"
           items={applicationTypesList}
-          selectId="admissionType"
+          selectId="applicationType"
           inputLabel="類型"
-          selectValue={formik.values.admissionType}
+          selectValue={formik.values.applicationType}
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
-          errorMessages={formik.errors.admissionType}
-          isTouched={formik.touched.admissionType}
+          errorMessages={formik.errors.applicationType}
+          isTouched={formik.touched.applicationType}
           isRequired
         />
 
@@ -411,8 +411,8 @@ const InterviewReviewPage: NextPage = () => {
           errorMessages={formik.errors.gpa}
           isTouched={formik.touched.gpa}
           disabled={
-            formik.values.admissionType === ApplicationTypeId.JUPAS ||
-            formik.values.admissionType === null
+            formik.values.applicationType === ApplicationTypeId.JUPAS ||
+            formik.values.applicationType === null
           }
           helpText="Non-Jupas/學士請填寫"
         />
