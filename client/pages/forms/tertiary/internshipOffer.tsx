@@ -15,7 +15,11 @@ import TitleTextInput from "../../../components/common/inputs/text/title"
 import AnonymousSwitch from "../../../components/common/switch/anonymous"
 import InputContainer from "../../../components/containers/input"
 import FormPageLayout from "../../../components/layouts/form"
-import { internshipTypesList, schoolTypesList } from "../../../constants/common"
+import {
+  internshipTypesList,
+  jobSourceTypesList,
+  schoolTypesList
+} from "../../../constants/common"
 
 import {
   intershipJobFindingDifficultyRating,
@@ -273,7 +277,7 @@ const InternshipOfferFormPage: React.FunctionComponent = () => {
 
         <BaseSelect
           name="jobSource"
-          items={schoolTypesList}
+          items={jobSourceTypesList}
           selectId="jobSource"
           inputLabel="如果得知這工作？"
           selectValue={formik.values.jobSource}

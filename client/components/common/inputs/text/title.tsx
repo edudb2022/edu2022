@@ -25,7 +25,7 @@ const TitleTextInput: React.FunctionComponent<ITitleTextInputProps> = ({
         {...props}
         isRequired
       />
-      <div className="absolute right-3 top-18 text-theme-three-500">
+      <div className="absolute right-3 top-7 text-theme-three-500">
         {`${valueLength}/${maxLength}`}
       </div>
     </div>

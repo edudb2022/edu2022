@@ -417,7 +417,7 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
         />
       </div>
 
-      <div className="grid  md:grid-cols-4  md:gap-x-9 md:items-end gap-y-2">
+      <div className="grid  md:grid-cols-4  md:gap-x-9  gap-y-2">
         <BaseSelect
           name="applicationType"
           items={applicationTypesList}
@@ -470,7 +470,7 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
             formik.values.applicationType === ApplicationTypeId.JUPAS ||
             formik.values.applicationType === undefined
           }
-          // helpText="Non-Jupas/學士請填寫"
+          helpText="Non-Jupas/學士請填寫"
         />
       </div>
 
