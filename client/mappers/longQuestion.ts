@@ -36,9 +36,8 @@ export const interviewReviewLongQuestionsMapper = {
   [2 as number]: { id: 2, question: "對面試難度嘅評價有冇補充？" },
   [3 as number]: { id: 3, question: "你點樣準備？" },
   [4 as number]: { id: 4, question: "面試形式係點？" },
-  [5 as number]: { id: 5, question: "對資源嘅評價有冇補充？" },
-  [6 as number]: { id: 6, question: "對後人嘅忠告？" },
-  [7 as number]: { id: 7, question: "最後補充?" }
+  [5 as number]: { id: 5, question: "對後人嘅忠告？" },
+  [6 as number]: { id: 6, question: "最後補充?" }
 }
 
 export const admissionOfferReviewLongQuestionsMapper = {

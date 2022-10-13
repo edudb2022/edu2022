@@ -663,20 +663,8 @@ const InterviewReviewPage: NextPage = () => {
       />
 
       <LongQuestionsSection
-        name="longQSix"
-        header={interviewReviewLongQuestionsMapper[6].question}
-        placeholder={``}
-        value={formik.values.longQSix}
-        valueLength={formik.values.longQSix.length}
-        onChange={formik.handleChange}
-        onBlur={formik.handleBlur}
-        errorMessages={formik.errors.longQSix}
-        isTouched={formik.touched.longQSix}
-      />
-
-      <LongQuestionsSection
         name="longQSeven"
-        header={interviewReviewLongQuestionsMapper[7].question}
+        header={interviewReviewLongQuestionsMapper[6].question}
         placeholder={``}
         value={formik.values.longQSeven}
         valueLength={formik.values.longQSeven.length}
