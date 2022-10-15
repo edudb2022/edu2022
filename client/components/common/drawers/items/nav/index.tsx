@@ -15,7 +15,7 @@ const BaseNavDraweritem: React.FunctionComponent<
     <div className="text-xl w-full mt-2 ">
       {url && (
         <a href={url} className="w-full flex flex-row items-center ">
-          <div className="mr-8 p-2 rounded-2xl bg-theme-one-100">{icon}</div>
+          <div className="mr-8 p-2 rounded-full bg-theme-one-100">{icon}</div>
           {title}
         </a>
       )}
@@ -25,7 +25,7 @@ const BaseNavDraweritem: React.FunctionComponent<
           className="w-full flex flex-row items-center"
           onClick={handleClick}
         >
-          <div className="mr-8 p-2 rounded-2xl bg-theme-one-100">{icon}</div>
+          <div className="mr-8 p-2 rounded-full bg-theme-one-100">{icon}</div>
           {title}
         </button>
       )}
