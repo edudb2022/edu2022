@@ -9,7 +9,7 @@ import DetailReviewHeaderContainer from "../../../../components/containers/detai
 import DetailReviewInfoContainer from "../../../../components/containers/detailReviewInfo"
 import LongTextDisplayContainer from "../../../../components/containers/longTextDisplay"
 import LongQuestionsDisplayLayout from "../../../../components/layouts/longQuestionsDisplay"
-
+import SEO from "../../../../components/seo"
 import PageLayout from "../../../../components/layouts/page"
 
 import {
@@ -90,63 +90,91 @@ const SchoolReviewDetailPage: NextPage = () => {
   }
 
   return (
-    <PageLayout>
-      <DetailReviewHeaderContainer
-        score={data!.votes}
-        ChineseTitle={data!.title}
-        schoolShortName="hku"
-        postId={data!.id}
-      >
-        <div className="grid md:grid-cols-6 grid-cols-3">
-          <RatingTag
-            rating={campusRating.rating}
-            title={campusRating.title}
-            header={campusRating.header}
-          />
-          <RatingTag
-            rating={resourceRating.rating}
-            title={resourceRating.title}
-            header={resourceRating.header}
-          />
-          <RatingTag
-            rating={policyRating.rating}
-            title={policyRating.title}
-            header={policyRating.header}
-          />
-          <RatingTag
-            rating={cafeteriaRating.rating}
-            title={cafeteriaRating.title}
-            header={cafeteriaRating.header}
-          />
-          <RatingTag
-            rating={selfOfBelongingRating.rating}
-            title={selfOfBelongingRating.title}
-            header={selfOfBelongingRating.header}
-          />
-          <RatingTag rating={3} title="12313" header="歸屬感" />
-        </div>
-
-        <DetailReviewInfoContainer
-          admissionYear={data!.admissionYear}
-          academicStatus="Year 1"
-          username={username!}
-          postDate={postDate}
-          contact="tg : 123"
-        />
-      </DetailReviewHeaderContainer>
-
-      <LongQuestionsDisplayLayout>
-        {data?.longQuestionResponses.map((data) => {
-          return (
-            <LongTextDisplayContainer
-              title={schoolReviewLongQuestionsMapper[data!.questionId].question}
-              content={data!.text}
-              key={data!.questionId}
+    <>
+      <SEO
+        title={data!.title}
+        description="Bachelor of Management Science and Information Management (Honours)"
+        openGraph={{
+          title: data!.title,
+          description:
+            "Bachelor of Management Science and Information Management (Honours)",
+          site_name: "GoodTurtle.fyi",
+          article: {
+            tags: [
+              data!.title,
+              "HKUST",
+              "Hong Kong University of Science and Technology",
+              "應用及人本計算學（榮譽）文學士",
+              "Bachelor of Management Science and Information Management (Honours)",
+              "課程結構",
+              "爛龜指數",
+              "爆肝指數",
+              "學習經歷",
+              "資源"
+            ]
+          }
+        }}
+      />
+      <PageLayout>
+        <DetailReviewHeaderContainer
+          score={data!.votes}
+          ChineseTitle={data!.title}
+          schoolShortName="hku"
+          postId={data!.id}
+        >
+          <div className="grid md:grid-cols-6 grid-cols-3 mt-4">
+            <RatingTag
+              rating={campusRating.rating}
+              title={campusRating.title}
+              header={campusRating.header}
             />
-          )
-        })}
-      </LongQuestionsDisplayLayout>
-    </PageLayout>
+            <RatingTag
+              rating={resourceRating.rating}
+              title={resourceRating.title}
+              header={resourceRating.header}
+            />
+            <RatingTag
+              rating={policyRating.rating}
+              title={policyRating.title}
+              header={policyRating.header}
+            />
+            <RatingTag
+              rating={cafeteriaRating.rating}
+              title={cafeteriaRating.title}
+              header={cafeteriaRating.header}
+            />
+            <RatingTag
+              rating={selfOfBelongingRating.rating}
+              title={selfOfBelongingRating.title}
+              header={selfOfBelongingRating.header}
+            />
+            <RatingTag rating={3} title="12313" header="歸屬感" />
+          </div>
+
+          <DetailReviewInfoContainer
+            admissionYear={data!.admissionYear}
+            academicStatus="Year 1"
+            username={username!}
+            postDate={postDate}
+            contact="tg : 123"
+          />
+        </DetailReviewHeaderContainer>
+
+        <LongQuestionsDisplayLayout>
+          {data?.longQuestionResponses.map((data) => {
+            return (
+              <LongTextDisplayContainer
+                title={
+                  schoolReviewLongQuestionsMapper[data!.questionId].question
+                }
+                content={data!.text}
+                key={data!.questionId}
+              />
+            )
+          })}
+        </LongQuestionsDisplayLayout>
+      </PageLayout>
+    </>
   )
 }
 
