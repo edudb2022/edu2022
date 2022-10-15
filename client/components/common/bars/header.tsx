@@ -7,27 +7,33 @@ import PencilIcon from "../icons/pencil"
 
 const formRoutes = [
   {
-    title: "學校評價",
+    titleFormer: "學校",
+    titleLatter: "評價",
     route: "schoolReview"
   },
   {
-    title: "課程評價",
+    titleFormer: "課程",
+    titleLatter: "評價",
     route: "programmeReview"
   },
   {
-    title: "面試情報",
+    titleFormer: "面試",
+    titleLatter: "情報",
     route: "interviewReview"
   },
   {
-    title: "入學情報",
+    titleFormer: "入學",
+    titleLatter: "情報",
     route: "admissionOffer"
   },
   {
-    title: "實習情報",
+    titleFormer: "實習",
+    titleLatter: "情報",
     route: "internshipOffer"
   },
   {
-    title: "工作情報",
+    titleFormer: "工作",
+    titleLatter: "情報",
     route: "gradJobOffer"
   }
 ]
@@ -36,19 +42,22 @@ const HeaderBar: React.FunctionComponent = () => {
   const router = useRouter()
 
   return (
-    <div className="flex flex-row md:gap-x-2">
+    <div className="flex flex-row gap-x-2 lg:gap-x-4">
       {formRoutes.map((data, key) => {
         return (
           <React.Fragment key={key}>
             <Link href={`/forms/tertiary/${data.route}`}>
               <a
-                className={`flex flex-wrap items-center justify-center gap-x-1 text-xs md:text-base py-1 md:px-3   ${
+                className={`flex flex-wrap items-center justify-center text-xs lg:text-base  lg:px-3  ${
                   router.pathname === "/forms/tertiary/" + data.route
                     ? "text-theme-one-500"
                     : "text-black"
                 }`}
               >
-                <PencilIcon /> {data.title}
+                <PencilIcon />
+
+                <span className="ml-1">{data.titleFormer}</span>
+                <span className="hidden md:block">{data.titleLatter}</span>
               </a>
             </Link>
           </React.Fragment>
