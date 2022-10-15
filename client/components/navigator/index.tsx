@@ -10,6 +10,7 @@ import NavDrawer from "../common/drawers/nav"
 import { signOut } from "supertokens-auth-react/recipe/emailpassword"
 import LoginGroup from "../common/groups/login.tsx"
 import { useAppSelector } from "../../hooks/common/useAppSelector"
+import GoodTurtleIcon from "../common/icons/logo"
 
 const Navbar: React.FunctionComponent = () => {
   const router = useRouter()
@@ -29,8 +30,8 @@ const Navbar: React.FunctionComponent = () => {
     >
       <div className="flex justify-between p-2">
         <Link href={"/"}>
-          <a className="text-theme-one-500 stroke-black font-black text-4xl">
-            GoodTurtle
+          <a className="text-theme-one-500 stroke-black font-black text-lg md:text-3xl">
+            <GoodTurtleIcon />
           </a>
         </Link>
 

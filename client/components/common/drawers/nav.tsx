@@ -2,6 +2,7 @@ import Link from "next/link"
 import React from "react"
 import BaseDrawer, { IBaseDrawerProps } from "."
 import { useAppSelector } from "../../../hooks/common/useAppSelector"
+import GoodTurtleIcon from "../icons/logo"
 import NavDrawerDiscorditem from "./items/nav/discord"
 import NavDrawerProfileItem from "./items/nav/profile"
 
@@ -22,7 +23,9 @@ const NavDrawer: React.FunctionComponent<INavDrawer> = ({
   return (
     <BaseDrawer anchor="right" open={isOpen} onClose={onClose}>
       <div className="w-full p-4 bg-theme-one-50 h-full ">
-        <h2 className="mb-3">Icon</h2>
+        <h2 className="mb-3">
+          <GoodTurtleIcon className="text-theme-one-500" />
+        </h2>
         <div className="w-36 ">
           {isLogin && (
             <div>
