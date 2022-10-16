@@ -24,7 +24,7 @@ const Navbar: React.FunctionComponent = () => {
 
   return (
     <nav
-      className={`flex flex-col  w-full   p-2 ${
+      className={`flex flex-col  w-full  p-2 ${
         router.pathname === "/" ? "bg-theme-one-50" : "bg-[#F1F2F2]"
       }`}
     >
@@ -52,9 +52,7 @@ const Navbar: React.FunctionComponent = () => {
         <NavDrawer isOpen={isOpen} onClose={handleClick} />
       </div>
 
-      <div>
-        <HeaderBar />
-      </div>
+      <HeaderBar />
     </nav>
   )
 }
