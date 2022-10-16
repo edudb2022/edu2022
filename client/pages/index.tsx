@@ -23,8 +23,9 @@ import { useRouter } from "next/router"
 import { apiService } from "../utils/api/api"
 import useGetSchools from "../hooks/api/useGetSchools"
 import { GetSchoolRes } from "../types/api"
-import { SessionContext } from "supertokens-auth-react/recipe/session"
+
 import Session from "supertokens-auth-react/recipe/session"
+
 const SchoolType = [
   { value: SchoolTypeId.UNIVERSITY, title: "大學" },
   { value: SchoolTypeId.COLLEGE, title: "大專" }
@@ -54,7 +55,7 @@ const Home: NextPage = (props) => {
   const handleSearchChange = (e: any) => {
     setSearch(e.target.value)
   }
-
+  // console.log(data)
   useEffect(() => {
     const res = CommonHelpers.schoolFilter(data, search.trim(), type)
     setList(res)
@@ -65,12 +66,12 @@ const Home: NextPage = (props) => {
       return await Session.doesSessionExist()
     }
     const res = check()
-    console.log(123, res)
+    // console.log(123, res)
   }, [])
 
   return (
     <PageLayout>
-      <SEO title="Main" description="123" />
+      <SEO title="主頁" description="123" />
       <div className="flex justify-center gap-x-4 mt-8">
         <TextField
           className="bg-white w-3/5 "
