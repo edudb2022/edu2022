@@ -28,10 +28,7 @@ const FormPageLayout: React.FunctionComponent<
     }
   }, [])
   return (
-    <form
-      className="flex justify-center items-center border-2"
-      onSubmit={onSubmit}
-    >
+    <form className="flex justify-center items-center " onSubmit={onSubmit}>
       <div className="flex flex-col p-2 w-full md:w-11/12  gap-y-8 md:gap-y-12 ">
         <div>
           <h1 className="font-black mt-2">{title}</h1>
