@@ -20,6 +20,7 @@ import {
   YearOfStudyTypeslId
 } from "../types/common"
 
+const SITENAME = "GoodTurtle.fyi"
 const dressCodeOptions = [
   { value: "", title: "Please Select" },
   { value: "formal", title: "formal" },
@@ -463,5 +464,6 @@ export {
   interviewSortingTypesList,
   admissionOfferSortingTypesList,
   intershipOfferSortingTypesList,
-  gradJobOfferSortingTypesList
+  gradJobOfferSortingTypesList,
+  SITENAME
 }
