@@ -6,6 +6,7 @@ import { STSignOut } from "../../../../service/supertoken/Sesstion"
 
 import { IUserActionTypes } from "../../../../state/user/actions"
 import { useAppDispatch } from "../../../../hooks/common/useAppDispatch"
+import UserIcon from "../../icons/User"
 // import UserIcon from "../../icons/user"
 
 interface ILoginGroupProps {
@@ -29,8 +30,8 @@ const LoginGroup: React.FunctionComponent<ILoginGroupProps> = ({
     dispatch({ type: IUserActionTypes.USER_SIGN_OUT })
   }
   return (
-    <div className="flex flex-row justify-content items-center  border-2">
-      {/* <UserIcon /> */}
+    <div className="flex flex-row justify-center items-center  gap-x-1 rounded-full p-3 bg-theme-one-100">
+      <UserIcon />
       <h6>{username}</h6>
       <button
         id="basic-button"
@@ -50,8 +51,8 @@ const LoginGroup: React.FunctionComponent<ILoginGroupProps> = ({
           "aria-labelledby": "basic-button"
         }}
       >
-        <MenuItem>Profile</MenuItem>
-        <MenuItem onClick={handleSignOut}>Logout</MenuItem>
+        <MenuItem disabled>個人資料</MenuItem>
+        <MenuItem onClick={handleSignOut}>登出</MenuItem>
       </Menu>
     </div>
   )
