@@ -3,8 +3,7 @@ import React from "react"
 
 import {
   admissionOfferTypesList,
-  gradJobOfferSortingTypesList,
-  jobSourceOptions
+  gradJobOfferSortingTypesList
 } from "../../../../constants/common"
 import { useAppDispatch } from "../../../../hooks/common/useAppDispatch"
 import { useAppSelector } from "../../../../hooks/common/useAppSelector"

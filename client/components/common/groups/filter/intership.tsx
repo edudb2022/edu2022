@@ -2,10 +2,8 @@ import { SelectChangeEvent } from "@mui/material"
 import React from "react"
 
 import {
-  admissionOfferTypesList,
   internshipTypesList,
-  intershipOfferSortingTypesList,
-  jobSourceOptions
+  intershipOfferSortingTypesList
 } from "../../../../constants/common"
 import { useAppDispatch } from "../../../../hooks/common/useAppDispatch"
 import { useAppSelector } from "../../../../hooks/common/useAppSelector"

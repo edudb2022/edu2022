@@ -156,18 +156,18 @@ export enum HonorTypesId {
   PASS
 }
 
-export enum DSEGradeId {
-  UNCLASSIFIED = 1,
-  ONE,
-  TWO,
-  THREE,
-  FOUR,
-  FIVE,
-  FIVE_START,
-  FIVE_DOUBLE_STAR,
-  PASS, //displat Text :達標/合格不
-  FAIL //displat Text :不達標/不合格
-}
+// export enum DSEGradeId {
+//   UNCLASSIFIED = 1,
+//   ONE,
+//   TWO,
+//   THREE,
+//   FOUR,
+//   FIVE,
+//   FIVE_START,
+//   FIVE_DOUBLE_STAR,
+//   PASS, //displat Text :達標/合格不
+//   FAIL //displat Text :不達標/不合格
+// }
 
 export enum DSEGradeTypesId {
   ONE = 1,
@@ -180,6 +180,36 @@ export enum DSEGradeTypesId {
   PASS, //displat Text :達標/合格不
   FAIL, //displat Text :不達標/不合格
   UNCLASSIFIED = 1
+}
+
+export enum DSESubjectId {
+  CHINESE_LANGUAGE = 1,
+  ENGLISH_LANGUAGE,
+  MATHEMATICS_COMPULSORY_PART,
+  CITIZENSHIP_AND_SOCIAL_DEVELOPMENT,
+  LIBERAL_STUDIES,
+  BIOLOGY,
+  CHEMISTRY,
+  ECONOMICS,
+  BUSINESS_ACCOUNTING_AND_FINANCIAL_STUDIES,
+  PHYSICS,
+  GEOGRAPHY,
+  M1,
+  M2,
+  CHINESE_HISTORY,
+  INFORMATION_AND_COMMUNICATION_TECHOLOGY,
+  TOURISM_AND_HOSPITALITY_STUDIES,
+  VISUAL_ARTS,
+  CHINESE_LITERATURE,
+  PHYSICAL_EDUCATION,
+  HEALTH_MANAGEMENT_AND_SOCIAL_CARE,
+  ETHICS_AND_RELIGIOUS_STUDIES,
+  DESIGN_AND_APPLIED_TECHNOLOGY,
+  COMBINED_SCIENCE,
+  LITERATURE_IN_ENGLISH,
+  TECHNOLOGY_AND_LIVING,
+  MUSIC,
+  INTEGRATED_SCIENCE
 }
 
 //sorting

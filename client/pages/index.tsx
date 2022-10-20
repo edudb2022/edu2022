@@ -69,6 +69,18 @@ const Home: NextPage = (props) => {
     // console.log(123, res)
   }, [])
 
+  // var now = new Date()
+  // // Add 24 fortnights (48 weeks)
+  //  new Date(now.setDate(now.getDate() + 24 * 14))
+
+  // var now = new Date()
+  // Add two weeks
+  const a = new Date(
+    new Date().setDate(new Date().getDate() - 365 * 50)
+  ).toISOString()
+
+  console.log(a)
+
   return (
     <PageLayout>
       <SEO title="主頁" description="123" />
@@ -95,15 +107,15 @@ const Home: NextPage = (props) => {
             schoolTypesList.find((ele) => ele.value === data.type.id)?.title ??
             ""
 
-          //change to object
-          // const score = [
-          //   data.report[1]?.averageScore,
-          //   data.report[4]?.averageScore,
-          //   data.report[2]?.averageScore,
-          //   data.report[0]?.averageScore,
-          //   data.report[3]?.averageScore
-          // ]
-          const score = [0, 1, 3, 4, 5]
+          // change to object
+          const score = [
+            data.report[1]?.averageScore,
+            data.report[4]?.averageScore,
+            data.report[2]?.averageScore,
+            data.report[0]?.averageScore,
+            data.report[3]?.averageScore
+          ]
+          // const score = [0, 1, 3, 4, 5]
 
           return (
             <Link key={data.id} href={`/school/tertiary/${data.id}`}>

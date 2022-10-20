@@ -1,11 +1,7 @@
 import { SelectChangeEvent } from "@mui/material"
 import React from "react"
 
-import {
-  internshipTypesList,
-  jobSourceOptions,
-  programmeSortingTypesList
-} from "../../../../constants/common"
+import { programmeSortingTypesList } from "../../../../constants/common"
 import { useAppDispatch } from "../../../../hooks/common/useAppDispatch"
 import { useAppSelector } from "../../../../hooks/common/useAppSelector"
 import { IInterviewFilterActionTypes } from "../../../../state/filters/interview/actions"

@@ -1,16 +1,17 @@
 import {
-  FormControl,
-  InputLabel,
-  ListSubheader,
-  MenuItem,
-  Select,
+  // FormControl,
+  // InputLabel,
+  // ListSubheader,
+  // MenuItem,
+  // Select,
   SelectProps
 } from "@mui/material"
 import React from "react"
+import BaseSelect from "."
 import {
-  CategoryA,
-  CategoryB,
-  CategoryC
+  CategoryA
+  // CategoryB,
+  // CategoryC
 } from "../../../../constants/admission"
 import ErrorMessage, { IErrorMessageProps } from "../../messages/error"
 
@@ -43,61 +44,69 @@ const DseSubjectsSelect: React.FunctionComponent<IDseSubjectsSelectProps> = ({
   ...props
 }) => {
   return (
-    <FormControl>
-      {inputLabel && (
-        <InputLabel id={selectId} className={`${inputLabelClassName}`}>
-          {inputLabel}
-        </InputLabel>
-      )}
+    // <FormControl>
+    //   {inputLabel && (
+    //     <InputLabel id={selectId} className={`${inputLabelClassName}`}>
+    //       {inputLabel}
+    //     </InputLabel>
+    //   )}
 
-      <Select
-        id={selectId}
-        value={selectValue}
-        label={inputLabel}
-        labelId={selectId}
-        className={`${selecClassName}`}
-        variant="outlined"
-        {...props}
-      >
-        <ListSubheader>甲類：高中科目</ListSubheader>
-        {CategoryA.map((data, index) => {
-          return (
-            <MenuItem
-              key={index}
-              className={`${itemsClassName}`}
-              value={data.value}
-            >
-              {data.title}
-            </MenuItem>
-          )
-        })}
-        {/* <ListSubheader>乙類：應用學習科目</ListSubheader>
-        {CategoryB.map((data, index) => {
-          return (
-            <MenuItem
-              key={index}
-              className={`${itemsClassName}`}
-              value={data.value}
-            >
-              {data.title}
-            </MenuItem>
-          )
-        })}
-        <ListSubheader>丙類：其他語言科目</ListSubheader>
-        {CategoryC.map((data, index) => {
-          return (
-            <MenuItem
-              key={index}
-              className={`${itemsClassName}`}
-              value={data.value}
-            >
-              {data.title}
-            </MenuItem>
-          )
-        })} */}
-      </Select>
-      <ErrorMessage errorMessages={errorMessages} isTouched={isTouched} />
-    </FormControl>
+    //   <Select
+    //     id={selectId}
+    //     value={selectValue}
+    //     label={inputLabel}
+    //     labelId={selectId}
+    //     className={`${selecClassName}`}
+    //     variant="outlined"
+    //     {...props}
+    //   >
+    //     <ListSubheader>甲類：高中科目</ListSubheader>
+    //     {CategoryA.map((data, index) => {
+    //       return (
+    //         <MenuItem
+    //           key={index}
+    //           className={`${itemsClassName}`}
+    //           value={data.value}
+    //         >
+    //           {data.title}
+    //         </MenuItem>
+    //       )
+    //     })}
+    //     {/* <ListSubheader>乙類：應用學習科目</ListSubheader>
+    //     {CategoryB.map((data, index) => {
+    //       return (
+    //         <MenuItem
+    //           key={index}
+    //           className={`${itemsClassName}`}
+    //           value={data.value}
+    //         >
+    //           {data.title}
+    //         </MenuItem>
+    //       )
+    //     })}
+    //     <ListSubheader>丙類：其他語言科目</ListSubheader>
+    //     {CategoryC.map((data, index) => {
+    //       return (
+    //         <MenuItem
+    //           key={index}
+    //           className={`${itemsClassName}`}
+    //           value={data.value}
+    //         >
+    //           {data.title}
+    //         </MenuItem>
+    //       )
+    //     })} */}
+    //   </Select>
+    //   <ErrorMessage errorMessages={errorMessages} isTouched={isTouched} />
+    // </FormControl>
+    <BaseSelect
+      inputLabel={inputLabel}
+      isTouched={isTouched}
+      errorMessages={errorMessages}
+      items={CategoryA}
+      selectValue={selectValue!}
+      {...props}
+    />
   )
 }
 

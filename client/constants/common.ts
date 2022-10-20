@@ -21,32 +21,32 @@ import {
 } from "../types/common"
 
 const SITENAME = "GoodTurtle.fyi"
-const dressCodeOptions = [
-  { value: "", title: "Please Select" },
-  { value: "formal", title: "formal" },
-  { value: "smartCasual", title: "Smart Casual" },
-  { value: "casual", title: "Casual" },
-  { value: "upToYou", title: "Up to You" }
-]
+// const dressCodeOptions = [
+//   { value: "", title: "Please Select" },
+//   { value: "formal", title: "formal" },
+//   { value: "smartCasual", title: "Smart Casual" },
+//   { value: "casual", title: "Casual" },
+//   { value: "upToYou", title: "Up to You" }
+// ]
 
-const jobSourceOptions = [
-  { value: "", title: "Please Select" },
-  { value: "jijis", title: "Jijis" },
-  { value: "universityCareerCentre", title: "University Career Centre" },
-  { value: "linkedIn", title: "LinkedIn" },
-  { value: "jobsDb", title: "JobsDb" },
-  { value: "indeed", title: "Indeed" },
-  { value: "CompanyWebsite", title: "CompanyWebsite" },
-  { value: "Friends", title: "frends recommendation" },
-  { value: "others", title: "others " }
-]
+// const jobSourceOptions = [
+//   { value: "", title: "Please Select" },
+//   { value: "jijis", title: "Jijis" },
+//   { value: "universityCareerCentre", title: "University Career Centre" },
+//   { value: "linkedIn", title: "LinkedIn" },
+//   { value: "jobsDb", title: "JobsDb" },
+//   { value: "indeed", title: "Indeed" },
+//   { value: "CompanyWebsite", title: "CompanyWebsite" },
+//   { value: "Friends", title: "frends recommendation" },
+//   { value: "others", title: "others " }
+// ]
 
-const internTypeOptions = [
-  { value: "", title: "Please Select" },
-  { value: "summer", title: "summer" },
-  { value: "winter", title: "winter" },
-  { value: "placement", title: "placement" }
-]
+// const internTypeOptions = [
+//   { value: "", title: "Please Select" },
+//   { value: "summer", title: "summer" },
+//   { value: "winter", title: "winter" },
+//   { value: "placement", title: "placement" }
+// ]
 
 const schoolTypesList = [
   { value: SchoolTypeId.UNIVERSITY, title: "大學" },
@@ -149,20 +149,20 @@ const academicStatusTypesList = [
 ]
 
 const honorTypesIdList = [
-  { value: HonorTypesId.FIRST, title: "甲等（First Class Honours）" },
+  { value: HonorTypesId.FIRST, title: "甲等(First Class Honours)" },
   {
     value: HonorTypesId.SECOND_UP,
-    title: "乙等一級（Upper Second Class Honours）"
+    title: "乙等一級(Upper Second Class Honours)"
   },
   {
     value: HonorTypesId.SECOND_LOW,
-    title: "乙等二級（Lower Second Class Honours）"
+    title: "乙等二級(Lower Second Class Honours)"
   },
-  { value: HonorTypesId.THIRD, title: "丙等（Third Class Honours）" },
+  { value: HonorTypesId.THIRD, title: "丙等(Third Class Honours)" },
   { value: HonorTypesId.SUMMA_CUM_LAUDE, title: "卓越(Summa Cum Laude)" },
   { value: HonorTypesId.MAGNA_CUM_LAUDE, title: "優異(Magna Cum Laude)" },
   { value: HonorTypesId.CUM_LAUDE, title: "優良(Cum Laude)" },
-  { value: HonorTypesId.PASS, title: "合格（Pass）" }
+  { value: HonorTypesId.PASS, title: "合格(Pass)" }
 ]
 
 const schoolSortingTypesList = [
@@ -443,9 +443,9 @@ const gradJobOfferSortingTypesList = [
 ]
 
 export {
-  dressCodeOptions,
-  jobSourceOptions,
-  internTypeOptions,
+  // dressCodeOptions,
+  // jobSourceOptions,
+  // internTypeOptions,
   schoolTypesList,
   dressCodeTypesList,
   applicationTypesList,
