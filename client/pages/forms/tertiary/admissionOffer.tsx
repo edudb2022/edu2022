@@ -20,7 +20,7 @@ import {
   SlectCommonValidationSchema
 } from "../../../utils/validation/form/schema"
 import { ERROR_FORM_MESSAGES } from "../../../utils/validation/errorMessages/form"
-import { ApplicationTypeId } from "../../../types/common"
+import { ApplicationTypeId, CurrentSchoolTypeId } from "../../../types/common"
 
 import { ISystemActionTypes } from "../../../state/system/actions"
 import InputHeader from "../../../components/common/header/input"
@@ -50,10 +50,10 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
     programme: "",
     title: "",
     offerDate: null,
-    currentSchoolType: "",
-    currentSchool: "",
-    currentFaculty: "",
-    currentProgramme: "",
+    currentSchoolType: null,
+    currentSchool: null,
+    currentFaculty: null,
+    currentProgramme: null,
     yearofStudy: "",
     offerType: "",
     jupasBanding: "",
@@ -91,9 +91,36 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
     faculty: SlectCommonValidationSchema,
     programme: SlectCommonValidationSchema,
     currentSchoolType: SlectCommonValidationSchema,
-    currentSchool: SlectCommonValidationSchema,
-    currentFaculty: SlectCommonValidationSchema,
-    currentProgramme: SlectCommonValidationSchema,
+    currentSchool: yup
+      .number()
+      .when("currentSchoolType", (currentSchoolType, schema) => {
+        if (
+          currentSchoolType === CurrentSchoolTypeId.UNIVERSITY ||
+          currentSchoolType === CurrentSchoolTypeId.COLLEGE
+        )
+          return schema.required(ERROR_FORM_MESSAGES.REQUIRED)
+      })
+      .nullable(),
+    currentFaculty: yup
+      .number()
+      .when("currentSchoolType", (currentSchoolType, schema) => {
+        if (
+          currentSchoolType === CurrentSchoolTypeId.UNIVERSITY ||
+          currentSchoolType === CurrentSchoolTypeId.COLLEGE
+        )
+          return schema.required(ERROR_FORM_MESSAGES.REQUIRED)
+      })
+      .nullable(),
+    currentProgramme: yup
+      .number()
+      .when("currentSchoolType", (currentSchoolType, schema) => {
+        if (
+          currentSchoolType === CurrentSchoolTypeId.UNIVERSITY ||
+          currentSchoolType === CurrentSchoolTypeId.COLLEGE
+        )
+          return schema.required(ERROR_FORM_MESSAGES.REQUIRED)
+      })
+      .nullable(),
 
     offerDate: DateValidationSchema,
     offerType: SlectCommonValidationSchema,
@@ -250,6 +277,19 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
     formik.values.desSubjectGradeSix
   ])
 
+  // console.log(123, formik.values.desSubjectGradeOne)
+
+  const isTertiarySchool =
+    formik.values.currentSchoolType == CurrentSchoolTypeId.SECONDARY_SCHOOL ||
+    formik.values.currentSchoolType == CurrentSchoolTypeId.RETAKER
+
+  useEffect(() => {
+    if (!isTertiarySchool) {
+      formik.values.currentSchool = null
+      formik.values.currentProgramme = null
+      formik.values.currentFaculty = null
+    }
+  }, [formik.values.currentSchoolType])
   return (
     <>
       <SEO

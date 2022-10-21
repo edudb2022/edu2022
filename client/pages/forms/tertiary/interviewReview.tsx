@@ -19,7 +19,8 @@ import {
   dressCodeTypesList,
   schoolTypesList,
   applicationTypesList,
-  SITENAME
+  SITENAME,
+  currentSchoolTypesList
 } from "../../../constants/common"
 
 import {
@@ -35,7 +36,11 @@ import {
   TitleValidationSchema
 } from "../../../utils/validation/form/schema"
 import { ERROR_FORM_MESSAGES } from "../../../utils/validation/errorMessages/form"
-import { ADMISSION_TYPE, ApplicationTypeId } from "../../../types/common"
+import {
+  ADMISSION_TYPE,
+  ApplicationTypeId,
+  CurrentSchoolTypeId
+} from "../../../types/common"
 import InputHeader from "../../../components/common/header/input"
 import { interviewReviewLongQuestionsMapper } from "../../../mappers/longQuestion"
 import dayjs from "dayjs"
@@ -49,11 +54,11 @@ const InterviewReviewPage: NextPage = () => {
     programme: "",
     title: "",
     interviewDate: null,
-    currentSchoolType: "",
-    currentSchool: "",
-    currentFaculty: "",
-    currentProgramme: "",
-    academicStatus: "",
+    currentSchoolType: null,
+    currentSchool: null,
+    currentFaculty: null,
+    currentProgramme: null,
+    academicStatus: null,
     exprience: 0,
     difficulty: 0,
     dressCode: "",
@@ -97,9 +102,37 @@ const InterviewReviewPage: NextPage = () => {
     exprience: RatingValidationSchema,
     difficulty: RatingValidationSchema,
     currentSchoolType: SlectCommonValidationSchema,
-    currentSchool: SlectCommonValidationSchema,
-    currentFaculty: SlectCommonValidationSchema,
-    currentProgramme: SlectCommonValidationSchema,
+    currentSchool: yup
+      .number()
+      .when("currentSchoolType", (currentSchoolType, schema) => {
+        if (
+          currentSchoolType === CurrentSchoolTypeId.UNIVERSITY ||
+          currentSchoolType === CurrentSchoolTypeId.COLLEGE
+        )
+          return schema.required(ERROR_FORM_MESSAGES.REQUIRED)
+      })
+      .nullable(),
+    currentFaculty: yup
+      .number()
+      .when("currentSchoolType", (currentSchoolType, schema) => {
+        if (
+          currentSchoolType === CurrentSchoolTypeId.UNIVERSITY ||
+          currentSchoolType === CurrentSchoolTypeId.COLLEGE
+        )
+          return schema.required(ERROR_FORM_MESSAGES.REQUIRED)
+      })
+      .nullable(),
+    currentProgramme: yup
+      .number()
+      .when("currentSchoolType", (currentSchoolType, schema) => {
+        if (
+          currentSchoolType === CurrentSchoolTypeId.UNIVERSITY ||
+          currentSchoolType === CurrentSchoolTypeId.COLLEGE
+        )
+          return schema.required(ERROR_FORM_MESSAGES.REQUIRED)
+      })
+      .nullable(),
+
     applicationType: SlectCommonValidationSchema,
     longQOne: longQuestionValidationSchema,
     longQTwo: longQuestionValidationSchema,
@@ -114,7 +147,7 @@ const InterviewReviewPage: NextPage = () => {
       .min(0, ERROR_FORM_MESSAGES.GPA_NEGATIVE)
       .max(4.3, ERROR_FORM_MESSAGES.GPA_TOO_LARGE)
       .when("applicaiotnType", (applicaiotnType, schema) => {
-        if (applicaiotnType === ADMISSION_TYPE.NON_JUPAS)
+        if (applicaiotnType === ApplicationTypeId.JUPAS)
           return schema.required(ERROR_FORM_MESSAGES.REQUIRED)
       })
       .nullable(true),
@@ -209,6 +242,18 @@ const InterviewReviewPage: NextPage = () => {
     }
   }, [formik.values.applicationType])
 
+  const isNotTertiarySchool =
+    formik.values.currentSchoolType == CurrentSchoolTypeId.SECONDARY_SCHOOL ||
+    formik.values.currentSchoolType == CurrentSchoolTypeId.RETAKER
+
+  useEffect(() => {
+    if (isNotTertiarySchool) {
+      formik.values.currentSchool = null
+      formik.values.currentProgramme = null
+      formik.values.currentFaculty = null
+    }
+  }, [formik.values.currentSchoolType])
+
   return (
     <>
       <SEO
@@ -282,7 +327,7 @@ const InterviewReviewPage: NextPage = () => {
         <InputContainer header="最近的教育程度/狀態">
           <div className="grid md:grid-cols-4 md:gap-x-9  gap-y-2 mt-2">
             <BaseSelect
-              items={schoolTypesList}
+              items={currentSchoolTypesList}
               name="currentSchoolType"
               selectId="currentSchoolType"
               inputLabel="學校類型/學業狀態"
@@ -304,6 +349,7 @@ const InterviewReviewPage: NextPage = () => {
               errorMessages={formik.errors.currentSchool}
               isTouched={formik.touched.currentSchool}
               isRequired
+              disabled={isNotTertiarySchool}
             />
 
             <BaseSelect
@@ -317,6 +363,7 @@ const InterviewReviewPage: NextPage = () => {
               errorMessages={formik.errors.currentFaculty}
               isTouched={formik.touched.currentFaculty}
               isRequired
+              disabled={isNotTertiarySchool}
             />
 
             <BaseSelect
@@ -330,6 +377,7 @@ const InterviewReviewPage: NextPage = () => {
               errorMessages={formik.errors.currentProgramme}
               isTouched={formik.touched.currentProgramme}
               isRequired
+              disabled={isNotTertiarySchool}
             />
           </div>
         </InputContainer>
