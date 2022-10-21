@@ -13,6 +13,8 @@ interface IBaseDatePickerProps extends IInputContainerProps {
   onChange: any
   label: string
   className?: string
+  maxDate?: Date
+  minDate?: Date
 }
 
 const BaseDatePicker: React.FunctionComponent<IBaseDatePickerProps> = ({
@@ -29,6 +31,8 @@ const BaseDatePicker: React.FunctionComponent<IBaseDatePickerProps> = ({
   isTouched,
   subHeader,
   subHeaderClassName,
+  maxDate,
+  minDate,
   ...props
 }) => {
   return (
@@ -52,6 +56,12 @@ const BaseDatePicker: React.FunctionComponent<IBaseDatePickerProps> = ({
             renderInput={(params) => <TextField {...params} fullWidth />}
             onChange={onChange}
             className={` ${className}`}
+            maxDate={maxDate}
+            minDate={minDate}
+            // minDate={
+            //   new Date(new Date().setDate(new Date().getDate() - 365 * 50))
+            // }
+            // maxDate={new Date(new Date().setDate(new Date().getDate() + 30))}
             {...props}
           />
         </InputContainer>
