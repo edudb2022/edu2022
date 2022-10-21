@@ -42,6 +42,7 @@ import { schoolReviewLongQuestionsMapper } from "../../../mappers/longQuestion"
 import { schoolReviewRatingQuestionsMapper } from "../../../mappers/ratingQuestions"
 import dayjs from "dayjs"
 import SEO from "../../../components/seo"
+import { CommonHelpers } from "../../../helpers"
 
 const SchoolReviewFormPage: React.FunctionComponent = () => {
   const initialValues = {
@@ -100,7 +101,6 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
     validationSchema: schoolReviewFormSchema
   })
 
-  console.log(formik.touched.admissionDate)
   return (
     <>
       <SEO
@@ -154,6 +154,8 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
             }}
             errorMessages={formik.errors.admissionDate}
             isTouched={formik.touched.admissionDate}
+            minDate={CommonHelpers.dayRange(-50, 0)}
+            maxDate={CommonHelpers.dayRange(0, 30)}
             helpText="只會顯示MM/YYYY"
           />
 
