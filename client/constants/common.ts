@@ -5,6 +5,7 @@ import {
   AdmissionOfferTypeId,
   ApplicationTypeId,
   ContactMethodTypeId,
+  CurrentSchoolTypeId,
   DressCodeTypeId,
   DSEGradeTypesId,
   DSEJupasChoicePriorityTypesId,
@@ -51,6 +52,12 @@ const SITENAME = "GoodTurtle.fyi"
 const schoolTypesList = [
   { value: SchoolTypeId.UNIVERSITY, title: "大學" },
   { value: SchoolTypeId.COLLEGE, title: "大專" }
+]
+const currentSchoolTypesList = [
+  { value: CurrentSchoolTypeId.UNIVERSITY, title: "大學" },
+  { value: CurrentSchoolTypeId.COLLEGE, title: "大專" },
+  { value: CurrentSchoolTypeId.SECONDARY_SCHOOL, title: "中學" },
+  { value: CurrentSchoolTypeId.RETAKER, title: "重讀生" }
 ]
 
 const applicationTypesList = [
@@ -465,5 +472,6 @@ export {
   admissionOfferSortingTypesList,
   intershipOfferSortingTypesList,
   gradJobOfferSortingTypesList,
-  SITENAME
+  SITENAME,
+  currentSchoolTypesList
 }
