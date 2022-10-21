@@ -62,7 +62,7 @@ export const CommonHelpers = {
     else return `${salary}`
   },
 
-  dayLimitation: (years: number, days: number) => {
+  dayRange: (years: number, days: number) => {
     return new Date(
       new Date().setDate(new Date().getDate() + days + years * 365)
     )
