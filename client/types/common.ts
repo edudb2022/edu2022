@@ -73,6 +73,22 @@ export enum SchoolTypeId {
   COLLEGE
 }
 
+export enum CurrentSchoolTypeId {
+  UNIVERSITY = 1,
+  COLLEGE,
+  SECONDARY_SCHOOL,
+  RETAKER
+}
+export enum ProgrammeTypeId {
+  BACHELOR = 1,
+  ASSOCIATE_DEGREE,
+  HIGHER_DIPLOMA,
+  PROFESSIONAL_DIPLOMA,
+  FOUNDATION_DIPLOMA,
+  ADVANCED_DIPLOMA,
+  DIPLOMA
+}
+
 export enum ApplicationTypeId {
   JUPAS = 1,
   NON_JUPAS,
@@ -179,7 +195,7 @@ export enum DSEGradeTypesId {
   FIVE_DOUBLE_STAR,
   PASS, //displat Text :達標/合格不
   FAIL, //displat Text :不達標/不合格
-  UNCLASSIFIED = 1
+  UNCLASSIFIED
 }
 
 export enum DSESubjectId {
