@@ -1,6 +1,6 @@
 import { useFormik } from "formik"
 import { NextPage } from "next"
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import RatingToggleButtonGroup from "../../../components/common/groups/toggleButton/rating"
 import BaseDatePicker from "../../../components/common/inputs/date"
 import GpaNumberInput from "../../../components/common/inputs/number/gpa"
@@ -229,7 +229,7 @@ const InterviewReviewPage: NextPage = () => {
       })
       .nullable(true)
   })
-
+  const [isInProgress, setIsInProgress] = useState(false)
   const formik = useFormik({
     initialValues: initialValues,
     onSubmit: handleSubmit,
@@ -269,6 +269,7 @@ const InterviewReviewPage: NextPage = () => {
         title="面試情報"
         subTitle="可以提交多次面試情報"
         onSubmit={formik.handleSubmit}
+        isInProgress={isInProgress}
       >
         <div className="grid md:grid-cols-4 md:gap-x-9 gap-y-2">
           <BaseSelect

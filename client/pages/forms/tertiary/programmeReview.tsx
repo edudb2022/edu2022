@@ -1,5 +1,5 @@
 import { useFormik } from "formik"
-import React from "react"
+import React, { useState } from "react"
 import RatingToggleButtonGroup from "../../../components/common/groups/toggleButton/rating"
 import BaseDatePicker from "../../../components/common/inputs/date"
 import LongQuestionsSection from "../../../components/common/inputs/sections/longQuestions"
@@ -89,6 +89,7 @@ const ProgrammeReviewFormPage: React.FunctionComponent = () => {
     longQEight: longQuestionValidationSchema,
     longQNine: longQuestionValidationSchema
   })
+  const [isInProgress, setIsInProgress] = useState(false)
   const handleSubmit = () => {
     console.log("sumit")
   }
@@ -114,6 +115,7 @@ const ProgrammeReviewFormPage: React.FunctionComponent = () => {
         title="課程評價"
         subTitle="每個課程只可以作一次評價"
         onSubmit={formik.handleSubmit}
+        isInProgress={isInProgress}
       >
         <div className="grid md:grid-cols-4 md:gap-x-9 gap-y-2">
           <BaseSelect

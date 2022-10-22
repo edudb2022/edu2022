@@ -1,5 +1,5 @@
 import { useFormik } from "formik"
-import React from "react"
+import React, { useState } from "react"
 
 import RatingToggleButtonGroup from "../../../components/common/groups/toggleButton/rating"
 import BaseDatePicker from "../../../components/common/inputs/date"
@@ -71,27 +71,28 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
     longQNine: ""
   }
   const schoolReviewFormSchema = yup.object().shape({
-    school: SlectCommonValidationSchema,
-    title: TitleValidationSchema,
-    campusRating: RatingValidationSchema,
-    resourceRating: RatingValidationSchema,
-    policyRating: RatingValidationSchema,
-    canteenRating: RatingValidationSchema,
-    selfOfBelonging: RatingValidationSchema,
-    recommendation: RatingValidationSchema,
-    admissionDate: DateValidationSchema,
-    longQOne: longQuestionValidationSchema,
-    longQTwo: longQuestionValidationSchema,
-    longQThree: longQuestionValidationSchema,
-    longQFour: longQuestionValidationSchema,
-    longQFive: longQuestionValidationSchema,
-    longQSix: longQuestionValidationSchema,
-    longQSeven: longQuestionValidationSchema,
-    longQEight: longQuestionValidationSchema,
-    longQNine: longQuestionValidationSchema
+    // school: SlectCommonValidationSchema,
+    // title: TitleValidationSchema,
+    // campusRating: RatingValidationSchema,
+    // resourceRating: RatingValidationSchema,
+    // policyRating: RatingValidationSchema,
+    // canteenRating: RatingValidationSchema,
+    // selfOfBelonging: RatingValidationSchema,
+    // recommendation: RatingValidationSchema,
+    // admissionDate: DateValidationSchema,
+    // longQOne: longQuestionValidationSchema,
+    // longQTwo: longQuestionValidationSchema,
+    // longQThree: longQuestionValidationSchema,
+    // longQFour: longQuestionValidationSchema,
+    // longQFive: longQuestionValidationSchema,
+    // longQSix: longQuestionValidationSchema,
+    // longQSeven: longQuestionValidationSchema,
+    // longQEight: longQuestionValidationSchema,
+    // longQNine: longQuestionValidationSchema
   })
-
+  const [isInProgress, setIsInProgress] = useState(false)
   const handleSubmit = () => {
+    setIsInProgress(true)
     console.log("sumit")
   }
 
@@ -117,6 +118,7 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
         title="學校評價"
         subTitle="每間學校只可以作一次評價"
         onSubmit={formik.handleSubmit}
+        isInProgress={isInProgress}
       >
         <div className="grid md:grid-cols-4 md:gap-x-9 gap-y-2">
           <SchoolTypeSelect
@@ -401,6 +403,7 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
           errorMessages={formik.errors.longQNine}
           isTouched={formik.touched.longQNine}
         />
+        {/* <button onClick={() => setIsInProgress(!isInProgress)}>23</button> */}
       </FormPageLayout>
     </>
   )

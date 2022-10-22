@@ -1,6 +1,6 @@
 import { useFormik } from "formik"
 
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 
 import RatingToggleButtonGroup from "../../../components/common/groups/toggleButton/rating"
 import BaseDatePicker from "../../../components/common/inputs/date"
@@ -98,7 +98,7 @@ const InternshipOfferFormPage: React.FunctionComponent = () => {
     longQSeven: longQuestionValidationSchema,
     longQEight: longQuestionValidationSchema
   })
-
+  const [isInProgress, setIsInProgress] = useState(false)
   const formik = useFormik({
     initialValues: initialValues,
     onSubmit: handleSubmit,
@@ -128,6 +128,7 @@ const InternshipOfferFormPage: React.FunctionComponent = () => {
         title="實習情報"
         subTitle="可以提交多次實習情報"
         onSubmit={formik.handleSubmit}
+        isInProgress={isInProgress}
       >
         <div className="grid md:grid-cols-4 md:gap-x-9 gap-y-2">
           <BaseSelect

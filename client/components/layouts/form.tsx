@@ -6,16 +6,19 @@ import {
 } from "supertokens-auth-react/recipe/emailpassword"
 import EmailPassword from "supertokens-auth-react/recipe/emailpassword"
 import SuperTokens from "supertokens-auth-react"
-import FormSumitButton from "../common/buttons/formSubmit"
-interface FormPageLayoutProps {
+import FormSumitButton, {
+  IFormSumitButtonProps
+} from "../common/buttons/formSubmit"
+interface IFormPageLayoutProps {
   title: string
   subTitle: string
   onSubmit: (e?: FormEvent<HTMLFormElement>) => void
+  isInProgress: boolean
 }
 
 const FormPageLayout: React.FunctionComponent<
-  PropsWithChildren<FormPageLayoutProps>
-> = ({ title, subTitle, children, onSubmit }) => {
+  PropsWithChildren<IFormPageLayoutProps>
+> = ({ title, subTitle, children, onSubmit, isInProgress }) => {
   const EmailPasswordAuthNoSSR = dynamic(
     new Promise<typeof EmailPassword.EmailPasswordAuth>((res) =>
       res(EmailPassword.EmailPasswordAuth)
@@ -38,7 +41,7 @@ const FormPageLayout: React.FunctionComponent<
 
         <div className="flex flex-col items-center gap-y-2 justify-center">
           <p className="text-black text-thin">提交之前請檢查內容</p>
-          <FormSumitButton />
+          <FormSumitButton isInProgress={isInProgress} />
         </div>
       </div>
     </form>

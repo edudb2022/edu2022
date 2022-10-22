@@ -1,5 +1,5 @@
 import { useFormik } from "formik"
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import BaseSalaryNumberInput from "../../../components/common/inputs/number/baseSalary"
 import BonusNumberInput from "../../../components/common/inputs/number/Bonus"
 import StockOptionNumberInput from "../../../components/common/inputs/number/stockOption"
@@ -101,7 +101,7 @@ const GradJobOfferFormPage: React.FunctionComponent = () => {
     longQEight: longQuestionValidationSchema,
     longQNine: longQuestionValidationSchema
   })
-
+  const [isInProgress, setIsInProgress] = useState(false)
   const formik = useFormik({
     initialValues: initialValues,
     onSubmit: handleSubmit,
@@ -128,6 +128,7 @@ const GradJobOfferFormPage: React.FunctionComponent = () => {
         title="工作情報"
         subTitle="可以提交多次工作情報"
         onSubmit={formik.handleSubmit}
+        isInProgress={isInProgress}
       >
         <div className="grid md:grid-cols-4 md:gap-x-9 gap-y-2">
           <BaseSelect

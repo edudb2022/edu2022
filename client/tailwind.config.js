@@ -180,6 +180,29 @@ module.exports = {
             borderColor: "#f43f5e",
             color: "#f43f5e"
           }
+        },
+        submitInprogress: {
+          "0%": { borderRadius: "20rem" },
+          "25%": {
+            backgroundColor: "#000",
+            color: "#FFFFFF",
+            borderRadius: "20rem"
+          },
+          "50%": {
+            backgroundColor: "#FFFFFF",
+            color: "#000",
+            borderRadius: "20rem"
+          },
+          "75%": {
+            backgroundColor: "#000",
+            color: "#FFFFFF",
+            borderRadius: "20rem"
+          },
+          "100%": {
+            backgroundColor: "#FFFFFF",
+            color: "#000",
+            borderRadius: "20rem"
+          }
         }
       },
 
@@ -191,7 +214,8 @@ module.exports = {
         discordHover: "discordHover 0.5s ease-in-out forwards",
         themeOneHover: "themeOneHover 0.5s ease-in-out forwards",
         blackBorderHover: "blackBorderHover 0.5s ease-in-out forwards",
-        warningBorderHover: "warningBorderHover 0.5s ease-in-out forwards"
+        warningBorderHover: "warningBorderHover 0.5s ease-in-out forwards",
+        submitInprogress: "submitInprogress 10s ease-in-out infinite"
       }
     }
   },

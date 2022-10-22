@@ -250,7 +250,7 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
   // }, [])
   const [bestFive, setBestFive] = useState(0)
   const [bestSix, setBestSix] = useState<number | "/">(0)
-
+  const [isInProgress, setIsInProgress] = useState(false)
   useEffect(() => {
     const res = CommonHelpers.DseGradeToScore([
       formik.values.desSubjectGradeOne,
@@ -306,6 +306,7 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
         title="入學情報"
         subTitle="可以提交多次入學情報"
         onSubmit={formik.handleSubmit}
+        isInProgress={isInProgress}
       >
         <div className="grid md:grid-cols-4 md:gap-x-9 gap-y-2">
           <BaseSelect
