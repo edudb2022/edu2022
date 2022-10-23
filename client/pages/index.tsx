@@ -25,6 +25,8 @@ import useGetSchools from "../hooks/api/useGetSchools"
 import { GetSchoolRes } from "../types/api"
 
 import Session from "supertokens-auth-react/recipe/session"
+import BaseTextInput from "../components/common/inputs/text"
+import SearchTextInput from "../components/common/inputs/text/search"
 
 const SchoolType = [
   { value: SchoolTypeId.UNIVERSITY, title: "大學" },
@@ -75,23 +77,17 @@ const Home: NextPage = (props) => {
 
   // var now = new Date()
   // Add two weeks
-  const a = new Date(
-    new Date().setDate(new Date().getDate() - 365 * 50)
-  ).toISOString()
+  // const a = new Date(
+  //   new Date().setDate(new Date().getDate() - 365 * 50)
+  // ).toISOString()
 
-  console.log(a)
+  // console.log(a)
 
   return (
     <PageLayout>
       <SEO title="主頁" description="123" />
       <div className="flex justify-center gap-x-4 mt-8">
-        <TextField
-          className="bg-white w-3/5 "
-          variant="outlined"
-          onChange={handleSearchChange}
-          placeholder={"輸入學校中文或英文名稱"}
-          value={search}
-        />
+        <SearchTextInput onChange={handleSearchChange} value={search} />
         <BaseSelect
           items={SchoolType}
           selectValue={type}
