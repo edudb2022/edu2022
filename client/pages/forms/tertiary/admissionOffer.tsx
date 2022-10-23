@@ -33,7 +33,8 @@ import {
   DSEJupasChoicePriorityTypesList,
   schoolTypesList,
   yearOfStudyTypesList,
-  SITENAME
+  SITENAME,
+  currentSchoolTypesList
 } from "../../../constants/common"
 import SEO from "../../../components/seo"
 
@@ -54,7 +55,7 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
     currentSchool: null,
     currentFaculty: null,
     currentProgramme: null,
-    yearofStudy: "",
+    yearofStudy: null,
     offerType: "",
     jupasBanding: "",
     applicationType: undefined,
@@ -121,7 +122,16 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
           return schema.required(ERROR_FORM_MESSAGES.REQUIRED)
       })
       .nullable(),
-
+    yearofStudy: yup
+      .number()
+      .when("currentSchoolType", (currentSchoolType, schema) => {
+        if (
+          currentSchoolType === CurrentSchoolTypeId.UNIVERSITY ||
+          currentSchoolType === CurrentSchoolTypeId.COLLEGE
+        )
+          return schema.required(ERROR_FORM_MESSAGES.REQUIRED)
+      })
+      .nullable(),
     offerDate: DateValidationSchema,
     offerType: SlectCommonValidationSchema,
     applicationType: SlectCommonValidationSchema,
@@ -279,15 +289,17 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
 
   // console.log(123, formik.values.desSubjectGradeOne)
 
-  const isTertiarySchool =
+  const isNotTertiarySchool =
     formik.values.currentSchoolType == CurrentSchoolTypeId.SECONDARY_SCHOOL ||
-    formik.values.currentSchoolType == CurrentSchoolTypeId.RETAKER
+    formik.values.currentSchoolType == CurrentSchoolTypeId.RETAKER ||
+    formik.values.currentSchoolType === null
 
   useEffect(() => {
-    if (!isTertiarySchool) {
+    if (isNotTertiarySchool) {
       formik.values.currentSchool = null
       formik.values.currentProgramme = null
       formik.values.currentFaculty = null
+      formik.values.yearofStudy = null
     }
   }, [formik.values.currentSchoolType])
   return (
@@ -364,7 +376,7 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
         <InputContainer header="最近的教育程度/狀態">
           <div className="grid md:grid-cols-5 md:gap-x-9  gap-y-2 mt-2">
             <BaseSelect
-              items={schoolTypesList}
+              items={currentSchoolTypesList}
               name="currentSchoolType"
               selectId="currentSchoolType"
               inputLabel="學校類型/學業狀態"
@@ -386,6 +398,7 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
               errorMessages={formik.errors.currentSchool}
               isTouched={formik.touched.currentSchool}
               isRequired
+              disabled={isNotTertiarySchool}
             />
 
             <BaseSelect
@@ -399,6 +412,7 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
               errorMessages={formik.errors.currentFaculty}
               isTouched={formik.touched.currentFaculty}
               isRequired
+              disabled={isNotTertiarySchool}
             />
 
             <BaseSelect
@@ -418,13 +432,14 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
               name="yearofStudy"
               items={yearOfStudyTypesList}
               selectId="yearofStudy"
-              inputLabel=" 現時學業年級"
+              inputLabel="現時學業年級"
               selectValue={formik.values.yearofStudy}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               errorMessages={formik.errors.yearofStudy}
               isTouched={formik.touched.yearofStudy}
               isRequired
+              disabled={isNotTertiarySchool}
             />
           </div>
         </InputContainer>

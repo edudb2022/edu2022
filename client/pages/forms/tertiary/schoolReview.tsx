@@ -71,24 +71,24 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
     longQNine: ""
   }
   const schoolReviewFormSchema = yup.object().shape({
-    // school: SlectCommonValidationSchema,
-    // title: TitleValidationSchema,
-    // campusRating: RatingValidationSchema,
-    // resourceRating: RatingValidationSchema,
-    // policyRating: RatingValidationSchema,
-    // canteenRating: RatingValidationSchema,
-    // selfOfBelonging: RatingValidationSchema,
-    // recommendation: RatingValidationSchema,
-    // admissionDate: DateValidationSchema,
-    // longQOne: longQuestionValidationSchema,
-    // longQTwo: longQuestionValidationSchema,
-    // longQThree: longQuestionValidationSchema,
-    // longQFour: longQuestionValidationSchema,
-    // longQFive: longQuestionValidationSchema,
-    // longQSix: longQuestionValidationSchema,
-    // longQSeven: longQuestionValidationSchema,
-    // longQEight: longQuestionValidationSchema,
-    // longQNine: longQuestionValidationSchema
+    school: SlectCommonValidationSchema,
+    title: TitleValidationSchema,
+    campusRating: RatingValidationSchema,
+    resourceRating: RatingValidationSchema,
+    policyRating: RatingValidationSchema,
+    canteenRating: RatingValidationSchema,
+    selfOfBelonging: RatingValidationSchema,
+    recommendation: RatingValidationSchema,
+    admissionDate: DateValidationSchema,
+    longQOne: longQuestionValidationSchema,
+    longQTwo: longQuestionValidationSchema,
+    longQThree: longQuestionValidationSchema,
+    longQFour: longQuestionValidationSchema,
+    longQFive: longQuestionValidationSchema,
+    longQSix: longQuestionValidationSchema,
+    longQSeven: longQuestionValidationSchema,
+    longQEight: longQuestionValidationSchema,
+    longQNine: longQuestionValidationSchema
   })
   const [isInProgress, setIsInProgress] = useState(false)
   const handleSubmit = () => {
@@ -403,6 +403,7 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
           errorMessages={formik.errors.longQNine}
           isTouched={formik.touched.longQNine}
         />
+
         {/* <button onClick={() => setIsInProgress(!isInProgress)}>23</button> */}
       </FormPageLayout>
     </>

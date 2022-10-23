@@ -20,7 +20,8 @@ import {
   schoolTypesList,
   applicationTypesList,
   SITENAME,
-  currentSchoolTypesList
+  currentSchoolTypesList,
+  yearOfStudyTypesList
 } from "../../../constants/common"
 
 import {
@@ -58,6 +59,7 @@ const InterviewReviewPage: NextPage = () => {
     currentSchool: null,
     currentFaculty: null,
     currentProgramme: null,
+    yearofStudy: null,
     academicStatus: null,
     exprience: 0,
     difficulty: 0,
@@ -123,6 +125,16 @@ const InterviewReviewPage: NextPage = () => {
       })
       .nullable(),
     currentProgramme: yup
+      .number()
+      .when("currentSchoolType", (currentSchoolType, schema) => {
+        if (
+          currentSchoolType === CurrentSchoolTypeId.UNIVERSITY ||
+          currentSchoolType === CurrentSchoolTypeId.COLLEGE
+        )
+          return schema.required(ERROR_FORM_MESSAGES.REQUIRED)
+      })
+      .nullable(),
+    yearofStudy: yup
       .number()
       .when("currentSchoolType", (currentSchoolType, schema) => {
         if (
@@ -244,13 +256,15 @@ const InterviewReviewPage: NextPage = () => {
 
   const isNotTertiarySchool =
     formik.values.currentSchoolType == CurrentSchoolTypeId.SECONDARY_SCHOOL ||
-    formik.values.currentSchoolType == CurrentSchoolTypeId.RETAKER
+    formik.values.currentSchoolType == CurrentSchoolTypeId.RETAKER ||
+    formik.values.currentSchoolType === null
 
   useEffect(() => {
     if (isNotTertiarySchool) {
       formik.values.currentSchool = null
       formik.values.currentProgramme = null
       formik.values.currentFaculty = null
+      formik.values.yearofStudy = null
     }
   }, [formik.values.currentSchoolType])
 
@@ -326,7 +340,7 @@ const InterviewReviewPage: NextPage = () => {
         </div>
 
         <InputContainer header="最近的教育程度/狀態">
-          <div className="grid md:grid-cols-4 md:gap-x-9  gap-y-2 mt-2">
+          <div className="grid md:grid-cols-5 md:gap-x-9  gap-y-2 mt-2">
             <BaseSelect
               items={currentSchoolTypesList}
               name="currentSchoolType"
@@ -377,6 +391,19 @@ const InterviewReviewPage: NextPage = () => {
               onBlur={formik.handleBlur}
               errorMessages={formik.errors.currentProgramme}
               isTouched={formik.touched.currentProgramme}
+              isRequired
+              disabled={isNotTertiarySchool}
+            />
+            <BaseSelect
+              name="yearofStudy"
+              items={yearOfStudyTypesList}
+              selectId="yearofStudy"
+              inputLabel="現時學業年級"
+              selectValue={formik.values.yearofStudy}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              errorMessages={formik.errors.yearofStudy}
+              isTouched={formik.touched.yearofStudy}
               isRequired
               disabled={isNotTertiarySchool}
             />
