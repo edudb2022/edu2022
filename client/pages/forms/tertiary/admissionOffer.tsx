@@ -273,11 +273,6 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
 
     setBestFive(res.bestFiveScore)
     setBestSix(res.bestSixScore)
-    // if (res.bestSixScore !== -1) {
-    //   setBestSix(res.bestSixScore)
-    // } else {
-    //   setBestSix("/")
-    // }
   }, [
     formik.values.desSubjectGradeOne,
     formik.values.desSubjectGradeTwo,
@@ -545,8 +540,8 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
 
         <div className="flex flex-row justify-between items-center">
           <InputHeader
-            header="DSE results (if applicable)"
-            subHeader="Please at least enter best 5 subjects"
+            header="DSE成績(如適用)"
+            subHeader="請至少填寫五科成績 (Best 5)"
           />
           <div>
             <p className="text-md font-bold">{`Best 5: ${bestFive}`}</p>
