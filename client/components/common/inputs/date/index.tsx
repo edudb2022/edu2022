@@ -53,15 +53,28 @@ const BaseDatePicker: React.FunctionComponent<IBaseDatePickerProps> = ({
             inputFormat="dd/MM/yyyy"
             label={label}
             value={value}
-            renderInput={(params) => <TextField {...params} fullWidth />}
             onChange={onChange}
             className={` ${className}`}
             maxDate={maxDate}
             minDate={minDate}
-            // minDate={
-            //   new Date(new Date().setDate(new Date().getDate() - 365 * 50))
-            // }
-            // maxDate={new Date(new Date().setDate(new Date().getDate() + 30))}
+            renderInput={(params) => (
+              <TextField
+                {...params}
+                sx={{
+                  "& label.Mui-focused": {
+                    color: "#F2994A"
+                  },
+                  "& .MuiOutlinedInput-root": {
+                    "&:hover fieldset": {
+                      borderColor: "#F2994A"
+                    },
+                    "&.Mui-focused fieldset": {
+                      borderColor: "#F2994A"
+                    }
+                  }
+                }}
+              />
+            )}
             {...props}
           />
         </InputContainer>

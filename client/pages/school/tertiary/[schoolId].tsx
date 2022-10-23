@@ -9,6 +9,7 @@ import ProgrammeCard from "../../../components/common/cards/programme"
 import BaseRadar from "../../../components/common/charts/radar"
 
 import BaseSelect from "../../../components/common/inputs/select"
+import SearchTextInput from "../../../components/common/inputs/text/search"
 import RatingLargeTag from "../../../components/common/tags/ratingLarge"
 
 import ReviewHeaderContainer from "../../../components/containers/reviewHeader"
@@ -96,13 +97,7 @@ const TertiarySchoolPage: NextPage = () => {
         </div>
       </ReviewHeaderContainer>
       <div className="flex justify-center gap-x-4 ">
-        <TextField
-          className="bg-white w-3/5 "
-          variant="outlined"
-          onChange={handleSearchChange}
-          placeholder={"輸入學校中文或英文名稱"}
-          value={search}
-        />
+        <SearchTextInput onChange={handleSearchChange} value={search} />
         <BaseSelect
           items={contactMethodTypesList}
           selectValue={type}

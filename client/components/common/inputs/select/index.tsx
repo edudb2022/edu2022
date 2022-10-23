@@ -80,7 +80,16 @@ const BaseSelect: React.FunctionComponent<IBaseSelectProps> = ({
     >
       <FormControl>
         {inputLabel && (
-          <InputLabel id={selectId} className={`${inputLabelClassName}`}>
+          <InputLabel
+            id={selectId}
+            className={`${inputLabelClassName}`}
+            // style={{ color: "#F2994A" }}
+            sx={{
+              "&.Mui-focused": {
+                color: "#F2994A"
+              }
+            }}
+          >
             {inputLabel}
             {isRequired && "*"}
           </InputLabel>
@@ -93,6 +102,14 @@ const BaseSelect: React.FunctionComponent<IBaseSelectProps> = ({
           className={`${selectClassName}`}
           variant="outlined"
           fullWidth
+          sx={{
+            "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+              borderColor: "#F2994A"
+            },
+            "&:hover .MuiOutlinedInput-notchedOutline": {
+              borderColor: "#F2994A"
+            }
+          }}
           {...props}
         >
           {items.map((data, index) => {

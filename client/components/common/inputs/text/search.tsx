@@ -1,10 +1,10 @@
-import React from "react";
-import BaseTextInput from ".";
-import { IBaseInputTextProps } from ".";
+import React from "react"
+import BaseTextInput from "."
+import { IBaseInputTextProps } from "."
 
 type ISearchTextInputProps = IBaseInputTextProps & {
-  className?: string;
-};
+  className?: string
+}
 
 const SearchTextInput: React.FunctionComponent<ISearchTextInputProps> = ({
   className,
@@ -13,11 +13,12 @@ const SearchTextInput: React.FunctionComponent<ISearchTextInputProps> = ({
   return (
     <BaseTextInput
       name="search"
-      className="w-10/12"
+      inputContainerClassName={"w-full"}
+      className={className}
       placeholder="輸入學校中文或英文名稱"
       {...props}
     />
-  );
-};
+  )
+}
 
-export default SearchTextInput;
+export default SearchTextInput

@@ -45,6 +45,8 @@ const BaseTextInput: React.FunctionComponent<IBaseInputTextProps> = ({
   //   }
   // })
 
+  const inputLable = label ? `${label}${isRequired ? "*" : ""}` : undefined
+
   return (
     <InputContainer
       errorMessages={errorMessages}
@@ -56,7 +58,21 @@ const BaseTextInput: React.FunctionComponent<IBaseInputTextProps> = ({
     >
       <TextField
         className={`${className}`}
-        label={`${label}${isRequired ? "*" : ""}`}
+        label={inputLable}
+        sx={{
+          "& label.Mui-focused": {
+            color: "#F2994A"
+          },
+          "& .MuiOutlinedInput-root": {
+            "&:hover fieldset": {
+              borderColor: "#F2994A"
+            },
+            "&.Mui-focused fieldset": {
+              borderColor: "#F2994A"
+            }
+          }
+        }}
+        fullWidth
         {...props}
       />
     </InputContainer>
