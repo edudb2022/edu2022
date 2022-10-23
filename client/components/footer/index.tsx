@@ -3,6 +3,7 @@ import React from "react"
 import DiscordIcon from "../common/icons/discord"
 import FaceBookIcon from "../common/icons/facebook"
 import InstagramIcon from "../common/icons/instagram"
+import GoodTurtleIcon from "../common/icons/logo"
 
 const Footer: React.FunctionComponent = () => {
   return (
@@ -12,10 +13,9 @@ const Footer: React.FunctionComponent = () => {
         className="md:container md:mx-auto w-full py-4 flex flex-col sm:flex-row"
       >
         <div id="intro" className="w-full sm:w-2/5 mr-12 mb-3 sm:mb-1">
-          Icon
+          <GoodTurtleIcon className="text-theme-one-500 font-black text-2xl" />
           <p>
-            This is a place for self introduction. Maybe Slogan. Maybe some on9
-            stuff. This is a place for self introduction. Maybe Slogan.
+            搞手但求打個和，為求升學資訊透明，令大家可以為未來做好打算。祝大家前程似錦！
           </p>
         </div>
         <div className="w-full sm:w-3/5 flex flex-col sm:flex-row justify-end">
