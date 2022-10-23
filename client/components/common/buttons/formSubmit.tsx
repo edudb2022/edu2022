@@ -1,3 +1,4 @@
+import { CircularProgress } from "@mui/material"
 import React from "react"
 import { ImArrowRight2 } from "react-icons/im"
 import BaseButton, { IBaseButtonProps } from "."
@@ -17,7 +18,7 @@ const FormSumitButton: React.FunctionComponent<IFormSumitButtonProps> = ({
   }`
 
   return (
-    <BaseButton type="submit" className={className}>
+    <BaseButton type="submit" className={className} disabled={isInProgress}>
       {isInProgress ? (
         <div>請等等...</div>
       ) : (
