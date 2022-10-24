@@ -1,6 +1,6 @@
 import { DSEGradeTypesId } from "../types/common"
 
-export const DSE_GRADE_TO_SOCRE_MAPPER = {
+export const DseGradeToScoreMapper = {
   [DSEGradeTypesId.ONE]: 1,
   [DSEGradeTypesId.TWO]: 2,
   [DSEGradeTypesId.THREE]: 3,

@@ -104,14 +104,14 @@ const Home: NextPage = (props) => {
             ""
 
           // change to object
-          const score = [
-            data.report[1]?.averageScore,
-            data.report[4]?.averageScore,
-            data.report[2]?.averageScore,
-            data.report[0]?.averageScore,
-            data.report[3]?.averageScore
-          ]
-          // const score = [0, 1, 3, 4, 5]
+          // const score = [
+          //   data.report[1]?.averageScore,
+          //   data.report[4]?.averageScore,
+          //   data.report[2]?.averageScore,
+          //   data.report[0]?.averageScore,
+          //   data.report[3]?.averageScore
+          // ]
+          const score = [0, 1, 3, 4, 5]
 
           return (
             <Link key={data.id} href={`/school/tertiary/${data.id}`}>

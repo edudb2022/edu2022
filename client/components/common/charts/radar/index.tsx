@@ -59,12 +59,12 @@ const BaseRadar: React.FunctionComponent<IBaseRadarProps> = ({
     datasets: [
       {
         label: "abc",
-        backgroundColor: "rgba(54, 162, 235, 0.2)",
-        borderColor: "rgb(54, 162, 235)",
-        pointBackgroundColor: "rgb(54, 162, 235)",
+        backgroundColor: "rgb(255,191,159,0.2)",
+        borderColor: "#FFBF9F",
+        pointBackgroundColor: "#FFBF9F",
         pointBorderColor: "#fff",
         pointHoverBackgroundColor: "#fff",
-        pointHoverBorderColor: "rgb(54, 162, 235)",
+        pointHoverBorderColor: "#FFBF9F",
 
         data: scores
       }

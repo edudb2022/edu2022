@@ -3,6 +3,7 @@ import React, { PropsWithChildren } from "react"
 import BaseCard, { IBaseCardProps } from ".."
 import { HiOutlineDocumentText } from "react-icons/hi"
 import { ID, SchoolName, SchoolTypeId } from "../../../../types/common"
+import { schoolColorMapper } from "../../../../mappers/schoolColor"
 
 export interface IBaseReviewCardProps extends IBaseCardProps {
   id: ID | number
@@ -25,12 +26,14 @@ const BaseReviewCard: React.FunctionComponent<
   type,
   id
 }) => {
-  const school = "cuhk"
+  // const school = "cuhk"
 
-  const schoolColor = ` bg-school-${school}`
+  // const schoolColor = ` bg-school-${school}`
+
+  console.log(schoolShortName)
   return (
-    <BaseCard className="flex flex-row  md:w-92  w-88 h-72 md:h-72 shadow-lg rounded-2xl bg-white">
-      <div
+    <BaseCard className="flex flex-row  md:w-92  w-88 h-72 md:h-72 border-theme-one-100 shadow-theme-one-50 shadow-sm  border rounded-2xl bg-white hover:animate-borderThemeOneDeep">
+      {/* <div
         className={`flex flex-col py-4 justify-between items-center w-1/4 ${schoolColor} rounded-l-2xl `}
       >
         <div className="bg-white border-2 rounded-full p-2 m-2 ">
@@ -51,10 +54,19 @@ const BaseReviewCard: React.FunctionComponent<
             {type}
           </div>
         </div>
-      </div>
+      </div> */}
 
-      <div className=" relative p-2 w-full">
-        <h4>{schoolChineseName}</h4>
+      <div className="relative p-2 w-full">
+        <h4
+          style={{
+            color:
+              schoolColorMapper[
+                schoolShortName.toLocaleLowerCase() as keyof typeof schoolColorMapper
+              ]
+          }}
+        >
+          {schoolChineseName}
+        </h4>
         <h6 className="text-gray-500">{schoolEnglishName}</h6>
 
         {children}

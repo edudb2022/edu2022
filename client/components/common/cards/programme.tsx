@@ -26,7 +26,7 @@ const ProgrammeCard: React.FunctionComponent<IProgrammeCardProps> = ({
   return (
     <Link href={`/programme/tertiary/${programmeId}`}>
       <a>
-        <div className="relative shadow-lg w-92 h-40 text-start rounded-lg ">
+        <div className="relative shadow-lg w-92 h-40 text-start rounded-lg border-2 border-theme-one-100 ">
           {/* <div className="bg-school-cuhk rounded-t-xl h-4"></div> */}
           <div className="p-4 flex flex-col h-full">
             <div className="flex flex-row justify-between">

@@ -1,6 +1,6 @@
 // import { ISchoolsReviewCardProps } from "../components/common/cards/review"
 import { ISchoolsReviewCardProps } from "../components/common/cards/review/school"
-import { DSE_GRADE_TO_SOCRE_MAPPER } from "../mappers/dseGrade"
+import { DseGradeToScoreMapper } from "../mappers/dseGrade"
 import { GetSchoolRes } from "../types/api"
 import { DSEGradeTypesId, SchoolTypeId } from "../types/common"
 
@@ -36,7 +36,7 @@ export const CommonHelpers = {
     for (let i = 0; i < gradeMeta.length - 1; i++) {
       const value = gradeMeta[i]
       if (value !== null) {
-        bestFiveScore += DSE_GRADE_TO_SOCRE_MAPPER[value]
+        bestFiveScore += DseGradeToScoreMapper[value]
       }
     }
 
@@ -44,7 +44,7 @@ export const CommonHelpers = {
       for (let i = 0; i < gradeMeta.length; i++) {
         const value = gradeMeta[i]
         if (value !== null) {
-          bestSixScore += DSE_GRADE_TO_SOCRE_MAPPER[value]
+          bestSixScore += DseGradeToScoreMapper[value]
         }
       }
     }

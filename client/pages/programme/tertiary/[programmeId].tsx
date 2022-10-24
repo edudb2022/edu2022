@@ -47,7 +47,7 @@ const ProgrammePage: React.FunctionComponent = () => {
       <ReviewHeaderContainer
         ChineseTitle="應用及人本計算學（榮譽）文學士"
         EnglishTitle="Bachelor of Management Science and Information Management (Honours)"
-        schoolShortName="cuhk"
+        schoolShortName="hku"
         ShortTitle="Bachelor"
       >
         <div className="md:flex md:justify-center ">

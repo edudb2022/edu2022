@@ -6,7 +6,7 @@ const width = {
   120: "30rem",
   "9/10": "90%"
 }
-const school = { cuhk: "#69246B" }
+const school = { cuhk: "#69246B", hku: "#000" }
 
 const intern = {
   summer: "rgb(255, 99, 132)",
