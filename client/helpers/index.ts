@@ -2,9 +2,9 @@
 import { ISchoolsReviewCardProps } from "../components/common/cards/review/school"
 import { DseGradeToScoreMapper } from "../mappers/dseGrade"
 import { GetSchoolRes } from "../types/api"
-import { DSEGradeTypesId, SchoolTypeId } from "../types/common"
+import { DSEGradeTypeId, SchoolTypeId } from "../types/common"
 
-type IGradeMeta = DSEGradeTypesId | null
+type IGradeMeta = DSEGradeTypeId | null
 export const CommonHelpers = {
   schoolFilter: (
     list: GetSchoolRes[] | undefined,

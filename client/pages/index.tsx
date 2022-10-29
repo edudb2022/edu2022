@@ -35,6 +35,7 @@ const SchoolType = [
 
 const Home: NextPage = (props) => {
   const router = useRouter()
+
   const { data, isLoading } = useGetSchools()
   // const { data } = useQuery(["schools"], apiService.getSchools)
   useEffect(() => {
@@ -136,7 +137,7 @@ const Home: NextPage = (props) => {
   )
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const queryClient = new QueryClient()
 
   await queryClient.prefetchQuery(["schools"], apiService.getSchools)
@@ -144,7 +145,8 @@ export async function getServerSideProps() {
   return {
     props: {
       dehydratedState: dehydrate(queryClient)
-    }
+    },
+    revalidate: 20
   }
 }
 export default Home

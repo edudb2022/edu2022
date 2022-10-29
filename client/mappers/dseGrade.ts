@@ -1,14 +1,14 @@
-import { DSEGradeTypesId } from "../types/common"
+import { DSEGradeTypeId } from "../types/common"
 
 export const DseGradeToScoreMapper = {
-  [DSEGradeTypesId.ONE]: 1,
-  [DSEGradeTypesId.TWO]: 2,
-  [DSEGradeTypesId.THREE]: 3,
-  [DSEGradeTypesId.FOUR]: 4,
-  [DSEGradeTypesId.FIVE]: 5,
-  [DSEGradeTypesId.FIVE_START]: 6,
-  [DSEGradeTypesId.FIVE_DOUBLE_STAR]: 7,
-  [DSEGradeTypesId.PASS]: 0,
-  [DSEGradeTypesId.FAIL]: 0,
-  [DSEGradeTypesId.UNCLASSIFIED]: 0
+  [DSEGradeTypeId.ONE]: 1,
+  [DSEGradeTypeId.TWO]: 2,
+  [DSEGradeTypeId.THREE]: 3,
+  [DSEGradeTypeId.FOUR]: 4,
+  [DSEGradeTypeId.FIVE]: 5,
+  [DSEGradeTypeId.FIVE_START]: 6,
+  [DSEGradeTypeId.FIVE_DOUBLE_STAR]: 7,
+  [DSEGradeTypeId.PASS]: 0,
+  [DSEGradeTypeId.FAIL]: 0,
+  [DSEGradeTypeId.UNCLASSIFIED]: 0
 }

@@ -77,8 +77,10 @@ export enum CurrentSchoolTypeId {
   UNIVERSITY = 1,
   COLLEGE,
   SECONDARY_SCHOOL,
-  RETAKER
+  RETAKER,
+  OTHER = 999
 }
+
 export enum ProgrammeTypeId {
   BACHELOR = 1,
   ASSOCIATE_DEGREE,
@@ -92,16 +94,17 @@ export enum ProgrammeTypeId {
 export enum ApplicationTypeId {
   JUPAS = 1,
   NON_JUPAS,
-  BACHELOR
+  BACHELOR,
+  OTHER = 999
 }
 
-export enum DSEJupasChoicePriorityTypesId {
+export enum DSEJupasChoicePriorityTypeId {
   BAND_A_ONE = 1,
   BAND_A_TWO,
   BAND_A_THREE,
   BAND_B,
   BAND_C,
-  OTHER
+  OTHER = 999
 }
 
 export enum AdmissionOfferTypeId {
@@ -131,7 +134,7 @@ export enum YearOfStudyTypeslId {
   YEAR_FIVE_PLUS
 }
 
-export enum JobSourceTypesId {
+export enum JobSourceTypeId {
   JIJIS = 1,
   LINKEDIN,
   INDEED,
@@ -139,7 +142,7 @@ export enum JobSourceTypesId {
   COMPANY_WEBSITE,
   UNIVERSITY,
   FRIENDS,
-  OTHER
+  OTHER = 999
 }
 
 export enum AcademicStatusTypesId {
@@ -150,7 +153,7 @@ export enum AcademicStatusTypesId {
   YEAR_FIVE_PLUS,
   POSTGRAD,
   ALUMI,
-  OTHER
+  OTHER = 999
 }
 
 export enum ContactMethodTypeId {
@@ -185,7 +188,7 @@ export enum HonorTypesId {
 //   FAIL //displat Text :不達標/不合格
 // }
 
-export enum DSEGradeTypesId {
+export enum DSEGradeTypeId {
   ONE = 1,
   TWO,
   THREE,

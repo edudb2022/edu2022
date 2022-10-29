@@ -13,10 +13,12 @@ const BaseFilter: React.FunctionComponent<
 > = ({ children, onClick, onSearch, isMobile }) => {
   return (
     <div
-      className={`flex flex-col items-center gap-y-2 w-full h-fit px-2 py-4 rounded-2xl ${
-        !isMobile &&
-        "border-theme-one-100 hover:animate-borderThemeOneDeep border-2 "
-      }`}
+      // className={`flex flex-col items-center gap-y-2 w-full h-fit px-2 py-4 rounded-2xl ${
+      //   !isMobile && "border-theme-one-100 hover:animate-borderThemeOneDeep  "
+      // }`}
+      className={
+        "flex flex-col items-center gap-y-2 w-full h-fit px-2 py-4 rounded-2xl border-theme-one-100 "
+      }
     >
       {children}
       <BaseButton className="test-xs text-gray-500 font-thin" onClick={onClick}>

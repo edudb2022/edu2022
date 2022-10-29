@@ -7,14 +7,14 @@ import {
   ContactMethodTypeId,
   CurrentSchoolTypeId,
   DressCodeTypeId,
-  DSEGradeTypesId,
-  DSEJupasChoicePriorityTypesId,
+  DSEGradeTypeId,
+  DSEJupasChoicePriorityTypeId,
   gradJobOfferSortingTypes,
   HonorTypesId,
   InternshipOfferSortingTypes,
   InternshipTypesId,
   InterviewSortingTypes,
-  JobSourceTypesId,
+  JobSourceTypeId,
   ProgrammeSortingTypes,
   SchoolSortingTypes,
   SchoolTypeId,
@@ -57,13 +57,15 @@ const currentSchoolTypesList = [
   { value: CurrentSchoolTypeId.UNIVERSITY, title: "大學" },
   { value: CurrentSchoolTypeId.COLLEGE, title: "大專" },
   { value: CurrentSchoolTypeId.SECONDARY_SCHOOL, title: "中學" },
-  { value: CurrentSchoolTypeId.RETAKER, title: "重讀生" }
+  { value: CurrentSchoolTypeId.RETAKER, title: "重讀生" },
+  { value: CurrentSchoolTypeId.OTHER, title: "其他" }
 ]
 
 const applicationTypesList = [
   { value: ApplicationTypeId.JUPAS, title: "Jupas" },
   { value: ApplicationTypeId.NON_JUPAS, title: "Non-Jupas" },
-  { value: ApplicationTypeId.BACHELOR, title: "Bachelor" }
+  { value: ApplicationTypeId.BACHELOR, title: "Bachelor" },
+  { value: ApplicationTypeId.OTHER, title: "其他" }
 ]
 
 const dressCodeTypesList = [
@@ -74,12 +76,12 @@ const dressCodeTypesList = [
 ]
 
 const DSEJupasChoicePriorityTypesList = [
-  { value: DSEJupasChoicePriorityTypesId.BAND_A_ONE, title: "A1" },
-  { value: DSEJupasChoicePriorityTypesId.BAND_A_TWO, title: "A2" },
-  { value: DSEJupasChoicePriorityTypesId.BAND_A_THREE, title: "A3" },
-  { value: DSEJupasChoicePriorityTypesId.BAND_B, title: "B" },
-  { value: DSEJupasChoicePriorityTypesId.BAND_C, title: "C" },
-  { value: DSEJupasChoicePriorityTypesId.OTHER, title: "其他" }
+  { value: DSEJupasChoicePriorityTypeId.BAND_A_ONE, title: "A1" },
+  { value: DSEJupasChoicePriorityTypeId.BAND_A_TWO, title: "A2" },
+  { value: DSEJupasChoicePriorityTypeId.BAND_A_THREE, title: "A3" },
+  { value: DSEJupasChoicePriorityTypeId.BAND_B, title: "B" },
+  { value: DSEJupasChoicePriorityTypeId.BAND_C, title: "C" },
+  { value: DSEJupasChoicePriorityTypeId.OTHER, title: "其他" }
 ]
 
 const admissionOfferTypesList = [
@@ -109,18 +111,18 @@ const yearOfStudyTypesList = [
 ]
 
 const jobSourceTypesList = [
-  { value: JobSourceTypesId.JIJIS, title: "Jijis" },
-  { value: JobSourceTypesId.LINKEDIN, title: "LinkedIn" },
+  { value: JobSourceTypeId.JIJIS, title: "Jijis" },
+  { value: JobSourceTypeId.LINKEDIN, title: "LinkedIn" },
 
-  { value: JobSourceTypesId.INDEED, title: "Indeed" },
-  { value: JobSourceTypesId.JOBSDB, title: "JobsDb" },
-  { value: JobSourceTypesId.COMPANY_WEBSITE, title: "該公司網站" },
+  { value: JobSourceTypeId.INDEED, title: "Indeed" },
+  { value: JobSourceTypeId.JOBSDB, title: "JobsDb" },
+  { value: JobSourceTypeId.COMPANY_WEBSITE, title: "該公司網站" },
   {
-    value: JobSourceTypesId.UNIVERSITY,
+    value: JobSourceTypeId.UNIVERSITY,
     title: "大學"
   },
-  { value: JobSourceTypesId.FRIENDS, title: "朋友介紹" },
-  { value: JobSourceTypesId.OTHER, title: "其他" }
+  { value: JobSourceTypeId.FRIENDS, title: "朋友介紹" },
+  { value: JobSourceTypeId.OTHER, title: "其他" }
 ]
 
 const contactMethodTypesList = [
@@ -132,16 +134,16 @@ const contactMethodTypesList = [
 ]
 
 const DSEGradeTypesList = [
-  { value: DSEGradeTypesId.ONE, title: "1" },
-  { value: DSEGradeTypesId.TWO, title: "2" },
-  { value: DSEGradeTypesId.THREE, title: "3" },
-  { value: DSEGradeTypesId.FOUR, title: "4" },
-  { value: DSEGradeTypesId.FIVE, title: "5" },
-  { value: DSEGradeTypesId.FIVE_START, title: "5*" },
-  { value: DSEGradeTypesId.FIVE_DOUBLE_STAR, title: "5**" },
-  { value: DSEGradeTypesId.PASS, title: "合格" },
-  { value: DSEGradeTypesId.FAIL, title: "肥𠹌佐嗚嗚嗚（不合格）" },
-  { value: DSEGradeTypesId.UNCLASSIFIED, title: "U" }
+  { value: DSEGradeTypeId.ONE, title: "1" },
+  { value: DSEGradeTypeId.TWO, title: "2" },
+  { value: DSEGradeTypeId.THREE, title: "3" },
+  { value: DSEGradeTypeId.FOUR, title: "4" },
+  { value: DSEGradeTypeId.FIVE, title: "5" },
+  { value: DSEGradeTypeId.FIVE_START, title: "5*" },
+  { value: DSEGradeTypeId.FIVE_DOUBLE_STAR, title: "5**" },
+  { value: DSEGradeTypeId.PASS, title: "合格" },
+  { value: DSEGradeTypeId.FAIL, title: "肥𠹌佐嗚嗚嗚（不合格）" },
+  { value: DSEGradeTypeId.UNCLASSIFIED, title: "U" }
 ]
 
 const academicStatusTypesList = [

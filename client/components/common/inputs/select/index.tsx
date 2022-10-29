@@ -16,7 +16,7 @@ import {
   InternshipTypesId,
   InterviewSortingTypes,
   ISelectMenuItemsType,
-  JobSourceTypesId,
+  JobSourceTypeId,
   ProgrammeSortingTypes,
   SchoolSortingTypes,
   SchoolTypeId,
@@ -34,7 +34,7 @@ export interface IBaseSelectProps extends SelectProps, IInputContainerProps {
     | null
     | string
     | SchoolTypeId
-    | JobSourceTypesId
+    | JobSourceTypeId
     | YearOfStudyTypeslId
     | AdmissionLevelTypesId
     | AdmissionOfferTypeId
