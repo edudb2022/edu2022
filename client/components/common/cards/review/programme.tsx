@@ -20,7 +20,7 @@ const ProgrammeReviewCard: React.FunctionComponent<IProgrammeReviewCard> = ({
       totalReports={totalReports!}
       type={"Review"}
     >
-      <div className="absolute top-0 h-full w-9/10  px-2 py-2 pl-6 ">
+      <div className="absolute top-0 h-full w-9/10  ml-8 px-3 ">
         <BaseRadar
           scores={[1, 2, 3, 4, 5]}
           labels={["課程結構", "爛龜指數", "爆肝指數", "學習經歷", "資源"]}
