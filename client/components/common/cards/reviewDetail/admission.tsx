@@ -46,7 +46,7 @@ const AdmissionOfferReviewDetailCard: React.FunctionComponent<
               <ReviewNumberItem detail={3.3} title={SCORE_TYPE.GPA} />
             </div>
 
-            <div className="flex flex-col md:flex-row  items-center md:gap-x-2 gap-y-1 md:mt-2 ">
+            <div className="flex flex-col md:flex-row  items-center md:gap-x-2 gap-y-1 md:mt-2 md:justify-end md:mr-2">
               <TextTag
                 title={ADMISSION_TYPE.NON_JUPAS}
                 type="admission"

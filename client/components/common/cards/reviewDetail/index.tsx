@@ -19,7 +19,7 @@ const BaseReviewDetailCard: React.FunctionComponent<
     >
       <div className="flex flex-row">
         <div className="w-4/5 h-fit flex flex-row gap-x-2 ">
-          {title && <h1>{title}</h1>}
+          {title && <h1 className="truncate">{title}</h1>}
           {isStudent && (
             <h1>
               <StudentIcon />

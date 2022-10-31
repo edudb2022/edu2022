@@ -39,7 +39,7 @@ const GradJobReviewDetailCard: React.FunctionComponent<
             <ReviewTextItem detail={contervedSalary} title="年薪" />
             {/* <ReviewNumberItem detail={salary} title="年薪" /> */}
           </div>
-          <div className="flex flex-row justify-start gap-x-4 items-center mt-2">
+          <div className="flex flex-row justify-end gap-x-4 items-center mt-2 md:mr-2">
             <RatingSmallTag title="搵工難度" rating={2} />
             <RatingSmallTag title="前途評估" rating={2} />
             {/* <RatingTag title="課程評價" rating={2} />

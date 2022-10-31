@@ -32,7 +32,7 @@ const IntershipReviewDetailCard: React.FunctionComponent<
             <ReviewTextItem detail={"課程評價"} title="行業" />
             <ReviewNumberItem detail={salary} title="月薪" />
           </div>
-          <div className="flex flex-row justify-start gap-x-4 items-center">
+          <div className="flex flex-row justify-end md:mr-2 gap-x-4 items-center">
             <RatingTag title="課程評價" rating={2} />
             <TextTag title="winter" type="winter" />
           </div>
