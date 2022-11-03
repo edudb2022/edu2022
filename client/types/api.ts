@@ -1,6 +1,10 @@
-import { AcademicStatusTypesId, SchoolTypeId } from "./common"
+import {
+  AcademicStatusTypesId,
+  ContactMethodTypeId,
+  SchoolTypeId
+} from "./common"
 
-export interface GetSchoolRes {
+export interface IGetSchoolRes {
   id: number
   aliases: string[]
   chineseName: string
@@ -11,7 +15,7 @@ export interface GetSchoolRes {
   type: ISchoolType
 }
 
-export interface GetSchoolDetailReivew {
+export interface IGetSchoolDetailReivew {
   id: number
   createdAt: Date
   likes: number
@@ -35,6 +39,31 @@ export interface GetSchoolDetailReivew {
   votes: number
 }
 
+export interface ICreateSchoolReviewRes {
+  schoolId: number
+  title: string
+  academicStatusId: AcademicStatusTypesId
+  admissionDate: Date
+  contactMethod: IContactMethod
+  ratingQuestionResponses: IRatingQuestionResponses[]
+  longQuestionResponses: ILongQuestionResponses[]
+  userId: number
+  anonymous: boolean
+}
+
+interface ILongQuestionResponses {
+  questionId: number
+  text: string
+}
+interface IRatingQuestionResponses {
+  questionId: number
+  optionId: number
+}
+
+interface IContactMethod {
+  typeId: ContactMethodTypeId
+  value: string
+}
 interface ISchoolType {
   id: SchoolTypeId
   schoolId: string

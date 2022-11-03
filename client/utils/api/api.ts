@@ -1,4 +1,5 @@
 import axios from "axios"
+import { ICreateSchoolReviewRes } from "../../types/api"
 import { DEFAULT_BASE_URL } from "../axios"
 
 const apiService = {
@@ -20,6 +21,37 @@ const apiService = {
     }
   },
 
+  createSchoolReview: async (body: ICreateSchoolReviewRes) => {
+    // const body: ICreateSchoolReviewRes = {
+    //   schoolId: 0,
+    //   title: "string",
+    //   academicStatusId: 0,
+    //   admissionDate: ,
+    //   contactMethod: {
+    //     typeId: 0,
+    //     value: "string"
+    //   },
+    //   ratingQuestionResponses: [
+    //     {
+    //       questionId: 0,
+    //       optionId: 0
+    //     }
+    //   ],
+    //   longQuestionResponses: [
+    //     {
+    //       questionId: 0,
+    //       text: "string"
+    //     }
+    //   ],
+    //   userId: 0,
+    //   anonymous: true
+    // }
+    const res = await axios.post(`${DEFAULT_BASE_URL}/school-reviews`, {
+      body
+    })
+
+    return res
+  },
   postVote: async ({ id, value }: { id: number; value: number }) => {
     // const id = queryKey[1].id
     try {
