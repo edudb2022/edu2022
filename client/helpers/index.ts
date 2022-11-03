@@ -1,17 +1,17 @@
 // import { ISchoolsReviewCardProps } from "../components/common/cards/review"
 import { ISchoolsReviewCardProps } from "../components/common/cards/review/school"
 import { DseGradeToScoreMapper } from "../mappers/dseGrade"
-import { GetSchoolRes } from "../types/api"
+import { IGetSchoolRes } from "../types/api"
 import { DSEGradeTypeId, SchoolTypeId } from "../types/common"
 
 type IGradeMeta = DSEGradeTypeId | null
 export const CommonHelpers = {
   schoolFilter: (
-    list: GetSchoolRes[] | undefined,
+    list: IGetSchoolRes[] | undefined,
     search: string,
     type: SchoolTypeId
-  ): GetSchoolRes[] => {
-    const arr: GetSchoolRes[] = []
+  ): IGetSchoolRes[] => {
+    const arr: IGetSchoolRes[] = []
     const lowerCaseSearchtext = search.toLowerCase()
     if (list) {
       list.forEach((data) => {
