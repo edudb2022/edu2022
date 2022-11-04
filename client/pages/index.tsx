@@ -154,7 +154,7 @@ const Home: NextPage = (props) => {
   )
 }
 
-export async function getStaticProps() {
+export async function getServerProps() {
   const queryClient = new QueryClient()
 
   await queryClient.prefetchQuery(["schools"], apiService.getSchools)
@@ -162,8 +162,8 @@ export async function getStaticProps() {
   return {
     props: {
       dehydratedState: dehydrate(queryClient)
-    },
-    revalidate: 20
+    }
+    // revalidate: 20
   }
 }
 export default Home
