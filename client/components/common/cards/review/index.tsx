@@ -28,9 +28,9 @@ const BaseReviewCard: React.FunctionComponent<
 }) => {
   // const school = "cuhk"
 
-  // const schoolColor = ` bg-school-${school}`
+  // const schoolColor = ` bg-schPool-${school}`
 
-  console.log(schoolShortName)
+  // console.log(schoolShortName)
   return (
     <BaseCard className="flex flex-row  md:w-92  w-88 h-72 md:h-72 border-theme-one-100 shadow-theme-one-50 shadow-sm  border rounded-2xl bg-white hover:animate-borderThemeOneDeep">
       {/* <div
