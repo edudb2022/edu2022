@@ -13,11 +13,11 @@ import SEO from "../../../../components/seo"
 import PageLayout from "../../../../components/layouts/page"
 
 import {
+  schoolCafeteriaRating,
   schoolCampusRating,
   schoolPolicyRating,
-  schoolSelfOfBelongingRating,
-  shcoolCafeteriaRating,
-  schoolResourcesRating
+  schoolResourcesRating,
+  schoolSenseOfBelongingRating
 } from "../../../../constants/rating"
 
 import useGetSchoolDetailReivew from "../../../../hooks/api/useGetSchoolDetailReview"
@@ -65,10 +65,10 @@ const SchoolReviewDetailPage: NextPage = () => {
   }
   const cafeteriaRating = {
     rating: Number(
-      shcoolCafeteriaRating[data!.ratingQuestionResponses[3]!.optionId].value
+      schoolCafeteriaRating[data!.ratingQuestionResponses[3]!.optionId].value
     ),
     title:
-      shcoolCafeteriaRating[data!.ratingQuestionResponses[3]!.optionId].label,
+      schoolCafeteriaRating[data!.ratingQuestionResponses[3]!.optionId].label,
     header:
       schoolReviewRatingQuestionsMapper[
         data!.ratingQuestionResponses[3].questionId
@@ -77,11 +77,11 @@ const SchoolReviewDetailPage: NextPage = () => {
 
   const selfOfBelongingRating = {
     rating: Number(
-      schoolSelfOfBelongingRating[data!.ratingQuestionResponses[4]!.optionId]
+      schoolSenseOfBelongingRating[data!.ratingQuestionResponses[4]!.optionId]
         .value
     ),
     title:
-      schoolSelfOfBelongingRating[data!.ratingQuestionResponses[4]!.optionId]
+      schoolSenseOfBelongingRating[data!.ratingQuestionResponses[4]!.optionId]
         .label,
     header:
       schoolReviewRatingQuestionsMapper[
@@ -184,7 +184,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 
   await queryClient.prefetchQuery(
     ["school-detail-review", { id: id }],
-    apiService.getSchoolDetailReivew
+    apiService.getSchoolDetailReview
   )
 
   return {

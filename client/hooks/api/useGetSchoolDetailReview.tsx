@@ -1,12 +1,12 @@
 import React from "react"
 import { useQuery } from "react-query"
-import { IGetSchoolDetailReivew } from "../../types/api"
+import { IGetSchoolDetailReview } from "../../types/api"
 import { apiService } from "../../utils/api/api"
 
 const useGetSchoolDetailReivew = (id: string) => {
-  return useQuery<IGetSchoolDetailReivew, Error>(
+  return useQuery<IGetSchoolDetailReview, Error>(
     ["school-detail-review", { id }],
-    apiService.getSchoolDetailReivew,
+    apiService.getSchoolDetailReview,
     {
       refetchOnWindowFocus: false
     }

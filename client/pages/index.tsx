@@ -22,7 +22,7 @@ import { useRouter } from "next/router"
 
 import { apiService } from "../utils/api/api"
 import useGetSchools from "../hooks/api/useGetSchools"
-import { GetSchoolRes } from "../types/api"
+import { IGetSchoolRes } from "../types/api"
 
 import Session from "supertokens-auth-react/recipe/session"
 import BaseTextInput from "../components/common/inputs/text"
@@ -39,17 +39,34 @@ const Home: NextPage = (props) => {
   const { data, isLoading } = useGetSchools()
   // const { data } = useQuery(["schools"], apiService.getSchools)
   useEffect(() => {
-    window.gtag("event", "page_view", {
-      page_title: "M23232323ain",
-      page_location: `${router.pathname}`,
-      page_path: `${router.pathname}`,
-      send_to: process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID
-    })
+    // window.gtag("event", "page_view", {
+    //   page_title: "M23232323ain",
+    //   page_location: `${router.pathname}`,
+    //   page_path: `${router.pathname}`,
+    //   send_to: process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID
+    // })
+    // window.gtag("event", "testing", {
+    //   page_title: "testing1",
+    //   page_location: `testing2`,
+    //   page_path: `testing3`,
+    //   send_to: process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID
+    // })
+    // ReactGA.initialize(`${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}`)
+    // ReactGA.event({
+    //   category: "12312312312",
+    //   action: "1",
+    //   label: "cc"
+    // })
+    // window.gtag("event", "aaa", {
+    //   event_category: "bbb",
+    //   event_label: "ccc"
+    // })
+    window.gtag("event", "aaa_testing ")
   }, [])
 
   const [type, setType] = useState(SchoolTypeId.UNIVERSITY)
   const [search, setSearch] = useState("")
-  const [list, setList] = useState<GetSchoolRes[]>([])
+  const [list, setList] = useState<IGetSchoolRes[]>([])
 
   const handleTypeChange = (e: any) => {
     setType(e.target.value)

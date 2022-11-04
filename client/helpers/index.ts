@@ -1,4 +1,5 @@
 // import { ISchoolsReviewCardProps } from "../components/common/cards/review"
+import dayjs from "dayjs"
 import { ISchoolsReviewCardProps } from "../components/common/cards/review/school"
 import { DseGradeToScoreMapper } from "../mappers/dseGrade"
 import { IGetSchoolRes } from "../types/api"
@@ -66,5 +67,9 @@ export const CommonHelpers = {
     return new Date(
       new Date().setDate(new Date().getDate() + days + years * 365)
     )
+  },
+
+  formatData: (date: Date, format: string) => {
+    return dayjs(date).format(format)
   }
 }

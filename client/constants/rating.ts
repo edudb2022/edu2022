@@ -47,7 +47,7 @@ export const schoolPolicyRating: IRating[] = [
   { value: 6, label: "貼地" }
 ]
 
-export const shcoolCafeteriaRating: IRating[] = [
+export const schoolCafeteriaRating: IRating[] = [
   { value: 1, label: "食物沙漠" },
   { value: 2, label: "冇乜野食" },
   { value: 3, label: "都叫有得揀" },
@@ -55,7 +55,7 @@ export const shcoolCafeteriaRating: IRating[] = [
   { value: 5, label: "很好" },
   { value: 6, label: "選擇多質素好" }
 ]
-export const schoolSelfOfBelongingRating: IRating[] = [
+export const schoolSenseOfBelongingRating: IRating[] = [
   { value: 1, label: "極反感" },
   { value: 2, label: "少反感" },
   { value: 3, label: "普通" },

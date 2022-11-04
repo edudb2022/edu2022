@@ -1,5 +1,5 @@
 import axios from "axios"
-import { ICreateSchoolReviewRes } from "../../types/api"
+import { ICreateSchoolReviewReq } from "../../types/api"
 import { DEFAULT_BASE_URL } from "../axios"
 
 const apiService = {
@@ -11,7 +11,7 @@ const apiService = {
       console.error(error)
     }
   },
-  getSchoolDetailReivew: async ({ queryKey }: any) => {
+  getSchoolDetailReview: async ({ queryKey }: any) => {
     const id = queryKey[1].id
     try {
       const data = await axios.get(`${DEFAULT_BASE_URL}/school-reviews/${id}`)
@@ -21,7 +21,7 @@ const apiService = {
     }
   },
 
-  createSchoolReview: async (body: ICreateSchoolReviewRes) => {
+  createSchoolReview: async (body: ICreateSchoolReviewReq) => {
     // const body: ICreateSchoolReviewRes = {
     //   schoolId: 0,
     //   title: "string",

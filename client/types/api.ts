@@ -9,13 +9,13 @@ export interface IGetSchoolRes {
   aliases: string[]
   chineseName: string
   englishName: string
-  faculties: Ifaculties[]
+  faculties: IFaculties[]
   report: IReport[]
   shortName: string
   type: ISchoolType
 }
 
-export interface IGetSchoolDetailReivew {
+export interface IGetSchoolDetailReview {
   id: number
   createdAt: Date
   likes: number
@@ -39,11 +39,11 @@ export interface IGetSchoolDetailReivew {
   votes: number
 }
 
-export interface ICreateSchoolReviewRes {
+export interface ICreateSchoolReviewReq {
   schoolId: number
   title: string
-  academicStatusId: AcademicStatusTypesId
-  admissionDate: Date
+  academicStatusId: AcademicStatusTypesId | null
+  admissionDate: string
   contactMethod: IContactMethod
   ratingQuestionResponses: IRatingQuestionResponses[]
   longQuestionResponses: ILongQuestionResponses[]
@@ -53,7 +53,7 @@ export interface ICreateSchoolReviewRes {
 
 interface ILongQuestionResponses {
   questionId: number
-  text: string
+  text: string | null | ""
 }
 interface IRatingQuestionResponses {
   questionId: number
@@ -61,15 +61,15 @@ interface IRatingQuestionResponses {
 }
 
 interface IContactMethod {
-  typeId: ContactMethodTypeId
-  value: string
+  typeId: ContactMethodTypeId | null
+  value: string | null
 }
 interface ISchoolType {
   id: SchoolTypeId
   schoolId: string
 }
 
-export interface Ifaculties {
+export interface IFaculties {
   name: string
   schoolId: number
 }

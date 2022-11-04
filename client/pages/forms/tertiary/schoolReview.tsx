@@ -9,8 +9,8 @@ import {
   schoolCampusRating,
   schoolResourcesRating,
   schoolPolicyRating,
-  shcoolCafeteriaRating,
-  schoolSelfOfBelongingRating,
+  schoolCafeteriaRating,
+  schoolSenseOfBelongingRating,
   schoolRecommendRating
 } from "../../../constants/rating"
 import SchoolTypeSelect from "../../../components/common/inputs/select/schoolType"
@@ -43,21 +43,22 @@ import { schoolReviewRatingQuestionsMapper } from "../../../mappers/ratingQuesti
 import dayjs from "dayjs"
 import SEO from "../../../components/seo"
 import { CommonHelpers } from "../../../helpers"
+import useCreateSchoolReview from "../../../hooks/api/useCreateSchoolReview"
 
 const SchoolReviewFormPage: React.FunctionComponent = () => {
   const initialValues = {
     schoolType: "",
     school: "",
     title: "",
-    admissionDate: null,
-    academicStatus: "",
+    admissionDate: dayjs(Date()).format("YYYY-MM-DD"),
+    academicStatus: null,
     campusRating: null,
     resourceRating: null,
     policyRating: null,
     canteenRating: null,
-    selfOfBelonging: null,
+    senseOfBelonging: null,
     recommendation: null,
-    contactMethod: "",
+    contactMethod: null,
     contactDetail: "",
     isAnonymous: false,
     longQOne: "",
@@ -77,7 +78,7 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
     resourceRating: RatingValidationSchema,
     policyRating: RatingValidationSchema,
     canteenRating: RatingValidationSchema,
-    selfOfBelonging: RatingValidationSchema,
+    senseOfBelonging: RatingValidationSchema,
     recommendation: RatingValidationSchema,
     admissionDate: DateValidationSchema,
     longQOne: longQuestionValidationSchema,
@@ -90,8 +91,98 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
     longQEight: longQuestionValidationSchema,
     longQNine: longQuestionValidationSchema
   })
+
   const [isInProgress, setIsInProgress] = useState(false)
+
+  const { mutate } = useCreateSchoolReview()
   const handleSubmit = () => {
+    const body = {
+      schoolId: 62,
+      title: formik.values.title,
+      academicStatusId: formik.values.academicStatus,
+      admissionDate: formik.values.admissionDate,
+      contactMethod: {
+        typeId: formik.values.contactMethod,
+        value: formik.values.contactDetail
+      },
+      ratingQuestionResponses: [
+        {
+          questionId: 1,
+          optionId: formik.values.campusRating!
+        },
+        {
+          questionId: 2,
+          optionId: formik.values.resourceRating!
+        },
+        {
+          questionId: 3,
+          optionId: formik.values.policyRating!
+        },
+        {
+          questionId: 4,
+          optionId: formik.values.canteenRating!
+        },
+        {
+          questionId: 5,
+          optionId: formik.values.senseOfBelonging!
+        },
+        {
+          questionId: 6,
+          optionId: formik.values.recommendation!
+        }
+      ],
+      longQuestionResponses: [
+        {
+          questionId: 1,
+          text: formik.values.longQOne
+        },
+        {
+          questionId: 2,
+          text: formik.values.longQTwo
+        },
+        {
+          questionId: 3,
+          text: formik.values.longQThree
+        },
+        {
+          questionId: 4,
+          text: formik.values.longQFour
+        },
+        {
+          questionId: 5,
+          text: formik.values.longQFive
+        },
+        {
+          questionId: 6,
+          text: formik.values.longQSix
+        },
+        {
+          questionId: 7,
+          text: formik.values.longQSeven
+        },
+        {
+          questionId: 8,
+          text: formik.values.longQEight
+        },
+        {
+          questionId: 9,
+          text: formik.values.longQNine
+        }
+      ],
+      userId: 1,
+      anonymous: formik.values.isAnonymous
+    }
+    mutate(body, {
+      onSuccess: (res) => {
+        console.log("res", res)
+      },
+      onError: (err) => {
+        console.log("err", err)
+      },
+      onSettled: () => {
+        setIsInProgress(false)
+      }
+    })
     setIsInProgress(true)
     console.log("sumit")
   }
@@ -102,6 +193,7 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
     validationSchema: schoolReviewFormSchema
   })
 
+  console.log(232, formik.values)
   return (
     <>
       <SEO
@@ -226,7 +318,7 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
             id="canteenRating"
             value={formik.values.canteenRating}
             onChange={formik.handleChange}
-            ratingTitle={shcoolCafeteriaRating}
+            ratingTitle={schoolCafeteriaRating}
             onBlur={formik.handleBlur}
             errorMessages={formik.errors.canteenRating}
             isTouched={formik.touched.canteenRating}
@@ -235,13 +327,13 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
           />
 
           <RatingToggleButtonGroup
-            id="selfOfBelonging"
-            value={formik.values.selfOfBelonging}
+            id="senseOfBelonging"
+            value={formik.values.senseOfBelonging}
             onChange={formik.handleChange}
-            ratingTitle={schoolSelfOfBelongingRating}
+            ratingTitle={schoolSenseOfBelongingRating}
             onBlur={formik.handleBlur}
-            errorMessages={formik.errors.selfOfBelonging}
-            isTouched={formik.touched.selfOfBelonging}
+            errorMessages={formik.errors.senseOfBelonging}
+            isTouched={formik.touched.senseOfBelonging}
             header={schoolReviewRatingQuestionsMapper[5].question}
             headerRequired={true}
           />

@@ -1,6 +1,6 @@
 import React from "react"
 import { useMutation, useQuery } from "react-query"
-import { ICreateSchoolReviewRes, IGetSchoolDetailReivew } from "../../types/api"
+import { ICreateSchoolReviewReq, IGetSchoolDetailReview } from "../../types/api"
 import { apiService } from "../../utils/api/api"
 
 const useCreateSchoolReview = () => {
