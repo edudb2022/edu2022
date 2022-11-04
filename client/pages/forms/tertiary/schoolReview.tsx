@@ -50,7 +50,7 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
     schoolType: "",
     school: "",
     title: "",
-    admissionDate: dayjs(Date()).format("YYYY-MM-DD"),
+    admissionDate: CommonHelpers.formatData(new Date(), "YYYY-MM-DD"),
     academicStatus: null,
     campusRating: null,
     resourceRating: null,
