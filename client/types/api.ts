@@ -1,5 +1,5 @@
 import {
-  AcademicStatusTypesId,
+  AcademicStatusTypeId,
   ContactMethodTypeId,
   SchoolTypeId
 } from "./common"
@@ -42,7 +42,7 @@ export interface IGetSchoolDetailReview {
 export interface ICreateSchoolReviewReq {
   schoolId: number
   title: string
-  academicStatusId: AcademicStatusTypesId | null
+  academicStatusId: AcademicStatusTypeId | null
   admissionDate: string
   contactMethod: IContactMethod
   ratingQuestionResponses: IRatingQuestionResponses[]

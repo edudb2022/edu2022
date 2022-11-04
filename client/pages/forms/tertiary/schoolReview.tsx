@@ -108,27 +108,27 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
       ratingQuestionResponses: [
         {
           questionId: 1,
-          optionId: formik.values.campusRating!
+          optionId: parseInt(formik.values.campusRating!)
         },
         {
           questionId: 2,
-          optionId: formik.values.resourceRating!
+          optionId: parseInt(formik.values.resourceRating!)
         },
         {
           questionId: 3,
-          optionId: formik.values.policyRating!
+          optionId: parseInt(formik.values.policyRating!)
         },
         {
           questionId: 4,
-          optionId: formik.values.canteenRating!
+          optionId: parseInt(formik.values.canteenRating!)
         },
         {
           questionId: 5,
-          optionId: formik.values.senseOfBelonging!
+          optionId: parseInt(formik.values.senseOfBelonging!)
         },
         {
           questionId: 6,
-          optionId: formik.values.recommendation!
+          optionId: parseInt(formik.values.recommendation!)
         }
       ],
       longQuestionResponses: [
@@ -193,7 +193,6 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
     validationSchema: schoolReviewFormSchema
   })
 
-  console.log(232, formik.values)
   return (
     <>
       <SEO
@@ -214,7 +213,7 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
       >
         <div className="grid md:grid-cols-4 md:gap-x-9 gap-y-2">
           <SchoolTypeSelect
-            selectId="Schhol type"
+            selectId="School type"
             inputLabel="學校類型"
             selectValue={formik.values.schoolType}
             onChange={formik.handleChange}

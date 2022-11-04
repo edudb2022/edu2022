@@ -46,9 +46,7 @@ const apiService = {
     //   userId: 0,
     //   anonymous: true
     // }
-    const res = await axios.post(`${DEFAULT_BASE_URL}/school-reviews`, {
-      body
-    })
+    const res = await axios.post(`${DEFAULT_BASE_URL}/school-reviews`, body)
 
     return res
   },
