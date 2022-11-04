@@ -6,9 +6,8 @@ import {
 } from "supertokens-auth-react/recipe/emailpassword"
 import EmailPassword from "supertokens-auth-react/recipe/emailpassword"
 import SuperTokens from "supertokens-auth-react"
-import FormSumitButton, {
-  IFormSumitButtonProps
-} from "../common/buttons/formSubmit"
+import FormSubmitButton from "../common/buttons/formSubmit"
+
 interface IFormPageLayoutProps {
   title: string
   subTitle: string
@@ -41,7 +40,7 @@ const FormPageLayout: React.FunctionComponent<
 
         <div className="flex flex-col items-center gap-y-2 justify-center">
           <p className="text-black text-thin">提交之前請檢查內容</p>
-          <FormSumitButton isInProgress={isInProgress} />
+          <FormSubmitButton isInProgress={isInProgress} />
         </div>
       </div>
     </form>

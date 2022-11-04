@@ -145,7 +145,7 @@ export enum JobSourceTypeId {
   OTHER = 999
 }
 
-export enum AcademicStatusTypesId {
+export enum AcademicStatusTypeId {
   YEAR_ONE = 1,
   YEAR_TWO,
   YEAR_THERE,
@@ -164,7 +164,7 @@ export enum ContactMethodTypeId {
   OTHER
 }
 
-export enum HonorTypesId {
+export enum HonorTypeId {
   FIRST = 1,
   SECOND_UP,
   SECOND_LOW,

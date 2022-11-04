@@ -17,7 +17,7 @@ import BaseSelect from "../../../components/common/inputs/select"
 
 import InputContainer from "../../../components/containers/input"
 import {
-  honorTypesIdList,
+  honorTypeIdList,
   jobSourceTypesList,
   schoolTypesList,
   SITENAME
@@ -287,7 +287,7 @@ const GradJobOfferFormPage: React.FunctionComponent = () => {
 
           <BaseSelect
             name="honour"
-            items={honorTypesIdList}
+            items={honorTypeIdList}
             selectId="honour"
             inputLabel="畢業榮譽 (Honour)"
             selectValue={formik.values.honour}

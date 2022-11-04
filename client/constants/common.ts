@@ -1,5 +1,5 @@
 import {
-  AcademicStatusTypesId,
+  AcademicStatusTypeId,
   AdmissionLevelTypesId,
   admissionOfferSortingTypes,
   AdmissionOfferTypeId,
@@ -10,7 +10,7 @@ import {
   DSEGradeTypeId,
   DSEJupasChoicePriorityTypeId,
   gradJobOfferSortingTypes,
-  HonorTypesId,
+  HonorTypeId,
   InternshipOfferSortingTypes,
   InternshipTypesId,
   InterviewSortingTypes,
@@ -147,31 +147,31 @@ const DSEGradeTypesList = [
 ]
 
 const academicStatusTypesList = [
-  { value: AcademicStatusTypesId.YEAR_ONE, title: "Year 1" },
-  { value: AcademicStatusTypesId.YEAR_TWO, title: "Year 2" },
-  { value: AcademicStatusTypesId.YEAR_THERE, title: "Year 3" },
-  { value: AcademicStatusTypesId.YEAR_FOUR, title: "Year 4" },
-  { value: AcademicStatusTypesId.YEAR_FIVE_PLUS, title: "Year 5+" },
-  { value: AcademicStatusTypesId.POSTGRAD, title: "研究生" },
-  { value: AcademicStatusTypesId.ALUMI, title: "校友" },
-  { value: AcademicStatusTypesId.OTHER, title: "其他" }
+  { value: AcademicStatusTypeId.YEAR_ONE, title: "Year 1" },
+  { value: AcademicStatusTypeId.YEAR_TWO, title: "Year 2" },
+  { value: AcademicStatusTypeId.YEAR_THERE, title: "Year 3" },
+  { value: AcademicStatusTypeId.YEAR_FOUR, title: "Year 4" },
+  { value: AcademicStatusTypeId.YEAR_FIVE_PLUS, title: "Year 5+" },
+  { value: AcademicStatusTypeId.POSTGRAD, title: "研究生" },
+  { value: AcademicStatusTypeId.ALUMI, title: "校友" },
+  { value: AcademicStatusTypeId.OTHER, title: "其他" }
 ]
 
-const honorTypesIdList = [
-  { value: HonorTypesId.FIRST, title: "甲等(First Class Honours)" },
+const honorTypeIdList = [
+  { value: HonorTypeId.FIRST, title: "甲等(First Class Honours)" },
   {
-    value: HonorTypesId.SECOND_UP,
+    value: HonorTypeId.SECOND_UP,
     title: "乙等一級(Upper Second Class Honours)"
   },
   {
-    value: HonorTypesId.SECOND_LOW,
+    value: HonorTypeId.SECOND_LOW,
     title: "乙等二級(Lower Second Class Honours)"
   },
-  { value: HonorTypesId.THIRD, title: "丙等(Third Class Honours)" },
-  { value: HonorTypesId.SUMMA_CUM_LAUDE, title: "卓越(Summa Cum Laude)" },
-  { value: HonorTypesId.MAGNA_CUM_LAUDE, title: "優異(Magna Cum Laude)" },
-  { value: HonorTypesId.CUM_LAUDE, title: "優良(Cum Laude)" },
-  { value: HonorTypesId.PASS, title: "合格(Pass)" }
+  { value: HonorTypeId.THIRD, title: "丙等(Third Class Honours)" },
+  { value: HonorTypeId.SUMMA_CUM_LAUDE, title: "卓越(Summa Cum Laude)" },
+  { value: HonorTypeId.MAGNA_CUM_LAUDE, title: "優異(Magna Cum Laude)" },
+  { value: HonorTypeId.CUM_LAUDE, title: "優良(Cum Laude)" },
+  { value: HonorTypeId.PASS, title: "合格(Pass)" }
 ]
 
 const schoolSortingTypesList = [
@@ -467,7 +467,7 @@ export {
   contactMethodTypesList,
   DSEGradeTypesList,
   academicStatusTypesList,
-  honorTypesIdList,
+  honorTypeIdList,
   schoolSortingTypesList,
   programmeSortingTypesList,
   interviewSortingTypesList,
