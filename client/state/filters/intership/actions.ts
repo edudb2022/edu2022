@@ -1,7 +1,6 @@
 import {
-  ADMISSION_TYPE,
   InternshipOfferSortingTypes,
-  InternshipTypesId
+  InternshipTypeId
 } from "../../../types/common"
 
 export enum IIntershipFilterActionTypes {
@@ -13,7 +12,7 @@ export enum IIntershipFilterActionTypes {
 
 export interface IIntershipFilterState {
   sorting: InternshipOfferSortingTypes
-  internshipType: "" | InternshipTypesId
+  internshipType: "" | InternshipTypeId
   industry: string
 }
 
@@ -23,7 +22,7 @@ export interface SET_SORTING {
 }
 
 export interface SET_INTERSHIP_TYPE {
-  payload: "" | InternshipTypesId
+  payload: "" | InternshipTypeId
   type: typeof IIntershipFilterActionTypes.SET_INTERSHIP_TYPE
 }
 

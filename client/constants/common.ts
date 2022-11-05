@@ -1,6 +1,6 @@
 import {
   AcademicStatusTypeId,
-  AdmissionLevelTypesId,
+  AdmissionLevelTypeId,
   admissionOfferSortingTypes,
   AdmissionOfferTypeId,
   ApplicationTypeId,
@@ -12,13 +12,13 @@ import {
   gradJobOfferSortingTypes,
   HonorTypeId,
   InternshipOfferSortingTypes,
-  InternshipTypesId,
+  InternshipTypeId,
   InterviewSortingTypes,
   JobSourceTypeId,
   ProgrammeSortingTypes,
   SchoolSortingTypes,
   SchoolTypeId,
-  YearOfStudyTypeslId
+  YearOfStudyTypeId
 } from "../types/common"
 
 const SITENAME = "GoodTurtle.fyi"
@@ -89,25 +89,25 @@ const admissionOfferTypesList = [
   { value: AdmissionOfferTypeId.CONDITIONAL, title: "Conditional" }
 ]
 const internshipTypesList = [
-  { value: InternshipTypesId.SUMMER, title: "Summer" },
-  { value: InternshipTypesId.WINTER, title: "Winter" },
-  { value: InternshipTypesId.PLACEMENT, title: "Placement" }
+  { value: InternshipTypeId.SUMMER, title: "Summer" },
+  { value: InternshipTypeId.WINTER, title: "Winter" },
+  { value: InternshipTypeId.PLACEMENT, title: "Placement" }
 ]
 
 const admissionLevelTypesList = [
-  { value: AdmissionLevelTypesId.YEAR_ONE, title: "Year 1" },
-  { value: AdmissionLevelTypesId.YEAR_TWO, title: "Year 2" },
-  { value: AdmissionLevelTypesId.YEAR_THREE, title: "Year 3" },
-  { value: AdmissionLevelTypesId.YEAR_FOUR, title: "Year 4" },
-  { value: AdmissionLevelTypesId.YEAR_FIVE_PLUS, title: "Year 5+" }
+  { value: AdmissionLevelTypeId.YEAR_ONE, title: "Year 1" },
+  { value: AdmissionLevelTypeId.YEAR_TWO, title: "Year 2" },
+  { value: AdmissionLevelTypeId.YEAR_THREE, title: "Year 3" },
+  { value: AdmissionLevelTypeId.YEAR_FOUR, title: "Year 4" },
+  { value: AdmissionLevelTypeId.YEAR_FIVE_PLUS, title: "Year 5+" }
 ]
 
 const yearOfStudyTypesList = [
-  { value: YearOfStudyTypeslId.YEAR_ONE, title: "1" },
-  { value: YearOfStudyTypeslId.YEAR_TWO, title: "2" },
-  { value: YearOfStudyTypeslId.YEAR_THREE, title: "3" },
-  { value: YearOfStudyTypeslId.YEAR_FOUR, title: "4" },
-  { value: YearOfStudyTypeslId.YEAR_FIVE_PLUS, title: "5+" }
+  { value: YearOfStudyTypeId.YEAR_ONE, title: "1" },
+  { value: YearOfStudyTypeId.YEAR_TWO, title: "2" },
+  { value: YearOfStudyTypeId.YEAR_THREE, title: "3" },
+  { value: YearOfStudyTypeId.YEAR_FOUR, title: "4" },
+  { value: YearOfStudyTypeId.YEAR_FIVE_PLUS, title: "5+" }
 ]
 
 const jobSourceTypesList = [
@@ -184,7 +184,7 @@ const schoolSortingTypesList = [
     title: "發佈日期-舊到新"
   },
   {
-    value: SchoolSortingTypes.ADIMSSION_DATE_DESCENDING,
+    value: SchoolSortingTypes.ADMISSION_DATE_DESCENDING,
     title: "入學日期-新到舊"
   },
   {
@@ -221,7 +221,7 @@ const programmeSortingTypesList = [
     title: "發佈日期-舊到新"
   },
   {
-    value: ProgrammeSortingTypes.ADIMSSION_DATE_DESCENDING,
+    value: ProgrammeSortingTypes.ADMISSION_DATE_DESCENDING,
     title: "入學日期-新到舊"
   },
   {

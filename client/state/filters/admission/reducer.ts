@@ -40,7 +40,7 @@ const admissionFilterReducer = (
         draft.admissionLevel = payload
       })
 
-    case IAdmissionFilterActionTypes.SET_YEAT_OF_STUDY:
+    case IAdmissionFilterActionTypes.SET_YEAR_OF_STUDY:
       return produce(state, (draft) => {
         draft.yearOfStudy = payload
       })

@@ -7,20 +7,20 @@ import {
 } from "@mui/material"
 import React from "react"
 import {
-  AdmissionLevelTypesId,
+  AdmissionLevelTypeId,
   admissionOfferSortingTypes,
   AdmissionOfferTypeId,
   ApplicationTypeId,
   gradJobOfferSortingTypes,
   InternshipOfferSortingTypes,
-  InternshipTypesId,
+  InternshipTypeId,
   InterviewSortingTypes,
   ISelectMenuItemsType,
   JobSourceTypeId,
   ProgrammeSortingTypes,
   SchoolSortingTypes,
   SchoolTypeId,
-  YearOfStudyTypeslId
+  YearOfStudyTypeId
 } from "../../../../types/common"
 import InputContainer, { IInputContainerProps } from "../../../containers/input"
 import ErrorMessage, { IErrorMessageProps } from "../../messages/error"
@@ -35,10 +35,10 @@ export interface IBaseSelectProps extends SelectProps, IInputContainerProps {
     | string
     | SchoolTypeId
     | JobSourceTypeId
-    | YearOfStudyTypeslId
-    | AdmissionLevelTypesId
+    | YearOfStudyTypeId
+    | AdmissionLevelTypeId
     | AdmissionOfferTypeId
-    | InternshipTypesId
+    | InternshipTypeId
     | ApplicationTypeId
     | SchoolSortingTypes
     | undefined

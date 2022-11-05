@@ -50,7 +50,7 @@ const AdmissionFilterInputGroup: React.FunctionComponent = () => {
 
     if (name === "yearOfStudy") {
       dispatch({
-        type: IAdmissionFilterActionTypes.SET_YEAT_OF_STUDY,
+        type: IAdmissionFilterActionTypes.SET_YEAR_OF_STUDY,
         payload: value
       })
     }

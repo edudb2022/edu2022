@@ -112,13 +112,13 @@ export enum AdmissionOfferTypeId {
   DIRECT
 }
 
-export enum InternshipTypesId {
+export enum InternshipTypeId {
   SUMMER = 1,
   WINTER,
   PLACEMENT
 }
 
-export enum AdmissionLevelTypesId {
+export enum AdmissionLevelTypeId {
   YEAR_ONE = 1,
   YEAR_TWO,
   YEAR_THREE,
@@ -126,7 +126,7 @@ export enum AdmissionLevelTypesId {
   YEAR_FIVE_PLUS
 }
 
-export enum YearOfStudyTypeslId {
+export enum YearOfStudyTypeId {
   YEAR_ONE = 1,
   YEAR_TWO,
   YEAR_THREE,
@@ -236,7 +236,7 @@ export enum SchoolSortingTypes {
   POST_DATE_ASCENDING = "createdAt,ASC",
   POST_DATE_DESCENDING = "createdAt,DESC",
   ADMISSION_DATE_ASCENDING = "admissionDate,ASC",
-  ADIMSSION_DATE_DESCENDING = "admissionDate,DESC",
+  ADMISSION_DATE_DESCENDING = "admissionDate,DESC",
   VOTE_ASCENDING = "vote,ASC",
   VOTE_DESCENDING = "vote,DESC",
   RECOMMENDATION_ASCENDING = "recommendation,ASC",
@@ -247,7 +247,7 @@ export enum ProgrammeSortingTypes {
   POST_DATE_ASCENDING = "createdAt,ASC",
   POST_DATE_DESCENDING = "createdAt,DESC",
   ADMISSION_DATE_ASCENDING = "admissionDate,ASC",
-  ADIMSSION_DATE_DESCENDING = "admissionDate,DESC",
+  ADMISSION_DATE_DESCENDING = "admissionDate,DESC",
   VOTE_ASCENDING = "vote,ASC",
   VOTE_DESCENDING = "vote,DESC",
   RECOMMENDATION_ASCENDING = "recommendation,ASC",
