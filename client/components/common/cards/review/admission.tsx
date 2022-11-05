@@ -2,7 +2,7 @@ import React from "react"
 import BaseReviewCard, { IBaseReviewCardProps } from "."
 import AdmissionScoreCircularBarGroup, {
   IAdmissionScoreCircularBarGroupProps
-} from "../../groups/cirmularBar/admissionScore"
+} from "../../groups/circularBar/admissionScore"
 
 interface IAdmissionOfferReviewCardProps
   extends Partial<IBaseReviewCardProps>,

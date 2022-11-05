@@ -7,7 +7,7 @@ import {
 
 import AdmissionScoreCircularBarGroup, {
   IAdmissionScoreCircularBarGroupProps
-} from "../../groups/cirmularBar/admissionScore"
+} from "../../groups/circularBar/admissionScore"
 import RatingTag from "../../tags/rating"
 
 interface IInterviewOfferReviewCardProps

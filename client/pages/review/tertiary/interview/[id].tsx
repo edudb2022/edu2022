@@ -3,21 +3,17 @@ import { NextPage } from "next"
 import React, { useState } from "react"
 import StickyBottomButton from "../../../../components/common/buttons/stickyBottom"
 import InterviewReviewDetailCard from "../../../../components/common/cards/reviewDetail/interview"
-import ReviewRankingCircularBar from "../../../../components/common/circularBar/reviewRanking"
 import InterviewFilterDrawer from "../../../../components/common/drawers/filters/interview"
 import InterviewFilter from "../../../../components/common/filters/interview"
-import AdmissionScoreCircularBarGroup from "../../../../components/common/groups/cirmularBar/admissionScore"
+import AdmissionScoreCircularBarGroup from "../../../../components/common/groups/circularBar/admissionScore"
 import ReviewDetailSkeletonCardGroup from "../../../../components/common/groups/skeleton/ReviewDetail"
-import ReviewDetailSkeletonCard from "../../../../components/common/skeleton/card/reviewDetail"
 import RatingTag from "../../../../components/common/tags/rating"
 import ReviewHeaderContainer from "../../../../components/containers/reviewHeader"
-import CardDisplayLayout from "../../../../components/layouts/cardDisplay"
 import DetailedCardDetailLayout from "../../../../components/layouts/cards/detailCardDisplay"
 import PageLayout from "../../../../components/layouts/page"
 import {
   interviewDifficultyRating,
-  interviewExperienceRating,
-  programmeGpaRating
+  interviewExperienceRating
 } from "../../../../constants/rating"
 
 const InterviewReviewPage: NextPage = () => {
@@ -90,7 +86,7 @@ const InterviewReviewPage: NextPage = () => {
               score={33}
               key={1}
               title="1123"
-              id="1"
+              id={23}
             />
           )}
         </DetailedCardDetailLayout>

@@ -3,17 +3,12 @@ import React, { useState } from "react"
 import ReviewHeaderContainer from "../../../../components/containers/reviewHeader"
 import PageLayout from "../../../../components/layouts/page"
 import CountUp from "react-countup"
-import CardDisplayLayout from "../../../../components/layouts/cardDisplay"
 import GradJobReviewDetailCard from "../../../../components/common/cards/reviewDetail/gradJob"
-import ReviewRankingCircularBar from "../../../../components/common/circularBar/reviewRanking"
-import RatingTag from "../../../../components/common/tags/rating"
-import RatingLargeTag from "../../../../components/common/tags/ratingLarge"
-import GradJobDrawer from "../../../../components/common/drawers/filters/gradJob"
 import GradJobFilter from "../../../../components/common/filters/gradJob"
 import GradJobFilterDrawer from "../../../../components/common/drawers/filters/gradJob"
 import StickyBottomButton from "../../../../components/common/buttons/stickyBottom"
-import InternshipFilter from "../../../../components/common/filters/internship"
 import DetailedCardDetailLayout from "../../../../components/layouts/cards/detailCardDisplay"
+import RatingLargeTag from "../../../../components/common/tags/ratingLarge"
 
 const GradJobReviewPage: NextPage = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -81,7 +76,7 @@ const GradJobReviewPage: NextPage = () => {
             score={33}
             key={1}
             title="The worse offer ever"
-            id="1"
+            id={23}
             salary={258019}
             gradDate="20/23"
           />

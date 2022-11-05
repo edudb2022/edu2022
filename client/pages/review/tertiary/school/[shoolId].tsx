@@ -85,7 +85,7 @@ const SchoolReviewPage = () => {
             postDate="20/23"
             label="絕對不建議"
             title="title"
-            id="1"
+            id={1}
           />
         </DetailedCardDetailLayout>
         <StickyBottomButton

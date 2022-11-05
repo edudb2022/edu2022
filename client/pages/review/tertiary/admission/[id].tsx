@@ -5,7 +5,7 @@ import StickyBottomButton from "../../../../components/common/buttons/stickyBott
 import AdmissionOfferReviewDetailCard from "../../../../components/common/cards/reviewDetail/admission"
 import AdmissionFilterDrawer from "../../../../components/common/drawers/filters/admission"
 import AdmissionFilter from "../../../../components/common/filters/admission"
-import AdmissionScoreCircularBarGroup from "../../../../components/common/groups/cirmularBar/admissionScore"
+import AdmissionScoreCircularBarGroup from "../../../../components/common/groups/circularBar/admissionScore"
 import ReviewHeaderContainer from "../../../../components/containers/reviewHeader"
 import DetailedCardDetailLayout from "../../../../components/layouts/cards/detailCardDisplay"
 import PageLayout from "../../../../components/layouts/page"
@@ -63,7 +63,7 @@ const AdmissionOfferReviewPage: NextPage = () => {
             postDate="20/23"
             score={23}
             label="23"
-            id="23"
+            id={23}
             isStudent={true}
             offerReceivedDate="20/23"
           />
@@ -74,7 +74,7 @@ const AdmissionOfferReviewPage: NextPage = () => {
             postDate="20/23"
             score={23}
             label="23"
-            id="23"
+            id={23}
             isStudent={true}
             offerReceivedDate="20/23"
           />
@@ -85,7 +85,7 @@ const AdmissionOfferReviewPage: NextPage = () => {
             postDate="20/23"
             score={23}
             label="23"
-            id="23"
+            id={23}
             offerReceivedDate="20/23"
             isStudent={true}
           />
