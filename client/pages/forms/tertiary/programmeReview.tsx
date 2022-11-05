@@ -21,7 +21,7 @@ import {
 } from "../../../constants/rating"
 import * as yup from "yup"
 import {
-  SlectCommonValidationSchema,
+  SelectCommonValidationSchema,
   TitleValidationSchema,
   RatingValidationSchema,
   DateValidationSchema,
@@ -68,15 +68,13 @@ const ProgrammeReviewFormPage: React.FunctionComponent = () => {
   }
 
   const programmeReviewFormSchema = yup.object().shape({
-    schoolType: SlectCommonValidationSchema,
-    school: SlectCommonValidationSchema,
-    faculty: SlectCommonValidationSchema,
-    programme: SlectCommonValidationSchema,
+    schoolType: SelectCommonValidationSchema,
+    school: SelectCommonValidationSchema,
+    faculty: SelectCommonValidationSchema,
+    programme: SelectCommonValidationSchema,
     title: TitleValidationSchema,
-    // progrmme: RatingValidationSchema,
     workloadRating: RatingValidationSchema,
     programmeStructure: RatingValidationSchema,
-    // teachingQuality: RatingValidationSchema,
     resources: RatingValidationSchema,
     learningExperience: RatingValidationSchema,
     recommendation: RatingValidationSchema,

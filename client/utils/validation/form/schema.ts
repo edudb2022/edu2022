@@ -13,7 +13,7 @@ const longQuestionValidationSchema = yup
   .string()
   .max(3000, ERROR_FORM_MESSAGES.TOO_LONG)
 
-const SlectCommonValidationSchema = yup
+const SelectCommonValidationSchema = yup
   .string()
   .required("必須選擇")
   .nullable(true)
@@ -25,7 +25,7 @@ const SalaryValidationSchema = yup
 export {
   TitleValidationSchema,
   RatingValidationSchema,
-  SlectCommonValidationSchema,
+  SelectCommonValidationSchema,
   SalaryValidationSchema,
   DateValidationSchema,
   longQuestionValidationSchema

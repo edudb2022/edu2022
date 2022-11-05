@@ -17,7 +17,7 @@ import * as yup from "yup"
 import {
   DateValidationSchema,
   longQuestionValidationSchema,
-  SlectCommonValidationSchema
+  SelectCommonValidationSchema
 } from "../../../utils/validation/form/schema"
 import { ERROR_FORM_MESSAGES } from "../../../utils/validation/errorMessages/form"
 import { ApplicationTypeId, CurrentSchoolTypeId } from "../../../types/common"
@@ -87,11 +87,11 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
   }
 
   const admissionOfferFormSchema = yup.object().shape({
-    schoolType: SlectCommonValidationSchema,
-    school: SlectCommonValidationSchema,
-    faculty: SlectCommonValidationSchema,
-    programme: SlectCommonValidationSchema,
-    currentSchoolType: SlectCommonValidationSchema,
+    schoolType: SelectCommonValidationSchema,
+    school: SelectCommonValidationSchema,
+    faculty: SelectCommonValidationSchema,
+    programme: SelectCommonValidationSchema,
+    currentSchoolType: SelectCommonValidationSchema,
     currentSchool: yup
       .number()
       .when("currentSchoolType", (currentSchoolType, schema) => {
@@ -133,9 +133,9 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
       })
       .nullable(),
     offerDate: DateValidationSchema,
-    offerType: SlectCommonValidationSchema,
-    applicationType: SlectCommonValidationSchema,
-    admissionLevel: SlectCommonValidationSchema,
+    offerType: SelectCommonValidationSchema,
+    applicationType: SelectCommonValidationSchema,
+    admissionLevel: SelectCommonValidationSchema,
     longQOne: longQuestionValidationSchema,
     longQTwo: longQuestionValidationSchema,
     longQThree: longQuestionValidationSchema,

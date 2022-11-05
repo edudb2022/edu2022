@@ -27,7 +27,7 @@ import {
   DateValidationSchema,
   longQuestionValidationSchema,
   RatingValidationSchema,
-  SlectCommonValidationSchema,
+  SelectCommonValidationSchema,
   TitleValidationSchema
 } from "../../../utils/validation/form/schema"
 
@@ -72,7 +72,7 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
     longQNine: ""
   }
   const schoolReviewFormSchema = yup.object().shape({
-    school: SlectCommonValidationSchema,
+    school: SelectCommonValidationSchema,
     title: TitleValidationSchema,
     campusRating: RatingValidationSchema,
     resourceRating: RatingValidationSchema,

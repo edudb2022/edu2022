@@ -30,7 +30,7 @@ import {
   longQuestionValidationSchema,
   RatingValidationSchema,
   SalaryValidationSchema,
-  SlectCommonValidationSchema,
+  SelectCommonValidationSchema,
   TitleValidationSchema
 } from "../../../utils/validation/form/schema"
 import InputHeader from "../../../components/common/header/input"
@@ -73,22 +73,22 @@ const InternshipOfferFormPage: React.FunctionComponent = () => {
   }
 
   const intershipOfferFormSchema = yup.object().shape({
-    schoolType: SlectCommonValidationSchema,
-    school: SlectCommonValidationSchema,
-    faculty: SlectCommonValidationSchema,
-    programme: SlectCommonValidationSchema,
+    schoolType: SelectCommonValidationSchema,
+    school: SelectCommonValidationSchema,
+    faculty: SelectCommonValidationSchema,
+    programme: SelectCommonValidationSchema,
     title: TitleValidationSchema,
     jobTitle: TitleValidationSchema,
     offerRecievedDate: DateValidationSchema,
     companyName: TitleValidationSchema,
-    industry: SlectCommonValidationSchema,
-    internType: SlectCommonValidationSchema,
+    industry: SelectCommonValidationSchema,
+    internType: SelectCommonValidationSchema,
     baseSalary: SalaryValidationSchema,
     bonus: SalaryValidationSchema,
     stockOption: SalaryValidationSchema,
     difficulty: RatingValidationSchema,
-    applicaiotnType: SlectCommonValidationSchema,
-    offerType: SlectCommonValidationSchema,
+    applicaiotnType: SelectCommonValidationSchema,
+    offerType: SelectCommonValidationSchema,
     longQOne: longQuestionValidationSchema,
     longQTwo: longQuestionValidationSchema,
     longQThree: longQuestionValidationSchema,

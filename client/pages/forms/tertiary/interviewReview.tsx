@@ -33,7 +33,7 @@ import {
   DateValidationSchema,
   longQuestionValidationSchema,
   RatingValidationSchema,
-  SlectCommonValidationSchema,
+  SelectCommonValidationSchema,
   TitleValidationSchema
 } from "../../../utils/validation/form/schema"
 import { ERROR_FORM_MESSAGES } from "../../../utils/validation/errorMessages/form"
@@ -96,15 +96,15 @@ const InterviewReviewPage: NextPage = () => {
   }
 
   const interviewReviewFormSchema = yup.object().shape({
-    schoolType: SlectCommonValidationSchema,
-    school: SlectCommonValidationSchema,
-    faculty: SlectCommonValidationSchema,
-    programme: SlectCommonValidationSchema,
+    schoolType: SelectCommonValidationSchema,
+    school: SelectCommonValidationSchema,
+    faculty: SelectCommonValidationSchema,
+    programme: SelectCommonValidationSchema,
     title: TitleValidationSchema,
     interviewDate: DateValidationSchema,
     exprience: RatingValidationSchema,
     difficulty: RatingValidationSchema,
-    currentSchoolType: SlectCommonValidationSchema,
+    currentSchoolType: SelectCommonValidationSchema,
     currentSchool: yup
       .number()
       .when("currentSchoolType", (currentSchoolType, schema) => {
@@ -146,7 +146,7 @@ const InterviewReviewPage: NextPage = () => {
       })
       .nullable(),
 
-    applicationType: SlectCommonValidationSchema,
+    applicationType: SelectCommonValidationSchema,
     longQOne: longQuestionValidationSchema,
     longQTwo: longQuestionValidationSchema,
     longQThree: longQuestionValidationSchema,

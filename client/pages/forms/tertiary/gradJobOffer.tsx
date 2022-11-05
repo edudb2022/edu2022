@@ -29,7 +29,7 @@ import {
   longQuestionValidationSchema,
   RatingValidationSchema,
   SalaryValidationSchema,
-  SlectCommonValidationSchema,
+  SelectCommonValidationSchema,
   TitleValidationSchema
 } from "../../../utils/validation/form/schema"
 import * as yup from "yup"
@@ -75,22 +75,22 @@ const GradJobOfferFormPage: React.FunctionComponent = () => {
   }
 
   const gradJobOfferFormSchema = yup.object().shape({
-    schoolType: SlectCommonValidationSchema,
-    school: SlectCommonValidationSchema,
-    faculty: SlectCommonValidationSchema,
-    programme: SlectCommonValidationSchema,
+    schoolType: SelectCommonValidationSchema,
+    school: SelectCommonValidationSchema,
+    faculty: SelectCommonValidationSchema,
+    programme: SelectCommonValidationSchema,
     title: TitleValidationSchema,
     jobTitle: TitleValidationSchema,
     offerRecievedDate: DateValidationSchema,
     companyName: TitleValidationSchema,
-    industry: SlectCommonValidationSchema,
+    industry: SelectCommonValidationSchema,
     baseSalary: SalaryValidationSchema,
     bonus: SalaryValidationSchema,
     hope: RatingValidationSchema,
     difficulty: RatingValidationSchema,
     stockOption: SalaryValidationSchema,
-    applicaiotnType: SlectCommonValidationSchema,
-    offerType: SlectCommonValidationSchema,
+    applicaiotnType: SelectCommonValidationSchema,
+    offerType: SelectCommonValidationSchema,
     longQOne: longQuestionValidationSchema,
     longQTwo: longQuestionValidationSchema,
     longQThree: longQuestionValidationSchema,
