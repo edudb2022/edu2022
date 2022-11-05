@@ -5,7 +5,7 @@ import {
   STCheckExist,
   STGetPayload,
   STGetUserId
-} from "../../service/supertoken/Sesstion"
+} from "../../service/supertoken/Session"
 import { IUserActionTypes } from "../../state/user/actions"
 import { useAppDispatch } from "../common/useAppDispatch"
 import { useAppSelector } from "../common/useAppSelector"

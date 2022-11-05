@@ -1,23 +1,22 @@
 import React from "react"
-import BaseFilter, { IBaseFilterPorps } from "."
+import BaseFilter, { IBaseFilterProps } from "."
 import { useAppDispatch } from "../../../hooks/common/useAppDispatch"
 import { ISchoolFilterActionTypes } from "../../../state/filters/school/actions"
-import ProgrammeFilterInputGroup from "../groups/filter/programme"
 import SchoolFilterInputGroup from "../groups/filter/school"
 
-export interface ISchoolFilterFilterPorps extends Partial<IBaseFilterPorps> {}
+export interface ISchoolFilterFilterProps extends Partial<IBaseFilterProps> {}
 
-const SchoolFilter: React.FunctionComponent<ISchoolFilterFilterPorps> = ({
+const SchoolFilter: React.FunctionComponent<ISchoolFilterFilterProps> = ({
   onSearch,
   isMobile
 }) => {
   const dispatch = useAppDispatch()
 
-  const hanldeClick = () => {
+  const handleClick = () => {
     dispatch({ type: ISchoolFilterActionTypes.RESET })
   }
   return (
-    <BaseFilter onClick={hanldeClick} onSearch={onSearch!} isMobile={isMobile}>
+    <BaseFilter onClick={handleClick} onSearch={onSearch!} isMobile={isMobile}>
       <SchoolFilterInputGroup />
     </BaseFilter>
   )

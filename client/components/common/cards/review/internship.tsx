@@ -21,7 +21,6 @@ const InternshipReviewCard: React.FunctionComponent<
   totalReports,
   id,
   salary,
-  // labels,
   statistic
 }) => {
   return (

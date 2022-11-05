@@ -1,7 +1,6 @@
 import React from "react"
 import BaseFilterDrawer, { IBaseFilterDrawerProps } from "."
-import BaseDrawer, { IBaseDrawerProps } from ".."
-import AdmissionFilter, { IAdmissionFilterPorps } from "../../filters/admission"
+import AdmissionFilter from "../../filters/admission"
 
 interface IAdmissionFilterDrawerProps extends IBaseFilterDrawerProps {}
 

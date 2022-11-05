@@ -10,7 +10,7 @@ import RatingTag from "../../../../components/common/tags/rating"
 import RatingLargeTag from "../../../../components/common/tags/ratingLarge"
 import ReviewHeaderContainer from "../../../../components/containers/reviewHeader"
 import CardDisplayLayout from "../../../../components/layouts/cardDisplay"
-import DetailedCardDetailLayout from "../../../../components/layouts/cards/detailCardDsplay"
+import DetailedCardDetailLayout from "../../../../components/layouts/cards/detailCardDisplay"
 import PageLayout from "../../../../components/layouts/page"
 
 const ProgrammeReviewPage: NextPage = () => {

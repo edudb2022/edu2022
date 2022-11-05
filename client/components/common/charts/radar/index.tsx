@@ -53,7 +53,6 @@ const BaseRadar: React.FunctionComponent<IBaseRadarProps> = ({
     }
   }
 
-  //   const labels = ["January", "February", "March", "April", "May"];
   const data = {
     labels: labels,
     datasets: [

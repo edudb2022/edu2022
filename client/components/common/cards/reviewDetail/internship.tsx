@@ -7,7 +7,7 @@ import ReviewTextItem from "../../display/items/text"
 import RatingTag from "../../tags/rating"
 import TextTag from "../../tags/text"
 
-interface IntershipReviewDetailCardProps extends IBaseReviewDetailCardProps {
+interface InternshipReviewDetailCardProps extends IBaseReviewDetailCardProps {
   industry: string
   offerDate: string
   salary: number
@@ -15,8 +15,8 @@ interface IntershipReviewDetailCardProps extends IBaseReviewDetailCardProps {
   id: ID
 }
 
-const IntershipReviewDetailCard: React.FunctionComponent<
-  IntershipReviewDetailCardProps
+const InternshipReviewDetailCard: React.FunctionComponent<
+  InternshipReviewDetailCardProps
 > = ({ industry, offerDate, salary, id, ...props }) => {
   return (
     <BaseReviewDetailCard {...props}>
@@ -42,4 +42,4 @@ const IntershipReviewDetailCard: React.FunctionComponent<
   )
 }
 
-export default IntershipReviewDetailCard
+export default InternshipReviewDetailCard

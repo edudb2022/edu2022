@@ -1,29 +1,27 @@
 import React from "react"
-import BaseFilter, { IBaseFilterPorps } from "."
+import BaseFilter, { IBaseFilterProps } from "."
 import { useAppDispatch } from "../../../hooks/common/useAppDispatch"
 
-import { IAdmissionFilterActionTypes } from "../../../state/filters/admission/actions"
-import { IIntershipFilterActionTypes } from "../../../state/filters/intership/actions"
-import BaseFilterContainer from "../../containers/filters"
-import AdmissionFilterInputGroup from "../groups/filter/admission"
-import InternshipFilterInputGroup from "../groups/filter/intership"
+import { IInternshipFilterActionTypes } from "../../../state/filters/internship/actions"
 
-export interface IIntershipFilterPorps extends Partial<IBaseFilterPorps> {}
+import InternshipFilterInputGroup from "../groups/filter/internship"
 
-const IntershipFilter: React.FunctionComponent<IIntershipFilterPorps> = ({
+export interface IInternshipFilterProps extends Partial<IBaseFilterProps> {}
+
+const InternshipFilter: React.FunctionComponent<IInternshipFilterProps> = ({
   onSearch,
   isMobile
 }) => {
   const dispatch = useAppDispatch()
 
-  const hanldeClick = () => {
-    dispatch({ type: IIntershipFilterActionTypes.RESET })
+  const handleClick = () => {
+    dispatch({ type: IInternshipFilterActionTypes.RESET })
   }
   return (
-    <BaseFilter onClick={hanldeClick} onSearch={onSearch!} isMobile={isMobile}>
+    <BaseFilter onClick={handleClick} onSearch={onSearch!} isMobile={isMobile}>
       <InternshipFilterInputGroup />
     </BaseFilter>
   )
 }
 
-export default IntershipFilter
+export default InternshipFilter

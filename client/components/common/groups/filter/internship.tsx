@@ -3,11 +3,11 @@ import React from "react"
 
 import {
   internshipTypesList,
-  intershipOfferSortingTypesList
+  internshipOfferSortingTypesList
 } from "../../../../constants/common"
 import { useAppDispatch } from "../../../../hooks/common/useAppDispatch"
 import { useAppSelector } from "../../../../hooks/common/useAppSelector"
-import { IIntershipFilterActionTypes } from "../../../../state/filters/intership/actions"
+import { IInternshipFilterActionTypes } from "../../../../state/filters/internship/actions"
 import { InternshipOfferSortingTypes } from "../../../../types/common"
 
 import BaseFilterContainer from "../../../containers/filters"
@@ -23,20 +23,20 @@ const InternshipFilterInputGroup: React.FunctionComponent = () => {
 
     if (name === "sorting") {
       dispatch({
-        type: IIntershipFilterActionTypes.SET_SORTING,
+        type: IInternshipFilterActionTypes.SET_SORTING,
         payload: value
       })
     }
     if (name === "intershipType") {
       dispatch({
-        type: IIntershipFilterActionTypes.SET_INTERSHIP_TYPE,
+        type: IInternshipFilterActionTypes.SET_INTERSHIP_TYPE,
         payload: value
       })
     }
 
     if (name === "industry") {
       dispatch({
-        type: IIntershipFilterActionTypes.SET_INDUESTY,
+        type: IInternshipFilterActionTypes.SET_INDUESTY,
         payload: value
       })
     }
@@ -47,7 +47,7 @@ const InternshipFilterInputGroup: React.FunctionComponent = () => {
         name="sorting"
         onChange={handleChange}
         selectValue={sorting}
-        items={intershipOfferSortingTypesList}
+        items={internshipOfferSortingTypesList}
         inputLabel="排序"
       />
       <BaseSelect

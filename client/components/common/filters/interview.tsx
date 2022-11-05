@@ -1,11 +1,11 @@
 import React from "react"
-import BaseFilter, { IBaseFilterPorps } from "."
+import BaseFilter, { IBaseFilterProps } from "."
 import { useAppDispatch } from "../../../hooks/common/useAppDispatch"
 import { IInterviewFilterActionTypes } from "../../../state/filters/interview/actions"
 import InterviewFilterInputGroup from "../groups/filter/interview"
 
 export interface IInterviewFilterFilterPorps
-  extends Partial<IBaseFilterPorps> {}
+  extends Partial<IBaseFilterProps> {}
 
 const InterviewFilter: React.FunctionComponent<IInterviewFilterFilterPorps> = ({
   onSearch,
@@ -13,11 +13,11 @@ const InterviewFilter: React.FunctionComponent<IInterviewFilterFilterPorps> = ({
 }) => {
   const dispatch = useAppDispatch()
 
-  const hanldeClick = () => {
+  const handleClick = () => {
     dispatch({ type: IInterviewFilterActionTypes.RESET })
   }
   return (
-    <BaseFilter onClick={hanldeClick} onSearch={onSearch!} isMobile={isMobile}>
+    <BaseFilter onClick={handleClick} onSearch={onSearch!} isMobile={isMobile}>
       <InterviewFilterInputGroup />
     </BaseFilter>
   )

@@ -1,6 +1,5 @@
 import React from "react"
 import BaseReviewCard, { IBaseReviewCardProps } from "."
-import { schoolTypesList } from "../../../../constants/common"
 import { SchoolTypeId } from "../../../../types/common"
 import BaseRadar from "../../charts/radar"
 

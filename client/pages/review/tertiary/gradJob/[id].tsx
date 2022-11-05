@@ -12,8 +12,8 @@ import GradJobDrawer from "../../../../components/common/drawers/filters/gradJob
 import GradJobFilter from "../../../../components/common/filters/gradJob"
 import GradJobFilterDrawer from "../../../../components/common/drawers/filters/gradJob"
 import StickyBottomButton from "../../../../components/common/buttons/stickyBottom"
-import IntershipFilter from "../../../../components/common/filters/internship"
-import DetailedCardDetailLayout from "../../../../components/layouts/cards/detailCardDsplay"
+import InternshipFilter from "../../../../components/common/filters/internship"
+import DetailedCardDetailLayout from "../../../../components/layouts/cards/detailCardDisplay"
 
 const GradJobReviewPage: NextPage = () => {
   const [isOpen, setIsOpen] = useState(false)

@@ -2,10 +2,10 @@ import React from "react"
 import BaseFilterDrawer, { IBaseFilterDrawerProps } from "."
 import IntershipFilter from "../../filters/internship"
 
-interface IIntershipFilterDrawerProps extends IBaseFilterDrawerProps {}
+interface IInternshipFilterDrawerProps extends IBaseFilterDrawerProps {}
 
-const IntershipFilterDrawer: React.FunctionComponent<
-  IIntershipFilterDrawerProps
+const InternshipFilterDrawer: React.FunctionComponent<
+  IInternshipFilterDrawerProps
 > = ({ ...props }) => {
   return (
     <BaseFilterDrawer {...props}>
@@ -14,4 +14,4 @@ const IntershipFilterDrawer: React.FunctionComponent<
   )
 }
 
-export default IntershipFilterDrawer
+export default InternshipFilterDrawer

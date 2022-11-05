@@ -1,13 +1,13 @@
 import React from "react"
 
-import BaseFilter, { IBaseFilterPorps } from "."
+import BaseFilter, { IBaseFilterProps } from "."
 import { useAppDispatch } from "../../../hooks/common/useAppDispatch"
 
 import { IGradJobFilterActionTypes } from "../../../state/filters/gradJob/actions"
 
 import GradJobFilterInputGroup from "../groups/filter/gradJob"
 
-export interface IGradJobFilterPorps extends Partial<IBaseFilterPorps> {}
+export interface IGradJobFilterPorps extends Partial<IBaseFilterProps> {}
 
 const GradJobFilter: React.FunctionComponent<IGradJobFilterPorps> = ({
   onSearch,
@@ -15,11 +15,11 @@ const GradJobFilter: React.FunctionComponent<IGradJobFilterPorps> = ({
 }) => {
   const dispatch = useAppDispatch()
 
-  const hanldeClick = () => {
+  const handleClick = () => {
     dispatch({ type: IGradJobFilterActionTypes.RESET })
   }
   return (
-    <BaseFilter onClick={hanldeClick} onSearch={onSearch!} isMobile={isMobile}>
+    <BaseFilter onClick={handleClick} onSearch={onSearch!} isMobile={isMobile}>
       <GradJobFilterInputGroup />
     </BaseFilter>
   )

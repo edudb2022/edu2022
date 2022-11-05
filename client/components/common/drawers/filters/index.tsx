@@ -1,6 +1,5 @@
 import React, { MouseEventHandler, PropsWithChildren } from "react"
 import BaseDrawer, { IBaseDrawerProps } from ".."
-import BaseButton from "../../buttons"
 import StickyBottomButton from "../../buttons/stickyBottom"
 
 export interface IBaseFilterDrawerProps extends IBaseDrawerProps {

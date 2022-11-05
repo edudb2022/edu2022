@@ -1,4 +1,4 @@
-import { ADMISSION_TYPE, ProgrammeSortingTypes } from "../../../types/common"
+import { ProgrammeSortingTypes } from "../../../types/common"
 
 export enum IProgrammeFilterActionTypes {
   SET_SORTING = "FILTER:PROGRAMME:SET_SORTING",

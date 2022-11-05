@@ -8,7 +8,7 @@ import SchoolFilter from "../../../../components/common/filters/school"
 import RatingLargeTag from "../../../../components/common/tags/ratingLarge"
 import ReviewHeaderContainer from "../../../../components/containers/reviewHeader"
 
-import DetailedCardDetailLayout from "../../../../components/layouts/cards/detailCardDsplay"
+import DetailedCardDetailLayout from "../../../../components/layouts/cards/detailCardDisplay"
 import PageLayout from "../../../../components/layouts/page"
 import { useAppSelector } from "../../../../hooks/common/useAppSelector"
 import qs from "qs"

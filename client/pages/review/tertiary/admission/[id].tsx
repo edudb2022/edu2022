@@ -7,7 +7,7 @@ import AdmissionFilterDrawer from "../../../../components/common/drawers/filters
 import AdmissionFilter from "../../../../components/common/filters/admission"
 import AdmissionScoreCircularBarGroup from "../../../../components/common/groups/cirmularBar/admissionScore"
 import ReviewHeaderContainer from "../../../../components/containers/reviewHeader"
-import DetailedCardDetailLayout from "../../../../components/layouts/cards/detailCardDsplay"
+import DetailedCardDetailLayout from "../../../../components/layouts/cards/detailCardDisplay"
 import PageLayout from "../../../../components/layouts/page"
 import { useAppSelector } from "../../../../hooks/common/useAppSelector"
 

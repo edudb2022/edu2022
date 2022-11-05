@@ -3,11 +3,8 @@ import React from "react"
 import BaseReviewDetailCard, { IBaseReviewDetailCardProps } from "."
 import { CommonHelpers } from "../../../../helpers"
 import { ID } from "../../../../types/common"
-import ReviewNumberItem from "../../display/items/number"
 import ReviewTextItem from "../../display/items/text"
-import RatingTag from "../../tags/rating"
 import RatingSmallTag from "../../tags/ratingSmall"
-import TextTag from "../../tags/text"
 
 interface IGradJobReviewDetailCard extends IBaseReviewDetailCardProps {
   industry: string
@@ -20,7 +17,7 @@ interface IGradJobReviewDetailCard extends IBaseReviewDetailCardProps {
 const GradJobReviewDetailCard: React.FunctionComponent<
   IGradJobReviewDetailCard
 > = ({ industry, gradDate, offerDate, salary, id, ...props }) => {
-  const contervedSalary = CommonHelpers.salaryConvertor(salary)
+  const convertedSalary = CommonHelpers.salaryConvertor(salary)
 
   return (
     <BaseReviewDetailCard {...props}>
@@ -36,15 +33,11 @@ const GradJobReviewDetailCard: React.FunctionComponent<
 
             <ReviewTextItem detail={offerDate} title="offer日期" />
             <ReviewTextItem detail={industry} title="行業" />
-            <ReviewTextItem detail={contervedSalary} title="年薪" />
-            {/* <ReviewNumberItem detail={salary} title="年薪" /> */}
+            <ReviewTextItem detail={convertedSalary} title="年薪" />
           </div>
           <div className="flex flex-row justify-end gap-x-4 items-center mt-2 md:mr-2">
             <RatingSmallTag title="搵工難度" rating={2} />
             <RatingSmallTag title="前途評估" rating={2} />
-            {/* <RatingTag title="課程評價" rating={2} />
-
-            <RatingTag title="課程評價" rating={2} /> */}
           </div>
         </a>
       </Link>

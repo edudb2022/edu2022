@@ -4,16 +4,15 @@ import ReviewHeaderContainer from "../../../../components/containers/reviewHeade
 import PageLayout from "../../../../components/layouts/page"
 import CountUp from "react-countup"
 import InternshipPeiChart from "../../../../components/common/charts/pie/internship"
-import CardDisplayLayout from "../../../../components/layouts/cardDisplay"
-import IntershipReviewDetailCard from "../../../../components/common/cards/reviewDetail/intership"
+
+import InternshipReviewDetailCard from "../../../../components/common/cards/reviewDetail/internship"
 import RatingLargeTag from "../../../../components/common/tags/ratingLarge"
-import RatingTag from "../../../../components/common/tags/rating"
-import IntershipFilter from "../../../../components/common/filters/internship"
-import DetailedCardDetailLayout from "../../../../components/layouts/cards/detailCardDsplay"
-import IntershipFilterDrawer from "../../../../components/common/drawers/filters/internship"
+import InternshipFilter from "../../../../components/common/filters/internship"
+import DetailedCardDetailLayout from "../../../../components/layouts/cards/detailCardDisplay"
+import InternshipFilterDrawer from "../../../../components/common/drawers/filters/internship"
 import StickyBottomButton from "../../../../components/common/buttons/stickyBottom"
 
-const IntershipReviewPage: NextPage = () => {
+const InternshipReviewPage: NextPage = () => {
   const [isOpen, setIsOpen] = useState(false)
   const handleMobileFilterOpen = () => {
     setIsOpen(!isOpen)
@@ -30,7 +29,7 @@ const IntershipReviewPage: NextPage = () => {
 
   return (
     <PageLayout>
-      <IntershipFilterDrawer
+      <InternshipFilterDrawer
         isOpen={isOpen}
         onClose={handleMobileFilterOpen}
         onSearchClick={handleMobileSearch}
@@ -67,11 +66,11 @@ const IntershipReviewPage: NextPage = () => {
 
       <div className="md:grid md:grid-cols-12 gap-x-4 mt-20">
         <div className="md:grid md:col-span-3 hidden">
-          <IntershipFilter onSearch={handleSearch} />
+          <InternshipFilter onSearch={handleSearch} />
         </div>
 
         <DetailedCardDetailLayout>
-          <IntershipReviewDetailCard
+          <InternshipReviewDetailCard
             jotTitle="123"
             offerDate="02/23"
             industry="123"
@@ -80,7 +79,7 @@ const IntershipReviewPage: NextPage = () => {
             score={10000}
             key={1}
             title="1123"
-            id="1"
+            id={1}
             salary={1232123}
           />
         </DetailedCardDetailLayout>
@@ -95,4 +94,4 @@ const IntershipReviewPage: NextPage = () => {
   )
 }
 
-export default IntershipReviewPage
+export default InternshipReviewPage

@@ -1,11 +1,11 @@
 import React from "react"
-import BaseFilter, { IBaseFilterPorps } from "."
+import BaseFilter, { IBaseFilterProps } from "."
 import { useAppDispatch } from "../../../hooks/common/useAppDispatch"
 import { IProgrammeFilterActionTypes } from "../../../state/filters/programme/actions"
 import ProgrammeFilterInputGroup from "../groups/filter/programme"
 
 export interface IProgrammeFilterFilterPorps
-  extends Partial<IBaseFilterPorps> {}
+  extends Partial<IBaseFilterProps> {}
 
 const ProgrammeFilter: React.FunctionComponent<IProgrammeFilterFilterPorps> = ({
   onSearch,
@@ -13,11 +13,11 @@ const ProgrammeFilter: React.FunctionComponent<IProgrammeFilterFilterPorps> = ({
 }) => {
   const dispatch = useAppDispatch()
 
-  const hanldeClick = () => {
+  const handleClick = () => {
     dispatch({ type: IProgrammeFilterActionTypes.RESET })
   }
   return (
-    <BaseFilter onClick={hanldeClick} onSearch={onSearch!} isMobile={isMobile}>
+    <BaseFilter onClick={handleClick} onSearch={onSearch!} isMobile={isMobile}>
       <ProgrammeFilterInputGroup />
     </BaseFilter>
   )

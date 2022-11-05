@@ -3,7 +3,6 @@ import BaseReviewCard, { IBaseReviewCardProps } from "."
 import AdmissionScoreCircularBarGroup, {
   IAdmissionScoreCircularBarGroupProps
 } from "../../groups/cirmularBar/admissionScore"
-import ReviewDetailSkeletonCard from "../../skeleton/card/reviewDetail"
 
 interface IAdmissionOfferReviewCardProps
   extends Partial<IBaseReviewCardProps>,

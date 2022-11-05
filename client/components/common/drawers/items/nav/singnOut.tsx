@@ -1,7 +1,7 @@
 import React, { PropsWithChildren } from "react"
 import BaseNavDraweritem, { IBaseNavDrawerItemProps } from "."
 import { useAppDispatch } from "../../../../../hooks/common/useAppDispatch"
-import { STSignOut } from "../../../../../service/supertoken/Sesstion"
+import { STSignOut } from "../../../../../service/supertoken/Session"
 import { IUserActionTypes } from "../../../../../state/user/actions"
 import LogOutIcon from "../../../icons/logout"
 

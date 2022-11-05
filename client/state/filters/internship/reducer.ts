@@ -1,8 +1,8 @@
 import produce from "immer"
 import { InternshipOfferSortingTypes } from "../../../types/common"
 import {
-  IIntershipFilterAction,
-  IIntershipFilterActionTypes,
+  IInternshipFilterAction,
+  IInternshipFilterActionTypes,
   IIntershipFilterState
 } from "./actions"
 
@@ -12,27 +12,27 @@ const initialState = {
   industry: ""
 } as IIntershipFilterState
 
-const intershipFilterReducer = (
+const internshipFilterReducer = (
   state: IIntershipFilterState = initialState,
-  { payload, type }: IIntershipFilterAction
+  { payload, type }: IInternshipFilterAction
 ) => {
   switch (type) {
-    case IIntershipFilterActionTypes.SET_SORTING:
+    case IInternshipFilterActionTypes.SET_SORTING:
       return produce(state, (draft) => {
         draft.sorting = payload
       })
 
-    case IIntershipFilterActionTypes.SET_INTERSHIP_TYPE:
+    case IInternshipFilterActionTypes.SET_INTERSHIP_TYPE:
       return produce(state, (draft) => {
         draft.internshipType = payload
       })
 
-    case IIntershipFilterActionTypes.SET_INDUESTY:
+    case IInternshipFilterActionTypes.SET_INDUESTY:
       return produce(state, (draft) => {
         draft.industry = payload
       })
 
-    case IIntershipFilterActionTypes.RESET:
+    case IInternshipFilterActionTypes.RESET:
       return produce(state, (draft) => {
         draft.sorting = InternshipOfferSortingTypes.POST_DATE_DESCENDING
         draft.internshipType = ""
@@ -43,4 +43,4 @@ const intershipFilterReducer = (
   }
 }
 
-export default intershipFilterReducer
+export default internshipFilterReducer

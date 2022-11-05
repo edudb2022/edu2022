@@ -1,8 +1,6 @@
 import React from "react"
 import BaseReviewCard, { IBaseReviewCardProps } from "."
 import CountUp from "react-countup"
-import ReviewRankingCircularBar from "../../circularBar/reviewRanking"
-import RatingTag from "../../tags/rating"
 import RatingLargeTag from "../../tags/ratingLarge"
 
 interface IGradJobOfferReviewCardProps extends Partial<IBaseReviewCardProps> {

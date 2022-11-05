@@ -357,7 +357,7 @@ const admissionOfferSortingTypesList = [
   }
 ]
 
-const intershipOfferSortingTypesList = [
+const internshipOfferSortingTypesList = [
   {
     value: InternshipOfferSortingTypes.POST_DATE_DESCENDING,
     title: "發佈日期-新到舊"
@@ -472,7 +472,7 @@ export {
   programmeSortingTypesList,
   interviewSortingTypesList,
   admissionOfferSortingTypesList,
-  intershipOfferSortingTypesList,
+  internshipOfferSortingTypesList,
   gradJobOfferSortingTypesList,
   SITENAME,
   currentSchoolTypesList

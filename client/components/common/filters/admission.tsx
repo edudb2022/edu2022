@@ -1,12 +1,12 @@
 import React from "react"
 
-import BaseFilter, { IBaseFilterPorps } from "."
+import BaseFilter, { IBaseFilterProps } from "."
 import { useAppDispatch } from "../../../hooks/common/useAppDispatch"
 import { IAdmissionFilterActionTypes } from "../../../state/filters/admission/actions"
 import BaseFilterContainer from "../../containers/filters"
 import AdmissionFilterInputGroup from "../groups/filter/admission"
 
-export interface IAdmissionFilterPorps extends Partial<IBaseFilterPorps> {}
+export interface IAdmissionFilterPorps extends Partial<IBaseFilterProps> {}
 
 const AdmissionFilter: React.FunctionComponent<IAdmissionFilterPorps> = ({
   onSearch,
