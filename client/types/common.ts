@@ -1,4 +1,4 @@
-export type ID = string
+export type TUserId = number
 export type UserName = string
 export type SchoolName = string
 

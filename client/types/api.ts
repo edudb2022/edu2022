@@ -1,7 +1,8 @@
 import {
   AcademicStatusTypeId,
   ContactMethodTypeId,
-  SchoolTypeId
+  SchoolTypeId,
+  TUserId
 } from "./common"
 
 export interface IGetSchoolRes {
@@ -15,7 +16,7 @@ export interface IGetSchoolRes {
   type: ISchoolType
 }
 
-export interface IGetSchoolDetailReview {
+export interface IGetSchoolDetailReviewRes {
   id: number
   createdAt: Date
   likes: number
@@ -47,7 +48,18 @@ export interface ICreateSchoolReviewReq {
   contactMethod: IContactMethod
   ratingQuestionResponses: IRatingQuestionResponses[]
   longQuestionResponses: ILongQuestionResponses[]
-  userId: number
+  userId: TUserId
+  anonymous: boolean
+}
+export interface ICreateProgrammeReviewReq {
+  userId: TUserId
+  programId: number
+  title: string
+  academicStatusId: AcademicStatusTypeId | null
+  admissionDate: string
+  contactMethod: IContactMethod
+  ratingQuestionResponses: IRatingQuestionResponses[]
+  longQuestionResponses: ILongQuestionResponses[]
   anonymous: boolean
 }
 
