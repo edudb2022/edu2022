@@ -29,7 +29,7 @@ export interface IUserState {
   isLogin: boolean
   role: ROLE
   username: UserName
-  userId: TUserId
+  userId: TUserId | null
   isVerified: boolean
 }
 

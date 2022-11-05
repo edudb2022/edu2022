@@ -40,7 +40,7 @@ const useAuth = () => {
     }
 
     getUser()
-  }, [UserState.isLogin])
+  }, [UserState.isLogin, dispatch])
 }
 
 export default useAuth

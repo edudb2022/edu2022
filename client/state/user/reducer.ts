@@ -5,7 +5,7 @@ const initialState = {
   isLogin: false,
   role: ROLE.USER,
   username: "",
-  userId: "",
+  userId: null,
   isVerified: false
 }
 
@@ -23,7 +23,7 @@ const userReducer = (
         isLogin: false,
         role: ROLE.USER,
         username: "",
-        userId: "",
+        userId: null,
         isVerified: false
       }
       return SignOutState
