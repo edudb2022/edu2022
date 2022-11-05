@@ -35,6 +35,8 @@ import {
 import InputHeader from "../../../components/common/header/input"
 import { programmeReviewLongQuestionsMapper } from "../../../mappers/longQuestion"
 import dayjs from "dayjs"
+import useCreateProgrammeReview from "../../../hooks/api/useCreateProgrammeReview"
+import { CommonHelpers } from "../../../helpers"
 
 const ProgrammeReviewFormPage: React.FunctionComponent = () => {
   const initialValues = {
@@ -43,15 +45,15 @@ const ProgrammeReviewFormPage: React.FunctionComponent = () => {
     faculty: "",
     programme: "",
     title: "",
-    admissionDate: null,
-    academicStatus: "",
-    workload: null,
+    admissionDate: CommonHelpers.formatData(new Date(), "YYYY-MM-DD"),
+    academicStatus: null,
+    workloadRating: null,
     programmeStructure: null,
     gpaRating: null,
     resources: null,
     learningExperience: null,
     recommendation: null,
-    contactMethod: "",
+    contactMethod: null,
     contactDetail: "",
     isAnonymous: false,
     longQOne: "",
@@ -71,10 +73,10 @@ const ProgrammeReviewFormPage: React.FunctionComponent = () => {
     faculty: SlectCommonValidationSchema,
     programme: SlectCommonValidationSchema,
     title: TitleValidationSchema,
-    progrmme: RatingValidationSchema,
-    workload: RatingValidationSchema,
+    // progrmme: RatingValidationSchema,
+    workloadRating: RatingValidationSchema,
     programmeStructure: RatingValidationSchema,
-    teachingQuality: RatingValidationSchema,
+    // teachingQuality: RatingValidationSchema,
     resources: RatingValidationSchema,
     learningExperience: RatingValidationSchema,
     recommendation: RatingValidationSchema,
@@ -90,7 +92,98 @@ const ProgrammeReviewFormPage: React.FunctionComponent = () => {
     longQNine: longQuestionValidationSchema
   })
   const [isInProgress, setIsInProgress] = useState(false)
+  const { mutate } = useCreateProgrammeReview()
   const handleSubmit = () => {
+    setIsInProgress(true)
+
+    const body = {
+      userId: 1,
+      programId: 62,
+      title: formik.values.title,
+      academicStatusId: formik.values.academicStatus,
+      admissionDate: formik.values.admissionDate,
+      contactMethod: {
+        typeId: formik.values.contactMethod,
+        value: formik.values.contactDetail
+      },
+      ratingQuestionResponses: [
+        {
+          questionId: 1,
+          optionId: parseInt(formik.values.programmeStructure!)
+        },
+        {
+          questionId: 2,
+          optionId: parseInt(formik.values.gpaRating!)
+        },
+        {
+          questionId: 3,
+          optionId: parseInt(formik.values.workloadRating!)
+        },
+        {
+          questionId: 4,
+          optionId: parseInt(formik.values.learningExperience!)
+        },
+        {
+          questionId: 5,
+          optionId: parseInt(formik.values.resources!)
+        },
+        {
+          questionId: 6,
+          optionId: parseInt(formik.values.recommendation!)
+        }
+      ],
+      longQuestionResponses: [
+        {
+          questionId: 1,
+          text: formik.values.longQOne
+        },
+        {
+          questionId: 2,
+          text: formik.values.longQTwo
+        },
+        {
+          questionId: 3,
+          text: formik.values.longQThree
+        },
+        {
+          questionId: 4,
+          text: formik.values.longQFour
+        },
+        {
+          questionId: 5,
+          text: formik.values.longQFive
+        },
+        {
+          questionId: 6,
+          text: formik.values.longQSix
+        },
+        {
+          questionId: 7,
+          text: formik.values.longQSeven
+        },
+        {
+          questionId: 8,
+          text: formik.values.longQEight
+        },
+        {
+          questionId: 9,
+          text: formik.values.longQNine
+        }
+      ],
+
+      anonymous: formik.values.isAnonymous
+    }
+    mutate(body, {
+      onSuccess: (res) => {
+        console.log("res", res)
+      },
+      onError: (err) => {
+        console.log("err", err)
+      },
+      onSettled: () => {
+        setIsInProgress(false)
+      }
+    })
     console.log("sumit")
   }
 
@@ -238,13 +331,13 @@ const ProgrammeReviewFormPage: React.FunctionComponent = () => {
           />
 
           <RatingToggleButtonGroup
-            id="workload"
-            value={formik.values.workload}
+            id="workloadRating"
+            value={formik.values.workloadRating}
             onChange={formik.handleChange}
             ratingTitle={programmeWorkLoadRating}
             onBlur={formik.handleBlur}
-            errorMessages={formik.errors.workload}
-            isTouched={formik.touched.workload}
+            errorMessages={formik.errors.workloadRating}
+            isTouched={formik.touched.workloadRating}
             header="爆肝指數"
             headerRequired={true}
           />

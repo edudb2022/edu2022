@@ -172,6 +172,7 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
       userId: 1,
       anonymous: formik.values.isAnonymous
     }
+    setIsInProgress(true)
     mutate(body, {
       onSuccess: (res) => {
         console.log("res", res)
@@ -183,7 +184,7 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
         setIsInProgress(false)
       }
     })
-    setIsInProgress(true)
+
     console.log("sumit")
   }
 

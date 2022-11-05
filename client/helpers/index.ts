@@ -13,13 +13,13 @@ export const CommonHelpers = {
     type: SchoolTypeId
   ): IGetSchoolRes[] => {
     const arr: IGetSchoolRes[] = []
-    const lowerCaseSearchtext = search.toLowerCase()
+    const lowerCaseSearchText = search.toLowerCase()
     if (list) {
       list.forEach((data) => {
         if (
-          data.chineseName.toLocaleLowerCase().includes(lowerCaseSearchtext) ||
-          data.englishName.toLocaleLowerCase().includes(lowerCaseSearchtext) ||
-          data.shortName.toLocaleLowerCase().includes(lowerCaseSearchtext)
+          data.chineseName.toLocaleLowerCase().includes(lowerCaseSearchText) ||
+          data.englishName.toLocaleLowerCase().includes(lowerCaseSearchText) ||
+          data.shortName.toLocaleLowerCase().includes(lowerCaseSearchText)
           //   &&
           // data.type.id === type
         ) {

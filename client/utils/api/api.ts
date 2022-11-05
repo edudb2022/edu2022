@@ -1,5 +1,8 @@
 import axios from "axios"
-import { ICreateSchoolReviewReq } from "../../types/api"
+import {
+  ICreateProgrammeReviewReq,
+  ICreateSchoolReviewReq
+} from "../../types/api"
 import { DEFAULT_BASE_URL } from "../axios"
 
 const apiService = {
@@ -22,32 +25,12 @@ const apiService = {
   },
 
   createSchoolReview: async (body: ICreateSchoolReviewReq) => {
-    // const body: ICreateSchoolReviewRes = {
-    //   schoolId: 0,
-    //   title: "string",
-    //   academicStatusId: 0,
-    //   admissionDate: ,
-    //   contactMethod: {
-    //     typeId: 0,
-    //     value: "string"
-    //   },
-    //   ratingQuestionResponses: [
-    //     {
-    //       questionId: 0,
-    //       optionId: 0
-    //     }
-    //   ],
-    //   longQuestionResponses: [
-    //     {
-    //       questionId: 0,
-    //       text: "string"
-    //     }
-    //   ],
-    //   userId: 0,
-    //   anonymous: true
-    // }
     const res = await axios.post(`${DEFAULT_BASE_URL}/school-reviews`, body)
+    return res
+  },
 
+  createProgrammeReview: async (body: ICreateProgrammeReviewReq) => {
+    const res = await axios.post(`${DEFAULT_BASE_URL}/program-reviews`, body)
     return res
   },
   postVote: async ({ id, value }: { id: number; value: number }) => {
