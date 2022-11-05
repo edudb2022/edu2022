@@ -3,7 +3,7 @@ export interface IRating {
   label: string
 }
 
-export const programmeLearningExprienceRating: IRating[] = [
+export const programmeLearningExperienceRating: IRating[] = [
   { value: 1, label: "極之垃圾" },
   { value: 2, label: "垃圾" },
   { value: 3, label: "普通" },
@@ -92,7 +92,7 @@ export const programmeGpaRating: IRating[] = [
   { value: 6, label: "靚龜到Sir" }
 ]
 
-export const progrmmeWorkLoadRating: IRating[] = [
+export const programmeWorkLoadRating: IRating[] = [
   { value: 1, label: "爆兩個肝" },
   { value: 2, label: "爆一個肝" },
   { value: 3, label: "正常" },
@@ -101,7 +101,7 @@ export const progrmmeWorkLoadRating: IRating[] = [
   { value: 6, label: "養肝Mode" }
 ]
 
-export const progrmmeResourcedRating: IRating[] = [
+export const programmeResourcedRating: IRating[] = [
   { value: 1, label: "0資源" },
   { value: 2, label: "極少" },
   { value: 3, label: "啱啱好" },
@@ -110,7 +110,7 @@ export const progrmmeResourcedRating: IRating[] = [
   { value: 6, label: "極度豐富" }
 ]
 
-export const progrmmeRecommendRating: IRating[] = [
+export const programmeRecommendRating: IRating[] = [
   { value: 1, label: "遠離呢科" },
   { value: 2, label: "三思而後行" },
   { value: 3, label: "想讀就讀" },

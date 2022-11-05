@@ -13,11 +13,11 @@ import FormPageLayout from "../../../components/layouts/form"
 import SEO from "../../../components/seo"
 import {
   programmeGpaRating,
-  programmeLearningExprienceRating,
+  programmeLearningExperienceRating,
   programmeStructureRating,
-  progrmmeRecommendRating,
-  progrmmeResourcedRating,
-  progrmmeWorkLoadRating
+  programmeRecommendRating,
+  programmeResourcedRating,
+  programmeWorkLoadRating
 } from "../../../constants/rating"
 import * as yup from "yup"
 import {
@@ -49,7 +49,7 @@ const ProgrammeReviewFormPage: React.FunctionComponent = () => {
     programmeStructure: null,
     gpaRating: null,
     resources: null,
-    learningExprience: null,
+    learningExperience: null,
     recommendation: null,
     contactMethod: "",
     contactDetail: "",
@@ -76,7 +76,7 @@ const ProgrammeReviewFormPage: React.FunctionComponent = () => {
     programmeStructure: RatingValidationSchema,
     teachingQuality: RatingValidationSchema,
     resources: RatingValidationSchema,
-    learningExprience: RatingValidationSchema,
+    learningExperience: RatingValidationSchema,
     recommendation: RatingValidationSchema,
     admissionDate: DateValidationSchema,
     longQOne: longQuestionValidationSchema,
@@ -241,7 +241,7 @@ const ProgrammeReviewFormPage: React.FunctionComponent = () => {
             id="workload"
             value={formik.values.workload}
             onChange={formik.handleChange}
-            ratingTitle={progrmmeWorkLoadRating}
+            ratingTitle={programmeWorkLoadRating}
             onBlur={formik.handleBlur}
             errorMessages={formik.errors.workload}
             isTouched={formik.touched.workload}
@@ -250,13 +250,13 @@ const ProgrammeReviewFormPage: React.FunctionComponent = () => {
           />
 
           <RatingToggleButtonGroup
-            id="learningExprience"
-            value={formik.values.learningExprience}
+            id="learningExperience"
+            value={formik.values.learningExperience}
             onChange={formik.handleChange}
-            ratingTitle={programmeLearningExprienceRating}
+            ratingTitle={programmeLearningExperienceRating}
             onBlur={formik.handleBlur}
-            errorMessages={formik.errors.learningExprience}
-            isTouched={formik.touched.learningExprience}
+            errorMessages={formik.errors.learningExperience}
+            isTouched={formik.touched.learningExperience}
             header="學習經歷"
             headerRequired={true}
             subHeader="例如學習氣氛，教師質素等"
@@ -266,7 +266,7 @@ const ProgrammeReviewFormPage: React.FunctionComponent = () => {
             id="resources"
             value={formik.values.resources}
             onChange={formik.handleChange}
-            ratingTitle={progrmmeResourcedRating}
+            ratingTitle={programmeResourcedRating}
             onBlur={formik.handleBlur}
             errorMessages={formik.errors.resources}
             isTouched={formik.touched.resources}
@@ -279,7 +279,7 @@ const ProgrammeReviewFormPage: React.FunctionComponent = () => {
             id="recommendation"
             value={formik.values.recommendation}
             onChange={formik.handleChange}
-            ratingTitle={progrmmeRecommendRating}
+            ratingTitle={programmeRecommendRating}
             onBlur={formik.handleBlur}
             errorMessages={formik.errors.recommendation}
             isTouched={formik.touched.recommendation}

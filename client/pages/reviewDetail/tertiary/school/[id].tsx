@@ -20,7 +20,7 @@ import {
   schoolSenseOfBelongingRating
 } from "../../../../constants/rating"
 
-import useGetSchoolDetailReivew from "../../../../hooks/api/useGetSchoolDetailReview"
+import useGetSchoolDetailReview from "../../../../hooks/api/useGetSchoolDetailReview"
 import { schoolReviewLongQuestionsMapper } from "../../../../mappers/longQuestion"
 import { schoolReviewRatingQuestionsMapper } from "../../../../mappers/ratingQuestions"
 import { apiService } from "../../../../utils/api/api"
@@ -28,7 +28,7 @@ import { apiService } from "../../../../utils/api/api"
 const SchoolReviewDetailPage: NextPage = () => {
   const router = useRouter()
   const { id } = router.query
-  const { data } = useGetSchoolDetailReivew(id as string)
+  const { data } = useGetSchoolDetailReview(id as string)
   const username = data?.anonymous === true ? "anonymous" : data?.user.name
   const postDate = dayjs(data?.createdAt).format("MM/YY")
   const campusRating = {

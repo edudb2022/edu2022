@@ -1,10 +1,10 @@
 import React from "react"
 import { useQuery } from "react-query"
-import { IGetSchoolDetailReview } from "../../types/api"
+import { IGetSchoolDetailReviewRes } from "../../types/api"
 import { apiService } from "../../utils/api/api"
 
-const useGetSchoolDetailReivew = (id: string) => {
-  return useQuery<IGetSchoolDetailReview, Error>(
+const useGetSchoolDetailReview = (id: string) => {
+  return useQuery<IGetSchoolDetailReviewRes, Error>(
     ["school-detail-review", { id }],
     apiService.getSchoolDetailReview,
     {
@@ -13,4 +13,4 @@ const useGetSchoolDetailReivew = (id: string) => {
   )
 }
 
-export default useGetSchoolDetailReivew
+export default useGetSchoolDetailReview
