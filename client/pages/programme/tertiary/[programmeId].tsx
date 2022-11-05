@@ -76,7 +76,7 @@ const ProgrammePage: React.FunctionComponent = () => {
         <Link href={`/review/tertiary/programme/${"2"}`}>
           <a>
             <ProgrammeReviewCard
-              id="2"
+              id={2}
               schoolChineseName="12"
               schoolEnglishName="123"
               schoolShortName="hku"
@@ -92,7 +92,7 @@ const ProgrammePage: React.FunctionComponent = () => {
               jupasBestSixValue={33}
               nonJupasBestFiveValue={3}
               nonJupasBestGpaValue={3.4}
-              id="1"
+              id={2}
               schoolChineseName="123"
               schoolEnglishName="123"
               schoolShortName="hku"
@@ -103,7 +103,7 @@ const ProgrammePage: React.FunctionComponent = () => {
         <Link href={`/review/tertiary/admission/${"2"}`}>
           <a>
             <AdmissionOfferReviewCard
-              id="1"
+              id={2}
               schoolChineseName="123"
               schoolEnglishName="123"
               schoolShortName="hku"
@@ -119,7 +119,7 @@ const ProgrammePage: React.FunctionComponent = () => {
         <Link href={`/review/tertiary/internship/${"2"}`}>
           <a>
             <InternshipReviewCard
-              id="1"
+              id={2}
               schoolChineseName="123"
               schoolEnglishName="123"
               schoolShortName="hku"
@@ -134,7 +134,7 @@ const ProgrammePage: React.FunctionComponent = () => {
         <Link href={`/review/tertiary/gradJob/${"2"}`}>
           <a>
             <GradJobOfferReviewCard
-              id="1"
+              id={2}
               schoolChineseName="123"
               schoolEnglishName="123"
               schoolShortName="hku"

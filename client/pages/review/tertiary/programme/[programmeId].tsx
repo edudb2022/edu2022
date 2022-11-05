@@ -76,7 +76,7 @@ const ProgrammeReviewPage: NextPage = () => {
             postDate="20/23"
             label="絕對不建議"
             title="推推推推推推推推推推推推推推推推推推推推推推推推推"
-            id="1"
+            id={2}
           />
         </DetailedCardDetailLayout>
       </div>
