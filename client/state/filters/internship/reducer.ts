@@ -3,17 +3,17 @@ import { InternshipOfferSortingTypes } from "../../../types/common"
 import {
   IInternshipFilterAction,
   IInternshipFilterActionTypes,
-  IIntershipFilterState
+  IInternshipFilterState
 } from "./actions"
 
 const initialState = {
   sorting: InternshipOfferSortingTypes.POST_DATE_DESCENDING,
   internshipType: "",
   industry: ""
-} as IIntershipFilterState
+} as IInternshipFilterState
 
 const internshipFilterReducer = (
-  state: IIntershipFilterState = initialState,
+  state: IInternshipFilterState = initialState,
   { payload, type }: IInternshipFilterAction
 ) => {
   switch (type) {
