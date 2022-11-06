@@ -63,6 +63,11 @@ export interface ICreateProgrammeReviewReq {
   anonymous: boolean
 }
 
+export interface IVoteReq {
+  id: number
+  value: number
+}
+
 interface ILongQuestionResponses {
   questionId: number
   text: string | null | ""

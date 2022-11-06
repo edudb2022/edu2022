@@ -49,7 +49,7 @@ const DetailReviewHeaderContainer: React.FunctionComponent<
 
     if (isValidUser && !voteType) {
       try {
-        await apiService.postVote({ id: postId, value: 1 })
+        await apiService.voteSchoolReview({ id: postId, value: 1 })
         setCurrentScore(score + 1)
         setVoteType(VoteTypeId.LIKED)
       } catch (error) {
@@ -72,7 +72,7 @@ const DetailReviewHeaderContainer: React.FunctionComponent<
 
     if (isValidUser && !voteType) {
       try {
-        await apiService.postVote({ id: postId, value: -1 })
+        await apiService.voteSchoolReview({ id: postId, value: -1 })
         setCurrentScore(score - 1)
         setVoteType(VoteTypeId.LIKED)
       } catch (error) {

@@ -1,7 +1,8 @@
 import axios from "axios"
 import {
   ICreateProgrammeReviewReq,
-  ICreateSchoolReviewReq
+  ICreateSchoolReviewReq,
+  IVoteReq
 } from "../../types/api"
 import { DEFAULT_BASE_URL } from "../axios"
 
@@ -33,16 +34,24 @@ const apiService = {
     const res = await axios.post(`${DEFAULT_BASE_URL}/program-reviews`, body)
     return res
   },
-  postVote: async ({ id, value }: { id: number; value: number }) => {
-    // const id = queryKey[1].id
+  voteSchoolReview: async (param: IVoteReq) => {
+    const { value, id } = param
     try {
       await axios.post(`${DEFAULT_BASE_URL}/school-reviews/${id}/votes`, {
-        // body: {
         value
-        // }
       })
     } catch (error) {
-      console.error(error)
+      throw error
+    }
+  },
+  voteProgrammeReview: async (param: IVoteReq) => {
+    const { value, id } = param
+    try {
+      await axios.post(`${DEFAULT_BASE_URL}/program-reviews/${id}/votes`, {
+        value
+      })
+    } catch (error) {
+      throw error
     }
   }
 }
