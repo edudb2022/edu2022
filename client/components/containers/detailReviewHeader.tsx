@@ -13,12 +13,14 @@ import { useCountUp } from "react-countup"
 import VotedModal from "../common/modals/voted"
 import { VoteTypeId } from "../../types/common"
 import { apiService } from "../../utils/api/api"
+import { IVoteReq } from "../../types/api"
 
 interface IDetailReviewHeader
   extends IReviewHeaderContainerProps,
     ILikeRatingProps {
   containerClassName?: string
   postId: number
+  onVote: (param: IVoteReq) => void
 }
 
 const DetailReviewHeaderContainer: React.FunctionComponent<
@@ -29,6 +31,7 @@ const DetailReviewHeaderContainer: React.FunctionComponent<
   containerClassName,
   layoutClassName,
   postId,
+  onVote,
   ...props
 }) => {
   const { isLogin } = useAppSelector((state) => state.user)
@@ -49,7 +52,9 @@ const DetailReviewHeaderContainer: React.FunctionComponent<
 
     if (isValidUser && !voteType) {
       try {
-        await apiService.voteSchoolReview({ id: postId, value: 1 })
+        const param = { id: postId, value: 1 }
+        onVote(param)
+        // await apiService.voteSchoolReview({ id: postId, value: 1 })
         setCurrentScore(score + 1)
         setVoteType(VoteTypeId.LIKED)
       } catch (error) {
