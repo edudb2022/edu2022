@@ -110,7 +110,7 @@ const TertiarySchoolPage: NextPage = () => {
         <ProgrammeCard
           programmeChineseName="計量金融學及風險管理科學"
           programmeEnglishName="Quantitative Finance and Risk Management Science"
-          programmeId="123"
+          programmeId={123}
           totalReports={123}
           programmeType="Bachelor"
           faculty="Fuckulty of finance"
