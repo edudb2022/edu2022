@@ -17,6 +17,7 @@ const IntershipReviewDetailPage: NextPage = () => {
         EnglishTitle="123"
         schoolShortName="hku"
         ShortTitle="123"
+        onVote={() => {}}
       >
         <div className="flex flex-wrap flex-row justify-evenly w-full border-2">
           <TextTag title="summer" type="summer" header="Intern類型" />

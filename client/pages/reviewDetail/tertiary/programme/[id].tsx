@@ -5,6 +5,7 @@ import DetailReviewHeaderContainer from "../../../../components/containers/detai
 import DetailReviewInfoContainer from "../../../../components/containers/detailReviewInfo"
 
 import PageLayout from "../../../../components/layouts/page"
+import useVoteSchoolReview from "../../../../hooks/api/vote/useVoteSchoolReview"
 
 const ProgrammeReviewDetailPage: NextPage = () => {
   // labels={[
@@ -14,6 +15,8 @@ const ProgrammeReviewDetailPage: NextPage = () => {
   //   "學習經歷",
   //   "資源"
   // ]}
+
+  const { mutate } = useVoteSchoolReview()
   return (
     <PageLayout>
       <DetailReviewHeaderContainer
@@ -23,6 +26,7 @@ const ProgrammeReviewDetailPage: NextPage = () => {
         EnglishTitle="123"
         schoolShortName="hku"
         ShortTitle="123"
+        onVote={mutate}
       >
         <div className="flex flex-wrap flex-row justify-evenly w-full border-2">
           <RatingTag rating={5} title="12313" header="推薦指數" />

@@ -24,71 +24,74 @@ import useGetSchoolDetailReview from "../../../../hooks/api/useGetSchoolDetailRe
 import { schoolReviewLongQuestionsMapper } from "../../../../mappers/longQuestion"
 import { schoolReviewRatingQuestionsMapper } from "../../../../mappers/ratingQuestions"
 import { apiService } from "../../../../utils/api/api"
+import useVoteSchoolReview from "../../../../hooks/api/vote/useVoteSchoolReview"
+import { CommonHelpers } from "../../../../helpers"
 
 const SchoolReviewDetailPage: NextPage = () => {
   const router = useRouter()
   const { id } = router.query
   const { data } = useGetSchoolDetailReview(id as string)
   const username = data?.anonymous === true ? "anonymous" : data?.user.name
-  const postDate = dayjs(data?.createdAt).format("MM/YY")
-  const campusRating = {
-    rating: Number(
-      schoolCampusRating[data!.ratingQuestionResponses[0]!.optionId].value
-    ),
-    title: schoolCampusRating[data!.ratingQuestionResponses[0]!.optionId].label,
-    header:
-      schoolReviewRatingQuestionsMapper[
-        data!.ratingQuestionResponses[0].questionId
-      ].question
-  }
+  const postDate = CommonHelpers.formatData(data!.createdAt, "MM/YY")
+  // const campusRating = {
+  //   rating: Number(
+  //     schoolCampusRating[data!.ratingQuestionResponses[0]!.optionId].value
+  //   ),
+  //   title: schoolCampusRating[data!.ratingQuestionResponses[0]!.optionId].label,
+  //   header:
+  //     schoolReviewRatingQuestionsMapper[
+  //       data!.ratingQuestionResponses[0].questionId
+  //     ].question
+  // }
 
-  const resourceRating = {
-    rating: Number(
-      schoolResourcesRating[data!.ratingQuestionResponses[1]!.optionId].value
-    ),
-    title:
-      schoolResourcesRating[data!.ratingQuestionResponses[1]!.optionId].label,
-    header:
-      schoolReviewRatingQuestionsMapper[
-        data!.ratingQuestionResponses[1].questionId
-      ].question
-  }
-  const policyRating = {
-    rating: Number(
-      schoolPolicyRating[data!.ratingQuestionResponses[2]!.optionId].value
-    ),
-    title: schoolPolicyRating[data!.ratingQuestionResponses[2]!.optionId].label,
-    header:
-      schoolReviewRatingQuestionsMapper[
-        data!.ratingQuestionResponses[2].questionId
-      ].question
-  }
-  const cafeteriaRating = {
-    rating: Number(
-      schoolCafeteriaRating[data!.ratingQuestionResponses[3]!.optionId].value
-    ),
-    title:
-      schoolCafeteriaRating[data!.ratingQuestionResponses[3]!.optionId].label,
-    header:
-      schoolReviewRatingQuestionsMapper[
-        data!.ratingQuestionResponses[3].questionId
-      ].question
-  }
+  // const resourceRating = {
+  //   rating: Number(
+  //     schoolResourcesRating[data!.ratingQuestionResponses[1]!.optionId].value
+  //   ),
+  //   title:
+  //     schoolResourcesRating[data!.ratingQuestionResponses[1]!.optionId].label,
+  //   header:
+  //     schoolReviewRatingQuestionsMapper[
+  //       data!.ratingQuestionResponses[1].questionId
+  //     ].question
+  // }
+  // const policyRating = {
+  //   rating: Number(
+  //     schoolPolicyRating[data!.ratingQuestionResponses[2]!.optionId].value
+  //   ),
+  //   title: schoolPolicyRating[data!.ratingQuestionResponses[2]!.optionId].label,
+  //   header:
+  //     schoolReviewRatingQuestionsMapper[
+  //       data!.ratingQuestionResponses[2].questionId
+  //     ].question
+  // }
+  // const cafeteriaRating = {
+  //   rating: Number(
+  //     schoolCafeteriaRating[data!.ratingQuestionResponses[3]!.optionId].value
+  //   ),
+  //   title:
+  //     schoolCafeteriaRating[data!.ratingQuestionResponses[3]!.optionId].label,
+  //   header:
+  //     schoolReviewRatingQuestionsMapper[
+  //       data!.ratingQuestionResponses[3].questionId
+  //     ].question
+  // }
 
-  const selfOfBelongingRating = {
-    rating: Number(
-      schoolSenseOfBelongingRating[data!.ratingQuestionResponses[4]!.optionId]
-        .value
-    ),
-    title:
-      schoolSenseOfBelongingRating[data!.ratingQuestionResponses[4]!.optionId]
-        .label,
-    header:
-      schoolReviewRatingQuestionsMapper[
-        data!.ratingQuestionResponses[4].questionId
-      ].question
-  }
+  // const senseOfBelongingRating = {
+  //   rating: Number(
+  //     schoolSenseOfBelongingRating[data!.ratingQuestionResponses[4]!.optionId]
+  //       .value
+  //   ),
+  //   title:
+  //     schoolSenseOfBelongingRating[data!.ratingQuestionResponses[4]!.optionId]
+  //       .label,
+  //   header:
+  //     schoolReviewRatingQuestionsMapper[
+  //       data!.ratingQuestionResponses[4].questionId
+  //     ].question
+  // }
 
+  const { mutate } = useVoteSchoolReview()
   return (
     <>
       <SEO
@@ -121,9 +124,10 @@ const SchoolReviewDetailPage: NextPage = () => {
           ChineseTitle={data!.title}
           schoolShortName="hku"
           postId={data!.id}
+          onVote={mutate}
         >
           <div className="grid md:grid-cols-6 grid-cols-3 mt-4">
-            <RatingTag
+            {/* <RatingTag
               rating={campusRating.rating}
               title={campusRating.title}
               header={campusRating.header}
@@ -144,11 +148,11 @@ const SchoolReviewDetailPage: NextPage = () => {
               header={cafeteriaRating.header}
             />
             <RatingTag
-              rating={selfOfBelongingRating.rating}
-              title={selfOfBelongingRating.title}
-              header={selfOfBelongingRating.header}
+              rating={senseOfBelongingRating.rating}
+              title={senseOfBelongingRating.title}
+              header={senseOfBelongingRating.header}
             />
-            <RatingTag rating={3} title="12313" header="歸屬感" />
+            <RatingTag rating={3} title="12313" header="歸屬感" /> */}
           </div>
 
           <DetailReviewInfoContainer

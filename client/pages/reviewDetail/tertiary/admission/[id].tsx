@@ -24,6 +24,7 @@ const AdmissionReviewDetailPage: NextPage = () => {
         // EnglishTitle="123"
         schoolShortName="hku"
         ShortTitle="hku"
+        onVote={() => {}}
       >
         <div className="flex flex-wrap flex-row justify-evenly w-full border-2">
           <TextTag
