@@ -95,6 +95,7 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
   const [isInProgress, setIsInProgress] = useState(false)
 
   const { mutate } = useCreateSchoolReview()
+
   const handleSubmit = () => {
     const body = {
       schoolId: 62,
@@ -194,6 +195,12 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
     validationSchema: schoolReviewFormSchema
   })
 
+  const handleDateChange = (newValue: any) => {
+    formik.setFieldValue(
+      "admissionDate",
+      CommonHelpers.formatData(newValue, "YYYY-MM-DD")
+    )
+  }
   return (
     <>
       <SEO
@@ -240,12 +247,13 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
           <BaseDatePicker
             label="入學日期"
             value={formik.values.admissionDate}
-            onChange={(newValue: any) => {
-              formik.setFieldValue(
-                "admissionDate",
-                dayjs(newValue).format("YYYY-MM-DD")
-              )
-            }}
+            // onChange={(newValue: any) => {
+            //   formik.setFieldValue(
+            //     "admissionDate",
+            //     dayjs(newValue).format("YYYY-MM-DD")
+            //   )
+            // }}
+            onChange={handleDateChange}
             errorMessages={formik.errors.admissionDate}
             isTouched={formik.touched.admissionDate}
             minDate={CommonHelpers.dayRange(-50, 0)}

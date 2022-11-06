@@ -55,7 +55,7 @@ const InterviewReviewPage: NextPage = () => {
     faculty: "",
     programme: "",
     title: "",
-    interviewDate: null,
+    interviewDate: CommonHelpers.formatData(new Date(), "YYYY-MM-DD"),
     currentSchoolType: null,
     currentSchool: null,
     currentFaculty: null,
@@ -292,7 +292,9 @@ const InterviewReviewPage: NextPage = () => {
     formik.values.desSubjectGradeFive,
     formik.values.desSubjectGradeSix
   ])
-
+  const handleDateChange = (newValue: any) => {
+    formik.setFieldValue("interviewDate", dayjs(newValue).format("YYYY-MM-DD"))
+  }
   return (
     <>
       <SEO
@@ -452,12 +454,13 @@ const InterviewReviewPage: NextPage = () => {
             <BaseDatePicker
               label="面試日期"
               value={formik.values.interviewDate}
-              onChange={(newValue: any) => {
-                formik.setFieldValue(
-                  "interviewDate",
-                  dayjs(newValue).format("YYYY-MM-DD")
-                )
-              }}
+              // onChange={(newValue: any) => {
+              //   formik.setFieldValue(
+              //     "interviewDate",
+              //     dayjs(newValue).format("YYYY-MM-DD")
+              //   )
+              // }}
+              onChange={handleDateChange}
               errorMessages={formik.errors.interviewDate}
               isTouched={formik.touched.interviewDate}
               helpText="只會顯示MM/YYYY"

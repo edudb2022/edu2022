@@ -36,6 +36,7 @@ import {
 import InputHeader from "../../../components/common/header/input"
 import { internshipOfferReviewLongQuestionsMapper } from "../../../mappers/longQuestion"
 import dayjs from "dayjs"
+import { CommonHelpers } from "../../../helpers"
 
 const InternshipOfferFormPage: React.FunctionComponent = () => {
   const initialValues = {
@@ -43,7 +44,7 @@ const InternshipOfferFormPage: React.FunctionComponent = () => {
     school: "",
     faculty: "",
     programme: "",
-    offerRecievedDate: null,
+    offerReceivedDate: CommonHelpers.formatData(new Date(), ""),
     title: "",
     jobTitle: "",
     companyName: "",
@@ -79,7 +80,7 @@ const InternshipOfferFormPage: React.FunctionComponent = () => {
     programme: SelectCommonValidationSchema,
     title: TitleValidationSchema,
     jobTitle: TitleValidationSchema,
-    offerRecievedDate: DateValidationSchema,
+    offerReceivedDate: DateValidationSchema,
     companyName: TitleValidationSchema,
     industry: SelectCommonValidationSchema,
     internType: SelectCommonValidationSchema,
@@ -87,7 +88,7 @@ const InternshipOfferFormPage: React.FunctionComponent = () => {
     bonus: SalaryValidationSchema,
     stockOption: SalaryValidationSchema,
     difficulty: RatingValidationSchema,
-    applicaiotnType: SelectCommonValidationSchema,
+    // applicaiotnType: SelectCommonValidationSchema,
     offerType: SelectCommonValidationSchema,
     longQOne: longQuestionValidationSchema,
     longQTwo: longQuestionValidationSchema,
@@ -111,6 +112,13 @@ const InternshipOfferFormPage: React.FunctionComponent = () => {
       formik?.values?.stockOption +
       formik.values.bonus
   }, [formik.values.baseSalary, formik.values.stockOption, formik.values.bonus])
+
+  const handleDateChange = (newValue: any) => {
+    formik.setFieldValue(
+      "offerReceivedDate",
+      dayjs(newValue).format("YYYY-MM-DD")
+    )
+  }
 
   return (
     <>
@@ -215,15 +223,16 @@ const InternshipOfferFormPage: React.FunctionComponent = () => {
 
           <BaseDatePicker
             label="收Offer日期"
-            value={formik.values.offerRecievedDate}
-            onChange={(newValue: any) => {
-              formik.setFieldValue(
-                "offerRecievedDate",
-                dayjs(newValue).format("YYYY-MM-DD")
-              )
-            }}
-            errorMessages={formik.errors.offerRecievedDate}
-            isTouched={formik.touched.offerRecievedDate}
+            value={formik.values.offerReceivedDate}
+            // onChange={(newValue: any) => {
+            //   formik.setFieldValue(
+            //     "offerReceivedDate",
+            //     dayjs(newValue).format("YYYY-MM-DD")
+            //   )
+            // }}
+            onChange={handleDateChange}
+            errorMessages={formik.errors.offerReceivedDate}
+            isTouched={formik.touched.offerReceivedDate}
             helpText="只會顯示MM/YYYY"
           />
         </div>

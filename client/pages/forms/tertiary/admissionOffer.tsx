@@ -22,7 +22,6 @@ import {
 import { ERROR_FORM_MESSAGES } from "../../../utils/validation/errorMessages/form"
 import { ApplicationTypeId, CurrentSchoolTypeId } from "../../../types/common"
 
-import { ISystemActionTypes } from "../../../state/system/actions"
 import InputHeader from "../../../components/common/header/input"
 import { useEffect } from "react"
 import { useAppDispatch } from "../../../hooks/common/useAppDispatch"
@@ -40,7 +39,6 @@ import SEO from "../../../components/seo"
 
 import { CommonHelpers } from "../../../helpers"
 import { admissionOfferReviewLongQuestionsMapper } from "../../../mappers/longQuestion"
-import dayjs from "dayjs"
 
 const AdmissionOfferFormPage: React.FunctionComponent = () => {
   const dispatch = useAppDispatch()
@@ -50,7 +48,7 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
     faculty: "",
     programme: "",
     title: "",
-    offerDate: null,
+    offerDate: CommonHelpers.formatData(new Date(), "YYYY-MM-DD"),
     currentSchoolType: null,
     currentSchool: null,
     currentFaculty: null,
@@ -235,29 +233,6 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
     validationSchema: admissionOfferFormSchema
   })
 
-  useEffect(() => {
-    if (
-      formik.values.applicationType === ApplicationTypeId.BACHELOR ||
-      ApplicationTypeId.NON_JUPAS
-    ) {
-      formik.values.jupasBanding = ""
-    }
-
-    if (formik.values.applicationType === ApplicationTypeId.JUPAS) {
-      formik.values.gpa = ""
-    }
-  }, [formik.values.applicationType])
-  // const gradeMeta = [
-  //   formik.values.desSubjectGradeOne,
-  //   formik.values.desSubjectGradeTwo,
-  //   formik.values.desSubjectGradeThree,
-  //   formik.values.desSubjectGradeFour,
-  //   formik.values.desSubjectGradeFive,
-  //   formik.values.desSubjectGradeSix
-  // ]
-  // useMemo(() => {
-
-  // }, [])
   const [bestFive, setBestFive] = useState(0)
   const [bestSix, setBestSix] = useState<number | "/">(0)
   const [isInProgress, setIsInProgress] = useState(false)
@@ -282,13 +257,6 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
     formik.values.desSubjectGradeSix
   ])
 
-  // console.log(123, formik.values.desSubjectGradeOne)
-
-  const isNotTertiarySchool =
-    formik.values.currentSchoolType == CurrentSchoolTypeId.SECONDARY_SCHOOL ||
-    formik.values.currentSchoolType == CurrentSchoolTypeId.RETAKER ||
-    formik.values.currentSchoolType === null
-
   useEffect(() => {
     if (isNotTertiarySchool) {
       formik.values.currentSchool = null
@@ -297,6 +265,31 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
       formik.values.yearofStudy = null
     }
   }, [formik.values.currentSchoolType])
+  // console.log(123, formik.values.desSubjectGradeOne)
+  useEffect(() => {
+    if (
+      formik.values.applicationType === ApplicationTypeId.BACHELOR ||
+      ApplicationTypeId.NON_JUPAS
+    ) {
+      formik.values.jupasBanding = ""
+    }
+
+    if (formik.values.applicationType === ApplicationTypeId.JUPAS) {
+      formik.values.gpa = ""
+    }
+  }, [formik.values.applicationType])
+
+  const isNotTertiarySchool =
+    formik.values.currentSchoolType == CurrentSchoolTypeId.SECONDARY_SCHOOL ||
+    formik.values.currentSchoolType == CurrentSchoolTypeId.RETAKER ||
+    formik.values.currentSchoolType === null
+
+  const handleDateChange = (newValue: any) => {
+    formik.setFieldValue(
+      "offerDate",
+      CommonHelpers.formatData(newValue, "YYYY-MM-DD")
+    )
+  }
   return (
     <>
       <SEO
@@ -457,12 +450,13 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
           <BaseDatePicker
             label="收Offer日期"
             value={formik.values.offerDate}
-            onChange={(newValue: any) => {
-              formik.setFieldValue(
-                "offerDate",
-                dayjs(newValue).format("YYYY-MM-DD")
-              )
-            }}
+            // onChange={(newValue: any) => {
+            //   formik.setFieldValue(
+            //     "offerDate",
+            //     CommonHelpers.formatData(newValue, "YYYY-MM-DD")
+            //   )
+            // }}
+            onChange={handleDateChange}
             errorMessages={formik.errors.offerDate}
             isTouched={formik.touched.offerDate}
             helpText="只會顯示MM/YYYY"

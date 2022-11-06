@@ -191,6 +191,10 @@ const ProgrammeReviewFormPage: React.FunctionComponent = () => {
     validationSchema: programmeReviewFormSchema
   })
 
+  const handleDateChange = (newValue: any) => {
+    formik.setFieldValue("admissionDate", dayjs(newValue).format("YYYY-MM-DD"))
+  }
+
   return (
     <>
       <SEO
@@ -277,12 +281,13 @@ const ProgrammeReviewFormPage: React.FunctionComponent = () => {
           <BaseDatePicker
             label="入學日期"
             value={formik.values.admissionDate}
-            onChange={(newValue: any) => {
-              formik.setFieldValue(
-                "admissionDate",
-                dayjs(newValue).format("YYYY-MM-DD")
-              )
-            }}
+            // onChange={(newValue: any) => {
+            //   formik.setFieldValue(
+            //     "admissionDate",
+            //     dayjs(newValue).format("YYYY-MM-DD")
+            //   )
+            // }}
+            onChange={handleDateChange}
             errorMessages={formik.errors.admissionDate}
             isTouched={formik.touched.admissionDate}
             helpText="只會顯示MM/YYYY"
