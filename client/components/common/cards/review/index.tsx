@@ -26,7 +26,10 @@ const BaseReviewCard: React.FunctionComponent<
   id
 }) => {
   return (
-    <BaseCard className="flex flex-row  md:w-92  w-88 h-72 md:h-72 border-theme-one-100 shadow-theme-one-50 shadow-sm  border rounded-2xl bg-white hover:animate-borderThemeOneDeep">
+    <BaseCard
+      className="flex flex-row  md:w-92  w-88 h-72 md:h-72 border-theme-one-100 shadow-theme-one-50 shadow-lg border rounded-2xl bg-white hover:animate-borderThemeOneDeep hover:animate-moveUp
+    "
+    >
       <div className="relative p-2 w-full">
         <h4
           style={{

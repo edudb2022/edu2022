@@ -182,6 +182,13 @@ module.exports = {
             borderColor: "#f43f5e",
             color: "#f43f5e"
           }
+        },
+        moveUp: {
+          "0%": {},
+          "100%": {
+            transform: "translate(0.5rem ,-0.5rem)"
+            // transform: "translateX(5rem)"
+          }
         }
       },
 
@@ -193,7 +200,8 @@ module.exports = {
         discordHover: "discordHover 0.5s ease-in-out forwards",
         themeOneHover: "themeOneHover 0.5s ease-in-out forwards",
         blackBorderHover: "blackBorderHover 0.5s ease-in-out forwards",
-        warningBorderHover: "warningBorderHover 0.5s ease-in-out forwards"
+        warningBorderHover: "warningBorderHover 0.5s ease-in-out forwards",
+        moveUp: "moveUp 0.5s ease-in-out forwards"
       }
     }
   },
