@@ -7,10 +7,10 @@ import GoodTurtleIcon from "../common/icons/logo"
 
 const Footer: React.FunctionComponent = () => {
   return (
-    <footer className=" w-full bg-theme-two-500 p-6">
+    <footer className=" w-full bg-theme-two-500 ">
       <div
         id="footer-upper"
-        className="md:container md:mx-auto w-full py-4 flex flex-col sm:flex-row"
+        className="md:container md:mx-auto w-full py-4 flex flex-col sm:flex-row p-6"
       >
         <div id="intro" className="w-full sm:w-2/5 mr-12 mb-3 sm:mb-1">
           <GoodTurtleIcon className="text-theme-one-500 font-black text-2xl" />
@@ -74,6 +74,12 @@ const Footer: React.FunctionComponent = () => {
               </Link>
             </div>
           </div>
+        </div>
+      </div>
+      <div className="text-center pb-4 mt-4">
+        <GoodTurtleIcon className="text-md text-theme-one-500 font-black" />
+        <div className="text-xs mt-4">
+          Copyright ©2022, GoodTurtle.fyi. All Rights Reserved.
         </div>
       </div>
     </footer>
