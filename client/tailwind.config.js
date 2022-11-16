@@ -1,5 +1,3 @@
-const { borderRadius } = require("@mui/system")
-
 const width = {
   88: "22rem",
   92: "23rem",
