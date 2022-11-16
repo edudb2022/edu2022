@@ -1,4 +1,4 @@
-import { TextField } from "@mui/material"
+import { Autocomplete, TextField } from "@mui/material"
 import type { NextPage } from "next"
 import { useEffect, useState } from "react"
 
@@ -6,7 +6,7 @@ import BaseSelect from "../components/common/inputs/select"
 import PageLayout from "../components/layouts/page"
 import { SchoolTypeId } from "../types/common"
 
-import { dehydrate, QueryClient, useQueries, useQuery } from "react-query"
+import { dehydrate, QueryClient } from "react-query"
 
 import SEO from "../components/seo"
 
@@ -24,8 +24,6 @@ import { apiService } from "../utils/api/api"
 import useGetSchools from "../hooks/api/useGetSchools"
 import { IGetSchoolRes } from "../types/api"
 
-import Session from "supertokens-auth-react/recipe/session"
-import BaseTextInput from "../components/common/inputs/text"
 import SearchTextInput from "../components/common/inputs/text/search"
 
 const SchoolType = [
