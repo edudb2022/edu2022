@@ -239,6 +239,7 @@ export enum JobCategoryTypeId {
   DESIGN,
   EDUCATION,
   ENGINEERING,
+  ENVIRONMENT,
   FILM,
   FINANCE,
   FOOD_AND_BEVERAGES,

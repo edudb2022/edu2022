@@ -38,6 +38,7 @@ import { gradJobOfferOfferReviewLongQuestionsMapper } from "../../../mappers/lon
 import dayjs from "dayjs"
 import SEO from "../../../components/seo"
 import { CommonHelpers } from "../../../helpers"
+import JobTypeSearchableSelect from "../../../components/common/inputs/select/searchable/jobType"
 const GradJobOfferFormPage: React.FunctionComponent = () => {
   const initialValues = {
     schoolType: "",
@@ -55,7 +56,7 @@ const GradJobOfferFormPage: React.FunctionComponent = () => {
     difficulty: 0,
     hope: 0,
     honour: "",
-    industry: "",
+    jobType: undefined,
     jobSource: "",
     contactMethod: "",
     contactDetail: "",
@@ -84,7 +85,7 @@ const GradJobOfferFormPage: React.FunctionComponent = () => {
     jobTitle: TitleValidationSchema,
     offerReceivedDate: DateValidationSchema,
     companyName: TitleValidationSchema,
-    industry: SelectCommonValidationSchema,
+    jobType: SelectCommonValidationSchema,
     baseSalary: SalaryValidationSchema,
     bonus: SalaryValidationSchema,
     hope: RatingValidationSchema,
@@ -119,6 +120,14 @@ const GradJobOfferFormPage: React.FunctionComponent = () => {
       "offerReceivedDate",
       dayjs(newValue).format("YYYY-MM-DD")
     )
+  }
+
+  const handleJobTypeChange = (e: any, newValue: any) => {
+    if (newValue) {
+      formik.setFieldValue("jobType", newValue.id)
+    } else {
+      formik.setFieldValue("jobType", undefined)
+    }
   }
   return (
     <>
@@ -268,16 +277,13 @@ const GradJobOfferFormPage: React.FunctionComponent = () => {
         </InputContainer>
 
         <div className="grid md:grid-cols-3 md:gap-x-9 mt-4 gap-y-2">
-          <BaseSelect
-            name="industry"
-            items={schoolTypesList}
-            selectId="industry"
-            inputLabel="行業"
-            selectValue={formik.values.industry}
-            onChange={formik.handleChange}
+          <JobTypeSearchableSelect
+            name="jobType"
+            value={formik.values.jobType}
+            onChange={handleJobTypeChange}
             onBlur={formik.handleBlur}
-            errorMessages={formik.errors.industry}
-            isTouched={formik.touched.industry}
+            errorMessages={formik.errors.jobType}
+            isTouched={formik.touched.jobType}
             isRequired
           />
 

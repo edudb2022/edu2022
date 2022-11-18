@@ -37,7 +37,7 @@ const JobTypeSearchableSelect: React.FunctionComponent<
   const GroupHeader = styled("div")(({ theme }) => ({
     position: "sticky",
     top: "-8px",
-    padding: "4px 20px",
+    padding: "4px 12px",
     // color: "#BE4B00",
     // backgroundColor: "#FFBF9F"
     backgroundColor: "rgb(203 213 225)"
