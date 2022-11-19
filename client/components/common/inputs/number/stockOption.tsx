@@ -12,7 +12,7 @@ const StockOptionNumberInput: React.FunctionComponent<
       id="stockOption"
       label="股票/股票期权"
       name="stockOption"
-      inputProps={{ min: 0, step: 1 }}
+      // inputProps={{ min: 0, step: 1 }}
       InputProps={{
         startAdornment: <InputAdornment position="start">HKD</InputAdornment>
       }}

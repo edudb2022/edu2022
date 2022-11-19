@@ -12,7 +12,7 @@ const BonusNumberInput: React.FunctionComponent<IBonusNumberInputProps> = ({
       id="bonus"
       label="花紅"
       name="bonus"
-      inputProps={{ min: 0, step: 1 }}
+      // inputProps={{ min: 0, step: 1 }}
       InputProps={{
         startAdornment: <InputAdornment position="start">HKD</InputAdornment>
       }}
