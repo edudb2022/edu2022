@@ -12,6 +12,8 @@ import DetailedCardDetailLayout from "../../../../components/layouts/cards/detai
 import PageLayout from "../../../../components/layouts/page"
 import { useAppSelector } from "../../../../hooks/common/useAppSelector"
 import qs from "qs"
+import BaseInfiniteScroll from "../../../../components/common/infiniteScroll"
+import shortid from "shortid"
 
 const SchoolReviewPage = () => {
   const { sorting } = useAppSelector((state) => state.filter.school)
@@ -36,6 +38,46 @@ const SchoolReviewPage = () => {
   const handleMobileSearch = () => {
     console.log("searhcing")
     setIsOpen(!isOpen)
+  }
+
+  const [mockList, setMockList] = useState([{ id: 1 }])
+  const [hasMore, setHasMore] = useState(true)
+  const fetchMoreData = () => {
+    if (mockList.length >= 20) {
+      setHasMore(false)
+      return
+    }
+    // a fake async api call like which sends
+    // 20 more records in .5 secs
+    setTimeout(() => {
+      const ID = Math.random()
+      setMockList(
+        mockList.concat([
+          { id: ID },
+          { id: ID },
+          { id: ID },
+          { id: ID }
+          // { id: ID },
+          // { id: ID },
+          // { id: ID },
+          // { id: ID },
+          // { id: ID },
+          // { id: ID },
+          // { id: ID },
+          // { id: ID },
+          // { id: ID },
+          // { id: ID },
+          // { id: ID },
+          // { id: ID },
+          // { id: ID },
+          // { id: ID },
+          // { id: ID },
+          // { id: ID },
+          // { id: ID },
+          // { id: ID }
+        ])
+      )
+    }, 500)
   }
   return (
     <PageLayout>
@@ -77,16 +119,29 @@ const SchoolReviewPage = () => {
           <SchoolFilter onSearch={handleSearch} />
         </div>
         <DetailedCardDetailLayout>
-          <SchoolReviewDetailCard
-            admissionDate="23/2022"
-            isStudent={true}
-            score={1223}
-            value={0}
-            postDate="20/23"
-            label="絕對不建議"
-            title="title"
-            id={1}
-          />
+          <BaseInfiniteScroll
+            dataLength={mockList.length}
+            fetchMoreData={fetchMoreData}
+            hasMore={hasMore}
+          >
+            <div className="flex flex-col gap-y-4">
+              {mockList.map((data) => {
+                return (
+                  <SchoolReviewDetailCard
+                    admissionDate="23/2022"
+                    isStudent={true}
+                    score={1223}
+                    value={0}
+                    postDate="20/23"
+                    label="絕對不建議"
+                    title="title"
+                    id={data.id}
+                    key={data.id}
+                  />
+                )
+              })}
+            </div>
+          </BaseInfiniteScroll>
         </DetailedCardDetailLayout>
         <StickyBottomButton
           onClick={handleMobileFilterOpen}
