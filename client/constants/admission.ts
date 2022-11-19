@@ -52,7 +52,7 @@ const CategoryA = [
   { value: DSESubjectId.M2, title: "M2" },
   { value: DSESubjectId.CHINESE_HISTORY, title: "中國歷史" },
   {
-    value: DSESubjectId.INFORMATION_AND_COMMUNICATION_TECHOLOGY,
+    value: DSESubjectId.INFORMATION_AND_COMMUNICATION_TECHNOLOGY,
     title: "資訊及通訊科技"
   },
   { value: DSESubjectId.TOURISM_AND_HOSPITALITY_STUDIES, title: "旅遊與款待" },
