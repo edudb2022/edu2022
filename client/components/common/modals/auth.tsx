@@ -33,11 +33,11 @@ const AuthModal: React.FunctionComponent<IAuthModalProps> = () => {
       rightButtonTile="登入"
       isOpen={modals.auth}
       onLeftClick={handleLeftClick}
-      onRightCick={handleRightClick}
+      onRightClick={handleRightClick}
       className=" h-48 w-80 md:h-56 md:w-96  "
     >
       <div className="flex flex-col justify-center items-center h-4/5 ">
-        <span className="text-6xl text-theme-one-300">
+        <span className="text-8xl text-theme-one-300">
           <ErrorIcon />
         </span>
         <h6 className="mt-4">不如登入咗先?</h6>
