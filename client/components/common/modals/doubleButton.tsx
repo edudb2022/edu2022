@@ -6,7 +6,7 @@ export interface IDoubleButtonModalProps extends IBaseModalProps {
   leftButtonClassName?: string
   rightButtonTile: string
   rightButtonClassName?: string
-  onRightCick: MouseEventHandler<HTMLButtonElement>
+  onRightClick: MouseEventHandler<HTMLButtonElement>
   onLeftClick: MouseEventHandler<HTMLButtonElement>
 }
 
@@ -18,7 +18,7 @@ const DoubleButtonModal: React.FunctionComponent<
   leftButtonClassName,
   rightButtonTile,
   rightButtonClassName,
-  onRightCick,
+  onRightClick,
   onLeftClick,
   ...props
 }) => {
@@ -28,14 +28,14 @@ const DoubleButtonModal: React.FunctionComponent<
 
       <div className="absolute bottom-0 left-0 w-full">
         <button
-          className={` p-2 rounded-bl-2xl w-1/2 bg-gray-300 text-white  ${rightButtonClassName}`}
+          className={` p-2 rounded-bl-2xl w-1/2 bg-gray-50 text-gray-500  ${rightButtonClassName}`}
           onClick={onLeftClick}
         >
           {leftButtonTitle}
         </button>
         <button
-          className={`p-2 rounded-br-2xl w-1/2 bg-theme-one-500 text-white ${leftButtonClassName}`}
-          onClick={onRightCick}
+          className={`p-2 rounded-br-2xl w-1/2 bg-theme-one-50 text-theme-one-500 ${leftButtonClassName}`}
+          onClick={onRightClick}
         >
           {rightButtonTile}
         </button>
