@@ -14,10 +14,10 @@ const BaseReviewDetailCard: React.FunctionComponent<
 > = ({ children, score, postDate, title, isStudent }) => {
   return (
     <BaseCard
-      className={`w-full flex flex-col h-fit border-b-2 p-2 rounded-md border-theme-one-100`}
+      className={`w-full flex flex-col h-fit rounded-lg border-theme-one-100  border-2 md:p-4  p-2 `}
     >
-      <div className="flex flex-row">
-        <div className="w-4/5 h-fit flex flex-row gap-x-2 ">
+      <div className="flex flex-row justify-between items-center border-2">
+        <div className="w-4/5 md:w-9/10 h-fit flex flex-row gap-x-2 ">
           {title && <h1 className="truncate">{title}</h1>}
           {isStudent && (
             <h1>
@@ -25,14 +25,14 @@ const BaseReviewDetailCard: React.FunctionComponent<
             </h1>
           )}
         </div>
-        <p className="w-1/5 text-xs md:text-base text-center h-full  ">
+        <p className="w-1/5  md:w-1/10 text-xs md:text-base md:text-center text-end h-full  ">
           <span>發布日期 {postDate}</span>
         </p>
       </div>
 
-      <div className="flex flex-row ">
-        <div className="w-4/5">{children}</div>
-        <div className="w-1/5 border-l-2 border-gray-200 flex items-center justify-center ">
+      <div className="flex flex-row justify-between">
+        <div className="w-9/10">{children}</div>
+        <div className="w-1/10 flex items-center justify-center  ">
           <LikeRating score={score} />
         </div>
       </div>
