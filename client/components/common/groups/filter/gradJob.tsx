@@ -47,7 +47,7 @@ const GradJobFilterInputGroup: React.FunctionComponent = () => {
         onChange={handleChange}
         selectValue={industry}
         items={admissionOfferTypesList}
-        inputLabel="行業"
+        inputLabel="工作類型"
       />
     </BaseFilterContainer>
   )

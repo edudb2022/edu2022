@@ -32,7 +32,7 @@ const GradJobReviewDetailCard: React.FunctionComponent<
             <ReviewTextItem detail={gradDate} title="畢業日期" />
 
             <ReviewTextItem detail={offerDate} title="offer日期" />
-            <ReviewTextItem detail={industry} title="行業" />
+            <ReviewTextItem detail={industry} title="工作類型" />
             <ReviewTextItem detail={convertedSalary} title="年薪" />
           </div>
           <div className="flex flex-row justify-end gap-x-4 items-center mt-2 md:mr-2">

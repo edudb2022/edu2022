@@ -62,7 +62,7 @@ const InternshipFilterInputGroup: React.FunctionComponent = () => {
         onChange={handleChange}
         selectValue={industry}
         items={internshipTypesList}
-        inputLabel="行業"
+        inputLabel="工作類型"
       />
     </BaseFilterContainer>
   )
