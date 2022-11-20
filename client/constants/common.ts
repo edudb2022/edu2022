@@ -15,6 +15,7 @@ import {
   InternshipTypeId,
   InterviewSortingTypes,
   JobSourceTypeId,
+  JobTypeId,
   ProgrammeSortingTypes,
   SchoolSortingTypes,
   SchoolTypeId,
@@ -453,965 +454,973 @@ const gradJobOfferSortingTypesList = [
 
 const jobTypeList = [
   {
-    id: 100,
+    id: JobTypeId.ARCHITECTURE,
     guiOrder: 0,
     chineseDisplayText: "建築",
     englishDisplayText: "Architecture",
     JobCategoryId: 1
   },
   {
-    id: 200,
+    id: JobTypeId.ANIMATION,
     guiOrder: 1,
     chineseDisplayText: "動畫",
     englishDisplayText: "Animation",
     JobCategoryId: 2
   },
   {
-    id: 201,
+    id: JobTypeId.ART,
     guiOrder: 2,
     chineseDisplayText: "藝術",
     englishDisplayText: "Art",
     JobCategoryId: 2
   },
   {
-    id: 202,
+    id: JobTypeId.COMICS,
     guiOrder: 3,
     chineseDisplayText: "漫畫",
     englishDisplayText: "Comics",
     JobCategoryId: 2
   },
   {
-    id: 203,
+    id: JobTypeId.CONTENT_CREATOR,
     guiOrder: 4,
     chineseDisplayText: "內容創作者",
     englishDisplayText: "Content Creator",
     JobCategoryId: 2
   },
   {
-    id: 204,
+    id: JobTypeId.ENTERTAINMENT,
     guiOrder: 5,
     chineseDisplayText: "娛樂",
     englishDisplayText: "Entertainment",
     JobCategoryId: 2
   },
   {
-    id: 205,
+    id: JobTypeId.MUSIC,
     guiOrder: 6,
     chineseDisplayText: "音樂",
     englishDisplayText: "Music",
     JobCategoryId: 2
   },
   {
-    id: 206,
+    id: JobTypeId.PERFORMER,
     guiOrder: 7,
     chineseDisplayText: "表演者",
     englishDisplayText: "Performer",
     JobCategoryId: 2
   },
   {
-    id: 207,
+    id: JobTypeId.WRITING_AND_EDITING,
     guiOrder: 8,
     chineseDisplayText: "寫作及編輯",
     englishDisplayText: "Writing And Editing",
     JobCategoryId: 2
   },
   {
-    id: 299,
+    id: JobTypeId.ARTS_AND_CREATION_OTHER,
     guiOrder: 9,
     chineseDisplayText: "藝術與創作 (其他)",
     englishDisplayText: "Arts And Creation (Other)",
     JobCategoryId: 2
   },
   {
-    id: 300,
+    id: JobTypeId.CUSTOMER_SERVICE,
     guiOrder: 10,
     chineseDisplayText: "客戶服務",
     englishDisplayText: "Customer Service",
     JobCategoryId: 3
   },
   {
-    id: 400,
+    id: JobTypeId.FASHION_DESIGN,
     guiOrder: 11,
     chineseDisplayText: "時裝設計",
     englishDisplayText: "Fashion Design",
     JobCategoryId: 4
   },
   {
-    id: 401,
+    id: JobTypeId.GRAPHICS_DESIGN,
     guiOrder: 12,
     chineseDisplayText: "平面設計",
     englishDisplayText: "Graphics Design",
     JobCategoryId: 4
   },
   {
-    id: 402,
+    id: JobTypeId.INTERIOR_DESIGN,
     guiOrder: 13,
     chineseDisplayText: "室內設計",
     englishDisplayText: "Interior Design",
     JobCategoryId: 4
   },
   {
-    id: 403,
+    id: JobTypeId.PRODUCT_DESIGN,
     guiOrder: 14,
     chineseDisplayText: "產品設計",
     englishDisplayText: "Product Design",
     JobCategoryId: 4
   },
   {
-    id: 404,
+    id: JobTypeId.UXUI_DESIGN,
     guiOrder: 15,
     chineseDisplayText: "UXUI設計",
-    englishDisplayText: "Uxui Design",
+    englishDisplayText: "UXUI Design",
     JobCategoryId: 4
   },
   {
-    id: 499,
+    id: JobTypeId.DESIGN_OTHER,
     guiOrder: 16,
-    chineseDisplayText: "設計（其他)",
+    chineseDisplayText: "設計（其他）",
     englishDisplayText: "Design (Other)",
     JobCategoryId: 4
   },
   {
-    id: 500,
+    id: JobTypeId.KINDERGARTEN_TEACHER,
     guiOrder: 17,
     chineseDisplayText: "幼兒園老師",
     englishDisplayText: "Kindergarten Teacher",
     JobCategoryId: 5
   },
   {
-    id: 501,
+    id: JobTypeId.LECTURER_OR_PROFESSOR,
     guiOrder: 18,
     chineseDisplayText: "講師或教授",
     englishDisplayText: "Lecturer Or Professor",
     JobCategoryId: 5
   },
   {
-    id: 502,
+    id: JobTypeId.PRIMARY_SCHOOL_TEACHER,
     guiOrder: 19,
     chineseDisplayText: "小學教師",
     englishDisplayText: "Primary School Teacher",
     JobCategoryId: 5
   },
   {
-    id: 503,
+    id: JobTypeId.SECONDARY_SCHOOL_TEACHER,
     guiOrder: 20,
     chineseDisplayText: "中學教師",
     englishDisplayText: "Secondary School Teacher",
     JobCategoryId: 5
   },
   {
-    id: 504,
+    id: JobTypeId.TUTOR,
     guiOrder: 21,
     chineseDisplayText: "導師",
     englishDisplayText: "Tutor",
     JobCategoryId: 5
   },
   {
-    id: 599,
+    id: JobTypeId.EDUCATION_OTHER,
     guiOrder: 22,
-    chineseDisplayText: "教育（其他)",
+    chineseDisplayText: "教育（其他）",
     englishDisplayText: "Education (Other)",
     JobCategoryId: 5
   },
   {
-    id: 600,
+    id: JobTypeId.BUILDING_SERVICES_ENGINEERING,
     guiOrder: 23,
     chineseDisplayText: "屋宇裝備工程",
     englishDisplayText: "Building Services Engineering",
     JobCategoryId: 6
   },
   {
-    id: 601,
+    id: JobTypeId.CIVIL_AND_STRUCTURAL_ENGINEERING,
     guiOrder: 24,
     chineseDisplayText: "土木與結構工程",
     englishDisplayText: "Civil And Structural Engineering",
     JobCategoryId: 6
   },
   {
-    id: 602,
+    id: JobTypeId.CHEMICAL_ENGINEERING,
     guiOrder: 25,
     chineseDisplayText: "化學工程",
     englishDisplayText: "Chemical Engineering",
     JobCategoryId: 6
   },
   {
-    id: 603,
+    id: JobTypeId.DRAFTSMAN,
     guiOrder: 26,
     chineseDisplayText: "繪圖員",
     englishDisplayText: "Draftsman",
     JobCategoryId: 6
   },
   {
-    id: 604,
+    id: JobTypeId.ELECTRICAL_ENGINEERING,
     guiOrder: 27,
     chineseDisplayText: "機電工程",
     englishDisplayText: "Electrical Engineering",
     JobCategoryId: 6
   },
   {
-    id: 605,
+    id: JobTypeId.ELECTRONIC_ENGINEERING,
     guiOrder: 28,
     chineseDisplayText: "電子工程",
     englishDisplayText: "Electronic Engineering",
     JobCategoryId: 6
   },
   {
-    id: 606,
+    id: JobTypeId.MECHANICAL_ENGINEERING,
     guiOrder: 29,
     chineseDisplayText: "機械工業",
     englishDisplayText: "Mechanical Engineering",
     JobCategoryId: 6
   },
   {
-    id: 607,
+    id: JobTypeId.NETWORK_ENGINEERING,
     guiOrder: 30,
     chineseDisplayText: "網路工程",
     englishDisplayText: "Network Engineering",
     JobCategoryId: 6
   },
   {
-    id: 608,
+    id: JobTypeId.SEMICONDUCTOR_ENGINEERING,
     guiOrder: 31,
     chineseDisplayText: "半導體工程",
     englishDisplayText: "Semiconductor Engineering",
     JobCategoryId: 6
   },
   {
-    id: 609,
+    id: JobTypeId.SURVEYING,
     guiOrder: 32,
     chineseDisplayText: "測量",
     englishDisplayText: "Surveying",
     JobCategoryId: 6
   },
   {
-    id: 699,
+    id: JobTypeId.ENGINEERING_OTHER,
     guiOrder: 33,
-    chineseDisplayText: "工程（其他)",
+    chineseDisplayText: "工程（其他）",
     englishDisplayText: "Engineering (Other)",
     JobCategoryId: 6
   },
   {
-    id: 700,
+    id: JobTypeId.CONSERVATION,
     guiOrder: 34,
     chineseDisplayText: "保育",
     englishDisplayText: "Conservation",
     JobCategoryId: 7
   },
   {
-    id: 701,
+    id: JobTypeId.RECYCLING,
     guiOrder: 35,
     chineseDisplayText: "回收",
     englishDisplayText: "Recycling",
     JobCategoryId: 7
   },
   {
-    id: 799,
+    id: JobTypeId.ENVIRONMENT_OTHER,
     guiOrder: 36,
-    chineseDisplayText: "環境（其他)",
+    chineseDisplayText: "環境（其他）",
     englishDisplayText: "Environment (Other)",
     JobCategoryId: 7
   },
   {
-    id: 800,
+    id: JobTypeId.DIRECTOR,
     guiOrder: 37,
     chineseDisplayText: "導演",
     englishDisplayText: "Director",
     JobCategoryId: 8
   },
   {
-    id: 801,
+    id: JobTypeId.FILM_PRODUCTION,
     guiOrder: 38,
     chineseDisplayText: "電影製作",
     englishDisplayText: "Film Production",
     JobCategoryId: 8
   },
   {
-    id: 802,
+    id: JobTypeId.LIGHTING_TECHNICIAN,
     guiOrder: 39,
     chineseDisplayText: "燈光師",
     englishDisplayText: "Lighting Technician",
     JobCategoryId: 8
   },
   {
-    id: 803,
+    id: JobTypeId.SOUND_TECHNICIAN,
     guiOrder: 40,
     chineseDisplayText: "音效師",
     englishDisplayText: "Sound Technician",
     JobCategoryId: 8
   },
   {
-    id: 899,
+    id: JobTypeId.FILM_OTHER,
     guiOrder: 41,
-    chineseDisplayText: "電影 (其他)",
+    chineseDisplayText: "電影（其他）",
     englishDisplayText: "Film (Other)",
     JobCategoryId: 8
   },
   {
-    id: 900,
+    id: JobTypeId.ACCOUNTING,
     guiOrder: 42,
     chineseDisplayText: "會計",
     englishDisplayText: "Accounting",
     JobCategoryId: 9
   },
   {
-    id: 901,
+    id: JobTypeId.AUDIT,
     guiOrder: 43,
     chineseDisplayText: "審計",
     englishDisplayText: "Audit",
     JobCategoryId: 9
   },
   {
-    id: 902,
+    id: JobTypeId.BANKING,
     guiOrder: 44,
     chineseDisplayText: "銀行",
     englishDisplayText: "Banking",
     JobCategoryId: 9
   },
   {
-    id: 903,
+    id: JobTypeId.BUSINESS_ANALYST,
     guiOrder: 45,
     chineseDisplayText: "業務分析師",
     englishDisplayText: "Business Analyst",
     JobCategoryId: 9
   },
   {
-    id: 904,
+    id: JobTypeId.FINANCE,
     guiOrder: 46,
     chineseDisplayText: "金融",
     englishDisplayText: "Finance",
     JobCategoryId: 9
   },
   {
-    id: 999,
+    id: JobTypeId.FINANCE_OTHER,
     guiOrder: 47,
-    chineseDisplayText: "金融（其他)",
+    chineseDisplayText: "金融（其他）",
     englishDisplayText: "finance (Other)",
     JobCategoryId: 9
   },
   {
-    id: 1000,
+    id: JobTypeId.CHINESE_CUISINE,
     guiOrder: 48,
     chineseDisplayText: "中菜",
     englishDisplayText: "Chinese Cuisine",
     JobCategoryId: 10
   },
   {
-    id: 1001,
+    id: JobTypeId.WESTERN_CUISINE,
     guiOrder: 49,
     chineseDisplayText: "西菜",
     englishDisplayText: "Western Cuisine",
     JobCategoryId: 10
   },
   {
-    id: 1099,
+    id: JobTypeId.FOOD_AND_BEVERAGES_OTHER,
     guiOrder: 50,
     chineseDisplayText: "飲食(其他)",
     englishDisplayText: "Food And Beverages (Other)",
     JobCategoryId: 10
   },
   {
-    id: 1100,
+    id: JobTypeId.BEAUTY_COSMETICS,
     guiOrder: 51,
     chineseDisplayText: "美容化妝品",
     englishDisplayText: "Beauty Cosmetics",
     JobCategoryId: 11
   },
   {
-    id: 1101,
+    id: JobTypeId.HEALTH_CARE,
     guiOrder: 52,
     chineseDisplayText: "健康保健",
     englishDisplayText: "Health Care",
     JobCategoryId: 11
   },
   {
-    id: 1102,
+    id: JobTypeId.SPORT,
     guiOrder: 53,
     chineseDisplayText: "運動",
     englishDisplayText: "Sport",
     JobCategoryId: 11
   },
   {
-    id: 1199,
+    id: JobTypeId.HEALTH_OTHER,
     guiOrder: 54,
-    chineseDisplayText: "健康（其他)",
+    chineseDisplayText: "健康（其他）",
     englishDisplayText: "Health (Other)",
     JobCategoryId: 11
   },
   {
-    id: 1200,
+    id: JobTypeId.STAFFING_AND_RECRUITING,
     guiOrder: 55,
     chineseDisplayText: "員工和招聘",
     englishDisplayText: "Staffing And Recruiting",
     JobCategoryId: 12
   },
   {
-    id: 1201,
+    id: JobTypeId.RECRUITMENT_CONSULTANT,
     guiOrder: 56,
     chineseDisplayText: "求職顧問",
     englishDisplayText: "Recruitment Consultant",
     JobCategoryId: 12
   },
   {
-    id: 1299,
+    id: JobTypeId.HUMAN_RESOURCE_OTHER,
     guiOrder: 57,
-    chineseDisplayText: "人力資源（其他)",
+    chineseDisplayText: "人力資源（其他）",
     englishDisplayText: "Human Resource (Other)",
     JobCategoryId: 12
   },
   {
-    id: 1300,
+    id: JobTypeId.INSURANCE,
     guiOrder: 58,
     chineseDisplayText: "保險",
     englishDisplayText: "Insurance",
     JobCategoryId: 13
   },
   {
-    id: 1400,
+    id: JobTypeId.BARRISTER,
     guiOrder: 59,
     chineseDisplayText: "大律師",
     englishDisplayText: "Barrister",
     JobCategoryId: 14
   },
   {
-    id: 1401,
+    id: JobTypeId.LEGAL_TRAINEE,
     guiOrder: 60,
     chineseDisplayText: "法律實習生",
     englishDisplayText: "Legal Trainee",
     JobCategoryId: 14
   },
   {
-    id: 1402,
+    id: JobTypeId.LEGAL_CONSULTANT,
     guiOrder: 61,
     chineseDisplayText: "法律顧問",
     englishDisplayText: "Legal Consultant",
     JobCategoryId: 14
   },
   {
-    id: 1403,
+    id: JobTypeId.SOLICITOR,
     guiOrder: 62,
     chineseDisplayText: "事務律師",
     englishDisplayText: "Solicitor",
     JobCategoryId: 14
   },
   {
-    id: 1499,
+    id: JobTypeId.LEGAL_SERVICE_OTHER,
     guiOrder: 63,
-    chineseDisplayText: "法律服務（其他)",
+    chineseDisplayText: "法律服務（其他）",
     englishDisplayText: "Legal Services (Other)",
     JobCategoryId: 14
   },
   {
-    id: 1500,
+    id: JobTypeId.TRANSPORTATION_AND_LOGISTIC,
     guiOrder: 64,
     chineseDisplayText: "運輸和物流",
     englishDisplayText: "Transportation And Logistic",
     JobCategoryId: 15
   },
   {
-    id: 1600,
+    id: JobTypeId.LUXURY_GOODS_AND_JEWELRY,
     guiOrder: 65,
     chineseDisplayText: "奢侈品和珠寶",
     englishDisplayText: "Luxury Goods And Jewelry",
     JobCategoryId: 16
   },
   {
-    id: 1700,
+    id: JobTypeId.PROJECT_MANAGER,
     guiOrder: 66,
     chineseDisplayText: "項目經理",
     englishDisplayText: "Project Manager",
     JobCategoryId: 17
   },
   {
-    id: 1701,
+    id: JobTypeId.PRODUCT_MANAGER,
     guiOrder: 67,
     chineseDisplayText: "產品經理",
     englishDisplayText: "Product Manager",
     JobCategoryId: 17
   },
   {
-    id: 1702,
+    id: JobTypeId.MANAGEMENT_TRAINEE,
     guiOrder: 68,
     chineseDisplayText: "管理培訓生",
     englishDisplayText: "Management Trainee",
     JobCategoryId: 17
   },
   {
-    id: 1799,
+    id: JobTypeId.MANAGEMENT_OTHER,
     guiOrder: 69,
-    chineseDisplayText: "管理（其他)",
+    chineseDisplayText: "管理（其他）",
     englishDisplayText: "Management (other)",
     JobCategoryId: 17
   },
   {
-    id: 1800,
+    id: JobTypeId.MANUFACTURING,
     guiOrder: 70,
     chineseDisplayText: "製造業",
     englishDisplayText: "Manufacturing",
     JobCategoryId: 18
   },
   {
-    id: 1900,
+    id: JobTypeId.ADVERTISING,
     guiOrder: 71,
     chineseDisplayText: "廣告",
     englishDisplayText: "Advertising",
     JobCategoryId: 19
   },
   {
-    id: 1901,
+    id: JobTypeId.DIGITAL_MARKETING,
     guiOrder: 72,
     chineseDisplayText: "數位市場推廣策劃",
     englishDisplayText: "Digital Marketing",
     JobCategoryId: 19
   },
   {
-    id: 1902,
+    id: JobTypeId.MARKETING,
     guiOrder: 73,
     chineseDisplayText: "市場推廣策劃",
     englishDisplayText: "Marketing",
     JobCategoryId: 19
   },
   {
-    id: 1999,
+    id: JobTypeId.MANAGEMENT_OTHER,
     guiOrder: 74,
     chineseDisplayText: "市場推廣策劃 (其他)",
     englishDisplayText: "Marketing (Other)",
     JobCategoryId: 19
   },
   {
-    id: 2000,
+    id: JobTypeId.BROADCASTING,
     guiOrder: 75,
     chineseDisplayText: "廣播",
     englishDisplayText: "Broadcasting",
     JobCategoryId: 20
   },
   {
-    id: 2001,
+    id: JobTypeId.MEDIA_PRODUCTION,
     guiOrder: 76,
     chineseDisplayText: "媒體製作",
     englishDisplayText: "Media Production",
     JobCategoryId: 20
   },
   {
-    id: 2002,
+    id: JobTypeId.MULTI_MEDIA,
     guiOrder: 77,
     chineseDisplayText: "多媒體",
     englishDisplayText: "Multi Media",
     JobCategoryId: 20
   },
   {
-    id: 2003,
+    id: JobTypeId.EDITOR_AND_JOURNALISM,
     guiOrder: 78,
     chineseDisplayText: "編輯和新聞",
     englishDisplayText: "Editor And Journalism",
     JobCategoryId: 20
   },
   {
-    id: 2099,
+    id: JobTypeId.MEDIA_OTHER,
     guiOrder: 79,
-    chineseDisplayText: "媒體（其他)",
+    chineseDisplayText: "媒體（其他）",
     englishDisplayText: "Media (Other)",
     JobCategoryId: 20
   },
   {
-    id: 2100,
+    id: JobTypeId.DENTAL_SERVICE,
     guiOrder: 80,
     chineseDisplayText: "牙科服務",
     englishDisplayText: "Dental Service",
     JobCategoryId: 21
   },
   {
-    id: 2101,
+    id: JobTypeId.DOCTOR,
     guiOrder: 81,
     chineseDisplayText: "醫生",
     englishDisplayText: "Doctor",
     JobCategoryId: 21
   },
   {
-    id: 2102,
+    id: JobTypeId.MUSIC_THERAPIST,
     guiOrder: 82,
     chineseDisplayText: "音樂治療師",
     englishDisplayText: "Music Therapist",
     JobCategoryId: 21
   },
   {
-    id: 2103,
+    id: JobTypeId.NURSE,
     guiOrder: 83,
     chineseDisplayText: "護士",
     englishDisplayText: "Nurse",
     JobCategoryId: 21
   },
   {
-    id: 2104,
+    id: JobTypeId.NURSING,
     guiOrder: 84,
     chineseDisplayText: "護理",
     englishDisplayText: "Nursing",
     JobCategoryId: 21
   },
   {
-    id: 2105,
+    id: JobTypeId.OCCUPATIONAL_THERAPIST,
     guiOrder: 85,
     chineseDisplayText: "職業治療師",
     englishDisplayText: "Occupational Therapist",
     JobCategoryId: 21
   },
   {
-    id: 2106,
+    id: JobTypeId.PHARMACY,
     guiOrder: 86,
     chineseDisplayText: "藥劑",
     englishDisplayText: "Pharmacy",
     JobCategoryId: 21
   },
   {
-    id: 2107,
+    id: JobTypeId.PSYCHOLOGICAL_COUNSELLING,
     guiOrder: 87,
     chineseDisplayText: "心理諮詢",
     englishDisplayText: "Psychological Counselling",
     JobCategoryId: 21
   },
   {
-    id: 2108,
+    id: JobTypeId.PHYSICAL_THERAPIST,
     guiOrder: 88,
     chineseDisplayText: "物理治療師",
     englishDisplayText: "Physical Therapist",
     JobCategoryId: 21
   },
   {
-    id: 2109,
+    id: JobTypeId.SPEECH_THERAPIST,
     guiOrder: 89,
     chineseDisplayText: "語言治療師",
     englishDisplayText: "Speech Therapist",
     JobCategoryId: 21
   },
   {
-    id: 2110,
+    id: JobTypeId.THERAPIST,
     guiOrder: 90,
     chineseDisplayText: "治療師",
     englishDisplayText: "Therapist",
     JobCategoryId: 21
   },
   {
-    id: 2111,
+    id: JobTypeId.VETERINARY,
     guiOrder: 91,
     chineseDisplayText: "獸醫",
     englishDisplayText: "Veterinary",
     JobCategoryId: 21
   },
   {
-    id: 2199,
+    id: JobTypeId.MEDICAL_SERVICE_OTHER,
     guiOrder: 92,
-    chineseDisplayText: "醫療服務（其他)",
+    chineseDisplayText: "醫療服務（其他）",
     englishDisplayText: "Medical Services (Other)",
     JobCategoryId: 21
   },
   {
-    id: 2200,
+    id: JobTypeId.ARCHITECTURE,
     guiOrder: 93,
     chineseDisplayText: "農業",
     englishDisplayText: "Agriculture",
     JobCategoryId: 22
   },
   {
-    id: 2201,
+    id: JobTypeId.FISHERY,
     guiOrder: 94,
     chineseDisplayText: "漁業",
     englishDisplayText: "Fishery",
     JobCategoryId: 22
   },
   {
-    id: 2299,
+    id: JobTypeId.PRIMARY_INDUSTRY_OTHER,
     guiOrder: 95,
-    chineseDisplayText: "初級產業（其他)",
+    chineseDisplayText: "初級產業（其他）",
     englishDisplayText: "Primary Industry (Other)",
     JobCategoryId: 22
   },
   {
-    id: 2300,
+    id: JobTypeId.REAL_ESTATE,
     guiOrder: 96,
     chineseDisplayText: "房地產",
     englishDisplayText: "Real Estate",
     JobCategoryId: 23
   },
   {
-    id: 2301,
+    id: JobTypeId.PROPERTY_MANAGEMENT,
     guiOrder: 97,
     chineseDisplayText: "物業管理",
     englishDisplayText: "Property Management",
     JobCategoryId: 23
   },
   {
-    id: 2399,
+    id: JobTypeId.PROPERTY_OTHER,
     guiOrder: 98,
-    chineseDisplayText: "房地產（其他)",
+    chineseDisplayText: "房地產（其他）",
     englishDisplayText: "Property (Other)",
     JobCategoryId: 23
   },
   {
-    id: 2400,
+    id: JobTypeId.MERCHANDISING,
     guiOrder: 99,
     chineseDisplayText: "銷售",
     englishDisplayText: "Merchandising",
     JobCategoryId: 24
   },
   {
-    id: 2401,
+    id: JobTypeId.PURCHASING,
     guiOrder: 100,
     chineseDisplayText: "採購",
     englishDisplayText: "Purchasing",
     JobCategoryId: 24
   },
   {
-    id: 2499,
+    id: JobTypeId.RETAIL_OTHER,
     guiOrder: 101,
-    chineseDisplayText: "零售（其他)",
+    chineseDisplayText: "零售（其他）",
     englishDisplayText: "Retail (Other)",
     JobCategoryId: 24
   },
   {
-    id: 2500,
+    id: JobTypeId.ENERGY,
     guiOrder: 102,
     chineseDisplayText: "能源",
     englishDisplayText: "Energy",
     JobCategoryId: 25
   },
   {
-    id: 2501,
+    id: JobTypeId.DIETITIAN,
     guiOrder: 103,
     chineseDisplayText: "營養師",
     englishDisplayText: "Dietitian",
     JobCategoryId: 25
   },
   {
-    id: 2502,
+    id: JobTypeId.FOOD_NUTRITIONIST,
     guiOrder: 104,
     chineseDisplayText: "食品營養學家",
     englishDisplayText: "Food Nutritionist",
     JobCategoryId: 25
   },
   {
-    id: 2503,
+    id: JobTypeId.FOOD_SCIENCE,
     guiOrder: 105,
     chineseDisplayText: "食物科學",
     englishDisplayText: "Food Science",
     JobCategoryId: 25
   },
   {
-    id: 2504,
+    id: JobTypeId.LABORATORY,
     guiOrder: 106,
     chineseDisplayText: "實驗室",
     englishDisplayText: "Laboratory",
     JobCategoryId: 25
   },
   {
-    id: 2505,
+    id: JobTypeId.R_AND_D,
     guiOrder: 107,
     chineseDisplayText: "研究與開發",
     englishDisplayText: "Research and development",
     JobCategoryId: 25
   },
   {
-    id: 2599,
+    id: JobTypeId.SCIENCE_OTHER,
     guiOrder: 108,
-    chineseDisplayText: "科學（其他)",
+    chineseDisplayText: "科學（其他）",
     englishDisplayText: "Science (Other)",
     JobCategoryId: 25
   },
   {
-    id: 2600,
+    id: JobTypeId.SOCIAL_WORKER,
     guiOrder: 109,
     chineseDisplayText: "社會工作者",
     englishDisplayText: "Social Worker",
     JobCategoryId: 26
   },
   {
-    id: 2699,
+    id: JobTypeId.SOCIAL_SERVICE_OTHER,
     guiOrder: 110,
     chineseDisplayText: "社會服務（其他）",
     englishDisplayText: "Social Service (Other)",
     JobCategoryId: 26
   },
   {
-    id: 2700,
+    id: JobTypeId.TEXTILES,
     guiOrder: 111,
     chineseDisplayText: "紡織品",
     englishDisplayText: "Textiles",
     JobCategoryId: 27
   },
   {
-    id: 2800,
+    id: JobTypeId.AI_AND_MACHINE_LEARNING_ENGINEER,
     guiOrder: 112,
     chineseDisplayText: "AI和機器學習工程師",
     englishDisplayText: "AI And Machine Learning Engineer",
     JobCategoryId: 28
   },
   {
-    id: 2801,
+    id: JobTypeId.BACKEND_SOFTWARE_ENGINEER,
     guiOrder: 113,
     chineseDisplayText: "後端軟件工程師",
     englishDisplayText: "Backend Software Engineer",
     JobCategoryId: 28
   },
   {
-    id: 2802,
+    id: JobTypeId.CYBER_SECURITY,
     guiOrder: 114,
     chineseDisplayText: "網絡安全",
     englishDisplayText: "Cyber Security",
     JobCategoryId: 28
   },
   {
-    id: 2803,
+    id: JobTypeId.FRONTEND_SOFTWARE_ENGINEER,
     guiOrder: 115,
     chineseDisplayText: "前端軟件工程師",
     englishDisplayText: "Frontend Software Engineer",
     JobCategoryId: 28
   },
   {
-    id: 2804,
+    id: JobTypeId.DEV_OPS,
     guiOrder: 116,
     chineseDisplayText: "DevOps",
     englishDisplayText: "DevOps",
     JobCategoryId: 28
   },
   {
-    id: 2805,
+    id: JobTypeId.DATA_ANALYST,
     guiOrder: 117,
     chineseDisplayText: "數據分析師",
     englishDisplayText: "Data Analyst",
     JobCategoryId: 28
   },
   {
-    id: 2806,
+    id: JobTypeId.DATA_SCIENTIST,
     guiOrder: 118,
     chineseDisplayText: "數據科學家",
     englishDisplayText: "Data Scientist",
     JobCategoryId: 28
   },
   {
-    id: 2807,
+    id: JobTypeId.GAME_DEVELOPER,
     guiOrder: 119,
     chineseDisplayText: "遊戲開發",
     englishDisplayText: "Game Developer",
     JobCategoryId: 28
   },
   {
-    id: 2808,
+    id: JobTypeId.MOBILE_SOFTWARE_ENGINEER,
     guiOrder: 120,
     chineseDisplayText: "手機軟件工程師",
     englishDisplayText: "Mobile Software Engineer",
     JobCategoryId: 28
   },
   {
-    id: 2809,
+    id: JobTypeId.INFRASTRUCTURE_ENGINEER,
     guiOrder: 121,
     chineseDisplayText: "系統工程師",
     englishDisplayText: "Infrastructure Engineer",
     JobCategoryId: 28
   },
   {
-    id: 2810,
+    id: JobTypeId.IOT_ENGINEER,
     guiOrder: 122,
     chineseDisplayText: "物聯網工程師",
-    englishDisplayText: "Iot Engineer",
+    englishDisplayText: "IOT Engineer",
     JobCategoryId: 28
   },
   {
-    id: 2811,
+    id: JobTypeId.IT_SUPPORT,
     guiOrder: 123,
     chineseDisplayText: "IT Support",
     englishDisplayText: "IT Support",
     JobCategoryId: 28
   },
   {
-    id: 2812,
+    id: JobTypeId.QA_ENGINEER,
     guiOrder: 124,
     chineseDisplayText: "QA工程師",
     englishDisplayText: "QA Engineer",
     JobCategoryId: 28
   },
   {
-    id: 2813,
+    id: JobTypeId.ROBOTIC_ENGINEER,
     guiOrder: 125,
     chineseDisplayText: "機器人工程師",
     englishDisplayText: "Robotic Engineer",
     JobCategoryId: 28
   },
   {
-    id: 2814,
+    id: JobTypeId.SOFTWARE_ENGINEER,
     guiOrder: 126,
     chineseDisplayText: "軟件工程師",
     englishDisplayText: "Software Engineer",
     JobCategoryId: 28
   },
   {
-    id: 2899,
+    id: JobTypeId.TECHNOLOGY_OTHER,
     guiOrder: 127,
-    chineseDisplayText: "科技 (其他)",
+    chineseDisplayText: "科技(其他)",
     englishDisplayText: "Technology Other",
     JobCategoryId: 28
   },
   {
-    id: 2900,
+    id: JobTypeId.TRAVEL,
     guiOrder: 128,
     chineseDisplayText: "旅遊",
     englishDisplayText: "Travel",
     JobCategoryId: 29
   },
   {
-    id: 2901,
+    id: JobTypeId.HOTEL_SERVICE,
     guiOrder: 129,
     chineseDisplayText: "酒店服務",
     englishDisplayText: "Hotel Service",
     JobCategoryId: 29
   },
   {
-    id: 2999,
+    id: JobTypeId.TOURISM_OTHER,
     guiOrder: 130,
-    chineseDisplayText: "旅遊業（其他)",
+    chineseDisplayText: "旅遊業（其他）",
     englishDisplayText: "Tourism (Other)",
     JobCategoryId: 29
   },
   {
-    id: 3000,
+    id: JobTypeId.TRANSLATION,
     guiOrder: 131,
     chineseDisplayText: "翻譯",
     englishDisplayText: "Translation",
     JobCategoryId: 30
   },
   {
-    id: 3100,
+    id: JobTypeId.CIVIL_SERVANT,
     guiOrder: 132,
-    chineseDisplayText: "自由工作者",
-    englishDisplayText: "Freelancer",
-    JobCategoryId: 31
-  },
-  {
-    id: 3101,
-    guiOrder: 133,
-    chineseDisplayText: "Slasher",
-    englishDisplayText: "Slasher",
-    JobCategoryId: 31
-  },
-  {
-    id: 3102,
-    guiOrder: 134,
     chineseDisplayText: "公務員",
     englishDisplayText: "Civil Servant",
     JobCategoryId: 31
   },
   {
-    id: 3103,
+    id: JobTypeId.ENTREPRENEUR,
+    guiOrder: 133,
+    chineseDisplayText: "創業",
+    englishDisplayText: "Entrepreneur",
+    JobCategoryId: 31
+  },
+  {
+    id: JobTypeId.FREELANCER,
+    guiOrder: 134,
+    chineseDisplayText: "自由工作者",
+    englishDisplayText: "Freelancer",
+    JobCategoryId: 31
+  },
+  {
+    id: JobTypeId.KOL,
     guiOrder: 135,
     chineseDisplayText: "KOL",
     englishDisplayText: "KOL",
     JobCategoryId: 31
   },
   {
-    id: 99999,
+    id: JobTypeId.SLASHER,
     guiOrder: 136,
+    chineseDisplayText: "Slasher",
+    englishDisplayText: "Slasher",
+    JobCategoryId: 31
+  },
+  {
+    id: JobTypeId.OTHER,
+    guiOrder: 137,
     chineseDisplayText: "其他",
     englishDisplayText: "Other",
     JobCategoryId: 999
   }
 ]
+
 export {
   // dressCodeOptions,
   // jobSourceOptions,
