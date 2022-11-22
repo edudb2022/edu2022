@@ -13,7 +13,8 @@ const StickyBottomButton: React.FunctionComponent<IStickyBottomButtonProps> = ({
 }) => {
   return (
     <BaseButton
-      className={`bg-theme-one-500 text-white fixed bottom-0 w-full rounded-none flex justify-center ${className}`}
+      className={`bg-theme-one-500 text-white fixed bottom-0 w-full rounded-none flex justify-center
+     ${className}`}
       {...props}
     >
       <h2>{title}</h2>

@@ -43,7 +43,7 @@ const SchoolReviewPage = () => {
   const [mockList, setMockList] = useState([{ id: 1 }])
   const [hasMore, setHasMore] = useState(true)
   const fetchMoreData = () => {
-    if (mockList.length >= 20) {
+    if (mockList.length >= 500) {
       setHasMore(false)
       return
     }
@@ -56,25 +56,25 @@ const SchoolReviewPage = () => {
           { id: ID },
           { id: ID },
           { id: ID },
+          { id: ID },
+          { id: ID },
+          { id: ID },
+          { id: ID },
+          { id: ID },
+          { id: ID },
+          { id: ID },
+          { id: ID },
+          { id: ID },
+          { id: ID },
+          { id: ID },
+          { id: ID },
+          { id: ID },
+          { id: ID },
+          { id: ID },
+          { id: ID },
+          { id: ID },
+          { id: ID },
           { id: ID }
-          // { id: ID },
-          // { id: ID },
-          // { id: ID },
-          // { id: ID },
-          // { id: ID },
-          // { id: ID },
-          // { id: ID },
-          // { id: ID },
-          // { id: ID },
-          // { id: ID },
-          // { id: ID },
-          // { id: ID },
-          // { id: ID },
-          // { id: ID },
-          // { id: ID },
-          // { id: ID },
-          // { id: ID },
-          // { id: ID }
         ])
       )
     }, 500)

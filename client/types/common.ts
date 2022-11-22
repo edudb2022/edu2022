@@ -235,7 +235,7 @@ export enum DSESubjectId {
 export enum JobCategoryTypeId {
   ARCHITECTURE = 1,
   ARTS_AND_CREATION,
-  CUSTOMER_SERVICE,
+  SERVICE_INDUSTRY,
   DESIGN,
   EDUCATION,
   ENGINEERING,
@@ -282,8 +282,9 @@ export enum JobTypeId {
   WRITING_AND_EDITING,
   ARTS_AND_CREATION_OTHER = 299,
 
-  //Customer service
+  //Service industry
   CUSTOMER_SERVICE = 300,
+  SERVICE_INDUSTRY_OTHER = 399,
 
   //Design
   FASHION_DESIGN = 400,
@@ -312,6 +313,7 @@ export enum JobTypeId {
   NETWORK_ENGINEERING,
   SEMICONDUCTOR_ENGINEERING,
   SURVEYING,
+  TECHNICIAN,
   ENGINEERING_OTHER = 699,
 
   //Environment
@@ -373,7 +375,8 @@ export enum JobTypeId {
   MANAGEMENT_OTHER = 1799,
 
   // Manufacturing
-  MANUFACTURING = 1800,
+  HANDICRAFT = 1800,
+  MANUFACTURING_OTHER = 1899,
 
   // Marketing
   ADVERTISING = 1900,
@@ -451,7 +454,7 @@ export enum JobTypeId {
   IT_SUPPORT,
   QA_ENGINEER,
   ROBOTIC_ENGINEER,
-  SOFTWARE_ENGINEER,
+  SOLUTION_ENGINEER,
   TECHNOLOGY_OTHER = 2899,
 
   //TOURISM and travel

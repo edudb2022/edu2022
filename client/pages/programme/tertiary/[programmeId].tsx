@@ -49,6 +49,7 @@ const ProgrammePage: React.FunctionComponent = () => {
         EnglishTitle="Bachelor of Management Science and Information Management (Honours)"
         schoolShortName="hku"
         ShortTitle="Bachelor"
+        jupasCode="JS(*&^"
       >
         <div className="md:flex md:justify-center ">
           <div className="flex flex-col md:flex-row justify-center items-center md:w-2/5 ">

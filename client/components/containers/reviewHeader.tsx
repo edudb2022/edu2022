@@ -1,5 +1,7 @@
 import Image from "next/image"
 import React, { PropsWithChildren } from "react"
+import { schoolColorMapper } from "../../mappers/schoolColor"
+import TextTag from "../common/tags/text"
 
 export interface IReviewHeaderContainerProps {
   ChineseTitle: string
@@ -7,6 +9,7 @@ export interface IReviewHeaderContainerProps {
   ShortTitle?: string
   schoolShortName: string
   layoutClassName?: string
+  jupasCode?: string
 }
 
 const ReviewHeaderContainer: React.FunctionComponent<
@@ -17,15 +20,16 @@ const ReviewHeaderContainer: React.FunctionComponent<
   EnglishTitle,
   schoolShortName,
   children,
-  layoutClassName
+  layoutClassName,
+  jupasCode
 }) => {
   return (
     <div>
       <div
         className={`flex justify-center items-center p-4 ${layoutClassName} `}
       >
-        <div className="flex flex-row">
-          <div className="hidden md:flex">
+        <div className="flex flex-col md:flex-row">
+          <div className="flex justify-center">
             <Image
               src={`/icons/schools/universities/${schoolShortName}.jpg`}
               width={"100rem"}
@@ -33,12 +37,13 @@ const ReviewHeaderContainer: React.FunctionComponent<
               alt={`${ShortTitle}`}
             />
           </div>
-          <div className="flex  flex-col  items-center justify-center ">
-            <h1>
-              {ChineseTitle} {ShortTitle && `|${ShortTitle}`}
-            </h1>
-
-            <h1 className="text-gray-400">{EnglishTitle} </h1>
+          <div className="flex  flex-col text-center  items-center justify-center gap-y-2 mt-4 md:mt-0">
+            <h3 className="test-xs">{ChineseTitle}</h3>
+            <h3 className="text-gray-400 ">{EnglishTitle} </h3>
+            <div className="flex flex-row justify-end w-full gap-x-2">
+              {ShortTitle && <TextTag title={ShortTitle} type="summer" />}
+              {jupasCode && <TextTag title={jupasCode} type="themeOne" />}
+            </div>
           </div>
         </div>
       </div>

@@ -531,6 +531,13 @@ const jobTypeList = [
     JobCategoryId: 3
   },
   {
+    id: JobTypeId.SERVICE_INDUSTRY_OTHER,
+    guiOrder: 10,
+    chineseDisplayText: "服務業 (其他)",
+    englishDisplayText: "Service Industry (Other)",
+    JobCategoryId: 3
+  },
+  {
     id: JobTypeId.FASHION_DESIGN,
     guiOrder: 11,
     chineseDisplayText: "時裝設計",
@@ -682,6 +689,13 @@ const jobTypeList = [
     guiOrder: 32,
     chineseDisplayText: "測量",
     englishDisplayText: "Surveying",
+    JobCategoryId: 6
+  },
+  {
+    id: JobTypeId.TECHNICIAN,
+    guiOrder: 32,
+    chineseDisplayText: "技術員 (技工)",
+    englishDisplayText: "Technician",
     JobCategoryId: 6
   },
   {
@@ -939,17 +953,25 @@ const jobTypeList = [
   {
     id: JobTypeId.MANAGEMENT_OTHER,
     guiOrder: 69,
-    chineseDisplayText: "管理（其他）",
+    chineseDisplayText: "管理 (其他)",
     englishDisplayText: "Management (other)",
     JobCategoryId: 17
   },
   {
-    id: JobTypeId.MANUFACTURING,
+    id: JobTypeId.HANDICRAFT,
     guiOrder: 70,
-    chineseDisplayText: "製造業",
-    englishDisplayText: "Manufacturing",
+    chineseDisplayText: "手工藝",
+    englishDisplayText: "Handicraft",
     JobCategoryId: 18
   },
+  {
+    id: JobTypeId.MANUFACTURING_OTHER,
+    guiOrder: 70,
+    chineseDisplayText: "製造業 (其他)",
+    englishDisplayText: "Manufacturing (Other)",
+    JobCategoryId: 18
+  },
+
   {
     id: JobTypeId.ADVERTISING,
     guiOrder: 71,
@@ -1336,10 +1358,10 @@ const jobTypeList = [
     JobCategoryId: 28
   },
   {
-    id: JobTypeId.SOFTWARE_ENGINEER,
+    id: JobTypeId.SOLUTION_ENGINEER,
     guiOrder: 126,
-    chineseDisplayText: "軟件工程師",
-    englishDisplayText: "Software Engineer",
+    chineseDisplayText: "解決方案工程師",
+    englishDisplayText: "Solution Engineer",
     JobCategoryId: 28
   },
   {

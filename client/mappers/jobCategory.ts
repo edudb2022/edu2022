@@ -11,10 +11,10 @@ export const JobCategoryMapper: any = {
     //id: 2,
     chineseDisplayText: "藝術及創作"
   },
-  [JobCategoryTypeId.CUSTOMER_SERVICE]: {
-    englishDisplayText: "Customer service",
+  [JobCategoryTypeId.SERVICE_INDUSTRY]: {
+    englishDisplayText: "Service Industry",
     //id: 3,
-    chineseDisplayText: "客戶服務"
+    chineseDisplayText: "服務業"
   },
   [JobCategoryTypeId.DESIGN]: {
     englishDisplayText: "Design",
