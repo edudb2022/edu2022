@@ -11,6 +11,11 @@ export const JobCategoryMapper: any = {
     //id: 2,
     chineseDisplayText: "藝術及創作"
   },
+  [JobCategoryTypeId.BUSINESS]: {
+    englishDisplayText: "Business",
+    //id: 9,
+    chineseDisplayText: "商業"
+  },
   [JobCategoryTypeId.SERVICE_INDUSTRY]: {
     englishDisplayText: "Service Industry",
     //id: 3,
@@ -41,11 +46,7 @@ export const JobCategoryMapper: any = {
     //id: 8,
     chineseDisplayText: "電影"
   },
-  [JobCategoryTypeId.FINANCE]: {
-    englishDisplayText: "Finance",
-    //id: 9,
-    chineseDisplayText: "金融"
-  },
+
   [JobCategoryTypeId.FOOD_AND_BEVERAGES]: {
     englishDisplayText: "Food and Beverages",
     //id: 10,

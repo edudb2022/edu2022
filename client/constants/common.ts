@@ -496,6 +496,56 @@ const jobTypeList = [
     JobCategoryId: 2
   },
   {
+    id: JobTypeId.ACCOUNTING,
+    guiOrder: 42,
+    chineseDisplayText: "會計",
+    englishDisplayText: "Accounting",
+    JobCategoryId: 9
+  },
+  {
+    id: JobTypeId.AUDIT,
+    guiOrder: 43,
+    chineseDisplayText: "審計",
+    englishDisplayText: "Audit",
+    JobCategoryId: 9
+  },
+  {
+    id: JobTypeId.BANKING,
+    guiOrder: 44,
+    chineseDisplayText: "銀行",
+    englishDisplayText: "Banking",
+    JobCategoryId: 9
+  },
+  {
+    id: JobTypeId.BUSINESS_ANALYST,
+    guiOrder: 45,
+    chineseDisplayText: "業務分析師",
+    englishDisplayText: "Business Analyst",
+    JobCategoryId: 9
+  },
+  {
+    id: JobTypeId.BUSINESS_DEVELOPMENT,
+    guiOrder: 45,
+    chineseDisplayText: "業務發展",
+    englishDisplayText: "Business Development",
+    JobCategoryId: 9
+  },
+  {
+    id: JobTypeId.FINANCE,
+    guiOrder: 46,
+    chineseDisplayText: "金融",
+    englishDisplayText: "Finance",
+    JobCategoryId: 9
+  },
+
+  {
+    id: JobTypeId.BUSINESS_OTHER,
+    guiOrder: 47,
+    chineseDisplayText: "商業（其他）",
+    englishDisplayText: "Business (Other)",
+    JobCategoryId: 9
+  },
+  {
     id: JobTypeId.MUSIC,
     guiOrder: 6,
     chineseDisplayText: "音樂",
@@ -761,48 +811,7 @@ const jobTypeList = [
     englishDisplayText: "Film (Other)",
     JobCategoryId: 8
   },
-  {
-    id: JobTypeId.ACCOUNTING,
-    guiOrder: 42,
-    chineseDisplayText: "會計",
-    englishDisplayText: "Accounting",
-    JobCategoryId: 9
-  },
-  {
-    id: JobTypeId.AUDIT,
-    guiOrder: 43,
-    chineseDisplayText: "審計",
-    englishDisplayText: "Audit",
-    JobCategoryId: 9
-  },
-  {
-    id: JobTypeId.BANKING,
-    guiOrder: 44,
-    chineseDisplayText: "銀行",
-    englishDisplayText: "Banking",
-    JobCategoryId: 9
-  },
-  {
-    id: JobTypeId.BUSINESS_ANALYST,
-    guiOrder: 45,
-    chineseDisplayText: "業務分析師",
-    englishDisplayText: "Business Analyst",
-    JobCategoryId: 9
-  },
-  {
-    id: JobTypeId.FINANCE,
-    guiOrder: 46,
-    chineseDisplayText: "金融",
-    englishDisplayText: "Finance",
-    JobCategoryId: 9
-  },
-  {
-    id: JobTypeId.FINANCE_OTHER,
-    guiOrder: 47,
-    chineseDisplayText: "金融（其他）",
-    englishDisplayText: "finance (Other)",
-    JobCategoryId: 9
-  },
+
   {
     id: JobTypeId.CHINESE_CUISINE,
     guiOrder: 48,
