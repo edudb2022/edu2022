@@ -2,7 +2,8 @@ import { TextField } from "@mui/material"
 import {
   DatePicker,
   LocalizationProvider,
-  MobileDatePicker
+  MobileDatePicker,
+  PickersDay
 } from "@mui/x-date-pickers"
 import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns"
 import React, { FocusEvent } from "react"
@@ -61,6 +62,7 @@ const BaseDatePicker: React.FunctionComponent<IBaseDatePickerProps> = ({
               <TextField
                 {...params}
                 sx={{
+                  svg: { color: "white" },
                   "& label.Mui-focused": {
                     color: "#F2994A"
                   },
@@ -68,7 +70,7 @@ const BaseDatePicker: React.FunctionComponent<IBaseDatePickerProps> = ({
                     "&:hover fieldset": {
                       borderColor: "#F2994A"
                     },
-                    "&.Mui-focused fieldset": {
+                    "& .Mui-focused fieldset": {
                       borderColor: "#F2994A"
                     }
                   }

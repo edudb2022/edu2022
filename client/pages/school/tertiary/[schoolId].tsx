@@ -96,7 +96,7 @@ const TertiarySchoolPage: NextPage = () => {
           </div>
         </div>
       </ReviewHeaderContainer>
-      <div className="flex justify-center gap-x-4 ">
+      <div className="flex justify-center gap-x-4 mx-2 md:mx-0">
         <SearchTextInput onChange={handleSearchChange} value={search} />
         <BaseSelect
           items={contactMethodTypesList}

@@ -102,7 +102,7 @@ const Home: NextPage = (props) => {
   return (
     <PageLayout>
       <SEO title="主頁" description="123" />
-      <div className="flex justify-center gap-x-4 mt-8">
+      <div className="flex justify-center gap-x-4 mt-8 mx-2">
         <SearchTextInput onChange={handleSearchChange} value={search} />
         <BaseSelect
           items={SchoolType}

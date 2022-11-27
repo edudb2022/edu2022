@@ -40,15 +40,14 @@ import InputHeader from "../../../components/common/header/input"
 
 import { schoolReviewLongQuestionsMapper } from "../../../mappers/longQuestion"
 import { schoolReviewRatingQuestionsMapper } from "../../../mappers/ratingQuestions"
-import dayjs from "dayjs"
 import SEO from "../../../components/seo"
 import { CommonHelpers } from "../../../helpers"
 import useCreateSchoolReview from "../../../hooks/api/useCreateSchoolReview"
 
 const SchoolReviewFormPage: React.FunctionComponent = () => {
   const initialValues = {
-    schoolType: "",
-    school: "",
+    schoolType: null,
+    school: null,
     title: "",
     admissionDate: CommonHelpers.formatData(new Date(), "YYYY-MM-DD"),
     academicStatus: null,
@@ -201,6 +200,7 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
       CommonHelpers.formatData(newValue, "YYYY-MM-DD")
     )
   }
+  console.log(formik.values.school)
   return (
     <>
       <SEO
@@ -247,12 +247,6 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
           <BaseDatePicker
             label="入學日期"
             value={formik.values.admissionDate}
-            // onChange={(newValue: any) => {
-            //   formik.setFieldValue(
-            //     "admissionDate",
-            //     dayjs(newValue).format("YYYY-MM-DD")
-            //   )
-            // }}
             onChange={handleDateChange}
             errorMessages={formik.errors.admissionDate}
             isTouched={formik.touched.admissionDate}

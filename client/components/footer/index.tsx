@@ -14,14 +14,12 @@ const Footer: React.FunctionComponent = () => {
       >
         <div id="intro" className="w-full sm:w-2/5 mr-12 mb-3 sm:mb-1">
           <GoodTurtleIcon className="text-theme-one-500 font-black text-2xl" />
-          <p>
-            搞手但求打個和，為求升學資訊透明，令大家可以為未來做好打算。祝大家前程似錦！
-          </p>
+          <p>為求升學資訊透明，令大家可以為未來做好打算。祝大家前程似錦！</p>
         </div>
         <div className="w-full sm:w-3/5 flex flex-col sm:flex-row justify-end">
           <div id="uni-strategy" className="w-full sm:w-1/3 mr-10 mb-3 sm:mb-1">
             <h3 className="sm:mb-3">快速導航</h3>
-            <div className="w-full flex flex-col">
+            <div className="w-full flex flex-wrap gap-x-2 md:flex-col">
               <Link href={"/"}>
                 <a>School</a>
               </Link>
@@ -37,8 +35,8 @@ const Footer: React.FunctionComponent = () => {
             </div>
           </div>
           <div id="about-us" className="w-full sm:w-1/3 mr-10 mb-3 sm:mb-1">
-            <h3 className="sm:mb-3">關於我們</h3>
-            <div className="w-full flex flex-col">
+            <h3 className="sm:mb-3 ">關於我們</h3>
+            <div className="w-full flex flex-wrap  gap-x-2  md:flex-col">
               <Link href={"/"}>
                 <a>Our team</a>
               </Link>
