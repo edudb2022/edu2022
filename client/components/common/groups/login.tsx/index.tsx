@@ -7,6 +7,7 @@ import { STSignOut } from "../../../../service/supertoken/Session"
 import { IUserActionTypes } from "../../../../state/user/actions"
 import { useAppDispatch } from "../../../../hooks/common/useAppDispatch"
 import UserIcon from "../../icons/User"
+import trackingEvent from "../../../../utils/services/GoogleAnalytics/tracking"
 
 interface ILoginGroupProps {
   username: UserName
@@ -26,6 +27,7 @@ const LoginGroup: React.FunctionComponent<ILoginGroupProps> = ({
 
   const handleSignOut = async () => {
     await STSignOut()
+    trackingEvent.customEvent("click_signout_nav")
     dispatch({ type: IUserActionTypes.USER_SIGN_OUT })
   }
   return (

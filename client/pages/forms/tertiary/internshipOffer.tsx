@@ -129,7 +129,7 @@ const InternshipOfferFormPage: React.FunctionComponent = () => {
     }
   }
 
-  console.log(2323, formik.values.jobType)
+  // console.log(2323, formik.values.jobType)
 
   return (
     <>

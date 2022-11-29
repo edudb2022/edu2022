@@ -11,6 +11,7 @@ import { signOut } from "supertokens-auth-react/recipe/emailpassword"
 import LoginGroup from "../common/groups/login.tsx"
 import { useAppSelector } from "../../hooks/common/useAppSelector"
 import GoodTurtleIcon from "../common/icons/logo"
+import trackingEvent from "../../utils/services/GoogleAnalytics/tracking"
 
 const Navbar: React.FunctionComponent = () => {
   const router = useRouter()
@@ -22,6 +23,9 @@ const Navbar: React.FunctionComponent = () => {
     setIsOpen(!isOpen)
   }
 
+  const handleDiscordClick = () => {
+    trackingEvent.customEvent("click_discord_nav")
+  }
   return (
     <nav
       className={`flex flex-col  w-full  p-2 ${
@@ -36,7 +40,7 @@ const Navbar: React.FunctionComponent = () => {
         </Link>
 
         <div className="flex-row gap-x-4 h-full hidden md:flex ">
-          <DiscordButton />
+          <DiscordButton onClick={handleDiscordClick} />
           {isLogin ? (
             <>
               <LoginGroup username="213" />

@@ -1,6 +1,7 @@
 import React from "react"
 import BaseButton, { IBaseButtonProps } from ".."
 import { STRedirectToSignIn } from "../../../../service/supertoken/function"
+import trackingEvent from "../../../../utils/services/GoogleAnalytics/tracking"
 
 interface ISignInButtonProps extends IBaseButtonProps {}
 const SignInButton: React.FunctionComponent<ISignInButtonProps> = ({
@@ -8,6 +9,7 @@ const SignInButton: React.FunctionComponent<ISignInButtonProps> = ({
 }) => {
   const handleClick = () => {
     STRedirectToSignIn()
+    trackingEvent.customEvent("click_signin_nav")
   }
   return (
     <BaseButton
