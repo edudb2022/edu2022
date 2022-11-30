@@ -25,6 +25,7 @@ import useGetSchools from "../hooks/api/useGetSchools"
 import { IGetSchoolRes } from "../types/api"
 
 import SearchTextInput from "../components/common/inputs/text/search"
+import trackingEvent from "../utils/services/GoogleAnalytics/tracking"
 
 const SchoolType = [
   { value: SchoolTypeId.UNIVERSITY, title: "大學" },
@@ -35,6 +36,11 @@ const Home: NextPage = (props) => {
   const router = useRouter()
 
   const { data, isLoading } = useGetSchools()
+
+  useEffect(() => {
+    // Call tracking event onMount
+    trackingEvent.customEvent("page_view_main")
+  }, [])
   // const { data } = useQuery(["schools"], apiService.getSchools)
   // useEffect(() => {
   // window.gtag("event", "page_view", {

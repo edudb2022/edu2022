@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import StickyBottomButton from "../../../../components/common/buttons/stickyBottom"
 import SchoolReviewDetailCard from "../../../../components/common/cards/reviewDetail/school"
 import BaseRadar from "../../../../components/common/charts/radar"
@@ -14,8 +14,12 @@ import { useAppSelector } from "../../../../hooks/common/useAppSelector"
 import qs from "qs"
 import BaseInfiniteScroll from "../../../../components/common/infiniteScroll"
 import shortid from "shortid"
+import { Router, useRouter } from "next/router"
+import trackingEvent from "../../../../utils/services/GoogleAnalytics/tracking"
 
 const SchoolReviewPage = () => {
+  const router = useRouter()
+  const { schoolId } = router.query
   const { sorting } = useAppSelector((state) => state.filter.school)
   const word = sorting.split(",")
 
@@ -26,6 +30,11 @@ const SchoolReviewPage = () => {
     limit: 10
   })
 
+  useEffect(() => {
+    // Call tracking event onMount
+    trackingEvent.customEvent(`page_view_school_review_${schoolId}`)
+  }, [])
+
   const [isOpen, setIsOpen] = useState(false)
   const handleMobileFilterOpen = () => {
     setIsOpen(!isOpen)
@@ -33,6 +42,7 @@ const SchoolReviewPage = () => {
 
   const handleSearch = () => {
     console.log("searhcing")
+    trackingEvent.customEvent(`search_click_school_review`)
   }
 
   const handleMobileSearch = () => {

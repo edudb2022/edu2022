@@ -1,5 +1,6 @@
 import { NextPage } from "next"
-import React, { useState } from "react"
+import { useRouter } from "next/router"
+import React, { useEffect, useState } from "react"
 import StickyBottomButton from "../../../../components/common/buttons/stickyBottom"
 import ProgrammeReviewDetailCard from "../../../../components/common/cards/reviewDetail/programme"
 import BaseRadar from "../../../../components/common/charts/radar"
@@ -12,15 +13,25 @@ import ReviewHeaderContainer from "../../../../components/containers/reviewHeade
 
 import DetailedCardDetailLayout from "../../../../components/layouts/cards/detailCardDisplay"
 import PageLayout from "../../../../components/layouts/page"
+import trackingEvent from "../../../../utils/services/GoogleAnalytics/tracking"
 
 const ProgrammeReviewPage: NextPage = () => {
+  const router = useRouter()
+  const { programmeId } = router.query
   const [isOpen, setIsOpen] = useState(false)
+
+  useEffect(() => {
+    // Call tracking event onMount
+    trackingEvent.customEvent(`page_view_programme_review_${programmeId}`)
+  }, [])
+
   const handleMobileFilterOpen = () => {
     setIsOpen(!isOpen)
   }
 
   const handleSearch = () => {
     console.log("searhcing")
+    trackingEvent.customEvent("click_search_programme_review")
   }
 
   const handleMobileSearch = () => {

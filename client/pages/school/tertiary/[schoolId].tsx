@@ -17,6 +17,7 @@ import CardDisplayLayout from "../../../components/layouts/cardDisplay"
 import PageLayout from "../../../components/layouts/page"
 import SEO from "../../../components/seo"
 import { contactMethodTypesList } from "../../../constants/common"
+import trackingEvent from "../../../utils/services/GoogleAnalytics/tracking"
 // import ReactGA from "react-ga"
 
 const TertiarySchoolPage: NextPage = () => {
@@ -24,6 +25,11 @@ const TertiarySchoolPage: NextPage = () => {
   const { schoolId } = router.query
   const [type, setType] = useState("all")
   const [search, setSearch] = useState("")
+
+  useEffect(() => {
+    // Call tracking event onMount
+    trackingEvent.customEvent(`page_view_school_${schoolId}`)
+  }, [])
 
   const handleTypeChange = (e: any) => {
     setType(e.target.value)

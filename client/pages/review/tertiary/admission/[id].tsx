@@ -1,5 +1,6 @@
 import { NextPage } from "next"
-import React, { useState } from "react"
+import { useRouter } from "next/router"
+import React, { useEffect, useState } from "react"
 import BaseButton from "../../../../components/common/buttons"
 import StickyBottomButton from "../../../../components/common/buttons/stickyBottom"
 import AdmissionOfferReviewDetailCard from "../../../../components/common/cards/reviewDetail/admission"
@@ -10,16 +11,26 @@ import ReviewHeaderContainer from "../../../../components/containers/reviewHeade
 import DetailedCardDetailLayout from "../../../../components/layouts/cards/detailCardDisplay"
 import PageLayout from "../../../../components/layouts/page"
 import { useAppSelector } from "../../../../hooks/common/useAppSelector"
+import trackingEvent from "../../../../utils/services/GoogleAnalytics/tracking"
 
 const AdmissionOfferReviewPage: NextPage = () => {
   const state = useAppSelector((state) => state.filter.admission)
+  const router = useRouter()
+  const { id } = router.query
   const [isOpen, setIsOpen] = useState(false)
+
+  useEffect(() => {
+    // Call tracking event onMount
+    trackingEvent.customEvent(`page_view_admission_review_${id}`)
+  }, [])
+
   const handleMobileFilterOpen = () => {
     setIsOpen(!isOpen)
   }
 
   const handleSearch = () => {
     console.log("searhcing")
+    trackingEvent.customEvent(`click_search_admission_review`)
   }
 
   const handleMobileSearch = () => {

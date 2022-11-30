@@ -1,5 +1,6 @@
 import Link from "next/link"
-import React from "react"
+import { useRouter } from "next/router"
+import React, { useEffect } from "react"
 import AdmissionOfferReviewCard from "../../../components/common/cards/review/admission"
 import GradJobOfferReviewCard from "../../../components/common/cards/review/gradJob"
 import InternshipReviewCard from "../../../components/common/cards/review/internship"
@@ -13,8 +14,16 @@ import ReviewHeaderContainer from "../../../components/containers/reviewHeader"
 import CardDisplayLayout from "../../../components/layouts/cardDisplay"
 import PageLayout from "../../../components/layouts/page"
 import SEO from "../../../components/seo"
+import trackingEvent from "../../../utils/services/GoogleAnalytics/tracking"
 
 const ProgrammePage: React.FunctionComponent = () => {
+  const router = useRouter()
+  const { programmeId } = router.query
+  useEffect(() => {
+    // Call tracking event onMount
+    trackingEvent.customEvent(`page_view_programme_${programmeId}`)
+  }, [])
+
   return (
     <PageLayout>
       <SEO

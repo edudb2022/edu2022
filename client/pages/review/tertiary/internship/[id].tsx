@@ -1,5 +1,5 @@
 import { NextPage } from "next"
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import ReviewHeaderContainer from "../../../../components/containers/reviewHeader"
 import PageLayout from "../../../../components/layouts/page"
 import CountUp from "react-countup"
@@ -11,15 +11,26 @@ import InternshipFilter from "../../../../components/common/filters/internship"
 import DetailedCardDetailLayout from "../../../../components/layouts/cards/detailCardDisplay"
 import InternshipFilterDrawer from "../../../../components/common/drawers/filters/internship"
 import StickyBottomButton from "../../../../components/common/buttons/stickyBottom"
+import { useRouter } from "next/router"
+import trackingEvent from "../../../../utils/services/GoogleAnalytics/tracking"
 
 const InternshipReviewPage: NextPage = () => {
+  const router = useRouter()
+  const { id } = router.query
   const [isOpen, setIsOpen] = useState(false)
+
+  useEffect(() => {
+    // Call tracking event onMount
+    trackingEvent.customEvent(`page_view_internship_review_${id}`)
+  }, [])
+
   const handleMobileFilterOpen = () => {
     setIsOpen(!isOpen)
   }
 
   const handleSearch = () => {
     console.log("searhcing")
+    trackingEvent.customEvent(`click_search_internship_review`)
   }
 
   const handleMobileSearch = () => {

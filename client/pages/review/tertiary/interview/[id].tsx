@@ -1,6 +1,7 @@
 import { NextPage } from "next"
+import { useRouter } from "next/router"
 
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import StickyBottomButton from "../../../../components/common/buttons/stickyBottom"
 import InterviewReviewDetailCard from "../../../../components/common/cards/reviewDetail/interview"
 import InterviewFilterDrawer from "../../../../components/common/drawers/filters/interview"
@@ -15,15 +16,25 @@ import {
   interviewDifficultyRating,
   interviewExperienceRating
 } from "../../../../constants/rating"
+import trackingEvent from "../../../../utils/services/GoogleAnalytics/tracking"
 
 const InterviewReviewPage: NextPage = () => {
   const [isOpen, setIsOpen] = useState(false)
+  const router = useRouter()
+  const { id } = router.query
+
+  useEffect(() => {
+    // Call tracking event onMount
+    trackingEvent.customEvent(`page_view_interview_review_${id}`)
+  }, [])
+
   const handleMobileFilterOpen = () => {
     setIsOpen(!isOpen)
   }
 
   const handleSearch = () => {
     console.log("searhcing")
+    trackingEvent.customEvent(`click_search_interview_review`)
   }
 
   const handleMobileSearch = () => {

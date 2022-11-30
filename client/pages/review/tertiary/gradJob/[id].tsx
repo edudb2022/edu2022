@@ -1,5 +1,5 @@
 import { NextPage } from "next"
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import ReviewHeaderContainer from "../../../../components/containers/reviewHeader"
 import PageLayout from "../../../../components/layouts/page"
 import CountUp from "react-countup"
@@ -9,15 +9,26 @@ import GradJobFilterDrawer from "../../../../components/common/drawers/filters/g
 import StickyBottomButton from "../../../../components/common/buttons/stickyBottom"
 import DetailedCardDetailLayout from "../../../../components/layouts/cards/detailCardDisplay"
 import RatingLargeTag from "../../../../components/common/tags/ratingLarge"
+import { useRouter } from "next/router"
+import trackingEvent from "../../../../utils/services/GoogleAnalytics/tracking"
 
 const GradJobReviewPage: NextPage = () => {
+  const router = useRouter()
+  const { id } = router.query
   const [isOpen, setIsOpen] = useState(false)
+
+  useEffect(() => {
+    // Call tracking event onMount
+    trackingEvent.customEvent(`page_view_gradJob_review_${id}`)
+  }, [])
+
   const handleMobileFilterOpen = () => {
     setIsOpen(!isOpen)
   }
 
   const handleSearch = () => {
     console.log("searhcing")
+    trackingEvent.customEvent(`search_click_gradJob_review`)
   }
 
   const handleMobileSearch = () => {
