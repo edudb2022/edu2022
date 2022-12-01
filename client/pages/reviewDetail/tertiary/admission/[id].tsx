@@ -1,5 +1,6 @@
 import { NextPage } from "next"
-import React from "react"
+import { useRouter } from "next/router"
+import React, { useEffect } from "react"
 import ReviewNumberItem from "../../../../components/common/display/items/number"
 import TextTag from "../../../../components/common/tags/text"
 import DetailReviewHeaderContainer from "../../../../components/containers/detailReviewHeader"
@@ -13,8 +14,17 @@ import {
   ADMISSION_LEVEL_TYPE,
   SCORE_TYPE
 } from "../../../../types/common"
+import trackingEvent from "../../../../utils/services/GoogleAnalytics/tracking"
 
 const AdmissionReviewDetailPage: NextPage = () => {
+  const router = useRouter()
+  const { id } = router.query
+
+  useEffect(() => {
+    // Call tracking event onMount
+    trackingEvent.customEvent(`page_view_admission_review_detail_${id}`)
+  }, [])
+
   return (
     <PageLayout>
       <DetailReviewHeaderContainer

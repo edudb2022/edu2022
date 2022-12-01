@@ -1,5 +1,6 @@
 import { NextPage } from "next"
-import React from "react"
+import { useRouter } from "next/router"
+import React, { useEffect } from "react"
 import ReviewSalaryItem from "../../../../components/common/display/items/salary"
 import RatingTag from "../../../../components/common/tags/rating"
 import TextTag from "../../../../components/common/tags/text"
@@ -7,8 +8,17 @@ import DetailReviewHeaderContainer from "../../../../components/containers/detai
 import DetailReviewInfoContainer from "../../../../components/containers/detailReviewInfo"
 
 import PageLayout from "../../../../components/layouts/page"
+import trackingEvent from "../../../../utils/services/GoogleAnalytics/tracking"
 
 const GradJobReviewDetailPage: NextPage = () => {
+  const router = useRouter()
+  const { id } = router.query
+
+  useEffect(() => {
+    // Call tracking event onMount
+    trackingEvent.customEvent(`page_view_gradJob_review_detail_${id}`)
+  }, [])
+
   return (
     <PageLayout>
       <DetailReviewHeaderContainer

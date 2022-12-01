@@ -1,13 +1,23 @@
 import { NextPage } from "next"
-import React from "react"
+import { useRouter } from "next/router"
+import React, { useEffect } from "react"
 import RatingTag from "../../../../components/common/tags/rating"
 import DetailReviewHeaderContainer from "../../../../components/containers/detailReviewHeader"
 import DetailReviewInfoContainer from "../../../../components/containers/detailReviewInfo"
 
 import PageLayout from "../../../../components/layouts/page"
 import useVoteSchoolReview from "../../../../hooks/api/vote/useVoteSchoolReview"
+import trackingEvent from "../../../../utils/services/GoogleAnalytics/tracking"
 
 const ProgrammeReviewDetailPage: NextPage = () => {
+  const router = useRouter()
+  const { id } = router.query
+
+  useEffect(() => {
+    // Call tracking event onMount
+    trackingEvent.customEvent(`page_view_programme_review_detail_${id}`)
+  }, [])
+
   // labels={[
   //   "課程結構",
   //   "爛龜指數",

@@ -1,13 +1,22 @@
 import { NextPage } from "next"
-import React from "react"
+import React, { useEffect } from "react"
 import TextTag from "../../../../components/common/tags/text"
 import DetailReviewHeaderContainer from "../../../../components/containers/detailReviewHeader"
 import DetailReviewInfoContainer from "../../../../components/containers/detailReviewInfo"
 import PageLayout from "../../../../components/layouts/page"
 import ReviewSalaryItem from "../../../../components/common/display/items/salary"
 import RatingTag from "../../../../components/common/tags/rating"
+import { useRouter } from "next/router"
+import trackingEvent from "../../../../utils/services/GoogleAnalytics/tracking"
 
 const IntershipReviewDetailPage: NextPage = () => {
+  const router = useRouter()
+  const { id } = router.query
+
+  useEffect(() => {
+    // Call tracking event onMount
+    trackingEvent.customEvent(`page_view_internship_review_detail_${id}`)
+  }, [])
   return (
     <PageLayout>
       <DetailReviewHeaderContainer

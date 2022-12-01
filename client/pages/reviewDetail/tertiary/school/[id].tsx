@@ -1,7 +1,7 @@
 import dayjs from "dayjs"
 import { GetServerSideProps, NextPage } from "next"
 import { useRouter } from "next/router"
-import React from "react"
+import React, { useEffect } from "react"
 import { dehydrate, QueryClient, useQuery } from "react-query"
 import LongQuestionsSection from "../../../../components/common/inputs/sections/longQuestions"
 import RatingTag from "../../../../components/common/tags/rating"
@@ -26,6 +26,7 @@ import { schoolReviewRatingQuestionsMapper } from "../../../../mappers/ratingQue
 import { apiService } from "../../../../utils/api/api"
 import useVoteSchoolReview from "../../../../hooks/api/vote/useVoteSchoolReview"
 import { CommonHelpers } from "../../../../helpers"
+import trackingEvent from "../../../../utils/services/GoogleAnalytics/tracking"
 
 const SchoolReviewDetailPage: NextPage = () => {
   const router = useRouter()
@@ -33,6 +34,11 @@ const SchoolReviewDetailPage: NextPage = () => {
   const { data } = useGetSchoolDetailReview(id as string)
   const username = data?.anonymous === true ? "anonymous" : data?.user.name
   const postDate = CommonHelpers.formatData(data!.createdAt, "MM/YY")
+  useEffect(() => {
+    // Call tracking event onMount
+    trackingEvent.customEvent(`page_view_school_review_detail_${id}`)
+  }, [])
+
   // const campusRating = {
   //   rating: Number(
   //     schoolCampusRating[data!.ratingQuestionResponses[0]!.optionId].value
