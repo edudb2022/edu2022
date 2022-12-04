@@ -17,12 +17,12 @@ import trackingEvent from "../../../../utils/services/GoogleAnalytics/tracking"
 
 const ProgrammeReviewPage: NextPage = () => {
   const router = useRouter()
-  const { programmeId } = router.query
+  const { id } = router.query
   const [isOpen, setIsOpen] = useState(false)
 
   useEffect(() => {
     // Call tracking event onMount
-    trackingEvent.customEvent(`page_view_programme_review_${programmeId}`)
+    trackingEvent.customEvent(`page_view_programme_review_${id}`)
   }, [])
 
   const handleMobileFilterOpen = () => {
@@ -49,7 +49,7 @@ const ProgrammeReviewPage: NextPage = () => {
       <ReviewHeaderContainer
         ChineseTitle={"計量金融學及風險管理科學"}
         EnglishTitle={"Quantitative Finance and Risk Management Science"}
-        ShortTitle={"HKu"}
+        ShortTitle={"香港大學"}
         schoolShortName={"hku"}
       >
         <div className="md:flex md:justify-center ">

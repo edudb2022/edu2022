@@ -1,5 +1,6 @@
 import Image from "next/image"
 import React, { PropsWithChildren } from "react"
+import shortid from "shortid"
 import { schoolColorMapper } from "../../mappers/schoolColor"
 import TextTag from "../common/tags/text"
 
@@ -10,6 +11,7 @@ export interface IReviewHeaderContainerProps {
   schoolShortName: string
   layoutClassName?: string
   jupasCode?: string
+  additionalInfoTag?: string[]
 }
 
 const ReviewHeaderContainer: React.FunctionComponent<
@@ -21,7 +23,8 @@ const ReviewHeaderContainer: React.FunctionComponent<
   schoolShortName,
   children,
   layoutClassName,
-  jupasCode
+  jupasCode,
+  additionalInfoTag
 }) => {
   const StyedItem: React.FunctionComponent<{ title: string }> = ({ title }) => {
     return (
@@ -56,6 +59,10 @@ const ReviewHeaderContainer: React.FunctionComponent<
             <div className="flex flex-row justify-end items-center w-full gap-x-2">
               {jupasCode && <StyedItem title={jupasCode} />}
               {ShortTitle && <StyedItem title={ShortTitle} />}
+              {additionalInfoTag &&
+                additionalInfoTag.map((data) => {
+                  return <StyedItem title={data} key={shortid.generate()} />
+                })}
             </div>
           </div>
         </div>

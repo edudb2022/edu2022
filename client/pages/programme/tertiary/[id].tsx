@@ -18,11 +18,13 @@ import trackingEvent from "../../../utils/services/GoogleAnalytics/tracking"
 
 const ProgrammePage: React.FunctionComponent = () => {
   const router = useRouter()
-  const { programmeId } = router.query
+  const { id } = router.query
   useEffect(() => {
     // Call tracking event onMount
-    trackingEvent.customEvent(`page_view_programme_${programmeId}`)
+    trackingEvent.customEvent(`page_view_programme_${id}`)
   }, [])
+
+  const additionalTags = ["JS9862", "學士"]
 
   return (
     <PageLayout>
@@ -57,8 +59,9 @@ const ProgrammePage: React.FunctionComponent = () => {
         ChineseTitle="應用及人本計算學（榮譽）文學士"
         EnglishTitle="Bachelor of Management Science and Information Management (Honours)"
         schoolShortName="hku"
-        ShortTitle="Bachelor"
-        jupasCode="JS(*&^"
+        // ShortTitle="學士"
+        // jupasCode="JS9862"
+        additionalInfoTag={additionalTags}
       >
         <div className="md:flex md:justify-center ">
           <div className="flex flex-col md:flex-row justify-center items-center md:w-2/5 ">

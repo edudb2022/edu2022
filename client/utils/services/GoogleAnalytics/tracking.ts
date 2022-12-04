@@ -18,9 +18,9 @@ const trackingEvent = {
   // },
   customEvent: (
     action: string,
-    event_category: string,
-    event_label: string,
-    value: number
+    event_category?: string,
+    event_label?: string,
+    value?: number
   ) => {
     window.gtag("event", action, {
       event_category: event_category,

@@ -22,13 +22,13 @@ import trackingEvent from "../../../utils/services/GoogleAnalytics/tracking"
 
 const TertiarySchoolPage: NextPage = () => {
   const router = useRouter()
-  const { schoolId } = router.query
+  const { id } = router.query
   const [type, setType] = useState("all")
   const [search, setSearch] = useState("")
 
   useEffect(() => {
     // Call tracking event onMount
-    trackingEvent.customEvent(`page_view_school_${schoolId}`)
+    trackingEvent.customEvent(`page_view_school_${id}`)
   }, [])
 
   const handleTypeChange = (e: any) => {
@@ -73,8 +73,8 @@ const TertiarySchoolPage: NextPage = () => {
       <ReviewHeaderContainer
         ChineseTitle={"香港科技大學"}
         EnglishTitle={"Hong Kong University of Science and Technology"}
-        ShortTitle={"大學"}
         schoolShortName={"hku"}
+        additionalInfoTag={["大學"]}
       >
         <div className="md:flex md:justify-center ">
           <div className="flex flex-col justify-center items-center md:flex-row md:w-2/5 ">
@@ -93,7 +93,7 @@ const TertiarySchoolPage: NextPage = () => {
 
             <div className="md:w-2/5 w-full py-12 flex flex-row md:flex-col md:justify-between justify-center gap-x-4 items-center">
               <RatingLargeTag title={"red"} rating={1} header="推薦指數" />
-              <Link href={`/review/tertiary/school/${schoolId}`}>
+              <Link href={`/review/tertiary/school/${id}`}>
                 <a className="text-theme-one-500 mt-4 border-b-2 border-theme-one-500">
                   更多學校評價
                 </a>

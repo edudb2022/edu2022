@@ -25,7 +25,7 @@ const BaseReviewDetailCard: React.FunctionComponent<
             </h1>
           )}
         </div>
-        <p className="w-1/5 md:w-1/10 text-xs md:text-base md:text-end text-end h-full ">
+        <p className="w-1/5 md:w-1/10 text-xs text-gray-500 md:text-end text-end h-full ">
           <span>{postDate}</span>
         </p>
       </div>
