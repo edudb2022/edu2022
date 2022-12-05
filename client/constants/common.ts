@@ -813,17 +813,31 @@ const jobTypeList = [
   },
 
   {
-    id: JobTypeId.CHINESE_CUISINE,
+    id: JobTypeId.CHEF,
     guiOrder: 48,
-    chineseDisplayText: "中菜",
-    englishDisplayText: "Chinese Cuisine",
+    chineseDisplayText: "廚師",
+    englishDisplayText: "Chef",
     JobCategoryId: 10
   },
   {
-    id: JobTypeId.WESTERN_CUISINE,
+    id: JobTypeId.COFFEE,
     guiOrder: 49,
-    chineseDisplayText: "西菜",
-    englishDisplayText: "Western Cuisine",
+    chineseDisplayText: "咖啡",
+    englishDisplayText: "Coffee",
+    JobCategoryId: 10
+  },
+  {
+    id: JobTypeId.DESSERT,
+    guiOrder: 48,
+    chineseDisplayText: "甜品",
+    englishDisplayText: "dessert",
+    JobCategoryId: 10
+  },
+  {
+    id: JobTypeId.LIQUOR,
+    guiOrder: 49,
+    chineseDisplayText: "酒",
+    englishDisplayText: "Liquor",
     JobCategoryId: 10
   },
   {

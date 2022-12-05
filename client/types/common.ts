@@ -338,8 +338,10 @@ export enum JobTypeId {
   BUSINESS_OTHER = 999,
 
   //Food and Beverages
-  CHINESE_CUISINE = 1000,
-  WESTERN_CUISINE,
+  CHEF = 1000,
+  COFFEE,
+  DESSERT,
+  LIQUOR,
   FOOD_AND_BEVERAGES_OTHER = 1099,
 
   //Health
