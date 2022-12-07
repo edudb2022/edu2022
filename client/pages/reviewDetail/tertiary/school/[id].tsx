@@ -36,7 +36,11 @@ const SchoolReviewDetailPage: NextPage = () => {
   const postDate = CommonHelpers.formatData(data!.createdAt, "MM/YY")
   useEffect(() => {
     // Call tracking event onMount
-    trackingEvent.customEvent(`page_view_school_review_detail_${id}`)
+    trackingEvent.customEvent(
+      `page_view_school_review_detail`,
+      undefined,
+      `${id}`
+    )
   }, [])
 
   // const campusRating = {

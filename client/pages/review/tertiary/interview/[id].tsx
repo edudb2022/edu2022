@@ -25,7 +25,7 @@ const InterviewReviewPage: NextPage = () => {
 
   useEffect(() => {
     // Call tracking event onMount
-    trackingEvent.customEvent(`page_view_interview_review_${id}`)
+    trackingEvent.customEvent(`page_view_interview_review`, undefined, `${id}`)
   }, [])
 
   const handleMobileFilterOpen = () => {

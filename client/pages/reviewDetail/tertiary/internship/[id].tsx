@@ -15,7 +15,11 @@ const IntershipReviewDetailPage: NextPage = () => {
 
   useEffect(() => {
     // Call tracking event onMount
-    trackingEvent.customEvent(`page_view_internship_review_detail_${id}`)
+    trackingEvent.customEvent(
+      `page_view_internship_review_detail`,
+      undefined,
+      `${id}`
+    )
   }, [])
   return (
     <PageLayout>

@@ -15,7 +15,11 @@ const ProgrammeReviewDetailPage: NextPage = () => {
 
   useEffect(() => {
     // Call tracking event onMount
-    trackingEvent.customEvent(`page_view_programme_review_detail_${id}`)
+    trackingEvent.customEvent(
+      `page_view_programme_review_detail`,
+      undefined,
+      `${id}`
+    )
   }, [])
 
   // labels={[

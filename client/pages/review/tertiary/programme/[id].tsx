@@ -22,7 +22,7 @@ const ProgrammeReviewPage: NextPage = () => {
 
   useEffect(() => {
     // Call tracking event onMount
-    trackingEvent.customEvent(`page_view_programme_review_${id}`)
+    trackingEvent.customEvent(`page_view_programme_review`, undefined, `${id}`)
   }, [])
 
   const handleMobileFilterOpen = () => {

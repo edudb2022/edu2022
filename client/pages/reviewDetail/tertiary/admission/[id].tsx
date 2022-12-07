@@ -22,7 +22,11 @@ const AdmissionReviewDetailPage: NextPage = () => {
 
   useEffect(() => {
     // Call tracking event onMount
-    trackingEvent.customEvent(`page_view_admission_review_detail_${id}`)
+    trackingEvent.customEvent(
+      `page_view_admission_review_detail`,
+      undefined,
+      `${id}`
+    )
   }, [])
 
   return (

@@ -19,7 +19,7 @@ const GradJobReviewPage: NextPage = () => {
 
   useEffect(() => {
     // Call tracking event onMount
-    trackingEvent.customEvent(`page_view_gradJob_review_${id}`)
+    trackingEvent.customEvent(`page_view_gradJob_review`, undefined, `${id}`)
   }, [])
 
   const handleMobileFilterOpen = () => {

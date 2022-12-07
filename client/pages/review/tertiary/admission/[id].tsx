@@ -19,9 +19,11 @@ const AdmissionOfferReviewPage: NextPage = () => {
   const { id } = router.query
   const [isOpen, setIsOpen] = useState(false)
 
+  console.log(23232, id)
+
   useEffect(() => {
     // Call tracking event onMount
-    trackingEvent.customEvent(`page_view_admission_review_${id}`)
+    trackingEvent.customEvent(`page_view_admission_review`, undefined, `${id}`)
   }, [])
 
   const handleMobileFilterOpen = () => {

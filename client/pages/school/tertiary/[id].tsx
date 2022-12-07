@@ -28,7 +28,7 @@ const TertiarySchoolPage: NextPage = () => {
 
   useEffect(() => {
     // Call tracking event onMount
-    trackingEvent.customEvent(`page_view_school_${id}`)
+    trackingEvent.customEvent(`page_view_school`, undefined, `${id}`)
   }, [])
 
   const handleTypeChange = (e: any) => {

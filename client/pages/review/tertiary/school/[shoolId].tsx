@@ -32,7 +32,11 @@ const SchoolReviewPage = () => {
 
   useEffect(() => {
     // Call tracking event onMount
-    trackingEvent.customEvent(`page_view_school_review_${schoolId}`)
+    trackingEvent.customEvent(
+      `page_view_school_review`,
+      undefined,
+      `${schoolId}`
+    )
   }, [])
 
   const [isOpen, setIsOpen] = useState(false)

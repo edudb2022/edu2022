@@ -21,7 +21,7 @@ const ProgrammePage: React.FunctionComponent = () => {
   const { id } = router.query
   useEffect(() => {
     // Call tracking event onMount
-    trackingEvent.customEvent(`page_view_programme_${id}`)
+    trackingEvent.customEvent(`page_view_programme`, undefined, `${id}`)
   }, [])
 
   const additionalTags = ["JS9862", "學士"]
