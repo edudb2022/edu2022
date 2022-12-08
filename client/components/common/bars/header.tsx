@@ -40,7 +40,7 @@ const HeaderBar: React.FunctionComponent = () => {
   const router = useRouter()
 
   return (
-    <div className="flex flex-row gap-x-2 lg:gap-x-4">
+    <div className="ml-2 flex flex-row gap-x-2 lg:gap-x-4">
       {formRoutes.map((data, key) => {
         return (
           <React.Fragment key={key}>
