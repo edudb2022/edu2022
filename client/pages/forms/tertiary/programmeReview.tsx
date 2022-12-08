@@ -37,8 +37,15 @@ import { programmeReviewLongQuestionsMapper } from "../../../mappers/longQuestio
 import dayjs from "dayjs"
 import useCreateProgrammeReview from "../../../hooks/api/useCreateProgrammeReview"
 import { CommonHelpers } from "../../../helpers"
+import { useAppDispatch } from "../../../hooks/common/useAppDispatch"
+import { useAppSelector } from "../../../hooks/common/useAppSelector"
+import { ISystemActionTypes } from "../../../state/system/actions"
+
+import { ErrorMessageStatement } from "../../../constants/errorMessageStatement"
 
 const ProgrammeReviewFormPage: React.FunctionComponent = () => {
+  const { modals } = useAppSelector((state) => state.system)
+  const dispatch = useAppDispatch()
   const initialValues = {
     schoolType: "",
     school: "",
