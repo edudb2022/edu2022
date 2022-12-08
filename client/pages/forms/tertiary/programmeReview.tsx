@@ -177,6 +177,10 @@ const ProgrammeReviewFormPage: React.FunctionComponent = () => {
       },
       onError: (err) => {
         console.log("err", err)
+        dispatch({
+          type: ISystemActionTypes.SYSTEM_ERROR,
+          payload: ErrorMessageStatement.FORM_GENERIC_ERROR
+        })
       },
       onSettled: () => {
         setIsInProgress(false)
