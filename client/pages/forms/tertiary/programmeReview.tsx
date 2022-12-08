@@ -214,6 +214,7 @@ const ProgrammeReviewFormPage: React.FunctionComponent = () => {
       >
         <div className="grid md:grid-cols-4 md:gap-x-9 gap-y-2">
           <BaseSelect
+            name="schoolType"
             items={schoolTypesList}
             selectId="schoolType"
             inputLabel="學校類型"
