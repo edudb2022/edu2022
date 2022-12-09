@@ -16,10 +16,11 @@ import BaseInfiniteScroll from "../../../../components/common/infiniteScroll"
 import shortid from "shortid"
 import { Router, useRouter } from "next/router"
 import trackingEvent from "../../../../utils/services/GoogleAnalytics/tracking"
+import ReviewDetailSkeletonCardGroup from "../../../../components/common/groups/skeleton/ReviewDetail"
 
 const SchoolReviewPage = () => {
   const router = useRouter()
-  const { schoolId } = router.query
+  const { id } = router.query
   const { sorting } = useAppSelector((state) => state.filter.school)
   const word = sorting.split(",")
 
@@ -32,11 +33,7 @@ const SchoolReviewPage = () => {
 
   useEffect(() => {
     // Call tracking event onMount
-    trackingEvent.customEvent(
-      `page_view_school_review`,
-      undefined,
-      `${schoolId}`
-    )
+    trackingEvent.customEvent(`page_view_school_review`, undefined, `${id}`)
   }, [])
 
   const [isOpen, setIsOpen] = useState(false)
@@ -93,6 +90,14 @@ const SchoolReviewPage = () => {
       )
     }, 500)
   }
+
+  const [isLoading, setIsLoading] = useState(true)
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false)
+    }, 5000)
+  }, [])
   return (
     <PageLayout>
       <SchoolFilterDrawer
@@ -137,6 +142,7 @@ const SchoolReviewPage = () => {
             dataLength={mockList.length}
             fetchMoreData={fetchMoreData}
             hasMore={hasMore}
+            isLoading={isLoading}
           >
             <div className="flex flex-col gap-y-4">
               {mockList.map((data) => {
