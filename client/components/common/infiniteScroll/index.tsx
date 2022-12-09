@@ -1,16 +1,18 @@
 import React, { PropsWithChildren } from "react"
 import InfiniteScroll from "react-infinite-scroll-component"
+import ReviewDetailSkeletonCardGroup from "../groups/skeleton/ReviewDetail"
 
 interface IBaseInfiniteScrollProps {
   dataLength: number
   fetchMoreData: () => void
   hasMore: boolean
+  isLoading?: boolean
   //   refresh: () => void
 }
 
 const BaseInfiniteScroll: React.FunctionComponent<
   PropsWithChildren<IBaseInfiniteScrollProps>
-> = ({ dataLength, fetchMoreData, hasMore, children }) => {
+> = ({ dataLength, fetchMoreData, hasMore, children, isLoading }) => {
   const MessageContainer: React.FunctionComponent<{ text: string }> = ({
     text
   }) => {
@@ -23,7 +25,9 @@ const BaseInfiniteScroll: React.FunctionComponent<
     )
   }
 
-  return (
+  return isLoading ? (
+    <ReviewDetailSkeletonCardGroup />
+  ) : (
     <InfiniteScroll
       dataLength={dataLength} //This is important field to render the next data
       next={fetchMoreData}
