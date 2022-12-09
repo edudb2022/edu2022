@@ -44,8 +44,6 @@ import { ISystemActionTypes } from "../../../state/system/actions"
 import { ErrorMessageStatement } from "../../../constants/errorMessageStatement"
 
 const ProgrammeReviewFormPage: React.FunctionComponent = () => {
-  const { modals } = useAppSelector((state) => state.system)
-  const dispatch = useAppDispatch()
   const initialValues = {
     schoolType: "",
     school: "",
@@ -98,6 +96,7 @@ const ProgrammeReviewFormPage: React.FunctionComponent = () => {
   })
   const [isInProgress, setIsInProgress] = useState(false)
   const { mutate } = useCreateProgrammeReview()
+  const dispatch = useAppDispatch()
   const handleSubmit = () => {
     setIsInProgress(true)
 
@@ -106,7 +105,8 @@ const ProgrammeReviewFormPage: React.FunctionComponent = () => {
       programId: 62,
       title: formik.values.title,
       academicStatusId: formik.values.academicStatus,
-      admissionDate: formik.values.admissionDate,
+      // admissionDate: formik.values.admissionDate,
+      admissionDate: 2018,
       contactMethod: {
         typeId: formik.values.contactMethod,
         value: formik.values.contactDetail
@@ -205,7 +205,7 @@ const ProgrammeReviewFormPage: React.FunctionComponent = () => {
   const handleDateChange = (newValue: any) => {
     formik.setFieldValue("admissionDate", dayjs(newValue).format("YYYY-MM-DD"))
   }
-
+  console.log(2323, formik.values.schoolType)
   return (
     <>
       <SEO
