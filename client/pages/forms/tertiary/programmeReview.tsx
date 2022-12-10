@@ -106,7 +106,7 @@ const ProgrammeReviewFormPage: React.FunctionComponent = () => {
       title: formik.values.title,
       academicStatusId: formik.values.academicStatus,
       // admissionDate: formik.values.admissionDate,
-      admissionDate: 2018,
+      admissionDate: "2018",
       contactMethod: {
         typeId: formik.values.contactMethod,
         value: formik.values.contactDetail
