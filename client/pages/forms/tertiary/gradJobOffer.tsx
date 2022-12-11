@@ -45,7 +45,7 @@ const GradJobOfferFormPage: React.FunctionComponent = () => {
     school: "",
     faculty: "",
     programme: "",
-    offerReceivedDate: CommonHelpers.formatData(new Date(), "YYYY-MM-DD"),
+    offerReceivedDate: CommonHelpers.formatData(new Date(), undefined, true),
     title: "",
     jobTitle: "",
     companyName: "",
@@ -115,13 +115,12 @@ const GradJobOfferFormPage: React.FunctionComponent = () => {
       formik.values.baseSalary + formik.values.stockOption + formik.values.bonus
   }, [formik.values.baseSalary, formik.values.stockOption, formik.values.bonus])
 
-  const handleDateChange = (newValue: any) => {
+  const handleDateChange = (newValue: Date) => {
     formik.setFieldValue(
       "offerReceivedDate",
-      dayjs(newValue).format("YYYY-MM-DD")
+      CommonHelpers.formatData(newValue, undefined, true)
     )
   }
-
   const handleJobTypeChange = (e: any, newValue: any) => {
     if (newValue) {
       formik.setFieldValue("jobType", newValue.id)

@@ -47,6 +47,7 @@ import { interviewReviewLongQuestionsMapper } from "../../../mappers/longQuestio
 import dayjs from "dayjs"
 import SEO from "../../../components/seo"
 import { CommonHelpers } from "../../../helpers"
+import useCreateInterviewReview from "../../../hooks/api/useCreateInterviewReview"
 
 const InterviewReviewPage: NextPage = () => {
   const initialValues = {
@@ -55,14 +56,14 @@ const InterviewReviewPage: NextPage = () => {
     faculty: "",
     programme: "",
     title: "",
-    interviewDate: CommonHelpers.formatData(new Date(), "YYYY-MM-DD"),
+    interviewDate: CommonHelpers.formatData(new Date(), undefined, true),
     currentSchoolType: null,
     currentSchool: null,
     currentFaculty: null,
     currentProgramme: null,
     yearofStudy: null,
     academicStatus: null,
-    exprience: 0,
+    experience: 0,
     difficulty: 0,
     dressCode: "",
     gpa: "",
@@ -102,7 +103,7 @@ const InterviewReviewPage: NextPage = () => {
     programme: SelectCommonValidationSchema,
     title: TitleValidationSchema,
     interviewDate: DateValidationSchema,
-    exprience: RatingValidationSchema,
+    experience: RatingValidationSchema,
     difficulty: RatingValidationSchema,
     currentSchoolType: SelectCommonValidationSchema,
     currentSchool: yup
@@ -159,8 +160,8 @@ const InterviewReviewPage: NextPage = () => {
       .number()
       .min(0, ERROR_FORM_MESSAGES.GPA_NEGATIVE)
       .max(4.3, ERROR_FORM_MESSAGES.GPA_TOO_LARGE)
-      .when("applicaiotnType", (applicaiotnType, schema) => {
-        if (applicaiotnType === ApplicationTypeId.JUPAS)
+      .when("applicationType", (applicationType, schema) => {
+        if (applicationType === ApplicationTypeId.JUPAS)
           return schema.required(ERROR_FORM_MESSAGES.REQUIRED)
       })
       .nullable(true),
@@ -243,6 +244,7 @@ const InterviewReviewPage: NextPage = () => {
       .nullable(true)
   })
   const [isInProgress, setIsInProgress] = useState(false)
+  const { mutate } = useCreateInterviewReview()
   const formik = useFormik({
     initialValues: initialValues,
     onSubmit: handleSubmit,
@@ -292,8 +294,11 @@ const InterviewReviewPage: NextPage = () => {
     formik.values.desSubjectGradeFive,
     formik.values.desSubjectGradeSix
   ])
-  const handleDateChange = (newValue: any) => {
-    formik.setFieldValue("interviewDate", dayjs(newValue).format("YYYY-MM-DD"))
+  const handleDateChange = (newValue: Date) => {
+    formik.setFieldValue(
+      "interviewDate",
+      CommonHelpers.formatData(newValue, undefined, true)
+    )
   }
   return (
     <>
@@ -471,13 +476,13 @@ const InterviewReviewPage: NextPage = () => {
 
         <div className="flex flex-col gap-y-6 justify-center items-center">
           <RatingToggleButtonGroup
-            id="exprience"
-            value={formik.values.exprience}
+            id="experience"
+            value={formik.values.experience}
             onChange={formik.handleChange}
             ratingTitle={interviewExperienceRating}
             onBlur={formik.handleBlur}
-            errorMessages={formik.errors.exprience}
-            isTouched={formik.touched.exprience}
+            errorMessages={formik.errors.experience}
+            isTouched={formik.touched.experience}
             header="面試體驗"
             headerRequired={true}
           />

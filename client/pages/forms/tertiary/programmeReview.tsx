@@ -106,7 +106,8 @@ const ProgrammeReviewFormPage: React.FunctionComponent = () => {
       title: formik.values.title,
       academicStatusId: formik.values.academicStatus,
       // admissionDate: formik.values.admissionDate,
-      admissionDate: "2018",
+      admissionDate: CommonHelpers.formatData(new Date(), undefined, true),
+      // admissionDate: "2018",
       contactMethod: {
         typeId: formik.values.contactMethod,
         value: formik.values.contactDetail
@@ -202,8 +203,11 @@ const ProgrammeReviewFormPage: React.FunctionComponent = () => {
     validationSchema: programmeReviewFormSchema
   })
 
-  const handleDateChange = (newValue: any) => {
-    formik.setFieldValue("admissionDate", dayjs(newValue).format("YYYY-MM-DD"))
+  const handleDateChange = (newValue: Date) => {
+    formik.setFieldValue(
+      "admissionDate",
+      CommonHelpers.formatData(newValue, undefined, true)
+    )
   }
   console.log(2323, formik.values.schoolType)
   return (

@@ -45,7 +45,7 @@ const InternshipOfferFormPage: React.FunctionComponent = () => {
     school: "",
     faculty: "",
     programme: "",
-    offerReceivedDate: CommonHelpers.formatData(new Date(), ""),
+    offerReceivedDate: CommonHelpers.formatData(new Date(), undefined, true),
     title: "",
     jobTitle: "",
     companyName: "",
@@ -114,10 +114,10 @@ const InternshipOfferFormPage: React.FunctionComponent = () => {
       formik.values.bonus
   }, [formik.values.baseSalary, formik.values.stockOption, formik.values.bonus])
 
-  const handleDateChange = (newValue: any) => {
+  const handleDateChange = (newValue: Date) => {
     formik.setFieldValue(
       "offerReceivedDate",
-      dayjs(newValue).format("YYYY-MM-DD")
+      CommonHelpers.formatData(newValue, undefined, true)
     )
   }
 

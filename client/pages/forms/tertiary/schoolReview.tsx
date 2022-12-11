@@ -49,7 +49,7 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
     schoolType: null,
     school: null,
     title: "",
-    admissionDate: CommonHelpers.formatData(new Date(), "YYYY-MM-DD"),
+    admissionDate: CommonHelpers.formatData(new Date(), undefined, true),
     academicStatus: null,
     campusRating: null,
     resourceRating: null,
@@ -100,7 +100,8 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
       schoolId: 62,
       title: formik.values.title,
       academicStatusId: formik.values.academicStatus,
-      admissionDate: formik.values.admissionDate,
+      // admissionDate: formik.values.admissionDate,
+      admissionDate: "2018",
       contactMethod: {
         typeId: formik.values.contactMethod,
         value: formik.values.contactDetail
@@ -194,13 +195,13 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
     validationSchema: schoolReviewFormSchema
   })
 
-  const handleDateChange = (newValue: any) => {
+  const handleDateChange = (newValue: Date) => {
     formik.setFieldValue(
       "admissionDate",
-      CommonHelpers.formatData(newValue, "YYYY-MM-DD")
+      CommonHelpers.formatData(newValue, undefined, true)
     )
   }
-  console.log(formik.values.school)
+  console.log(123, formik.values.admissionDate)
   return (
     <>
       <SEO

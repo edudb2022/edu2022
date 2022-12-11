@@ -48,7 +48,7 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
     faculty: "",
     programme: "",
     title: "",
-    offerDate: CommonHelpers.formatData(new Date(), "YYYY-MM-DD"),
+    offerDate: CommonHelpers.formatData(new Date(), undefined, true),
     currentSchoolType: null,
     currentSchool: null,
     currentFaculty: null,
@@ -284,10 +284,10 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
     formik.values.currentSchoolType == CurrentSchoolTypeId.RETAKER ||
     formik.values.currentSchoolType === null
 
-  const handleDateChange = (newValue: any) => {
+  const handleDateChange = (newValue: Date) => {
     formik.setFieldValue(
       "offerDate",
-      CommonHelpers.formatData(newValue, "YYYY-MM-DD")
+      CommonHelpers.formatData(newValue, undefined, true)
     )
   }
   return (
