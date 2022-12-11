@@ -1,5 +1,6 @@
 import axios from "axios"
 import {
+  ICreateInterviewReviewReq,
   ICreateProgrammeReviewReq,
   ICreateSchoolReviewReq,
   IVoteReq
@@ -34,6 +35,11 @@ const apiService = {
     const res = await axios.post(`${DEFAULT_BASE_URL}/program-reviews`, body)
     return res
   },
+  createInterviewReview: async (body: ICreateInterviewReviewReq) => {
+    const res = await axios.post(`${DEFAULT_BASE_URL}/interview-reviews`, body)
+    return res
+  },
+
   voteSchoolReview: async (param: IVoteReq) => {
     const { value, id } = param
     try {

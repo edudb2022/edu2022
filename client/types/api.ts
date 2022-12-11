@@ -1,5 +1,6 @@
 import {
   AcademicStatusTypeId,
+  ApplicationTypeId,
   ContactMethodTypeId,
   SchoolTypeId,
   TUserId
@@ -57,6 +58,19 @@ export interface ICreateProgrammeReviewReq {
   title: string
   academicStatusId: AcademicStatusTypeId | null
   admissionDate: string
+  contactMethod: IContactMethod
+  ratingQuestionResponses: IRatingQuestionResponses[]
+  longQuestionResponses: ILongQuestionResponses[]
+  anonymous: boolean
+}
+
+export interface ICreateInterviewReviewReq {
+  userId: TUserId
+  programId: number
+  dressCodeId: number
+  title: string
+  applicationTypeId: ApplicationTypeId | null
+  interviewDate: string
   contactMethod: IContactMethod
   ratingQuestionResponses: IRatingQuestionResponses[]
   longQuestionResponses: ILongQuestionResponses[]
