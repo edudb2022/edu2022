@@ -43,6 +43,9 @@ import { schoolReviewRatingQuestionsMapper } from "../../../mappers/ratingQuesti
 import SEO from "../../../components/seo"
 import { CommonHelpers } from "../../../helpers"
 import useCreateSchoolReview from "../../../hooks/api/useCreateSchoolReview"
+import { ISystemActionTypes } from "../../../state/system/actions"
+import { ErrorMessageStatement } from "../../../constants/errorMessageStatement"
+import { useAppDispatch } from "../../../hooks/common/useAppDispatch"
 
 const SchoolReviewFormPage: React.FunctionComponent = () => {
   const initialValues = {
@@ -94,10 +97,11 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
   const [isInProgress, setIsInProgress] = useState(false)
 
   const { mutate } = useCreateSchoolReview()
+  const dispatch = useAppDispatch()
 
   const handleSubmit = () => {
     const body = {
-      schoolId: 62,
+      schoolId: 60,
       title: formik.values.title,
       academicStatusId: formik.values.academicStatus,
       // admissionDate: formik.values.admissionDate,
@@ -179,7 +183,12 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
         console.log("res", res)
       },
       onError: (err) => {
-        console.log("err", err)
+        console.log("errrrrrr", err)
+
+        dispatch({
+          type: ISystemActionTypes.SYSTEM_ERROR,
+          payload: ErrorMessageStatement.FORM_GENERIC_ERROR
+        })
       },
       onSettled: () => {
         setIsInProgress(false)
