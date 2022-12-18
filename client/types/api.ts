@@ -2,8 +2,12 @@ import {
   AcademicStatusTypeId,
   ApplicationTypeId,
   ContactMethodTypeId,
+  CurrentSchoolTypeId,
+  DSEGradeTypeId,
+  DSESubjectId,
   SchoolTypeId,
-  TUserId
+  TUserId,
+  YearOfStudyTypeId
 } from "./common"
 
 export interface IGetSchoolRes {
@@ -53,15 +57,15 @@ export interface ICreateSchoolReviewReq {
   anonymous: boolean
 }
 export interface ICreateProgrammeReviewReq {
-  userId: TUserId
   programId: number
   title: string
   academicStatusId: AcademicStatusTypeId | null
   admissionDate: string
   contactMethod: IContactMethod
+  userId: TUserId
+  anonymous: boolean
   ratingQuestionResponses: IRatingQuestionResponses[]
   longQuestionResponses: ILongQuestionResponses[]
-  anonymous: boolean
 }
 
 export interface ICreateInterviewReviewReq {
@@ -69,7 +73,10 @@ export interface ICreateInterviewReviewReq {
   programId: number
   dressCodeId: number
   title: string
-  applicationTypeId: ApplicationTypeId | null
+  applicationTypeId?: ApplicationTypeId | null
+  currentSchoolTypeId?: CurrentSchoolTypeId | null
+  currentYearOfStudyId?: YearOfStudyTypeId | null
+  dseScores: IDseScores[]
   interviewDate: string
   contactMethod: IContactMethod
   ratingQuestionResponses: IRatingQuestionResponses[]
@@ -81,7 +88,10 @@ export interface IVoteReq {
   id: number
   value: number
 }
-
+export interface IDseScores {
+  gradId: DSEGradeTypeId
+  subjectId: DSESubjectId
+}
 interface ILongQuestionResponses {
   questionId: number
   text: string | null | ""

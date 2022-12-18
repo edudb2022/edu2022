@@ -164,7 +164,6 @@ export enum ContactMethodTypeId {
   SIGNAL,
   OTHER
 }
-
 export enum HonorTypeId {
   FIRST = 1,
   SECOND_UP,
