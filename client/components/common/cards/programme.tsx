@@ -30,8 +30,8 @@ const ProgrammeCard: React.FunctionComponent<IProgrammeCardProps> = ({
           {/* <div className="bg-school-cuhk rounded-t-xl h-4"></div> */}
           <div className="p-4 flex flex-col h-full">
             <div className="flex flex-row justify-between">
-              <h5 className="text-base">{programmeChineseName}</h5>
-              <p className="border-b border-gray-400 text-gray-400 font-thin">
+              <h5 className="text-base ">{programmeChineseName}</h5>
+              <p className="border-b border-theme-one-600 text-theme-one-600 font-mono ">
                 {"JS6578"}
               </p>
             </div>
