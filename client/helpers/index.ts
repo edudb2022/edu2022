@@ -49,10 +49,6 @@ export const CommonHelpers = {
         }
       }
     }
-    // else {
-    //   bestSixScore = -1
-    // }
-
     return { bestFiveScore, bestSixScore }
   },
 
