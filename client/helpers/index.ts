@@ -10,18 +10,28 @@ export const CommonHelpers = {
   schoolFilter: (
     list: IGetSchoolRes[] | undefined,
     search: string,
-    type: SchoolTypeId
+    type: number
   ): IGetSchoolRes[] => {
     const arr: IGetSchoolRes[] = []
     const lowerCaseSearchText = search.toLowerCase()
+
     if (list) {
       list.forEach((data) => {
+        const matchChineseName = data.chineseName
+          .toLocaleLowerCase()
+          .includes(lowerCaseSearchText)
+
+        const matchEnglishName = data.englishName
+          .toLocaleLowerCase()
+          .includes(lowerCaseSearchText)
+
+        const matchShortName = data.shortName
+          .toLocaleLowerCase()
+          .includes(lowerCaseSearchText)
+
         if (
-          data.chineseName.toLocaleLowerCase().includes(lowerCaseSearchText) ||
-          data.englishName.toLocaleLowerCase().includes(lowerCaseSearchText) ||
-          data.shortName.toLocaleLowerCase().includes(lowerCaseSearchText)
-          //   &&
-          // data.type.id === type
+          (type === 0 || data.type.id == type) &&
+          (matchChineseName || matchEnglishName || matchShortName)
         ) {
           arr.push(data)
         }

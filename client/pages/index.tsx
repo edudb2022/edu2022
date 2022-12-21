@@ -27,48 +27,21 @@ import { IGetSchoolRes } from "../types/api"
 import SearchTextInput from "../components/common/inputs/text/search"
 import trackingEvent from "../utils/services/GoogleAnalytics/tracking"
 
-const SchoolType = [
+const SchoolOptions = [
+  { value: 0, title: "全部" },
   { value: SchoolTypeId.UNIVERSITY, title: "大學" },
   { value: SchoolTypeId.COLLEGE, title: "大專" }
 ]
 
 const Home: NextPage = (props) => {
-  const router = useRouter()
-
   const { data, isLoading } = useGetSchools()
 
   useEffect(() => {
     // Call tracking event onMount
     trackingEvent.customEvent("page_view_main")
   }, [])
-  // const { data } = useQuery(["schools"], apiService.getSchools)
-  // useEffect(() => {
-  // window.gtag("event", "page_view", {
-  //   page_title: "M23232323ain",
-  //   page_location: `${router.pathname}`,
-  //   page_path: `${router.pathname}`,
-  //   send_to: process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID
-  // })
-  // window.gtag("event", "testing", {
-  //   page_title: "testing1",
-  //   page_location: `testing2`,
-  //   page_path: `testing3`,
-  //   send_to: process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID
-  // })
-  // ReactGA.initialize(`${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}`)
-  // ReactGA.event({
-  //   category: "12312312312",
-  //   action: "1",
-  //   label: "cc"
-  // })
-  // window.gtag("event", "aaa", {
-  //   event_category: "bbb",
-  //   event_label: "ccc"
-  // })
-  // window.gtag("event", "aaa_testing ")
-  // }, [])
 
-  const [type, setType] = useState(SchoolTypeId.UNIVERSITY)
+  const [type, setType] = useState(0)
   const [search, setSearch] = useState("")
   const [list, setList] = useState<IGetSchoolRes[]>([])
 
@@ -79,43 +52,26 @@ const Home: NextPage = (props) => {
   const handleSearchChange = (e: any) => {
     setSearch(e.target.value)
   }
-  // console.log(data)
+
   useEffect(() => {
     const res = CommonHelpers.schoolFilter(data, search.trim(), type)
     setList(res)
   }, [search, type, data])
 
-  // useEffect(() => {
-  //   const check = async () => {
-  //     return await Session.doesSessionExist()
-  //   }
-  //   const res = check()
-  //   // console.log(123, res)
-  // }, [])
-
-  // var now = new Date()
-  // // Add 24 fortnights (48 weeks)
-  //  new Date(now.setDate(now.getDate() + 24 * 14))
-
-  // var now = new Date()
-  // Add two weeks
-  // const a = new Date(
-  //   new Date().setDate(new Date().getDate() - 365 * 50)
-  // ).toISOString()
-
-  console.log(list)
-
   return (
     <PageLayout>
-      <SEO title="主頁" description="123" />
-      <div className="flex justify-center gap-x-4 mt-8 mx-2">
-        <SearchTextInput onChange={handleSearchChange} value={search} />
-        <BaseSelect
-          items={SchoolType}
-          selectValue={type}
-          selectClassName="bg-white  px-2"
-          onChange={handleTypeChange}
-        />
+      <SEO title="主頁" />
+      {/* <div className="flex justify-center gap-x-4 mt-8 mx-2"> */}
+      <div className="w-full flex justify-center">
+        <div className="flex justify-center gap-x-4 w-full md:w-11/12  mt-8 mx-2 my-4">
+          <SearchTextInput onChange={handleSearchChange} value={search} />
+          <BaseSelect
+            items={SchoolOptions}
+            selectValue={type}
+            selectClassName="bg-white  px-2"
+            onChange={handleTypeChange}
+          />
+        </div>
       </div>
 
       <CardDisplayLayout>
