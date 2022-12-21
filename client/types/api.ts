@@ -76,7 +76,8 @@ export interface ICreateInterviewReviewReq {
   applicationTypeId?: ApplicationTypeId | null
   currentSchoolTypeId?: CurrentSchoolTypeId | null
   currentYearOfStudyId?: YearOfStudyTypeId | null
-  dseScores: IDseScores[]
+  gpa: number | null
+  dseScores: IDseScores[] | null
   interviewDate: string
   contactMethod: IContactMethod
   ratingQuestionResponses: IRatingQuestionResponses[]
@@ -89,7 +90,7 @@ export interface IVoteReq {
   value: number
 }
 export interface IDseScores {
-  gradId: DSEGradeTypeId
+  gradeId: DSEGradeTypeId
   subjectId: DSESubjectId
 }
 interface ILongQuestionResponses {
@@ -106,8 +107,9 @@ interface IContactMethod {
   value: string | null
 }
 interface ISchoolType {
-  id: SchoolTypeId
-  schoolId: string
+  id: number
+  displayText: string
+  guiOrder: number
 }
 
 export interface IFaculties {
