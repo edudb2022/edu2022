@@ -24,6 +24,7 @@ import InputContainer from "../../../components/containers/input"
 import AnonymousSwitch from "../../../components/common/switch/anonymous"
 import * as yup from "yup"
 import {
+  contactDetailValidationSchema,
   DateValidationSchema,
   longQuestionValidationSchema,
   RatingValidationSchema,
@@ -46,6 +47,9 @@ import useCreateSchoolReview from "../../../hooks/api/useCreateSchoolReview"
 import { ISystemActionTypes } from "../../../state/system/actions"
 import { ErrorMessageStatement } from "../../../constants/errorMessageStatement"
 import { useAppDispatch } from "../../../hooks/common/useAppDispatch"
+import { useRouter } from "next/router"
+import { ERROR_FORM_MESSAGES } from "../../../utils/validation/errorMessages/form"
+import { ContactMethodTypeId } from "../../../types/common"
 
 const SchoolReviewFormPage: React.FunctionComponent = () => {
   const initialValues = {
@@ -73,6 +77,8 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
     longQEight: "",
     longQNine: ""
   }
+  const phoneRegExp =
+    /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
   const schoolReviewFormSchema = yup.object().shape({
     school: SelectCommonValidationSchema,
     title: TitleValidationSchema,
@@ -91,13 +97,15 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
     longQSix: longQuestionValidationSchema,
     longQSeven: longQuestionValidationSchema,
     longQEight: longQuestionValidationSchema,
-    longQNine: longQuestionValidationSchema
+    longQNine: longQuestionValidationSchema,
+    contactDetail: contactDetailValidationSchema
   })
 
   const [isInProgress, setIsInProgress] = useState(false)
 
   const { mutate } = useCreateSchoolReview()
   const dispatch = useAppDispatch()
+  const router = useRouter()
 
   const handleSubmit = () => {
     const body = {
@@ -180,7 +188,9 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
     setIsInProgress(true)
     mutate(body, {
       onSuccess: (res) => {
-        console.log("res", res)
+        const id = res.data.data.id
+        //console.log("res", res.data.data.id)
+        router.push(`/reviewDetail/tertiary/school/${id}`)
       },
       onError: (err) => {
         console.log("errrrrrr", err)
@@ -210,7 +220,7 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
       CommonHelpers.formatData(newValue, undefined, true)
     )
   }
-  console.log(123, formik.values.admissionDate)
+  //console.log(123, formik.values.admissionDate)
   return (
     <>
       <SEO

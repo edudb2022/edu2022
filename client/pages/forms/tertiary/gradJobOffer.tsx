@@ -25,6 +25,7 @@ import {
 import { ContactSelect } from "../../../components/common/inputs/select/contact"
 import AnonymousSwitch from "../../../components/common/switch/anonymous"
 import {
+  contactDetailValidationSchema,
   DateValidationSchema,
   longQuestionValidationSchema,
   RatingValidationSchema,
@@ -91,6 +92,7 @@ const GradJobOfferFormPage: React.FunctionComponent = () => {
     hope: RatingValidationSchema,
     difficulty: RatingValidationSchema,
     stockOption: SalaryValidationSchema,
+    contactDetail: contactDetailValidationSchema,
     // applicaiotnType: SelectCommonValidationSchema,
     offerType: SelectCommonValidationSchema,
     longQOne: longQuestionValidationSchema,

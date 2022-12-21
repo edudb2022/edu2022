@@ -26,6 +26,7 @@ import { intershipJobFindingDifficultyRating } from "../../../constants/rating"
 
 import * as yup from "yup"
 import {
+  contactDetailValidationSchema,
   DateValidationSchema,
   longQuestionValidationSchema,
   RatingValidationSchema,
@@ -91,6 +92,7 @@ const InternshipOfferFormPage: React.FunctionComponent = () => {
     difficulty: RatingValidationSchema,
     // applicaiotnType: SelectCommonValidationSchema,
     offerType: SelectCommonValidationSchema,
+    contactDetail: contactDetailValidationSchema,
     longQOne: longQuestionValidationSchema,
     longQTwo: longQuestionValidationSchema,
     longQThree: longQuestionValidationSchema,

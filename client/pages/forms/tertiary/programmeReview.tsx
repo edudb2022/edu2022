@@ -25,7 +25,8 @@ import {
   TitleValidationSchema,
   RatingValidationSchema,
   DateValidationSchema,
-  longQuestionValidationSchema
+  longQuestionValidationSchema,
+  contactDetailValidationSchema
 } from "../../../utils/validation/form/schema"
 import {
   academicStatusTypesList,
@@ -42,6 +43,7 @@ import { useAppSelector } from "../../../hooks/common/useAppSelector"
 import { ISystemActionTypes } from "../../../state/system/actions"
 
 import { ErrorMessageStatement } from "../../../constants/errorMessageStatement"
+import { ICreateProgrammeReviewReq } from "../../../types/api"
 
 const ProgrammeReviewFormPage: React.FunctionComponent = () => {
   const initialValues = {
@@ -92,7 +94,8 @@ const ProgrammeReviewFormPage: React.FunctionComponent = () => {
     longQSix: longQuestionValidationSchema,
     longQSeven: longQuestionValidationSchema,
     longQEight: longQuestionValidationSchema,
-    longQNine: longQuestionValidationSchema
+    longQNine: longQuestionValidationSchema,
+    contactDetail: contactDetailValidationSchema
   })
   const [isInProgress, setIsInProgress] = useState(false)
   const { mutate } = useCreateProgrammeReview()
@@ -100,14 +103,14 @@ const ProgrammeReviewFormPage: React.FunctionComponent = () => {
   const handleSubmit = () => {
     setIsInProgress(true)
 
-    const body = {
+    const body: ICreateProgrammeReviewReq = {
       userId: 1,
-      programId: 62,
+      programId: 6070,
       title: formik.values.title,
       academicStatusId: formik.values.academicStatus,
       // admissionDate: formik.values.admissionDate,
-      admissionDate: CommonHelpers.formatData(new Date(), undefined, true),
-      // admissionDate: "2018",
+      //admissionDate: CommonHelpers.formatData(new Date(), undefined, true),
+      admissionDate: "2018",
       contactMethod: {
         typeId: formik.values.contactMethod,
         value: formik.values.contactDetail
@@ -194,7 +197,6 @@ const ProgrammeReviewFormPage: React.FunctionComponent = () => {
         setIsInProgress(false)
       }
     })
-    console.log("sumit")
   }
 
   const formik = useFormik({
