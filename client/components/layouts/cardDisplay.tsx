@@ -10,7 +10,7 @@ const CardDisplayLayout: React.FunctionComponent<
   return (
     <div className="flex justify-center mt-4 ">
       <div
-        className={`w-full flex-wrap flex flex-row gap-y-6 gap-x-12 justify-center md:justify-start  ${className}`}
+        className={`w-11/12 md:w-full flex-wrap flex flex-row gap-y-6 gap-x-12 justify-center  ${className}md:justify-start`}
       >
         {children}
       </div>
