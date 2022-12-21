@@ -1,3 +1,5 @@
+const defaultColor = "#FF8239"
+
 export const schoolColorMapper = {
   hku: "#015A32",
   cu: "#69246B",
@@ -9,7 +11,7 @@ export const schoolColorMapper = {
   lu: "#D40428",
   mu: "#7FC241",
   hsu: "#9B6321",
-  syu: "#ffff",
+  syu: defaultColor,
   hkapa: "#6A2D74",
   hkcc: "#A01F33",
   uow: "#1E191A",
@@ -19,7 +21,7 @@ export const schoolColorMapper = {
   speed: "#A02437",
   hkdi: "#51296F",
   cci: "#C92429",
-  hkca: "#ffff",
+  hkca: defaultColor,
   ici: "#F26522",
   space: "#1D2172",
   spaceplk: "#1D2172",
