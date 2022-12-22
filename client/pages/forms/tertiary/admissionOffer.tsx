@@ -16,9 +16,13 @@ import FormPageLayout from "../../../components/layouts/form"
 import * as yup from "yup"
 import {
   contactDetailValidationSchema,
+  currentFacultyValidationSchema,
+  currentProgrammeValidationSchema,
+  currentSchoolValidationSchema,
   DateValidationSchema,
   longQuestionValidationSchema,
-  SelectCommonValidationSchema
+  SelectCommonValidationSchema,
+  yearOfStudyValidationSchema
 } from "../../../utils/validation/form/schema"
 import { ERROR_FORM_MESSAGES } from "../../../utils/validation/errorMessages/form"
 import { ApplicationTypeId, CurrentSchoolTypeId } from "../../../types/common"
@@ -91,46 +95,10 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
     faculty: SelectCommonValidationSchema,
     programme: SelectCommonValidationSchema,
     currentSchoolType: SelectCommonValidationSchema,
-    currentSchool: yup
-      .number()
-      .when("currentSchoolType", (currentSchoolType, schema) => {
-        if (
-          currentSchoolType === CurrentSchoolTypeId.UNIVERSITY ||
-          currentSchoolType === CurrentSchoolTypeId.COLLEGE
-        )
-          return schema.required(ERROR_FORM_MESSAGES.REQUIRED)
-      })
-      .nullable(),
-    currentFaculty: yup
-      .number()
-      .when("currentSchoolType", (currentSchoolType, schema) => {
-        if (
-          currentSchoolType === CurrentSchoolTypeId.UNIVERSITY ||
-          currentSchoolType === CurrentSchoolTypeId.COLLEGE
-        )
-          return schema.required(ERROR_FORM_MESSAGES.REQUIRED)
-      })
-      .nullable(),
-    currentProgramme: yup
-      .number()
-      .when("currentSchoolType", (currentSchoolType, schema) => {
-        if (
-          currentSchoolType === CurrentSchoolTypeId.UNIVERSITY ||
-          currentSchoolType === CurrentSchoolTypeId.COLLEGE
-        )
-          return schema.required(ERROR_FORM_MESSAGES.REQUIRED)
-      })
-      .nullable(),
-    yearofStudy: yup
-      .number()
-      .when("currentSchoolType", (currentSchoolType, schema) => {
-        if (
-          currentSchoolType === CurrentSchoolTypeId.UNIVERSITY ||
-          currentSchoolType === CurrentSchoolTypeId.COLLEGE
-        )
-          return schema.required(ERROR_FORM_MESSAGES.REQUIRED)
-      })
-      .nullable(),
+    currentSchool: currentSchoolValidationSchema,
+    currentFaculty: currentFacultyValidationSchema,
+    currentProgramme: currentProgrammeValidationSchema,
+    yearofStudy: yearOfStudyValidationSchema,
     offerDate: DateValidationSchema,
     offerType: SelectCommonValidationSchema,
     contactDetail: contactDetailValidationSchema,

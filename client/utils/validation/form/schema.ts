@@ -1,5 +1,5 @@
 import * as yup from "yup"
-import { ContactMethodTypeId } from "../../../types/common"
+import { ContactMethodTypeId, CurrentSchoolTypeId } from "../../../types/common"
 import { ERROR_FORM_MESSAGES } from "../errorMessages/form"
 const phoneRegExp =
   /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
@@ -42,6 +42,23 @@ const SelectCommonValidationSchema = yup
   .required("必須選擇")
   .nullable(true)
 
+const currentSchoolValidationSchema = yup
+  .number()
+  .when("currentSchoolType", (currentSchoolType, schema) => {
+    if (
+      currentSchoolType == CurrentSchoolTypeId.UNIVERSITY ||
+      currentSchoolType == CurrentSchoolTypeId.COLLEGE
+    )
+      return schema.required(ERROR_FORM_MESSAGES.REQUIRED)
+  })
+  .nullable()
+
+const currentFacultyValidationSchema = currentSchoolValidationSchema
+
+const currentProgrammeValidationSchema = currentSchoolValidationSchema
+
+const yearOfStudyValidationSchema = currentSchoolValidationSchema
+
 const SalaryValidationSchema = yup
   .number()
   .min(0, ERROR_FORM_MESSAGES.SALARY_NEGATIVE)
@@ -53,5 +70,9 @@ export {
   SalaryValidationSchema,
   DateValidationSchema,
   longQuestionValidationSchema,
-  contactDetailValidationSchema
+  contactDetailValidationSchema,
+  currentSchoolValidationSchema,
+  currentFacultyValidationSchema,
+  currentProgrammeValidationSchema,
+  yearOfStudyValidationSchema
 }

@@ -31,11 +31,15 @@ import {
 import * as yup from "yup"
 import {
   contactDetailValidationSchema,
+  currentFacultyValidationSchema,
+  currentProgrammeValidationSchema,
+  currentSchoolValidationSchema,
   DateValidationSchema,
   longQuestionValidationSchema,
   RatingValidationSchema,
   SelectCommonValidationSchema,
-  TitleValidationSchema
+  TitleValidationSchema,
+  yearOfStudyValidationSchema
 } from "../../../utils/validation/form/schema"
 import { ERROR_FORM_MESSAGES } from "../../../utils/validation/errorMessages/form"
 import { ApplicationTypeId, CurrentSchoolTypeId } from "../../../types/common"
@@ -57,8 +61,8 @@ const InterviewReviewPage: NextPage = () => {
     programme: "",
     title: "",
     interviewDate: CommonHelpers.formatData(new Date(), undefined, true),
-    currentSchoolType: null,
-    currentSchool: null,
+    currentSchoolType: "",
+    currentSchool: "",
     currentFaculty: null,
     currentProgramme: null,
     yearofStudy: null,
@@ -81,7 +85,7 @@ const InterviewReviewPage: NextPage = () => {
     dseSubjectSix: null,
     dseSubjectGradeSix: null,
     contactMethod: null,
-    contactDetail: null,
+    contactDetail: "",
     isAnonymous: false,
     longQOne: "",
     longQTwo: "",
@@ -101,47 +105,10 @@ const InterviewReviewPage: NextPage = () => {
     experience: RatingValidationSchema,
     difficulty: RatingValidationSchema,
     currentSchoolType: SelectCommonValidationSchema,
-    currentSchool: yup
-      .number()
-      .when("currentSchoolType", (currentSchoolType, schema) => {
-        if (
-          currentSchoolType === CurrentSchoolTypeId.UNIVERSITY ||
-          currentSchoolType === CurrentSchoolTypeId.COLLEGE
-        )
-          return schema.required(ERROR_FORM_MESSAGES.REQUIRED)
-      })
-      .nullable(),
-    currentFaculty: yup
-      .number()
-      .when("currentSchoolType", (currentSchoolType, schema) => {
-        if (
-          currentSchoolType === CurrentSchoolTypeId.UNIVERSITY ||
-          currentSchoolType === CurrentSchoolTypeId.COLLEGE
-        )
-          return schema.required(ERROR_FORM_MESSAGES.REQUIRED)
-      })
-      .nullable(),
-    currentProgramme: yup
-      .number()
-      .when("currentSchoolType", (currentSchoolType, schema) => {
-        if (
-          currentSchoolType === CurrentSchoolTypeId.UNIVERSITY ||
-          currentSchoolType === CurrentSchoolTypeId.COLLEGE
-        )
-          return schema.required(ERROR_FORM_MESSAGES.REQUIRED)
-      })
-      .nullable(),
-    yearofStudy: yup
-      .number()
-      .when("currentSchoolType", (currentSchoolType, schema) => {
-        if (
-          currentSchoolType === CurrentSchoolTypeId.UNIVERSITY ||
-          currentSchoolType === CurrentSchoolTypeId.COLLEGE
-        )
-          return schema.required(ERROR_FORM_MESSAGES.REQUIRED)
-      })
-      .nullable(),
-
+    currentSchool: currentSchoolValidationSchema,
+    currentFaculty: currentFacultyValidationSchema,
+    currentProgramme: currentProgrammeValidationSchema,
+    yearofStudy: yearOfStudyValidationSchema,
     applicationType: SelectCommonValidationSchema,
     longQOne: longQuestionValidationSchema,
     longQTwo: longQuestionValidationSchema,
@@ -368,7 +335,7 @@ const InterviewReviewPage: NextPage = () => {
         value: formik.values.contactDetail
       },
       applicationTypeId: 1,
-      currentSchoolTypeId: formik.values.currentSchool,
+      currentSchoolTypeId: parseInt(formik.values.currentSchool),
       currentYearOfStudyId: formik.values.yearofStudy,
       gpa: gpa,
       dseScores: dseScores,
@@ -446,13 +413,15 @@ const InterviewReviewPage: NextPage = () => {
   }, [formik.values.applicationType])
 
   const isNotTertiarySchool =
-    formik.values.currentSchoolType == CurrentSchoolTypeId.SECONDARY_SCHOOL ||
-    formik.values.currentSchoolType == CurrentSchoolTypeId.RETAKER ||
+    parseInt(formik.values.currentSchoolType) ==
+      CurrentSchoolTypeId.SECONDARY_SCHOOL ||
+    parseInt(formik.values.currentSchoolType) == CurrentSchoolTypeId.RETAKER ||
+    parseInt(formik.values.currentSchoolType) == CurrentSchoolTypeId.OTHER ||
     formik.values.currentSchoolType === null
 
   useEffect(() => {
     if (isNotTertiarySchool) {
-      formik.values.currentSchool = null
+      formik.values.currentSchool = ""
       formik.values.currentProgramme = null
       formik.values.currentFaculty = null
       formik.values.yearofStudy = null
