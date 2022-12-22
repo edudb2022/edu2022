@@ -85,7 +85,7 @@ const InterviewReviewPage: NextPage = () => {
     dseSubjectSix: null,
     dseSubjectGradeSix: null,
     contactMethod: null,
-    contactDetail: "",
+    contactDetail: null,
     isAnonymous: false,
     longQOne: "",
     longQTwo: "",

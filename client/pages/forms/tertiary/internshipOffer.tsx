@@ -59,7 +59,7 @@ const InternshipOfferFormPage: React.FunctionComponent = () => {
     jobSource: "",
     internType: "",
     contactMethod: "",
-    contactDetail: "",
+    contactDetail: null,
     isAnonymous: false,
     longQOne: "",
     longQTwo: "",

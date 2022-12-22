@@ -33,9 +33,8 @@ const contactDetailValidationSchema = yup
         .string()
         .matches(phoneRegExp, ERROR_FORM_MESSAGES.NOT_A_VALID_PHONE_NUMBER)
         .required(ERROR_FORM_MESSAGES.REQUIRED)
-    else return yup.string()
+    else return yup.string().nullable()
   })
-  .nullable(true)
 
 const SelectCommonValidationSchema = yup
   .string()
