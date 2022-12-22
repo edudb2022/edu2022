@@ -35,6 +35,18 @@ import {
   currentProgrammeValidationSchema,
   currentSchoolValidationSchema,
   DateValidationSchema,
+  dseSubjectFiveValidationSchema,
+  dseSubjectFourValidationSchema,
+  dseSubjectGradeFiveValidationSchema,
+  dseSubjectGradeFourValidationSchema,
+  dseSubjectGradeOneValidationSchema,
+  dseSubjectGradeSixValidationSchema,
+  dseSubjectGradeThreeValidationSchema,
+  dseSubjectGradeTwoValidationSchema,
+  dseSubjectOneValidationSchema,
+  dseSubjectSixValidationSchema,
+  dseSubjectThreeValidationSchema,
+  dseSubjectTwoValidationSchema,
   longQuestionValidationSchema,
   RatingValidationSchema,
   SelectCommonValidationSchema,
@@ -67,8 +79,8 @@ const InterviewReviewPage: NextPage = () => {
     currentProgramme: null,
     yearofStudy: null,
     academicStatus: null,
-    experience: 0,
-    difficulty: 0,
+    experience: null,
+    difficulty: null,
     dressCode: "",
     gpa: "",
     applicationType: null,
@@ -127,146 +139,19 @@ const InterviewReviewPage: NextPage = () => {
           return schema.required(ERROR_FORM_MESSAGES.REQUIRED)
       })
       .nullable(true),
-    dseSubjectOne: yup
-      .string()
-      .notOneOf(
-        [
-          yup.ref("dseSubjectTwo"),
-          yup.ref("dseSubjectThree"),
-          yup.ref("dseSubjectFour"),
-          yup.ref("dseSubjectFive"),
-          yup.ref("dseSubjectSix")
-        ],
-        ERROR_FORM_MESSAGES.NOT_SUBJECT_DUPLICATION
-      )
-      .nullable(true),
-    dseSubjectTwo: yup
-      .string()
-      .when("applicationType", (applicationType, schema) => {
-        if (applicationType == ApplicationTypeId.JUPAS)
-          return schema.required(ERROR_FORM_MESSAGES.REQUIRED)
-      })
-      .notOneOf(
-        [
-          yup.ref("dseSubjectOne"),
-          yup.ref("dseSubjectThree"),
-          yup.ref("dseSubjectFour"),
-          yup.ref("dseSubjectFive"),
-          yup.ref("dseSubjectSix")
-        ],
-        ERROR_FORM_MESSAGES.NOT_SUBJECT_DUPLICATION
-      )
-      .nullable(true),
-    dseSubjectThree: yup
-      .string()
-      .when("applicationType", (applicationType, schema) => {
-        if (applicationType == ApplicationTypeId.JUPAS)
-          return schema.required(ERROR_FORM_MESSAGES.REQUIRED)
-      })
-      .notOneOf(
-        [
-          yup.ref("dseSubjectOne"),
-          yup.ref("dseSubjectTwo"),
-          yup.ref("dseSubjectFour"),
-          yup.ref("dseSubjectFive"),
-          yup.ref("dseSubjectSix")
-        ],
-        ERROR_FORM_MESSAGES.NOT_SUBJECT_DUPLICATION
-      )
-      .nullable(true),
-    dseSubjectFour: yup
-      .string()
-      .when("applicationType", (applicationType, schema) => {
-        if (applicationType == ApplicationTypeId.JUPAS)
-          return schema.required(ERROR_FORM_MESSAGES.REQUIRED)
-      })
-      .notOneOf(
-        [
-          yup.ref("dseSubjectOne"),
-          yup.ref("dseSubjectTwo"),
-          yup.ref("dseSubjectThree"),
-          yup.ref("dseSubjectFive"),
-          yup.ref("dseSubjectSix")
-        ],
-        ERROR_FORM_MESSAGES.NOT_SUBJECT_DUPLICATION
-      )
-      .nullable(true),
-    dseSubjectFive: yup
-      .string()
-      .when("applicationType", (applicationType, schema) => {
-        if (applicationType == ApplicationTypeId.JUPAS)
-          return schema.required(ERROR_FORM_MESSAGES.REQUIRED)
-      })
-      .notOneOf(
-        [
-          yup.ref("dseSubjectOne"),
-          yup.ref("dseSubjectTwo"),
-          yup.ref("dseSubjectThree"),
-          yup.ref("dseSubjectFour"),
-          yup.ref("dseSubjectSix")
-        ],
-        ERROR_FORM_MESSAGES.NOT_SUBJECT_DUPLICATION
-      )
-      .nullable(true),
-    dseSubjectSix: yup
-      .string()
-      .when("applicationType", (applicationType, schema) => {
-        if (applicationType == ApplicationTypeId.JUPAS)
-          return schema.required(ERROR_FORM_MESSAGES.REQUIRED)
-      })
-      .notOneOf(
-        [
-          yup.ref("dseSubjectOne"),
-          yup.ref("dseSubjectTwo"),
-          yup.ref("dseSubjectThree"),
-          yup.ref("dseSubjectFour"),
-          yup.ref("dseSubjectFive")
-        ],
-        ERROR_FORM_MESSAGES.NOT_SUBJECT_DUPLICATION
-      )
-      .nullable(true),
-    dseSubjectGradeOne: yup
-      .string()
-      .when("dseSubjectOne", (dseSubjectOne, schema) => {
-        if (dseSubjectOne) return schema.required(ERROR_FORM_MESSAGES.REQUIRED)
-      })
-      .nullable(true),
 
-    dseSubjectGradeTwo: yup
-      .string()
-      .when("dseSubjectTwo", (dseSubjectTwo, schema) => {
-        if (dseSubjectTwo) return schema.required(ERROR_FORM_MESSAGES.REQUIRED)
-      })
-      .nullable(true),
-
-    dseSubjectGradeThree: yup
-      .string()
-      .when("dseSubjectThree", (dseSubjectThree, schema) => {
-        if (dseSubjectThree)
-          return schema.required(ERROR_FORM_MESSAGES.REQUIRED)
-      })
-      .nullable(true),
-
-    dseSubjectGradeFour: yup
-      .string()
-      .when("dseSubjectFour", (dseSubjectFour, schema) => {
-        if (dseSubjectFour) return schema.required(ERROR_FORM_MESSAGES.REQUIRED)
-      })
-      .nullable(true),
-
-    dseSubjectGradeFive: yup
-      .string()
-      .when("dseSubjectFive", (dseSubjectFive, schema) => {
-        if (dseSubjectFive) return schema.required(ERROR_FORM_MESSAGES.REQUIRED)
-      })
-      .nullable(true),
-
-    dseSubjectGradeSix: yup
-      .string()
-      .when("dseSubjectSix", (dseSubjectSix, schema) => {
-        if (dseSubjectSix) return schema.required(ERROR_FORM_MESSAGES.REQUIRED)
-      })
-      .nullable(true)
+    dseSubjectOne: dseSubjectOneValidationSchema,
+    dseSubjectTwo: dseSubjectTwoValidationSchema,
+    dseSubjectThree: dseSubjectThreeValidationSchema,
+    dseSubjectFour: dseSubjectFourValidationSchema,
+    dseSubjectFive: dseSubjectFiveValidationSchema,
+    dseSubjectSix: dseSubjectSixValidationSchema,
+    dseSubjectGradeOne: dseSubjectGradeOneValidationSchema,
+    dseSubjectGradeTwo: dseSubjectGradeTwoValidationSchema,
+    dseSubjectGradeThree: dseSubjectGradeThreeValidationSchema,
+    dseSubjectGradeFour: dseSubjectGradeFourValidationSchema,
+    dseSubjectGradeFive: dseSubjectGradeFiveValidationSchema,
+    dseSubjectGradeSix: dseSubjectGradeSixValidationSchema
   })
 
   const [isInProgress, setIsInProgress] = useState(false)
@@ -334,9 +219,10 @@ const InterviewReviewPage: NextPage = () => {
         typeId: formik.values.contactMethod,
         value: formik.values.contactDetail
       },
-      applicationTypeId: 1,
+      applicationTypeId: 2,
       currentSchoolTypeId: parseInt(formik.values.currentSchool),
       currentYearOfStudyId: formik.values.yearofStudy,
+      currentProgramId: 6070,
       gpa: gpa,
       dseScores: dseScores,
       userId: 1,
@@ -359,26 +245,22 @@ const InterviewReviewPage: NextPage = () => {
           text: formik.values.longQFour
         },
         {
-          questionId: 6,
+          questionId: 5,
           text: formik.values.longQFive
         },
         {
-          questionId: 7,
+          questionId: 6,
           text: formik.values.longQSix
-        },
-        {
-          questionId: 8,
-          text: formik.values.longQSeven
         }
       ],
       ratingQuestionResponses: [
         {
           questionId: 1,
-          optionId: formik.values.experience
+          optionId: parseInt(formik.values.experience!)
         },
         {
-          questionId: 1,
-          optionId: formik.values.difficulty
+          questionId: 2,
+          optionId: parseInt(formik.values.difficulty!)
         }
       ]
     }

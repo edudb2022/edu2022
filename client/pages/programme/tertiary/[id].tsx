@@ -6,6 +6,7 @@ import GradJobOfferReviewCard from "../../../components/common/cards/review/grad
 import InternshipReviewCard from "../../../components/common/cards/review/internship"
 import InterviewReviewCard from "../../../components/common/cards/review/interview"
 import ProgrammeReviewCard from "../../../components/common/cards/review/programme"
+import SchoolsReviewCards from "../../../components/common/cards/review/school"
 import BaseRadar from "../../../components/common/charts/radar"
 import ReviewRankingCircularBar from "../../../components/common/circularBar/reviewRanking"
 import RatingTag from "../../../components/common/tags/rating"
@@ -90,8 +91,7 @@ const ProgrammePage: React.FunctionComponent = () => {
           <a>
             <ProgrammeReviewCard
               id={2}
-              schoolChineseName="12"
-              schoolEnglishName="123"
+              schoolChineseName="課程評價"
               schoolShortName="hku"
               totalReports={123}
             />
@@ -106,8 +106,7 @@ const ProgrammePage: React.FunctionComponent = () => {
               nonJupasBestFiveValue={3}
               nonJupasBestGpaValue={3.4}
               id={2}
-              schoolChineseName="123"
-              schoolEnglishName="123"
+              schoolChineseName="面試情報"
               schoolShortName="hku"
               totalReports={123}
             />
@@ -117,8 +116,7 @@ const ProgrammePage: React.FunctionComponent = () => {
           <a>
             <AdmissionOfferReviewCard
               id={2}
-              schoolChineseName="123"
-              schoolEnglishName="123"
+              schoolChineseName="入學情報"
               schoolShortName="hku"
               totalReports={123}
               jupasBestFiveValue={12}
@@ -133,8 +131,7 @@ const ProgrammePage: React.FunctionComponent = () => {
           <a>
             <InternshipReviewCard
               id={2}
-              schoolChineseName="123"
-              schoolEnglishName="123"
+              schoolChineseName="實習情報"
               schoolShortName="hku"
               totalReports={123}
               salary={332244}
@@ -148,8 +145,7 @@ const ProgrammePage: React.FunctionComponent = () => {
           <a>
             <GradJobOfferReviewCard
               id={2}
-              schoolChineseName="123"
-              schoolEnglishName="123"
+              schoolChineseName="工作情報"
               schoolShortName="hku"
               totalReports={123}
               salary={123123123}
