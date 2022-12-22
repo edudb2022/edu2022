@@ -11,6 +11,8 @@ export type IBaseInputTextProps = Partial<FilledTextFieldProps> &
   Partial<StandardTextFieldProps> &
   IInputContainerProps & {
     isRequired?: boolean
+    maxLength?: number | null
+    valueLength?: number | null
   }
 
 const BaseTextInput: React.FunctionComponent<IBaseInputTextProps> = ({
@@ -23,29 +25,12 @@ const BaseTextInput: React.FunctionComponent<IBaseInputTextProps> = ({
   isRequired,
   label,
   helpText,
+  maxLength,
+  valueLength,
   ...props
 }) => {
-  // const CssTextField = styled(TextField)({
-  //   "& label.Mui-focused": {
-  //     color: "#F2994A"
-  //   },
-  //   "& .MuiInput-underline:after": {
-  //     borderBottomColor: "#F2994A"
-  //   },
-  //   "& .MuiOutlinedInput-root": {
-  //     "& fieldset": {
-  //       borderColor: "#F2994A"
-  //     },
-  //     "&:hover fieldset": {
-  //       borderColor: "#F2994A"
-  //     },
-  //     "&.Mui-focused fieldset": {
-  //       borderColor: "#F2994A"
-  //     }
-  //   }
-  // })
-
   const inputLable = label ? `${label}${isRequired ? "*" : ""}` : undefined
+  const length = valueLength || 0
 
   return (
     <InputContainer
@@ -56,25 +41,32 @@ const BaseTextInput: React.FunctionComponent<IBaseInputTextProps> = ({
       isTouched={isTouched}
       helpText={helpText}
     >
-      <TextField
-        className={`${className}`}
-        label={inputLable}
-        sx={{
-          "& label.Mui-focused": {
-            color: "#F2994A"
-          },
-          "& .MuiOutlinedInput-root": {
-            "&:hover fieldset": {
-              borderColor: "#F2994A"
+      <div className="relative">
+        <TextField
+          className={`${className}`}
+          label={inputLable}
+          sx={{
+            "& label.Mui-focused": {
+              color: "#F2994A"
             },
-            "&.Mui-focused fieldset": {
-              borderColor: "#F2994A"
+            "& .MuiOutlinedInput-root": {
+              "&:hover fieldset": {
+                borderColor: "#F2994A"
+              },
+              "&.Mui-focused fieldset": {
+                borderColor: "#F2994A"
+              }
             }
-          }
-        }}
-        fullWidth
-        {...props}
-      />
+          }}
+          fullWidth
+          {...props}
+        />
+        {maxLength && (
+          <div className="absolute right-3 top-7 text-theme-three-500">
+            {`${length}/${maxLength}`}
+          </div>
+        )}
+      </div>
     </InputContainer>
   )
 }

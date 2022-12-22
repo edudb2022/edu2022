@@ -25,6 +25,7 @@ const contactDetailValidationSchema = yup
         .string()
         .email(ERROR_FORM_MESSAGES.NOT_A_VALID_EMAIL)
         .required(ERROR_FORM_MESSAGES.REQUIRED)
+        .max(30, ERROR_FORM_MESSAGES.TOO_LONG)
     else if (
       contactMethod === ContactMethodTypeId.SIGNAL ||
       contactMethod === ContactMethodTypeId.WHATSAPP
@@ -33,7 +34,8 @@ const contactDetailValidationSchema = yup
         .string()
         .matches(phoneRegExp, ERROR_FORM_MESSAGES.NOT_A_VALID_PHONE_NUMBER)
         .required(ERROR_FORM_MESSAGES.REQUIRED)
-    else return yup.string().nullable()
+        .max(30, ERROR_FORM_MESSAGES.TOO_LONG)
+    else return yup.string().max(30, ERROR_FORM_MESSAGES.TOO_LONG).nullable()
   })
 
 const SelectCommonValidationSchema = yup
