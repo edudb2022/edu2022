@@ -61,7 +61,7 @@ const ProgrammeReviewFormPage: React.FunctionComponent = () => {
     learningExperience: null,
     recommendation: null,
     contactMethod: null,
-    contactDetail: "",
+    contactDetail: null,
     isAnonymous: false,
     longQOne: "",
     longQTwo: "",

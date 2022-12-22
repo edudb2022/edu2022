@@ -60,7 +60,7 @@ const GradJobOfferFormPage: React.FunctionComponent = () => {
     jobType: undefined,
     jobSource: "",
     contactMethod: "",
-    contactDetail: "",
+    contactDetail: null,
     isAnonymous: false,
     longQOne: "",
     longQTwo: "",
