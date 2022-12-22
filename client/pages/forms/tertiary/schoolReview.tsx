@@ -65,6 +65,7 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
     senseOfBelonging: null,
     recommendation: null,
     contactMethod: null,
+    //keel empty string
     contactDetail: "",
     isAnonymous: false,
     longQOne: "",
@@ -112,7 +113,6 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
       schoolId: 60,
       title: formik.values.title,
       academicStatusId: formik.values.academicStatus,
-      // admissionDate: formik.values.admissionDate,
       admissionDate: "2018",
       contactMethod: {
         typeId: formik.values.contactMethod,
@@ -400,7 +400,9 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
                 onBlur={formik.handleBlur}
                 errorMessages={formik.errors.contactDetail}
                 isTouched={formik.touched.contactDetail}
-                disabled={formik.values.contactMethod === ""}
+                disabled={formik.values.contactMethod === null}
+                maxLength={30}
+                valueLength={formik.values?.contactDetail.length}
               />
             </div>
           </div>
