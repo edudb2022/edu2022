@@ -76,6 +76,7 @@ export interface ICreateInterviewReviewReq {
   applicationTypeId?: ApplicationTypeId | null
   currentSchoolTypeId?: CurrentSchoolTypeId | null
   currentYearOfStudyId?: YearOfStudyTypeId | null
+  currentProgramId?: number | null
   gpa: number | null
   dseScores: IDseScores[] | null
   interviewDate: string
