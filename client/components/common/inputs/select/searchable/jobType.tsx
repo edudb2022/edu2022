@@ -12,7 +12,7 @@ import shortid from "shortid"
 
 interface IJobTypeSearchableSelectProps extends IInputContainerProps {
   name?: string
-  value?: JobCategoryTypeId
+  value?: JobCategoryTypeId | null
   onChange?: any
   onBlur?: any
   isRequired?: boolean

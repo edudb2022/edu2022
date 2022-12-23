@@ -36,9 +36,14 @@ import {
 } from "../../../utils/validation/form/schema"
 import InputHeader from "../../../components/common/header/input"
 import { internshipOfferReviewLongQuestionsMapper } from "../../../mappers/longQuestion"
-import dayjs from "dayjs"
 import { CommonHelpers } from "../../../helpers"
 import JobTypeSearchableSelect from "../../../components/common/inputs/select/searchable/jobType"
+import useCreateInternshipReview from "../../../hooks/api/useCreateIntershipReview"
+import { useAppDispatch } from "../../../hooks/common/useAppDispatch"
+import { useRouter } from "next/router"
+import { ISystemActionTypes } from "../../../state/system/actions"
+import { ErrorMessageStatement } from "../../../constants/errorMessageStatement"
+import { ICreateInternshipReviewReq } from "../../../types/api"
 
 const InternshipOfferFormPage: React.FunctionComponent = () => {
   const initialValues = {
@@ -54,8 +59,8 @@ const InternshipOfferFormPage: React.FunctionComponent = () => {
     bonus: 0,
     stockOption: 0,
     totalSalary: 0,
-    difficulty: 0,
-    jobType: undefined,
+    difficulty: null,
+    jobType: null,
     jobSource: "",
     internType: "",
     contactMethod: "",
@@ -69,10 +74,6 @@ const InternshipOfferFormPage: React.FunctionComponent = () => {
     longQSix: "",
     longQSeven: "",
     longQEight: ""
-  }
-
-  const handleSubmit = () => {
-    console.log()
   }
 
   const intershipOfferFormSchema = yup.object().shape({
@@ -103,6 +104,93 @@ const InternshipOfferFormPage: React.FunctionComponent = () => {
     longQEight: longQuestionValidationSchema
   })
   const [isInProgress, setIsInProgress] = useState(false)
+  const { mutate } = useCreateInternshipReview()
+  const dispatch = useAppDispatch()
+  const router = useRouter()
+
+  const handleSubmit = () => {
+    console.log(13123123)
+    // const body: ICreateInternshipReviewReq = {
+    //   programId: 6070,
+    //   internshipTypeId: parseInt(formik.values.internType),
+    //   title: formik.values.title,
+    //   gpa: 2,
+    //   jobTypeId: formik.values.jobType!,
+    //   jobPostSourceId: parseInt(formik.values.jobSource),
+    //   companyName: formik.values.companyName,
+    //   jobTitle: formik.values.jobTitle,
+    //   offerReceiveDate: "2018",
+    //   baseSalary: formik.values.baseSalary,
+    //   bonus: formik.values.bonus,
+    //   stockOptions: formik.values.stockOption,
+    //   contactMethod: {
+    //     typeId: parseInt(formik.values.contactMethod!),
+    //     value: formik.values.contactDetail
+    //   },
+    //   userId: 1,
+    //   anonymous: formik.values.isAnonymous,
+    //   ratingQuestionResponses: [
+    //     {
+    //       questionId: 1,
+    //       optionId: parseInt(formik.values.difficulty!)
+    //     }
+    //   ],
+    //   longQuestionResponses: [
+    //     {
+    //       questionId: 1,
+    //       text: formik.values.longQOne
+    //     },
+    //     {
+    //       questionId: 2,
+    //       text: formik.values.longQTwo
+    //     },
+    //     {
+    //       questionId: 3,
+    //       text: formik.values.longQThree
+    //     },
+    //     {
+    //       questionId: 4,
+    //       text: formik.values.longQFour
+    //     },
+    //     {
+    //       questionId: 5,
+    //       text: formik.values.longQFive
+    //     },
+    //     {
+    //       questionId: 6,
+    //       text: formik.values.longQSix
+    //     },
+    //     {
+    //       questionId: 7,
+    //       text: formik.values.longQSeven
+    //     },
+    //     {
+    //       questionId: 8,
+    //       text: formik.values.longQEight
+    //     }
+    //   ]
+    // }
+    // setIsInProgress(true)
+    // mutate(body, {
+    //   onSuccess: (res) => {
+    //     const id = res.data.data.id
+    //     //console.log("res", res.data.data.id)
+    //     // router.push(`/reviewDetail/tertiary/school/${id}`)
+    //   },
+    //   onError: (err) => {
+    //     console.log("errrrrrr", err)
+
+    //     dispatch({
+    //       type: ISystemActionTypes.SYSTEM_ERROR,
+    //       payload: ErrorMessageStatement.FORM_GENERIC_ERROR
+    //     })
+    //   },
+    //   onSettled: () => {
+    //     setIsInProgress(false)
+    //   }
+    // })
+  }
+
   const formik = useFormik({
     initialValues: initialValues,
     onSubmit: handleSubmit,

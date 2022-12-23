@@ -5,6 +5,9 @@ import {
   CurrentSchoolTypeId,
   DSEGradeTypeId,
   DSESubjectId,
+  InternshipTypeId,
+  JobSourceTypeId,
+  JobTypeId,
   SchoolTypeId,
   TUserId,
   YearOfStudyTypeId
@@ -84,6 +87,26 @@ export interface ICreateInterviewReviewReq {
   ratingQuestionResponses: IRatingQuestionResponses[]
   longQuestionResponses: ILongQuestionResponses[]
   anonymous: boolean
+}
+
+export interface ICreateInternshipReviewReq {
+  programId: number
+  internshipTypeId: InternshipTypeId
+  title: string
+  gpa: number | null
+  jobTypeId: JobTypeId
+  jobPostSourceId: JobSourceTypeId | null
+  companyName: string
+  jobTitle: string
+  offerReceiveDate: string
+  baseSalary: number
+  bonus: number | null
+  stockOptions: number | null
+  contactMethod: IContactMethod
+  userId: number
+  anonymous: boolean
+  ratingQuestionResponses: IRatingQuestionResponses[]
+  longQuestionResponses: ILongQuestionResponses[]
 }
 
 export interface IVoteReq {
