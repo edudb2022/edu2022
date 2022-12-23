@@ -100,8 +100,8 @@ export interface ICreateInternshipReviewReq {
   jobTitle: string
   offerReceiveDate: string
   baseSalary: number
-  bonus: number | null
-  stockOptions: number | null
+  bonus: number
+  stockOptions: number
   contactMethod: IContactMethod
   userId: number
   anonymous: boolean
