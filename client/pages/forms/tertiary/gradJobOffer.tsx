@@ -26,12 +26,12 @@ import { ContactSelect } from "../../../components/common/inputs/select/contact"
 import AnonymousSwitch from "../../../components/common/switch/anonymous"
 import {
   contactDetailValidationSchema,
-  DateValidationSchema,
+  dateValidationSchema,
   longQuestionValidationSchema,
-  RatingValidationSchema,
+  ratingValidationSchema,
   SalaryValidationSchema,
-  SelectCommonValidationSchema,
-  TitleValidationSchema
+  selectCommonValidationSchema,
+  titleValidationSchema
 } from "../../../utils/validation/form/schema"
 import * as yup from "yup"
 import InputHeader from "../../../components/common/header/input"
@@ -78,23 +78,23 @@ const GradJobOfferFormPage: React.FunctionComponent = () => {
   }
 
   const gradJobOfferFormSchema = yup.object().shape({
-    schoolType: SelectCommonValidationSchema,
-    school: SelectCommonValidationSchema,
-    faculty: SelectCommonValidationSchema,
-    programme: SelectCommonValidationSchema,
-    title: TitleValidationSchema,
-    jobTitle: TitleValidationSchema,
-    offerReceivedDate: DateValidationSchema,
-    companyName: TitleValidationSchema,
-    jobType: SelectCommonValidationSchema,
+    schoolType: selectCommonValidationSchema,
+    school: selectCommonValidationSchema,
+    faculty: selectCommonValidationSchema,
+    programme: selectCommonValidationSchema,
+    title: titleValidationSchema,
+    jobTitle: titleValidationSchema,
+    offerReceivedDate: dateValidationSchema,
+    companyName: titleValidationSchema,
+    jobType: selectCommonValidationSchema,
     baseSalary: SalaryValidationSchema,
     bonus: SalaryValidationSchema,
-    hope: RatingValidationSchema,
-    difficulty: RatingValidationSchema,
+    hope: ratingValidationSchema,
+    difficulty: ratingValidationSchema,
     stockOption: SalaryValidationSchema,
     contactDetail: contactDetailValidationSchema,
-    // applicaiotnType: SelectCommonValidationSchema,
-    offerType: SelectCommonValidationSchema,
+    // applicaiotnType: selectCommonValidationSchema,
+    offerType: selectCommonValidationSchema,
     longQOne: longQuestionValidationSchema,
     longQTwo: longQuestionValidationSchema,
     longQThree: longQuestionValidationSchema,

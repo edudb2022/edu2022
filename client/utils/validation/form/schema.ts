@@ -8,14 +8,14 @@ import { ERROR_FORM_MESSAGES } from "../errorMessages/form"
 const phoneRegExp =
   /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
 
-const TitleValidationSchema = yup
+const titleValidationSchema = yup
   .string()
   .max(25, ERROR_FORM_MESSAGES.TOO_LONG)
   .required("必須填寫")
 
-const RatingValidationSchema = yup.string().required("必須選擇").nullable(true)
+const ratingValidationSchema = yup.string().required("必須選擇").nullable(true)
 
-const DateValidationSchema = yup.date().required("必須填寫").nullable(true)
+const dateValidationSchema = yup.date().required("必須填寫").nullable(true)
 
 const longQuestionValidationSchema = yup
   .string()
@@ -42,7 +42,7 @@ const contactDetailValidationSchema = yup
     else return yup.string().max(30, ERROR_FORM_MESSAGES.TOO_LONG).nullable()
   })
 
-const SelectCommonValidationSchema = yup
+const selectCommonValidationSchema = yup
   .string()
   .required("必須選擇")
   .nullable(true)
@@ -354,11 +354,11 @@ const SalaryValidationSchema = yup
   .min(0, ERROR_FORM_MESSAGES.SALARY_NEGATIVE)
 
 export {
-  TitleValidationSchema,
-  RatingValidationSchema,
-  SelectCommonValidationSchema,
+  titleValidationSchema,
+  ratingValidationSchema,
+  selectCommonValidationSchema,
   SalaryValidationSchema,
-  DateValidationSchema,
+  dateValidationSchema,
   longQuestionValidationSchema,
   contactDetailValidationSchema,
   currentSchoolValidationSchema,

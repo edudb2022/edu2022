@@ -27,12 +27,12 @@ import { intershipJobFindingDifficultyRating } from "../../../constants/rating"
 import * as yup from "yup"
 import {
   contactDetailValidationSchema,
-  DateValidationSchema,
+  dateValidationSchema,
   longQuestionValidationSchema,
-  RatingValidationSchema,
+  ratingValidationSchema,
   SalaryValidationSchema,
-  SelectCommonValidationSchema,
-  TitleValidationSchema
+  selectCommonValidationSchema,
+  titleValidationSchema
 } from "../../../utils/validation/form/schema"
 import InputHeader from "../../../components/common/header/input"
 import { internshipOfferReviewLongQuestionsMapper } from "../../../mappers/longQuestion"
@@ -76,22 +76,22 @@ const InternshipOfferFormPage: React.FunctionComponent = () => {
   }
 
   const intershipOfferFormSchema = yup.object().shape({
-    schoolType: SelectCommonValidationSchema,
-    school: SelectCommonValidationSchema,
-    faculty: SelectCommonValidationSchema,
-    programme: SelectCommonValidationSchema,
-    title: TitleValidationSchema,
-    jobTitle: TitleValidationSchema,
-    offerReceivedDate: DateValidationSchema,
-    companyName: TitleValidationSchema,
-    jobType: SelectCommonValidationSchema,
-    internType: SelectCommonValidationSchema,
+    schoolType: selectCommonValidationSchema,
+    school: selectCommonValidationSchema,
+    faculty: selectCommonValidationSchema,
+    programme: selectCommonValidationSchema,
+    title: titleValidationSchema,
+    jobTitle: titleValidationSchema,
+    offerReceivedDate: dateValidationSchema,
+    companyName: titleValidationSchema,
+    jobType: selectCommonValidationSchema,
+    internType: selectCommonValidationSchema,
     baseSalary: SalaryValidationSchema,
     bonus: SalaryValidationSchema,
     stockOption: SalaryValidationSchema,
-    difficulty: RatingValidationSchema,
-    // applicaiotnType: SelectCommonValidationSchema,
-    offerType: SelectCommonValidationSchema,
+    difficulty: ratingValidationSchema,
+    // applicaiotnType: selectCommonValidationSchema,
+    offerType: selectCommonValidationSchema,
     contactDetail: contactDetailValidationSchema,
     longQOne: longQuestionValidationSchema,
     longQTwo: longQuestionValidationSchema,

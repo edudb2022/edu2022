@@ -21,10 +21,10 @@ import {
 } from "../../../constants/rating"
 import * as yup from "yup"
 import {
-  SelectCommonValidationSchema,
-  TitleValidationSchema,
-  RatingValidationSchema,
-  DateValidationSchema,
+  selectCommonValidationSchema,
+  titleValidationSchema,
+  ratingValidationSchema,
+  dateValidationSchema,
   longQuestionValidationSchema,
   contactDetailValidationSchema
 } from "../../../utils/validation/form/schema"
@@ -75,17 +75,17 @@ const ProgrammeReviewFormPage: React.FunctionComponent = () => {
   }
 
   const programmeReviewFormSchema = yup.object().shape({
-    schoolType: SelectCommonValidationSchema,
-    school: SelectCommonValidationSchema,
-    faculty: SelectCommonValidationSchema,
-    programme: SelectCommonValidationSchema,
-    title: TitleValidationSchema,
-    workloadRating: RatingValidationSchema,
-    programmeStructure: RatingValidationSchema,
-    resources: RatingValidationSchema,
-    learningExperience: RatingValidationSchema,
-    recommendation: RatingValidationSchema,
-    admissionDate: DateValidationSchema,
+    schoolType: selectCommonValidationSchema,
+    school: selectCommonValidationSchema,
+    faculty: selectCommonValidationSchema,
+    programme: selectCommonValidationSchema,
+    title: titleValidationSchema,
+    workloadRating: ratingValidationSchema,
+    programmeStructure: ratingValidationSchema,
+    resources: ratingValidationSchema,
+    learningExperience: ratingValidationSchema,
+    recommendation: ratingValidationSchema,
+    admissionDate: dateValidationSchema,
     longQOne: longQuestionValidationSchema,
     longQTwo: longQuestionValidationSchema,
     longQThree: longQuestionValidationSchema,

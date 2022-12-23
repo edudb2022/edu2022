@@ -19,7 +19,7 @@ import {
   currentFacultyValidationSchema,
   currentProgrammeValidationSchema,
   currentSchoolValidationSchema,
-  DateValidationSchema,
+  dateValidationSchema,
   dseSubjectFiveValidationSchema,
   dseSubjectFourValidationSchema,
   dseSubjectGradeFiveValidationSchema,
@@ -34,7 +34,7 @@ import {
   dseSubjectTwoValidationSchema,
   gpaValidationSchema,
   longQuestionValidationSchema,
-  SelectCommonValidationSchema,
+  selectCommonValidationSchema,
   yearOfStudyValidationSchema
 } from "../../../utils/validation/form/schema"
 import { ERROR_FORM_MESSAGES } from "../../../utils/validation/errorMessages/form"
@@ -103,20 +103,20 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
   }
 
   const admissionOfferFormSchema = yup.object().shape({
-    schoolType: SelectCommonValidationSchema,
-    school: SelectCommonValidationSchema,
-    faculty: SelectCommonValidationSchema,
-    programme: SelectCommonValidationSchema,
-    currentSchoolType: SelectCommonValidationSchema,
+    schoolType: selectCommonValidationSchema,
+    school: selectCommonValidationSchema,
+    faculty: selectCommonValidationSchema,
+    programme: selectCommonValidationSchema,
+    currentSchoolType: selectCommonValidationSchema,
     currentSchool: currentSchoolValidationSchema,
     currentFaculty: currentFacultyValidationSchema,
     currentProgramme: currentProgrammeValidationSchema,
     yearofStudy: yearOfStudyValidationSchema,
-    offerDate: DateValidationSchema,
-    offerType: SelectCommonValidationSchema,
+    offerDate: dateValidationSchema,
+    offerType: selectCommonValidationSchema,
     contactDetail: contactDetailValidationSchema,
-    applicationType: SelectCommonValidationSchema,
-    admissionLevel: SelectCommonValidationSchema,
+    applicationType: selectCommonValidationSchema,
+    admissionLevel: selectCommonValidationSchema,
     longQOne: longQuestionValidationSchema,
     longQTwo: longQuestionValidationSchema,
     longQThree: longQuestionValidationSchema,

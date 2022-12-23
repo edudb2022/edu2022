@@ -25,11 +25,11 @@ import AnonymousSwitch from "../../../components/common/switch/anonymous"
 import * as yup from "yup"
 import {
   contactDetailValidationSchema,
-  DateValidationSchema,
+  dateValidationSchema,
   longQuestionValidationSchema,
-  RatingValidationSchema,
-  SelectCommonValidationSchema,
-  TitleValidationSchema
+  ratingValidationSchema,
+  selectCommonValidationSchema,
+  titleValidationSchema
 } from "../../../utils/validation/form/schema"
 
 import {
@@ -81,15 +81,15 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
   const phoneRegExp =
     /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
   const schoolReviewFormSchema = yup.object().shape({
-    school: SelectCommonValidationSchema,
-    title: TitleValidationSchema,
-    campusRating: RatingValidationSchema,
-    resourceRating: RatingValidationSchema,
-    policyRating: RatingValidationSchema,
-    canteenRating: RatingValidationSchema,
-    senseOfBelonging: RatingValidationSchema,
-    recommendation: RatingValidationSchema,
-    admissionDate: DateValidationSchema,
+    school: selectCommonValidationSchema,
+    title: titleValidationSchema,
+    campusRating: ratingValidationSchema,
+    resourceRating: ratingValidationSchema,
+    policyRating: ratingValidationSchema,
+    canteenRating: ratingValidationSchema,
+    senseOfBelonging: ratingValidationSchema,
+    recommendation: ratingValidationSchema,
+    admissionDate: dateValidationSchema,
     longQOne: longQuestionValidationSchema,
     longQTwo: longQuestionValidationSchema,
     longQThree: longQuestionValidationSchema,
