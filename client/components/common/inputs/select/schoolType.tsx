@@ -13,11 +13,6 @@ const SchoolTypeSelect: React.FunctionComponent<ISchoolTypeSelectPorps> = ({
   ...props
 }) => {
   const options = [
-    // {
-    //   value: "None",
-    //   title: "select school type"
-    // },
-
     {
       value: SCHOOL_TYPE.COLLEGE,
       title: SCHOOL_TYPE.COLLEGE

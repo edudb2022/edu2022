@@ -1,7 +1,6 @@
 import React from "react"
 import ErrorIcon from "../icons/error"
 import SingleButtonModal from "./singleButton"
-// import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 interface ISuccessModalProps {}
 
 const SuccessModal: React.FunctionComponent<ISuccessModalProps> = () => {

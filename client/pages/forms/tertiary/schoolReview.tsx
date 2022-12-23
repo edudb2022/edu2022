@@ -1,6 +1,5 @@
 import { useFormik } from "formik"
 import React, { useState } from "react"
-
 import RatingToggleButtonGroup from "../../../components/common/groups/toggleButton/rating"
 import BaseDatePicker from "../../../components/common/inputs/date"
 import TitleTextInput from "../../../components/common/inputs/text/title"
@@ -16,10 +15,8 @@ import {
 import SchoolTypeSelect from "../../../components/common/inputs/select/schoolType"
 import { ContactSelect } from "../../../components/common/inputs/select/contact"
 import LongQuestionsSection from "../../../components/common/inputs/sections/longQuestions"
-
 import BaseTextInput from "../../../components/common/inputs/text"
 import BaseSelect from "../../../components/common/inputs/select"
-
 import InputContainer from "../../../components/containers/input"
 import AnonymousSwitch from "../../../components/common/switch/anonymous"
 import * as yup from "yup"
@@ -48,8 +45,6 @@ import { ISystemActionTypes } from "../../../state/system/actions"
 import { ErrorMessageStatement } from "../../../constants/errorMessageStatement"
 import { useAppDispatch } from "../../../hooks/common/useAppDispatch"
 import { useRouter } from "next/router"
-import { ERROR_FORM_MESSAGES } from "../../../utils/validation/errorMessages/form"
-import { ContactMethodTypeId } from "../../../types/common"
 
 const SchoolReviewFormPage: React.FunctionComponent = () => {
   const initialValues = {

@@ -14,7 +14,6 @@ import {
 } from "../../../constants/rating"
 import FormPageLayout from "../../../components/layouts/form"
 import BaseSelect from "../../../components/common/inputs/select"
-
 import InputContainer from "../../../components/containers/input"
 import {
   honorTypeIdList,
@@ -36,10 +35,10 @@ import {
 import * as yup from "yup"
 import InputHeader from "../../../components/common/header/input"
 import { gradJobOfferOfferReviewLongQuestionsMapper } from "../../../mappers/longQuestion"
-import dayjs from "dayjs"
 import SEO from "../../../components/seo"
 import { CommonHelpers } from "../../../helpers"
 import JobTypeSearchableSelect from "../../../components/common/inputs/select/searchable/jobType"
+
 const GradJobOfferFormPage: React.FunctionComponent = () => {
   const initialValues = {
     schoolType: null,

@@ -1,24 +1,18 @@
-import { TextField } from "@mui/material"
-import axios from "axios"
 import { NextPage } from "next"
 import Link from "next/link"
 import { useRouter } from "next/router"
 import React, { useEffect, useState } from "react"
-
 import ProgrammeCard from "../../../components/common/cards/programme"
 import BaseRadar from "../../../components/common/charts/radar"
-
 import BaseSelect from "../../../components/common/inputs/select"
 import SearchTextInput from "../../../components/common/inputs/text/search"
 import RatingLargeTag from "../../../components/common/tags/ratingLarge"
-
 import ReviewHeaderContainer from "../../../components/containers/reviewHeader"
 import CardDisplayLayout from "../../../components/layouts/cardDisplay"
 import PageLayout from "../../../components/layouts/page"
 import SEO from "../../../components/seo"
 import { contactMethodTypesList } from "../../../constants/common"
 import trackingEvent from "../../../utils/services/GoogleAnalytics/tracking"
-// import ReactGA from "react-ga"
 
 const TertiarySchoolPage: NextPage = () => {
   const router = useRouter()
@@ -27,7 +21,6 @@ const TertiarySchoolPage: NextPage = () => {
   const [search, setSearch] = useState("")
 
   useEffect(() => {
-    // Call tracking event onMount
     trackingEvent.customEvent(`page_view_school`, undefined, `${id}`)
   }, [])
 

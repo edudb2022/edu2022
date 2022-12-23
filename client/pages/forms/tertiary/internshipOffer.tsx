@@ -23,7 +23,6 @@ import {
 } from "../../../constants/common"
 import SEO from "../../../components/seo"
 import { intershipJobFindingDifficultyRating } from "../../../constants/rating"
-
 import * as yup from "yup"
 import {
   contactDetailValidationSchema,
@@ -36,7 +35,6 @@ import {
 } from "../../../utils/validation/form/schema"
 import InputHeader from "../../../components/common/header/input"
 import { internshipOfferReviewLongQuestionsMapper } from "../../../mappers/longQuestion"
-import dayjs from "dayjs"
 import { CommonHelpers } from "../../../helpers"
 import JobTypeSearchableSelect from "../../../components/common/inputs/select/searchable/jobType"
 

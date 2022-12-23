@@ -12,10 +12,6 @@ const BaseSalaryNumberInput: React.FunctionComponent<
       id="baseSalary"
       label="基本薪金"
       name="baseSalary"
-      // inputProps={{
-      //   min: 0,
-      //   step: 1
-      // }}
       InputProps={{
         startAdornment: <InputAdornment position="start">HKD</InputAdornment>
       }}

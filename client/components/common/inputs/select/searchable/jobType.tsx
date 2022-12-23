@@ -38,16 +38,11 @@ const JobTypeSearchableSelect: React.FunctionComponent<
     position: "sticky",
     top: "-8px",
     padding: "4px 12px",
-    // color: "#BE4B00",
-    // backgroundColor: "#FFBF9F"
     backgroundColor: "rgb(203 213 225)"
   }))
 
   const GroupItems = styled("ul")({
     padding: 0
-    // color: "#F2994A"
-    // backgroundColor: "#FFF5EC"
-    // backgroundColor: " rgb(203 213 225)"
   })
 
   const options = jobTypeList

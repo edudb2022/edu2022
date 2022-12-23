@@ -83,7 +83,6 @@ const BaseSelect: React.FunctionComponent<IBaseSelectProps> = ({
           <InputLabel
             id={selectId}
             className={`${inputLabelClassName}`}
-            // style={{ color: "#F2994A" }}
             sx={{
               "&.Mui-focused": {
                 color: "#F2994A"

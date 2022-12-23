@@ -4,21 +4,13 @@ import BaseModal, { IBaseModalProps } from "."
 export interface ISingleButtonModalProps
   extends IBaseModalProps,
     ButtonHTMLAttributes<HTMLButtonElement> {
-  //   isOpen: boolean;
   buttonTitle: string
   buttonClassName?: string
 }
 
 const SingleButtonModal: React.FunctionComponent<
   PropsWithChildren<ISingleButtonModalProps>
-> = ({
-  //   isOpen,
-  buttonTitle,
-  buttonClassName,
-  children,
-  onClick,
-  ...props
-}) => {
+> = ({ buttonTitle, buttonClassName, children, onClick, ...props }) => {
   return (
     <BaseModal {...props}>
       <div>

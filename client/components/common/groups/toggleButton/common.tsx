@@ -7,14 +7,7 @@ interface ICommonToggleButtonGroupProps
   extends IBaseToggleButtonGroupProps,
     IInputContainerProps {
   id: string
-  //   options: any[]
 }
-
-// const options =[{
-//     value:'1', aria-label:'1' , title:'non -jupas'
-// },{
-//     value:'1', aria-label:'1' , title:'non -jupas'
-// }]
 
 const options = [
   { value: "1", "aria-label": "1", title: "non -jupas" },

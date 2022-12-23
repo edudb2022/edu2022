@@ -54,7 +54,6 @@ const DetailReviewHeaderContainer: React.FunctionComponent<
       try {
         const param = { id: postId, value: 1 }
         onVote(param)
-        // await apiService.voteSchoolReview({ id: postId, value: 1 })
         setCurrentScore(score + 1)
         setVoteType(VoteTypeId.LIKED)
       } catch (error) {
