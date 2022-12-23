@@ -12,7 +12,7 @@ import shortid from "shortid"
 
 interface IJobTypeSearchableSelectProps extends IInputContainerProps {
   name?: string
-  value?: JobCategoryTypeId
+  value?: JobCategoryTypeId | null
   onChange?: any
   onBlur?: any
   isRequired?: boolean
@@ -62,7 +62,7 @@ const JobTypeSearchableSelect: React.FunctionComponent<
       helpText={helpText}
     >
       <Autocomplete
-        id="grouped-demo"
+        id="jobtype"
         options={options}
         groupBy={(option: any) => option.JobCategoryId}
         getOptionLabel={(option) =>
@@ -73,7 +73,7 @@ const JobTypeSearchableSelect: React.FunctionComponent<
           <TextField
             {...params}
             id="jobType"
-            label="工作類型"
+            label={`工作類型${isRequired && "*"}`}
             sx={{
               "& label.Mui-focused": {
                 color: "#F2994A"
@@ -89,11 +89,8 @@ const JobTypeSearchableSelect: React.FunctionComponent<
             }}
             value={value}
             name={name}
-            onChange={(e) => {
-              console.log(232, e)
-            }}
+            onChange={onChange}
             onBlur={onBlur}
-            required={isRequired}
             {...props}
           />
         )}

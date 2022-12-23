@@ -1,5 +1,9 @@
 import * as yup from "yup"
-import { ContactMethodTypeId, CurrentSchoolTypeId } from "../../../types/common"
+import {
+  ApplicationTypeId,
+  ContactMethodTypeId,
+  CurrentSchoolTypeId
+} from "../../../types/common"
 import { ERROR_FORM_MESSAGES } from "../errorMessages/form"
 const phoneRegExp =
   /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
@@ -334,6 +338,17 @@ const dseSubjectGradeSixValidationSchema = yup
   })
   .nullable(true)
 
+//gpa
+
+const gpaValidationSchema = yup
+  .number()
+  .min(0, ERROR_FORM_MESSAGES.GPA_NEGATIVE)
+  .max(4.3, ERROR_FORM_MESSAGES.GPA_TOO_LARGE)
+  .when("applicationType", (applicationType, schema) => {
+    if (applicationType === ApplicationTypeId.JUPAS)
+      return schema.required(ERROR_FORM_MESSAGES.REQUIRED)
+  })
+  .nullable(true)
 const SalaryValidationSchema = yup
   .number()
   .min(0, ERROR_FORM_MESSAGES.SALARY_NEGATIVE)
@@ -361,5 +376,6 @@ export {
   dseSubjectGradeThreeValidationSchema,
   dseSubjectGradeFourValidationSchema,
   dseSubjectGradeFiveValidationSchema,
-  dseSubjectGradeSixValidationSchema
+  dseSubjectGradeSixValidationSchema,
+  gpaValidationSchema
 }

@@ -47,10 +47,10 @@ import { ICreateProgrammeReviewReq } from "../../../types/api"
 
 const ProgrammeReviewFormPage: React.FunctionComponent = () => {
   const initialValues = {
-    schoolType: "",
-    school: "",
-    faculty: "",
-    programme: "",
+    schoolType: null,
+    school: null,
+    faculty: null,
+    programme: null,
     title: "",
     admissionDate: CommonHelpers.formatData(new Date(), "YYYY-MM-DD"),
     academicStatus: null,

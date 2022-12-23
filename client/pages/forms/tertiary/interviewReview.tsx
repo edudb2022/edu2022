@@ -47,6 +47,7 @@ import {
   dseSubjectSixValidationSchema,
   dseSubjectThreeValidationSchema,
   dseSubjectTwoValidationSchema,
+  gpaValidationSchema,
   longQuestionValidationSchema,
   RatingValidationSchema,
   SelectCommonValidationSchema,
@@ -67,22 +68,22 @@ import { ErrorMessageStatement } from "../../../constants/errorMessageStatement"
 
 const InterviewReviewPage: NextPage = () => {
   const initialValues = {
-    schoolType: "",
-    school: "",
-    faculty: "",
-    programme: "",
+    schoolType: null,
+    school: null,
+    faculty: null,
+    programme: null,
     title: "",
     interviewDate: CommonHelpers.formatData(new Date(), undefined, true),
-    currentSchoolType: "",
-    currentSchool: "",
+    currentSchoolType: null,
+    currentSchool: null,
     currentFaculty: null,
     currentProgramme: null,
     yearofStudy: null,
     academicStatus: null,
     experience: null,
     difficulty: null,
-    dressCode: "",
-    gpa: "",
+    dressCode: null,
+    gpa: null,
     applicationType: null,
     dseSubjectOne: null,
     dseSubjectGradeOne: null,
@@ -130,16 +131,7 @@ const InterviewReviewPage: NextPage = () => {
     longQSix: longQuestionValidationSchema,
     longQSeven: longQuestionValidationSchema,
     contactDetail: contactDetailValidationSchema,
-    gpa: yup
-      .number()
-      .min(0, ERROR_FORM_MESSAGES.GPA_NEGATIVE)
-      .max(4.3, ERROR_FORM_MESSAGES.GPA_TOO_LARGE)
-      .when("applicationType", (applicationType, schema) => {
-        if (applicationType === ApplicationTypeId.JUPAS)
-          return schema.required(ERROR_FORM_MESSAGES.REQUIRED)
-      })
-      .nullable(true),
-
+    gpa: gpaValidationSchema,
     dseSubjectOne: dseSubjectOneValidationSchema,
     dseSubjectTwo: dseSubjectTwoValidationSchema,
     dseSubjectThree: dseSubjectThreeValidationSchema,
@@ -159,8 +151,9 @@ const InterviewReviewPage: NextPage = () => {
   const dispatch = useAppDispatch()
 
   const handleSubmit = () => {
-    const gpa = parseInt(parseInt(formik.values.gpa).toFixed(2)) || null
-
+    const gpa = formik.values.gpa
+      ? parseInt(parseInt(formik.values.gpa).toFixed(2))
+      : null
     const completedBestFive =
       formik.values.dseSubjectOne &&
       formik.values.dseSubjectTwo &&
@@ -212,7 +205,9 @@ const InterviewReviewPage: NextPage = () => {
 
     const body: ICreateInterviewReviewReq = {
       programId: 6070,
-      dressCodeId: parseInt(formik.values.dressCode),
+      dressCodeId: formik.values.dressCode
+        ? parseInt(formik.values.dressCode)
+        : null,
       title: formik.values.title,
       interviewDate: "2018",
       contactMethod: {
@@ -220,7 +215,9 @@ const InterviewReviewPage: NextPage = () => {
         value: formik.values.contactDetail
       },
       applicationTypeId: 2,
-      currentSchoolTypeId: parseInt(formik.values.currentSchool),
+      currentSchoolTypeId: formik.values.currentSchool
+        ? parseInt(formik.values.currentSchool)
+        : null,
       currentYearOfStudyId: formik.values.yearofStudy,
       currentProgramId: 6070,
       gpa: gpa,
@@ -290,20 +287,22 @@ const InterviewReviewPage: NextPage = () => {
 
   useEffect(() => {
     if (formik.values.applicationType === ApplicationTypeId.JUPAS) {
-      formik.values.gpa = ""
+      formik.values.gpa = null
     }
   }, [formik.values.applicationType])
 
   const isNotTertiarySchool =
-    parseInt(formik.values.currentSchoolType) ==
+    parseInt(formik.values.currentSchoolType || "") ==
       CurrentSchoolTypeId.SECONDARY_SCHOOL ||
-    parseInt(formik.values.currentSchoolType) == CurrentSchoolTypeId.RETAKER ||
-    parseInt(formik.values.currentSchoolType) == CurrentSchoolTypeId.OTHER ||
+    parseInt(formik.values.currentSchoolType || "") ==
+      CurrentSchoolTypeId.RETAKER ||
+    parseInt(formik.values.currentSchoolType || "") ==
+      CurrentSchoolTypeId.OTHER ||
     formik.values.currentSchoolType === null
 
   useEffect(() => {
     if (isNotTertiarySchool) {
-      formik.values.currentSchool = ""
+      formik.values.currentSchool = null
       formik.values.currentProgramme = null
       formik.values.currentFaculty = null
       formik.values.yearofStudy = null
