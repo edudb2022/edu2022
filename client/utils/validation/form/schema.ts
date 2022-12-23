@@ -340,15 +340,23 @@ const dseSubjectGradeSixValidationSchema = yup
 
 //gpa
 
-const gpaValidationSchema = yup
+const gpaCommonValidationSchema = yup
   .number()
   .min(0, ERROR_FORM_MESSAGES.GPA_NEGATIVE)
   .max(4.3, ERROR_FORM_MESSAGES.GPA_TOO_LARGE)
-  .when("applicationType", (applicationType, schema) => {
-    if (applicationType === ApplicationTypeId.JUPAS)
-      return schema.required(ERROR_FORM_MESSAGES.REQUIRED)
-  })
   .nullable(true)
+
+const gpaCheckApplicationTypeValidationSchema = gpaCommonValidationSchema.when(
+  "applicationType",
+  (applicationType, schema) => {
+    if (
+      applicationType == ApplicationTypeId.NON_JUPAS ||
+      applicationType == ApplicationTypeId.BACHELOR
+    )
+      return schema.required(ERROR_FORM_MESSAGES.REQUIRED)
+  }
+)
+
 const SalaryValidationSchema = yup
   .number()
   .min(0, ERROR_FORM_MESSAGES.SALARY_NEGATIVE)
@@ -377,5 +385,6 @@ export {
   dseSubjectGradeFourValidationSchema,
   dseSubjectGradeFiveValidationSchema,
   dseSubjectGradeSixValidationSchema,
-  gpaValidationSchema
+  gpaCommonValidationSchema,
+  gpaCheckApplicationTypeValidationSchema
 }
