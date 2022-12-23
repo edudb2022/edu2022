@@ -27,6 +27,7 @@ import * as yup from "yup"
 import {
   contactDetailValidationSchema,
   dateValidationSchema,
+  gpaCommonValidationSchema,
   longQuestionValidationSchema,
   ratingValidationSchema,
   SalaryValidationSchema,
@@ -43,6 +44,7 @@ import { useRouter } from "next/router"
 import { ISystemActionTypes } from "../../../state/system/actions"
 import { ErrorMessageStatement } from "../../../constants/errorMessageStatement"
 import { ICreateInternshipReviewReq } from "../../../types/api"
+import GpaNumberInput from "../../../components/common/inputs/number/gpa"
 
 const InternshipOfferFormPage: React.FunctionComponent = () => {
   const initialValues = {
@@ -61,6 +63,7 @@ const InternshipOfferFormPage: React.FunctionComponent = () => {
     difficulty: null,
     jobType: null,
     jobSource: null,
+    gpa: null,
     internType: null,
     contactMethod: null,
     contactDetail: "",
@@ -86,12 +89,11 @@ const InternshipOfferFormPage: React.FunctionComponent = () => {
     companyName: titleValidationSchema,
     jobType: selectCommonValidationSchema,
     internType: selectCommonValidationSchema,
+    gpa: gpaCommonValidationSchema,
     baseSalary: SalaryValidationSchema,
     bonus: SalaryValidationSchema,
     stockOption: SalaryValidationSchema,
     difficulty: ratingValidationSchema,
-    // applicaiotnType: selectCommonValidationSchema,
-    offerType: selectCommonValidationSchema,
     contactDetail: contactDetailValidationSchema,
     longQOne: longQuestionValidationSchema,
     longQTwo: longQuestionValidationSchema,
@@ -105,96 +107,101 @@ const InternshipOfferFormPage: React.FunctionComponent = () => {
   const [isInProgress, setIsInProgress] = useState(false)
   const { mutate } = useCreateInternshipReview()
   const dispatch = useAppDispatch()
-  const router = useRouter()
 
   const handleSubmit = () => {
-    console.log(13123123)
-    // const body: ICreateInternshipReviewReq = {
-    //   programId: 6070,
-    //   internshipTypeId: parseInt(formik.values.internType),
-    //   title: formik.values.title,
-    //   gpa: 2,
-    //   jobTypeId: formik.values.jobType!,
-    //   jobPostSourceId: parseInt(formik.values.jobSource),
-    //   companyName: formik.values.companyName,
-    //   jobTitle: formik.values.jobTitle,
-    //   offerReceiveDate: "2018",
-    //   baseSalary: formik.values.baseSalary,
-    //   bonus: formik.values.bonus,
-    //   stockOptions: formik.values.stockOption,
-    //   contactMethod: {
-    //     typeId: parseInt(formik.values.contactMethod!),
-    //     value: formik.values.contactDetail
-    //   },
-    //   userId: 1,
-    //   anonymous: formik.values.isAnonymous,
-    //   ratingQuestionResponses: [
-    //     {
-    //       questionId: 1,
-    //       optionId: parseInt(formik.values.difficulty!)
-    //     }
-    //   ],
-    //   longQuestionResponses: [
-    //     {
-    //       questionId: 1,
-    //       text: formik.values.longQOne
-    //     },
-    //     {
-    //       questionId: 2,
-    //       text: formik.values.longQTwo
-    //     },
-    //     {
-    //       questionId: 3,
-    //       text: formik.values.longQThree
-    //     },
-    //     {
-    //       questionId: 4,
-    //       text: formik.values.longQFour
-    //     },
-    //     {
-    //       questionId: 5,
-    //       text: formik.values.longQFive
-    //     },
-    //     {
-    //       questionId: 6,
-    //       text: formik.values.longQSix
-    //     },
-    //     {
-    //       questionId: 7,
-    //       text: formik.values.longQSeven
-    //     },
-    //     {
-    //       questionId: 8,
-    //       text: formik.values.longQEight
-    //     }
-    //   ]
-    // }
-    // setIsInProgress(true)
-    // mutate(body, {
-    //   onSuccess: (res) => {
-    //     const id = res.data.data.id
-    //     //console.log("res", res.data.data.id)
-    //     // router.push(`/reviewDetail/tertiary/school/${id}`)
-    //   },
-    //   onError: (err) => {
-    //     console.log("errrrrrr", err)
+    const body: ICreateInternshipReviewReq = {
+      programId: 6070,
+      internshipTypeId: parseInt(formik.values.internType!),
+      title: formik.values.title,
+      gpa: formik.values.gpa,
+      jobTypeId: formik.values.jobType!,
+      jobPostSourceId: formik.values.jobSource
+        ? parseInt(formik.values.jobSource)
+        : null,
+      companyName: formik.values.companyName,
+      jobTitle: formik.values.jobTitle,
+      offerReceiveDate: "2018",
+      baseSalary: parseInt(formik.values.baseSalary),
+      bonus: parseInt(formik.values.bonus),
+      stockOptions: parseInt(formik.values.stockOption),
+      contactMethod: {
+        typeId: parseInt(formik.values.contactMethod!),
+        value: formik.values.contactDetail
+      },
+      userId: 1,
+      anonymous: formik.values.isAnonymous,
+      ratingQuestionResponses: [
+        {
+          questionId: 1,
+          optionId: parseInt(formik.values.difficulty!)
+        }
+      ],
+      longQuestionResponses: [
+        {
+          questionId: 1,
+          text: formik.values.longQOne
+        },
+        {
+          questionId: 2,
+          text: formik.values.longQTwo
+        },
+        {
+          questionId: 3,
+          text: formik.values.longQThree
+        },
+        {
+          questionId: 4,
+          text: formik.values.longQFour
+        },
+        {
+          questionId: 5,
+          text: formik.values.longQFive
+        },
+        {
+          questionId: 6,
+          text: formik.values.longQSix
+        },
+        {
+          questionId: 7,
+          text: formik.values.longQSeven
+        },
+        {
+          questionId: 8,
+          text: formik.values.longQEight
+        }
+      ]
+    }
+    setIsInProgress(true)
+    mutate(body, {
+      onSuccess: (res) => {
+        const id = res.data.data.id
+        //console.log("res", res.data.data.id)
+        // router.push(`/reviewDetail/tertiary/school/${id}`)
+      },
+      onError: (err) => {
+        console.log("errrrrrr", err)
 
-    //     dispatch({
-    //       type: ISystemActionTypes.SYSTEM_ERROR,
-    //       payload: ErrorMessageStatement.FORM_GENERIC_ERROR
-    //     })
-    //   },
-    //   onSettled: () => {
-    //     setIsInProgress(false)
-    //   }
-    // })
+        dispatch({
+          type: ISystemActionTypes.SYSTEM_ERROR,
+          payload: ErrorMessageStatement.FORM_GENERIC_ERROR
+        })
+      },
+      onSettled: () => {
+        setIsInProgress(false)
+      }
+    })
   }
 
+  // const handleSubmit = () => {
+  //   console.log(232323, "sumit")
+  // }
   const formik = useFormik({
     initialValues: initialValues,
     onSubmit: handleSubmit,
     validationSchema: intershipOfferFormSchema
   })
+
+  const router = useRouter()
 
   useEffect(() => {
     formik.values.totalSalary =
@@ -365,7 +372,14 @@ const InternshipOfferFormPage: React.FunctionComponent = () => {
           </div>
           {/* </div> */}
         </InputContainer>
-        <div className="grid md:grid-cols-3 md:gap-x-9 mt-4 gap-y-2">
+        <div className="grid md:grid-cols-4 md:gap-x-9 mt-4 gap-y-2">
+          <GpaNumberInput
+            value={formik.values.gpa}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            errorMessages={formik.errors.gpa}
+            isTouched={formik.touched.gpa}
+          />
           <BaseSelect
             name="internType"
             items={internshipTypesList}
