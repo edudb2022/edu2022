@@ -1,6 +1,5 @@
 import { useFormik } from "formik"
 import React, { useState } from "react"
-
 import BaseDatePicker from "../../../components/common/inputs/date"
 import GpaNumberInput from "../../../components/common/inputs/number/gpa"
 import LongQuestionsSection from "../../../components/common/inputs/sections/longQuestions"
@@ -14,14 +13,28 @@ import AnonymousSwitch from "../../../components/common/switch/anonymous"
 import InputContainer from "../../../components/containers/input"
 import FormPageLayout from "../../../components/layouts/form"
 import * as yup from "yup"
+
 import {
   contactDetailValidationSchema,
   currentFacultyValidationSchema,
   currentProgrammeValidationSchema,
   currentSchoolValidationSchema,
-  DateValidationSchema,
+  dateValidationSchema,
+  dseSubjectFiveValidationSchema,
+  dseSubjectFourValidationSchema,
+  dseSubjectGradeFiveValidationSchema,
+  dseSubjectGradeFourValidationSchema,
+  dseSubjectGradeOneValidationSchema,
+  dseSubjectGradeSixValidationSchema,
+  dseSubjectGradeThreeValidationSchema,
+  dseSubjectGradeTwoValidationSchema,
+  dseSubjectOneValidationSchema,
+  dseSubjectSixValidationSchema,
+  dseSubjectThreeValidationSchema,
+  dseSubjectTwoValidationSchema,
+  gpaValidationSchema,
   longQuestionValidationSchema,
-  SelectCommonValidationSchema,
+  selectCommonValidationSchema,
   yearOfStudyValidationSchema
 } from "../../../utils/validation/form/schema"
 import { ERROR_FORM_MESSAGES } from "../../../utils/validation/errorMessages/form"
@@ -48,10 +61,10 @@ import { admissionOfferReviewLongQuestionsMapper } from "../../../mappers/longQu
 const AdmissionOfferFormPage: React.FunctionComponent = () => {
   const dispatch = useAppDispatch()
   const initialValues = {
-    schoolType: "",
-    school: "",
-    faculty: "",
-    programme: "",
+    schoolType: null,
+    school: null,
+    faculty: null,
+    programme: null,
     title: "",
     offerDate: CommonHelpers.formatData(new Date(), undefined, true),
     currentSchoolType: null,
@@ -59,11 +72,11 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
     currentFaculty: null,
     currentProgramme: null,
     yearofStudy: null,
-    offerType: "",
-    jupasBanding: "",
+    offerType: null,
+    jupasBanding: null,
     applicationType: undefined,
-    admissionLevel: "",
-    gpa: "",
+    admissionLevel: null,
+    gpa: null,
     dseSubjectOne: null,
     dseSubjectGradeOne: null,
     dseSubjectTwo: null,
@@ -90,113 +103,36 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
   }
 
   const admissionOfferFormSchema = yup.object().shape({
-    schoolType: SelectCommonValidationSchema,
-    school: SelectCommonValidationSchema,
-    faculty: SelectCommonValidationSchema,
-    programme: SelectCommonValidationSchema,
-    currentSchoolType: SelectCommonValidationSchema,
+    schoolType: selectCommonValidationSchema,
+    school: selectCommonValidationSchema,
+    faculty: selectCommonValidationSchema,
+    programme: selectCommonValidationSchema,
+    currentSchoolType: selectCommonValidationSchema,
     currentSchool: currentSchoolValidationSchema,
     currentFaculty: currentFacultyValidationSchema,
     currentProgramme: currentProgrammeValidationSchema,
     yearofStudy: yearOfStudyValidationSchema,
-    offerDate: DateValidationSchema,
-    offerType: SelectCommonValidationSchema,
+    offerDate: dateValidationSchema,
+    offerType: selectCommonValidationSchema,
     contactDetail: contactDetailValidationSchema,
-    applicationType: SelectCommonValidationSchema,
-    admissionLevel: SelectCommonValidationSchema,
+    applicationType: selectCommonValidationSchema,
+    admissionLevel: selectCommonValidationSchema,
     longQOne: longQuestionValidationSchema,
     longQTwo: longQuestionValidationSchema,
     longQThree: longQuestionValidationSchema,
-    //TODO : dse validation
-    gpa: yup
-      .number()
-      .min(0, ERROR_FORM_MESSAGES.GPA_NEGATIVE)
-      .max(4.3, ERROR_FORM_MESSAGES.GPA_TOO_LARGE)
-      .when("applicationType", (applicationType, schema) => {
-        if (
-          applicationType == ApplicationTypeId.NON_JUPAS ||
-          applicationType == ApplicationTypeId.BACHELOR
-        )
-          return schema.required(ERROR_FORM_MESSAGES.REQUIRED)
-      })
-      .nullable(true),
-    dseSubjectOne: yup
-      .string()
-      .when("applicationType", (applicationType, schema) => {
-        if (applicationType == ApplicationTypeId.JUPAS)
-          return schema.required(ERROR_FORM_MESSAGES.REQUIRED)
-      })
-      .nullable(true),
-    dseSubjectTwo: yup
-      .string()
-      .when("applicationType", (applicationType, schema) => {
-        if (applicationType == ApplicationTypeId.JUPAS)
-          return schema.required(ERROR_FORM_MESSAGES.REQUIRED)
-      })
-      .nullable(true),
-    dseSubjectThree: yup
-      .string()
-      .when("applicationType", (applicationType, schema) => {
-        if (applicationType == ApplicationTypeId.JUPAS)
-          return schema.required(ERROR_FORM_MESSAGES.REQUIRED)
-      })
-      .nullable(true),
-    dseSubjectFour: yup
-      .string()
-      .when("applicationType", (applicationType, schema) => {
-        if (applicationType == ApplicationTypeId.JUPAS)
-          return schema.required(ERROR_FORM_MESSAGES.REQUIRED)
-      })
-      .nullable(true),
-    dseSubjectFive: yup
-      .string()
-      .when("applicationType", (applicationType, schema) => {
-        if (applicationType == ApplicationTypeId.JUPAS)
-          return schema.required(ERROR_FORM_MESSAGES.REQUIRED)
-      })
-      .nullable(true),
-    dseSubjectGradeOne: yup
-      .string()
-      .when("dseSubjectOne", (dseSubjectOne, schema) => {
-        if (dseSubjectOne) return schema.required(ERROR_FORM_MESSAGES.REQUIRED)
-      })
-      .nullable(true),
-
-    dseSubjectGradeTwo: yup
-      .string()
-      .when("dseSubjectTwo", (dseSubjectTwo, schema) => {
-        if (dseSubjectTwo) return schema.required(ERROR_FORM_MESSAGES.REQUIRED)
-      })
-      .nullable(true),
-
-    dseSubjectGradeThree: yup
-      .string()
-      .when("dseSubjectThree", (dseSubjectThree, schema) => {
-        if (dseSubjectThree)
-          return schema.required(ERROR_FORM_MESSAGES.REQUIRED)
-      })
-      .nullable(true),
-
-    dseSubjectGradeFour: yup
-      .string()
-      .when("dseSubjectFour", (dseSubjectFour, schema) => {
-        if (dseSubjectFour) return schema.required(ERROR_FORM_MESSAGES.REQUIRED)
-      })
-      .nullable(true),
-
-    dseSubjectGradeFive: yup
-      .string()
-      .when("dseSubjectFive", (dseSubjectFive, schema) => {
-        if (dseSubjectFive) return schema.required(ERROR_FORM_MESSAGES.REQUIRED)
-      })
-      .nullable(true),
-
-    dseSubjectGradeSix: yup
-      .string()
-      .when("dseSubjectSix", (dseSubjectSix, schema) => {
-        if (dseSubjectSix) return schema.required(ERROR_FORM_MESSAGES.REQUIRED)
-      })
-      .nullable(true)
+    gpa: gpaValidationSchema,
+    dseSubjectOne: dseSubjectOneValidationSchema,
+    dseSubjectTwo: dseSubjectTwoValidationSchema,
+    dseSubjectThree: dseSubjectThreeValidationSchema,
+    dseSubjectFour: dseSubjectFourValidationSchema,
+    dseSubjectFive: dseSubjectFiveValidationSchema,
+    dseSubjectSix: dseSubjectSixValidationSchema,
+    dseSubjectGradeOne: dseSubjectGradeOneValidationSchema,
+    dseSubjectGradeTwo: dseSubjectGradeTwoValidationSchema,
+    dseSubjectGradeThree: dseSubjectGradeThreeValidationSchema,
+    dseSubjectGradeFour: dseSubjectGradeFourValidationSchema,
+    dseSubjectGradeFive: dseSubjectGradeFiveValidationSchema,
+    dseSubjectGradeSix: dseSubjectGradeSixValidationSchema
   })
   const formik = useFormik({
     initialValues: initialValues,
@@ -242,11 +178,11 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
       formik.values.applicationType === ApplicationTypeId.BACHELOR ||
       ApplicationTypeId.NON_JUPAS
     ) {
-      formik.values.jupasBanding = ""
+      formik.values.jupasBanding = null
     }
 
     if (formik.values.applicationType === ApplicationTypeId.JUPAS) {
-      formik.values.gpa = ""
+      formik.values.gpa = null
     }
   }, [formik.values.applicationType])
 

@@ -1,6 +1,5 @@
 import { useFormik } from "formik"
 import React, { useState } from "react"
-
 import RatingToggleButtonGroup from "../../../components/common/groups/toggleButton/rating"
 import BaseDatePicker from "../../../components/common/inputs/date"
 import TitleTextInput from "../../../components/common/inputs/text/title"
@@ -16,20 +15,18 @@ import {
 import SchoolTypeSelect from "../../../components/common/inputs/select/schoolType"
 import { ContactSelect } from "../../../components/common/inputs/select/contact"
 import LongQuestionsSection from "../../../components/common/inputs/sections/longQuestions"
-
 import BaseTextInput from "../../../components/common/inputs/text"
 import BaseSelect from "../../../components/common/inputs/select"
-
 import InputContainer from "../../../components/containers/input"
 import AnonymousSwitch from "../../../components/common/switch/anonymous"
 import * as yup from "yup"
 import {
   contactDetailValidationSchema,
-  DateValidationSchema,
+  dateValidationSchema,
   longQuestionValidationSchema,
-  RatingValidationSchema,
-  SelectCommonValidationSchema,
-  TitleValidationSchema
+  ratingValidationSchema,
+  selectCommonValidationSchema,
+  titleValidationSchema
 } from "../../../utils/validation/form/schema"
 
 import {
@@ -48,8 +45,6 @@ import { ISystemActionTypes } from "../../../state/system/actions"
 import { ErrorMessageStatement } from "../../../constants/errorMessageStatement"
 import { useAppDispatch } from "../../../hooks/common/useAppDispatch"
 import { useRouter } from "next/router"
-import { ERROR_FORM_MESSAGES } from "../../../utils/validation/errorMessages/form"
-import { ContactMethodTypeId } from "../../../types/common"
 
 const SchoolReviewFormPage: React.FunctionComponent = () => {
   const initialValues = {
@@ -81,15 +76,15 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
   const phoneRegExp =
     /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
   const schoolReviewFormSchema = yup.object().shape({
-    school: SelectCommonValidationSchema,
-    title: TitleValidationSchema,
-    campusRating: RatingValidationSchema,
-    resourceRating: RatingValidationSchema,
-    policyRating: RatingValidationSchema,
-    canteenRating: RatingValidationSchema,
-    senseOfBelonging: RatingValidationSchema,
-    recommendation: RatingValidationSchema,
-    admissionDate: DateValidationSchema,
+    school: selectCommonValidationSchema,
+    title: titleValidationSchema,
+    campusRating: ratingValidationSchema,
+    resourceRating: ratingValidationSchema,
+    policyRating: ratingValidationSchema,
+    canteenRating: ratingValidationSchema,
+    senseOfBelonging: ratingValidationSchema,
+    recommendation: ratingValidationSchema,
+    admissionDate: dateValidationSchema,
     longQOne: longQuestionValidationSchema,
     longQTwo: longQuestionValidationSchema,
     longQThree: longQuestionValidationSchema,

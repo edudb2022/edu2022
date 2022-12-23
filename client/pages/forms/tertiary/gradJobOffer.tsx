@@ -14,7 +14,6 @@ import {
 } from "../../../constants/rating"
 import FormPageLayout from "../../../components/layouts/form"
 import BaseSelect from "../../../components/common/inputs/select"
-
 import InputContainer from "../../../components/containers/input"
 import {
   honorTypeIdList,
@@ -26,41 +25,41 @@ import { ContactSelect } from "../../../components/common/inputs/select/contact"
 import AnonymousSwitch from "../../../components/common/switch/anonymous"
 import {
   contactDetailValidationSchema,
-  DateValidationSchema,
+  dateValidationSchema,
   longQuestionValidationSchema,
-  RatingValidationSchema,
+  ratingValidationSchema,
   SalaryValidationSchema,
-  SelectCommonValidationSchema,
-  TitleValidationSchema
+  selectCommonValidationSchema,
+  titleValidationSchema
 } from "../../../utils/validation/form/schema"
 import * as yup from "yup"
 import InputHeader from "../../../components/common/header/input"
 import { gradJobOfferOfferReviewLongQuestionsMapper } from "../../../mappers/longQuestion"
-import dayjs from "dayjs"
 import SEO from "../../../components/seo"
 import { CommonHelpers } from "../../../helpers"
 import JobTypeSearchableSelect from "../../../components/common/inputs/select/searchable/jobType"
+
 const GradJobOfferFormPage: React.FunctionComponent = () => {
   const initialValues = {
-    schoolType: "",
-    school: "",
-    faculty: "",
-    programme: "",
+    schoolType: null,
+    school: null,
+    faculty: null,
+    programme: null,
     offerReceivedDate: CommonHelpers.formatData(new Date(), undefined, true),
     title: "",
-    jobTitle: "",
-    companyName: "",
-    baseSalary: 0,
-    bonus: 0,
-    stockOption: 0,
+    jobTitle: null,
+    companyName: null,
+    baseSalary: "0",
+    bonus: "0",
+    stockOption: "0",
     totalSalary: 0,
-    difficulty: 0,
-    hope: 0,
-    honour: "",
+    difficulty: null,
+    hope: null,
+    honour: null,
     jobType: undefined,
-    jobSource: "",
-    contactMethod: "",
-    contactDetail: null,
+    jobSource: null,
+    contactMethod: null,
+    contactDetail: "",
     isAnonymous: false,
     longQOne: "",
     longQTwo: "",
@@ -78,23 +77,23 @@ const GradJobOfferFormPage: React.FunctionComponent = () => {
   }
 
   const gradJobOfferFormSchema = yup.object().shape({
-    schoolType: SelectCommonValidationSchema,
-    school: SelectCommonValidationSchema,
-    faculty: SelectCommonValidationSchema,
-    programme: SelectCommonValidationSchema,
-    title: TitleValidationSchema,
-    jobTitle: TitleValidationSchema,
-    offerReceivedDate: DateValidationSchema,
-    companyName: TitleValidationSchema,
-    jobType: SelectCommonValidationSchema,
+    schoolType: selectCommonValidationSchema,
+    school: selectCommonValidationSchema,
+    faculty: selectCommonValidationSchema,
+    programme: selectCommonValidationSchema,
+    title: titleValidationSchema,
+    jobTitle: titleValidationSchema,
+    offerReceivedDate: dateValidationSchema,
+    companyName: titleValidationSchema,
+    jobType: selectCommonValidationSchema,
     baseSalary: SalaryValidationSchema,
     bonus: SalaryValidationSchema,
-    hope: RatingValidationSchema,
-    difficulty: RatingValidationSchema,
+    hope: ratingValidationSchema,
+    difficulty: ratingValidationSchema,
     stockOption: SalaryValidationSchema,
     contactDetail: contactDetailValidationSchema,
-    // applicaiotnType: SelectCommonValidationSchema,
-    offerType: SelectCommonValidationSchema,
+    // applicaiotnType: selectCommonValidationSchema,
+    offerType: selectCommonValidationSchema,
     longQOne: longQuestionValidationSchema,
     longQTwo: longQuestionValidationSchema,
     longQThree: longQuestionValidationSchema,
@@ -114,9 +113,10 @@ const GradJobOfferFormPage: React.FunctionComponent = () => {
 
   useEffect(() => {
     formik.values.totalSalary =
-      formik.values.baseSalary + formik.values.stockOption + formik.values.bonus
+      parseInt(formik?.values?.baseSalary || "0") +
+      parseInt(formik?.values?.stockOption || "0") +
+      parseInt(formik.values.bonus || "0")
   }, [formik.values.baseSalary, formik.values.stockOption, formik.values.bonus])
-
   const handleDateChange = (newValue: Date) => {
     formik.setFieldValue(
       "offerReceivedDate",
@@ -250,7 +250,7 @@ const GradJobOfferFormPage: React.FunctionComponent = () => {
 
         <InputContainer
           header="總年薪(HKD)"
-          subHeader={`${formik.values.totalSalary} HKD`}
+          subHeader={`HKD ${formik.values.totalSalary}`}
         >
           <div className="grid md:grid-cols-3 md:gap-x-9 mt-4 gap-y-2">
             <BaseSalaryNumberInput

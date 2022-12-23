@@ -1,12 +1,5 @@
 import { number } from "yup"
 
-export type longQuestionType = {
-  //   [x as number]: {
-  id: number
-  question: string
-  //   }
-}
-
 export const schoolReviewLongQuestionsMapper = {
   [1 as number]: { id: 1, question: "對校園環境同設施既評價有冇補充?" },
   [2 as number]: { id: 2, question: "對資源及支援嘅評價有冇補充？" },

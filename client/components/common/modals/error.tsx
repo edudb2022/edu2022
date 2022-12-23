@@ -4,20 +4,11 @@ import SingleButtonModal, { ISingleButtonModalProps } from "./singleButton"
 import { useAppSelector } from "../../../hooks/common/useAppSelector"
 import { useAppDispatch } from "../../../hooks/common/useAppDispatch"
 import { ISystemActionTypes } from "../../../state/system/actions"
-// import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 interface ISuccessModalProps {}
 
 const ErrorModal: React.FunctionComponent<ISuccessModalProps> = () => {
   const state = useAppSelector((state) => state.system.modals.error)
   const dispatch = useAppDispatch()
-
-  // const dispatch = useAppDispatch()
-  //   const handleLeftClick = () => {
-  //     dispatch({
-  //       type: ISystemActionTypes.SYSTEM_IS_AUTH_MODAL_OPEN,
-  //       payload: false
-  //     })
-  //   }
 
   const handleClick = () => {
     dispatch({

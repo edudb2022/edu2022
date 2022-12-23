@@ -1,7 +1,6 @@
 import React from "react"
 import ErrorIcon from "../components/common/icons/error"
 import PageLayout from "../components/layouts/page"
-import { TbError404 } from "react-icons/tb"
 import NotFound404Icon from "../components/common/icons/notFound"
 
 const ErrorPage: React.FunctionComponent = () => {

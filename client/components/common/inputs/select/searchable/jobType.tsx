@@ -89,11 +89,8 @@ const JobTypeSearchableSelect: React.FunctionComponent<
             }}
             value={value}
             name={name}
-            onChange={(e) => {
-              console.log(232, e)
-            }}
+            onChange={onChange}
             onBlur={onBlur}
-            required={isRequired}
             {...props}
           />
         )}

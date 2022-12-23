@@ -23,16 +23,15 @@ import {
 } from "../../../constants/common"
 import SEO from "../../../components/seo"
 import { intershipJobFindingDifficultyRating } from "../../../constants/rating"
-
 import * as yup from "yup"
 import {
   contactDetailValidationSchema,
-  DateValidationSchema,
+  dateValidationSchema,
   longQuestionValidationSchema,
-  RatingValidationSchema,
+  ratingValidationSchema,
   SalaryValidationSchema,
-  SelectCommonValidationSchema,
-  TitleValidationSchema
+  selectCommonValidationSchema,
+  titleValidationSchema
 } from "../../../utils/validation/form/schema"
 import InputHeader from "../../../components/common/header/input"
 import { internshipOfferReviewLongQuestionsMapper } from "../../../mappers/longQuestion"
@@ -47,24 +46,24 @@ import { ICreateInternshipReviewReq } from "../../../types/api"
 
 const InternshipOfferFormPage: React.FunctionComponent = () => {
   const initialValues = {
-    schoolType: "",
-    school: "",
-    faculty: "",
-    programme: "",
+    schoolType: null,
+    school: null,
+    faculty: null,
+    programme: null,
     offerReceivedDate: CommonHelpers.formatData(new Date(), undefined, true),
     title: "",
     jobTitle: "",
     companyName: "",
-    baseSalary: 0,
-    bonus: 0,
-    stockOption: 0,
+    baseSalary: "0",
+    bonus: "0",
+    stockOption: "0",
     totalSalary: 0,
     difficulty: null,
     jobType: null,
-    jobSource: "",
-    internType: "",
-    contactMethod: "",
-    contactDetail: null,
+    jobSource: null,
+    internType: null,
+    contactMethod: null,
+    contactDetail: "",
     isAnonymous: false,
     longQOne: "",
     longQTwo: "",
@@ -77,22 +76,22 @@ const InternshipOfferFormPage: React.FunctionComponent = () => {
   }
 
   const intershipOfferFormSchema = yup.object().shape({
-    schoolType: SelectCommonValidationSchema,
-    school: SelectCommonValidationSchema,
-    faculty: SelectCommonValidationSchema,
-    programme: SelectCommonValidationSchema,
-    title: TitleValidationSchema,
-    jobTitle: TitleValidationSchema,
-    offerReceivedDate: DateValidationSchema,
-    companyName: TitleValidationSchema,
-    jobType: SelectCommonValidationSchema,
-    internType: SelectCommonValidationSchema,
+    schoolType: selectCommonValidationSchema,
+    school: selectCommonValidationSchema,
+    faculty: selectCommonValidationSchema,
+    programme: selectCommonValidationSchema,
+    title: titleValidationSchema,
+    jobTitle: titleValidationSchema,
+    offerReceivedDate: dateValidationSchema,
+    companyName: titleValidationSchema,
+    jobType: selectCommonValidationSchema,
+    internType: selectCommonValidationSchema,
     baseSalary: SalaryValidationSchema,
     bonus: SalaryValidationSchema,
     stockOption: SalaryValidationSchema,
-    difficulty: RatingValidationSchema,
-    // applicaiotnType: SelectCommonValidationSchema,
-    offerType: SelectCommonValidationSchema,
+    difficulty: ratingValidationSchema,
+    // applicaiotnType: selectCommonValidationSchema,
+    offerType: selectCommonValidationSchema,
     contactDetail: contactDetailValidationSchema,
     longQOne: longQuestionValidationSchema,
     longQTwo: longQuestionValidationSchema,
@@ -199,9 +198,9 @@ const InternshipOfferFormPage: React.FunctionComponent = () => {
 
   useEffect(() => {
     formik.values.totalSalary =
-      formik?.values?.baseSalary +
-      formik?.values?.stockOption +
-      formik.values.bonus
+      parseInt(formik?.values?.baseSalary || "0") +
+      parseInt(formik?.values?.stockOption || "0") +
+      parseInt(formik.values.bonus || "0")
   }, [formik.values.baseSalary, formik.values.stockOption, formik.values.bonus])
 
   const handleDateChange = (newValue: Date) => {
@@ -215,11 +214,9 @@ const InternshipOfferFormPage: React.FunctionComponent = () => {
     if (newValue) {
       formik.setFieldValue("jobType", newValue.id)
     } else {
-      formik.setFieldValue("jobType", undefined)
+      formik.setFieldValue("jobType", null)
     }
   }
-
-  // console.log(2323, formik.values.jobType)
 
   return (
     <>
@@ -339,7 +336,7 @@ const InternshipOfferFormPage: React.FunctionComponent = () => {
         </div>
         <InputContainer
           header="總年薪(HKD)"
-          subHeader={`${formik.values.totalSalary} HKD`}
+          subHeader={`HKD ${formik.values.totalSalary}`}
         >
           {/* <div className="flex flex-col md:flex-row w-full gap-x-3 gap-y-6 justify-end"> */}
           <div className="grid md:grid-cols-3 md:gap-x-9 mt-4 gap-y-2">

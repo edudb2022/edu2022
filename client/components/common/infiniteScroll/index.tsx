@@ -7,7 +7,6 @@ interface IBaseInfiniteScrollProps {
   fetchMoreData: () => void
   hasMore: boolean
   isLoading?: boolean
-  //   refresh: () => void
 }
 
 const BaseInfiniteScroll: React.FunctionComponent<

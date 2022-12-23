@@ -74,7 +74,7 @@ export interface ICreateProgrammeReviewReq {
 export interface ICreateInterviewReviewReq {
   userId: TUserId
   programId: number
-  dressCodeId: number
+  dressCodeId: number | null
   title: string
   applicationTypeId?: ApplicationTypeId | null
   currentSchoolTypeId?: CurrentSchoolTypeId | null

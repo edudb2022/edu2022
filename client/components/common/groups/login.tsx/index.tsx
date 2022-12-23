@@ -31,7 +31,7 @@ const LoginGroup: React.FunctionComponent<ILoginGroupProps> = ({
     dispatch({ type: IUserActionTypes.USER_SIGN_OUT })
   }
   return (
-    <div className="flex flex-row justify-center items-center  gap-x-1 rounded-full p-3 bg-theme-one-100">
+    <div className="flex flex-row justify-center items-center  gap-x-1 rounded-full p-3">
       <UserIcon />
       <h6>{username}</h6>
       <button
