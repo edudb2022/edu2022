@@ -211,7 +211,7 @@ const ProgrammeReviewFormPage: React.FunctionComponent = () => {
       CommonHelpers.formatData(newValue, undefined, true)
     )
   }
-  console.log(2323, formik.values.schoolType)
+
   return (
     <>
       <SEO

@@ -13,7 +13,6 @@ const signInAndUpConFig = {
         id: "pa1ssword",
         label: "...",
         validate: async (value: string) => {
-          console.log(123, value)
           // Your own validation returning a string or undefined if no errors.
           return "..."
         }

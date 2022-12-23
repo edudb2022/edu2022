@@ -32,7 +32,7 @@ import {
   dseSubjectSixValidationSchema,
   dseSubjectThreeValidationSchema,
   dseSubjectTwoValidationSchema,
-  gpaValidationSchema,
+  gpaCheckApplicationTypeValidationSchema,
   longQuestionValidationSchema,
   selectCommonValidationSchema,
   yearOfStudyValidationSchema
@@ -120,7 +120,7 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
     longQOne: longQuestionValidationSchema,
     longQTwo: longQuestionValidationSchema,
     longQThree: longQuestionValidationSchema,
-    gpa: gpaValidationSchema,
+    gpa: gpaCheckApplicationTypeValidationSchema,
     dseSubjectOne: dseSubjectOneValidationSchema,
     dseSubjectTwo: dseSubjectTwoValidationSchema,
     dseSubjectThree: dseSubjectThreeValidationSchema,
@@ -172,7 +172,7 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
       formik.values.yearofStudy = null
     }
   }, [formik.values.currentSchoolType])
-  // console.log(123, formik.values.dseSubjectGradeOne)
+
   useEffect(() => {
     if (
       formik.values.applicationType === ApplicationTypeId.BACHELOR ||
@@ -412,19 +412,6 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
             }
           />
 
-          <BaseSelect
-            name="offerType"
-            items={admissionOfferTypesList}
-            selectId="offerType"
-            inputLabel="Offer類型"
-            selectValue={formik.values.offerType}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            errorMessages={formik.errors.offerType}
-            isTouched={formik.touched.offerType}
-            isRequired
-          />
-
           <GpaNumberInput
             value={formik.values.gpa}
             onChange={formik.handleChange}
@@ -436,6 +423,18 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
               formik.values.applicationType === undefined
             }
             helpText="Non-Jupas/學士請填寫"
+          />
+          <BaseSelect
+            name="offerType"
+            items={admissionOfferTypesList}
+            selectId="offerType"
+            inputLabel="Offer類型"
+            selectValue={formik.values.offerType}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            errorMessages={formik.errors.offerType}
+            isTouched={formik.touched.offerType}
+            isRequired
           />
         </div>
 
