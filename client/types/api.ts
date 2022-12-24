@@ -26,7 +26,7 @@ export interface IGetSchoolRes {
 
 export interface IGetSchoolDetailReviewRes {
   id: number
-  createdAt: Date
+  createdAt: string
   likes: number
   dislikes: number
   title: string

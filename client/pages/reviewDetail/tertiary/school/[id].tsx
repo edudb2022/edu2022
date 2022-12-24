@@ -34,8 +34,7 @@ const SchoolReviewDetailPage: NextPage = () => {
   const router = useRouter()
   const { id } = router.query
   const { data } = useGetSchoolDetailReview(id as string)
-  const username = data?.anonymous === true ? "anonymous" : data?.user.name
-  const postDate = CommonHelpers.formatData(data!.createdAt, "MM/YY")
+
   useEffect(() => {
     // Call tracking event onMount
     trackingEvent.customEvent(
@@ -110,6 +109,11 @@ const SchoolReviewDetailPage: NextPage = () => {
   const academicStatus =
     data?.admissionDate || CommonCopyRight.NOT_WILLING_TO_RESPONSE
 
+  const userName = data?.anonymous
+    ? CommonCopyRight.NOT_WILLING_TO_RESPONSE
+    : data?.user.name
+  // const userName = data?.user.name
+
   const { mutate } = useVoteSchoolReview()
   return (
     <>
@@ -144,6 +148,7 @@ const SchoolReviewDetailPage: NextPage = () => {
           schoolShortName={data!.school.shortName.toLowerCase()}
           postId={data!.id}
           onVote={mutate}
+          // isStudent={data?.user.}
         >
           <div className="grid md:grid-cols-6 grid-cols-3 mt-4">
             <RatingTag
@@ -181,8 +186,8 @@ const SchoolReviewDetailPage: NextPage = () => {
           <DetailReviewInfoContainer
             admissionYear={data!.admissionDate}
             academicStatus={academicStatus}
-            username={username!}
-            postDate={postDate}
+            username={userName!}
+            postDate={data!.createdAt!}
             contact="tg : 123"
           />
         </DetailReviewHeaderContainer>

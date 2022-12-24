@@ -1,8 +1,7 @@
 import Image from "next/image"
 import React, { PropsWithChildren } from "react"
 import shortid from "shortid"
-import { schoolColorMapper } from "../../mappers/schoolColor"
-import TextTag from "../common/tags/text"
+import StudentIcon from "../common/icons/student"
 
 export interface IReviewHeaderContainerProps {
   ChineseTitle: string
@@ -12,6 +11,7 @@ export interface IReviewHeaderContainerProps {
   layoutClassName?: string
   jupasCode?: string
   additionalInfoTag?: string[]
+  isStudent?: boolean
 }
 
 const ReviewHeaderContainer: React.FunctionComponent<
@@ -24,7 +24,8 @@ const ReviewHeaderContainer: React.FunctionComponent<
   children,
   layoutClassName,
   jupasCode,
-  additionalInfoTag
+  additionalInfoTag,
+  isStudent
 }) => {
   const StyedItem: React.FunctionComponent<{ title: string }> = ({ title }) => {
     return (
@@ -49,7 +50,15 @@ const ReviewHeaderContainer: React.FunctionComponent<
             />
           </div>
           <div className="flex  flex-col text-center  items-center justify-center gap-y-2 mt-4 md:mt-0">
-            <h3 className="test-xs">{ChineseTitle}</h3>
+            <div className="flex flex-row gap-x-2">
+              <h3 className="test-xs">{ChineseTitle}</h3>
+              {isStudent && (
+                <h3>
+                  <StudentIcon />
+                </h3>
+              )}
+            </div>
+
             <h3 className="text-gray-400 ">{EnglishTitle} </h3>
             {/* <div className="flex flex-row justify-end w-full gap-x-2">
               {ShortTitle && <TextTag title={ShortTitle} type="summer" />}

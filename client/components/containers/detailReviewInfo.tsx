@@ -87,7 +87,10 @@ const DetailReviewInfoContainer: React.FunctionComponent<
           {/* <div className="flex flex-row justify-evenly border-2 w-full"> */}
 
           <InfoItem header="用戶名稱" description={username || "Unknown"} />
-          <InfoItem header="發布日期" description={postDate} />
+          <InfoItem
+            header="發布日期"
+            description={CommonHelpers.formatData(postDate, "DD/MM/YY")}
+          />
           <InfoItem header="聯絡資訊" description={contact} />
         </div>
         {/* </div> */}
