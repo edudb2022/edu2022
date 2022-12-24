@@ -105,7 +105,7 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
 
   const handleSubmit = () => {
     const body = {
-      schoolId: 60,
+      schoolId: 218,
       title: formik.values.title,
       academicStatusId: formik.values.academicStatus,
       admissionDate: "2018",
@@ -142,39 +142,39 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
       longQuestionResponses: [
         {
           questionId: 1,
-          text: formik.values.longQOne
+          text: formik.values.longQOne.trim()
         },
         {
           questionId: 2,
-          text: formik.values.longQTwo
+          text: formik.values.longQTwo.trim()
         },
         {
           questionId: 3,
-          text: formik.values.longQThree
+          text: formik.values.longQThree.trim()
         },
         {
           questionId: 4,
-          text: formik.values.longQFour
+          text: formik.values.longQFour.trim()
         },
         {
           questionId: 5,
-          text: formik.values.longQFive
+          text: formik.values.longQFive.trim()
         },
         {
           questionId: 6,
-          text: formik.values.longQSix
+          text: formik.values.longQSix.trim()
         },
         {
           questionId: 7,
-          text: formik.values.longQSeven
+          text: formik.values.longQSeven.trim()
         },
         {
           questionId: 8,
-          text: formik.values.longQEight
+          text: formik.values.longQEight.trim()
         },
         {
           questionId: 9,
-          text: formik.values.longQNine
+          text: formik.values.longQNine.trim()
         }
       ],
       userId: 1,
@@ -215,7 +215,7 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
       CommonHelpers.formatData(newValue, undefined, true)
     )
   }
-  //console.log(123, formik.values.admissionDate)
+  console.log(123, formik.values)
   return (
     <>
       <SEO

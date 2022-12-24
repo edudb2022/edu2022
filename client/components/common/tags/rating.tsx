@@ -38,7 +38,7 @@ const RatingTag: React.FunctionComponent<IRantingTagProps> = ({
   const ROUNDED_OFF_RATING = Math.round(rating)
 
   return (
-    <div className="flex flex-col justify-center items-center">
+    <div className=" flex flex-col justify-center items-center ">
       <p className={`text-mb text-gray-400 mb-0 ${headerClassName}`}>
         {header}
       </p>

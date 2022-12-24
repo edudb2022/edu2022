@@ -10,7 +10,7 @@ interface IProgrammeCardProps extends IBaseCardProps {
   programmeEnglishName: string
   programmeType: string
   programmeId: ID
-  faculty: string
+  // faculty: string
 }
 
 //programmeType = HD/ass/bahelor
@@ -20,8 +20,8 @@ const ProgrammeCard: React.FunctionComponent<IProgrammeCardProps> = ({
   programmeEnglishName,
   programmeType,
   totalReports,
-  programmeId,
-  faculty
+  programmeId
+  // faculty
 }) => {
   return (
     <Link href={`/programme/tertiary/${programmeId}`}>
@@ -41,7 +41,7 @@ const ProgrammeCard: React.FunctionComponent<IProgrammeCardProps> = ({
             <div className="absolute bottom-1 w-9/10 ">
               <div className="flex flex-row justify-between">
                 <div>
-                  <p>{faculty}</p>
+                  {/* <p>{faculty}</p> */}
                   <p>{programmeType}</p>
                 </div>
 

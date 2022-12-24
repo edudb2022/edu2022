@@ -18,7 +18,7 @@ const BaseTag: React.FunctionComponent<IBaseTagProps> = ({
   titleClassName
 }) => {
   return (
-    <div className={`flex flex-col w-fit items-center rounded-2xl`}>
+    <div className={`flex flex-col w-fit items-center rounded-2xl `}>
       {header && <p className="text-mb text-gray-400 mb-0 ">{header}</p>}
       <div className={` flex flex-row items-center rounded-2xl ${className}`}>
         {rating! >= 0 && (
@@ -28,7 +28,7 @@ const BaseTag: React.FunctionComponent<IBaseTagProps> = ({
         )}
 
         <div
-          className={`max-w-full items-center  md:text-base ${titleClassName} ${
+          className={`max-w-full items-center  md:text-base shrink-0 ${titleClassName} ${
             !rating ? "px-4 py-[2px]" : "px-2"
           }`}
         >

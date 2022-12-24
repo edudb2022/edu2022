@@ -75,7 +75,7 @@ export const CommonHelpers = {
     )
   },
 
-  formatData: (date: Date, format?: string, toISO?: boolean) => {
+  formatData: (date: Date | string, format?: string, toISO?: boolean) => {
     if (toISO) return dayjs(date).toISOString()
     return dayjs(date).format(format)
   }

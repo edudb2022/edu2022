@@ -1,4 +1,5 @@
 import React from "react"
+import { CommonHelpers } from "../../helpers"
 
 interface IDetailReviewInfoContainerProps {
   className?: string
@@ -55,7 +56,10 @@ const DetailReviewInfoContainer: React.FunctionComponent<
       <div className="flex flex-col items-center bg-theme-one-50 rounded-2xl p-4 mt-8">
         <div className="flex flex-row justify-evenly w-full">
           {admissionYear && (
-            <InfoItem header="入學日期" description={admissionYear} />
+            <InfoItem
+              header="入學日期"
+              description={CommonHelpers.formatData(admissionYear, "MM/YY")}
+            />
           )}
           {interviewDate && (
             <InfoItem header="面試日期" description={interviewDate} />

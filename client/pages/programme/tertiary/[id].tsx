@@ -63,7 +63,7 @@ const ProgrammePage: React.FunctionComponent = () => {
       >
         <div className="md:flex md:justify-center ">
           <div className="flex flex-col md:flex-row justify-center items-center md:w-2/5 ">
-            <div className="w-4/5 md:w-3/5 ">
+            {/* <div className="w-4/5 md:w-3/5 ">
               <BaseRadar
                 scores={[1, 2, 3, 4, 5]}
                 labels={[
@@ -74,7 +74,7 @@ const ProgrammePage: React.FunctionComponent = () => {
                   "資源"
                 ]}
               />
-            </div>
+            </div> */}
 
             <div className="w-2/5  py-12 flex flex-col justify-center items-center">
               <RatingLargeTag title={"red"} rating={5} header="推薦指數" />

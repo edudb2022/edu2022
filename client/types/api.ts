@@ -30,13 +30,19 @@ export interface IGetSchoolDetailReviewRes {
   likes: number
   dislikes: number
   title: string
-  admissionYear: string
+  admissionDate: string
   anonymous: boolean
   user: { id: string; name: string }
-  academicStatus: {
+  // academicStatus: {
+  //   id: number
+  //   displaytext: string
+  // }[]
+  academicStatus: string | undefined
+  school: {
     id: number
-    displaytext: string
-  }[]
+    shortName: string
+    type: { id: number; displayText: string; guiOrder: number }
+  }
   ratingQuestionResponses: {
     optionId: 2
     questionId: 1

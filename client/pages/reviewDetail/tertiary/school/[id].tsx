@@ -16,6 +16,7 @@ import {
   schoolCafeteriaRating,
   schoolCampusRating,
   schoolPolicyRating,
+  schoolRecommendRating,
   schoolResourcesRating,
   schoolSenseOfBelongingRating
 } from "../../../../constants/rating"
@@ -27,6 +28,7 @@ import { apiService } from "../../../../utils/api/api"
 import useVoteSchoolReview from "../../../../hooks/api/vote/useVoteSchoolReview"
 import { CommonHelpers } from "../../../../helpers"
 import trackingEvent from "../../../../utils/services/GoogleAnalytics/tracking"
+import { CommonCopyRight } from "../../../../utils/copyRight/common"
 
 const SchoolReviewDetailPage: NextPage = () => {
   const router = useRouter()
@@ -43,63 +45,70 @@ const SchoolReviewDetailPage: NextPage = () => {
     )
   }, [])
 
-  // const campusRating = {
-  //   rating: Number(
-  //     schoolCampusRating[data!.ratingQuestionResponses[0]!.optionId].value
-  //   ),
-  //   title: schoolCampusRating[data!.ratingQuestionResponses[0]!.optionId].label,
-  //   header:
-  //     schoolReviewRatingQuestionsMapper[
-  //       data!.ratingQuestionResponses[0].questionId
-  //     ].question
-  // }
+  const campusRating = {
+    rating: data!.ratingQuestionResponses[0].optionId - 1,
+    title: schoolCampusRating.find(
+      (val) => val.value == data!.ratingQuestionResponses[0]!.optionId
+    )?.label,
+    header:
+      schoolReviewRatingQuestionsMapper[
+        data!.ratingQuestionResponses[0].questionId
+      ].question
+  }
+  const resourceRating = {
+    rating: data!.ratingQuestionResponses[1].optionId - 1,
+    title: schoolResourcesRating.find(
+      (val) => val.value == data!.ratingQuestionResponses[1]!.optionId
+    )?.label,
+    header:
+      schoolReviewRatingQuestionsMapper[
+        data!.ratingQuestionResponses[1].questionId
+      ].question
+  }
+  const policyRating = {
+    rating: data!.ratingQuestionResponses[2].optionId - 1,
+    title: schoolPolicyRating.find(
+      (val) => val.value == data!.ratingQuestionResponses[2]!.optionId
+    )?.label,
+    header:
+      schoolReviewRatingQuestionsMapper[
+        data!.ratingQuestionResponses[2].questionId
+      ].question
+  }
+  const cafeteriaRating = {
+    rating: data!.ratingQuestionResponses[3].optionId - 1,
+    title: schoolCafeteriaRating.find(
+      (val) => val.value == data!.ratingQuestionResponses[3]!.optionId
+    )?.label,
+    header:
+      schoolReviewRatingQuestionsMapper[
+        data!.ratingQuestionResponses[3].questionId
+      ].question
+  }
 
-  // const resourceRating = {
-  //   rating: Number(
-  //     schoolResourcesRating[data!.ratingQuestionResponses[1]!.optionId].value
-  //   ),
-  //   title:
-  //     schoolResourcesRating[data!.ratingQuestionResponses[1]!.optionId].label,
-  //   header:
-  //     schoolReviewRatingQuestionsMapper[
-  //       data!.ratingQuestionResponses[1].questionId
-  //     ].question
-  // }
-  // const policyRating = {
-  //   rating: Number(
-  //     schoolPolicyRating[data!.ratingQuestionResponses[2]!.optionId].value
-  //   ),
-  //   title: schoolPolicyRating[data!.ratingQuestionResponses[2]!.optionId].label,
-  //   header:
-  //     schoolReviewRatingQuestionsMapper[
-  //       data!.ratingQuestionResponses[2].questionId
-  //     ].question
-  // }
-  // const cafeteriaRating = {
-  //   rating: Number(
-  //     schoolCafeteriaRating[data!.ratingQuestionResponses[3]!.optionId].value
-  //   ),
-  //   title:
-  //     schoolCafeteriaRating[data!.ratingQuestionResponses[3]!.optionId].label,
-  //   header:
-  //     schoolReviewRatingQuestionsMapper[
-  //       data!.ratingQuestionResponses[3].questionId
-  //     ].question
-  // }
+  const senseOfBelongingRating = {
+    rating: data!.ratingQuestionResponses[4].optionId - 1,
+    title: schoolSenseOfBelongingRating.find(
+      (val) => val.value == data!.ratingQuestionResponses[4]!.optionId
+    )?.label,
+    header:
+      schoolReviewRatingQuestionsMapper[
+        data!.ratingQuestionResponses[4].questionId
+      ].question
+  }
 
-  // const senseOfBelongingRating = {
-  //   rating: Number(
-  //     schoolSenseOfBelongingRating[data!.ratingQuestionResponses[4]!.optionId]
-  //       .value
-  //   ),
-  //   title:
-  //     schoolSenseOfBelongingRating[data!.ratingQuestionResponses[4]!.optionId]
-  //       .label,
-  //   header:
-  //     schoolReviewRatingQuestionsMapper[
-  //       data!.ratingQuestionResponses[4].questionId
-  //     ].question
-  // }
+  const recommendationRating = {
+    rating: data!.ratingQuestionResponses[5].optionId - 1,
+    title: schoolRecommendRating.find(
+      (val) => val.value == data!.ratingQuestionResponses[5]!.optionId
+    )?.label,
+    header:
+      schoolReviewRatingQuestionsMapper[
+        data!.ratingQuestionResponses[5].questionId
+      ].question
+  }
+  const academicStatus =
+    data?.admissionDate || CommonCopyRight.NOT_WILLING_TO_RESPONSE
 
   const { mutate } = useVoteSchoolReview()
   return (
@@ -132,42 +141,46 @@ const SchoolReviewDetailPage: NextPage = () => {
         <DetailReviewHeaderContainer
           score={data!.votes}
           ChineseTitle={data!.title}
-          schoolShortName="hku"
+          schoolShortName={data!.school.shortName.toLowerCase()}
           postId={data!.id}
           onVote={mutate}
         >
           <div className="grid md:grid-cols-6 grid-cols-3 mt-4">
-            {/* <RatingTag
+            <RatingTag
               rating={campusRating.rating}
-              title={campusRating.title}
+              title={campusRating.title!}
               header={campusRating.header}
             />
             <RatingTag
               rating={resourceRating.rating}
-              title={resourceRating.title}
+              title={resourceRating.title!}
               header={resourceRating.header}
             />
             <RatingTag
               rating={policyRating.rating}
-              title={policyRating.title}
+              title={policyRating.title!}
               header={policyRating.header}
             />
             <RatingTag
               rating={cafeteriaRating.rating}
-              title={cafeteriaRating.title}
+              title={cafeteriaRating.title!}
               header={cafeteriaRating.header}
             />
             <RatingTag
               rating={senseOfBelongingRating.rating}
-              title={senseOfBelongingRating.title}
+              title={senseOfBelongingRating.title!}
               header={senseOfBelongingRating.header}
             />
-            <RatingTag rating={3} title="12313" header="歸屬感" /> */}
+            <RatingTag
+              rating={recommendationRating.rating}
+              title={recommendationRating.title!}
+              header={recommendationRating.header}
+            />
           </div>
 
           <DetailReviewInfoContainer
-            admissionYear={data!.admissionYear}
-            academicStatus="Year 1"
+            admissionYear={data!.admissionDate}
+            academicStatus={academicStatus}
             username={username!}
             postDate={postDate}
             contact="tg : 123"
@@ -186,6 +199,15 @@ const SchoolReviewDetailPage: NextPage = () => {
               />
             )
           })}
+          {/* <LongTextDisplayContainer
+            title={
+              schoolReviewLongQuestionsMapper[
+                data.longQuestionResponses.find((data) => data.questionId == 1)
+              ].question
+            }
+            content={data!.text}
+            key={data!.questionId}
+          /> */}
         </LongQuestionsDisplayLayout>
       </PageLayout>
     </>

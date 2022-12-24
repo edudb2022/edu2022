@@ -343,7 +343,7 @@ const dseSubjectGradeSixValidationSchema = yup
 const gpaCommonValidationSchema = yup
   .number()
   .min(0, ERROR_FORM_MESSAGES.GPA_NEGATIVE)
-  .max(4.3, ERROR_FORM_MESSAGES.GPA_TOO_LARGE)
+  .max(4.5, ERROR_FORM_MESSAGES.GPA_TOO_LARGE)
   .nullable(true)
 
 const gpaCheckApplicationTypeValidationSchema = gpaCommonValidationSchema.when(
