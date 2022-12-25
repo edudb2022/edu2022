@@ -54,8 +54,8 @@ const InternshipOfferFormPage: React.FunctionComponent = () => {
     programme: null,
     offerReceivedDate: CommonHelpers.formatData(new Date(), undefined, true),
     title: "",
-    jobTitle: "",
-    companyName: "",
+    jobTitle: null,
+    companyName: null,
     baseSalary: "0",
     bonus: "0",
     stockOption: "0",
@@ -84,9 +84,9 @@ const InternshipOfferFormPage: React.FunctionComponent = () => {
     faculty: selectCommonValidationSchema,
     programme: selectCommonValidationSchema,
     title: titleValidationSchema,
-    jobTitle: titleValidationSchema,
     offerReceivedDate: dateValidationSchema,
-    companyName: titleValidationSchema,
+    jobTitle: titleValidationSchema.nullable(),
+    companyName: titleValidationSchema.nullable(),
     jobType: selectCommonValidationSchema,
     internType: selectCommonValidationSchema,
     gpa: gpaCommonValidationSchema,
@@ -118,8 +118,8 @@ const InternshipOfferFormPage: React.FunctionComponent = () => {
       jobPostSourceId: formik.values.jobSource
         ? parseInt(formik.values.jobSource)
         : null,
-      companyName: formik.values.companyName,
-      jobTitle: formik.values.jobTitle,
+      companyName: formik.values.companyName!,
+      jobTitle: formik.values.jobTitle!,
       offerReceiveDate: "2018",
       baseSalary: parseInt(formik.values.baseSalary),
       bonus: parseInt(formik.values.bonus),
@@ -315,6 +315,7 @@ const InternshipOfferFormPage: React.FunctionComponent = () => {
             onBlur={formik.handleBlur}
             isTouched={formik.touched.jobTitle}
             errorMessages={formik.errors.jobTitle}
+            isRequired
           />
           <BaseTextInput
             label="公司名稱"
@@ -324,6 +325,7 @@ const InternshipOfferFormPage: React.FunctionComponent = () => {
             onBlur={formik.handleBlur}
             isTouched={formik.touched.companyName}
             errorMessages={formik.errors.companyName}
+            isRequired
           />
 
           <BaseDatePicker
@@ -335,6 +337,8 @@ const InternshipOfferFormPage: React.FunctionComponent = () => {
             //     dayjs(newValue).format("YYYY-MM-DD")
             //   )
             // }}
+            minDate={CommonHelpers.dayRange(-50, 0)}
+            maxDate={CommonHelpers.dayRange(0, 0)}
             onChange={handleDateChange}
             errorMessages={formik.errors.offerReceivedDate}
             isTouched={formik.touched.offerReceivedDate}

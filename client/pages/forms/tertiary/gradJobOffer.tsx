@@ -82,15 +82,15 @@ const GradJobOfferFormPage: React.FunctionComponent = () => {
     faculty: selectCommonValidationSchema,
     programme: selectCommonValidationSchema,
     title: titleValidationSchema,
-    jobTitle: titleValidationSchema,
+    jobTitle: titleValidationSchema.nullable(),
     offerReceivedDate: dateValidationSchema,
-    companyName: titleValidationSchema,
+    companyName: titleValidationSchema.nullable(),
     jobType: selectCommonValidationSchema,
     baseSalary: SalaryValidationSchema,
     bonus: SalaryValidationSchema,
+    stockOption: SalaryValidationSchema,
     hope: ratingValidationSchema,
     difficulty: ratingValidationSchema,
-    stockOption: SalaryValidationSchema,
     contactDetail: contactDetailValidationSchema,
     // applicaiotnType: selectCommonValidationSchema,
     offerType: selectCommonValidationSchema,
@@ -221,6 +221,7 @@ const GradJobOfferFormPage: React.FunctionComponent = () => {
             onBlur={formik.handleBlur}
             isTouched={formik.touched.jobTitle}
             errorMessages={formik.errors.jobTitle}
+            isRequired
           />
           <BaseTextInput
             label="公司名稱"
@@ -230,6 +231,7 @@ const GradJobOfferFormPage: React.FunctionComponent = () => {
             onBlur={formik.handleBlur}
             isTouched={formik.touched.companyName}
             errorMessages={formik.errors.companyName}
+            isRequired
           />
 
           <BaseDatePicker
@@ -241,6 +243,8 @@ const GradJobOfferFormPage: React.FunctionComponent = () => {
             //     dayjs(newValue).format("YYYY-MM-DD")
             //   )
             // }}
+            minDate={CommonHelpers.dayRange(-50, 0)}
+            maxDate={CommonHelpers.dayRange(0, 0)}
             onChange={handleDateChange}
             errorMessages={formik.errors.offerReceivedDate}
             isTouched={formik.touched.offerReceivedDate}

@@ -265,7 +265,7 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
             errorMessages={formik.errors.admissionDate}
             isTouched={formik.touched.admissionDate}
             minDate={CommonHelpers.dayRange(-50, 0)}
-            maxDate={CommonHelpers.dayRange(0, 30)}
+            maxDate={CommonHelpers.dayRange(0, 0)}
             helpText="只會顯示MM/YYYY"
           />
 

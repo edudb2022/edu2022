@@ -15,6 +15,7 @@ const TitleTextInput: React.FunctionComponent<ITitleTextInputProps> = ({
     <BaseTextInput
       label="標題"
       name="title"
+      placeholder="為你的評價/情報改一個令人深刻印象的標題吧！！！"
       className={` ${className}`}
       {...props}
       isRequired

@@ -314,6 +314,8 @@ const ProgrammeReviewFormPage: React.FunctionComponent = () => {
             onChange={handleDateChange}
             errorMessages={formik.errors.admissionDate}
             isTouched={formik.touched.admissionDate}
+            minDate={CommonHelpers.dayRange(-50, 0)}
+            maxDate={CommonHelpers.dayRange(0, 0)}
             helpText="只會顯示MM/YYYY"
             // format="DD/MM/YYYY"
           />

@@ -508,6 +508,8 @@ const InterviewReviewPage: NextPage = () => {
               //     dayjs(newValue).format("YYYY-MM-DD")
               //   )
               // }}
+              minDate={CommonHelpers.dayRange(-50, 0)}
+              maxDate={CommonHelpers.dayRange(0, 0)}
               onChange={handleDateChange}
               errorMessages={formik.errors.interviewDate}
               isTouched={formik.touched.interviewDate}
