@@ -44,6 +44,7 @@ import { ISystemActionTypes } from "../../../state/system/actions"
 
 import { ErrorMessageStatement } from "../../../constants/errorMessageStatement"
 import { ICreateProgrammeReviewReq } from "../../../types/api"
+import { useRouter } from "next/router"
 
 const ProgrammeReviewFormPage: React.FunctionComponent = () => {
   const initialValues = {
@@ -100,6 +101,8 @@ const ProgrammeReviewFormPage: React.FunctionComponent = () => {
   const [isInProgress, setIsInProgress] = useState(false)
   const { mutate } = useCreateProgrammeReview()
   const dispatch = useAppDispatch()
+  const router = useRouter()
+
   const handleSubmit = () => {
     setIsInProgress(true)
 
@@ -185,6 +188,9 @@ const ProgrammeReviewFormPage: React.FunctionComponent = () => {
     mutate(body, {
       onSuccess: (res) => {
         console.log("res", res)
+        const id = res.data.data.id
+        //console.log("res", res.data.data.id)
+        router.push(`/reviewDetail/tertiary/programme/${id}`)
       },
       onError: (err) => {
         console.log("err", err)

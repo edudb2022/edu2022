@@ -27,6 +27,16 @@ const apiService = {
     }
   },
 
+  getProgrammeDetailReview: async ({ queryKey }: any) => {
+    const id = queryKey[1].id
+    try {
+      const data = await axios.get(`${DEFAULT_BASE_URL}/program-reviews/${id}`)
+      return data.data.data
+    } catch (error) {
+      console.error(error)
+    }
+  },
+
   createSchoolReview: async (body: ICreateSchoolReviewReq) => {
     const res = await axios.post(`${DEFAULT_BASE_URL}/school-reviews`, body)
     return res

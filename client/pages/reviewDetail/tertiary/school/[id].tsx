@@ -29,12 +29,14 @@ import useVoteSchoolReview from "../../../../hooks/api/vote/useVoteSchoolReview"
 import { CommonHelpers } from "../../../../helpers"
 import trackingEvent from "../../../../utils/services/GoogleAnalytics/tracking"
 import { CommonCopyRight } from "../../../../utils/copyRight/common"
+import { schoolTypesList, SITENAME } from "../../../../constants/common"
+import { SchoolTypeId } from "../../../../types/common"
 
 const SchoolReviewDetailPage: NextPage = () => {
   const router = useRouter()
   const { id } = router.query
   const { data } = useGetSchoolDetailReview(id as string)
-
+  const { mutate } = useVoteSchoolReview()
   useEffect(() => {
     // Call tracking event onMount
     trackingEvent.customEvent(
@@ -107,24 +109,27 @@ const SchoolReviewDetailPage: NextPage = () => {
       ].question
   }
   const academicStatus =
-    data?.admissionDate || CommonCopyRight.NOT_WILLING_TO_RESPONSE
+    data?.academicStatus || CommonCopyRight.NOT_WILLING_TO_RESPONSE
 
   const userName = data?.anonymous
     ? CommonCopyRight.NOT_WILLING_TO_RESPONSE
     : data?.user.name
-  // const userName = data?.user.name
 
-  const { mutate } = useVoteSchoolReview()
+  const tags = [
+    data?.school.type.displayText,
+    data?.school.shortName,
+    "學校評價"
+  ]
   return (
     <>
       <SEO
         title={data!.title}
-        description="Bachelor of Management Science and Information Management (Honours)"
+        //description="Bachelor of Management Science and Information Management (Honours)"
         openGraph={{
           title: data!.title,
-          description:
-            "Bachelor of Management Science and Information Management (Honours)",
-          site_name: "GoodTurtle.fyi",
+          //description:
+          //"Bachelor of Management Science and Information Management (Honours)",
+          site_name: SITENAME,
           article: {
             tags: [
               data!.title,
@@ -147,6 +152,8 @@ const SchoolReviewDetailPage: NextPage = () => {
           ChineseTitle={data!.title}
           schoolShortName={data!.school.shortName.toLowerCase()}
           postId={data!.id}
+          title={data!.title}
+          additionalInfoTag={tags}
           onVote={mutate}
           // isStudent={data?.user.}
         >
@@ -204,15 +211,6 @@ const SchoolReviewDetailPage: NextPage = () => {
               />
             )
           })}
-          {/* <LongTextDisplayContainer
-            title={
-              schoolReviewLongQuestionsMapper[
-                data.longQuestionResponses.find((data) => data.questionId == 1)
-              ].question
-            }
-            content={data!.text}
-            key={data!.questionId}
-          /> */}
         </LongQuestionsDisplayLayout>
       </PageLayout>
     </>

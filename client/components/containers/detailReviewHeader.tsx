@@ -98,7 +98,7 @@ const DetailReviewHeaderContainer: React.FunctionComponent<
     <ReviewHeaderContainer layoutClassName={layoutClassName} {...props}>
       {children}
       <div
-        className={`flex flex-row items-center justify-around text-l mt-8 ${containerClassName}`}
+        className={`flex flex-row items-center justify-between text-l mt-8 md:mx-12 mx-2 ${containerClassName}`}
       >
         <VotedModal
           voteType={voteType}

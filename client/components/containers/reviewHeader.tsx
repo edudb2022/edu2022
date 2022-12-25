@@ -10,8 +10,9 @@ export interface IReviewHeaderContainerProps {
   schoolShortName: string
   layoutClassName?: string
   jupasCode?: string
-  additionalInfoTag?: string[]
+  additionalInfoTag?: (string | undefined)[]
   isStudent?: boolean
+  title?: string
 }
 
 const ReviewHeaderContainer: React.FunctionComponent<
@@ -25,7 +26,8 @@ const ReviewHeaderContainer: React.FunctionComponent<
   layoutClassName,
   jupasCode,
   additionalInfoTag,
-  isStudent
+  isStudent,
+  title
 }) => {
   const StyedItem: React.FunctionComponent<{ title: string }> = ({ title }) => {
     return (
@@ -41,7 +43,7 @@ const ReviewHeaderContainer: React.FunctionComponent<
         className={`flex justify-center items-center p-4 ${layoutClassName} `}
       >
         <div className="flex flex-col md:flex-row">
-          <div className="flex justify-center">
+          <div className="flex justify-center shrink-0">
             <Image
               src={`/icons/schools/universities/${schoolShortName}.jpg`}
               width={"100rem"}
@@ -49,9 +51,9 @@ const ReviewHeaderContainer: React.FunctionComponent<
               alt={`${ShortTitle}`}
             />
           </div>
-          <div className="flex  flex-col text-center  items-center justify-center gap-y-2 mt-4 md:mt-0">
+          <div className="flex  flex-col text-center  items-center justify-center gap-y-2 mt-4 md:mt-0 md:w-10/12">
             <div className="flex flex-row gap-x-2">
-              <h3 className="test-xs">{ChineseTitle}</h3>
+              <h3 className="test-xs max-w-10/12">{ChineseTitle}</h3>
               {isStudent && (
                 <h3>
                   <StudentIcon />
@@ -60,23 +62,22 @@ const ReviewHeaderContainer: React.FunctionComponent<
             </div>
 
             <h3 className="text-gray-400 ">{EnglishTitle} </h3>
-            {/* <div className="flex flex-row justify-end w-full gap-x-2">
-              {ShortTitle && <TextTag title={ShortTitle} type="summer" />}
-              {jupasCode && <TextTag title={jupasCode} type="themeOne" />}
-            </div> */}
 
             <div className="flex flex-row justify-end items-center w-full gap-x-2">
               {jupasCode && <StyedItem title={jupasCode} />}
               {ShortTitle && <StyedItem title={ShortTitle} />}
               {additionalInfoTag &&
                 additionalInfoTag.map((data) => {
-                  return <StyedItem title={data} key={shortid.generate()} />
+                  if (data) {
+                    return <StyedItem title={data} key={shortid.generate()} />
+                  }
                 })}
             </div>
           </div>
         </div>
       </div>
-      {children}
+      <h2 className="text-center mt-4">{title}</h2>
+      <div className="mt-12">{children}</div>
     </div>
   )
 }

@@ -65,6 +65,7 @@ import { ICreateInterviewReviewReq, IDseScores } from "../../../types/api"
 import { useAppDispatch } from "../../../hooks/common/useAppDispatch"
 import { ISystemActionTypes } from "../../../state/system/actions"
 import { ErrorMessageStatement } from "../../../constants/errorMessageStatement"
+import { useRouter } from "next/router"
 
 const InterviewReviewPage: NextPage = () => {
   const initialValues = {
@@ -149,6 +150,7 @@ const InterviewReviewPage: NextPage = () => {
   const [isInProgress, setIsInProgress] = useState(false)
   const { mutate } = useCreateInterviewReview()
   const dispatch = useAppDispatch()
+  const router = useRouter()
 
   const handleSubmit = () => {
     const gpa = formik.values.gpa
@@ -265,6 +267,8 @@ const InterviewReviewPage: NextPage = () => {
     mutate(body, {
       onSuccess: (res) => {
         console.log("res", res)
+        const id = res.data.data.id
+        router.push(`/reviewDetail/tertiary/interview/${id}`)
       },
       onError: (err) => {
         console.log("err", err)

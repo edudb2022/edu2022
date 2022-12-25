@@ -37,6 +37,12 @@ export interface IGetSchoolDetailReviewRes {
   //   id: number
   //   displaytext: string
   // }[]
+  program: {
+    id: number
+    chineseName: string
+    englishName: string
+    jupasCode: string
+  }
   academicStatus: string | undefined
   school: {
     id: number

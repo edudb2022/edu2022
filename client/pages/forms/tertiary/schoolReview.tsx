@@ -184,7 +184,6 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
     mutate(body, {
       onSuccess: (res) => {
         const id = res.data.data.id
-        //console.log("res", res.data.data.id)
         router.push(`/reviewDetail/tertiary/school/${id}`)
       },
       onError: (err) => {
