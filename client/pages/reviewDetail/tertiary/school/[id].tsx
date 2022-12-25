@@ -29,7 +29,11 @@ import useVoteSchoolReview from "../../../../hooks/api/vote/useVoteSchoolReview"
 import { CommonHelpers } from "../../../../helpers"
 import trackingEvent from "../../../../utils/services/GoogleAnalytics/tracking"
 import { CommonCopyRight } from "../../../../utils/copyRight/common"
-import { schoolTypesList, SITENAME } from "../../../../constants/common"
+import {
+  schoolTypesList,
+  SITENAME,
+  WEB_ORIGIN
+} from "../../../../constants/common"
 import { SchoolTypeId } from "../../../../types/common"
 
 const SchoolReviewDetailPage: NextPage = () => {
@@ -37,6 +41,8 @@ const SchoolReviewDetailPage: NextPage = () => {
   const { id } = router.query
   const { data } = useGetSchoolDetailReview(id as string)
   const { mutate } = useVoteSchoolReview()
+
+  console.log(2232, data)
   useEffect(() => {
     // Call tracking event onMount
     trackingEvent.customEvent(
@@ -120,6 +126,7 @@ const SchoolReviewDetailPage: NextPage = () => {
     data?.school.shortName,
     "學校評價"
   ]
+
   return (
     <>
       <SEO
@@ -129,8 +136,13 @@ const SchoolReviewDetailPage: NextPage = () => {
           title: data!.title,
           //description:
           //"Bachelor of Management Science and Information Management (Honours)",
+          url: `${WEB_ORIGIN}${router.asPath}`,
           site_name: SITENAME,
           article: {
+            authors: [
+              data?.user.name || CommonCopyRight.NOT_WILLING_TO_RESPONSE
+            ],
+            publishedTime: data?.createdAt,
             tags: [
               data!.title,
               "HKUST",
@@ -155,6 +167,7 @@ const SchoolReviewDetailPage: NextPage = () => {
           title={data!.title}
           additionalInfoTag={tags}
           onVote={mutate}
+          isStudent={!!data?.user.hasSchoolBadge}
           // isStudent={data?.user.}
         >
           <div className="grid md:grid-cols-6 grid-cols-3 mt-4">

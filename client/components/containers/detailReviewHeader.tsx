@@ -95,31 +95,36 @@ const DetailReviewHeaderContainer: React.FunctionComponent<
   }
 
   return (
-    <ReviewHeaderContainer layoutClassName={layoutClassName} {...props}>
-      {children}
-      <div
-        className={`flex flex-row items-center justify-between text-l mt-8 md:mx-12 mx-2 ${containerClassName}`}
-      >
-        <VotedModal
-          voteType={voteType}
-          isOpen={voteTypeModalOpen}
-          onClick={handleClick}
-        />
-        <BaseButton className=" bg-theme-rose-500 text-white gap-x-1 rounded-2xl hover:border-2 hover:animate-warningBorderHover">
-          <MdOutlineReportGmailerrorred />
-          {"舉報"}
-        </BaseButton>
+    <>
+      <VotedModal
+        voteType={voteType}
+        isOpen={voteTypeModalOpen}
+        onClick={handleClick}
+      />
+      <ReviewHeaderContainer layoutClassName={layoutClassName} {...props}>
+        {children}
+        {/* <div
+          className={`flex flex-row items-center justify-between text-l mt-8 border-2 ${containerClassName}`}
+        > */}
+        <div className={`grid grid-cols-3 text-lg mt-8  ${containerClassName}`}>
+          <div className="flex justify-center items-center">
+            <BaseButton className=" bg-theme-rose-500 text-white gap-x-1 rounded-2xl hover:border-2 hover:animate-warningBorderHover w-fit h-fit">
+              <MdOutlineReportGmailerrorred />
+              {"舉報"}
+            </BaseButton>
+          </div>
 
-        <LikeRating score={currtentScore} />
-        <div>
-          <LikeAndDisLikeButtonGroup
-            handleLeftClick={handleLikeClick}
-            handleRightClick={handleDislikeClick}
-            voteType={voteType}
-          />
+          <LikeRating score={currtentScore} />
+          <div className="flex justify-center items-center">
+            <LikeAndDisLikeButtonGroup
+              handleLeftClick={handleLikeClick}
+              handleRightClick={handleDislikeClick}
+              voteType={voteType}
+            />
+          </div>
         </div>
-      </div>
-    </ReviewHeaderContainer>
+      </ReviewHeaderContainer>
+    </>
   )
 }
 

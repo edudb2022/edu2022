@@ -211,7 +211,7 @@ const InterviewReviewPage: NextPage = () => {
         ? parseInt(formik.values.dressCode)
         : null,
       title: formik.values.title,
-      interviewDate: "2018",
+      interviewDate: formik.values.interviewDate,
       contactMethod: {
         typeId: formik.values.contactMethod,
         value: formik.values.contactDetail

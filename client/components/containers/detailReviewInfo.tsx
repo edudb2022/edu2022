@@ -16,6 +16,7 @@ interface IDetailReviewInfoContainerProps {
   industry?: string
   companyName?: string
   jobSource?: string
+  applicationType?: string
 }
 
 interface IInfoItemProps {
@@ -38,7 +39,8 @@ const DetailReviewInfoContainer: React.FunctionComponent<
   currentProgramme,
   industry,
   companyName,
-  jobSource
+  jobSource,
+  applicationType
 }) => {
   const InfoItem: React.FunctionComponent<IInfoItemProps> = ({
     header,
@@ -54,7 +56,7 @@ const DetailReviewInfoContainer: React.FunctionComponent<
   return (
     <div className={`mt-8 ${className}`}>
       <div className="flex flex-col items-center bg-theme-one-50 rounded-2xl p-4 mt-8">
-        <div className="flex flex-row justify-evenly w-full">
+        <div className="flex flex-wrap flex-row justify-evenly w-full">
           {admissionYear && (
             <InfoItem
               header="入學日期"
@@ -62,7 +64,10 @@ const DetailReviewInfoContainer: React.FunctionComponent<
             />
           )}
           {interviewDate && (
-            <InfoItem header="面試日期" description={interviewDate} />
+            <InfoItem
+              header="面試日期"
+              description={CommonHelpers.formatData(interviewDate, "MM/YY")}
+            />
           )}
           {academicStatus && (
             <InfoItem header="學業狀態" description={academicStatus} />
@@ -79,12 +84,13 @@ const DetailReviewInfoContainer: React.FunctionComponent<
             <InfoItem header="公司名稱" description={companyName} />
           )}
           {jobSource && <InfoItem header="工作來源" description={jobSource} />}
+          {applicationType && (
+            <InfoItem header="類型" description={applicationType} />
+          )}
           {offerDate && (
             <InfoItem header="收Offer日期" description={offerDate} />
           )}
           {DressCode && <InfoItem header="衣著要求" description={DressCode} />}
-
-          {/* <div className="flex flex-row justify-evenly border-2 w-full"> */}
 
           <InfoItem header="用戶名稱" description={username || "Unknown"} />
           <InfoItem
@@ -93,7 +99,6 @@ const DetailReviewInfoContainer: React.FunctionComponent<
           />
           <InfoItem header="聯絡資訊" description={contact} />
         </div>
-        {/* </div> */}
       </div>
     </div>
   )

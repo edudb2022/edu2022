@@ -10,7 +10,7 @@ import LongQuestionsDisplayLayout from "../../../../components/layouts/longQuest
 
 import PageLayout from "../../../../components/layouts/page"
 import SEO from "../../../../components/seo"
-import { SITENAME } from "../../../../constants/common"
+import { SITENAME, WEB_ORIGIN } from "../../../../constants/common"
 import {
   programmeGpaRating,
   programmeLearningExperienceRating,
@@ -32,15 +32,6 @@ const ProgrammeReviewDetailPage: NextPage = () => {
   const router = useRouter()
   const { id } = router.query
   const { data } = useGetProgrammeDetailReview(id as string)
-  useEffect(() => {
-    // Call tracking event onMount
-    trackingEvent.customEvent(
-      `page_view_programme_review_detail`,
-      undefined,
-      `${id}`
-    )
-  }, [])
-
   const { mutate } = useVoteSchoolReview()
 
   const tags = [data?.program?.jupasCode, "課程評價"]
@@ -49,6 +40,15 @@ const ProgrammeReviewDetailPage: NextPage = () => {
   const userName = data?.anonymous
     ? CommonCopyRight.NOT_WILLING_TO_RESPONSE
     : data?.user.name
+
+  useEffect(() => {
+    // Call tracking event onMount
+    trackingEvent.customEvent(
+      `page_view_programme_review_detail`,
+      undefined,
+      `${id}`
+    )
+  }, [])
 
   return (
     <>
@@ -59,14 +59,19 @@ const ProgrammeReviewDetailPage: NextPage = () => {
           title: data!.title,
           // description:
           //    data!.title,
+          url: `${WEB_ORIGIN}${router.asPath}`,
           site_name: SITENAME,
           article: {
+            authors: [
+              data?.user.name || CommonCopyRight.NOT_WILLING_TO_RESPONSE
+            ],
+            publishedTime: data?.createdAt,
             tags: [
               data!.title,
               "HKUST",
               data?.program.chineseName!,
               data?.program.englishName!,
-              data?.createdAt!,
+
               CommonHelpers.formatData(data?.admissionDate!, "MM/YY")
             ]
           }
@@ -77,11 +82,12 @@ const ProgrammeReviewDetailPage: NextPage = () => {
           score={data!.votes}
           ChineseTitle={data?.program.chineseName!}
           EnglishTitle={data?.program.englishName!}
+          title={data?.title}
           schoolShortName={"hku"}
           postId={data!.id}
           additionalInfoTag={tags}
           onVote={mutate}
-          title={data?.title}
+          isStudent={!!data?.user.hasSchoolBadge}
         >
           <div className="flex flex-wrap flex-row justify-evenly w-full ">
             <RatingTag

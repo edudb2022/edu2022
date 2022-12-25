@@ -42,7 +42,7 @@ const ReviewHeaderContainer: React.FunctionComponent<
       <div
         className={`flex justify-center items-center p-4 ${layoutClassName} `}
       >
-        <div className="flex flex-col md:flex-row">
+        <div className="flex flex-col md:flex-row w-full ">
           <div className="flex justify-center shrink-0">
             <Image
               src={`/icons/schools/universities/${schoolShortName}.jpg`}
@@ -51,17 +51,14 @@ const ReviewHeaderContainer: React.FunctionComponent<
               alt={`${ShortTitle}`}
             />
           </div>
-          <div className="flex  flex-col text-center  items-center justify-center gap-y-2 mt-4 md:mt-0 md:w-10/12">
+          <div className="flex  flex-col text-center  items-center justify-center gap-y-2 mt-4 md:mt-0 ">
             <div className="flex flex-row gap-x-2">
-              <h3 className="test-xs max-w-10/12">{ChineseTitle}</h3>
-              {isStudent && (
-                <h3>
-                  <StudentIcon />
-                </h3>
-              )}
+              <h3 className="text-xs md:text-lg max-w-10/12">{ChineseTitle}</h3>
             </div>
 
-            <h3 className="text-gray-400 ">{EnglishTitle} </h3>
+            <h3 className="text-gray-400 text-xs  md:text-base">
+              {EnglishTitle}{" "}
+            </h3>
 
             <div className="flex flex-row justify-end items-center w-full gap-x-2">
               {jupasCode && <StyedItem title={jupasCode} />}
@@ -76,7 +73,14 @@ const ReviewHeaderContainer: React.FunctionComponent<
           </div>
         </div>
       </div>
-      <h2 className="text-center mt-4">{title}</h2>
+      <h2 className="text-center mt-4">
+        {title}{" "}
+        {isStudent && (
+          <h3>
+            <StudentIcon />
+          </h3>
+        )}
+      </h2>
       <div className="mt-12">{children}</div>
     </div>
   )

@@ -23,7 +23,10 @@ import {
 } from "../types/common"
 
 const SITENAME = "GoodTurtle.fyi"
-
+const WEB_ORIGIN =
+  typeof window !== "undefined" && window.location.origin
+    ? window.location.origin
+    : ""
 const schoolTypesList = [
   { value: SchoolTypeId.UNIVERSITY, title: "大學" },
   { value: SchoolTypeId.COLLEGE, title: "大專" }
@@ -1465,5 +1468,6 @@ export {
   gradJobOfferSortingTypesList,
   SITENAME,
   currentSchoolTypesList,
-  jobTypeList
+  jobTypeList,
+  WEB_ORIGIN
 }

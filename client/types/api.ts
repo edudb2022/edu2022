@@ -1,3 +1,4 @@
+import { number } from "yup"
 import {
   AcademicStatusTypeId,
   ApplicationTypeId,
@@ -32,32 +33,63 @@ export interface IGetSchoolDetailReviewRes {
   title: string
   admissionDate: string
   anonymous: boolean
-  user: { id: string; name: string }
-  // academicStatus: {
+  user: IUserRes
+  // program: {
   //   id: number
-  //   displaytext: string
-  // }[]
-  program: {
-    id: number
-    chineseName: string
-    englishName: string
-    jupasCode: string
-  }
-  academicStatus: string | undefined
+  //   chineseName: string
+  //   englishName: string
+  //   jupasCode: string
+  // }
   school: {
     id: number
     shortName: string
     type: { id: number; displayText: string; guiOrder: number }
   }
-  ratingQuestionResponses: {
-    optionId: 2
-    questionId: 1
-  }[]
-  longQuestionResponses: {
-    text: string
-    questionId: number
-  }[]
+  academicStatus: string | undefined
+  contactMethod: IContactMethodRes | null
+  ratingQuestionResponses: IRatingQuestionResponses[]
+  longQuestionResponses: ILongQuestionResponses[]
   votes: number
+}
+
+export interface IGetProgrammeDetailReviewRes {
+  id: number
+  createdAt: string
+  title: string
+  admissionDate: string
+  anonymous: number
+  academicStatusId: AcademicStatusTypeId
+  program: IProgrammeRes
+  user: IUserRes
+  academicStatus: string
+  contactMethod: IContactMethodRes | null
+  ratingQuestionResponses: IRatingQuestionResponses[]
+  longQuestionResponses: ILongQuestionResponses[]
+  voteOfUser: number
+  votes: number
+}
+
+export interface IGetInterviewDetailReviewRes {
+  id: number
+  createdAt: string
+  title: string
+  interviewDate: string
+  likes: number
+  anonymous: boolean
+  dislikes: number
+  program: IProgrammeRes
+  user: IUserRes
+  dressCode: { displayText: string }
+  applicationType: { displayText: string }
+  currentSchoolType: { id: number; displayText: string }
+  currentYearOfStudy: { id: number; displayText: string }
+  currentProgram: IProgrammeRes
+  contactMethod: IContactMethodRes | null
+  voteOfUser: number
+  votes: number
+  dseScores: IDseScoresRes[]
+  ratingQuestionResponses: IRatingQuestionResponses[]
+  longQuestionResponses: ILongQuestionResponses[]
 }
 
 export interface ICreateSchoolReviewReq {
@@ -156,4 +188,34 @@ export interface IFaculties {
 export interface IReport {
   ratingQuestion: string
   averageScore: number
+}
+
+export interface IProgrammeRes {
+  id: number
+  chineseName: string
+  englishName: string
+  jupasCode: string
+}
+
+export interface IUserRes {
+  id: string
+  name: string
+  hasSchoolBadge: number
+}
+
+export interface IContactMethodRes {
+  value: string
+  type: string
+}
+
+export interface IDseScoresRes {
+  subject: {
+    id: number
+    displayText: string
+  }
+  grade: {
+    id: number
+    displayText: string
+    value: number
+  }
 }

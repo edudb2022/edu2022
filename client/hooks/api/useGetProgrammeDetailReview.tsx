@@ -1,10 +1,9 @@
-import React from "react"
 import { useQuery } from "react-query"
-import { IGetSchoolDetailReviewRes } from "../../types/api"
+import { IGetProgrammeDetailReviewRes } from "../../types/api"
 import { apiService } from "../../utils/api/api"
 
 const useGetProgrammeDetailReview = (id: string) => {
-  return useQuery<IGetSchoolDetailReviewRes, Error>(
+  return useQuery<IGetProgrammeDetailReviewRes, Error>(
     ["programme-detail-review", { id }],
     apiService.getProgrammeDetailReview,
     {
