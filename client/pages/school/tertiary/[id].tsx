@@ -4,6 +4,7 @@ import { useRouter } from "next/router"
 import React, { useEffect, useState } from "react"
 import ProgrammeCard from "../../../components/common/cards/programme"
 import BaseRadar from "../../../components/common/charts/radar"
+import RightArrowIcon from "../../../components/common/icons/rightArrow"
 import BaseSelect from "../../../components/common/inputs/select"
 import SearchTextInput from "../../../components/common/inputs/text/search"
 import RatingLargeTag from "../../../components/common/tags/ratingLarge"
@@ -69,7 +70,7 @@ const TertiarySchoolPage: NextPage = () => {
         schoolShortName={"hku"}
         additionalInfoTag={["大學"]}
       >
-        <div className="md:flex md:justify-center ">
+        <div className="md:flex md:justify-center">
           <div className="flex flex-col justify-center items-center md:flex-row md:w-2/5 ">
             <div className="w-4/5 md:w-3/5 ">
               <BaseRadar
@@ -86,16 +87,20 @@ const TertiarySchoolPage: NextPage = () => {
 
             <div className="md:w-2/5 w-full py-12 flex flex-row md:flex-col md:justify-between justify-center gap-x-4 items-center">
               <RatingLargeTag title={"red"} rating={1} header="推薦指數" />
-              <Link href={`/review/tertiary/school/${id}`}>
-                <a className="text-theme-one-500 mt-4 border-b-2 border-theme-one-500">
-                  更多學校評價
-                </a>
-              </Link>
             </div>
           </div>
         </div>
+
+        <div className="flex flex-row justify-end">
+          <Link href={`/review/tertiary/school/${id}`}>
+            <a className="flex flex-row  justify-center items-center gap-2 text-white bg-theme-one-500 border-2 border-theme-one-500 text-sm rounded-3xl hover:animate-themeOneHover px-4 py-2 mr-4">
+              查看更多學校詳細評價 <RightArrowIcon />
+            </a>
+          </Link>
+        </div>
       </ReviewHeaderContainer>
-      <div className="flex justify-center gap-x-4 mx-2 md:mx-0">
+
+      <div className="flex justify-center gap-x-4 mx-2 md:mx-0 mt-4 md:mt-12">
         <SearchTextInput onChange={handleSearchChange} value={search} />
         <BaseSelect
           items={contactMethodTypesList}

@@ -15,7 +15,7 @@ const titleValidationSchema = yup
 
 const jobTitleValidationSchema = yup
   .string()
-  .max(100, ERROR_FORM_MESSAGES.TOO_LONG)
+  .max(40, ERROR_FORM_MESSAGES.TOO_LONG)
   .required("必須填寫")
 
 const companyNameValidationSchema = yup

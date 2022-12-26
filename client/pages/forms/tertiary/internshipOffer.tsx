@@ -321,7 +321,7 @@ const InternshipOfferFormPage: React.FunctionComponent = () => {
             isTouched={formik.touched.jobTitle}
             errorMessages={formik.errors.jobTitle}
             valueLength={formik.values?.jobTitle?.length}
-            maxLength={100}
+            maxLength={40}
             isRequired
           />
           <BaseTextInput

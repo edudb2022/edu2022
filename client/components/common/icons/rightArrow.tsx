@@ -2,7 +2,7 @@ import React from "react"
 import { ImArrowRight2 } from "react-icons/im"
 
 interface IRightArrowIconProps {
-  className: string
+  className?: string
 }
 
 const RightArrowIcon: React.FunctionComponent<IRightArrowIconProps> = ({
