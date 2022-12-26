@@ -41,7 +41,7 @@ const ReviewHeaderContainer: React.FunctionComponent<
         className={`flex justify-center items-center p-4 ${layoutClassName} `}
       >
         <div className="flex flex-col md:flex-row w-full ">
-          <div className="flex justify-center shrink-0 md:w-1/10 ">
+          <div className="flex justify-center shrink-0 md:w-1/10">
             <Image
               src={`/icons/schools/universities/${schoolShortName}.jpg`}
               width={"100%"}

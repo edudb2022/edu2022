@@ -47,8 +47,8 @@ const GradJobOfferFormPage: React.FunctionComponent = () => {
     programme: null,
     offerReceivedDate: CommonHelpers.formatData(new Date(), undefined, true),
     title: "",
-    jobTitle: null,
-    companyName: null,
+    jobTitle: "",
+    companyName: "",
     baseSalary: "0",
     bonus: "0",
     stockOption: "0",
@@ -221,6 +221,8 @@ const GradJobOfferFormPage: React.FunctionComponent = () => {
             onBlur={formik.handleBlur}
             isTouched={formik.touched.jobTitle}
             errorMessages={formik.errors.jobTitle}
+            valueLength={formik.values?.jobTitle?.length}
+            maxLength={100}
             isRequired
           />
           <BaseTextInput
@@ -231,6 +233,8 @@ const GradJobOfferFormPage: React.FunctionComponent = () => {
             onBlur={formik.handleBlur}
             isTouched={formik.touched.companyName}
             errorMessages={formik.errors.companyName}
+            valueLength={formik.values?.companyName?.length}
+            maxLength={100}
             isRequired
           />
 
@@ -368,7 +372,7 @@ const GradJobOfferFormPage: React.FunctionComponent = () => {
                 onBlur={formik.handleBlur}
                 errorMessages={formik.errors.contactDetail}
                 isTouched={formik.touched.contactDetail}
-                disabled={formik.values.contactMethod === ""}
+                disabled={formik.values.contactMethod === null}
               />
             </div>
           </div>

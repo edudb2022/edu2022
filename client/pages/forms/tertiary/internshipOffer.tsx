@@ -25,9 +25,11 @@ import SEO from "../../../components/seo"
 import { internshipJobFindingDifficultyRating } from "../../../constants/rating"
 import * as yup from "yup"
 import {
+  companyNameValidationSchema,
   contactDetailValidationSchema,
   dateValidationSchema,
   gpaCommonValidationSchema,
+  jobTitleValidationSchema,
   longQuestionValidationSchema,
   ratingValidationSchema,
   SalaryValidationSchema,
@@ -55,8 +57,8 @@ const InternshipOfferFormPage: React.FunctionComponent = () => {
     programme: null,
     offerReceivedDate: CommonHelpers.formatData(new Date(), undefined, true),
     title: "",
-    jobTitle: null,
-    companyName: null,
+    jobTitle: "",
+    companyName: "",
     baseSalary: "0",
     bonus: "0",
     stockOption: "0",
@@ -86,14 +88,8 @@ const InternshipOfferFormPage: React.FunctionComponent = () => {
     programme: selectCommonValidationSchema,
     title: titleValidationSchema,
     offerReceivedDate: dateValidationSchema,
-    jobTitle: yup
-      .string()
-      .max(100, ERROR_FORM_MESSAGES.TOO_LONG)
-      .required("必須填寫"),
-    companyName: yup
-      .string()
-      .max(100, ERROR_FORM_MESSAGES.TOO_LONG)
-      .required("必須填寫"),
+    jobTitle: jobTitleValidationSchema,
+    companyName: companyNameValidationSchema,
     jobType: selectCommonValidationSchema,
     internType: selectCommonValidationSchema,
     gpa: gpaCommonValidationSchema,
@@ -128,8 +124,8 @@ const InternshipOfferFormPage: React.FunctionComponent = () => {
       jobPostSourceId: formik.values.jobSource
         ? parseInt(formik.values.jobSource)
         : null,
-      companyName: formik.values.companyName!,
-      jobTitle: formik.values.jobTitle!,
+      companyName: formik.values.companyName,
+      jobTitle: formik.values.jobTitle,
       offerReceiveDate: "2018",
       baseSalary: parseInt(formik.values.baseSalary),
       bonus: parseInt(formik.values.bonus),
@@ -324,6 +320,8 @@ const InternshipOfferFormPage: React.FunctionComponent = () => {
             onBlur={formik.handleBlur}
             isTouched={formik.touched.jobTitle}
             errorMessages={formik.errors.jobTitle}
+            valueLength={formik.values?.jobTitle?.length}
+            maxLength={100}
             isRequired
           />
           <BaseTextInput
@@ -334,6 +332,8 @@ const InternshipOfferFormPage: React.FunctionComponent = () => {
             onBlur={formik.handleBlur}
             isTouched={formik.touched.companyName}
             errorMessages={formik.errors.companyName}
+            valueLength={formik.values?.companyName?.length}
+            maxLength={100}
             isRequired
           />
 
@@ -468,7 +468,7 @@ const InternshipOfferFormPage: React.FunctionComponent = () => {
                 onBlur={formik.handleBlur}
                 errorMessages={formik.errors.contactDetail}
                 isTouched={formik.touched.contactDetail}
-                disabled={formik.values.contactMethod === ""}
+                disabled={formik.values.contactMethod === null}
               />
             </div>
           </div>

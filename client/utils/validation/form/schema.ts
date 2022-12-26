@@ -13,6 +13,16 @@ const titleValidationSchema = yup
   .max(25, ERROR_FORM_MESSAGES.TOO_LONG)
   .required("必須填寫")
 
+const jobTitleValidationSchema = yup
+  .string()
+  .max(100, ERROR_FORM_MESSAGES.TOO_LONG)
+  .required("必須填寫")
+
+const companyNameValidationSchema = yup
+  .string()
+  .max(100, ERROR_FORM_MESSAGES.TOO_LONG)
+  .required("必須填寫")
+
 const ratingValidationSchema = yup.string().required("必須選擇").nullable(true)
 
 const dateValidationSchema = yup.date().required("必須填寫").nullable(true)
@@ -386,5 +396,7 @@ export {
   dseSubjectGradeFiveValidationSchema,
   dseSubjectGradeSixValidationSchema,
   gpaCommonValidationSchema,
-  gpaCheckApplicationTypeValidationSchema
+  gpaCheckApplicationTypeValidationSchema,
+  jobTitleValidationSchema,
+  companyNameValidationSchema
 }

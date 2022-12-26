@@ -618,7 +618,7 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
                 onBlur={formik.handleBlur}
                 errorMessages={formik.errors.contactDetail}
                 isTouched={formik.touched.contactDetail}
-                disabled={formik.values.contactMethod === ""}
+                disabled={formik.values.contactMethod === null}
               />
             </div>
           </div>
