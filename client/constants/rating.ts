@@ -139,7 +139,7 @@ export const interviewDifficultyRating: IRating[] = [
   { value: 6, label: "太易了" }
 ]
 
-export const intershipJobFindingDifficultyRating: IRating[] = [
+export const internshipJobFindingDifficultyRating: IRating[] = [
   { value: 1, label: "準備乞食" },
   { value: 2, label: "困難" },
   { value: 3, label: "正常" },

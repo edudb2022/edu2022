@@ -106,7 +106,7 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
   const handleSubmit = () => {
     const body = {
       schoolId: 218,
-      title: formik.values.title,
+      title: formik.values.title.trim(),
       academicStatusId: formik.values.academicStatus,
       admissionDate: "2018",
       contactMethod: {
@@ -142,39 +142,39 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
       longQuestionResponses: [
         {
           questionId: 1,
-          text: formik.values.longQOne.trim()
+          text: formik.values.longQOne.trim() || null
         },
         {
           questionId: 2,
-          text: formik.values.longQTwo.trim()
+          text: formik.values.longQTwo.trim() || null
         },
         {
           questionId: 3,
-          text: formik.values.longQThree.trim()
+          text: formik.values.longQThree.trim() || null
         },
         {
           questionId: 4,
-          text: formik.values.longQFour.trim()
+          text: formik.values.longQFour.trim() || null
         },
         {
           questionId: 5,
-          text: formik.values.longQFive.trim()
+          text: formik.values.longQFive.trim() || null
         },
         {
           questionId: 6,
-          text: formik.values.longQSix.trim()
+          text: formik.values.longQSix.trim() || null
         },
         {
           questionId: 7,
-          text: formik.values.longQSeven.trim()
+          text: formik.values.longQSeven.trim() || null
         },
         {
           questionId: 8,
-          text: formik.values.longQEight.trim()
+          text: formik.values.longQEight.trim() || null
         },
         {
           questionId: 9,
-          text: formik.values.longQNine.trim()
+          text: formik.values.longQNine.trim() || null
         }
       ],
       userId: 1,

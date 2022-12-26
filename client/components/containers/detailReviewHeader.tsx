@@ -103,9 +103,7 @@ const DetailReviewHeaderContainer: React.FunctionComponent<
       />
       <ReviewHeaderContainer layoutClassName={layoutClassName} {...props}>
         {children}
-        {/* <div
-          className={`flex flex-row items-center justify-between text-l mt-8 border-2 ${containerClassName}`}
-        > */}
+
         <div className={`grid grid-cols-3 text-lg mt-8  ${containerClassName}`}>
           <div className="flex justify-center items-center">
             <BaseButton className=" bg-theme-rose-500 text-white gap-x-1 rounded-2xl hover:border-2 hover:animate-warningBorderHover w-fit h-fit">

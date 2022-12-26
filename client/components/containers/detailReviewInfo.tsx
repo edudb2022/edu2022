@@ -13,7 +13,7 @@ interface IDetailReviewInfoContainerProps {
   offerDate?: string
   currentSchool?: string
   currentProgramme?: string
-  industry?: string
+  jobType?: string
   companyName?: string
   jobSource?: string
   applicationType?: string
@@ -37,7 +37,7 @@ const DetailReviewInfoContainer: React.FunctionComponent<
   offerDate,
   currentSchool,
   currentProgramme,
-  industry,
+  jobType,
   companyName,
   jobSource,
   applicationType
@@ -79,7 +79,7 @@ const DetailReviewInfoContainer: React.FunctionComponent<
           {currentProgramme && (
             <InfoItem header="最近就讀的課程" description={currentProgramme} />
           )}
-          {industry && <InfoItem header="Industry" description={industry} />}
+          {jobType && <InfoItem header="jobType" description={jobType} />}
           {companyName && (
             <InfoItem header="公司名稱" description={companyName} />
           )}
@@ -88,7 +88,10 @@ const DetailReviewInfoContainer: React.FunctionComponent<
             <InfoItem header="類型" description={applicationType} />
           )}
           {offerDate && (
-            <InfoItem header="收Offer日期" description={offerDate} />
+            <InfoItem
+              header="收Offer日期"
+              description={CommonHelpers.formatData(offerDate, "MM/YY")}
+            />
           )}
           {DressCode && <InfoItem header="衣著要求" description={DressCode} />}
 

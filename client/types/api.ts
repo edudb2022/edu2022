@@ -100,6 +100,7 @@ export interface IGetInternshipDetailReviewRes {
   offerReceiveDate: string
   bonus: number
   stockOptions: number
+  baseSalary: number
   jobType: IJopTypeRes
   jobPostSource: IJobPostSourceRes
   id: number
@@ -107,9 +108,10 @@ export interface IGetInternshipDetailReviewRes {
   user: IUserRes
   // likes*	number
   // dislikes*	number
+  program: IProgrammeRes
   anonymous: boolean
   // voteOfUser*	{...}
-  // votes*	number
+  votes: number
   ratingQuestionResponses: IRatingQuestionResponses[]
   longQuestionResponses: ILongQuestionResponses[]
 }

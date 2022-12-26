@@ -22,7 +22,7 @@ import {
   SITENAME
 } from "../../../constants/common"
 import SEO from "../../../components/seo"
-import { intershipJobFindingDifficultyRating } from "../../../constants/rating"
+import { internshipJobFindingDifficultyRating } from "../../../constants/rating"
 import * as yup from "yup"
 import {
   contactDetailValidationSchema,
@@ -45,6 +45,7 @@ import { ISystemActionTypes } from "../../../state/system/actions"
 import { ErrorMessageStatement } from "../../../constants/errorMessageStatement"
 import { ICreateInternshipReviewReq } from "../../../types/api"
 import GpaNumberInput from "../../../components/common/inputs/number/gpa"
+import { ERROR_FORM_MESSAGES } from "../../../utils/validation/errorMessages/form"
 
 const InternshipOfferFormPage: React.FunctionComponent = () => {
   const initialValues = {
@@ -85,8 +86,14 @@ const InternshipOfferFormPage: React.FunctionComponent = () => {
     programme: selectCommonValidationSchema,
     title: titleValidationSchema,
     offerReceivedDate: dateValidationSchema,
-    jobTitle: titleValidationSchema.nullable(),
-    companyName: titleValidationSchema.nullable(),
+    jobTitle: yup
+      .string()
+      .max(100, ERROR_FORM_MESSAGES.TOO_LONG)
+      .required("必須填寫"),
+    companyName: yup
+      .string()
+      .max(100, ERROR_FORM_MESSAGES.TOO_LONG)
+      .required("必須填寫"),
     jobType: selectCommonValidationSchema,
     internType: selectCommonValidationSchema,
     gpa: gpaCommonValidationSchema,
@@ -109,11 +116,14 @@ const InternshipOfferFormPage: React.FunctionComponent = () => {
   const dispatch = useAppDispatch()
 
   const handleSubmit = () => {
+    const gpa = formik.values.gpa
+      ? parseInt(parseInt(formik.values.gpa).toFixed(2))
+      : null
     const body: ICreateInternshipReviewReq = {
       programId: 6070,
       internshipTypeId: parseInt(formik.values.internType!),
       title: formik.values.title,
-      gpa: formik.values.gpa,
+      gpa: gpa,
       jobTypeId: formik.values.jobType!,
       jobPostSourceId: formik.values.jobSource
         ? parseInt(formik.values.jobSource)
@@ -139,35 +149,35 @@ const InternshipOfferFormPage: React.FunctionComponent = () => {
       longQuestionResponses: [
         {
           questionId: 1,
-          text: formik.values.longQOne
+          text: formik.values.longQOne.trim() || null
         },
         {
           questionId: 2,
-          text: formik.values.longQTwo
+          text: formik.values.longQTwo.trim() || null
         },
         {
           questionId: 3,
-          text: formik.values.longQThree
+          text: formik.values.longQThree.trim() || null
         },
         {
           questionId: 4,
-          text: formik.values.longQFour
+          text: formik.values.longQFour.trim() || null
         },
         {
           questionId: 5,
-          text: formik.values.longQFive
+          text: formik.values.longQFive.trim() || null
         },
         {
           questionId: 6,
-          text: formik.values.longQSix
+          text: formik.values.longQSix.trim() || null
         },
         {
           questionId: 7,
-          text: formik.values.longQSeven
+          text: formik.values.longQSeven.trim() || null
         },
         {
           questionId: 8,
-          text: formik.values.longQEight
+          text: formik.values.longQEight.trim() || null
         }
       ]
     }
@@ -345,7 +355,7 @@ const InternshipOfferFormPage: React.FunctionComponent = () => {
           />
         </div>
         <InputContainer
-          header="總年薪(HKD)"
+          header="月薪(HKD)"
           subHeader={`HKD ${formik.values.totalSalary}`}
         >
           {/* <div className="flex flex-col md:flex-row w-full gap-x-3 gap-y-6 justify-end"> */}
@@ -423,7 +433,7 @@ const InternshipOfferFormPage: React.FunctionComponent = () => {
             id="difficulty"
             value={formik.values.difficulty}
             onChange={formik.handleChange}
-            ratingTitle={intershipJobFindingDifficultyRating}
+            ratingTitle={internshipJobFindingDifficultyRating}
             onBlur={formik.handleBlur}
             errorMessages={formik.errors.difficulty}
             isTouched={formik.touched.difficulty}

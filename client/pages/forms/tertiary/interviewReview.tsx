@@ -210,7 +210,7 @@ const InterviewReviewPage: NextPage = () => {
       dressCodeId: formik.values.dressCode
         ? parseInt(formik.values.dressCode)
         : null,
-      title: formik.values.title,
+      title: formik.values.title.trim(),
       interviewDate: formik.values.interviewDate,
       contactMethod: {
         typeId: formik.values.contactMethod,
@@ -229,27 +229,27 @@ const InterviewReviewPage: NextPage = () => {
       longQuestionResponses: [
         {
           questionId: 1,
-          text: formik.values.longQOne
+          text: formik.values.longQOne.trim() || null
         },
         {
           questionId: 2,
-          text: formik.values.longQTwo
+          text: formik.values.longQTwo.trim() || null
         },
         {
           questionId: 3,
-          text: formik.values.longQThree
+          text: formik.values.longQThree.trim() || null
         },
         {
           questionId: 4,
-          text: formik.values.longQFour
+          text: formik.values.longQFour.trim() || null
         },
         {
           questionId: 5,
-          text: formik.values.longQFive
+          text: formik.values.longQFive.trim() || null
         },
         {
           questionId: 6,
-          text: formik.values.longQSix
+          text: formik.values.longQSix.trim() || null
         }
       ],
       ratingQuestionResponses: [

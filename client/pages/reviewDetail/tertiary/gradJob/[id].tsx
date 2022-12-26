@@ -41,7 +41,7 @@ const GradJobReviewDetailPage: NextPage = () => {
         </div>
         <DetailReviewInfoContainer
           offerDate="02/2022"
-          industry="Law"
+          jobType="Law"
           companyName="123"
           jobSource="123"
           username={null}

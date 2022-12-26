@@ -9,7 +9,6 @@ export interface IReviewHeaderContainerProps {
   ShortTitle?: string
   schoolShortName: string
   layoutClassName?: string
-  jupasCode?: string
   additionalInfoTag?: (string | undefined)[]
   isStudent?: boolean
   title?: string
@@ -24,7 +23,6 @@ const ReviewHeaderContainer: React.FunctionComponent<
   schoolShortName,
   children,
   layoutClassName,
-  jupasCode,
   additionalInfoTag,
   isStudent,
   title
@@ -43,15 +41,15 @@ const ReviewHeaderContainer: React.FunctionComponent<
         className={`flex justify-center items-center p-4 ${layoutClassName} `}
       >
         <div className="flex flex-col md:flex-row w-full ">
-          <div className="flex justify-center shrink-0">
+          <div className="flex justify-center shrink-0 md:w-1/10 ">
             <Image
               src={`/icons/schools/universities/${schoolShortName}.jpg`}
-              width={"100rem"}
-              height={"100rem"}
+              width={"100%"}
+              height={"100%"}
               alt={`${ShortTitle}`}
             />
           </div>
-          <div className="flex  flex-col text-center  items-center justify-center gap-y-2 mt-4 md:mt-0 ">
+          <div className="flex  flex-col text-center  items-center justify-center gap-y-2 mt-4 md:mt-0 md:w-9/10 ">
             <div className="flex flex-row gap-x-2">
               <h3 className="text-xs md:text-lg max-w-10/12">{ChineseTitle}</h3>
             </div>
@@ -61,8 +59,6 @@ const ReviewHeaderContainer: React.FunctionComponent<
             </h3>
 
             <div className="flex flex-row justify-end items-center w-full gap-x-2">
-              {jupasCode && <StyedItem title={jupasCode} />}
-              {ShortTitle && <StyedItem title={ShortTitle} />}
               {additionalInfoTag &&
                 additionalInfoTag.map((data) => {
                   if (data) {
@@ -73,14 +69,10 @@ const ReviewHeaderContainer: React.FunctionComponent<
           </div>
         </div>
       </div>
-      <h2 className="text-center mt-4">
-        {title}{" "}
-        {isStudent && (
-          <h3>
-            <StudentIcon />
-          </h3>
-        )}
-      </h2>
+      <div className="flex flex-fow text-lg justify-center gap-x-2">
+        <h2>{title}</h2>
+        {isStudent && <StudentIcon />}
+      </div>
       <div className="mt-12">{children}</div>
     </div>
   )
