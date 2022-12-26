@@ -92,6 +92,28 @@ export interface IGetInterviewDetailReviewRes {
   longQuestionResponses: ILongQuestionResponses[]
 }
 
+export interface IGetInternshipDetailReviewRes {
+  title: string
+  internshipType: IInternshipRes
+  companyName: string
+  jobTitle: string
+  offerReceiveDate: string
+  bonus: number
+  stockOptions: number
+  jobType: IJopTypeRes
+  jobPostSource: IJobPostSourceRes
+  id: number
+  createdAt: string
+  user: IUserRes
+  // likes*	number
+  // dislikes*	number
+  anonymous: boolean
+  // voteOfUser*	{...}
+  // votes*	number
+  ratingQuestionResponses: IRatingQuestionResponses[]
+  longQuestionResponses: ILongQuestionResponses[]
+}
+
 export interface ICreateSchoolReviewReq {
   schoolId: number
   title: string
@@ -206,6 +228,21 @@ export interface IUserRes {
 export interface IContactMethodRes {
   value: string
   type: string
+}
+
+export interface IInternshipRes {
+  id: number
+  displayText: string
+}
+
+export interface IJopTypeRes {
+  id: number
+  displayText: string
+}
+
+export interface IJobPostSourceRes {
+  id: number
+  displayText: string
 }
 
 export interface IDseScoresRes {
