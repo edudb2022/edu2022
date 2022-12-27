@@ -18,6 +18,7 @@ interface IDetailReviewInfoContainerProps {
   companyName?: string
   jobSource?: string
   applicationType?: string
+  gpa?: number | null | string
 }
 
 interface IInfoItemProps {
@@ -41,7 +42,8 @@ const DetailReviewInfoContainer: React.FunctionComponent<
   jobType,
   companyName,
   jobSource,
-  applicationType
+  applicationType,
+  gpa
 }) => {
   const contact = contactMetaData
     ? `${contactMetaData.type} : ${contactMetaData.detail}`
@@ -83,6 +85,7 @@ const DetailReviewInfoContainer: React.FunctionComponent<
           {currentProgramme && (
             <InfoItem header="最近就讀的課程" description={currentProgramme} />
           )}
+          {gpa && <InfoItem header="GPA" description={gpa} />}
           {jobType && <InfoItem header="jobType" description={jobType} />}
           {companyName && (
             <InfoItem header="公司名稱" description={companyName} />
