@@ -8,6 +8,7 @@ import {
   CurrentSchoolTypeId,
   DSEGradeTypeId,
   DSESubjectId,
+  HonorTypeId,
   InternshipTypeId,
   JobSourceTypeId,
   JobTypeId,
@@ -191,6 +192,26 @@ export interface ICreateInternshipReviewReq {
   stockOptions: number
   contactMethod: IContactMethod | null
   userId: number
+  anonymous: boolean
+  ratingQuestionResponses: IRatingQuestionResponses[]
+  longQuestionResponses: ILongQuestionResponses[]
+}
+
+export interface ICreateGradJobReviewReq {
+  programId: number
+  userId: number
+  honorId: HonorTypeId | null
+  annualSalary: number
+  title: string
+  jobTypeId: JobTypeId
+  jobPostSourceId: JobSourceTypeId | null
+  companyName: string
+  jobTitle: string
+  offerReceiveDate: string
+  baseSalary: number
+  bonus: number
+  stockOptions: number
+  contactMethod: IContactMethod | null
   anonymous: boolean
   ratingQuestionResponses: IRatingQuestionResponses[]
   longQuestionResponses: ILongQuestionResponses[]

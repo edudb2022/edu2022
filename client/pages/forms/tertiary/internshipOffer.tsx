@@ -110,6 +110,7 @@ const InternshipOfferFormPage: React.FunctionComponent = () => {
   const [isInProgress, setIsInProgress] = useState(false)
   const { mutate } = useCreateInternshipReview()
   const dispatch = useAppDispatch()
+  const router = useRouter()
 
   const handleSubmit = () => {
     const gpa = formik.values.gpa
@@ -210,8 +211,6 @@ const InternshipOfferFormPage: React.FunctionComponent = () => {
     onSubmit: handleSubmit,
     validationSchema: intershipOfferFormSchema
   })
-
-  const router = useRouter()
 
   useEffect(() => {
     formik.values.totalSalary =

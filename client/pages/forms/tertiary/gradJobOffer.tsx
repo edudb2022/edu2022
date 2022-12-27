@@ -38,6 +38,12 @@ import { gradJobOfferOfferReviewLongQuestionsMapper } from "../../../mappers/lon
 import SEO from "../../../components/seo"
 import { CommonHelpers } from "../../../helpers"
 import JobTypeSearchableSelect from "../../../components/common/inputs/select/searchable/jobType"
+import useCreateGradJobOfferReview from "../../../hooks/api/uesCreateGradJobReview"
+import { ICreateGradJobReviewReq } from "../../../types/api"
+import { useRouter } from "next/router"
+import { useAppDispatch } from "../../../hooks/common/useAppDispatch"
+import { ISystemActionTypes } from "../../../state/system/actions"
+import { ErrorMessageStatement } from "../../../constants/errorMessageStatement"
 
 const GradJobOfferFormPage: React.FunctionComponent = () => {
   const initialValues = {
@@ -56,7 +62,7 @@ const GradJobOfferFormPage: React.FunctionComponent = () => {
     difficulty: null,
     hope: null,
     honour: null,
-    jobType: undefined,
+    jobType: null,
     jobSource: null,
     contactMethod: null,
     contactDetail: "",
@@ -72,34 +78,23 @@ const GradJobOfferFormPage: React.FunctionComponent = () => {
     longQNine: ""
   }
 
-  const handleSubmit = () => {
-    const contact = formik.values.contactMethod
-      ? {
-          typeId: formik.values.contactMethod,
-          value: formik.values.contactDetail
-        }
-      : null
-    console.log("sumit")
-  }
-
   const gradJobOfferFormSchema = yup.object().shape({
     schoolType: selectCommonValidationSchema,
     school: selectCommonValidationSchema,
     faculty: selectCommonValidationSchema,
     programme: selectCommonValidationSchema,
+    offerReceivedDate: dateValidationSchema,
     title: titleValidationSchema,
     jobTitle: titleValidationSchema.nullable(),
-    offerReceivedDate: dateValidationSchema,
     companyName: titleValidationSchema.nullable(),
-    jobType: selectCommonValidationSchema,
     baseSalary: SalaryValidationSchema,
     bonus: SalaryValidationSchema,
     stockOption: SalaryValidationSchema,
+    jobType: selectCommonValidationSchema,
     hope: ratingValidationSchema,
     difficulty: ratingValidationSchema,
     contactDetail: contactDetailValidationSchema,
-    // applicaiotnType: selectCommonValidationSchema,
-    offerType: selectCommonValidationSchema,
+    honour: selectCommonValidationSchema,
     longQOne: longQuestionValidationSchema,
     longQTwo: longQuestionValidationSchema,
     longQThree: longQuestionValidationSchema,
@@ -111,6 +106,104 @@ const GradJobOfferFormPage: React.FunctionComponent = () => {
     longQNine: longQuestionValidationSchema
   })
   const [isInProgress, setIsInProgress] = useState(false)
+  const { mutate } = useCreateGradJobOfferReview()
+  const router = useRouter()
+  const dispatch = useAppDispatch()
+
+  const handleSubmit = () => {
+    const contact = formik.values.contactMethod
+      ? {
+          typeId: formik.values.contactMethod,
+          value: formik.values.contactDetail
+        }
+      : null
+
+    const body: ICreateGradJobReviewReq = {
+      programId: 6070,
+      userId: 1,
+      honorId: formik.values.honour,
+      annualSalary: 0,
+      title: formik.values.title,
+      jobTypeId: formik.values.jobType!,
+      jobPostSourceId: formik.values.jobSource || null,
+      companyName: formik.values.companyName,
+      jobTitle: formik.values.jobTitle,
+      offerReceiveDate: "2018",
+      baseSalary: parseInt(formik.values.baseSalary),
+      bonus: parseInt(formik.values.bonus),
+      stockOptions: parseInt(formik.values.stockOption),
+      contactMethod: contact,
+      anonymous: formik.values.isAnonymous,
+      ratingQuestionResponses: [
+        {
+          questionId: 1,
+          optionId: parseInt(formik.values.difficulty!)
+        },
+        {
+          questionId: 2,
+          optionId: parseInt(formik.values.hope!)
+        }
+      ],
+      longQuestionResponses: [
+        {
+          questionId: 1,
+          text: formik.values.longQOne.trim() || null
+        },
+        {
+          questionId: 2,
+          text: formik.values.longQTwo.trim() || null
+        },
+        {
+          questionId: 3,
+          text: formik.values.longQThree.trim() || null
+        },
+        {
+          questionId: 4,
+          text: formik.values.longQFour.trim() || null
+        },
+        {
+          questionId: 5,
+          text: formik.values.longQFive.trim() || null
+        },
+        {
+          questionId: 6,
+          text: formik.values.longQSix.trim() || null
+        },
+        {
+          questionId: 7,
+          text: formik.values.longQSeven.trim() || null
+        },
+        {
+          questionId: 8,
+          text: formik.values.longQEight.trim() || null
+        },
+        {
+          questionId: 9,
+          text: formik.values.longQNine.trim() || null
+        }
+      ]
+    }
+
+    setIsInProgress(true)
+    mutate(body, {
+      onSuccess: (res) => {
+        const id = res.data.data.id
+        router.push(`/reviewDetail/tertiary/gradJob/${id}`)
+      },
+      onError: (err) => {
+        console.log("errrrrrr", err)
+
+        dispatch({
+          type: ISystemActionTypes.SYSTEM_ERROR,
+          payload: ErrorMessageStatement.FORM_GENERIC_ERROR
+        })
+      },
+      onSettled: () => {
+        setIsInProgress(false)
+      }
+    })
+  }
+
   const formik = useFormik({
     initialValues: initialValues,
     onSubmit: handleSubmit,
