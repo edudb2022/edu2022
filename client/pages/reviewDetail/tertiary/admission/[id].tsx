@@ -7,7 +7,6 @@ import DetailReviewHeaderContainer from "../../../../components/containers/detai
 import DetailReviewInfoContainer from "../../../../components/containers/detailReviewInfo"
 
 import PageLayout from "../../../../components/layouts/page"
-import { useAppSelector } from "../../../../hooks/common/useAppSelector"
 import {
   ADMISSION_OFFER_TYPE,
   ADMISSION_TYPE,

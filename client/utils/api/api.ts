@@ -50,6 +50,18 @@ const apiService = {
     }
   },
 
+  getGradJobDetailReview: async ({ queryKey }: any) => {
+    const id = queryKey[1].id
+    try {
+      const data = await axios.get(
+        `${DEFAULT_BASE_URL}/api/grad-job-reviews/${id}`
+      )
+      return data.data.data
+    } catch (error) {
+      console.error(error)
+    }
+  },
+
   getInterviewDetailReview: async ({ queryKey }: any) => {
     const id = queryKey[1].id
     try {

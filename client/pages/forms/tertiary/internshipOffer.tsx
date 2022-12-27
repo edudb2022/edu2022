@@ -203,9 +203,6 @@ const InternshipOfferFormPage: React.FunctionComponent = () => {
     })
   }
 
-  // const handleSubmit = () => {
-  //   console.log(232323, "sumit")
-  // }
   const formik = useFormik({
     initialValues: initialValues,
     onSubmit: handleSubmit,
