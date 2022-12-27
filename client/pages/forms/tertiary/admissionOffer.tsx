@@ -57,9 +57,17 @@ import SEO from "../../../components/seo"
 
 import { CommonHelpers } from "../../../helpers"
 import { admissionOfferReviewLongQuestionsMapper } from "../../../mappers/longQuestion"
+import useCreateAdmissionOfferReview from "../../../hooks/api/useCreateAdmissionOfferReview"
+import { IAdmissionOfferReviewReq, IDseScores } from "../../../types/api"
+import { useRouter } from "next/router"
+import { ISystemActionTypes } from "../../../state/system/actions"
+import { ErrorMessageStatement } from "../../../constants/errorMessageStatement"
 
 const AdmissionOfferFormPage: React.FunctionComponent = () => {
   const dispatch = useAppDispatch()
+  const { mutate } = useCreateAdmissionOfferReview()
+  const router = useRouter()
+
   const initialValues = {
     schoolType: null,
     school: null,
@@ -74,7 +82,7 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
     yearofStudy: null,
     offerType: null,
     jupasBanding: null,
-    applicationType: undefined,
+    applicationType: null,
     admissionLevel: null,
     gpa: null,
     dseSubjectOne: null,
@@ -104,8 +112,100 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
           value: formik.values.contactDetail
         }
       : null
-    console.log("Submit")
-    // dispatch({ type: ISystemActionTypes.SYSTEM_IS_LOADING, payload: true })
+
+    const gpa = formik.values.gpa
+      ? parseInt(parseInt(formik.values.gpa).toFixed(2))
+      : null
+    const completedBestFive =
+      formik.values.dseSubjectOne &&
+      formik.values.dseSubjectTwo &&
+      formik.values.dseSubjectThree &&
+      formik.values.dseSubjectFour &&
+      formik.values.dseSubjectFive
+
+    const completedBestSix = completedBestFive && formik.values.dseSubjectSix
+
+    let dseScoresData: IDseScores[] | null = null
+
+    if (completedBestFive) {
+      dseScoresData = [
+        {
+          gradeId: formik.values.dseSubjectGradeOne!,
+          subjectId: formik.values.dseSubjectOne!
+        },
+        {
+          gradeId: formik.values.dseSubjectGradeTwo!,
+          subjectId: formik.values.dseSubjectTwo!
+        },
+        {
+          gradeId: formik.values.dseSubjectGradeThree!,
+          subjectId: formik.values.dseSubjectThree!
+        },
+        {
+          gradeId: formik.values.dseSubjectGradeFour!,
+          subjectId: formik.values.dseSubjectFour!
+        },
+        {
+          gradeId: formik.values.dseSubjectGradeFive!,
+          subjectId: formik.values.dseSubjectFive!
+        }
+      ]
+    }
+
+    if (completedBestSix) {
+      const bestSix = {
+        gradeId: formik.values.dseSubjectGradeSix!,
+        subjectId: formik.values.dseSubjectSix!
+      } as IDseScores
+
+      if (dseScoresData) {
+        dseScoresData.push(bestSix)
+      }
+    }
+
+    const body: IAdmissionOfferReviewReq = {
+      title: formik.values.title,
+      gpa: gpa,
+      userId: 1,
+      anonymous: formik.values.isAnonymous,
+      offerTypeId: formik.values.offerType!,
+      contactMethod: contact,
+      programId: 6070,
+      currentProgramId: 6070,
+      admissionLevelId: formik.values.admissionLevel!,
+      dseScores: dseScoresData,
+      longQuestionResponses: [
+        {
+          questionId: 1,
+          text: formik.values.longQOne.trim() || null
+        },
+        {
+          questionId: 2,
+          text: formik.values.longQTwo.trim() || null
+        },
+        {
+          questionId: 3,
+          text: formik.values.longQThree.trim() || null
+        }
+      ]
+    }
+    mutate(body, {
+      onSuccess: (res) => {
+        console.log("res", res)
+        const id = res.data.data.id
+        router.push(`/reviewDetail/tertiary/interview/${id}`)
+      },
+      onError: (err) => {
+        console.log("err", err)
+        dispatch({
+          type: ISystemActionTypes.SYSTEM_ERROR,
+          payload: ErrorMessageStatement.FORM_GENERIC_ERROR
+        })
+      },
+      onSettled: () => {
+        setIsInProgress(false)
+      }
+    })
   }
 
   const admissionOfferFormSchema = yup.object().shape({
@@ -416,7 +516,7 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
             disabled={
               formik.values.applicationType === ApplicationTypeId.NON_JUPAS ||
               formik.values.applicationType === ApplicationTypeId.BACHELOR ||
-              formik.values.applicationType === ""
+              formik.values.applicationType === null
             }
           />
 

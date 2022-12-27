@@ -35,6 +35,8 @@ const InternshipReviewDetailPage: NextPage = () => {
     ? { type: data.contactMethod.type, detail: data.contactMethod.value }
     : null
 
+  const gpa = data?.gpa || CommonCopyRight.NOT_WILLING_TO_RESPONSE
+
   useEffect(() => {
     // Call tracking event onMount
     trackingEvent.customEvent(
@@ -43,6 +45,7 @@ const InternshipReviewDetailPage: NextPage = () => {
       `${id}`
     )
   }, [])
+
   return (
     <PageLayout>
       <DetailReviewHeaderContainer
@@ -96,6 +99,7 @@ const InternshipReviewDetailPage: NextPage = () => {
           username={userName!}
           postDate={data?.createdAt!}
           contactMetaData={contactMethod}
+          gpa={gpa}
         />
       </DetailReviewHeaderContainer>
 

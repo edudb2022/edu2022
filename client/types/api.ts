@@ -1,6 +1,8 @@
 import { number } from "yup"
 import {
   AcademicStatusTypeId,
+  AdmissionLevelTypeId,
+  AdmissionOfferTypeId,
   ApplicationTypeId,
   ContactMethodTypeId,
   CurrentSchoolTypeId,
@@ -106,6 +108,7 @@ export interface IGetInternshipDetailReviewRes {
   id: number
   createdAt: string
   user: IUserRes
+  gpa: number | null
   // likes*	number
   // dislikes*	number
   program: IProgrammeRes
@@ -153,10 +156,24 @@ export interface ICreateInterviewReviewReq {
   dseScores: IDseScores[] | null
   interviewDate: string
   contactMethod: IContactMethod | null
-
   ratingQuestionResponses: IRatingQuestionResponses[]
   longQuestionResponses: ILongQuestionResponses[]
   anonymous: boolean
+}
+
+export interface IAdmissionOfferReviewReq {
+  programId: number
+  title: string
+  gpa: number | null
+  admissionLevelId: AdmissionLevelTypeId
+  offerTypeId: AdmissionOfferTypeId
+  currentProgramId: number
+  dseScores: IDseScores[] | null
+  contactMethod: IContactMethod | null
+  userId: number
+  anonymous: boolean
+  ratingQuestionResponses?: IRatingQuestionResponses[]
+  longQuestionResponses: ILongQuestionResponses[]
 }
 
 export interface ICreateInternshipReviewReq {

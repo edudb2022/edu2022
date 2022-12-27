@@ -163,6 +163,7 @@ const InterviewReviewPage: NextPage = () => {
           value: formik.values.contactDetail
         }
       : null
+
     const completedBestFive =
       formik.values.dseSubjectOne &&
       formik.values.dseSubjectTwo &&
@@ -170,43 +171,44 @@ const InterviewReviewPage: NextPage = () => {
       formik.values.dseSubjectFour &&
       formik.values.dseSubjectFive
 
-    const completedBestSix =
-      formik.values.dseSubjectOne &&
-      formik.values.dseSubjectTwo &&
-      formik.values.dseSubjectThree &&
-      formik.values.dseSubjectFour &&
-      formik.values.dseSubjectFive &&
-      formik.values.dseSubjectSix
+    const completedBestSix = completedBestFive && formik.values.dseSubjectSix
 
-    const dseScoresData: IDseScores[] = [
-      {
-        gradeId: formik.values.dseSubjectGradeOne!,
-        subjectId: formik.values.dseSubjectOne!
-      },
-      {
-        gradeId: formik.values.dseSubjectGradeTwo!,
-        subjectId: formik.values.dseSubjectTwo!
-      },
-      {
-        gradeId: formik.values.dseSubjectGradeThree!,
-        subjectId: formik.values.dseSubjectThree!
-      },
-      {
-        gradeId: formik.values.dseSubjectGradeFour!,
-        subjectId: formik.values.dseSubjectFour!
-      },
-      {
-        gradeId: formik.values.dseSubjectGradeFive!,
-        subjectId: formik.values.dseSubjectFive!
-      }
-    ]
+    let dseScoresData: IDseScores[] | null = null
+
+    if (completedBestFive) {
+      dseScoresData = [
+        {
+          gradeId: formik.values.dseSubjectGradeOne!,
+          subjectId: formik.values.dseSubjectOne!
+        },
+        {
+          gradeId: formik.values.dseSubjectGradeTwo!,
+          subjectId: formik.values.dseSubjectTwo!
+        },
+        {
+          gradeId: formik.values.dseSubjectGradeThree!,
+          subjectId: formik.values.dseSubjectThree!
+        },
+        {
+          gradeId: formik.values.dseSubjectGradeFour!,
+          subjectId: formik.values.dseSubjectFour!
+        },
+        {
+          gradeId: formik.values.dseSubjectGradeFive!,
+          subjectId: formik.values.dseSubjectFive!
+        }
+      ]
+    }
+
     if (completedBestSix) {
       const bestSix = {
         gradeId: formik.values.dseSubjectGradeSix!,
         subjectId: formik.values.dseSubjectSix!
       } as IDseScores
 
-      dseScoresData.push(bestSix)
+      if (dseScoresData) {
+        dseScoresData.push(bestSix)
+      }
     }
 
     const dseScores: IDseScores[] | null =
