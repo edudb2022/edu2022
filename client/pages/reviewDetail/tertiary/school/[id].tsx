@@ -2,8 +2,7 @@ import dayjs from "dayjs"
 import { GetServerSideProps, NextPage } from "next"
 import { useRouter } from "next/router"
 import React, { useEffect } from "react"
-import { dehydrate, QueryClient, useQuery } from "react-query"
-import LongQuestionsSection from "../../../../components/common/inputs/sections/longQuestions"
+import { dehydrate, QueryClient } from "react-query"
 import RatingTag from "../../../../components/common/tags/rating"
 import DetailReviewHeaderContainer from "../../../../components/containers/detailReviewHeader"
 import DetailReviewInfoContainer from "../../../../components/containers/detailReviewInfo"
@@ -26,15 +25,9 @@ import { schoolReviewLongQuestionsMapper } from "../../../../mappers/longQuestio
 import { schoolReviewRatingQuestionsMapper } from "../../../../mappers/ratingQuestions"
 import { apiService } from "../../../../utils/api/api"
 import useVoteSchoolReview from "../../../../hooks/api/vote/useVoteSchoolReview"
-import { CommonHelpers } from "../../../../helpers"
 import trackingEvent from "../../../../utils/services/GoogleAnalytics/tracking"
 import { CommonCopyRight } from "../../../../utils/copyRight/common"
-import {
-  schoolTypesList,
-  SITENAME,
-  WEB_ORIGIN
-} from "../../../../constants/common"
-import { SchoolTypeId } from "../../../../types/common"
+import { SITENAME, WEB_ORIGIN } from "../../../../constants/common"
 
 const SchoolReviewDetailPage: NextPage = () => {
   const router = useRouter()
@@ -42,7 +35,10 @@ const SchoolReviewDetailPage: NextPage = () => {
   const { data } = useGetSchoolDetailReview(id as string)
   const { mutate } = useVoteSchoolReview()
 
-  console.log(2232, data)
+  const contactMethod = data?.contactMethod
+    ? { type: data.contactMethod.type, detail: data.contactMethod.value }
+    : null
+
   useEffect(() => {
     // Call tracking event onMount
     trackingEvent.customEvent(
@@ -208,7 +204,7 @@ const SchoolReviewDetailPage: NextPage = () => {
             academicStatus={academicStatus}
             username={userName!}
             postDate={data!.createdAt!}
-            contact="tg : 123"
+            contactMetaData={contactMethod}
           />
         </DetailReviewHeaderContainer>
 

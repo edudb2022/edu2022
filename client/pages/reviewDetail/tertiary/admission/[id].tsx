@@ -20,6 +20,10 @@ const AdmissionReviewDetailPage: NextPage = () => {
   const router = useRouter()
   const { id } = router.query
 
+  // const contactMethod = data?.contactMethod
+  // ? { type: data.contactMethod.type, detail: data.contactMethod.value }
+  // : null
+
   useEffect(() => {
     // Call tracking event onMount
     trackingEvent.customEvent(
@@ -75,7 +79,7 @@ const AdmissionReviewDetailPage: NextPage = () => {
           currentSchool="123"
           username={null}
           postDate="01/02/23"
-          contact="tg : 123"
+          contactMetaData={{ type: "123", detail: "123" }}
         />
       </DetailReviewHeaderContainer>
     </PageLayout>

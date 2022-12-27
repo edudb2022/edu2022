@@ -98,6 +98,12 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
   }
 
   const handleSubmit = () => {
+    const contact = formik.values.contactMethod
+      ? {
+          typeId: formik.values.contactMethod,
+          value: formik.values.contactDetail
+        }
+      : null
     console.log("Submit")
     // dispatch({ type: ISystemActionTypes.SYSTEM_IS_LOADING, payload: true })
   }

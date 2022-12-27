@@ -115,6 +115,14 @@ const InternshipOfferFormPage: React.FunctionComponent = () => {
     const gpa = formik.values.gpa
       ? parseInt(parseInt(formik.values.gpa).toFixed(2))
       : null
+
+    const contact = formik.values.contactMethod
+      ? {
+          typeId: formik.values.contactMethod,
+          value: formik.values.contactDetail
+        }
+      : null
+
     const body: ICreateInternshipReviewReq = {
       programId: 6070,
       internshipTypeId: parseInt(formik.values.internType!),
@@ -130,10 +138,7 @@ const InternshipOfferFormPage: React.FunctionComponent = () => {
       baseSalary: parseInt(formik.values.baseSalary),
       bonus: parseInt(formik.values.bonus),
       stockOptions: parseInt(formik.values.stockOption),
-      contactMethod: {
-        typeId: parseInt(formik.values.contactMethod!),
-        value: formik.values.contactDetail
-      },
+      contactMethod: contact,
       userId: 1,
       anonymous: formik.values.isAnonymous,
       ratingQuestionResponses: [

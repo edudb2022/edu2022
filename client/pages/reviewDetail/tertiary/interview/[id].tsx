@@ -33,10 +33,16 @@ const InterviewReviewDetailPage: NextPage = () => {
   const [dseBestFive, setDseBestFive] = useState(0)
   const [dseBestSix, setDseBestSix] = useState(0)
   const { data } = useGetInterviewDetailReview(id as string)
+
   const tags = ["面試情報"]
+
   const userName = data?.anonymous
     ? CommonCopyRight.NOT_WILLING_TO_RESPONSE
     : data?.user.name
+
+  const contactMethod = data?.contactMethod
+    ? { type: data.contactMethod.type, detail: data.contactMethod.value }
+    : null
 
   useEffect(() => {
     // Call tracking event onMount
@@ -164,7 +170,7 @@ const InterviewReviewDetailPage: NextPage = () => {
           </div>
 
           <DetailReviewInfoContainer
-            contact="tg : 123"
+            contactMetaData={contactMethod}
             interviewDate={data!.interviewDate}
             DressCode={data?.dressCode.displayText}
             applicationType={data?.applicationType.displayText}

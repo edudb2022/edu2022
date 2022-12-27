@@ -104,15 +104,19 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
   const router = useRouter()
 
   const handleSubmit = () => {
+    const contact = formik.values.contactMethod
+      ? {
+          typeId: formik.values.contactMethod,
+          value: formik.values.contactDetail
+        }
+      : null
+
     const body = {
       schoolId: 218,
       title: formik.values.title.trim(),
       academicStatusId: formik.values.academicStatus,
       admissionDate: "2018",
-      contactMethod: {
-        typeId: formik.values.contactMethod,
-        value: formik.values.contactDetail
-      },
+      contactMethod: contact,
       ratingQuestionResponses: [
         {
           questionId: 1,

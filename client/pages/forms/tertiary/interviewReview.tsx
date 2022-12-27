@@ -156,6 +156,13 @@ const InterviewReviewPage: NextPage = () => {
     const gpa = formik.values.gpa
       ? parseInt(parseInt(formik.values.gpa).toFixed(2))
       : null
+
+    const contact = formik.values.contactMethod
+      ? {
+          typeId: formik.values.contactMethod,
+          value: formik.values.contactDetail
+        }
+      : null
     const completedBestFive =
       formik.values.dseSubjectOne &&
       formik.values.dseSubjectTwo &&
@@ -212,10 +219,7 @@ const InterviewReviewPage: NextPage = () => {
         : null,
       title: formik.values.title.trim(),
       interviewDate: formik.values.interviewDate,
-      contactMethod: {
-        typeId: formik.values.contactMethod,
-        value: formik.values.contactDetail
-      },
+      contactMethod: contact,
       applicationTypeId: 2,
       currentSchoolTypeId: formik.values.currentSchool
         ? parseInt(formik.values.currentSchool)

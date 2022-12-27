@@ -105,7 +105,12 @@ const ProgrammeReviewFormPage: React.FunctionComponent = () => {
 
   const handleSubmit = () => {
     setIsInProgress(true)
-
+    const contact = formik.values.contactMethod
+      ? {
+          typeId: formik.values.contactMethod,
+          value: formik.values.contactDetail
+        }
+      : null
     const body: ICreateProgrammeReviewReq = {
       userId: 1,
       programId: 6070,
@@ -114,10 +119,7 @@ const ProgrammeReviewFormPage: React.FunctionComponent = () => {
       // admissionDate: formik.values.admissionDate,
       //admissionDate: CommonHelpers.formatData(new Date(), undefined, true),
       admissionDate: "2018",
-      contactMethod: {
-        typeId: formik.values.contactMethod,
-        value: formik.values.contactDetail
-      },
+      contactMethod: contact,
       ratingQuestionResponses: [
         {
           questionId: 1,

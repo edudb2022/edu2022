@@ -1,11 +1,12 @@
 import React from "react"
 import { CommonHelpers } from "../../helpers"
+import { CommonCopyRight } from "../../utils/copyRight/common"
 
 interface IDetailReviewInfoContainerProps {
   className?: string
   postDate: string
   username: string | null
-  contact: string
+  contactMetaData: { type: string; detail: string } | null
   admissionYear?: string
   academicStatus?: string
   interviewDate?: string
@@ -29,7 +30,7 @@ const DetailReviewInfoContainer: React.FunctionComponent<
   className,
   postDate,
   username,
-  contact,
+  contactMetaData,
   admissionYear,
   interviewDate,
   academicStatus,
@@ -42,6 +43,9 @@ const DetailReviewInfoContainer: React.FunctionComponent<
   jobSource,
   applicationType
 }) => {
+  const contact = contactMetaData
+    ? `${contactMetaData.type} : ${contactMetaData.detail}`
+    : CommonCopyRight.NOT_WILLING_TO_RESPONSE
   const InfoItem: React.FunctionComponent<IInfoItemProps> = ({
     header,
     description

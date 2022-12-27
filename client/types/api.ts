@@ -111,6 +111,7 @@ export interface IGetInternshipDetailReviewRes {
   program: IProgrammeRes
   anonymous: boolean
   // voteOfUser*	{...}
+  contactMethod: IContactMethodRes | null
   votes: number
   ratingQuestionResponses: IRatingQuestionResponses[]
   longQuestionResponses: ILongQuestionResponses[]
@@ -121,7 +122,7 @@ export interface ICreateSchoolReviewReq {
   title: string
   academicStatusId: AcademicStatusTypeId | null
   admissionDate: string
-  contactMethod: IContactMethod
+  contactMethod: IContactMethod | null
   ratingQuestionResponses: IRatingQuestionResponses[]
   longQuestionResponses: ILongQuestionResponses[]
   userId: TUserId
@@ -132,7 +133,7 @@ export interface ICreateProgrammeReviewReq {
   title: string
   academicStatusId: AcademicStatusTypeId | null
   admissionDate: string
-  contactMethod: IContactMethod
+  contactMethod: IContactMethod | null
   userId: TUserId
   anonymous: boolean
   ratingQuestionResponses: IRatingQuestionResponses[]
@@ -151,7 +152,8 @@ export interface ICreateInterviewReviewReq {
   gpa: number | null
   dseScores: IDseScores[] | null
   interviewDate: string
-  contactMethod: IContactMethod
+  contactMethod: IContactMethod | null
+
   ratingQuestionResponses: IRatingQuestionResponses[]
   longQuestionResponses: ILongQuestionResponses[]
   anonymous: boolean
@@ -170,7 +172,7 @@ export interface ICreateInternshipReviewReq {
   baseSalary: number
   bonus: number
   stockOptions: number
-  contactMethod: IContactMethod
+  contactMethod: IContactMethod | null
   userId: number
   anonymous: boolean
   ratingQuestionResponses: IRatingQuestionResponses[]

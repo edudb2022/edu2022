@@ -73,6 +73,12 @@ const GradJobOfferFormPage: React.FunctionComponent = () => {
   }
 
   const handleSubmit = () => {
+    const contact = formik.values.contactMethod
+      ? {
+          typeId: formik.values.contactMethod,
+          value: formik.values.contactDetail
+        }
+      : null
     console.log("sumit")
   }
 

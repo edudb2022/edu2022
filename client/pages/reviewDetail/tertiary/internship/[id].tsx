@@ -25,10 +25,16 @@ const InternshipReviewDetailPage: NextPage = () => {
     ? CommonCopyRight.NOT_WILLING_TO_RESPONSE
     : data?.user.name
   const tags = [data?.program.jupasCode, "實習情報"]
+
   const baseSalary = data?.baseSalary || 0
   const bonus = data?.bonus || 0
   const stockOptions = data?.stockOptions || 0
   const totalSalary = baseSalary + bonus + stockOptions
+
+  const contactMethod = data?.contactMethod
+    ? { type: data.contactMethod.type, detail: data.contactMethod.value }
+    : null
+
   useEffect(() => {
     // Call tracking event onMount
     trackingEvent.customEvent(
@@ -89,7 +95,7 @@ const InternshipReviewDetailPage: NextPage = () => {
           jobSource={data?.jobPostSource?.displayText}
           username={userName!}
           postDate={data?.createdAt!}
-          contact="tg : 123"
+          contactMetaData={contactMethod}
         />
       </DetailReviewHeaderContainer>
 

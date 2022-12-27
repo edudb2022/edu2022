@@ -35,6 +35,11 @@ const ProgrammeReviewDetailPage: NextPage = () => {
   const { mutate } = useVoteSchoolReview()
 
   const tags = [data?.program?.jupasCode, "課程評價"]
+
+  const contactMethod = data?.contactMethod
+    ? { type: data.contactMethod.type, detail: data.contactMethod.value }
+    : null
+
   const academicStatus =
     data?.academicStatus || CommonCopyRight.NOT_WILLING_TO_RESPONSE
   const userName = data?.anonymous
@@ -181,7 +186,7 @@ const ProgrammeReviewDetailPage: NextPage = () => {
             academicStatus={academicStatus}
             username={userName!}
             postDate={data!.createdAt!}
-            contact="tg : 123"
+            contactMetaData={contactMethod}
           />
         </DetailReviewHeaderContainer>
         <LongQuestionsDisplayLayout>
