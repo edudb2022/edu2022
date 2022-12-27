@@ -5,8 +5,7 @@ import {
   CurrentSchoolTypeId
 } from "../../../types/common"
 import { ERROR_FORM_MESSAGES } from "../errorMessages/form"
-const phoneRegExp =
-  /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
+const phoneRegExp = /^[2-9][0-9]{7}$/
 
 const titleValidationSchema = yup
   .string()
