@@ -1,7 +1,5 @@
 import Link from "next/link"
 import React from "react"
-import DiscordIcon from "../common/icons/discord"
-import FaceBookIcon from "../common/icons/facebook"
 import InstagramIcon from "../common/icons/instagram"
 import GoodTurtleIcon from "../common/icons/logo"
 
@@ -55,19 +53,9 @@ const Footer: React.FunctionComponent = () => {
             <h3 className="sm:mb-3">聯絡我們</h3>
             <Link href={"mailto:abc@abc.com"}>Email: abc@abc.com</Link>
             <div className="w-24 sm:w-3/4 flex justify-between mt-3">
-              <Link href={"http://www.facebook.com"}>
-                <a className="text-3xl">
-                  <FaceBookIcon />
-                </a>
-              </Link>
               <Link href={"http://www.instagram.com"}>
                 <a className="text-3xl">
                   <InstagramIcon />
-                </a>
-              </Link>
-              <Link href={"http://www.discord.com"}>
-                <a className="text-indigo-600 text-3xl">
-                  <DiscordIcon />
                 </a>
               </Link>
             </div>

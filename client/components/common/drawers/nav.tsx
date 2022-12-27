@@ -4,6 +4,7 @@ import BaseDrawer, { IBaseDrawerProps } from "."
 import { useAppSelector } from "../../../hooks/common/useAppSelector"
 import GoodTurtleIcon from "../icons/logo"
 import NavDrawerDiscorditem from "./items/nav/discord"
+import NavDrawerInstagramItem from "./items/nav/Instagram"
 import NavDrawerProfileItem from "./items/nav/profile"
 
 import NavDrawerSignInitem from "./items/nav/signIn"
@@ -38,7 +39,8 @@ const NavDrawer: React.FunctionComponent<INavDrawer> = ({
             <div>
               <NavDrawerSignInitem />
               <NavDrawerSignUpitem />
-              <NavDrawerDiscorditem />
+              {/* <NavDrawerDiscorditem /> */}
+              <NavDrawerInstagramItem />
             </div>
           )}
         </div>

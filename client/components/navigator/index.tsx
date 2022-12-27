@@ -12,6 +12,8 @@ import LoginGroup from "../common/groups/login.tsx"
 import { useAppSelector } from "../../hooks/common/useAppSelector"
 import GoodTurtleIcon from "../common/icons/logo"
 import trackingEvent from "../../utils/services/GoogleAnalytics/tracking"
+import BaseButton from "../common/buttons"
+import InstagramIcon from "../common/icons/instagram"
 
 const Navbar: React.FunctionComponent = () => {
   const router = useRouter()
@@ -40,7 +42,12 @@ const Navbar: React.FunctionComponent = () => {
         </Link>
 
         <div className="flex-row gap-x-4 h-full hidden md:flex ">
-          <DiscordButton onClick={handleDiscordClick} />
+          <BaseButton
+            className={`gap-x-1 text-sm bg-gradient-to-br from-[#4c68d7] via-[#bc2a8d]  to-[#fbad50]  text-white rounded-3xl `}
+          >
+            <InstagramIcon />
+            <span className="text-mono">追蹤IG</span>
+          </BaseButton>
           {isLogin ? (
             <>
               <LoginGroup username="213" />
