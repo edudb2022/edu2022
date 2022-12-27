@@ -111,9 +111,6 @@ const TertiarySchoolPage: NextPage = () => {
       </div>
 
       <CardDisplayLayout>
-        {/* <div className="relative shadow-lg w-92 h-40 text-start rounded-lg border-2 border-theme-one-100  hover:animate-moveUp ">
-          <>123</>
-        </div> */}
         <ProgrammeCard
           programmeChineseName="計量金融學及風險管理科學"
           programmeEnglishName="Quantitative Finance and Risk Management Science"
