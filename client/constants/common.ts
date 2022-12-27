@@ -1288,6 +1288,13 @@ const jobTypeList = [
     JobCategoryId: 28
   },
   {
+    id: JobTypeId.FULL_STACK_SOFTWARE_ENGINEER,
+    guiOrder: 115,
+    chineseDisplayText: "全端軟件工程師",
+    englishDisplayText: "Full Stack Software Engineer",
+    JobCategoryId: 28
+  },
+  {
     id: JobTypeId.DEV_OPS,
     guiOrder: 116,
     chineseDisplayText: "DevOps",
