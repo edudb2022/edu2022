@@ -38,6 +38,19 @@ const apiService = {
       console.error(error)
     }
   },
+
+  getAdmissionOfferDetailReview: async ({ queryKey }: any) => {
+    const id = queryKey[1].id
+    try {
+      const data = await axios.get(
+        `${DEFAULT_BASE_URL}/admission-offer-reviews/${id}`
+      )
+      return data.data.data
+    } catch (error) {
+      console.error(error)
+    }
+  },
+
   getInternshipDetailReview: async ({ queryKey }: any) => {
     const id = queryKey[1].id
     try {

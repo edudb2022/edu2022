@@ -3,6 +3,7 @@ import { useRouter } from "next/router"
 import React, { useEffect, useState } from "react"
 import { dehydrate, QueryClient } from "react-query"
 import ReviewNumberItem from "../../../../components/common/display/items/number"
+import DseScoreList from "../../../../components/common/list/dseScore"
 
 import RatingTag from "../../../../components/common/tags/rating"
 import TextTag from "../../../../components/common/tags/text"
@@ -155,19 +156,7 @@ const InterviewReviewDetailPage: NextPage = () => {
             <ReviewNumberItem title={SCORE_TYPE.GPA} detail={123} />
           </div>
 
-          <div className="flex flex-wrap flex-row justify-around mt-10">
-            {data?.dseScores.map((data) => {
-              return (
-                <>
-                  <TextTag
-                    header={data.subject.displayText}
-                    title={data.grade.displayText}
-                    type="themeOne"
-                  />
-                </>
-              )
-            })}
-          </div>
+          <DseScoreList dseScores={data?.dseScores} className="mt-10" />
 
           <DetailReviewInfoContainer
             contactMetaData={contactMethod}

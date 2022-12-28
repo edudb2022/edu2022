@@ -1,9 +1,10 @@
 import React from "react"
 import ReviewBaseItem, { IReviewBaseItemProps } from "."
+import { CommonCopyRight } from "../../../../utils/copyRight/common"
 
 interface IReviewNumberItemProps extends IReviewBaseItemProps {
   title: string
-  detail: number
+  detail?: number | null
   subtitle?: string
 }
 
@@ -14,7 +15,13 @@ const ReviewNumberItem: React.FunctionComponent<IReviewNumberItemProps> = ({
 }) => {
   return (
     <ReviewBaseItem title={title} subtitle={subtitle}>
-      <h6 className="text-sx md:text-xl">{detail}</h6>
+      {detail ? (
+        <h6 className="text-sx md:text-xl">{detail}</h6>
+      ) : (
+        <p className="text-sx font-semibold text-gray-400">
+          {CommonCopyRight.NOT_APPLICABLE}
+        </p>
+      )}
     </ReviewBaseItem>
   )
 }

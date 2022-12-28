@@ -1,4 +1,4 @@
-import React from "react"
+import React, { Children, PropsWithChildren } from "react"
 import { CommonHelpers } from "../../helpers"
 import { CommonCopyRight } from "../../utils/copyRight/common"
 
@@ -27,7 +27,7 @@ interface IInfoItemProps {
   description: string | number
 }
 const DetailReviewInfoContainer: React.FunctionComponent<
-  IDetailReviewInfoContainerProps
+  PropsWithChildren<IDetailReviewInfoContainerProps>
 > = ({
   className,
   postDate,
@@ -45,7 +45,8 @@ const DetailReviewInfoContainer: React.FunctionComponent<
   jobSource,
   applicationType,
   gpa,
-  honor
+  honor,
+  children
 }) => {
   const contact = contactMetaData
     ? `${contactMetaData.type} : ${contactMetaData.detail}`
@@ -111,6 +112,7 @@ const DetailReviewInfoContainer: React.FunctionComponent<
             description={CommonHelpers.formatData(postDate, "DD/MM/YY")}
           />
           <InfoItem header="聯絡資訊" description={contact} />
+          {children}
         </div>
       </div>
     </div>

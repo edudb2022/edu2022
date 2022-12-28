@@ -187,13 +187,14 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
           questionId: 3,
           text: formik.values.longQThree.trim() || null
         }
-      ]
+      ],
+      ratingQuestionResponses: []
     }
     mutate(body, {
       onSuccess: (res) => {
         console.log("res", res)
         const id = res.data.data.id
-        router.push(`/reviewDetail/tertiary/interview/${id}`)
+        router.push(`/reviewDetail/tertiary/admission/${id}`)
       },
       onError: (err) => {
         console.log("err", err)

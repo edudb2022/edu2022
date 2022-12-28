@@ -90,9 +90,28 @@ export interface IGetInterviewDetailReviewRes {
   contactMethod: IContactMethodRes | null
   voteOfUser: number
   votes: number
-  dseScores: IDseScoresRes[]
+  dseScores: IDseScoresRes[] | null
   ratingQuestionResponses: IRatingQuestionResponses[]
   longQuestionResponses: ILongQuestionResponses[]
+}
+
+export interface IGetAdmissionOfferDetailReviewRes {
+  id: number
+  createdAt: string
+  title: string
+  gpa: number | null
+  anonymous: false
+  program: IProgrammeRes
+  user: IUserRes
+  admissionLevel: IAdmissionLevelRes
+  offerType: IOfferTypeRes
+  currentProgram: IProgrammeRes
+  dseScores: IDseScoresRes[] | null
+  contactMethod: IContactMethodRes | null
+  //ratingQuestionResponses: IRatingQuestionResponses[]
+  longQuestionResponses: ILongQuestionResponses[]
+  // voteOfUser: number
+  votes: number
 }
 
 export interface IGetInternshipDetailReviewRes {
@@ -329,5 +348,13 @@ export interface IDseScoresRes {
 }
 
 export interface IHonorRes {
+  displayText: string
+}
+
+export interface IAdmissionLevelRes {
+  displayText: string
+}
+
+export interface IOfferTypeRes {
   displayText: string
 }
