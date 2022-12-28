@@ -7,9 +7,9 @@ import { IGradJobFilterActionTypes } from "../../../state/filters/gradJob/action
 
 import GradJobFilterInputGroup from "../groups/filter/gradJob"
 
-export interface IGradJobFilterPorps extends Partial<IBaseFilterProps> {}
+export interface IGradJobFilterProps extends Partial<IBaseFilterProps> {}
 
-const GradJobFilter: React.FunctionComponent<IGradJobFilterPorps> = ({
+const GradJobFilter: React.FunctionComponent<IGradJobFilterProps> = ({
   onSearch,
   isMobile
 }) => {

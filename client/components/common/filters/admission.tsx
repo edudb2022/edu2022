@@ -14,11 +14,11 @@ const AdmissionFilter: React.FunctionComponent<IAdmissionFilterPorps> = ({
 }) => {
   const dispatch = useAppDispatch()
 
-  const hanldeClick = () => {
+  const handleClick = () => {
     dispatch({ type: IAdmissionFilterActionTypes.RESET })
   }
   return (
-    <BaseFilter onClick={hanldeClick} onSearch={onSearch!} isMobile={isMobile}>
+    <BaseFilter onClick={handleClick} onSearch={onSearch!} isMobile={isMobile}>
       <AdmissionFilterInputGroup />
     </BaseFilter>
   )

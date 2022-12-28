@@ -3,7 +3,6 @@ import React from "react"
 import { MdArrowDropDown } from "react-icons/md"
 import { UserName } from "../../../../types/common"
 import { STSignOut } from "../../../../service/supertoken/Session"
-
 import { IUserActionTypes } from "../../../../state/user/actions"
 import { useAppDispatch } from "../../../../hooks/common/useAppDispatch"
 import UserIcon from "../../icons/User"

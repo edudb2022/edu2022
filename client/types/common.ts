@@ -50,13 +50,6 @@ export interface ISelectMenuItemsType<T, U> {
   title: U
 }
 
-// interface KeyPair<T, U> {
-//   key: T
-//   value: U
-// }
-
-// export interface ISchoolTypeIdTypes
-//   extends ISelectMenuItemsType<SchoolTypeId, string> {}
 export enum VoteTypeId {
   LIKED = 1,
   DISLIKE = -1
@@ -174,19 +167,6 @@ export enum HonorTypeId {
   CUM_LAUDE,
   PASS
 }
-
-// export enum DSEGradeId {
-//   UNCLASSIFIED = 1,
-//   ONE,
-//   TWO,
-//   THREE,
-//   FOUR,
-//   FIVE,
-//   FIVE_START,
-//   FIVE_DOUBLE_STAR,
-//   PASS, //displat Text :達標/合格不
-//   FAIL //displat Text :不達標/不合格
-// }
 
 export enum DSEGradeTypeId {
   ONE = 1,
