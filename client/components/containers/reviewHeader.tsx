@@ -40,16 +40,16 @@ const ReviewHeaderContainer: React.FunctionComponent<
       <div
         className={`flex justify-center items-center p-4 ${layoutClassName} `}
       >
-        <div className="flex flex-col md:flex-row w-full ">
-          <div className="flex justify-center shrink-0 md:w-1/10">
+        <div className="flex flex-col md:flex-row w-fit ">
+          <div className="flex justify-center shrink-0 ">
             <Image
-              src={`/icons/schools/universities/${schoolShortName}.jpg`}
+              src={`/icons/schools/tertiary/${schoolShortName}.jpg`}
               width={"100%"}
               height={"100%"}
               alt={`${ShortTitle}`}
             />
           </div>
-          <div className="flex  flex-col text-center  items-center justify-center gap-y-2 mt-4 md:mt-0 md:w-9/10 ">
+          <div className="flex  flex-col text-center  items-center justify-center gap-y-2 mt-4 md:mt-0 ">
             <div className="flex flex-row gap-x-2">
               <h3 className="text-xs md:text-lg max-w-10/12">{ChineseTitle}</h3>
             </div>

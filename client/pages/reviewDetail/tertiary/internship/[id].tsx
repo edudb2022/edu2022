@@ -85,7 +85,7 @@ const InternshipReviewDetailPage: NextPage = () => {
             type="admission_year"
           />
           <TextTag
-            header="TobType"
+            header="工作類型"
             title={data?.companyName!}
             type="admission_year"
           />

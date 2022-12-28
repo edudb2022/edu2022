@@ -24,8 +24,10 @@ import {
 import { ContactSelect } from "../../../components/common/inputs/select/contact"
 import AnonymousSwitch from "../../../components/common/switch/anonymous"
 import {
+  companyNameValidationSchema,
   contactDetailValidationSchema,
   dateValidationSchema,
+  jobTitleValidationSchema,
   longQuestionValidationSchema,
   ratingValidationSchema,
   SalaryValidationSchema,
@@ -85,8 +87,8 @@ const GradJobOfferFormPage: React.FunctionComponent = () => {
     programme: selectCommonValidationSchema,
     offerReceivedDate: dateValidationSchema,
     title: titleValidationSchema,
-    jobTitle: titleValidationSchema.nullable(),
-    companyName: titleValidationSchema.nullable(),
+    jobTitle: jobTitleValidationSchema,
+    companyName: companyNameValidationSchema,
     baseSalary: SalaryValidationSchema,
     bonus: SalaryValidationSchema,
     stockOption: SalaryValidationSchema,
@@ -122,7 +124,6 @@ const GradJobOfferFormPage: React.FunctionComponent = () => {
       programId: 6070,
       userId: 1,
       honorId: formik.values.honour,
-      annualSalary: 0,
       title: formik.values.title,
       jobTypeId: formik.values.jobType!,
       jobPostSourceId: formik.values.jobSource || null,

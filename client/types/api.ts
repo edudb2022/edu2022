@@ -121,6 +121,36 @@ export interface IGetInternshipDetailReviewRes {
   longQuestionResponses: ILongQuestionResponses[]
 }
 
+export interface IGetGradJobDetailReviewRes {
+  id: number
+  createdAt: string
+  companyName: string
+  jobTitle: string
+
+  offerReceiveDate: string
+  bonus: number
+  stockOptions: number
+
+  title: string
+  anonymous: boolean
+  honor: IHonorRes
+  program: IProgrammeRes
+  user: IUserRes
+
+  baseSalary: number
+  jobType: IJopTypeRes
+  jobPostSource: IJobPostSourceRes
+
+  // likes*	number
+  // dislikes*	number
+
+  // voteOfUser*	{...}
+  contactMethod: IContactMethodRes | null
+  votes: number
+  ratingQuestionResponses: IRatingQuestionResponses[]
+  longQuestionResponses: ILongQuestionResponses[]
+}
+
 export interface ICreateSchoolReviewReq {
   schoolId: number
   title: string
@@ -201,7 +231,6 @@ export interface ICreateGradJobReviewReq {
   programId: number
   userId: number
   honorId: HonorTypeId | null
-  annualSalary: number
   title: string
   jobTypeId: JobTypeId
   jobPostSourceId: JobSourceTypeId | null
@@ -297,4 +326,8 @@ export interface IDseScoresRes {
     displayText: string
     value: number
   }
+}
+
+export interface IHonorRes {
+  displayText: string
 }
