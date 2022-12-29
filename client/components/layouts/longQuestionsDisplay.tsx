@@ -5,7 +5,7 @@ interface ILongQuestionsDisplayLayoutProps {}
 const LongQuestionsDisplayLayout: React.FunctionComponent<
   PropsWithChildren<ILongQuestionsDisplayLayoutProps>
 > = ({ children }) => {
-  return <div className="flex flex-col gap-y-8 mt-8">{children}</div>
+  return <div className="flex flex-col gap-y-20 mt-20">{children}</div>
 }
 
 export default LongQuestionsDisplayLayout
