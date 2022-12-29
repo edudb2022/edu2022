@@ -108,6 +108,8 @@ export interface IGetAdmissionOfferDetailReviewRes {
   currentProgram: IProgrammeRes
   dseScores: IDseScoresRes[] | null
   contactMethod: IContactMethodRes | null
+  currentYearOfStudy: IYearsOfStudyRes
+  offerReceiveDate: string
   //ratingQuestionResponses: IRatingQuestionResponses[]
   longQuestionResponses: ILongQuestionResponses[]
   // voteOfUser: number
@@ -218,6 +220,9 @@ export interface IAdmissionOfferReviewReq {
   admissionLevelId: AdmissionLevelTypeId
   offerTypeId: AdmissionOfferTypeId
   currentProgramId: number
+  offerReceiveDate: string
+  applicationType: ApplicationTypeId
+  currentYearOfStudyId: CurrentSchoolTypeId
   dseScores: IDseScores[] | null
   contactMethod: IContactMethod | null
   userId: number
@@ -357,4 +362,9 @@ export interface IAdmissionLevelRes {
 
 export interface IOfferTypeRes {
   displayText: string
+}
+
+export interface IYearsOfStudyRes {
+  displayText: string
+  id: number
 }
