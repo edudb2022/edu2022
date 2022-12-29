@@ -172,6 +172,9 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
       contactMethod: contact,
       programId: 6070,
       currentProgramId: 6070,
+      currentYearOfStudyId: formik.values.yearofStudy!,
+      applicationType: formik.values.applicationType!,
+      offerReceiveDate: "2018",
       admissionLevelId: formik.values.admissionLevel!,
       dseScores: dseScoresData,
       longQuestionResponses: [
