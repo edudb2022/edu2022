@@ -78,6 +78,12 @@ const DetailReviewInfoContainer: React.FunctionComponent<
               description={CommonHelpers.formatData(interviewDate, "MM/YY")}
             />
           )}
+          {offerDate && (
+            <InfoItem
+              header="收Offer日期"
+              description={CommonHelpers.formatData(offerDate, "MM/YY")}
+            />
+          )}
           {academicStatus && (
             <InfoItem header="學業狀態" description={academicStatus} />
           )}
@@ -85,6 +91,7 @@ const DetailReviewInfoContainer: React.FunctionComponent<
           {currentSchool && (
             <InfoItem header="最近就讀的學校" description={currentSchool} />
           )}
+
           {currentProgramme && (
             <InfoItem header="最近就讀的課程" description={currentProgramme} />
           )}
@@ -98,12 +105,7 @@ const DetailReviewInfoContainer: React.FunctionComponent<
           {applicationType && (
             <InfoItem header="類型" description={applicationType} />
           )}
-          {offerDate && (
-            <InfoItem
-              header="收Offer日期"
-              description={CommonHelpers.formatData(offerDate, "MM/YY")}
-            />
-          )}
+
           {DressCode && <InfoItem header="衣著要求" description={DressCode} />}
 
           <InfoItem header="用戶名稱" description={username || "Unknown"} />
