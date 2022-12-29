@@ -166,7 +166,7 @@ const SchoolReviewDetailPage: NextPage = () => {
           isStudent={!!data?.user.hasSchoolBadge}
           // isStudent={data?.user.}
         >
-          <div className="grid md:grid-cols-6 grid-cols-3 mt-4">
+          <div className="grid md:grid-cols-6 grid-cols-3 place-items-center  mt-4 gap-4">
             <RatingTag
               rating={campusRating.rating}
               title={campusRating.title!}

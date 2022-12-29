@@ -78,7 +78,7 @@ const AdmissionReviewDetailPage: NextPage = () => {
         ChineseTitle={data!.program.chineseName}
         EnglishTitle={data?.program.englishName}
         //schoolShortName={data!.school.shortName.toLowerCase()}
-        schoolShortName="hku"
+        schoolShortName="apa"
         postId={data!.id}
         title={data!.title}
         additionalInfoTag={tags}

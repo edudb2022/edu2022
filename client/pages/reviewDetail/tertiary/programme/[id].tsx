@@ -94,7 +94,7 @@ const ProgrammeReviewDetailPage: NextPage = () => {
           onVote={mutate}
           isStudent={!!data?.user.hasSchoolBadge}
         >
-          <div className="flex flex-wrap flex-row justify-evenly w-full ">
+          <div className="grid md:grid-cols-6 grid-cols-3 place-items-center mt-4 gap-4 ">
             <RatingTag
               rating={data!.ratingQuestionResponses[0].optionId - 1}
               title={

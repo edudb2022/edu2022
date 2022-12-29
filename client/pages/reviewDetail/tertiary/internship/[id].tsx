@@ -62,14 +62,14 @@ const InternshipReviewDetailPage: NextPage = () => {
         isStudent={!!data?.user.hasSchoolBadge}
         onVote={() => {}}
       >
-        <div className="flex flex-wrap flex-row justify-evenly w-full">
+        <div className="flex flex-wrap flex-row justify-evenly  w-full">
           <ReviewSalaryItem salary={totalSalary} title="總月薪" />
           <ReviewSalaryItem salary={baseSalary} title="基本薪金" />
           <ReviewSalaryItem salary={bonus} title="花紅" />
           <ReviewSalaryItem salary={stockOptions} title="股票/股票期权" />
         </div>
 
-        <div className=" flex flex-row flex-wrap justify-around mt-8">
+        <div className=" flex flex-col items-center md:flex-row md:justify-around  gap-4 mt-8">
           <RatingTag
             rating={data!.ratingQuestionResponses[0].optionId - 1}
             title={

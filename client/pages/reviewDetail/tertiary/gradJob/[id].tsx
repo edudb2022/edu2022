@@ -60,7 +60,7 @@ const GradJobReviewDetailPage: NextPage = () => {
         ChineseTitle={data!.program.chineseName}
         EnglishTitle={data?.program.englishName}
         //schoolShortName={data!.school.shortName.toLowerCase()}
-        schoolShortName="thei"
+        schoolShortName="hkuspaceplk"
         postId={data!.id}
         title={data!.title}
         additionalInfoTag={tags}

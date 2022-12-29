@@ -40,22 +40,26 @@ const ReviewHeaderContainer: React.FunctionComponent<
       <div
         className={`flex justify-center items-center p-4 ${layoutClassName} `}
       >
-        <div className="flex flex-col md:flex-row w-fit ">
-          <div className="flex justify-center shrink-0 ">
+        <div className="flex flex-col md:flex-row w-full ">
+          <div className="flex flex-row justify-center shrink-0 w-full md:w-1/5 h-fit">
+            {/* <div className="w-"> */}
             <Image
               src={`/icons/schools/tertiary/${schoolShortName}.jpg`}
-              width={"100%"}
-              height={"100%"}
+              width={150}
+              height={150}
+              objectFit="contain"
               alt={`${ShortTitle}`}
+              // style={{ width: "auto" }}
             />
+            {/* </div> */}
           </div>
-          <div className="flex  flex-col text-center  items-center justify-center gap-y-2 mt-4 md:mt-0 ">
+          <div className="flex flex-col text-center items-center justify-center gap-y-2 w-full mt-4 md:mt-0 md:w-4/5 ">
             <div className="flex flex-row gap-x-2">
-              <h3 className="text-xs md:text-lg max-w-10/12">{ChineseTitle}</h3>
+              <h3 className="text-sm md:text-lg max-w-10/12">{ChineseTitle}</h3>
             </div>
 
-            <h3 className="text-gray-400 text-xs  md:text-base">
-              {EnglishTitle}{" "}
+            <h3 className="text-gray-400 text-sm  md:text-base">
+              {EnglishTitle}
             </h3>
 
             <div className="flex flex-row justify-end items-center w-full gap-x-2">

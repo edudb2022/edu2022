@@ -65,7 +65,8 @@ const DetailReviewInfoContainer: React.FunctionComponent<
   return (
     <div className={`mt-8 ${className}`}>
       <div className="flex flex-col items-center bg-theme-one-50 rounded-2xl p-4 mt-8">
-        <div className="flex flex-wrap flex-row justify-evenly w-full">
+        {/* <div className="flex flex-wrap flex-row justify-evenly w-full"> */}
+        <div className="grid grid-cols-3 md:grid-cols-6 gap-4">
           {admissionYear && (
             <InfoItem
               header="入學日期"
