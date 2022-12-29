@@ -87,7 +87,7 @@ const AdmissionReviewDetailPage: NextPage = () => {
         isStudent={!!data?.user.hasSchoolBadge}
         onVote={() => {}}
       >
-        <div className="flex flex-wrap flex-row justify-evenly w-full ">
+        <div className="grid grid-cols-2 md:grid-cols-4 place-items-center w-full mt-12 gap-y-4 ">
           <TextTag
             title={"application type"}
             type="admission"
@@ -104,36 +104,26 @@ const AdmissionReviewDetailPage: NextPage = () => {
             header="入學年級"
           />
           <TextTag
-            title={"year of study"}
+            title={data?.currentYearOfStudy.displayText!}
             type="year_of_study"
             header="現時學業年級"
           />
         </div>
 
-        <div className="flex flex-wrap flex-row justify-evenly  w-full">
+        <div className="flex flex-wrap flex-row justify-evenly w-full mt-12">
           <ReviewNumberItem detail={dseBestFive} title={SCORE_TYPE.BEST_FIVE} />
           <ReviewNumberItem detail={dseBestSix} title={SCORE_TYPE.BEST_SIX} />
           <ReviewNumberItem detail={data?.gpa} title={SCORE_TYPE.GPA} />
         </div>
 
-        <DseScoreList dseScores={data?.dseScores} className="mt-10" />
+        <DseScoreList dseScores={data?.dseScores} className="mt-12" />
 
         <DetailReviewInfoContainer
-          // offerDate="02/23"
-          // currentProgramme="213"
-          // currentSchool="123"
-          // username={null}
-          // postDate="01/02/23"
-          // contactMetaData={{ type: "123", detail: "123" }}
-
+          offerDate={data?.offerReceiveDate}
           contactMetaData={contactMethod}
-          // interviewDate={data!.in}
-
-          // academicStatus={academicStatus}
           username={userName!}
           postDate={data!.createdAt!}
           currentProgramme={data?.currentProgram.chineseName}
-          //currentSchool={data?.currentSchoolType.displayText}
         />
       </DetailReviewHeaderContainer>
 
