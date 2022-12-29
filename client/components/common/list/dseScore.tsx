@@ -16,7 +16,7 @@ const DseScoreList: React.FunctionComponent<IDseScoreListProps> = ({
     <div className={`flex flex-col w-full items-center ${className}`}>
       <p className="text-center text-gray-400">DSE成績</p>
       {dseScores && (
-        <div className="flex flex-wrap flex-row gap-8 p-4 w-fit">
+        <div className="grid grid-cols-2 place-items-center gap-y-4  md:flex md:flex-row md:justify-center md:gap-x-8 w-full mt-4">
           {dseScores.map((data) => {
             return (
               <TextTag
