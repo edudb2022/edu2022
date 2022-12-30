@@ -135,7 +135,7 @@ export enum JobSourceTypeId {
   JOBSDB,
   COMPANY_WEBSITE,
   UNIVERSITY,
-  FRIENDS,
+  INTERNAL_REFERRAL,
   OTHER = 999
 }
 

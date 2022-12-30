@@ -99,7 +99,7 @@ const jobSourceTypesList = [
     value: JobSourceTypeId.UNIVERSITY,
     title: "大學"
   },
-  { value: JobSourceTypeId.FRIENDS, title: "朋友介紹" },
+  { value: JobSourceTypeId.INTERNAL_REFERRAL, title: "內部推薦" },
   { value: JobSourceTypeId.OTHER, title: "其他" }
 ]
 

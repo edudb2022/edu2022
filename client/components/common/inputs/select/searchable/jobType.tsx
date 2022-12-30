@@ -73,7 +73,7 @@ const JobTypeSearchableSelect: React.FunctionComponent<
           <TextField
             {...params}
             id="jobType"
-            label="工作類型"
+            label={`工作類型${isRequired && "*"}`}
             sx={{
               "& label.Mui-focused": {
                 color: "#F2994A"

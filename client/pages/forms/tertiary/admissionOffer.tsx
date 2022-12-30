@@ -98,7 +98,7 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
     dseSubjectSix: null,
     dseSubjectGradeSix: null,
     contactMethod: null,
-    contactDetail: null,
+    contactDetail: "",
     isAnonymous: false,
     longQOne: "",
     longQTwo: "",
@@ -729,6 +729,8 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
                 errorMessages={formik.errors.contactDetail}
                 isTouched={formik.touched.contactDetail}
                 disabled={formik.values.contactMethod === null}
+                maxLength={30}
+                valueLength={formik.values?.contactDetail.length}
               />
             </div>
           </div>

@@ -470,6 +470,8 @@ const InternshipOfferFormPage: React.FunctionComponent = () => {
                 errorMessages={formik.errors.contactDetail}
                 isTouched={formik.touched.contactDetail}
                 disabled={formik.values.contactMethod === null}
+                maxLength={30}
+                valueLength={formik.values?.contactDetail.length}
               />
             </div>
           </div>
