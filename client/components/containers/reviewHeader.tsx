@@ -40,7 +40,7 @@ const ReviewHeaderContainer: React.FunctionComponent<
       <div
         className={`flex justify-center items-center p-4 ${layoutClassName} `}
       >
-        <div className="flex flex-col md:flex-row w-full ">
+        <div className="flex flex-col md:flex-row w-fit ">
           <div className="flex flex-row justify-center shrink-0 w-full md:w-1/5 h-fit">
             {/* <div className="w-"> */}
             <Image

@@ -111,7 +111,7 @@ const InterviewReviewDetailPage: NextPage = () => {
           ChineseTitle={data?.program.chineseName!}
           EnglishTitle={data?.program.englishName!}
           title={data?.title}
-          schoolShortName={"hku"}
+          schoolShortName={"hkuspace"}
           postId={data!.id}
           additionalInfoTag={tags}
           isStudent={!!data?.user.hasSchoolBadge}
