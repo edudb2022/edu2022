@@ -84,7 +84,7 @@ const InterviewReviewPage: NextPage = () => {
     experience: null,
     difficulty: null,
     dressCode: null,
-    gpa: null,
+    gpa: "",
     applicationType: null,
     dseSubjectOne: null,
     dseSubjectGradeOne: null,
@@ -297,7 +297,7 @@ const InterviewReviewPage: NextPage = () => {
 
   useEffect(() => {
     if (formik.values.applicationType === ApplicationTypeId.JUPAS) {
-      formik.values.gpa = null
+      formik.values.gpa = ""
     }
   }, [formik.values.applicationType])
 

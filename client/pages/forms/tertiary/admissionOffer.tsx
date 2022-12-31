@@ -84,7 +84,7 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
     jupasBanding: null,
     applicationType: null,
     admissionLevel: null,
-    gpa: null,
+    gpa: "",
     dseSubjectOne: null,
     dseSubjectGradeOne: null,
     dseSubjectTwo: null,
@@ -292,7 +292,19 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
     }
 
     if (formik.values.applicationType === ApplicationTypeId.JUPAS) {
-      formik.values.gpa = null
+      formik.values.gpa = ""
+      // formik.values.dseSubjectOne = null
+      // formik.values.dseSubjectTwo = null
+      // formik.values.dseSubjectThree = null
+      // formik.values.dseSubjectFour = null
+      // formik.values.dseSubjectFive = null
+      // formik.values.dseSubjectSix = null
+      // formik.values.dseSubjectGradeOne = null
+      // formik.values.dseSubjectGradeTwo = null
+      // formik.values.dseSubjectGradeThree = null
+      // formik.values.dseSubjectGradeFour = null
+      // formik.values.dseSubjectGradeFive = null
+      // formik.values.dseSubjectGradeSix = null
     }
   }, [formik.values.applicationType])
 
@@ -532,7 +544,7 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
             isTouched={formik.touched.gpa}
             disabled={
               formik.values.applicationType === ApplicationTypeId.JUPAS ||
-              formik.values.applicationType === undefined
+              formik.values.applicationType === null
             }
             helpText="Non-Jupas/學士請填寫"
           />
@@ -572,6 +584,9 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
               onBlur={formik.handleBlur}
               errorMessages={formik.errors.dseSubjectOne}
               isTouched={formik.touched.dseSubjectOne}
+              // disabled={
+              //   formik.values.applicationType === ApplicationTypeId.JUPAS
+              // }
             />
           </div>
 
