@@ -1,5 +1,6 @@
 export enum ERROR_FORM_MESSAGES {
   REQUIRED = "必須填寫",
+  DSE_SUBJECT_REQUIRED = "如果類型係dse，請至少填寫5個dse成績🙇‍♂️",
   DSE_GRAD_REQUIRED = "required",
   GPA_NOT_REQUIRED = "not required",
   TOO_LONG = "太長啦！",

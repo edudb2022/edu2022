@@ -293,18 +293,10 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
 
     if (formik.values.applicationType === ApplicationTypeId.JUPAS) {
       formik.values.gpa = ""
-      // formik.values.dseSubjectOne = null
-      // formik.values.dseSubjectTwo = null
-      // formik.values.dseSubjectThree = null
-      // formik.values.dseSubjectFour = null
-      // formik.values.dseSubjectFive = null
-      // formik.values.dseSubjectSix = null
-      // formik.values.dseSubjectGradeOne = null
-      // formik.values.dseSubjectGradeTwo = null
-      // formik.values.dseSubjectGradeThree = null
-      // formik.values.dseSubjectGradeFour = null
-      // formik.values.dseSubjectGradeFive = null
-      // formik.values.dseSubjectGradeSix = null
+    }
+
+    if (formik.values.applicationType !== ApplicationTypeId.JUPAS) {
+      formik.values.jupasBanding = null
     }
   }, [formik.values.applicationType])
 
@@ -319,6 +311,8 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
       CommonHelpers.formatData(newValue, undefined, true)
     )
   }
+
+  console.log(123123, formik.values.dseSubjectOne, formik.errors.dseSubjectOne)
   return (
     <>
       <SEO

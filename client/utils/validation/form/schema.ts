@@ -110,6 +110,11 @@ const dseSubjectOneValidationSchema = yup
       return true
     }
   )
+  .when("applicationType", (applicationType, schema) => {
+    if (applicationType == ApplicationTypeId.JUPAS) {
+      return schema.required(ERROR_FORM_MESSAGES.DSE_SUBJECT_REQUIRED)
+    }
+  })
   .nullable()
 
 const dseSubjectTwoValidationSchema = yup
@@ -148,6 +153,11 @@ const dseSubjectTwoValidationSchema = yup
       return true
     }
   )
+  .when("applicationType", (applicationType, schema) => {
+    if (applicationType == ApplicationTypeId.JUPAS) {
+      return schema.required(ERROR_FORM_MESSAGES.DSE_SUBJECT_REQUIRED)
+    }
+  })
   .nullable()
 
 //subject three
@@ -188,6 +198,11 @@ const dseSubjectThreeValidationSchema = yup
       return true
     }
   )
+  .when("applicationType", (applicationType, schema) => {
+    if (applicationType == ApplicationTypeId.JUPAS) {
+      return schema.required(ERROR_FORM_MESSAGES.DSE_SUBJECT_REQUIRED)
+    }
+  })
   .nullable()
 //subject four
 const dseSubjectFourValidationSchema = yup
@@ -226,6 +241,11 @@ const dseSubjectFourValidationSchema = yup
       return true
     }
   )
+  .when("applicationType", (applicationType, schema) => {
+    if (applicationType == ApplicationTypeId.JUPAS) {
+      return schema.required(ERROR_FORM_MESSAGES.DSE_SUBJECT_REQUIRED)
+    }
+  })
   .nullable()
 //subject five
 
@@ -266,6 +286,11 @@ const dseSubjectFiveValidationSchema = yup
       return true
     }
   )
+  .when("applicationType", (applicationType, schema) => {
+    if (applicationType == ApplicationTypeId.JUPAS) {
+      return schema.required(ERROR_FORM_MESSAGES.DSE_SUBJECT_REQUIRED)
+    }
+  })
   .nullable()
 //subject six
 
