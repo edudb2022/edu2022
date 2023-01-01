@@ -20,12 +20,14 @@ const CommonLayout: React.FunctionComponent<
       <LoadingBackDrop />
       <AuthModal />
       <ErrorModal />
-      <header>
-        <Navbar />
-      </header>
+      <div className="flex flex-col justify-between h-screen border-2">
+        <header>
+          <Navbar />
+        </header>
 
-      <main>{children}</main>
-      <Footer />
+        <main>{children}</main>
+        <Footer />
+      </div>
     </>
   )
 }

@@ -9,19 +9,19 @@ const signInAndUpConFig = {
       //     return "..."
       //   }
       // },
-      {
-        id: "pa1ssword",
-        label: "...",
-        validate: async (value: string) => {
-          // Your own validation returning a string or undefined if no errors.
-          return "..."
-        }
-      },
-      {
-        id: "username",
-        label: "username",
-        placeholder: "username"
-      }
+      // {
+      //   id: "pa1ssword",
+      //   label: "...",
+      //   validate: async (value: string) => {
+      //     // Your own validation returning a string or undefined if no errors.
+      //     return "..."
+      //   }
+      // },
+      // {
+      //   id: "username",
+      //   label: "username",
+      //   placeholder: "username"
+      // }
     ],
     termsOfServiceLink: "/TNC",
     privacyPolicyLink: "/PP"

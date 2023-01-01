@@ -5,7 +5,7 @@ import GoodTurtleIcon from "../common/icons/logo"
 
 const Footer: React.FunctionComponent = () => {
   return (
-    <footer className=" w-full bg-theme-two-500 mt-8">
+    <footer className="w-full bg-theme-two-500 mt-8">
       <div
         id="footer-upper"
         className="md:container md:mx-auto w-full py-4 flex flex-col sm:flex-row p-6"

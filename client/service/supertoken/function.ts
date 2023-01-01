@@ -1,4 +1,4 @@
-import { redirectToAuth } from "supertokens-auth-react/recipe/emailpassword"
+import { redirectToAuth } from "supertokens-auth-react"
 
 const STRedirectToSignIn = () => {
   return redirectToAuth({ show: "signin" })

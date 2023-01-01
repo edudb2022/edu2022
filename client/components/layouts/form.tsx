@@ -1,12 +1,7 @@
-import dynamic from "next/dynamic"
 import React, { FormEvent, PropsWithChildren, useEffect } from "react"
-import {
-  EmailPasswordAuth,
-  redirectToAuth
-} from "supertokens-auth-react/recipe/emailpassword"
-import EmailPassword from "supertokens-auth-react/recipe/emailpassword"
-import SuperTokens from "supertokens-auth-react"
+
 import FormSubmitButton from "../common/buttons/formSubmit"
+import { SessionAuth } from "supertokens-auth-react/recipe/session"
 
 interface IFormPageLayoutProps {
   title: string
@@ -18,18 +13,8 @@ interface IFormPageLayoutProps {
 const FormPageLayout: React.FunctionComponent<
   PropsWithChildren<IFormPageLayoutProps>
 > = ({ title, subTitle, children, onSubmit, isInProgress }) => {
-  const EmailPasswordAuthNoSSR = dynamic(
-    new Promise<typeof EmailPassword.EmailPasswordAuth>((res) =>
-      res(EmailPassword.EmailPasswordAuth)
-    ),
-    { ssr: false }
-  )
-  useEffect(() => {
-    if (SuperTokens.canHandleRoute() === false) {
-      // redirectToAuth()
-    }
-  }, [])
   return (
+    // <SessionAuth>
     <form className="flex justify-center items-center " onSubmit={onSubmit}>
       <div className="flex flex-col p-2 w-full md:w-11/12  gap-y-8 md:gap-y-12 ">
         <div>
@@ -44,6 +29,7 @@ const FormPageLayout: React.FunctionComponent<
         </div>
       </div>
     </form>
+    // </SessionAuth>
   )
 }
 

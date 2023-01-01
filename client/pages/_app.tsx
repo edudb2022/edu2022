@@ -6,7 +6,7 @@ import { Hydrate, QueryClient, QueryClientProvider } from "react-query"
 import { useEffect, useState } from "react"
 import { ReactQueryDevtools } from "react-query/devtools"
 import CommonLayout from "../components/layouts"
-import SuperTokensReact from "supertokens-auth-react"
+import SuperTokensReact, { SuperTokensWrapper } from "supertokens-auth-react"
 import React from "react"
 import { frontendConfig } from "../service/supertoken/config/frontendConfig"
 import dynamic from "next/dynamic"
@@ -49,25 +49,27 @@ const MyApp: React.FunctionComponent<IMyAppProps> = ({
   return (
     <QueryClientProvider client={queryClient}>
       <Hydrate state={pageProps.dehydratedState}>
-        <Provider store={store}>
-          <Script
-            src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}`}
-            strategy="afterInteractive"
-          />
-          <Script id="google-analytics" strategy="afterInteractive">
-            {`
+        <SuperTokensWrapper>
+          <Provider store={store}>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}`}
+              strategy="afterInteractive"
+            />
+            <Script id="google-analytics" strategy="afterInteractive">
+              {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){window.dataLayer.push(arguments);}
           gtag('js', new Date());
 
           gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}');
         `}
-          </Script>
-          <CommonLayout>
-            <Component {...pageProps} />
-          </CommonLayout>
-        </Provider>
-        <ReactQueryDevtools initialIsOpen={false} />
+            </Script>
+            <CommonLayout>
+              <Component {...pageProps} />
+            </CommonLayout>
+          </Provider>
+          <ReactQueryDevtools initialIsOpen={false} />
+        </SuperTokensWrapper>
       </Hydrate>
     </QueryClientProvider>
   )

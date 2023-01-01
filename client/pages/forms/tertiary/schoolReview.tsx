@@ -45,6 +45,8 @@ import { ISystemActionTypes } from "../../../state/system/actions"
 import { ErrorMessageStatement } from "../../../constants/errorMessageStatement"
 import { useAppDispatch } from "../../../hooks/common/useAppDispatch"
 import { useRouter } from "next/router"
+import { useSessionContext } from "supertokens-auth-react/recipe/session"
+import { EmailVerificationClaim } from "supertokens-auth-react/recipe/emailverification"
 
 const SchoolReviewFormPage: React.FunctionComponent = () => {
   const initialValues = {
@@ -219,8 +221,32 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
     )
   }
   console.log(123, formik.values)
+  function InvalidClaimHandler(props: React.PropsWithChildren<any>) {
+    let sessionContext = useSessionContext()
+    if (sessionContext.loading) {
+      return null
+    }
+
+    if (
+      sessionContext.invalidClaims.some(
+        (i) => i.validatorId === EmailVerificationClaim.id
+      )
+    ) {
+      return (
+        <div>
+          You cannot access this page because your email address is not
+          verified.
+        </div>
+      )
+    }
+
+    // We show the protected route since all claims validators have
+    // passed implying that the user has verified their email.
+    return <div>{props.children}</div>
+  }
   return (
     <>
+      {/* <InvalidClaimHandler> */}
       <SEO
         title="填寫學校評價"
         description="填寫學校評價! 講低你對呢間學校嘅睇法啦！！"
@@ -230,7 +256,6 @@ const SchoolReviewFormPage: React.FunctionComponent = () => {
           site_name: SITENAME
         }}
       />
-
       <FormPageLayout
         title="學校評價"
         subTitle="每間學校只可以作一次評價"

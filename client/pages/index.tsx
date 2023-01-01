@@ -25,6 +25,7 @@ import { IGetSchoolRes } from "../types/api"
 
 import SearchTextInput from "../components/common/inputs/text/search"
 import trackingEvent from "../utils/services/GoogleAnalytics/tracking"
+import { SessionAuth } from "supertokens-auth-react/recipe/session"
 
 const SchoolOptions = [
   { value: 0, title: "全部" },
