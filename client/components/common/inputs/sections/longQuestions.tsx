@@ -1,5 +1,6 @@
 import React from "react"
 import InputHeader, { IInputHeaderProps } from "../../header/input"
+import UpArrowIcon from "../../icons/upArrow"
 import BaseTextArea, { IBaseTextAreaProps } from "../textArea"
 
 interface ILongQuestionsSectionProps
@@ -38,6 +39,13 @@ const LongQuestionsSection: React.FunctionComponent<
           minRows={7}
           {...props}
         />
+      </div>
+
+      <div className="hidden md:flex flex-row justify-end w-full text-gray-500">
+        <p className="text-end p-0 font-normal">可以拉長的！</p>
+        <div className="animate-bounce">
+          <UpArrowIcon />
+        </div>
       </div>
     </div>
   )
