@@ -40,8 +40,8 @@ const ReviewHeaderContainer: React.FunctionComponent<
       <div
         className={`flex justify-center items-center p-4 ${layoutClassName} `}
       >
-        <div className="flex flex-col md:flex-row w-fit ">
-          <div className="flex flex-row justify-center shrink-0 w-full md:w-1/5 h-fit">
+        <div className="flex flex-col md:flex-row md:justify-center w-4/5 ">
+          <div className="hidden md:flex flex-row justify-end shrink-0 w-full md:w-1/5 h-fit ">
             {/* <div className="w-"> */}
             <Image
               src={`/icons/schools/tertiary/${schoolShortName}.jpg`}
@@ -53,7 +53,7 @@ const ReviewHeaderContainer: React.FunctionComponent<
             />
             {/* </div> */}
           </div>
-          <div className="flex flex-col text-center items-center justify-center gap-y-2 w-full mt-4 md:mt-0 md:w-4/5 ">
+          <div className="flex flex-col text-center items-center justify-center gap-y-2 w-full mt-4 md:mt-0 md:w-fit ">
             <div className="flex flex-row gap-x-2">
               <h3 className="text-sm md:text-lg max-w-10/12">{ChineseTitle}</h3>
             </div>
