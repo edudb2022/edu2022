@@ -29,7 +29,6 @@ const FormPageLayout: React.FunctionComponent<
         </div>
       </div>
     </form>
-    // </SessionAuth>
   )
 }
 
