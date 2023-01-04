@@ -284,19 +284,28 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
   }, [formik.values.currentSchoolType])
 
   useEffect(() => {
-    if (
-      formik.values.applicationType === ApplicationTypeId.BACHELOR ||
-      ApplicationTypeId.NON_JUPAS
-    ) {
-      formik.values.jupasBanding = null
-    }
-
     if (formik.values.applicationType === ApplicationTypeId.JUPAS) {
       formik.values.gpa = ""
     }
 
     if (formik.values.applicationType !== ApplicationTypeId.JUPAS) {
       formik.values.jupasBanding = null
+    }
+
+    if (formik.values.applicationType === ApplicationTypeId.OTHER) {
+      formik.values.gpa = ""
+      formik.values.dseSubjectOne = null
+      formik.values.dseSubjectTwo = null
+      formik.values.dseSubjectThree = null
+      formik.values.dseSubjectFour = null
+      formik.values.dseSubjectFive = null
+      formik.values.dseSubjectSix = null
+      formik.values.dseSubjectGradeOne = null
+      formik.values.dseSubjectGradeTwo = null
+      formik.values.dseSubjectGradeThree = null
+      formik.values.dseSubjectGradeFour = null
+      formik.values.dseSubjectGradeFive = null
+      formik.values.dseSubjectGradeSix = null
     }
   }, [formik.values.applicationType])
 
@@ -312,7 +321,10 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
     )
   }
 
-  console.log(123123, formik.values.dseSubjectOne, formik.errors.dseSubjectOne)
+  const dseDseDisabled =
+    formik.values.applicationType === ApplicationTypeId.OTHER ||
+    formik.values.applicationType === null
+
   return (
     <>
       <SEO
@@ -526,7 +538,8 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
             disabled={
               formik.values.applicationType === ApplicationTypeId.NON_JUPAS ||
               formik.values.applicationType === ApplicationTypeId.BACHELOR ||
-              formik.values.applicationType === null
+              formik.values.applicationType === null ||
+              dseDseDisabled
             }
           />
 
@@ -538,6 +551,7 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
             isTouched={formik.touched.gpa}
             disabled={
               formik.values.applicationType === ApplicationTypeId.JUPAS ||
+              formik.values.applicationType === ApplicationTypeId.OTHER ||
               formik.values.applicationType === null
             }
             helpText="Non-Jupas/學士請填寫"
@@ -578,9 +592,7 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
               onBlur={formik.handleBlur}
               errorMessages={formik.errors.dseSubjectOne}
               isTouched={formik.touched.dseSubjectOne}
-              // disabled={
-              //   formik.values.applicationType === ApplicationTypeId.JUPAS
-              // }
+              disabled={dseDseDisabled}
             />
           </div>
 
@@ -607,6 +619,7 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
               onBlur={formik.handleBlur}
               errorMessages={formik.errors.dseSubjectTwo}
               isTouched={formik.touched.dseSubjectTwo}
+              disabled={dseDseDisabled}
             />
           </div>
 
@@ -630,6 +643,7 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
               onBlur={formik.handleBlur}
               errorMessages={formik.errors.dseSubjectThree}
               isTouched={formik.touched.dseSubjectThree}
+              disabled={dseDseDisabled}
             />
           </div>
           <DseGradeSelect
@@ -652,6 +666,7 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
               onBlur={formik.handleBlur}
               errorMessages={formik.errors.dseSubjectFour}
               isTouched={formik.touched.dseSubjectFour}
+              disabled={dseDseDisabled}
             />
           </div>
           <DseGradeSelect
@@ -674,6 +689,7 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
               onBlur={formik.handleBlur}
               errorMessages={formik.errors.dseSubjectFive}
               isTouched={formik.touched.dseSubjectFive}
+              disabled={dseDseDisabled}
             />
           </div>
           <DseGradeSelect
@@ -697,6 +713,7 @@ const AdmissionOfferFormPage: React.FunctionComponent = () => {
               onBlur={formik.handleBlur}
               errorMessages={formik.errors.dseSubjectSix}
               isTouched={formik.touched.dseSubjectSix}
+              disabled={dseDseDisabled}
             />
           </div>
           <DseGradeSelect

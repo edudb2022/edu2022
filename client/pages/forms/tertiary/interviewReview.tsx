@@ -299,6 +299,22 @@ const InterviewReviewPage: NextPage = () => {
     if (formik.values.applicationType === ApplicationTypeId.JUPAS) {
       formik.values.gpa = ""
     }
+
+    if (formik.values.applicationType === ApplicationTypeId.OTHER) {
+      formik.values.gpa = ""
+      formik.values.dseSubjectOne = null
+      formik.values.dseSubjectTwo = null
+      formik.values.dseSubjectThree = null
+      formik.values.dseSubjectFour = null
+      formik.values.dseSubjectFive = null
+      formik.values.dseSubjectSix = null
+      formik.values.dseSubjectGradeOne = null
+      formik.values.dseSubjectGradeTwo = null
+      formik.values.dseSubjectGradeThree = null
+      formik.values.dseSubjectGradeFour = null
+      formik.values.dseSubjectGradeFive = null
+      formik.values.dseSubjectGradeSix = null
+    }
   }, [formik.values.applicationType])
 
   const isNotTertiarySchool =
@@ -349,6 +365,11 @@ const InterviewReviewPage: NextPage = () => {
       CommonHelpers.formatData(newValue, undefined, true)
     )
   }
+
+  const dseDseDisabled =
+    formik.values.applicationType === ApplicationTypeId.OTHER ||
+    formik.values.applicationType === null
+
   return (
     <>
       <SEO
@@ -584,7 +605,8 @@ const InterviewReviewPage: NextPage = () => {
             isTouched={formik.touched.gpa}
             disabled={
               formik.values.applicationType === ApplicationTypeId.JUPAS ||
-              formik.values.applicationType === null
+              formik.values.applicationType === null ||
+              dseDseDisabled
             }
             helpText="Non-Jupas/學士請填寫"
           />
@@ -614,6 +636,7 @@ const InterviewReviewPage: NextPage = () => {
               onBlur={formik.handleBlur}
               errorMessages={formik.errors.dseSubjectOne}
               isTouched={formik.touched.dseSubjectOne}
+              disabled={dseDseDisabled}
             />
           </div>
 
@@ -640,6 +663,7 @@ const InterviewReviewPage: NextPage = () => {
               onBlur={formik.handleBlur}
               errorMessages={formik.errors.dseSubjectTwo}
               isTouched={formik.touched.dseSubjectTwo}
+              disabled={dseDseDisabled}
             />
           </div>
 
@@ -663,6 +687,7 @@ const InterviewReviewPage: NextPage = () => {
               onBlur={formik.handleBlur}
               errorMessages={formik.errors.dseSubjectThree}
               isTouched={formik.touched.dseSubjectThree}
+              disabled={dseDseDisabled}
             />
           </div>
           <DseGradeSelect
@@ -685,6 +710,7 @@ const InterviewReviewPage: NextPage = () => {
               onBlur={formik.handleBlur}
               errorMessages={formik.errors.dseSubjectFour}
               isTouched={formik.touched.dseSubjectFour}
+              disabled={dseDseDisabled}
             />
           </div>
           <DseGradeSelect
@@ -707,6 +733,7 @@ const InterviewReviewPage: NextPage = () => {
               onBlur={formik.handleBlur}
               errorMessages={formik.errors.dseSubjectFive}
               isTouched={formik.touched.dseSubjectFive}
+              disabled={dseDseDisabled}
             />
           </div>
           <DseGradeSelect
@@ -730,6 +757,7 @@ const InterviewReviewPage: NextPage = () => {
               onBlur={formik.handleBlur}
               errorMessages={formik.errors.dseSubjectSix}
               isTouched={formik.touched.dseSubjectSix}
+              disabled={dseDseDisabled}
             />
           </div>
           <DseGradeSelect
