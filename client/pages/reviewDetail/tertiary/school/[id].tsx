@@ -20,7 +20,7 @@ import {
   schoolSenseOfBelongingRating
 } from "../../../../constants/rating"
 
-import useGetSchoolDetailReview from "../../../../hooks/api/useGetSchoolDetailReview"
+import useGetSchoolDetailReview from "../../../../hooks/api/get/useGetSchoolDetailReview"
 import { schoolReviewLongQuestionsMapper } from "../../../../mappers/longQuestion"
 import { schoolReviewRatingQuestionsMapper } from "../../../../mappers/ratingQuestions"
 import { apiService } from "../../../../utils/api/api"

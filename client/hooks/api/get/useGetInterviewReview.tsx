@@ -1,6 +1,6 @@
 import { useQuery } from "react-query"
-import { IGetInterviewDetailReviewRes } from "../../types/api"
-import { apiService } from "../../utils/api/api"
+import { IGetInterviewDetailReviewRes } from "../../../types/api"
+import { apiService } from "../../../utils/api/api"
 
 const useGetInterviewDetailReview = (id: string) => {
   return useQuery<IGetInterviewDetailReviewRes, Error>(

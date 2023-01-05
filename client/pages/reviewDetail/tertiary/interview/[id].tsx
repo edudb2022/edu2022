@@ -20,7 +20,7 @@ import {
   interviewExperienceRating
 } from "../../../../constants/rating"
 import { CommonHelpers } from "../../../../helpers"
-import useGetInterviewDetailReview from "../../../../hooks/api/useGetInterviewReview"
+import useGetInterviewDetailReview from "../../../../hooks/api/get/useGetInterviewReview"
 import { interviewReviewLongQuestionsMapper } from "../../../../mappers/longQuestion"
 import { interviewReviewRatingQuestionsMapper } from "../../../../mappers/ratingQuestions"
 import { SCORE_TYPE } from "../../../../types/common"

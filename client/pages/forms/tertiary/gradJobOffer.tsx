@@ -40,7 +40,7 @@ import { gradJobOfferOfferReviewLongQuestionsMapper } from "../../../mappers/lon
 import SEO from "../../../components/seo"
 import { CommonHelpers } from "../../../helpers"
 import JobTypeSearchableSelect from "../../../components/common/inputs/select/searchable/jobType"
-import useCreateGradJobOfferReview from "../../../hooks/api/uesCreateGradJobReview"
+import useCreateGradJobOfferReview from "../../../hooks/api/create/uesCreateGradJobReview"
 import { ICreateGradJobReviewReq } from "../../../types/api"
 import { useRouter } from "next/router"
 import { useAppDispatch } from "../../../hooks/common/useAppDispatch"

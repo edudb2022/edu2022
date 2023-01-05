@@ -8,7 +8,7 @@ import ReviewSalaryItem from "../../../../components/common/display/items/salary
 import RatingTag from "../../../../components/common/tags/rating"
 import { useRouter } from "next/router"
 import trackingEvent from "../../../../utils/services/GoogleAnalytics/tracking"
-import useGetInternshipDetailReview from "../../../../hooks/api/useGetIntershipReview"
+import useGetInternshipDetailReview from "../../../../hooks/api/get/useGetIntershipReview"
 import { dehydrate, QueryClient } from "react-query"
 import { apiService } from "../../../../utils/api/api"
 import { CommonCopyRight } from "../../../../utils/copyRight/common"

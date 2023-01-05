@@ -1,5 +1,5 @@
 import type { NextPage } from "next"
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 
 import BaseSelect from "../components/common/inputs/select"
 import PageLayout from "../components/layouts/page"
@@ -20,12 +20,13 @@ import { schoolTypesList } from "../constants/common"
 import { useRouter } from "next/router"
 
 import { apiService } from "../utils/api/api"
-import useGetSchools from "../hooks/api/useGetSchools"
+
 import { IGetSchoolRes } from "../types/api"
 
 import SearchTextInput from "../components/common/inputs/text/search"
 import trackingEvent from "../utils/services/GoogleAnalytics/tracking"
 import { SessionAuth } from "supertokens-auth-react/recipe/session"
+import useGetSchools from "../hooks/api/get/useGetSchools"
 
 const SchoolOptions = [
   { value: 0, title: "全部" },

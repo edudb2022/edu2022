@@ -20,7 +20,7 @@ import {
   programmeWorkLoadRating
 } from "../../../../constants/rating"
 import { CommonHelpers } from "../../../../helpers"
-import useGetProgrammeDetailReview from "../../../../hooks/api/useGetProgrammeDetailReview"
+import useGetProgrammeDetailReview from "../../../../hooks/api/get/useGetProgrammeDetailReview"
 import useVoteSchoolReview from "../../../../hooks/api/vote/useVoteSchoolReview"
 import { programmeReviewLongQuestionsMapper } from "../../../../mappers/longQuestion"
 import { programmeReviewRatingQuestionsMapper } from "../../../../mappers/ratingQuestions"

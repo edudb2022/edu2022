@@ -11,7 +11,7 @@ import LongTextDisplayContainer from "../../../../components/containers/longText
 import LongQuestionsDisplayLayout from "../../../../components/layouts/longQuestionsDisplay"
 
 import PageLayout from "../../../../components/layouts/page"
-import useGetAdmissionOfferReview from "../../../../hooks/api/useGetAdmissionOfferReview"
+import useGetAdmissionOfferReview from "../../../../hooks/api/get/useGetAdmissionOfferReview"
 import { admissionOfferReviewLongQuestionsMapper } from "../../../../mappers/longQuestion"
 import {
   ADMISSION_OFFER_TYPE,

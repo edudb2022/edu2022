@@ -15,7 +15,7 @@ import {
   gradJobHopeRating,
   gradJobJobFindingDifficultyRating
 } from "../../../../constants/rating"
-import useGetGradJobDetailReview from "../../../../hooks/api/useGetGradJobReview"
+import useGetGradJobDetailReview from "../../../../hooks/api/get/useGetGradJobReview"
 import { gradJobOfferOfferReviewLongQuestionsMapper } from "../../../../mappers/longQuestion"
 import { apiService } from "../../../../utils/api/api"
 import { CommonCopyRight } from "../../../../utils/copyRight/common"
