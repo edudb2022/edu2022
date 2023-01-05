@@ -36,7 +36,7 @@ import {
 import InputHeader from "../../../components/common/header/input"
 import { programmeReviewLongQuestionsMapper } from "../../../mappers/longQuestion"
 import dayjs from "dayjs"
-import useCreateProgrammeReview from "../../../hooks/api/useCreateProgrammeReview"
+import useCreateProgrammeReview from "../../../hooks/api/create/useCreateProgrammeReview"
 import { CommonHelpers } from "../../../helpers"
 import { useAppDispatch } from "../../../hooks/common/useAppDispatch"
 import { useAppSelector } from "../../../hooks/common/useAppSelector"
