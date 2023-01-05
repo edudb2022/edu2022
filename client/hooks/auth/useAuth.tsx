@@ -1,5 +1,4 @@
-import { type } from "os"
-import React, { useEffect } from "react"
+import { useEffect } from "react"
 
 import {
   STCheckExist,
@@ -9,7 +8,6 @@ import {
 import { IUserActionTypes } from "../../state/user/actions"
 import { useAppDispatch } from "../common/useAppDispatch"
 import { useAppSelector } from "../common/useAppSelector"
-// import { IUserActionTypes } from "../../state/user/actions"
 
 const useAuth = () => {
   const dispatch = useAppDispatch()
