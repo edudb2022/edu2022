@@ -106,8 +106,7 @@ const InterviewReviewPage: NextPage = () => {
     longQThree: "",
     longQFour: "",
     longQFive: "",
-    longQSix: "",
-    longQSeven: ""
+    longQSix: ""
   }
   const interviewReviewFormSchema = yup.object().shape({
     schoolType: selectCommonValidationSchema,
@@ -877,14 +876,14 @@ const InterviewReviewPage: NextPage = () => {
         />
 
         <LongQuestionsSection
-          name="longQSeven"
+          name="longQSix"
           header={interviewReviewLongQuestionsMapper[6].question}
-          value={formik.values.longQSeven}
-          valueLength={formik.values.longQSeven.length}
+          value={formik.values.longQSix}
+          valueLength={formik.values.longQSix.length}
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
-          errorMessages={formik.errors.longQSeven}
-          isTouched={formik.touched.longQSeven}
+          errorMessages={formik.errors.longQSix}
+          isTouched={formik.touched.longQSix}
         />
       </FormPageLayout>
     </>
