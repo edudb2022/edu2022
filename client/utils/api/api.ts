@@ -136,17 +136,17 @@ const apiService = {
     } catch (error) {
       throw error
     }
+  },
+  voteInterviewReview: async (param: IVoteReq) => {
+    const { value, id } = param
+    try {
+      await axios.post(`${DEFAULT_BASE_URL}/interview-reviews/${id}/votes`, {
+        value
+      })
+    } catch (error) {
+      throw error
+    }
   }
-  // voteProgrammeReview: async (param: IVoteReq) => {
-  //   const { value, id } = param
-  //   try {
-  //     await axios.post(`${DEFAULT_BASE_URL}/program-reviews/${id}/votes`, {
-  //       value
-  //     })
-  //   } catch (error) {
-  //     throw error
-  //   }
-  // }
 }
 
 export { apiService }
