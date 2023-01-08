@@ -221,7 +221,7 @@ export interface IAdmissionOfferReviewReq {
   offerTypeId: AdmissionOfferTypeId
   currentProgramId: number
   offerReceiveDate: string
-  applicationType: ApplicationTypeId
+  applicationTypeId: ApplicationTypeId
   currentYearOfStudyId: CurrentSchoolTypeId
   dseScores: IDseScores[] | null
   contactMethod: IContactMethod | null

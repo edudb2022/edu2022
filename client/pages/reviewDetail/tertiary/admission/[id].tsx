@@ -12,6 +12,7 @@ import LongQuestionsDisplayLayout from "../../../../components/layouts/longQuest
 
 import PageLayout from "../../../../components/layouts/page"
 import useGetAdmissionOfferReview from "../../../../hooks/api/get/useGetAdmissionOfferReview"
+import useVoteAdmissionOfferReview from "../../../../hooks/api/vote/useVoteAdmissionOfferReview"
 import { admissionOfferReviewLongQuestionsMapper } from "../../../../mappers/longQuestion"
 import {
   ADMISSION_OFFER_TYPE,
@@ -29,6 +30,8 @@ const AdmissionReviewDetailPage: NextPage = () => {
   const { data } = useGetAdmissionOfferReview(id as string)
   const [dseBestFive, setDseBestFive] = useState<number | null>(null)
   const [dseBestSix, setDseBestSix] = useState<number | null>(null)
+  const { mutate } = useVoteAdmissionOfferReview()
+
   const contactMethod = data?.contactMethod
     ? { type: data.contactMethod.type, detail: data.contactMethod.value }
     : null
@@ -85,7 +88,7 @@ const AdmissionReviewDetailPage: NextPage = () => {
         // onVote={mutate}
 
         isStudent={!!data?.user.hasSchoolBadge}
-        onVote={() => {}}
+        onVote={mutate}
       >
         <div className="grid grid-cols-2 md:grid-cols-4 place-items-center w-full mt-12 gap-y-4 ">
           <TextTag

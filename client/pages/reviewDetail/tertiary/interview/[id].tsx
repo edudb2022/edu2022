@@ -21,7 +21,7 @@ import {
 } from "../../../../constants/rating"
 import { CommonHelpers } from "../../../../helpers"
 import useGetInterviewDetailReview from "../../../../hooks/api/get/useGetInterviewReview"
-import useVotePInterviewReview from "../../../../hooks/api/vote/useVoteInterviewReview"
+import useVoteInterviewReview from "../../../../hooks/api/vote/useVoteInterviewReview"
 import { interviewReviewLongQuestionsMapper } from "../../../../mappers/longQuestion"
 import { interviewReviewRatingQuestionsMapper } from "../../../../mappers/ratingQuestions"
 import { SCORE_TYPE } from "../../../../types/common"
@@ -35,7 +35,7 @@ const InterviewReviewDetailPage: NextPage = () => {
   const [dseBestFive, setDseBestFive] = useState(0)
   const [dseBestSix, setDseBestSix] = useState(0)
   const { data } = useGetInterviewDetailReview(id as string)
-  const { mutate } = useVotePInterviewReview()
+  const { mutate } = useVoteInterviewReview()
   const tags = ["面試情報"]
 
   const userName = data?.anonymous

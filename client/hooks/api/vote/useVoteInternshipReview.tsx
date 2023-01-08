@@ -2,7 +2,7 @@ import { useMutation } from "react-query"
 import { apiService } from "../../../utils/api/api"
 
 const useVoteInterviewReview = () => {
-  return useMutation(apiService.voteInterviewReview)
+  return useMutation(apiService.voteInternshipOfferReview)
 }
 
-export default useVoteInterviewReview
+useVoteInterviewReview

@@ -16,11 +16,14 @@ import { internshipJobFindingDifficultyRating } from "../../../../constants/rati
 import LongQuestionsDisplayLayout from "../../../../components/layouts/longQuestionsDisplay"
 import LongTextDisplayContainer from "../../../../components/containers/longTextDisplay"
 import { internshipOfferReviewLongQuestionsMapper } from "../../../../mappers/longQuestion"
+import useVoteInterviewReview from "../../../../hooks/api/vote/useVoteInterviewReview"
 
 const InternshipReviewDetailPage: NextPage = () => {
   const router = useRouter()
   const { id } = router.query
   const { data } = useGetInternshipDetailReview(id as string)
+  const { mutate } = useVoteInterviewReview()
+
   const userName = data?.anonymous
     ? CommonCopyRight.NOT_WILLING_TO_RESPONSE
     : data?.user.name
@@ -57,10 +60,8 @@ const InternshipReviewDetailPage: NextPage = () => {
         postId={data!.id}
         title={data!.title}
         additionalInfoTag={tags}
-        // onVote={mutate}
-
+        onVote={mutate}
         isStudent={!!data?.user.hasSchoolBadge}
-        onVote={() => {}}
       >
         <div className="flex flex-wrap flex-row justify-evenly  w-full">
           <ReviewSalaryItem salary={totalSalary} title="總月薪" />

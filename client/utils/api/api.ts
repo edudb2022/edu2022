@@ -146,6 +146,39 @@ const apiService = {
     } catch (error) {
       throw error
     }
+  },
+  voteAdmissionOfferReview: async (param: IVoteReq) => {
+    const { value, id } = param
+    try {
+      await axios.post(
+        `${DEFAULT_BASE_URL}/admission-offer-reviews/${id}/votes`,
+        {
+          value
+        }
+      )
+    } catch (error) {
+      throw error
+    }
+  },
+  voteInternshipOfferReview: async (param: IVoteReq) => {
+    const { value, id } = param
+    try {
+      await axios.post(`${DEFAULT_BASE_URL}/internship-reviews/${id}/votes`, {
+        value
+      })
+    } catch (error) {
+      throw error
+    }
+  },
+  voteGradJobOfferReview: async (param: IVoteReq) => {
+    const { value, id } = param
+    try {
+      await axios.post(`${DEFAULT_BASE_URL}/grad-job-reviews/${id}/votes`, {
+        value
+      })
+    } catch (error) {
+      throw error
+    }
   }
 }
 

@@ -16,6 +16,7 @@ import {
   gradJobJobFindingDifficultyRating
 } from "../../../../constants/rating"
 import useGetGradJobDetailReview from "../../../../hooks/api/get/useGetGradJobReview"
+import useVoteGradJobReview from "../../../../hooks/api/vote/useVoteGradJobReview"
 import { gradJobOfferOfferReviewLongQuestionsMapper } from "../../../../mappers/longQuestion"
 import { apiService } from "../../../../utils/api/api"
 import { CommonCopyRight } from "../../../../utils/copyRight/common"
@@ -25,6 +26,7 @@ const GradJobReviewDetailPage: NextPage = () => {
   const router = useRouter()
   const { id } = router.query
   const { data } = useGetGradJobDetailReview(id as string)
+  const { mutate } = useVoteGradJobReview()
 
   const userName = data?.anonymous
     ? CommonCopyRight.NOT_WILLING_TO_RESPONSE
@@ -66,7 +68,7 @@ const GradJobReviewDetailPage: NextPage = () => {
         additionalInfoTag={tags}
         // onVote={mutate}
         isStudent={!!data?.user.hasSchoolBadge}
-        onVote={() => {}}
+        onVote={mutate}
       >
         <div className="flex flex-wrap flex-row justify-evenly w-full">
           <ReviewSalaryItem salary={totalSalary} title="總年薪" />
