@@ -16,19 +16,25 @@ const Footer: React.FunctionComponent = () => {
         </div>
         <div className="w-full sm:w-3/5 flex flex-col sm:flex-row justify-end">
           <div id="uni-strategy" className="w-full sm:w-1/3 mr-10 mb-3 sm:mb-1">
-            <h3 className="sm:mb-3">快速導航</h3>
-            <div className="w-full flex flex-wrap gap-x-2 md:flex-col">
-              <Link href={"/"}>
-                <a>School</a>
+            <h3 className="sm:mb-3">寫評價/情報</h3>
+            <div className="w-full flex flex-wrap gap-x-2 flex-col">
+              <Link href={"/forms/tertiary/schoolReview"}>
+                <a>學校評價</a>
               </Link>
-              <Link href={"/school/tertiary/1"}>
-                <a>Programme</a>
+              <Link href={"/forms/tertiary/programmeReview"}>
+                <a>課程評價</a>
               </Link>
-              <Link href={"/"}>
-                <a>Intern</a>
+              <Link href={"/forms/tertiary/interviewReview"}>
+                <a>面試情報</a>
               </Link>
-              <Link href={"/"}>
-                <a>Grad Job</a>
+              <Link href={"/forms/tertiary/admissionOffer"}>
+                <a>入學情報</a>
+              </Link>
+              <Link href={"/forms/tertiary/internshipOffer"}>
+                <a>實習情報</a>
+              </Link>
+              <Link href={"/forms/tertiary/gradJobOffer"}>
+                <a>工作情報</a>
               </Link>
             </div>
           </div>
@@ -52,12 +58,14 @@ const Footer: React.FunctionComponent = () => {
           <div id="contact-us" className="w-full sm:w-1/3 mr-10 mb-3 sm:mb-1">
             <h3 className="sm:mb-3">聯絡我們</h3>
             <Link href={"mailto:abc@abc.com"}>Email: abc@abc.com</Link>
-            <div className="w-24 sm:w-3/4 flex justify-between mt-3">
+            <div className="w-24 sm:w-3/4 flex flex-row items-center justify-start mt-3">
               <Link href={"http://www.instagram.com"}>
-                <a className="text-3xl">
+                <a className="text-base">
                   <InstagramIcon />
                 </a>
               </Link>
+
+              <p>@GoodTurtle.fyi</p>
             </div>
           </div>
         </div>
