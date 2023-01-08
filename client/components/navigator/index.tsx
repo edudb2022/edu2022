@@ -43,10 +43,15 @@ const Navbar: React.FunctionComponent = () => {
 
         <div className="flex-row gap-x-4 h-full hidden md:flex ">
           <BaseButton
-            className={`gap-x-1 text-sm bg-gradient-to-br from-[#4c68d7] via-[#bc2a8d]  to-[#fbad50]  text-white rounded-3xl `}
+            className={`gap-x-1 text-base bg-gradient-to-r from-[#4c68d7] via-[#bc2a8d]  to-[#fbad50]  text-white rounded-3xl `}
           >
-            <InstagramIcon />
-            <span className="text-mono">追蹤IG</span>
+            {/* <BaseButton
+            className={`gap-x-1 text-sm bg-gradient-to-br bg-[#bc2a8d] ]  text-white rounded-3xl `}
+          > */}
+
+            <InstagramIcon className="text-2xl" />
+
+            <span className="text-mono">@goodtutle.fyi</span>
           </BaseButton>
           {isLogin ? (
             <>
